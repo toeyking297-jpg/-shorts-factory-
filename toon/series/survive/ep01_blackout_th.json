@@ -1,0 +1,404 @@
+{
+ "channel": "รอดวันแรก",
+ "series": "รอดวันแรก",
+ "episode": "ไฟดับทั้งเมือง · คืนที่ 1",
+ "lang": "th",
+ "voice": {
+  "engine": "edge",
+  "edge_voice": "th-TH-NiwatNeural",
+  "rate": "+6%"
+ },
+ "end_card": {
+  "kicker": "ตอนต่อไป",
+  "title": "วันที่ 2: น้ำไม่ไหล"
+ },
+ "facts": [
+  {
+   "claim": "A closed refrigerator keeps food cold for about 4 hours during an outage; a full freezer for up to 48 hours.",
+   "value": "4 hours / 48 hours",
+   "source": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+   "source_name": "FoodSafety.gov"
+  },
+  {
+   "claim": "Generators must be used outdoors, at least 20 feet from windows, never indoors or in partially enclosed spaces.",
+   "value": "20 feet",
+   "source": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+   "source_name": "CDC"
+  },
+  {
+   "claim": "Avoid candles, which can cause house fires; use flashlights.",
+   "value": "",
+   "source": "https://www.dhses.ny.gov/power-outage",
+   "source_name": "NY State DHSES"
+  },
+  {
+   "claim": "Carbon monoxide is a colorless, odorless gas.",
+   "value": "",
+   "source": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+   "source_name": "CDC"
+  }
+ ],
+ "meta": {
+  "title": "ไฟดับทั้งเมือง อย่าทำสิ่งนี้เป็นอย่างแรก",
+  "title_options": [
+   "ไฟดับทั้งเมือง อย่าทำสิ่งนี้เป็นอย่างแรก",
+   "3 ความผิดพลาดตอนไฟดับ ที่อันตรายกว่าที่คิด",
+   "รอดวันแรก: ไฟดับทั้งเมือง"
+  ],
+  "description": "คืนแรกที่ไฟดับทั้งเมือง กฎ 3 ข้อที่ช่วยให้ปลอดภัย (ข้อมูลจาก FoodSafety.gov และ CDC)",
+  "hashtags": [
+   "shorts",
+   "เอาตัวรอด",
+   "ไฟดับ",
+   "การ์ตูน"
+  ],
+  "pinned_comment": "ถ้าเป็นคุณ จะเปิดตู้เย็นดูไหม?"
+ },
+ "scenes": [
+  {
+   "text": "ไฟดับทั้งเมืองแล้ว",
+   "shot": {
+    "set": "city",
+    "fx": [
+     "lights_out"
+    ],
+    "cam": "push",
+    "title": true,
+    "counter": {
+     "value": "21:42 น.",
+     "label": "คืนที่ 1",
+     "color": [
+      255,
+      214,
+      10
+     ],
+     "x": 540,
+     "y": 600,
+     "at": 0.15
+    }
+   }
+  },
+  {
+   "text": "และคนส่วนใหญ่ ทำชั่วโมงแรกพลาด",
+   "shot": {
+    "set": "city_dark",
+    "cam": "pan",
+    "zip": {
+     "x": 540,
+     "y": 640,
+     "from": [
+      1250,
+      300
+     ]
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 270,
+      "mood": "scared",
+      "look": 1
+     },
+     {
+      "who": "max",
+      "x": 560,
+      "pose": "scared",
+      "mood": "scared"
+     },
+     {
+      "who": "gus",
+      "x": 840,
+      "mood": "scared",
+      "look": -1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "สิ่งแรกที่แม็กซ์ทำ คือเปิดตู้เย็นดู",
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.62
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 940,
+      "to": 600,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "กฎข้อหนึ่ง ปิดตู้เย็นไว้ ถ้าไม่เปิด ความเย็นอยู่ได้ประมาณสี่ชั่วโมง",
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "zip": {
+     "x": 900,
+     "y": 600
+    },
+    "card": {
+     "n": 1,
+     "at": 0.08,
+     "text": "ห้ามเปิดตู้เย็น"
+    },
+    "counter": {
+     "x": 540,
+     "y": 360,
+     "at": 0.45,
+     "source": "FoodSafety.gov",
+     "value": "4 ชั่วโมง",
+     "label": "ตู้เย็นยังเย็น"
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 600,
+      "pose": "point",
+      "mood": "determined",
+      "look": -1
+     },
+     {
+      "who": "max",
+      "x": 860,
+      "pose": "stand",
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "ถ้าช่องแช่แข็งของเต็ม อยู่ได้นานถึงสี่สิบแปดชั่วโมง",
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 620,
+     "at": 0.1,
+     "source": "FoodSafety.gov",
+     "color": [
+      64,
+      224,
+      255
+     ],
+     "value": "48 ชั่วโมง",
+     "label": "ช่องแช่แข็งที่เต็ม"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "smile",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "แล้วกัสก็เข็นเครื่องปั่นไฟเข้ามาในโรงรถ",
+   "shot": {
+    "set": "garage",
+    "cam": "pan",
+    "cast": [
+     {
+      "who": "gus",
+      "x": 1000,
+      "to": 470,
+      "carry": "generator",
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "กฎข้อสอง เครื่องปั่นไฟต้องอยู่นอกบ้าน ห่างหน้าต่างอย่างน้อยหกเมตร",
+   "shot": {
+    "set": "garage",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "generator",
+      "x": 900
+     },
+     {
+      "kind": "arrow",
+      "x0": 330,
+      "x1": 760,
+      "y": 1330,
+      "label": "6 เมตร"
+     }
+    ],
+    "card": {
+     "n": 2,
+     "at": 0.05,
+     "text": "เครื่องปั่นไฟ ต้องอยู่นอกบ้าน"
+    },
+    "zip": {
+     "x": 860,
+     "y": 560
+    },
+    "cast": [
+     {
+      "who": "gus",
+      "x": 250,
+      "mood": "determined",
+      "look": 1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "เพราะในบ้าน ก๊าซคาร์บอนมอนอกไซด์จะสะสม ไม่มีสี ไม่มีกลิ่น",
+   "shot": {
+    "set": "garage",
+    "cam": "push",
+    "fx": [
+     "shake"
+    ],
+    "props": [
+     {
+      "kind": "generator",
+      "x": 420
+     },
+     {
+      "kind": "gas",
+      "x": 560,
+      "y": 1500
+     }
+    ],
+    "meter": {
+     "from": 1,
+     "to": 8,
+     "x": 700,
+     "y": 360,
+     "label": "ระดับอันตราย"
+    },
+    "cast": [
+     {
+      "who": "gus",
+      "x": 780,
+      "pose": "scared",
+      "mood": "scared",
+      "look": -1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "จากนั้น แม็กซ์ก็จุดเทียน",
+   "shot": {
+    "set": "living",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "candle",
+      "x": 820,
+      "y": 1262
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 480,
+      "mood": "smile",
+      "look": 1
+     }
+    ]
+   }
+  },
+  {
+   "text": "กฎข้อสาม ใช้ไฟฉายแทน เพราะเทียนทำให้ไฟไหม้บ้านได้",
+   "shot": {
+    "set": "living",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "beam",
+      "x": 330,
+      "y": 1430,
+      "at": 0.25
+     }
+    ],
+    "card": {
+     "n": 3,
+     "at": 0.05,
+     "text": "ใช้ไฟฉาย ไม่ใช้เทียน"
+    },
+    "zip": {
+     "x": 880,
+     "y": 600
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 260,
+      "pose": "point",
+      "mood": "determined",
+      "look": 1
+     },
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "คืนแรกผ่านไป แต่พอตีสาม น้ำประปาก็หยุดไหล",
+   "shot": {
+    "set": "sink",
+    "cam": "push",
+    "fx": [
+     "flicker"
+    ],
+    "props": [
+     {
+      "kind": "drip",
+      "x": 680,
+      "y": 1060,
+      "stop_at": 0.55
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 600,
+     "at": 0.35,
+     "value": "03:00 น.",
+     "label": "คืนที่ 1"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 780,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  }
+ ]
+}

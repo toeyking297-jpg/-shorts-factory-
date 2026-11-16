@@ -1,0 +1,122 @@
+{
+  "episode": "EP005_3-crazy-facts-about-earth-s-most-remote-",
+  "video": "EP005_3-crazy-facts-about-earth-s-most-remote-.mp4",
+  "cover": "EP005_3-crazy-facts-about-earth-s-most-remote-_cover.jpg",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "three_things",
+  "series": "Hidden Atlas #3",
+  "series_no": 3,
+  "playlist": "3 Things You Didn't Know",
+  "titles": [
+    "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+    "Why Astronauts Are Closer to Point Nemo Than You",
+    "The Ocean Graveyard Where Spacecraft Go to Die"
+  ],
+  "description": "Point Nemo is so far out in the Pacific Ocean that astronauts overhead are closer to it than anyone standing on land.\n\nHidden Atlas #3\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Pole_of_inaccessibility\n- Wikipedia https://en.wikipedia.org/wiki/Finding_Nemo\n\nFootage & images:\n- Video by RobertoMyLife on Pixabay https://pixabay.com/videos/id-33194/\n- Video by Prachi1778 on Pixabay https://pixabay.com/videos/id-336799/\n- NASA (GSFC): NASA Set To Launch Shoebox-sized Satellite Studying Earth's Upper Atmosphere: B-Roll 2 https://images.nasa.gov/details/GSFC_20170802_m12602_Dellingr_deployment\n- Video by doktorkleinmusic on Pixabay https://pixabay.com/videos/id-371290/\n- NASA (JSC): The Soyuz MS-27 spacecraft docked to the Prichal module https://images.nasa.gov/details/iss073e0775543\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #geography #pointnemo #space #ocean",
+  "hashtags": "#shorts #geography #pointnemo #space #ocean",
+  "tags": [
+    "Point Nemo",
+    "pole of inaccessibility",
+    "space graveyard",
+    "geography facts",
+    "ISS",
+    "Pacific Ocean"
+  ],
+  "pinned_comment": "Would you ever sail to the loneliest spot on Earth?",
+  "cover_text": "Loneliest spot on Earth?",
+  "social": {
+    "tiktok": "3 Crazy Facts About Earth's Most Remote Ocean Spot  #geography #pointnemo #space #ocean #fyp",
+    "reels": "3 Crazy Facts About Earth's Most Remote Ocean Spot  #geography #pointnemo #space #ocean",
+    "facebook": "3 Crazy Facts About Earth's Most Remote Ocean Spot  #geography #pointnemo #space #ocean"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "ready",
+  "status_th": "พร้อมลง",
+  "reasons_th": [],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [
+      "scene 5: no fitting picture was found (shows the map instead)"
+    ],
+    "rights": [],
+    "editorial": [
+      "scene 4 is 6.9s long; the picture should change every <=5s"
+    ]
+  },
+  "duration": 41.51,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "Point Nemo is about 1,670 miles from the nearest land mass.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Finding Nemo grossed $871 million worldwide.",
+      "value": "$871 million",
+      "source": "https://en.wikipedia.org/wiki/Finding_Nemo",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The International Space Station passes overhead at an altitude of about 258 miles.",
+      "value": "258 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Over 263 spacecraft have been deorbited in the oceanic pole of inaccessibility area.",
+      "value": "263",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-22T03:27",
+  "metrics": {
+    "seconds": {
+      "voice": 92,
+      "footage": 167,
+      "draft_qc": 55,
+      "render": 449,
+      "final_review": 67,
+      "qc": 23,
+      "writing": 376
+    },
+    "total_seconds": 1250,
+    "api": {
+      "gemini_calls": 42,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 8,
+        "gemini-3.6-flash": 7,
+        "gemini-flash-latest": 6,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 6,
+        "gemini-3.7-flash": 6,
+        "gemini-3-flash-preview": 6,
+        "gemini-flash-lite-latest": 3,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 35,
+      "footage_api_calls": 147,
+      "downloads": 11,
+      "gemini_rate_limited": 31
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

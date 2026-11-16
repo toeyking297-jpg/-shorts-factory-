@@ -1,0 +1,300 @@
+{
+  "id": "EP004",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "myth_vs_fact",
+  "loop": true,
+  "meta": {
+    "title": "The Soviet Statue Hiding in Antarctica",
+    "title_options": [
+      "The Soviet Statue Hiding in Antarctica",
+      "Why is there a Lenin statue in the ice?",
+      "Earth's Most Remote Landmark Is Buried"
+    ],
+    "description": "Discover the Southern Pole of Inaccessibility, the remotest spot in Antarctica where a Soviet statue still stands.",
+    "hashtags": [
+      "shorts",
+      "antarctica",
+      "history",
+      "geography",
+      "soviet"
+    ],
+    "tags": [
+      "Antarctica",
+      "Pole of Inaccessibility",
+      "Soviet Union",
+      "Lenin Statue",
+      "Remote Places",
+      "History"
+    ],
+    "pinned_comment": "Would you travel 800 miles across the ice just to see this statue?"
+  },
+  "scenes": [
+    {
+      "text": "A Soviet statue is hiding in Antarctica.",
+      "visual": {
+        "type": "image",
+        "query": "Lenin bust Pole of Inaccessibility Antarctica buried",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "It sits at the world’s most remote spot.",
+      "visual": {
+        "type": "footage",
+        "query": "antarctica frozen wasteland aerial drone ice",
+        "alt": [
+          "ice desert"
+        ],
+        "must_show": [
+          "snow"
+        ],
+        "must_not_show": [
+          "trees",
+          "grass",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "This is the Southern Pole of Inaccessibility.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "SOUTHERN POLE",
+            "lon": 64.89,
+            "lat": -83.9
+          }
+        ],
+        "headline": "THE REMOTE POLE",
+        "kicker": "ANTARCTICA",
+        "zoom": "in"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "The station is about 808 miles from the South Pole.",
+      "visual": {
+        "type": "map",
+        "distance": {
+          "from": [
+            0,
+            -90
+          ],
+          "to": [
+            54.96,
+            -82.1
+          ],
+          "label": "808 MILES",
+          "fact": "f2"
+        },
+        "headline": "MILES FROM SOUTH POLE",
+        "zoom": "out",
+        "pins": []
+      },
+      "scroll_test": 7
+    },
+    {
+      "text": "Another point here is about 988 miles from water.",
+      "visual": {
+        "type": "footage",
+        "query": "rough southern ocean waves storm",
+        "alt": [
+          "open ocean"
+        ],
+        "must_show": [
+          "waves"
+        ],
+        "must_not_show": [
+          "land",
+          "beach",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:24216"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "988 miles",
+        "label": "to the ocean",
+        "source": "Wikipedia",
+        "fact": "f1"
+      },
+      "scroll_test": 7
+    },
+    {
+      "text": "That is further than driving from New York to Florida.",
+      "visual": {
+        "type": "map",
+        "compare": {
+          "shape": "USA48",
+          "onto": "Antarctica",
+          "label": "USA SIZE"
+        },
+        "headline": "VAST DISTANCE",
+        "kicker": "USA COMPARISON",
+        "zoom": "none",
+        "pins": []
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "In 1958, Soviet explorers reached this point and built a base.",
+      "visual": {
+        "type": "image",
+        "query": "Soviet Antarctic Expedition 1958 station historical",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "1958",
+        "label": "established",
+        "source": "Wikipedia",
+        "fact": "f3"
+      },
+      "scroll_test": 9
+    },
+    {
+      "text": "They placed a plastic bust of Vladimir Lenin on the roof.",
+      "visual": {
+        "type": "image",
+        "query": "Lenin bust Soviet Antarctic station close up",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "LENIN BUST",
+        "pos": "top"
+      },
+      "scroll_test": 9
+    },
+    {
+      "text": "The statue still faces Moscow across the frozen desert.",
+      "visual": {
+        "type": "footage",
+        "query": "antarctica white frozen desert horizon flat ice",
+        "alt": [
+          "ice field"
+        ],
+        "must_show": [
+          "ice"
+        ],
+        "must_not_show": [
+          "water",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s08.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:338857"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "Since then, decades of snow have buried the entire station.",
+      "visual": {
+        "type": "footage",
+        "query": "snow storm blizzard antarctica whiteout",
+        "alt": [
+          "blizzard"
+        ],
+        "must_show": [
+          "snow"
+        ],
+        "must_not_show": [
+          "sun",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "scroll_test": 9
+    },
+    {
+      "text": "Now, only the yellowed head stares out above the ice.",
+      "visual": {
+        "type": "image",
+        "query": "Lenin statue head buried snow Antarctica",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "BURIED BASE",
+        "pos": "middle"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "And that is why",
+      "visual": {
+        "type": "loop"
+      },
+      "scroll_test": 8
+    }
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The Outer pole is 1,590.4 km (988.2 mi) from the ocean.",
+      "value": "988 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "This lies 1,301 km (808 mi) from the South Pole.",
+      "value": "808 MILES",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "On 14 December 1958, the 3rd Soviet Antarctic Expedition established the temporary Pole of Inaccessibility Station.",
+      "value": "1958",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ]
+}

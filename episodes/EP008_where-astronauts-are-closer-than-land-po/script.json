@@ -1,0 +1,353 @@
+{
+  "id": "EP008",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "myth_vs_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Point Nemo is roughly 1,670 miles away from the three closest landmasses.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "No regular marine or air traffic routes are within 250 miles of Point Nemo.",
+      "value": "250 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "Point Nemo is known as a spacecraft cemetery where hundreds of decommissioned spacecraft have been directed to re-enter.",
+      "value": "hundreds of spacecraft",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "The International Space Station is planned to crash into the ocean near Point Nemo in 2031.",
+      "value": "2031",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ],
+  "meta": {
+    "title": "Where Astronauts Are Closer Than Land: Point Nemo",
+    "description": "Point Nemo is the most isolated oceanic spot on Earth, sitting over 1,670 miles from the nearest shore.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "ocean",
+      "space",
+      "pointnemo"
+    ],
+    "tags": [
+      "Point Nemo",
+      "oceanography",
+      "International Space Station",
+      "geography facts",
+      "pole of inaccessibility",
+      "spacecraft cemetery"
+    ],
+    "cover_text": "Closer to space?",
+    "title_options": [
+      "Where Astronauts Are Closer Than Land: Point Nemo",
+      "Why Point Nemo Is Closer to Space Than Any Human",
+      "Point Nemo: The Ocean Spot Closer to Orbit Than Land"
+    ],
+    "pinned_comment": "Would you spend a week floating alone at Point Nemo?"
+  },
+  "scenes": [
+    {
+      "text": "Where are astronauts your closest human neighbors?",
+      "visual": {
+        "type": "footage",
+        "query": "international space station orbiting above blue ocean",
+        "alt": [
+          "ISS over earth"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "space station",
+          "ocean"
+        ],
+        "must_not_show": [
+          "astronaut face close up",
+          "watermark"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "CLOSER TO SPACE",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "The loneliest place on Earth is often thought to be a scorching desert.",
+      "visual": {
+        "type": "footage",
+        "query": "vast empty desert dunes aerial",
+        "alt": [
+          "empty desert sand"
+        ],
+        "must_show": [
+          "sand dunes"
+        ],
+        "must_not_show": [
+          "water",
+          "trees",
+          "roads",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "pixabay:284566"
+        ],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:310247"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "THE COMMON MYTH",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Instead, it sits in the South Pacific Ocean at remote Point Nemo.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "THE REAL POLE",
+        "kicker": "POINT NEMO",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "The three nearest landmasses are roughly 1,670 miles away to the north, northeast, and south.",
+      "visual": {
+        "type": "map",
+        "ring": {
+          "center": [
+            -123.39,
+            -48.88
+          ],
+          "radius_km": 2688
+        },
+        "distance": {
+          "from": [
+            -123.39,
+            -48.88
+          ],
+          "to": [
+            -124.79,
+            -24.68
+          ],
+          "label": "1,670 MI",
+          "fact": "f1"
+        },
+        "headline": "ISOLATED BY WATER",
+        "kicker": "1,670 MILES TO SHORE",
+        "zoom": "out",
+        "pins": []
+      }
+    },
+    {
+      "text": "This makes it the farthest point from land anywhere on Earth.",
+      "visual": {
+        "type": "footage",
+        "query": "rough open ocean waves no land",
+        "alt": [
+          "stormy open sea"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "coastline",
+          "beach",
+          "ships",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:283533"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "FARTHEST FROM LAND",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "No regular shipping or flight routes operate within 250 miles of here.",
+      "visual": {
+        "type": "footage",
+        "query": "calm endless ocean horizon aerial",
+        "alt": [
+          "empty ocean water"
+        ],
+        "must_show": [
+          "open water"
+        ],
+        "must_not_show": [
+          "boats",
+          "land",
+          "birds",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:21175"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "250 miles",
+        "label": "no traffic routes",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "When the International Space Station passes overhead, those astronauts are sometimes your closest humans.",
+      "visual": {
+        "type": "footage",
+        "query": "international space station cupola view of earth",
+        "alt": [
+          "view from space station"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "city lights",
+          "people",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "nasa:ksc_025210_sts130_recap"
+        ],
+        "_kind": "none",
+        "_media_id": "nasa:ksc_025210_sts130_recap"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "ASTRONAUTS ARE CLOSEST",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "This extreme isolation also turns the region into an oceanic spacecraft cemetery.",
+      "visual": {
+        "type": "footage",
+        "query": "deep blue sea underwater dark water",
+        "alt": [
+          "underwater open ocean"
+        ],
+        "must_show": [
+          "deep ocean"
+        ],
+        "must_not_show": [
+          "coral reef",
+          "sharks",
+          "divers",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SPACECRAFT CEMETERY",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Hundreds of decommissioned satellites have been steered directly into these deep waters.",
+      "visual": {
+        "type": "footage",
+        "query": "spacecraft re-entry atmosphere light streak",
+        "alt": [
+          "satellite burning up re-entry"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "streaks of light"
+        ],
+        "must_not_show": [
+          "city",
+          "buildings",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "HUNDREDS OF CRASHES",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Even the International Space Station is planned to crash here in 2031.",
+      "visual": {
+        "type": "footage",
+        "query": "international space station in low earth orbit solar panels",
+        "alt": [
+          "ISS full view"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "interior",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s09.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:86063"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "2031",
+        "label": "planned ISS splashdown",
+        "source": "Wikipedia",
+        "fact": "f4"
+      }
+    },
+    {
+      "text": "And that leaves explorers asking,",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": [
+    "scene 4: overclaim: \"This makes it the farthest point from land anywhere on Earth.\" -> Point Nemo is the oceanic pole of inaccessibility, the place in the ocean farthest from land."
+  ]
+}

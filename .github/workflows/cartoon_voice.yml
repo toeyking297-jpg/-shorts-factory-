@@ -1,0 +1,51 @@
+name: Cartoon voice
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode id"
+        required: true
+        default: "EP001"
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ติดตั้ง
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q edge-tts faster-whisper pillow numpy
+      - name: พากย์ทีละประโยค
+        env:
+          EP: ${{ inputs.episode }}
+        run: |
+          set -o pipefail
+          python -m engine.cartoon voice "$EP" 2>&1 | tee voice.log || { echo "::error::voice: $(tail -c 1500 voice.log | tr '\n' ' ')"; exit 1; }
+          echo "::notice::$(tail -n 1 voice.log)"
+      - name: ตรวจเสียงด้วย ASR
+        continue-on-error: true
+        env:
+          EP: ${{ inputs.episode }}
+        run: |
+          set -o pipefail
+          python -m engine.cartoon asr "$EP" 2>&1 | tee asr.log || { echo "::error::asr: $(tail -c 1500 asr.log | tr '\n' ' ')"; exit 1; }
+          echo "::notice::$(grep -c cer= asr.log) lines checked"
+      - name: เก็บไฟล์เสียงกลับเข้า repo
+        if: always()
+        env:
+          EP: ${{ inputs.episode }}
+        run: |
+          git config user.name "cartoon-bot"
+          git config user.email "cartoon-bot@users.noreply.github.com"
+          git add "cartoon/episodes/$EP/audio" cartoon/state/jobs.json
+          git commit -m "Cartoon $EP: voice lines + ASR check" || echo "nothing new"
+          git pull --rebase -q && git push

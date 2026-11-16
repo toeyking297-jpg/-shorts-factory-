@@ -1,0 +1,181 @@
+{
+ "episode_id": "EP001",
+ "shots": [
+  {
+   "shot_id": "SH01",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "REF_C03_expressions",
+    "REF_C03_turnaround",
+    "BG01"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH01 - wide, camera eye level, straight on. Location: Thai chicken-rice shophouse front (same as background BG01). Characters in frame ONLY: the stall girl (black bob, white tee, teal apron): cheerful, pose 'cheerful', looking screen-left; the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): bossy, pose 'bossy', looking screen-left. Action: ป้าเดินแทรกเข้ามายืนหน้าหนุ่มพร้อมพัด (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH02",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH02 - close-up, camera eye level, from counter side. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right. Action: หนุ่มตอบเรียบ ไม่ขยับ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH03",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "BG01M"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH03 - medium two-shot, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG01M). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): bossy, pose 'bossy', looking screen-left. Action: ป้าโบกพัดปัดคำพูด (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH04",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH04 - close-up, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right. Action: หนุ่มชี้ข้อเท็จจริงเรียบๆ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH05",
+   "refs": [
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH05 - close-up, camera eye level, slightly low. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): proud, pose 'bossy', looking screen-left. Action: ป้าเชิดหน้า หลับตาภูมิใจ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH06",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH06 - close-up (reaction), camera eye level. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right. Action: หนุ่มกะพริบตาหนึ่งครั้ง นิ่ง (มุกกลาง) (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH07",
+   "refs": [
+    "REF_C03_expressions",
+    "REF_C03_turnaround",
+    "BG02"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH07 - close-up, camera eye level, from customer side. Location: Thai chicken-rice shophouse front (same as background BG02). Characters in frame ONLY: the stall girl (black bob, white tee, teal apron): cheerful, pose 'cheerful', looking screen-left. Action: พนักงานเรียกคิว (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH08",
+   "refs": [
+    "INS01"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH08 - insert, camera close, slightly top-down. Location: Thai chicken-rice shophouse front (same as background INS01). Characters in frame ONLY: none (insert/prop shot). Action: มือป้าโฉบแย่งบัตรคิว 45 จากมือหนุ่ม (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH09",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "BG01M"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH09 - medium two-shot, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG01M). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): impatient, pose 'ticket', looking screen-left. Action: หนุ่มพยายามบอก ป้าชูบัตรพูดทับ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH10",
+   "refs": [
+    "REF_C03_expressions",
+    "REF_C03_turnaround",
+    "BG02"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH10 - close-up, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG02). Characters in frame ONLY: the stall girl (black bob, white tee, teal apron): cheerful, pose 'bags', looking screen-left. Action: พนักงานยกกองถุงข้าว อ่านออเดอร์ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH11",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "REF_C03_expressions",
+    "REF_C03_turnaround",
+    "BG01"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH11 - wide, camera eye level, straight on. Location: Thai chicken-rice shophouse front (same as background BG01). Characters in frame ONLY: the stall girl (black bob, white tee, teal apron): cheerful, pose 'cheerful', looking screen-left; the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): impatient, pose 'ticket', looking screen-left. Action: เห็นกองถุงบนเคาน์เตอร์ ป้ายืนค้าง (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH12",
+   "refs": [
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH12 - close-up (reaction), camera eye level. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): shocked, pose 'shocked', looking screen-left. Action: ป้าตาโต ค้าง แล้วพูดเสียงเบา (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH13",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH13 - close-up, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right. Action: หนุ่มอธิบายสั้นๆ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH14",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "BG01M"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH14 - medium two-shot, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG01M). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): neutral deadpan, pose 'neutral', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): sheepish, pose 'sheepish', looking screen-left. Action: ป้ายื่นบัตรคืนด้วยสองนิ้ว (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH15",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "BG03"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH15 - close-up, camera eye level. Location: Thai chicken-rice shophouse front (same as background BG03). Characters in frame ONLY: the office guy (mustard hoodie, round glasses, silver bags on shoulder): tiny smile, pose 'gesture', looking screen-right. Action: หนุ่มยิ้มนิดๆ ผายมือเชิญไปเคาน์เตอร์ (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  },
+  {
+   "shot_id": "SH16",
+   "refs": [
+    "REF_C01_expressions",
+    "REF_C01_turnaround",
+    "REF_C02_expressions",
+    "REF_C02_turnaround",
+    "REF_C03_expressions",
+    "REF_C03_turnaround",
+    "BG01"
+   ],
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16, clean 2D cartoon, clear silhouettes, bold outlines, restrained flat colors. No generated text, no letters, no logo, no watermark (subtitles are added in editing). Do not add any character that is not listed for this shot.\nShot SH16 - wide (button), camera eye level, straight on. Location: Thai chicken-rice shophouse front (same as background BG01). Characters in frame ONLY: the stall girl (black bob, white tee, teal apron): cheerful, pose 'cheerful', looking screen-left; the office guy (mustard hoodie, round glasses, silver bags on shoulder): tiny smile, pose 'gesture', looking screen-right; the auntie (curly reddish perm, coral floral blouse, gold chain, coral fan): shocked, pose 'shocked', looking screen-right. Action: ป้ายืนค้างหน้ากองถุง 50 ห่อ หนุ่มผายมือ พนักงานยิ้มรอเงิน (Thai note for the artist). Keep the counter on screen-right.",
+   "use": "optional: single full-frame key art for this shot; the renderer uses the layered assets"
+  }
+ ]
+}

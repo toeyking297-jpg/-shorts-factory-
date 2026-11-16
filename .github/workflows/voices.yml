@@ -1,0 +1,39 @@
+name: Voice test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  voices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: ติดตั้งเสียง Edge + Kokoro
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg espeak-ng
+          pip install -q -r requirements.txt
+          pip install -q --extra-index-url https://download.pytorch.org/whl/cpu torch kokoro soundfile
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: kokoro-hf-v1
+      - name: ทำเสียงตัวอย่าง
+        run: python -m engine.run voices
+      - name: ส่งเสียงเข้าแดชบอร์ด
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          files=(final/voice_*.mp3)
+          [ ${#files[@]} -gt 0 ] || { echo "::error::no voice sample was made"; exit 1; }
+          gh release delete voice-test --yes --cleanup-tag 2>/dev/null || true
+          gh release create voice-test "${files[@]}" --title "Voice test" --notes "Same sentence in each free voice. Pick one on the dashboard."

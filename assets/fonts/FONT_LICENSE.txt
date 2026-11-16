@@ -1,0 +1,3 @@
+Poppins (Indian Type Foundry) is licensed under the SIL Open Font License 1.1 (free for commercial video use).
+https://fonts.google.com/specimen/Poppins  /  https://openfontlicense.org
+To use another font: drop the .ttf here and change style.font_file and style.font_name in config/channel.json.

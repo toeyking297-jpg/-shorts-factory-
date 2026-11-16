@@ -1,0 +1,657 @@
+{
+ "episode_id": "EP001",
+ "requests": [
+  {
+   "asset_id": "REF_C01_turnaround",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nCharacter turnaround sheet on a plain flat cream background: the SAME single character shown 3 times side by side - front view, side view, full-body three-quarter view - neutral pose, identical design in all three. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. No mouth variations.",
+   "use": "reference image for every other request of this character"
+  },
+  {
+   "asset_id": "REF_C01_expressions",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [
+    "REF_C01_turnaround"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nExpression sheet, head and shoulders only, plain cream background, 5 heads in a row of the SAME character as the reference image: neutral, smiling, confused, annoyed, shocked. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder.",
+   "use": "expression reference"
+  },
+  {
+   "asset_id": "REF_C02_turnaround",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nCharacter turnaround sheet on a plain flat cream background: the SAME single character shown 3 times side by side - front view, side view, full-body three-quarter view - neutral pose, identical design in all three. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. No mouth variations.",
+   "use": "reference image for every other request of this character"
+  },
+  {
+   "asset_id": "REF_C02_expressions",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [
+    "REF_C02_turnaround"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nExpression sheet, head and shoulders only, plain cream background, 5 heads in a row of the SAME character as the reference image: neutral, smiling, confused, annoyed, shocked. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy.",
+   "use": "expression reference"
+  },
+  {
+   "asset_id": "REF_C03_turnaround",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nCharacter turnaround sheet on a plain flat cream background: the SAME single character shown 3 times side by side - front view, side view, full-body three-quarter view - neutral pose, identical design in all three. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. No mouth variations.",
+   "use": "reference image for every other request of this character"
+  },
+  {
+   "asset_id": "REF_C03_expressions",
+   "type": "character_reference",
+   "size": "1536x1024",
+   "refs": [
+    "REF_C03_turnaround"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nExpression sheet, head and shoulders only, plain cream background, 5 heads in a row of the SAME character as the reference image: neutral, smiling, confused, annoyed, shocked. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers.",
+   "use": "expression reference"
+  },
+  {
+   "asset_id": "C01_full_neutral",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: deadpan, half-closed eyes, completely calm. Pose: standing, arms relaxed at sides, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_full_neutral_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions",
+    "C01_full_neutral"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: deadpan, half-closed eyes, completely calm. Pose: standing, arms relaxed at sides, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_full_gesture",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: calm with a tiny polite smile. Pose: open right palm gesturing politely toward screen-right, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_full_gesture_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions",
+    "C01_full_gesture"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: calm with a tiny polite smile. Pose: open right palm gesturing politely toward screen-right, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_bust_deadpan",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: deadpan, half-closed eyes, completely calm. Pose: standing, arms relaxed at sides, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_bust_deadpan_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions",
+    "C01_bust_deadpan"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: deadpan, half-closed eyes, completely calm. Pose: standing, arms relaxed at sides, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_bust_smile",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: calm with a tiny polite smile. Pose: open right palm gesturing politely toward screen-right, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_bust_smile_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C01_turnaround",
+    "REF_C01_expressions",
+    "C01_bust_smile"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-right. Same character as the reference images. Thai office guy, late 20s, wide bean-shaped head, half-closed sleepy deadpan eyes, thick straight brows, big round black glasses, short messy black hair with one cowlick, mustard-yellow hoodie (#E3A21A) with cream drawstrings and kangaroo pocket, grey slacks (#7A7F87), white sneakers, a stack of five folded silver insulated food-delivery bags (#C9CED6) hanging from his right shoulder. Expression: calm with a tiny polite smile. Pose: open right palm gesturing politely toward screen-right, three-quarter view. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_bossy",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: bossy and loud, brows angled down. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_bossy_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_full_bossy"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: bossy and loud, brows angled down. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_ticket",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: impatient, brows down, palm up. Pose: holding a small cream queue ticket up high in her right hand, fan in left hand. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_ticket_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_full_ticket"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: impatient, brows down, palm up. Pose: holding a small cream queue ticket up high in her right hand, fan in left hand. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_sheepish",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: sheepish and embarrassed, brows tilted up. Pose: holding the small cream queue ticket out toward screen-left with two fingers, fan in left hand. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_sheepish_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_full_sheepish"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: sheepish and embarrassed, brows tilted up. Pose: holding the small cream queue ticket out toward screen-left with two fingers, fan in left hand. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_shocked",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: shocked, eyes wide open, brows high. Pose: both hands up near her chest, ticket in one hand, fan in the other. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_full_shocked_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_full_shocked"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-right. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: shocked, eyes wide open, brows high. Pose: both hands up near her chest, ticket in one hand, fan in the other. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_smug",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: smug, one brow raised, eyes half-closed. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_smug_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_bust_smug"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: smug, one brow raised, eyes half-closed. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_proud",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: proud, chin up, eyes closed in self-satisfaction. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_proud_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_bust_proud"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: proud, chin up, eyes closed in self-satisfaction. Pose: fanning herself with the fan raised near her face, other hand on hip. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_shocked",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: shocked, eyes wide open, brows high. Pose: both hands up near her chest, ticket in one hand, fan in the other. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C02_bust_shocked_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C02_turnaround",
+    "REF_C02_expressions",
+    "C02_bust_shocked"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai auntie, mid 50s, round face with puffy cheeks, high arched expressive brows, short curly permed reddish-brown hair (#8B3A2B), coral-red blouse (#D6453D) with small white flower print, thick gold chain necklace, navy wide trousers (#2B2F4A), brown leather sandals, always holds a coral folding fan (#F28C6B) in her left hand. Slightly shorter and rounder than the office guy. Expression: shocked, eyes wide open, brows high. Pose: both hands up near her chest, ticket in one hand, fan in the other. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_full_cheerful",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: waving one hand at shoulder height. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_full_cheerful_blink",
+   "type": "character_pose",
+   "size": "1440x1664",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions",
+    "C03_full_cheerful"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), full body, feet visible near the bottom edge, centred, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: waving one hand at shoulder height. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_bust_cheerful",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: waving one hand at shoulder height. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_bust_cheerful_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions",
+    "C03_bust_cheerful"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: waving one hand at shoulder height. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_bust_bags",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: lifting a big stack of white take-away bags with boxed rice in both hands. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C03_bust_bags_blink",
+   "type": "character_pose",
+   "size": "1188x1500",
+   "refs": [
+    "REF_C03_turnaround",
+    "REF_C03_expressions",
+    "C03_bust_bags"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle character on a fully TRANSPARENT background (PNG with alpha), head and upper chest close-up, head fills the upper 75% of the frame, facing screen-left. Same character as the reference images. Thai food-stall staff girl, early 20s, small oval face, big dot eyes, black bob haircut with straight bangs, small silver hoop earrings, white T-shirt, teal apron (#2A9D8F) with a cream front pocket, dark grey trousers. Expression: cheerful customer-service smile, happy closed eyes. Pose: lifting a big stack of white take-away bags with boxed rice in both hands. Draw the face WITHOUT a mouth (the mouth is a separate sprite added in editing), leave smooth skin where the mouth would be. EYES CLOSED (blink frame), everything else identical to the open-eye version. No other characters, no background, no text.",
+   "mouth_anchor_note": "after import, check mouth_anchor in assets/manifest.json (edit assets/anchors_override.json if the face moved)"
+  },
+  {
+   "asset_id": "C01_mouth_rest",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed mouth, a short gentle curved line. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C01_mouth_open",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: slightly open mouth, small dark oval with a hint of tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C01_mouth_wide",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: wide open mouth, top teeth visible, tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C01_mouth_round",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: small round 'O' mouth. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C01_mouth_smile",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C01_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed small smile. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C02_mouth_rest",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed mouth, a short gentle curved line. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C02_mouth_open",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: slightly open mouth, small dark oval with a hint of tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C02_mouth_wide",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: wide open mouth, top teeth visible, tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C02_mouth_round",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: small round 'O' mouth. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C02_mouth_smile",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C02_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed small smile. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C03_mouth_rest",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed mouth, a short gentle curved line. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C03_mouth_open",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: slightly open mouth, small dark oval with a hint of tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C03_mouth_wide",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: wide open mouth, top teeth visible, tongue. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C03_mouth_round",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: small round 'O' mouth. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "C03_mouth_smile",
+   "type": "mouth_sprite",
+   "size": "170x110 (or 4x that, same aspect)",
+   "refs": [
+    "REF_C03_expressions"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nA single cartoon MOUTH only, centred, on a fully transparent background, for the character in the reference: closed small smile. Same line weight and colours as the character. Nothing else in the image."
+  },
+  {
+   "asset_id": "BG01",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. Wide straight-on eye-level view of a small Thai chicken-rice shophouse in late morning: striped cream/teal canvas awning at the top, half-open steel rolling shutter in the middle with steel tables inside, a BLANK wooden menu board on the left wall, a potted plant at the far left, a stainless food cart with a glass case, a steamer pot and boiled chickens hanging on a rail on the right, pavement in the lower 20%. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "BG01_FG",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. ONLY the stainless food cart/counter from the wide shop view (right 40% of the frame, occupying the lower middle), everything else fully transparent - it is a foreground layer that hides the staff girl's legs. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "BG01M",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. The same shophouse as BG01 but a tighter medium framing centred slightly left of the door: shutter, part of the menu board and the left edge of the food cart. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "BG01M_FG",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. ONLY the food-cart edge of the BG01M framing, everything else transparent. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "BG02",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. Close background seen from the customer side: stainless steamer pot, boiled chickens hanging on a rail, white wall tiles, soft background blur. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "BG03",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. Close background seen from the counter looking back at the queue: cream shop wall, the edge of the blank wooden menu board, a potted plant, pavement, soft background blur. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "INS01",
+   "type": "background",
+   "size": "1188x2112 (9:16)",
+   "refs": [
+    "BG01"
+   ],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nVertical 9:16 background plate, NO characters, NO people. Close-up insert: the office guy's hand (mustard hoodie sleeve) coming from the lower left, fingers pinching nothing yet (a ticket layer is added in edit), blurred pavement behind. Location lock: หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย. No readable text, no signs with letters, no logo."
+  },
+  {
+   "asset_id": "PROP_TICKET",
+   "type": "prop",
+   "size": "see assets/manifest.json",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle prop on a fully transparent background: a small cream paper queue ticket with NO number printed (number is added in edit), a long white order slip stapled under it. No text."
+  },
+  {
+   "asset_id": "HAND_C02",
+   "type": "prop",
+   "size": "see assets/manifest.json",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle prop on a fully transparent background: the auntie's hand reaching in from the right, coral-red floral sleeve, grabbing pose. No text."
+  },
+  {
+   "asset_id": "PROP_BAGS_WIDE",
+   "type": "prop",
+   "size": "see assets/manifest.json",
+   "refs": [],
+   "status": "WAITING_FOR_ASSET",
+   "prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.\nSingle prop on a fully transparent background: a pile of about 50 white take-away bags with boxed rice, as a stack sized to sit on the counter in the wide shot. No text."
+  }
+ ]
+}

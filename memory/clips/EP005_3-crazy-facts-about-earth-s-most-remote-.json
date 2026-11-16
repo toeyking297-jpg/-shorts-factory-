@@ -1,0 +1,103 @@
+{
+  "episode": "EP005_3-crazy-facts-about-earth-s-most-remote-",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "three_things",
+  "title": "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+  "titles": [
+    "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+    "Why Astronauts Are Closer to Point Nemo Than You",
+    "The Ocean Graveyard Where Spacecraft Go to Die"
+  ],
+  "hook": "this is the loneliest spot on Earth.",
+  "words": 105,
+  "duration": 41.51,
+  "loop": true,
+  "status": "ready",
+  "series_no": 3,
+  "date": "2026-10-22",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.071,
+      "text": "this is the loneliest spot on Earth.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 2.071,
+      "end": 7.649,
+      "text": "Deep in the South Pacific lies Point Nemo, the ocean's pole of inaccessibility.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:33194"
+    },
+    {
+      "i": 2,
+      "start": 7.649,
+      "end": 12.908,
+      "text": "First, it sits about 1,670 miles from the nearest piece of land.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 12.908,
+      "end": 18.568,
+      "text": "While Finding Nemo made 871 million dollars, real Nemo means no one.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:336799"
+    },
+    {
+      "i": 4,
+      "start": 18.568,
+      "end": 25.479,
+      "text": "Second, when the Space Station passes directly overhead, astronauts are only 258 miles up.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "nasa:GSFC_20170802_m12602_Dellingr_deployment"
+    },
+    {
+      "i": 5,
+      "start": 25.479,
+      "end": 29.653,
+      "text": "They are six times closer to Point Nemo than any human on land.",
+      "kind": "none",
+      "overlay": "label",
+      "media": null
+    },
+    {
+      "i": 6,
+      "start": 29.653,
+      "end": 35.031,
+      "text": "Third, space agencies use this watery desert as a giant spacecraft graveyard.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:371290"
+    },
+    {
+      "i": 7,
+      "start": 35.031,
+      "end": 39.795,
+      "text": "Over 260 spacecraft have been crashed here, with the Space Station joining them.",
+      "kind": "image",
+      "overlay": "label",
+      "media": "nasa:iss073e0775543"
+    },
+    {
+      "i": 8,
+      "start": 39.795,
+      "end": 41.509,
+      "text": "And that's why in the middle of the Pacific,",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

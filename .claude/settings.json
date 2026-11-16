@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m engine.run:*)",
+      "Bash(py -m engine.run:*)",
+      "WebSearch",
+      "WebFetch",
+      "Read",
+      "Edit",
+      "Write"
+    ]
+  }
+}

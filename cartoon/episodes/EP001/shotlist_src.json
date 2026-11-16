@@ -1,0 +1,811 @@
+{
+ "episode_id": "EP001",
+ "note": "Source spec. Times are anchors on real dialogue audio (D07.start, D05.end+0.05, SHOT.start+0.3). 'timeline' resolves them into shotlist.json / shotlist.csv. Pose layers: at = [centre_x, bottom_y] on the 1188x2112 stage; props: at = top-left.",
+ "end": "D15.end+1.5",
+ "shots": [
+  {
+   "shot_id": "SH01",
+   "start": 0,
+   "dialogue_ids": [
+    "D01"
+   ],
+   "shot_size": "wide",
+   "camera_angle": "eye level, straight on",
+   "background_id": "BG01",
+   "action": "ป้าเดินแทรกเข้ามายืนหน้าหนุ่มพร้อมพัด",
+   "emotion": "C02 bossy / C01 deadpan",
+   "layers": [
+    {
+     "asset": "C03_full_cheerful",
+     "at": [
+      986,
+      1475
+     ],
+     "scale": 0.53
+    },
+    {
+     "asset": "BG01_FG",
+     "at": [
+      0,
+      0
+     ],
+     "origin": "topleft"
+    },
+    {
+     "asset": "C01_full_neutral",
+     "at": [
+      290,
+      1894
+     ],
+     "scale": 0.56
+    },
+    {
+     "asset": "C02_full_bossy",
+     "at": [
+      700,
+      1890
+     ],
+     "scale": 0.504,
+     "keys": [
+      [
+       "SHOT.start",
+       -720,
+       0
+      ],
+      [
+       "SHOT.start+0.45",
+       0,
+       0
+      ]
+     ]
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.45,
+     0.62,
+     1.06
+    ]
+   ],
+   "continuity_notes": "P01 bags on C01 shoulder; P02 ticket not visible yet (in C01 hand, small); P03 fan in C02 hand"
+  },
+  {
+   "shot_id": "SH02",
+   "start": "D02.start-0.1",
+   "dialogue_ids": [
+    "D02"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level, from counter side",
+   "background_id": "BG03",
+   "action": "หนุ่มตอบเรียบ ไม่ขยับ",
+   "emotion": "deadpan",
+   "layers": [
+    {
+     "asset": "C01_bust_deadpan",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.46,
+     1.06
+    ]
+   ],
+   "continuity_notes": "glasses, mustard hoodie, bags strap on shoulder"
+  },
+  {
+   "shot_id": "SH03",
+   "start": "D03.start-0.1",
+   "dialogue_ids": [
+    "D03"
+   ],
+   "shot_size": "medium two-shot",
+   "camera_angle": "eye level",
+   "background_id": "BG01M",
+   "action": "ป้าโบกพัดปัดคำพูด",
+   "emotion": "C02 smug",
+   "layers": [
+    {
+     "asset": "C01_full_neutral",
+     "at": [
+      300,
+      2330
+     ],
+     "scale": 0.86
+    },
+    {
+     "asset": "C02_full_bossy",
+     "at": [
+      890,
+      2326
+     ],
+     "scale": 0.774
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.02
+    ],
+    [
+     "SHOT.end",
+     0.52,
+     0.48,
+     1.07
+    ]
+   ],
+   "continuity_notes": "C02 stands screen-right of C01 (between him and the counter)"
+  },
+  {
+   "shot_id": "SH04",
+   "start": "D04.start-0.1",
+   "dialogue_ids": [
+    "D04"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level",
+   "background_id": "BG03",
+   "action": "หนุ่มชี้ข้อเท็จจริงเรียบๆ",
+   "emotion": "deadpan",
+   "layers": [
+    {
+     "asset": "C01_bust_deadpan",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.47,
+     1.04
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.45,
+     1.09
+    ]
+   ],
+   "continuity_notes": "same as SH02"
+  },
+  {
+   "shot_id": "SH05",
+   "start": "D05.start-0.1",
+   "dialogue_ids": [
+    "D05"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level, slightly low",
+   "background_id": "BG03",
+   "action": "ป้าเชิดหน้า หลับตาภูมิใจ",
+   "emotion": "proud",
+   "layers": [
+    {
+     "asset": "C02_bust_proud",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.47,
+     1.05
+    ]
+   ],
+   "continuity_notes": "fan raised, gold chain"
+  },
+  {
+   "shot_id": "SH06",
+   "start": "D05.end+0.05",
+   "dialogue_ids": [],
+   "shot_size": "close-up (reaction)",
+   "camera_angle": "eye level",
+   "background_id": "BG03",
+   "action": "หนุ่มกะพริบตาหนึ่งครั้ง นิ่ง (มุกกลาง)",
+   "emotion": "deadpan",
+   "layers": [
+    {
+     "asset": "C01_bust_deadpan",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0,
+     "blink_at": [
+      "SHOT.start+0.35"
+     ]
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.46,
+     1.06
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.46,
+     1.06
+    ]
+   ],
+   "continuity_notes": "static hold"
+  },
+  {
+   "shot_id": "SH07",
+   "start": "D06.start-0.35",
+   "dialogue_ids": [
+    "D06"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level, from customer side",
+   "background_id": "BG02",
+   "action": "พนักงานเรียกคิว",
+   "emotion": "cheerful",
+   "layers": [
+    {
+     "asset": "C03_bust_cheerful",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.47,
+     1.05
+    ]
+   ],
+   "sfx": [
+    [
+     "ding",
+     "SHOT.start+0.02"
+    ]
+   ],
+   "continuity_notes": "teal apron, silver hoops"
+  },
+  {
+   "shot_id": "SH08",
+   "start": "D06.end-0.15",
+   "dialogue_ids": [
+    "D07"
+   ],
+   "shot_size": "insert",
+   "camera_angle": "close, slightly top-down",
+   "background_id": "INS01",
+   "action": "มือป้าโฉบแย่งบัตรคิว 45 จากมือหนุ่ม",
+   "emotion": "greedy (off-screen voice)",
+   "layers": [
+    {
+     "asset": "PROP_TICKET",
+     "at": [
+      380,
+      900
+     ],
+     "origin": "topleft",
+     "keys": [
+      [
+       "D07.start+0.12",
+       0,
+       0
+      ],
+      [
+       "D07.start+0.42",
+       1100,
+       -60
+      ]
+     ]
+    },
+    {
+     "text": "45",
+     "at": [
+      640,
+      1130
+     ],
+     "size": 210,
+     "color": "#23203A",
+     "keys": [
+      [
+       "D07.start+0.12",
+       0,
+       0
+      ],
+      [
+       "D07.start+0.42",
+       1100,
+       -60
+      ]
+     ]
+    },
+    {
+     "asset": "HAND_C02",
+     "at": [
+      560,
+      960
+     ],
+     "origin": "topleft",
+     "keys": [
+      [
+       "D07.start-0.2",
+       900,
+       0
+      ],
+      [
+       "D07.start+0.0",
+       0,
+       0
+      ],
+      [
+       "D07.start+0.15",
+       0,
+       0
+      ],
+      [
+       "D07.start+0.45",
+       1100,
+       -60
+      ]
+     ]
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.52,
+     1.02
+    ],
+    [
+     "SHOT.end",
+     0.52,
+     0.52,
+     1.08
+    ]
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "D07.start-0.3"
+    ]
+   ],
+   "continuity_notes": "P02 changes hands here (C01 -> C02). Number 45 is an edit overlay, not in the art. Ticket alone in C01 hand for ~0.5 s before the grab (plant)."
+  },
+  {
+   "shot_id": "SH09",
+   "start": "D08.start-0.1",
+   "dialogue_ids": [
+    "D08",
+    "D09",
+    "D16"
+   ],
+   "shot_size": "medium two-shot",
+   "camera_angle": "eye level",
+   "background_id": "BG01M",
+   "action": "หนุ่มพยายามบอก ป้าชูบัตรพูดทับ แล้วหันไปสั่งพนักงาน",
+   "emotion": "C01 deadpan / C02 impatient",
+   "layers": [
+    {
+     "asset": "C01_full_neutral",
+     "at": [
+      300,
+      2330
+     ],
+     "scale": 0.86
+    },
+    {
+     "asset": "C02_full_ticket",
+     "at": [
+      890,
+      2326
+     ],
+     "scale": 0.774
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.02
+    ],
+    [
+     "SHOT.end",
+     0.52,
+     0.48,
+     1.07
+    ]
+   ],
+   "continuity_notes": "ticket now in C02 raised hand; fan still in C02 other hand"
+  },
+  {
+   "shot_id": "SH10",
+   "start": "D10.start-0.1",
+   "dialogue_ids": [
+    "D10"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level",
+   "background_id": "BG02",
+   "action": "พนักงานยกกองถุงข้าว อ่านออเดอร์",
+   "emotion": "cheerful",
+   "layers": [
+    {
+     "asset": "C03_bust_bags",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.5,
+     1.05
+    ]
+   ],
+   "continuity_notes": "P04 bag stack first appears"
+  },
+  {
+   "shot_id": "SH11",
+   "start": "D11.start-0.1",
+   "dialogue_ids": [
+    "D11"
+   ],
+   "shot_size": "wide",
+   "camera_angle": "eye level, straight on",
+   "background_id": "BG01",
+   "action": "เห็นกองถุงบนเคาน์เตอร์ ป้ายืนค้าง",
+   "emotion": "C03 cheerful / C02 frozen",
+   "layers": [
+    {
+     "asset": "C03_full_cheerful",
+     "at": [
+      986,
+      1475
+     ],
+     "scale": 0.53
+    },
+    {
+     "asset": "BG01_FG",
+     "at": [
+      0,
+      0
+     ],
+     "origin": "topleft"
+    },
+    {
+     "asset": "PROP_BAGS_WIDE",
+     "at": [
+      0,
+      0
+     ],
+     "origin": "topleft"
+    },
+    {
+     "asset": "C01_full_neutral",
+     "at": [
+      290,
+      1894
+     ],
+     "scale": 0.56
+    },
+    {
+     "asset": "C02_full_ticket",
+     "at": [
+      700,
+      1890
+     ],
+     "scale": 0.504
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.52,
+     0.55,
+     1.0
+    ],
+    [
+     "SHOT.end",
+     0.6,
+     0.6,
+     1.08
+    ]
+   ],
+   "continuity_notes": "bags on counter, ticket in C02 hand"
+  },
+  {
+   "shot_id": "SH12",
+   "start": "D11.end+0.08",
+   "dialogue_ids": [
+    "D12"
+   ],
+   "shot_size": "close-up (reaction)",
+   "camera_angle": "eye level",
+   "background_id": "BG03",
+   "action": "ป้าตาโต ค้าง แล้วพูดเสียงเบา",
+   "emotion": "shocked",
+   "layers": [
+    {
+     "asset": "C02_bust_shocked",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.0
+    ],
+    [
+     "SHOT.start+0.14",
+     0.5,
+     0.46,
+     1.08
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.46,
+     1.09
+    ]
+   ],
+   "sfx": [
+    [
+     "dun",
+     "SHOT.start"
+    ]
+   ],
+   "continuity_notes": "ticket in hand, fan in other hand"
+  },
+  {
+   "shot_id": "SH13",
+   "start": "D13.start-0.15",
+   "dialogue_ids": [
+    "D13"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level",
+   "background_id": "BG03",
+   "action": "หนุ่มอธิบายสั้นๆ",
+   "emotion": "deadpan",
+   "layers": [
+    {
+     "asset": "C01_bust_deadpan",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.47,
+     1.03
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.46,
+     1.06
+    ]
+   ],
+   "continuity_notes": "same as SH02"
+  },
+  {
+   "shot_id": "SH14",
+   "start": "D14.start-0.1",
+   "dialogue_ids": [
+    "D14"
+   ],
+   "shot_size": "medium two-shot",
+   "camera_angle": "eye level",
+   "background_id": "BG01M",
+   "action": "ป้ายื่นบัตรคืนด้วยสองนิ้ว",
+   "emotion": "sheepish",
+   "layers": [
+    {
+     "asset": "C01_full_neutral",
+     "at": [
+      300,
+      2330
+     ],
+     "scale": 0.86
+    },
+    {
+     "asset": "C02_full_sheepish",
+     "at": [
+      890,
+      2326
+     ],
+     "scale": 0.774
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.5,
+     1.02
+    ],
+    [
+     "SHOT.end",
+     0.52,
+     0.48,
+     1.07
+    ]
+   ],
+   "continuity_notes": "ticket held out toward C01"
+  },
+  {
+   "shot_id": "SH15",
+   "start": "D15.start-0.1",
+   "dialogue_ids": [
+    "D15"
+   ],
+   "shot_size": "close-up",
+   "camera_angle": "eye level",
+   "background_id": "BG03",
+   "action": "หนุ่มยิ้มนิดๆ ผายมือเชิญไปเคาน์เตอร์",
+   "emotion": "deadpan polite, tiny smile",
+   "layers": [
+    {
+     "asset": "C01_bust_smile",
+     "at": [
+      594,
+      2112
+     ],
+     "scale": 1.0
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.47,
+     1.02
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.45,
+     1.06
+    ]
+   ],
+   "continuity_notes": "payoff line"
+  },
+  {
+   "shot_id": "SH16",
+   "start": "D15.end+0.15",
+   "dialogue_ids": [],
+   "shot_size": "wide (button)",
+   "camera_angle": "eye level, straight on",
+   "background_id": "BG01",
+   "action": "ป้ายืนค้างหน้ากองถุง 50 ห่อ หนุ่มผายมือ พนักงานยิ้มรอเงิน",
+   "emotion": "C02 shocked / C01 polite / C03 cheerful",
+   "layers": [
+    {
+     "asset": "C03_full_cheerful",
+     "at": [
+      986,
+      1475
+     ],
+     "scale": 0.53
+    },
+    {
+     "asset": "BG01_FG",
+     "at": [
+      0,
+      0
+     ],
+     "origin": "topleft"
+    },
+    {
+     "asset": "PROP_BAGS_WIDE",
+     "at": [
+      0,
+      0
+     ],
+     "origin": "topleft"
+    },
+    {
+     "asset": "C01_full_gesture",
+     "at": [
+      280,
+      1894
+     ],
+     "scale": 0.56
+    },
+    {
+     "asset": "C02_full_shocked",
+     "at": [
+      720,
+      1890
+     ],
+     "scale": 0.504
+    }
+   ],
+   "camera": [
+    [
+     "SHOT.start",
+     0.5,
+     0.55,
+     1.04
+    ],
+    [
+     "SHOT.end",
+     0.5,
+     0.55,
+     1.04
+    ]
+   ],
+   "continuity_notes": "static button shot, ends 1.5 s after the last line"
+  }
+ ]
+}

@@ -1,0 +1,336 @@
+{
+  "id": "EP012",
+  "topic": "Kevin De Bruyne Premier League Assist Records",
+  "format": "versus",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Kevin De Bruyne equalled the Premier League record for most assists in a season with 20.",
+      "value": "20",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "De Bruyne set a Bundesliga record with 21 assists in the 2014-15 season.",
+      "value": "21",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "Manchester City achieved 100 points in the 2017-18 season.",
+      "value": "100",
+      "source": "https://en.wikipedia.org/wiki/Premier_League_records_and_statistics",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "Kevin De Bruyne has won the Premier League title six times.",
+      "value": "6",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f5",
+      "claim": "He has been named Premier League Playmaker of the Season three times.",
+      "value": "3",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+    "https://en.wikipedia.org/wiki/Premier_League_records_and_statistics"
+  ],
+  "meta": {
+    "title": "How Kevin De Bruyne Broke Premier League Assist Records",
+    "description": "Discover how Kevin De Bruyne set all-time assist records in both Germany and England.",
+    "hashtags": [
+      "shorts",
+      "soccer",
+      "debruyne",
+      "premierleague",
+      "mancity"
+    ],
+    "tags": [
+      "Kevin De Bruyne",
+      "Manchester City",
+      "Premier League",
+      "assist record",
+      "football",
+      "Bundesliga"
+    ],
+    "cover_text": "Assist King De Bruyne",
+    "title_options": [
+      "How Kevin De Bruyne Broke Premier League Assist Records",
+      "The Assist Record Kevin De Bruyne Shattered in Two Leagues",
+      "How One Player Mastered Assists in Germany and England"
+    ],
+    "pinned_comment": "Is De Bruyne the greatest passer in Premier League history?"
+  },
+  "scenes": [
+    {
+      "text": "How did one passer break two leagues?",
+      "visual": {
+        "type": "footage",
+        "query": "soccer player passing ball accurate",
+        "alt": [
+          "soccer ball path"
+        ],
+        "must_show": [
+          "soccer ball"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_asset": "s00.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:147704"
+      }
+    },
+    {
+      "text": "Kevin De Bruyne dominates modern football passing as one of the premier playmakers of his generation.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United Kingdom"
+        ],
+        "pins": [
+          {
+            "label": "Manchester City",
+            "lon": -2.2,
+            "lat": 53.48
+          }
+        ],
+        "headline": "ASSIST KING DE BRUYNE",
+        "kicker": "MANCHESTER, UK",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "Before coming to England, he stormed Germany with standout playmaking abilities.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer midfielder passing long ball",
+        "alt": [
+          "midfielder passing"
+        ],
+        "must_show": [
+          "soccer midfielder"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "In Germany, he set an all-time record with 21 assists in one season.",
+      "visual": {
+        "type": "footage",
+        "query": "German soccer stadium match",
+        "alt": [
+          "german stadium"
+        ],
+        "must_show": [
+          "soccer stadium"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:239964"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "21",
+        "label": "Bundesliga Season Record",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "Then in England, he matched the Premier League record with 20.",
+      "visual": {
+        "type": "footage",
+        "query": "Manchester City soccer match action",
+        "alt": [
+          "soccer match"
+        ],
+        "must_show": [
+          "soccer match"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "compare",
+        "title": "MOST ASSISTS IN A SEASON",
+        "items": [
+          {
+            "label": "Bundesliga (Record)",
+            "value": 21,
+            "display": "21"
+          },
+          {
+            "label": "Premier League (Record)",
+            "value": 20,
+            "display": "20"
+          }
+        ],
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "His elite vision helped power Manchester City's dominant attack.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer team celebrating goal on field",
+        "alt": [
+          "soccer team celebration"
+        ],
+        "must_show": [
+          "soccer team"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:202759"
+      }
+    },
+    {
+      "text": "That precision helped City achieve a historic 100-point league season.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer stadium trophy celebration fireworks",
+        "alt": [
+          "trophy celebration"
+        ],
+        "must_show": [
+          "soccer stadium"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "100",
+        "label": "Points in 2017-18",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "He has collected six league titles and three Playmaker of the Season awards.",
+      "visual": {
+        "type": "footage",
+        "query": "championship trophy stage celebration",
+        "alt": [
+          "championship stage"
+        ],
+        "must_show": [
+          "trophy stage"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "icons",
+        "title": "THE TROPHY CABINET",
+        "items": [
+          {
+            "icon": "crown",
+            "label": "6 TITLES"
+          },
+          {
+            "icon": "gem",
+            "label": "3 AWARDS"
+          }
+        ],
+        "pos": "top"
+      }
+    },
+    {
+      "text": "He stands among the most consistent assist providers in Premier League history.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer stadium floodlights night view",
+        "alt": [
+          "night stadium"
+        ],
+        "must_show": [
+          "soccer stadium"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "His record-breaking genius consistently creates high-quality chances against top defenses.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer defender frustrated on pitch",
+        "alt": [
+          "soccer match pitch"
+        ],
+        "must_show": [
+          "soccer pitch"
+        ],
+        "must_not_show": [
+          "watermark",
+          "text"
+        ],
+        "_rejected": [],
+        "_asset": "s09.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:15734"
+      }
+    },
+    {
+      "text": "Before every match, every defender wonders",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": [
+    "scene meta.title: overclaim: \"How Kevin De Bruyne Broke Premier League Assist Records\" -> How Kevin De Bruyne Set Premier League Assist Records",
+    "scene 0: overclaim: \"How did one passer break two leagues?\" -> How did one passer dominate two leagues?",
+    "scene 1: unsupported: \"MANCHESTER, UK\" -> NAPLES, ITALY",
+    "scene 1: unsupported: \"Manchester City\" -> Napoli",
+    "scene 2: unsupported: \"Before coming to England, he stormed Germany with standout playmaking abilities.\" -> Between his stints in England, he stormed Germany with standout playmaking abilities.",
+    "scene 3: unsupported: \"In Germany, he set an all-time record with 21 assists in one season.\" -> In Germany, he set a Bundesliga record with 21 assists in one season.",
+    "scene 7: unsupported: \"He has collected six league titles and three Playmaker of the Season awards.\" -> He has collected six Premier League titles and three Playmaker of the Season awards.",
+    "scene 7: unsupported: \"6 TITLES\" -> 6 PL TITLES"
+  ]
+}

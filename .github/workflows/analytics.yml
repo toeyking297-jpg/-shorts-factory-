@@ -1,0 +1,59 @@
+name: Results and Analyst
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # every day 05:30 Thailand time; the analyst also runs on Sundays
+  workflow_dispatch:
+    inputs:
+      analyst:
+        description: "Run the weekly analyst now too"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shorts-factory-memory
+  cancel-in-progress: false
+
+jobs:
+  results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: ดึงผลจาก YouTube (ผูกด้วย video_id, เทียบที่อายุคลิปเท่ากัน)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python -m engine.run analytics
+      - name: ทีมวิเคราะห์ประจำสัปดาห์
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          FORCE_ANALYST: ${{ inputs.analyst }}
+        run: |
+          if [ "$FORCE_ANALYST" = "true" ] || [ "$(TZ=Asia/Bangkok date +%u)" = "7" ]; then
+            python -m engine.run analyst
+          else
+            echo "not Sunday: analyst skipped"
+          fi
+      - name: บันทึกผล
+        run: |
+          git config user.name "shorts-factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add memory
+          git commit -q -m "Results update" || exit 0
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 7; done
+          echo "::warning::could not save results this time"

@@ -1,0 +1,311 @@
+{
+  "id": "EP006",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "versus",
+  "loop": false,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Point Nemo is located roughly 1,670 miles away from the nearest land.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The Northern pole of inaccessibility is 626 miles from the three closest landmasses.",
+      "value": "626 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "The International Space Station orbits at an altitude of about 250 miles.",
+      "value": "250 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ],
+  "meta": {
+    "title": "Where Astronauts Are Closer to You Than Anyone on Earth",
+    "description": "At Point Nemo in the South Pacific, the nearest human isn't on land. When the International Space Station passes overhead, astronauts are just 250 miles away.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "pointnemo",
+      "space",
+      "ocean"
+    ],
+    "tags": [
+      "Point Nemo",
+      "Pole of Inaccessibility",
+      "International Space Station",
+      "geography facts",
+      "ocean",
+      "loneliest place on earth"
+    ],
+    "cover_text": "Space closer than land?",
+    "title_options": [
+      "Where Astronauts Are Closer to You Than Anyone on Earth",
+      "Point Nemo: The Ocean Spot Closest to Space",
+      "Why Astronauts Are Your Closest Neighbors at Point Nemo"
+    ],
+    "pinned_comment": "Would you spend a week at Point Nemo if you had satellite internet?"
+  },
+  "scenes": [
+    {
+      "text": "Where are astronauts closer than anyone on land?",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "POINT NEMO",
+        "kicker": "SOUTH PACIFIC",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "The Arctic pole of inaccessibility sits frozen on ocean pack ice.",
+      "visual": {
+        "type": "footage",
+        "query": "frozen arctic ocean pack ice aerial view",
+        "alt": [
+          "arctic sea ice aerial"
+        ],
+        "must_show": [
+          "ice"
+        ],
+        "must_not_show": [
+          "land",
+          "trees",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:236893"
+      }
+    },
+    {
+      "text": "That frozen northern location sits about 626 miles from any landmass.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Arctic Pole",
+            "lon": -176.15,
+            "lat": 85.8
+          }
+        ],
+        "headline": "ARCTIC POLE",
+        "kicker": "626 MILES TO LAND",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "However, the South Pacific holds an even more remote oceanic location.",
+      "visual": {
+        "type": "footage",
+        "query": "endless open ocean deep blue water waves",
+        "alt": [
+          "open ocean deep blue"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "coast",
+          "beach",
+          "land",
+          "boats",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:37712"
+      }
+    },
+    {
+      "text": "Point Nemo sits roughly 1,670 miles away from the nearest island.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "ring": {
+          "center": [
+            -123.39,
+            -48.88
+          ],
+          "radius_km": 2688
+        },
+        "headline": "1,670 MILES TO LAND",
+        "kicker": "POINT NEMO",
+        "zoom": "out"
+      }
+    },
+    {
+      "text": "If you float at this exact coordinate, human civilization is immensely far.",
+      "visual": {
+        "type": "footage",
+        "query": "lonely boat open ocean calm blue water",
+        "alt": [
+          "boat isolated in ocean"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "coast",
+          "land",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:206272"
+      }
+    },
+    {
+      "text": "Yet when the space station passes directly overhead, that changes completely.",
+      "visual": {
+        "type": "footage",
+        "query": "international space station orbit earth view",
+        "source": "nasa",
+        "alt": [
+          "space station above earth"
+        ],
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "ground structures",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SPACE STATION OVERHEAD",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Astronauts orbit just 250 miles above your head in space.",
+      "visual": {
+        "type": "footage",
+        "query": "astronaut floating inside space station cupola window",
+        "source": "nasa",
+        "alt": [
+          "astronaut looking at earth"
+        ],
+        "must_show": [
+          "astronaut"
+        ],
+        "must_not_show": [
+          "scuba diver",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "250 miles",
+        "label": "ISS orbit altitude",
+        "source": "Wikipedia",
+        "fact": "f4"
+      }
+    },
+    {
+      "text": "That compares a 1,670 mile distance to land with a 250 mile orbital height.",
+      "visual": {
+        "type": "footage",
+        "query": "earth horizon view from space station orbit",
+        "source": "nasa",
+        "alt": [
+          "earth view from orbit"
+        ],
+        "must_show": [
+          "earth horizon"
+        ],
+        "must_not_show": [
+          "city buildings",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "compare",
+        "title": "Distance from Point Nemo",
+        "items": [
+          {
+            "label": "Nearest Land",
+            "value": 1670,
+            "display": "1,670 miles"
+          },
+          {
+            "label": "Space Station",
+            "value": 250,
+            "display": "250 miles"
+          }
+        ],
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "When passing directly overhead, astronauts become your nearest living neighbors.",
+      "visual": {
+        "type": "footage",
+        "query": "deep blue ocean under starry night sky",
+        "alt": [
+          "ocean under night sky"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "coast",
+          "city lights",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s09.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:16160"
+      }
+    }
+  ],
+  "qc_audit": []
+}

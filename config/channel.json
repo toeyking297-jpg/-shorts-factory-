@@ -1,0 +1,116 @@
+{
+  "channel_name": "HIDDEN ATLAS",
+  "niche": {
+    "name": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "audience": "English-speaking viewers 18-45, mainly the US (also UK, Canada, Australia) who like maps, geography, economics and 'I never knew that' facts",
+    "promise": "Every Short reveals one surprising, true fact about a real place or country and explains WHY, with maps",
+    "angles": [
+      "why a country is rich or poor (geography, trade routes, resources, smart policy)",
+      "places with bizarre laws or rules and the reason behind them",
+      "weird borders, enclaves and exclaves",
+      "extreme places: coldest, hottest, most remote, most crowded",
+      "engineering that makes a place possible (canals, dams, tunnels, artificial islands)",
+      "how geography shaped history and money (straits, rivers, mountains, deserts)"
+    ],
+    "avoid": [
+      "party politics, elections, war propaganda, religion debates",
+      "tragedy for shock value",
+      "unverifiable mystery claims, conspiracy theories, fake facts",
+      "investment or financial advice",
+      "topics where no free footage, photos or map can show it"
+    ],
+    "visual_sources_hint": "Animated maps for every place story; Pixabay/Pexels for landscapes and cities; Wikimedia Commons for specific landmarks"
+  },
+  "language": "en-US",
+  "voice": {
+    "engine": "edge",
+    "edge_voice": "en-US-AndrewMultilingualNeural",
+    "rate": "+6%",
+    "pitch": "+0Hz",
+    "elevenlabs_voice_id": "",
+    "elevenlabs_model": "eleven_multilingual_v2",
+    "piper_model": "assets/voices/en_US-ryan-high.onnx"
+  },
+  "style": {
+    "accent": "#FFD400",
+    "accent2": "#3DDCFF",
+    "panel": "#0B1E3A",
+    "font_file": "assets/fonts/Poppins-Bold.ttf",
+    "font_name": "Poppins",
+    "sub_size": 92,
+    "sub_outline": 7,
+    "sub_margin_v": 560,
+    "sub_uppercase": true,
+    "words_per_chunk": 3,
+    "chars_per_chunk": 18,
+    "caption_mode": "chunk",
+    "sub_size_word": 120,
+    "punch_zoom": 0.06,
+    "push_in": 0.045
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "max_seconds": 58,
+    "loop": true,
+    "tail": 0.6
+  },
+  "music": {
+    "dir": "assets/music",
+    "volume": 0.16
+  },
+  "footage": {
+    "sources": [
+      "pixabay",
+      "pexels",
+      "wikimedia"
+    ]
+  },
+  "production": {
+    "episodes_per_batch": 3,
+    "words_target": [
+      110,
+      145
+    ],
+    "max_uploads_per_day": 2,
+    "daily_count": 3,
+    "formats": [
+      "shock_fact",
+      "myth_vs_fact",
+      "three_things",
+      "versus",
+      "map_explains"
+    ],
+    "post_times_et": [
+      "08:00",
+      "12:30",
+      "19:00"
+    ]
+  },
+  "brain": {
+    "models": [
+      "gemini-3.5-flash",
+      "gemini-3.6-flash",
+      "gemini-flash-latest",
+      "gemini-2.5-flash",
+      "gemini-3.8-flash"
+    ],
+    "min_seconds_between_calls": 4,
+    "vision_check": true,
+    "auto_fix_rounds": 1
+  },
+  "youtube": {
+    "channel_id": "",
+    "region": "US"
+  },
+  "sfx": {
+    "whoosh": false,
+    "volume": 0.18,
+    "every_nth_cut": 2,
+    "note": "Only real recorded SFX files in assets/sfx/whoosh*.wav are used; set whoosh true after adding one."
+  },
+  "notify": {
+    "ntfy_topic_env": "NTFY_TOPIC"
+  }
+}

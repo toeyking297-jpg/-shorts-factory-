@@ -1,0 +1,30 @@
+{
+  "location_id": "LOC01",
+  "name": "หน้าร้านข้าวมันไก่ห้องแถว ตอนสาย",
+  "time_of_day": "late morning, bright overcast daylight",
+  "layout_screen_coords_note": "Wide shot BG01 faces the shop. x 0 = left edge, 1 = right edge; y 0 = top, 1 = bottom.",
+  "layout": {
+    "counter": {"desc": "รถเข็นหน้าร้านสแตนเลส มีหม้อนึ่งไก่ และไก่ต้มแขวนบนราว", "x": [0.62, 1.0], "y": [0.52, 0.80]},
+    "staff_spot": {"character_id": "C03", "x": 0.82, "floor_y": 0.80, "gaze": "left", "note": "หลังเคาน์เตอร์ เห็นแค่ครึ่งตัวบน"},
+    "queue_lane": {"desc": "แนวคิวยืนเรียงจากเคาน์เตอร์ไปทางซ้ายตามหน้าร้าน", "x": [0.05, 0.62], "floor_y": 0.86},
+    "auntie_spot": {"character_id": "C02", "x": 0.55, "floor_y": 0.88, "gaze": "left_then_right", "note": "หลังแทรกคิว ยืนระหว่าง C01 กับเคาน์เตอร์"},
+    "hero_spot": {"character_id": "C01", "x": 0.30, "floor_y": 0.88, "gaze": "right"},
+    "shop_door": {"desc": "ประตูเหล็กม้วนเปิดครึ่ง เห็นโต๊ะสแตนเลสด้านใน", "x": [0.30, 0.60], "y": [0.25, 0.70]},
+    "menu_board": {"desc": "ป้ายเมนูไม้ ว่าง ไม่มีตัวหนังสือ (ตัวหนังสือใส่ตอนตัดต่อถ้าต้องการ)", "x": [0.05, 0.25], "y": [0.30, 0.50]},
+    "awning": {"desc": "กันสาดผ้าใบลายทางสีครีมสลับเทอร์คอยซ์", "y": [0.0, 0.18]},
+    "street_edge": {"desc": "ขอบฟุตปาธ กระถางต้นไม้ 1 กระถางซ้ายสุด", "x": [0.0, 0.08]}
+  },
+  "backgrounds": [
+    {"background_id": "BG01", "name": "wide shopfront", "use": "wide และ medium two-shot", "camera": "eye level, straight on, 28mm feel"},
+    {"background_id": "BG02", "name": "counter close background", "use": "close-up ของ C03 (หันซ้าย)", "camera": "eye level from customer side; steamer pot and hanging chickens out of focus feel"},
+    {"background_id": "BG03", "name": "queue side close background", "use": "close-up ของ C01 และ C02", "camera": "eye level from counter side looking back at the queue: shop wall, menu board edge, potted plant"},
+    {"background_id": "INS01", "name": "ticket insert", "use": "insert บัตรคิวในมือ C01", "camera": "close-up, slightly top-down"}
+  ],
+  "screen_direction_rule": "Counter is always screen-right in wide/medium shots. C01 looks right, C03 looks left, C02 looks left at C01 while arguing and right at C03 when taking the ticket. Close-ups keep the same gaze so the 180-degree line is never crossed.",
+  "continuity_rules": [
+    "C01 คล้องถุงผ้าเงิน (P01) ไหล่ขวาทุกช็อตที่เห็นไหล่",
+    "C02 ถือพัด (P03) มือซ้ายตลอด และถือบัตรคิว (P02) มือขวาตั้งแต่ SH08",
+    "บัตรคิว (P02) อยู่ในมือ C01 ถึง SH08 จากนั้นอยู่กับ C02 ตลอด",
+    "กองถุงข้าว (P04) ปรากฏบนเคาน์เตอร์ตั้งแต่ SH10 เท่านั้น"
+  ]
+}

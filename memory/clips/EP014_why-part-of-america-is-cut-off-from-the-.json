@@ -1,0 +1,121 @@
+{
+  "episode": "EP014_why-part-of-america-is-cut-off-from-the-",
+  "topic": "The Northwest Angle of Minnesota",
+  "format": "map_explains",
+  "title": "Why Part of Minnesota Is Trapped in Canada",
+  "titles": [
+    "Why Part of Minnesota Is Trapped in Canada",
+    "The US Territory Cut Off From America",
+    "How a Mapping Error Moved the US Border"
+  ],
+  "hook": "This US territory is trapped inside Canada.",
+  "words": 107,
+  "duration": 42.24,
+  "loop": true,
+  "status": "ready",
+  "series_no": 10,
+  "date": "2026-10-23",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 3.191,
+      "text": "This US territory is trapped inside Canada.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 3.191,
+      "end": 5.844,
+      "text": "This is the Northwest Angle of Minnesota.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:192649"
+    },
+    {
+      "i": 2,
+      "start": 5.844,
+      "end": 10.526,
+      "text": "It is the only part of the Lower 48 north of the 49th parallel.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 10.526,
+      "end": 15.62,
+      "text": "To drive here, Americans must travel 63 miles through Manitoba.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:2165"
+    },
+    {
+      "i": 4,
+      "start": 15.62,
+      "end": 18.934,
+      "text": "Or you can take a boat across the massive Lake of the Woods.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:23011"
+    },
+    {
+      "i": 5,
+      "start": 18.934,
+      "end": 23.498,
+      "text": "Only 149 people live in this isolated wilderness year round.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:211275"
+    },
+    {
+      "i": 6,
+      "start": 23.498,
+      "end": 28.309,
+      "text": "This isolation made it the perfect setting for the Danny Orlis mystery books.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:185092"
+    },
+    {
+      "i": 7,
+      "start": 28.309,
+      "end": 30.998,
+      "text": "How did this bizarre border glitch even happen?",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:207982"
+    },
+    {
+      "i": 8,
+      "start": 30.998,
+      "end": 36.505,
+      "text": "Negotiators in 1783 relied on an incredibly inaccurate map.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 9,
+      "start": 36.505,
+      "end": 39.995,
+      "text": "They misplaced the source of the Mississippi River by miles.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:14205"
+    },
+    {
+      "i": 10,
+      "start": 39.995,
+      "end": 42.241,
+      "text": "The error was never fixed, leaving",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

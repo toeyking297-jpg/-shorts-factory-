@@ -1,0 +1,200 @@
+{
+  "id": "EP002",
+  "topic": "The Diomede Islands",
+  "format": "map_explains",
+  "loop": true,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Little_Diomede_Island",
+    "https://en.wikipedia.org/wiki/Diomede_Islands"
+  ],
+  "meta": {
+    "title": "The Islands Where You Can Walk into Tomorrow",
+    "description": "Separated by only 2.4 miles, the Diomede Islands sit on opposite sides of the International Date Line, creating a 21-hour time gap.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "alaska",
+      "russia"
+    ],
+    "tags": [
+      "Diomede Islands",
+      "Bering Strait",
+      "International Date Line",
+      "Alaska",
+      "Russia",
+      "Yesterday Island",
+      "Tomorrow Island"
+    ],
+    "cover_text": "Walk into Tomorrow",
+    "title_options": [
+      "The Two-Mile Gap Between America and Russia",
+      "The Islands Where You Can Walk into Tomorrow",
+      "Why Russia is only 2.4 Miles from Alaska"
+    ]
+  },
+  "scenes": [
+    {
+      "text": "Walking two miles skips twenty-one hours.",
+      "visual": {
+        "type": "image",
+        "query": "Little Diomede Island",
+        "source": "wikimedia"
+      }
+    },
+    {
+      "text": "These are the Diomede Islands, located deep in the Bering Strait.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United States",
+          "Russia"
+        ],
+        "pins": [
+          {
+            "label": "Bering Strait",
+            "lon": -168.5,
+            "lat": 66.0
+          }
+        ],
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "Big Diomede is Russian, but Little Diomede belongs to the United States.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "location",
+          "place": "Diomede Islands",
+          "region": "USA-Russia Border",
+          "coords": "65.7°N 168.9°W"
+        }
+      }
+    },
+    {
+      "text": "They are separated by only two point four miles of water.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United States"
+        ],
+        "context": [
+          "Russia"
+        ],
+        "pins": [
+          {
+            "label": "2.4 Miles",
+            "lon": -168.95,
+            "lat": 65.76
+          }
+        ],
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "That distance is shorter than walking across New York's Central Park.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "compare",
+          "title": "Distance in Miles",
+          "items": [
+            {
+              "label": "Central Park",
+              "value": 2.5,
+              "display": "2.5"
+            },
+            {
+              "label": "Island Gap",
+              "value": 2.4,
+              "display": "2.4"
+            }
+          ],
+          "source": "Wikipedia, 2024"
+        }
+      }
+    },
+    {
+      "text": "But the International Date Line runs directly between these two islands.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Date Line",
+            "lon": -168.97,
+            "lat": 65.76
+          }
+        ],
+        "zoom": "in"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "The Date Line Divide",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "This creates a massive twenty-one-hour time gap across the border.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "stat",
+          "value": "21 HOURS",
+          "label": "Time Difference",
+          "source": "Wikipedia, 2024"
+        }
+      }
+    },
+    {
+      "text": "Locals call them Tomorrow Island and Yesterday Island for this reason.",
+      "visual": {
+        "type": "footage",
+        "query": "arctic rocky island cliffs",
+        "alt": [
+          "bering strait islands"
+        ]
+      },
+      "overlay": {
+        "type": "icons",
+        "items": [
+          {
+            "icon": "calendar",
+            "label": "YESTERDAY",
+            "state": ""
+          },
+          {
+            "icon": "calendar",
+            "label": "TOMORROW",
+            "state": ""
+          }
+        ],
+        "pos": "top"
+      }
+    },
+    {
+      "text": "In winter, the sea freezes into a bridge between two days.",
+      "visual": {
+        "type": "map",
+        "route": [
+          [
+            -168.92,
+            65.76
+          ],
+          [
+            -169.05,
+            65.78
+          ]
+        ],
+        "route_from": "Yesterday",
+        "route_to": "Tomorrow",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "It is the only spot where",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ]
+}

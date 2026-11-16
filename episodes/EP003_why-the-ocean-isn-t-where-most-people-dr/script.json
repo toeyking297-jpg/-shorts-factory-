@@ -1,0 +1,306 @@
+{
+  "id": "EP003",
+  "topic": "Where do most drownings actually happen?",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Approximately 90% of drownings take place in freshwater.",
+      "value": "90%",
+      "source": "https://en.wikipedia.org/wiki/Drowning",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "Approximately 10% of drownings take place in seawater.",
+      "value": "10%",
+      "source": "https://en.wikipedia.org/wiki/Drowning",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "People have drowned in as little as 1.2 inches of water while lying face down.",
+      "value": "1.2 in",
+      "source": "https://en.wikipedia.org/wiki/Drowning",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "Alcohol is involved in approximately 50% of fatal drownings.",
+      "value": "50%",
+      "source": "https://en.wikipedia.org/wiki/Drowning",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Drowning",
+    "https://en.wikipedia.org/wiki/Alberto_Santos-Dumont"
+  ],
+  "meta": {
+    "title": "Why the Ocean Isn't Where Most People Drown",
+    "description": "We fear the deep ocean, but statistics reveal that the real water danger is much closer to home.",
+    "hashtags": [
+      "shorts",
+      "drowning",
+      "water safety",
+      "facts"
+    ],
+    "tags": [
+      "drowning facts",
+      "ocean safety",
+      "freshwater vs seawater",
+      "water safety",
+      "surprising facts"
+    ],
+    "cover_text": "Ocean vs Freshwater",
+    "title_options": [
+      "Why the Ocean Isn't Where Most People Drown",
+      "The Shocking Truth About Water Safety",
+      "Where Do Most Drownings Actually Happen?"
+    ],
+    "pinned_comment": "Did you expect freshwater to be responsible for 90% of drownings?"
+  },
+  "scenes": [
+    {
+      "text": "Most drownings don't happen in the ocean.",
+      "visual": {
+        "type": "footage",
+        "query": "dramatic ocean waves aerial",
+        "alt": [
+          "crashing ocean water"
+        ],
+        "must_show": [
+          "open ocean waves"
+        ],
+        "must_not_show": [
+          "beach",
+          "swimmers",
+          "boats",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s00.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:214592"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SURPRISING DANGER",
+        "kicker": "WATER SAFETY",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "When thinking of water danger, we usually picture massive ocean waves.",
+      "visual": {
+        "type": "footage",
+        "query": "stormy sea dark water deep ocean",
+        "alt": [
+          "rough ocean water"
+        ],
+        "must_show": [
+          "stormy sea water"
+        ],
+        "must_not_show": [
+          "land",
+          "swimmers",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:349452"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "DEEP SEA FEARS",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "In reality, only 10% of drownings take place in seawater.",
+      "visual": {
+        "type": "footage",
+        "query": "deep ocean blue ocean surface aerial",
+        "alt": [
+          "calm open sea water"
+        ],
+        "must_show": [
+          "open sea"
+        ],
+        "must_not_show": [
+          "beach",
+          "swimmers",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s02.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:308046"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "10%",
+        "label": "in seawater",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "Instead, an overwhelming 90% happen in freshwater like lakes and rivers.",
+      "visual": {
+        "type": "footage",
+        "query": "calm river and lake surface aerial",
+        "alt": [
+          "freshwater lake landscape"
+        ],
+        "must_show": [
+          "freshwater lake or river"
+        ],
+        "must_not_show": [
+          "ocean",
+          "swimmers",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:216058"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "90%",
+        "label": "in freshwater",
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "People let their guard down around calm water, making freshwater far deadlier.",
+      "visual": {
+        "type": "footage",
+        "query": "calm freshwater lake shore summer",
+        "alt": [
+          "lake surface daytime"
+        ],
+        "must_show": [
+          "calm lake water"
+        ],
+        "must_not_show": [
+          "ocean",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "pixabay:217850"
+        ],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:44259"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "FALSE SECURITY",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "In fact, alcohol plays a role in roughly 50% of fatal drownings.",
+      "visual": {
+        "type": "footage",
+        "query": "dock on a quiet freshwater lake sunset",
+        "alt": [
+          "lake dock sunset"
+        ],
+        "must_show": [
+          "lake shore"
+        ],
+        "must_not_show": [
+          "ocean",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:84633"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "50%",
+        "label": "involve alcohol",
+        "source": "Wikipedia",
+        "fact": "f4"
+      }
+    },
+    {
+      "text": "Even scarier, people have drowned in as little as 1.2 inches of water.",
+      "visual": {
+        "type": "footage",
+        "query": "shallow water puddle close up ground",
+        "alt": [
+          "shallow water ripples"
+        ],
+        "must_show": [
+          "shallow water"
+        ],
+        "must_not_show": [
+          "deep ocean",
+          "swimmers",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:17013"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "1.2 in",
+        "label": "minimum depth",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "The deep sea feels terrifying, but local freshwater holds the real danger.",
+      "visual": {
+        "type": "footage",
+        "query": "peaceful lake water surface wide shot",
+        "alt": [
+          "lake water landscape"
+        ],
+        "must_show": [
+          "calm lake surface"
+        ],
+        "must_not_show": [
+          "ocean",
+          "swimmers",
+          "text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s07.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:188595"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "FRESHWATER DANGER",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "And that's why",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ]
+}

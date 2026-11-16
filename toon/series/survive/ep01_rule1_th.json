@@ -1,0 +1,257 @@
+{
+ "channel": "รอดวันแรก",
+ "series": "รอดวันแรก",
+ "episode": "ไฟดับทั้งเมือง · กฎข้อ 1",
+ "lang": "th",
+ "voice": {
+  "engine": "edge",
+  "edge_voice": "th-TH-NiwatNeural",
+  "rate": "-8%"
+ },
+ "end_card": {
+  "kicker": "ตอนต่อไป · กฎข้อ 2",
+  "title": "เครื่องปั่นไฟ"
+ },
+ "facts": [
+  {
+   "claim": "A closed refrigerator keeps food safe for up to 4 hours during a power outage; a full freezer about 48 hours.",
+   "value": "4 hours / 48 hours",
+   "source": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+   "source_name": "FoodSafety.gov"
+  }
+ ],
+ "meta": {
+  "title": "ไฟดับทั้งเมือง อย่าเพิ่งเปิดสิ่งนี้",
+  "title_options": [
+   "ไฟดับทั้งเมือง อย่าเพิ่งเปิดสิ่งนี้",
+   "กฎข้อ 1 ตอนไฟดับ ที่คนส่วนใหญ่ทำพลาด",
+   "กฎ 4 ชั่วโมง ที่ไม่มีใครบอกคุณ"
+  ],
+  "description": "กฎข้อ 1 ตอนไฟดับ: ปิดตู้เย็นไว้ ถ้าไม่เปิด อาหารปลอดภัยได้ถึง 4 ชั่วโมง ช่องแช่แข็งที่ของเต็มราว 48 ชั่วโมง (ข้อมูล: FoodSafety.gov)",
+  "hashtags": [
+   "shorts",
+   "เอาตัวรอด",
+   "ไฟดับ",
+   "การ์ตูน"
+  ],
+  "pinned_comment": "ถามจริง ถ้าเป็นคุณ จะเปิดไหม?"
+ },
+ "scenes": [
+  {
+   "text": "ไฟดับทั้งเมือง",
+   "pause_after": 0.5,
+   "shot": {
+    "set": "city",
+    "fx": [
+     "lights_out"
+    ],
+    "cam": "push",
+    "title": true,
+    "counter": {
+     "value": "21:42 น.",
+     "label": "ไฟดับ",
+     "color": [
+      255,
+      214,
+      10
+     ],
+     "x": 540,
+     "y": 600,
+     "at": 0.35
+    }
+   }
+  },
+  {
+   "text": "และสิ่งแรกที่คุณจะทำ คือสิ่งที่ผิด",
+   "pause_after": 0.7,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "pose": "scared",
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "คุณเปิดตู้เย็น แค่จะดูเฉยๆ",
+   "pause_after": 0.4,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.45
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 940,
+      "to": 620,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "แต่ทุกครั้งที่เปิด ความเย็นจะรั่วออกไป",
+   "pause_after": 0.4,
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.0
+     },
+     {
+      "kind": "gas",
+      "x": 420,
+      "y": 1350
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "กฎข้อที่หนึ่ง",
+   "pause_after": 1.2,
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "zip": {
+     "x": 880,
+     "y": 420,
+     "from": [
+      1250,
+      200
+     ]
+    },
+    "card": {
+     "n": 1,
+     "at": 0.05,
+     "text": "ห้ามเปิดตู้เย็น"
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 560,
+      "pose": "point",
+      "mood": "determined",
+      "look": -1
+     },
+     {
+      "who": "max",
+      "x": 860,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "ถ้าปิดไว้ อาหารในตู้เย็น จะปลอดภัยได้นานถึง สี่ชั่วโมง",
+   "pause_after": 0.6,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 520,
+     "at": 0.15,
+     "source": "FoodSafety.gov",
+     "value": "4 ชั่วโมง",
+     "label": "อาหารยังปลอดภัย"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "ส่วนช่องแช่แข็ง ที่ของเต็ม อยู่ได้ราว สองวัน",
+   "pause_after": 0.7,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 520,
+     "at": 0.15,
+     "source": "FoodSafety.gov",
+     "color": [
+      64,
+      224,
+      255
+     ],
+     "value": "48 ชั่วโมง",
+     "label": "ช่องแช่แข็งที่ของเต็ม"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "smile",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "ถามจริง ถ้าเป็นคุณ จะเปิดไหม?",
+   "pause_after": 0.0,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  }
+ ]
+}

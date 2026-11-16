@@ -1,0 +1,404 @@
+{
+ "channel": "SURVIVE DAY 1",
+ "series": "SURVIVE DAY 1",
+ "episode": "Blackout · Night 1",
+ "lang": "en",
+ "voice": {
+  "engine": "edge",
+  "edge_voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+4%"
+ },
+ "end_card": {
+  "kicker": "NEXT EPISODE",
+  "title": "DAY 2: NO WATER"
+ },
+ "facts": [
+  {
+   "claim": "A closed refrigerator keeps food cold for about 4 hours during an outage; a full freezer for up to 48 hours.",
+   "value": "4 hours / 48 hours",
+   "source": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+   "source_name": "FoodSafety.gov"
+  },
+  {
+   "claim": "Generators must be used outdoors, at least 20 feet from windows, never indoors or in partially enclosed spaces.",
+   "value": "20 feet",
+   "source": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+   "source_name": "CDC"
+  },
+  {
+   "claim": "Avoid candles, which can cause house fires; use flashlights.",
+   "value": "",
+   "source": "https://www.dhses.ny.gov/power-outage",
+   "source_name": "NY State DHSES"
+  },
+  {
+   "claim": "Carbon monoxide is a colorless, odorless gas.",
+   "value": "",
+   "source": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+   "source_name": "CDC"
+  }
+ ],
+ "meta": {
+  "title": "Your City Just Lost Power. Don't Do This First.",
+  "title_options": [
+   "Your City Just Lost Power. Don't Do This First.",
+   "3 Blackout Mistakes That Can Get You Hurt",
+   "Survive Day 1: The Blackout"
+  ],
+  "description": "Night one of a citywide blackout: three rules that keep you safe (sources: FoodSafety.gov, CDC).",
+  "hashtags": [
+   "shorts",
+   "survival",
+   "blackout",
+   "animation"
+  ],
+  "pinned_comment": "Would you have opened the fridge? Be honest."
+ },
+ "scenes": [
+  {
+   "text": "Your whole city just went dark.",
+   "shot": {
+    "set": "city",
+    "fx": [
+     "lights_out"
+    ],
+    "cam": "push",
+    "title": true,
+    "counter": {
+     "value": "9:42 PM",
+     "label": "NEW YORK CITY",
+     "color": [
+      255,
+      214,
+      10
+     ],
+     "x": 540,
+     "y": 600,
+     "at": 0.15
+    }
+   }
+  },
+  {
+   "text": "Most people get the next hour wrong.",
+   "shot": {
+    "set": "city_dark",
+    "cam": "pan",
+    "zip": {
+     "x": 540,
+     "y": 640,
+     "from": [
+      1250,
+      300
+     ]
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 270,
+      "mood": "scared",
+      "look": 1
+     },
+     {
+      "who": "max",
+      "x": 560,
+      "pose": "scared",
+      "mood": "scared"
+     },
+     {
+      "who": "gus",
+      "x": 840,
+      "mood": "scared",
+      "look": -1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "Max's first move? Open the fridge to check.",
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.62
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 940,
+      "to": 600,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Rule one: keep it shut. A closed fridge stays cold for about four hours.",
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "zip": {
+     "x": 900,
+     "y": 600
+    },
+    "card": {
+     "n": 1,
+     "at": 0.08,
+     "text": "Keep the fridge shut"
+    },
+    "counter": {
+     "x": 540,
+     "y": 360,
+     "at": 0.45,
+     "source": "FoodSafety.gov",
+     "value": "4 HOURS",
+     "label": "FRIDGE STAYS COLD"
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 600,
+      "pose": "point",
+      "mood": "determined",
+      "look": -1
+     },
+     {
+      "who": "max",
+      "x": 860,
+      "pose": "stand",
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "A full freezer? Up to forty-eight hours.",
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 620,
+     "at": 0.1,
+     "source": "FoodSafety.gov",
+     "color": [
+      64,
+      224,
+      255
+     ],
+     "value": "48 HOURS",
+     "label": "FULL FREEZER"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "smile",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Then Gus rolls the generator into the garage.",
+   "shot": {
+    "set": "garage",
+    "cam": "pan",
+    "cast": [
+     {
+      "who": "gus",
+      "x": 1000,
+      "to": 470,
+      "carry": "generator",
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "Rule two: generators stay outside, at least twenty feet from any window.",
+   "shot": {
+    "set": "garage",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "generator",
+      "x": 900
+     },
+     {
+      "kind": "arrow",
+      "x0": 330,
+      "x1": 760,
+      "y": 1330,
+      "label": "20 FT"
+     }
+    ],
+    "card": {
+     "n": 2,
+     "at": 0.05,
+     "text": "Generators stay outside"
+    },
+    "zip": {
+     "x": 860,
+     "y": 560
+    },
+    "cast": [
+     {
+      "who": "gus",
+      "x": 250,
+      "mood": "determined",
+      "look": 1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "Inside, carbon monoxide builds up. No color. No smell.",
+   "shot": {
+    "set": "garage",
+    "cam": "push",
+    "fx": [
+     "shake"
+    ],
+    "props": [
+     {
+      "kind": "generator",
+      "x": 420
+     },
+     {
+      "kind": "gas",
+      "x": 560,
+      "y": 1500
+     }
+    ],
+    "meter": {
+     "from": 1,
+     "to": 8,
+     "x": 700,
+     "y": 360,
+     "label": "CO DANGER"
+    },
+    "cast": [
+     {
+      "who": "gus",
+      "x": 780,
+      "pose": "scared",
+      "mood": "scared",
+      "look": -1,
+      "scale": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "text": "Then Max lights a candle.",
+   "shot": {
+    "set": "living",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "candle",
+      "x": 820,
+      "y": 1262
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 480,
+      "mood": "smile",
+      "look": 1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Rule three: use flashlights. Candles start house fires.",
+   "shot": {
+    "set": "living",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "beam",
+      "x": 330,
+      "y": 1430,
+      "at": 0.25
+     }
+    ],
+    "card": {
+     "n": 3,
+     "at": 0.05,
+     "text": "Flashlights, not candles"
+    },
+    "zip": {
+     "x": 880,
+     "y": 600
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 260,
+      "pose": "point",
+      "mood": "determined",
+      "look": 1
+     },
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Night one is over. But at three a.m., the water stops too.",
+   "shot": {
+    "set": "sink",
+    "cam": "push",
+    "fx": [
+     "flicker"
+    ],
+    "props": [
+     {
+      "kind": "drip",
+      "x": 680,
+      "y": 1060,
+      "stop_at": 0.55
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 600,
+     "at": 0.35,
+     "value": "3:00 AM",
+     "label": "NIGHT 1"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 780,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  }
+ ]
+}

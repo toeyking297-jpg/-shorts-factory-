@@ -1,0 +1,35 @@
+name: Cartoon to Telegram
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "ไฟล์วิดีโอที่จะส่ง"
+        required: true
+        default: "cartoon/share/EP001_animatic.mp4"
+      caption:
+        description: "ข้อความแนบ"
+        required: false
+        default: "EP001 ป้ามาก่อน (animatic ภาพชั่วคราว)"
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: ส่งเข้า Telegram
+        env:
+          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FILE: ${{ inputs.file }}
+          CAPTION: ${{ inputs.caption }}
+        run: |
+          [ -n "$TOKEN" ] || { echo "::error::ยังไม่ได้ใส่ secret TELEGRAM_BOT_TOKEN"; exit 1; }
+          [ -f "$FILE" ] || { echo "::error::ไม่พบไฟล์ $FILE"; exit 1; }
+          if [ -z "$CHAT" ]; then
+            CHAT=$(curl -s "https://api.telegram.org/bot$TOKEN/getUpdates" | python3 -c "import sys,json;r=json.load(sys.stdin).get('result',[]);print(next((u[k]['chat']['id'] for u in reversed(r) for k in ('message','channel_post') if k in u),''))")
+          fi
+          [ -n "$CHAT" ] || { echo "::error::หา chat id ไม่เจอ: เปิดบอทใน Telegram แล้วพิมพ์อะไรก็ได้ 1 ข้อความ แล้วกดรันใหม่"; exit 1; }
+          R=$(curl -s -F chat_id="$CHAT" -F caption="$CAPTION" -F supports_streaming=true -F video=@"$FILE" "https://api.telegram.org/bot$TOKEN/sendVideo")
+          echo "$R" | grep -q '"ok":true' && echo "::notice::ส่งแล้ว" || { echo "::error::Telegram ตอบ: $(echo "$R" | head -c 300)"; exit 1; }

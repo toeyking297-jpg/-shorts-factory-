@@ -1,0 +1,49 @@
+name: Toon episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      scripts:
+        description: "Episode scripts (space separated)"
+        required: true
+        default: "toon/series/survive/ep01_blackout_en.json toon/series/survive/ep01_blackout_th.json"
+
+permissions:
+  contents: write
+
+jobs:
+  toon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: ติดตั้ง
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+      - name: พากย์ วาด ตัดต่อ
+        env:
+          IN_SCRIPTS: ${{ inputs.scripts }}
+        run: python -m engine.run toon $IN_SCRIPTS
+      - name: ส่งเข้าแท็บคลิป
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          files=(final/toon_*.mp4)
+          [ ${#files[@]} -gt 0 ] || { echo "::error::no episode was made"; exit 1; }
+          tag="toon-$(date -u +%Y%m%d-%H%M)-${{ github.run_number }}"
+          gh release create "$tag" "${files[@]}" --title "$(TZ=Asia/Bangkok date '+%d/%m %H:%M') · การ์ตูน ${#files[@]} คลิป" --notes "Toon episode test"
+      - name: ส่งเข้า Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          for f in final/toon_*.mp4; do cp "$f" "final/EP_${f#final/toon_}"; done 2>/dev/null || true
+          python -m engine.telegram "https://${{ github.repository_owner }}.github.io/-shorts-dashboard-/"

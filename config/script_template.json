@@ -1,0 +1,17 @@
+{
+  "id": "EP000",
+  "topic": "",
+  "sources": [],
+  "meta": { "title": "", "description": "", "hashtags": ["shorts"], "tags": [] },
+  "scenes": [
+    {
+      "text": "Hook sentence that creates a question in under 2 seconds.",
+      "visual": { "type": "footage", "query": "concrete search words", "alt": ["broader backup words"] },
+      "overlay": { "type": "label", "text": "Short on-screen claim", "pos": "top" }
+    },
+    {
+      "text": "A number that surprises.",
+      "visual": { "type": "graphic", "graphic": { "type": "stat", "value": "-46°C", "label": "what the number means" } }
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+[
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP003_why-the-ocean-isn-t-where-most-people-dr",
+    "title": "Why the Ocean Isn't Where Most People Drown",
+    "format": "shock_fact",
+    "hook": "Most drownings don't happen in the ocean.",
+    "title_options": [
+      "Why the Ocean Isn't Where Most People Drown",
+      "The Shocking Truth About Water Safety",
+      "Where Do Most Drownings Actually Happen?"
+    ],
+    "description": "We fear the deep ocean, but statistics reveal that the real water danger is much closer to home.",
+    "status": "ready",
+    "ok": true,
+    "issues": [],
+    "reasons_th": [],
+    "date": "2026-10-21",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 1,
+    "seconds": 1842,
+    "gemini_calls": 26
+  },
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP004_the-soviet-statue-hiding-in-antarctica",
+    "title": "The Soviet Statue Hiding in Antarctica",
+    "format": "myth_vs_fact",
+    "hook": "A Soviet statue is hiding in Antarctica.",
+    "title_options": [
+      "The Soviet Statue Hiding in Antarctica",
+      "Why is there a Lenin statue in the ice?",
+      "Earth's Most Remote Landmark Is Buried"
+    ],
+    "description": "Discover the Southern Pole of Inaccessibility, the remotest spot in Antarctica where a Soviet statue still stands.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[visual] scene 0: no fitting picture was found (borrowed another scene's)",
+      "[visual] scene 1: no fitting picture was found (borrowed another scene's)",
+      "[visual] scene 6: no fitting picture was found (borrowed another scene's)",
+      "[visual] scene 7: no fitting picture was found (borrowed another scene's)",
+      "[visual] scene 9: no fitting picture was found (borrowed another scene's)",
+      "[visual] scene 10: no fitting picture was found (borrowed another scene's)"
+    ],
+    "reasons_th": [
+      "[ภาพ/ตัวหนังสือ] scene 0: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] scene 1: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] scene 6: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] scene 7: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] scene 9: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] scene 10: no fitting picture was found (borrowed another scene's)",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): The background shows a sandy beach and ocean waves, which contradicts the narration about Antarctica.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Reuses the same ocean/beach background image from frame 1, which contradicts Antarctica and lacks visual variety."
+    ],
+    "date": "2026-10-21",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 2,
+    "seconds": 907,
+    "gemini_calls": 56
+  },
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP005_3-crazy-facts-about-earth-s-most-remote-",
+    "title": "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+    "format": "three_things",
+    "hook": "this is the loneliest spot on Earth.",
+    "title_options": [
+      "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+      "Why Astronauts Are Closer to Point Nemo Than You",
+      "The Ocean Graveyard Where Spacecraft Go to Die"
+    ],
+    "description": "Point Nemo is so far out in the Pacific Ocean that astronauts overhead are closer to it than anyone standing on land.",
+    "status": "ready",
+    "ok": true,
+    "issues": [
+      "[visual] scene 5: no fitting picture was found (shows the map instead)",
+      "[editorial] scene 4 is 6.9s long; the picture should change every <=5s"
+    ],
+    "reasons_th": [],
+    "date": "2026-10-22",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 3,
+    "seconds": 1250,
+    "gemini_calls": 42
+  },
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP006_where-astronauts-are-closer-to-you-than-",
+    "title": "Where Astronauts Are Closer to You Than Anyone on Earth",
+    "format": "versus",
+    "hook": "Where are astronauts closer than anyone on land?",
+    "title_options": [
+      "Where Astronauts Are Closer to You Than Anyone on Earth",
+      "Point Nemo: The Ocean Spot Closest to Space",
+      "Why Astronauts Are Your Closest Neighbors at Point Nemo"
+    ],
+    "description": "At Point Nemo in the South Pacific, the nearest human isn't on land. When the International Space Station passes overhead, astronauts are just 250 miles away.",
+    "status": "ready",
+    "ok": true,
+    "issues": [
+      "[visual] scene 6: no fitting picture was found (shows the map instead)",
+      "[visual] scene 7: no fitting picture was found (shows the map instead)",
+      "[visual] scene 8: no fitting picture was found (shows the map instead)",
+      "[editorial] scene 8 is 6.6s long; the picture should change every <=5s"
+    ],
+    "reasons_th": [],
+    "date": "2026-10-22",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 4,
+    "seconds": 1343,
+    "gemini_calls": 51
+  },
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP007_the-ocean-spot-where-astronauts-are-your",
+    "title": "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+    "format": "shock_fact",
+    "hook": "This is the most remote oceanic location.",
+    "title_options": [
+      "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+      "Why Astronauts Are Closer To Point Nemo Than Anyone On Earth",
+      "The Loneliest Place On Earth Is In The Ocean"
+    ],
+    "description": "Point Nemo is so isolated in the South Pacific that people on the International Space Station are closer to it than anyone on Earth.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[factual] claim audit: scene 1: wrong_source: \"It is about 1,670 miles away from the nearest land in any direction.\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this fact to the NOAA Ocean Service as per the research notes.",
+      "[factual] claim audit: scene 1: wrong_source: \"scene 1 overlay.value: 1,670 miles\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this figure to the NOAA Ocean Service.",
+      "[factual] claim audit: scene 3: wrong_source: \"When the International Space Station passes overhead at about 250 miles high\" -> The ISS altitude of 250 miles is not in the cited Wikipedia article; attribute this to NASA as per the research notes.",
+      "[factual] claim audit: scene 4: wrong_source: \"those astronauts are over 6 times closer to Point Nemo than any human on land.\" -> The proximity comparison is not in the cited Wikipedia article; attribute this calculation to NASA data.",
+      "[factual] claim audit: scene 4: overclaim: \"scene 4 overlay.value: 6 times\" -> Change to 'Over 6 times' or '6x+' to match the research (Fact 3 and Web Note 4).",
+      "[factual] claim audit: scene 4: wrong_source: \"scene 4 overlay.value: 6 times\" -> Attribute the proximity comparison to NASA rather than the Wikipedia page on poles of inaccessibility."
+    ],
+    "reasons_th": [
+      "[ข้อเท็จจริง] claim audit: scene 1: wrong_source: \"It is about 1,670 miles away from the nearest land in any direction.\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this fact to the NOAA Ocean Service as per the research notes.",
+      "[ข้อเท็จจริง] claim audit: scene 1: wrong_source: \"scene 1 overlay.value: 1,670 miles\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this figure to the NOAA Ocean Service.",
+      "[ข้อเท็จจริง] claim audit: scene 3: wrong_source: \"When the International Space Station passes overhead at about 250 miles high\" -> The ISS altitude of 250 miles is not in the cited Wikipedia article; attribute this to NASA as per the research notes.",
+      "[ข้อเท็จจริง] claim audit: scene 4: wrong_source: \"those astronauts are over 6 times closer to Point Nemo than any human on land.\" -> The proximity comparison is not in the cited Wikipedia article; attribute this calculation to NASA data.",
+      "[ข้อเท็จจริง] claim audit: scene 4: overclaim: \"scene 4 overlay.value: 6 times\" -> Change to 'Over 6 times' or '6x+' to match the research (Fact 3 and Web Note 4).",
+      "[ข้อเท็จจริง] claim audit: scene 4: wrong_source: \"scene 4 overlay.value: 6 times\" -> Attribute the proximity comparison to NASA rather than the Wikipedia page on poles of inaccessibility.",
+      "[ข้อเท็จจริง] claim audit: scene 5: overclaim: \"scene 5 overlay.value: 263 spacecraft\" -> Change to 'More than 263' or '263+' as the research (Fact 4 and Web Note 6) states this is a minimum count.",
+      "[ข้อเท็จจริง] claim audit: scene 5: wrong_source: \"scene 5 overlay.value: 263 spacecraft\" -> The count of 263 spacecraft is not in the cited Wikipedia article; attribute this to the ESA (European Space Agency)."
+    ],
+    "date": "2026-10-22",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 5,
+    "seconds": 1030,
+    "gemini_calls": 37
+  },
+  {
+    "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+    "episode": "EP008_where-astronauts-are-closer-than-land-po",
+    "title": "Where Astronauts Are Closer Than Land: Point Nemo",
+    "format": "myth_vs_fact",
+    "hook": "Where are astronauts your closest human neighbors?",
+    "title_options": [
+      "Where Astronauts Are Closer Than Land: Point Nemo",
+      "Why Point Nemo Is Closer to Space Than Any Human",
+      "Point Nemo: The Ocean Spot Closer to Orbit Than Land"
+    ],
+    "description": "Point Nemo is the most isolated oceanic spot on Earth, sitting over 1,670 miles from the nearest shore.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[factual] claim audit: scene 4: overclaim: \"This makes it the farthest point from land anywhere on Earth.\" -> Point Nemo is the oceanic pole of inaccessibility, the place in the ocean farthest from land.",
+      "[visual] scene 0: no fitting picture was found (shows the map instead)",
+      "[visual] scene 6: no fitting picture was found (shows the map instead)",
+      "[visual] scene 7: no fitting picture was found (shows the map instead)",
+      "[visual] scene 8: no fitting picture was found (shows the map instead)",
+      "[editorial] scene 3 is 7.4s long; the picture should change every <=5s"
+    ],
+    "reasons_th": [
+      "[ข้อเท็จจริง] claim audit: scene 4: overclaim: \"This makes it the farthest point from land anywhere on Earth.\" -> Point Nemo is the oceanic pole of inaccessibility, the place in the ocean farthest from land.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Top overlay text 'THE COMMON' is cut off and overlapping the branding at the very top.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Repeated Earth visual used again for 'Spacecraft Cemetery', which lacks specific context.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): The exact same Earth visual is repeated a third time for 'Hundreds of Crashes'.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Small text at the bottom ('SOURCE: WIKIMEDIA') is unreadable on mobile screens."
+    ],
+    "date": "2026-10-22",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 6,
+    "seconds": 1049,
+    "gemini_calls": 39
+  },
+  {
+    "topic": "The Mantis Shrimp",
+    "episode": "EP010_this-tiny-sea-creature-punches-faster-th",
+    "title": "This Tiny Sea Creature Punches Faster Than a Bullet",
+    "format": "shock_fact",
+    "hook": "This shrimp punches faster than a bullet.",
+    "title_options": [
+      "This Tiny Sea Creature Punches Faster Than a Bullet",
+      "Why the Mantis Shrimp Has the Deadliest Punch in the Ocean",
+      "The Animal With Eyes That Can See Impossible Colors"
+    ],
+    "description": "The mantis shrimp has incredible vision and punches with the force of a bullet.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[factual] claim audit: scene 6: unsupported: \"Humans have four visual pigments compared to the many more found in mantis shrimp.\" -> State that humans have four visual pigments (three for color) while mantis shrimp have between 12 and 16 types of photoreceptor cells.",
+      "[visual] scene 0: no fitting picture was found (borrowed another scene's picture)",
+      "[visual] scene 1: no fitting picture was found (borrowed another scene's picture)",
+      "[visual] scene 5: no fitting picture was found (borrowed another scene's picture)",
+      "[visual] scene 7: no fitting picture was found (borrowed another scene's picture)",
+      "[visual] final review (score 4): Missing visual subject; only text on underwater background for punch speed."
+    ],
+    "reasons_th": [
+      "[ข้อเท็จจริง] claim audit: scene 6: unsupported: \"Humans have four visual pigments compared to the many more found in mantis shrimp.\" -> State that humans have four visual pigments (three for color) while mantis shrimp have between 12 and 16 types of photoreceptor cells.",
+      "[ภาพ/ตัวหนังสือ] scene 0: no fitting picture was found (borrowed another scene's picture)",
+      "[ภาพ/ตัวหนังสือ] scene 1: no fitting picture was found (borrowed another scene's picture)",
+      "[ภาพ/ตัวหนังสือ] scene 5: no fitting picture was found (borrowed another scene's picture)",
+      "[ภาพ/ตัวหนังสือ] scene 7: no fitting picture was found (borrowed another scene's picture)",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Missing visual subject; only text on underwater background for punch speed.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Missing visual subject; only text on bubbles for acceleration rate.",
+      "[ภาพ/ตัวหนังสือ] final review (score 4): Empty or boring frame showing just water bubbles."
+    ],
+    "date": "2026-10-22",
+    "niche": "สัตว์โลกแปลกๆ",
+    "series_no": 7,
+    "seconds": 1965,
+    "gemini_calls": 82
+  },
+  {
+    "topic": "Cesc Fàbregas and Como 1907",
+    "episode": "EP011_how-a-premier-league-legend-transformed-",
+    "title": "How a Premier League Legend Transformed Como Into a European Giant",
+    "format": "shock_fact",
+    "hook": "How a Premier League legend conquered Italy.",
+    "title_options": [
+      "How a Premier League Legend Transformed Como Into a European Giant",
+      "How Cesc Fàbregas Transformed Como 1907",
+      "From Premier League Star to Serie A Manager"
+    ],
+    "description": "Cesc Fàbregas went from midfield maestro at Arsenal and Barcelona to managing Como 1907 into European competition.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[visual] scene 0: no fitting picture was found (shows the map instead)",
+      "[visual] scene 3: no fitting picture was found (shows the map instead)",
+      "[visual] scene 4: no fitting picture was found (shows the map instead)",
+      "[visual] scene 5: no fitting picture was found (shows the map instead)",
+      "[visual] scene 6: no fitting picture was found (shows the map instead)",
+      "[visual] scene 7: no fitting picture was found (shows the map instead)"
+    ],
+    "reasons_th": [
+      "[ภาพ/ตัวหนังสือ] final review (score 3): The map showing Africa does not match the narration about conquering Italy or Premier League legends.",
+      "[ภาพ/ตัวหนังสือ] final review (score 3): Map of Africa/Indian Ocean labeled COMO does not match Italy or the football world context.",
+      "[ภาพ/ตัวหนังสือ] final review (score 3): Repeated map background with text overlay '2022 JOINED COMO'.",
+      "[ภาพ/ตัวหนังสือ] final review (score 3): Same repeated Africa map background with incomplete caption fragment."
+    ],
+    "date": "2026-10-22",
+    "niche": "10 อันดับ ลูกยิงที่สวยที่สุด พรีเมียลีก 2025",
+    "series_no": 8,
+    "seconds": 672,
+    "gemini_calls": 53
+  },
+  {
+    "topic": "Kevin De Bruyne Premier League Assist Records",
+    "episode": "EP012_how-kevin-de-bruyne-broke-premier-league",
+    "title": "How Kevin De Bruyne Broke Premier League Assist Records",
+    "format": "versus",
+    "hook": "How did one passer break two leagues?",
+    "title_options": [
+      "How Kevin De Bruyne Broke Premier League Assist Records",
+      "The Assist Record Kevin De Bruyne Shattered in Two Leagues",
+      "How One Player Mastered Assists in Germany and England"
+    ],
+    "description": "Discover how Kevin De Bruyne set all-time assist records in both Germany and England.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[factual] claim audit: scene meta.title: overclaim: \"How Kevin De Bruyne Broke Premier League Assist Records\" -> How Kevin De Bruyne Set Premier League Assist Records",
+      "[factual] claim audit: scene 0: overclaim: \"How did one passer break two leagues?\" -> How did one passer dominate two leagues?",
+      "[factual] claim audit: scene 1: unsupported: \"MANCHESTER, UK\" -> NAPLES, ITALY",
+      "[factual] claim audit: scene 1: unsupported: \"Manchester City\" -> Napoli",
+      "[factual] claim audit: scene 2: unsupported: \"Before coming to England, he stormed Germany with standout playmaking abilities.\" -> Between his stints in England, he stormed Germany with standout playmaking abilities.",
+      "[factual] claim audit: scene 3: unsupported: \"In Germany, he set an all-time record with 21 assists in one season.\" -> In Germany, he set a Bundesliga record with 21 assists in one season."
+    ],
+    "reasons_th": [
+      "[ข้อเท็จจริง] claim audit: scene meta.title: overclaim: \"How Kevin De Bruyne Broke Premier League Assist Records\" -> How Kevin De Bruyne Set Premier League Assist Records",
+      "[ข้อเท็จจริง] claim audit: scene 0: overclaim: \"How did one passer break two leagues?\" -> How did one passer dominate two leagues?",
+      "[ข้อเท็จจริง] claim audit: scene 1: unsupported: \"MANCHESTER, UK\" -> NAPLES, ITALY",
+      "[ข้อเท็จจริง] claim audit: scene 1: unsupported: \"Manchester City\" -> Napoli",
+      "[ข้อเท็จจริง] claim audit: scene 2: unsupported: \"Before coming to England, he stormed Germany with standout playmaking abilities.\" -> Between his stints in England, he stormed Germany with standout playmaking abilities.",
+      "[ข้อเท็จจริง] claim audit: scene 3: unsupported: \"In Germany, he set an all-time record with 21 assists in one season.\" -> In Germany, he set a Bundesliga record with 21 assists in one season.",
+      "[ข้อเท็จจริง] claim audit: scene 7: unsupported: \"He has collected six league titles and three Playmaker of the Season awards.\" -> He has collected six Premier League titles and three Playmaker of the Season awards.",
+      "[ข้อเท็จจริง] claim audit: scene 7: unsupported: \"6 TITLES\" -> 6 PL TITLES"
+    ],
+    "date": "2026-10-23",
+    "niche": "10 อันดับ ลูกยิงที่สวยที่สุด พรีเมียลีก 2025",
+    "series_no": 9,
+    "seconds": 2370,
+    "gemini_calls": 25
+  },
+  {
+    "topic": "The Northwest Angle of Minnesota",
+    "episode": "EP014_why-part-of-america-is-cut-off-from-the-",
+    "title": "Why Part of Minnesota Is Trapped in Canada",
+    "format": "map_explains",
+    "hook": "This US territory is trapped inside Canada.",
+    "title_options": [
+      "Why Part of Minnesota Is Trapped in Canada",
+      "The US Territory Cut Off From America",
+      "How a Mapping Error Moved the US Border"
+    ],
+    "description": "The Northwest Angle is the only part of the Lower 48 north of the 49th parallel because of a 1783 mapping error.",
+    "status": "ready",
+    "ok": true,
+    "issues": [],
+    "reasons_th": [],
+    "date": "2026-10-23",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 10,
+    "seconds": 910,
+    "gemini_calls": 15
+  },
+  {
+    "topic": "Pheasant Island (Isla de los Faisanes)",
+    "episode": "EP015_the-tiny-island-that-changes-countries-e",
+    "title": "The Tiny Island That Changes Countries Every Six Months",
+    "format": "shock_fact",
+    "hook": "This tiny river island changes countries twice every year.",
+    "title_options": [
+      "The Tiny Island That Changes Countries Every Six Months",
+      "Why This River Island Switches Between Spain and France",
+      "The World's Strangest Shared Island Border"
+    ],
+    "description": "Pheasant Island sits in a river between France and Spain. Under a centuries-old treaty, it switches countries twice a year.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[visual] final review (score 6): The image shows Stonehenge, which represents ancient prehistory, completely contradicting the year 1659 and the Treaty of the Pyrenees.",
+      "[visual] final review (score 6): The image is nearly identical to frame 6, creating repetitive and redundant visual content.",
+      "[visual] final review (score 6): The frame is extremely dark, making the globe graphic barely visible and creating a boring end to the video."
+    ],
+    "reasons_th": [
+      "[ภาพ/ตัวหนังสือ] final review (score 6): The image shows Stonehenge, which represents ancient prehistory, completely contradicting the year 1659 and the Treaty of the Pyrenees.",
+      "[ภาพ/ตัวหนังสือ] final review (score 6): The image is nearly identical to frame 6, creating repetitive and redundant visual content.",
+      "[ภาพ/ตัวหนังสือ] final review (score 6): The frame is extremely dark, making the globe graphic barely visible and creating a boring end to the video."
+    ],
+    "date": "2026-10-23",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 11,
+    "seconds": 485,
+    "gemini_calls": 7
+  },
+  {
+    "topic": "The Big and Little Diomede Islands",
+    "episode": "EP016_you-can-see-tomorrow-from-this-alaskan-i",
+    "title": "You Can See Tomorrow From This Alaskan Island",
+    "format": "map_explains",
+    "hook": "You can look straight into tomorrow here.",
+    "title_options": [
+      "You Can See Tomorrow From This Alaskan Island",
+      "Two Islands Only 2.4 Miles Apart With a 21-Hour Time Difference",
+      "The Alaskan Island Where You Can Look Into Tomorrow"
+    ],
+    "description": "Two islands in the Bering Strait are only 2.4 miles apart, but their time zones differ by 21 hours.",
+    "status": "needs_review",
+    "ok": false,
+    "issues": [
+      "[visual] final review (score 6): The globe image in frame 7 is identical to the globe image in frame 8, resulting in a repeated picture.",
+      "[visual] final review (score 6): The globe image in frame 8 is an exact repetition of the picture in frame 7."
+    ],
+    "reasons_th": [
+      "[ภาพ/ตัวหนังสือ] final review (score 6): The globe image in frame 7 is identical to the globe image in frame 8, resulting in a repeated picture.",
+      "[ภาพ/ตัวหนังสือ] final review (score 6): The globe image in frame 8 is an exact repetition of the picture in frame 7."
+    ],
+    "date": "2026-10-23",
+    "niche": "Hidden Atlas: strange places on Earth, and why some countries are rich or poor",
+    "series_no": 12,
+    "seconds": 295,
+    "gemini_calls": 4
+  }
+]

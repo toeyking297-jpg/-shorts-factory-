@@ -1,0 +1,121 @@
+{
+  "episode": "EP012_how-kevin-de-bruyne-broke-premier-league",
+  "topic": "Kevin De Bruyne Premier League Assist Records",
+  "format": "versus",
+  "title": "How Kevin De Bruyne Broke Premier League Assist Records",
+  "titles": [
+    "How Kevin De Bruyne Broke Premier League Assist Records",
+    "The Assist Record Kevin De Bruyne Shattered in Two Leagues",
+    "How One Player Mastered Assists in Germany and England"
+  ],
+  "hook": "How did one passer break two leagues?",
+  "words": 118,
+  "duration": 46.2,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 9,
+  "date": "2026-10-23",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.484,
+      "text": "How did one passer break two leagues?",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:147704"
+    },
+    {
+      "i": 1,
+      "start": 2.484,
+      "end": 8.285,
+      "text": "Kevin De Bruyne dominates modern football passing as one of the premier playmakers of his generation.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 2,
+      "start": 8.285,
+      "end": 13.156,
+      "text": "Before coming to England, he stormed Germany with standout playmaking abilities.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 13.156,
+      "end": 17.778,
+      "text": "In Germany, he set an all-time record with 21 assists in one season.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:239964"
+    },
+    {
+      "i": 4,
+      "start": 17.778,
+      "end": 21.08,
+      "text": "Then in England, he matched the Premier League record with 20.",
+      "kind": "none",
+      "overlay": "compare",
+      "media": null
+    },
+    {
+      "i": 5,
+      "start": 21.08,
+      "end": 24.995,
+      "text": "His elite vision helped power Manchester City's dominant attack.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:202759"
+    },
+    {
+      "i": 6,
+      "start": 24.995,
+      "end": 29.052,
+      "text": "That precision helped City achieve a historic 100-point league season.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 7,
+      "start": 29.052,
+      "end": 33.51,
+      "text": "He has collected six league titles and three Playmaker of the Season awards.",
+      "kind": "none",
+      "overlay": "icons",
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 33.51,
+      "end": 37.943,
+      "text": "He stands among the most consistent assist providers in Premier League history.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 9,
+      "start": 37.943,
+      "end": 43.356,
+      "text": "His record-breaking genius consistently creates high-quality chances against top defenses.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:15734"
+    },
+    {
+      "i": 10,
+      "start": 43.356,
+      "end": 46.191,
+      "text": "Before every match, every defender wonders",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

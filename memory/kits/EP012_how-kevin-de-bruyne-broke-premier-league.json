@@ -1,0 +1,152 @@
+{
+  "episode": "EP012_how-kevin-de-bruyne-broke-premier-league",
+  "video": "EP012_how-kevin-de-bruyne-broke-premier-league.mp4",
+  "cover": "EP012_how-kevin-de-bruyne-broke-premier-league_cover.jpg",
+  "topic": "Kevin De Bruyne Premier League Assist Records",
+  "format": "versus",
+  "series": "Hidden Atlas #9",
+  "series_no": 9,
+  "playlist": "Versus",
+  "titles": [
+    "How Kevin De Bruyne Broke Premier League Assist Records",
+    "The Assist Record Kevin De Bruyne Shattered in Two Leagues",
+    "How One Player Mastered Assists in Germany and England"
+  ],
+  "description": "Discover how Kevin De Bruyne set all-time assist records in both Germany and England.\n\nHidden Atlas #9\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Kevin_De_Bruyne\n- Wikipedia https://en.wikipedia.org/wiki/Premier_League_records_and_statistics\n\nFootage & images:\n- Video by u_sajylqtz0q on Pixabay https://pixabay.com/videos/id-147704/\n- Video by Valentin_Aleksandrov on Pixabay https://pixabay.com/videos/id-239964/\n- Video by Matthias_Groeneveld on Pixabay https://pixabay.com/videos/id-202759/\n- Video by adege on Pixabay https://pixabay.com/videos/id-15734/\n- Icons: Font Awesome Free (CC BY 4.0) https://fontawesome.com\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #soccer #debruyne #premierleague #mancity",
+  "hashtags": "#shorts #soccer #debruyne #premierleague #mancity",
+  "tags": [
+    "Kevin De Bruyne",
+    "Manchester City",
+    "Premier League",
+    "assist record",
+    "football",
+    "Bundesliga"
+  ],
+  "pinned_comment": "Is De Bruyne the greatest passer in Premier League history?",
+  "cover_text": "Assist King De Bruyne",
+  "social": {
+    "tiktok": "How Kevin De Bruyne Broke Premier League Assist Records  #soccer #debruyne #premierleague #mancity #fyp",
+    "reels": "How Kevin De Bruyne Broke Premier League Assist Records  #soccer #debruyne #premierleague #mancity",
+    "facebook": "How Kevin De Bruyne Broke Premier League Assist Records  #soccer #debruyne #premierleague #mancity"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "needs_review",
+  "status_th": "ต้องดูก่อน",
+  "reasons_th": [
+    "[ข้อเท็จจริง] claim audit: scene meta.title: overclaim: \"How Kevin De Bruyne Broke Premier League Assist Records\" -> How Kevin De Bruyne Set Premier League Assist Records",
+    "[ข้อเท็จจริง] claim audit: scene 0: overclaim: \"How did one passer break two leagues?\" -> How did one passer dominate two leagues?",
+    "[ข้อเท็จจริง] claim audit: scene 1: unsupported: \"MANCHESTER, UK\" -> NAPLES, ITALY",
+    "[ข้อเท็จจริง] claim audit: scene 1: unsupported: \"Manchester City\" -> Napoli",
+    "[ข้อเท็จจริง] claim audit: scene 2: unsupported: \"Before coming to England, he stormed Germany with standout playmaking abilities.\" -> Between his stints in England, he stormed Germany with standout playmaking abilities.",
+    "[ข้อเท็จจริง] claim audit: scene 3: unsupported: \"In Germany, he set an all-time record with 21 assists in one season.\" -> In Germany, he set a Bundesliga record with 21 assists in one season.",
+    "[ข้อเท็จจริง] claim audit: scene 7: unsupported: \"He has collected six league titles and three Playmaker of the Season awards.\" -> He has collected six Premier League titles and three Playmaker of the Season awards.",
+    "[ข้อเท็จจริง] claim audit: scene 7: unsupported: \"6 TITLES\" -> 6 PL TITLES"
+  ],
+  "categories": {
+    "technical": [],
+    "factual": [
+      "claim audit: scene meta.title: overclaim: \"How Kevin De Bruyne Broke Premier League Assist Records\" -> How Kevin De Bruyne Set Premier League Assist Records",
+      "claim audit: scene 0: overclaim: \"How did one passer break two leagues?\" -> How did one passer dominate two leagues?",
+      "claim audit: scene 1: unsupported: \"MANCHESTER, UK\" -> NAPLES, ITALY",
+      "claim audit: scene 1: unsupported: \"Manchester City\" -> Napoli",
+      "claim audit: scene 2: unsupported: \"Before coming to England, he stormed Germany with standout playmaking abilities.\" -> Between his stints in England, he stormed Germany with standout playmaking abilities.",
+      "claim audit: scene 3: unsupported: \"In Germany, he set an all-time record with 21 assists in one season.\" -> In Germany, he set a Bundesliga record with 21 assists in one season.",
+      "claim audit: scene 7: unsupported: \"He has collected six league titles and three Playmaker of the Season awards.\" -> He has collected six Premier League titles and three Playmaker of the Season awards.",
+      "claim audit: scene 7: unsupported: \"6 TITLES\" -> 6 PL TITLES"
+    ],
+    "visual": [
+      "scene 2: no fitting picture was found (shows the map instead)",
+      "scene 4: no fitting picture was found (shows the map instead)",
+      "scene 6: no fitting picture was found (shows the map instead)",
+      "scene 7: no fitting picture was found (shows the map instead)",
+      "scene 8: no fitting picture was found (shows the map instead)",
+      "final review (score 4): Text overlaps title, and static globe visual lacks player action.",
+      "final review (score 4): Map graphic lacks dynamic visual appeal and player context.",
+      "final review (score 4): Repeated globe background creates visual monotony.",
+      "final review (score 4): Graphic mentions Bundesliga while caption states England, alongside repeated globe background."
+    ],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 46.2,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "Kevin De Bruyne equalled the Premier League record for most assists in a season with 20.",
+      "value": "20",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "De Bruyne set a Bundesliga record with 21 assists in the 2014-15 season.",
+      "value": "21",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Manchester City achieved 100 points in the 2017-18 season.",
+      "value": "100",
+      "source": "https://en.wikipedia.org/wiki/Premier_League_records_and_statistics",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Kevin De Bruyne has won the Premier League title six times.",
+      "value": "6",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "He has been named Premier League Playmaker of the Season three times.",
+      "value": "3",
+      "source": "https://en.wikipedia.org/wiki/Kevin_De_Bruyne",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-23T18:59",
+  "metrics": {
+    "seconds": {
+      "voice": 39,
+      "footage": 907,
+      "draft_qc": 492,
+      "render": 190,
+      "final_review": 77,
+      "qc": 9,
+      "writing": 656
+    },
+    "total_seconds": 2370,
+    "api": {
+      "gemini_calls": 25,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 6,
+        "gemini-3.6-flash": 5,
+        "gemini-flash-latest": 4,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 4,
+        "gemini-3.7-flash": 4,
+        "gemini-3-flash-preview": 2,
+        "gemini-flash-lite-latest": 0,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 17,
+      "footage_api_calls": 72,
+      "downloads": 4,
+      "gemini_rate_limited": 0
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

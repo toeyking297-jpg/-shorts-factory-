@@ -1,0 +1,21 @@
+.env
+episodes/*/assets/
+episodes/*/build/
+final/
+assets/voices/
+inbox_used_*.json
+__pycache__/
+toon_build/
+# cartoon pipeline
+cartoon/input/reference/
+cartoon/analysis/frames/
+cartoon/analysis/cuts/
+cartoon/analysis/*.jpg
+cartoon/analysis/*.wav
+cartoon/analysis/*.raw
+cartoon/analysis/scdet.txt
+cartoon/assets/_placeholder/
+cartoon/episodes/*/preview/
+cartoon/episodes/*/export/
+cartoon/episodes/*/audio/lines/
+cartoon/episodes/*/audio/mix*.wav

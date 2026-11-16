@@ -1,0 +1,112 @@
+{
+  "episode": "EP015_the-tiny-island-that-changes-countries-e",
+  "topic": "Pheasant Island (Isla de los Faisanes)",
+  "format": "shock_fact",
+  "title": "The Tiny Island That Changes Countries Every Six Months",
+  "titles": [
+    "The Tiny Island That Changes Countries Every Six Months",
+    "Why This River Island Switches Between Spain and France",
+    "The World's Strangest Shared Island Border"
+  ],
+  "hook": "This tiny river island changes countries twice every year.",
+  "words": 91,
+  "duration": 36.09,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 11,
+  "date": "2026-10-23",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 3.993,
+      "text": "This tiny river island changes countries twice every year.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 3.993,
+      "end": 7.625,
+      "text": "It sits in the Bidasoa river right between France and Spain.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:218082"
+    },
+    {
+      "i": 2,
+      "start": 7.625,
+      "end": 10.774,
+      "text": "For the first six months, it is officially part of Spain.",
+      "kind": "image",
+      "overlay": "stat",
+      "media": "wikimedia:31171600"
+    },
+    {
+      "i": 3,
+      "start": 10.774,
+      "end": 14.889,
+      "text": "Then on August first, governance shifts entirely to France.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 4,
+      "start": 14.889,
+      "end": 18.557,
+      "text": "This bizarre arrangement started back in sixteen fifty-nine.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:278353"
+    },
+    {
+      "i": 5,
+      "start": 18.557,
+      "end": 21.882,
+      "text": "Leaders signed a treaty here to end a brutal war.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:370145"
+    },
+    {
+      "i": 6,
+      "start": 21.882,
+      "end": 26.293,
+      "text": "Today, the uninhabited island is roughly two hundred meters long.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:219302"
+    },
+    {
+      "i": 7,
+      "start": 26.293,
+      "end": 30.385,
+      "text": "Visitors are strictly banned to protect the fragile land.",
+      "kind": "video",
+      "overlay": "icons",
+      "media": "pixabay:86173"
+    },
+    {
+      "i": 8,
+      "start": 30.385,
+      "end": 34.099,
+      "text": "Only naval commanders and local mayors ever step ashore.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:239038"
+    },
+    {
+      "i": 9,
+      "start": 34.099,
+      "end": 36.085,
+      "text": "Proving that even borders can",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

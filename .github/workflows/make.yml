@@ -1,0 +1,146 @@
+name: Make Shorts
+
+on:
+  # schedule paused by the owner (2026-10-22): the channel is moving to animated series.
+  # schedule:
+  #   - cron: "0 21 * * *"   # every day 04:00 Thailand time
+  workflow_dispatch:
+    inputs:
+      niche:
+        description: "Niche or idea for today (Thai or English). Empty = channel default"
+        required: false
+        default: ""
+      count:
+        description: "How many clips (1-6)"
+        required: true
+        default: "3"
+      topics:
+        description: "Exact topics, one per line (optional; skips the trend radar)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shorts-factory
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: เตรียมระบบ
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ติดตั้ง Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: ติดตั้งโปรแกรมตัดต่อ
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+          pip install -q piper-tts || echo "backup voice not installed (optional)"
+          ENGINE=$(python -c "import json;print(json.load(open('config/channel.json'))['voice'].get('engine','edge'))")
+          if [ "$ENGINE" = "kokoro" ]; then
+            sudo apt-get install -y -qq espeak-ng
+            pip install -q --extra-index-url https://download.pytorch.org/whl/cpu torch kokoro soundfile || echo "kokoro not installed, Edge voice will be used"
+          fi
+
+      - name: เตรียมโมเดลเสียง Kokoro
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: kokoro-hf-v1
+
+      - name: เตรียมเสียงสำรอง
+        uses: actions/cache@v4
+        with:
+          path: assets/voices
+          key: piper-voice-ryan-high-v1
+      - name: ดาวน์โหลดเสียงสำรอง
+        run: |
+          mkdir -p assets/voices
+          cd assets/voices
+          base=https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/high
+          [ -f en_US-ryan-high.onnx ] || curl -sSfL -o en_US-ryan-high.onnx "$base/en_US-ryan-high.onnx" || true
+          [ -f en_US-ryan-high.onnx.json ] || curl -sSfL -o en_US-ryan-high.onnx.json "$base/en_US-ryan-high.onnx.json" || true
+
+      - name: หาเทรนด์ ค้นข้อมูล เขียนบท พากย์ ตัดต่อ ตรวจงาน
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          IN_NICHE: ${{ inputs.niche }}
+          IN_COUNT: ${{ inputs.count }}
+          IN_TOPICS: ${{ inputs.topics }}
+        run: python -m engine.run auto --niche "$IN_NICHE" --count "$IN_COUNT" --topics "$IN_TOPICS"
+
+      - name: ส่งคลิปเข้าแท็บคลิป
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          files=(final/*.mp4 final/EP*.json final/*_upload.md final/*_cover.jpg)
+          if [ ${#files[@]} -eq 0 ]; then echo "No clips were produced"; exit 0; fi
+          tag="clips-$(date -u +%Y%m%d-%H%M)-${{ github.run_number }}"
+          gh release create "$tag" "${files[@]}" \
+            --title "$(TZ=Asia/Bangkok date '+%d/%m %H:%M') · $(ls final/*.mp4 | wc -l) clip(s)" \
+            --notes-file final/batch_summary.md
+          # keep the newest 30 batches
+          gh release list --limit 200 --json tagName --jq '.[30:][].tagName' | while read t; do
+            gh release delete "$t" --yes --cleanup-tag || true
+          done
+
+      - name: ส่งคลิปเข้า Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m engine.telegram "https://${{ github.repository_owner }}.github.io/-shorts-dashboard-/"
+
+      - name: แจ้งเตือนเข้ามือถือ
+        if: always()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -n "$NTFY_TOPIC" ] || exit 0
+          n=$(ls final/*.mp4 2>/dev/null | wc -l)
+          url="https://${{ github.repository_owner }}.github.io/-shorts-dashboard-/"
+          if [ "$JOB_STATUS" = "success" ] && [ "$n" -gt 0 ]; then
+            ready=$(grep -l '"status": "ready"' final/EP*.json 2>/dev/null | wc -l)
+            msg="คลิปใหม่ $n คลิป: พร้อมลง $ready · ต้องดูก่อน $((n-ready))"; tags="clapper"
+          else
+            msg="ระบบทำคลิปไม่สำเร็จ: $(head -c 300 final/error.txt 2>/dev/null)"; tags="warning"
+          fi
+          curl -s -H "Title: Shorts Factory" -H "Tags: $tags" -H "Click: $url" -d "$msg" "https://ntfy.sh/$NTFY_TOPIC" || true
+
+      - name: บันทึกสิ่งที่ระบบเรียนรู้
+        if: always()
+        run: |
+          git config user.name "shorts-factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p memory/kits && cp final/EP*.json memory/kits/ 2>/dev/null || true
+          for p in memory trends queue episodes; do [ -e "$p" ] && git add "$p"; done
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Batch ${{ github.run_number }}: memory update"
+          for i in 1 2 3; do
+            git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "::warning::could not save memory this time"

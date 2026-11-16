@@ -1,0 +1,255 @@
+{
+  "id": "EP007",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Point Nemo is about 1,670 miles away from the nearest land in any direction.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The International Space Station orbits at roughly 250 miles above Earth.",
+      "value": "250 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "Astronauts on the space station are over 6 times closer to Point Nemo than anyone on dry land.",
+      "value": "6 times",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "Space agencies have deorbited more than 263 spacecraft into the Point Nemo region.",
+      "value": "263 spacecraft",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ],
+  "meta": {
+    "title": "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+    "description": "Point Nemo is so isolated in the South Pacific that people on the International Space Station are closer to it than anyone on Earth.",
+    "hashtags": [
+      "shorts",
+      "space",
+      "ocean",
+      "geography",
+      "science"
+    ],
+    "tags": [
+      "Point Nemo",
+      "space station",
+      "ocean of inaccessibility",
+      "geography",
+      "spacecraft cemetery",
+      "NASA"
+    ],
+    "cover_text": "Astronauts are closer",
+    "title_options": [
+      "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+      "Why Astronauts Are Closer To Point Nemo Than Anyone On Earth",
+      "The Loneliest Place On Earth Is In The Ocean"
+    ],
+    "pinned_comment": "Would you ever want to visit the loneliest spot in the ocean?"
+  },
+  "scenes": [
+    {
+      "text": "This is the most remote oceanic location.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "POINT NEMO",
+        "kicker": "PACIFIC OCEAN",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "It is about 1,670 miles away from the nearest land in any direction.",
+      "visual": {
+        "type": "footage",
+        "query": "open ocean waves aerial view",
+        "alt": [
+          "deep blue sea waves"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "beach",
+          "coastline",
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:184069"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "1,670 miles",
+        "label": "to the nearest land",
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "That extreme isolation creates a very strange space trivia fact.",
+      "visual": {
+        "type": "footage",
+        "query": "planet earth rotating in space",
+        "alt": [
+          "earth from space"
+        ],
+        "must_show": [
+          "Earth from space"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s02.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:1175"
+      }
+    },
+    {
+      "text": "When the International Space Station passes overhead at about 250 miles high",
+      "visual": {
+        "type": "footage",
+        "query": "international space station orbiting earth nasa",
+        "source": "nasa",
+        "alt": [
+          "space station in orbit"
+        ],
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "nasa:jsc2020m001425_ISS_20th_Anniversary_Panel_Expanding_the_Market_in_Low-Earth_Orbit"
+        ],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "nasa:JPL-20231122-MARSODf-0001-Mars Report Odyssey November 2023"
+      }
+    },
+    {
+      "text": "those astronauts are over 6 times closer to Point Nemo than any human on land.",
+      "visual": {
+        "type": "footage",
+        "query": "astronaut looking out window space station nasa",
+        "source": "nasa",
+        "alt": [
+          "earth view from space"
+        ],
+        "must_show": [
+          "earth from orbit"
+        ],
+        "must_not_show": [
+          "indoor studio",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "nasa:ksc_050406_sssr"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "6 times",
+        "label": "closer than people on land",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "Space agencies even use this empty region as a spacecraft cemetery.",
+      "visual": {
+        "type": "footage",
+        "query": "satellite in orbit burning up entering atmosphere",
+        "alt": [
+          "space debris falling"
+        ],
+        "must_show": [
+          "spacecraft"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "source": "nasa",
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:5377"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "263 spacecraft",
+        "label": "deorbited safely",
+        "source": "Wikipedia",
+        "fact": "f4"
+      }
+    },
+    {
+      "text": "More than 200 discarded machines now rest on the dark seafloor below.",
+      "visual": {
+        "type": "footage",
+        "query": "deep dark ocean floor underwater",
+        "alt": [
+          "deep sea bed"
+        ],
+        "must_show": [
+          "ocean floor"
+        ],
+        "must_not_show": [
+          "beach",
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:244754"
+      }
+    },
+    {
+      "text": "It turns out your closest neighbors up there are",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": [
+    "scene 1: wrong_source: \"It is about 1,670 miles away from the nearest land in any direction.\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this fact to the NOAA Ocean Service as per the research notes.",
+    "scene 1: wrong_source: \"scene 1 overlay.value: 1,670 miles\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this figure to the NOAA Ocean Service.",
+    "scene 3: wrong_source: \"When the International Space Station passes overhead at about 250 miles high\" -> The ISS altitude of 250 miles is not in the cited Wikipedia article; attribute this to NASA as per the research notes.",
+    "scene 4: wrong_source: \"those astronauts are over 6 times closer to Point Nemo than any human on land.\" -> The proximity comparison is not in the cited Wikipedia article; attribute this calculation to NASA data.",
+    "scene 4: overclaim: \"scene 4 overlay.value: 6 times\" -> Change to 'Over 6 times' or '6x+' to match the research (Fact 3 and Web Note 4).",
+    "scene 4: wrong_source: \"scene 4 overlay.value: 6 times\" -> Attribute the proximity comparison to NASA rather than the Wikipedia page on poles of inaccessibility.",
+    "scene 5: overclaim: \"scene 5 overlay.value: 263 spacecraft\" -> Change to 'More than 263' or '263+' as the research (Fact 4 and Web Note 6) states this is a minimum count.",
+    "scene 5: wrong_source: \"scene 5 overlay.value: 263 spacecraft\" -> The count of 263 spacecraft is not in the cited Wikipedia article; attribute this to the ESA (European Space Agency)."
+  ]
+}

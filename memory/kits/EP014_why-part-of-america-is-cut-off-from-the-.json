@@ -1,0 +1,124 @@
+{
+  "episode": "EP014_why-part-of-america-is-cut-off-from-the-",
+  "video": "EP014_why-part-of-america-is-cut-off-from-the-.mp4",
+  "cover": "EP014_why-part-of-america-is-cut-off-from-the-_cover.jpg",
+  "topic": "The Northwest Angle of Minnesota",
+  "format": "map_explains",
+  "series": "Hidden Atlas #10",
+  "series_no": 10,
+  "playlist": "Maps That Explain",
+  "titles": [
+    "Why Part of Minnesota Is Trapped in Canada",
+    "The US Territory Cut Off From America",
+    "How a Mapping Error Moved the US Border"
+  ],
+  "description": "The Northwest Angle is the only part of the Lower 48 north of the 49th parallel because of a 1783 mapping error.\n\nHidden Atlas #10\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Northwest_Angle\n- Wikipedia https://en.wikipedia.org/wiki/Danny_Orlis_series\n\nFootage & images:\n- Video by agentluca on Pixabay https://pixabay.com/videos/id-192649/\n- Video by VariousPhotography on Pixabay https://pixabay.com/videos/id-2165/\n- Video by Nassau_Yacht_Haven_Marina on Pixabay https://pixabay.com/videos/id-23011/\n- Video by Shayea_Kim on Pixabay https://pixabay.com/videos/id-211275/\n- Video by stefaniejockschat on Pixabay https://pixabay.com/videos/id-185092/\n- Video by TungArt7 on Pixabay https://pixabay.com/videos/id-207982/\n- Video by Alex_Sochi7777 on Pixabay https://pixabay.com/videos/id-174860/\n- Video by OjasweinGuptaOJG on Pixabay https://pixabay.com/videos/id-14205/\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #minnesota #geography #history #maps",
+  "hashtags": "#shorts #minnesota #geography #history #maps",
+  "tags": [
+    "Northwest Angle",
+    "Minnesota",
+    "Canada border",
+    "US history",
+    "mapping error",
+    "Danny Orlis"
+  ],
+  "pinned_comment": "Would you ever visit the Northwest Angle?",
+  "cover_text": "Trapped in Canada",
+  "social": {
+    "tiktok": "Why Part of Minnesota Is Trapped in Canada  #minnesota #geography #history #maps #fyp",
+    "reels": "Why Part of Minnesota Is Trapped in Canada  #minnesota #geography #history #maps",
+    "facebook": "Why Part of Minnesota Is Trapped in Canada  #minnesota #geography #history #maps"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "ready",
+  "status_th": "พร้อมลง",
+  "reasons_th": [],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 42.24,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "The 1783 Treaty of Paris set the border based on mapping errors.",
+      "value": "1783",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The Northwest Angle has a total population of 149 at the 2020 Census.",
+      "value": "149",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "U.S. Census"
+    },
+    {
+      "claim": "The Northwest Angle is the only place in the contiguous US north of the 49th parallel.",
+      "value": "49th",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The distance from Warroad to the Angle is about 63 miles through Manitoba.",
+      "value": "63 mi",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The Northwest Angle is the setting for the Danny Orlis mystery book series.",
+      "value": "Danny Orlis",
+      "source": "https://en.wikipedia.org/wiki/Danny_Orlis_series",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-23T22:02",
+  "metrics": {
+    "seconds": {
+      "voice": 117,
+      "footage": 229,
+      "draft_qc": 37,
+      "render": 259,
+      "final_review": 20,
+      "qc": 14,
+      "writing": 96
+    },
+    "total_seconds": 910,
+    "api": {
+      "gemini_calls": 15,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 0,
+        "gemini-3.6-flash": 0,
+        "gemini-flash-latest": 0,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 1,
+        "gemini-3.7-flash": 1,
+        "gemini-3-flash-preview": 12,
+        "gemini-flash-lite-latest": 1,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 3,
+      "footage_api_calls": 56,
+      "downloads": 22,
+      "gemini_rate_limited": 0
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

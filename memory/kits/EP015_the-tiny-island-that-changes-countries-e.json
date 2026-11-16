@@ -1,0 +1,119 @@
+{
+  "episode": "EP015_the-tiny-island-that-changes-countries-e",
+  "video": "EP015_the-tiny-island-that-changes-countries-e.mp4",
+  "cover": "EP015_the-tiny-island-that-changes-countries-e_cover.jpg",
+  "topic": "Pheasant Island (Isla de los Faisanes)",
+  "format": "shock_fact",
+  "series": "Hidden Atlas #11",
+  "series_no": 11,
+  "playlist": "Strange But True",
+  "titles": [
+    "The Tiny Island That Changes Countries Every Six Months",
+    "Why This River Island Switches Between Spain and France",
+    "The World's Strangest Shared Island Border"
+  ],
+  "description": "Pheasant Island sits in a river between France and Spain. Under a centuries-old treaty, it switches countries twice a year.\n\nHidden Atlas #11\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Pheasant_Island\n- https://en.wikipedia.org/wiki/Pheasant_Island_(film)\n\nFootage & images:\n- Video by McPix22 on Pixabay https://pixabay.com/videos/id-218082/\n- Irun - Isla de los Faisanes sobre el río Bisasoa 01.jpg by Zarateman (CC0), Wikimedia Commons https://commons.wikimedia.org/wiki/File:Irun_-_Isla_de_los_Faisanes_sobre_el_r%C3%ADo_Bisasoa_01.jpg\n- Video by Positive_Hedgehog on Pixabay https://pixabay.com/videos/id-278353/\n- Video by Jacko-007 on Pixabay https://pixabay.com/videos/id-370145/\n- Video by lkorhonen on Pixabay https://pixabay.com/videos/id-219302/\n- Video by Kililla on Pixabay https://pixabay.com/videos/id-86173/\n- Video by u_xkn8n105so on Pixabay https://pixabay.com/videos/id-239038/\n- Icons: Font Awesome Free (CC BY 4.0) https://fontawesome.com\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #geography #europe #spain #france",
+  "hashtags": "#shorts #geography #europe #spain #france",
+  "tags": [
+    "Pheasant Island",
+    "France Spain border",
+    "geography facts",
+    "condominium",
+    "Bidasoa river"
+  ],
+  "pinned_comment": "Would you want to visit this tiny island?",
+  "cover_text": "Switches countries twice a year!",
+  "social": {
+    "tiktok": "The Tiny Island That Changes Countries Every Six Months  #geography #europe #spain #france #fyp",
+    "reels": "The Tiny Island That Changes Countries Every Six Months  #geography #europe #spain #france",
+    "facebook": "The Tiny Island That Changes Countries Every Six Months  #geography #europe #spain #france"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "needs_review",
+  "status_th": "ต้องดูก่อน",
+  "reasons_th": [
+    "[ภาพ/ตัวหนังสือ] final review (score 6): The image shows Stonehenge, which represents ancient prehistory, completely contradicting the year 1659 and the Treaty of the Pyrenees.",
+    "[ภาพ/ตัวหนังสือ] final review (score 6): The image is nearly identical to frame 6, creating repetitive and redundant visual content.",
+    "[ภาพ/ตัวหนังสือ] final review (score 6): The frame is extremely dark, making the globe graphic barely visible and creating a boring end to the video."
+  ],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [
+      "final review (score 6): The image shows Stonehenge, which represents ancient prehistory, completely contradicting the year 1659 and the Treaty of the Pyrenees.",
+      "final review (score 6): The image is nearly identical to frame 6, creating repetitive and redundant visual content.",
+      "final review (score 6): The frame is extremely dark, making the globe graphic barely visible and creating a boring end to the video."
+    ],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 36.09,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "Pheasant Island is administered by Spain from February 1st to July 31st.",
+      "value": "6 months",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "According to the terms of the Treaty of the Pyrenees in 1659, the island remains a condominium under joint sovereignty.",
+      "value": "1659",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "As of January 2018, the island was approximately 200 metres long and 40 metres wide.",
+      "value": "200 meters",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-23T22:10",
+  "metrics": {
+    "seconds": {
+      "voice": 36,
+      "footage": 93,
+      "draft_qc": 26,
+      "render": 218,
+      "final_review": 16,
+      "qc": 20,
+      "writing": 76
+    },
+    "total_seconds": 485,
+    "api": {
+      "gemini_calls": 7,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 0,
+        "gemini-3.6-flash": 0,
+        "gemini-flash-latest": 0,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 0,
+        "gemini-3.7-flash": 0,
+        "gemini-3-flash-preview": 0,
+        "gemini-flash-lite-latest": 7,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 0,
+      "footage_api_calls": 26,
+      "downloads": 10,
+      "gemini_rate_limited": 0
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

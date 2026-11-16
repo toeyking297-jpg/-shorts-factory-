@@ -1,0 +1,309 @@
+{
+  "id": "EP014",
+  "topic": "The Northwest Angle of Minnesota",
+  "format": "map_explains",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The 1783 Treaty of Paris set the border based on mapping errors.",
+      "value": "1783",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The Northwest Angle has a total population of 149 at the 2020 Census.",
+      "value": "149",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "U.S. Census"
+    },
+    {
+      "id": "f3",
+      "claim": "The Northwest Angle is the only place in the contiguous US north of the 49th parallel.",
+      "value": "49th",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "The distance from Warroad to the Angle is about 63 miles through Manitoba.",
+      "value": "63 mi",
+      "source": "https://en.wikipedia.org/wiki/Northwest_Angle",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f5",
+      "claim": "The Northwest Angle is the setting for the Danny Orlis mystery book series.",
+      "value": "Danny Orlis",
+      "source": "https://en.wikipedia.org/wiki/Danny_Orlis_series",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Northwest_Angle",
+    "https://en.wikipedia.org/wiki/Danny_Orlis_series"
+  ],
+  "meta": {
+    "title": "Why Part of Minnesota Is Trapped in Canada",
+    "description": "The Northwest Angle is the only part of the Lower 48 north of the 49th parallel because of a 1783 mapping error.",
+    "hashtags": [
+      "shorts",
+      "minnesota",
+      "geography",
+      "history",
+      "maps"
+    ],
+    "tags": [
+      "Northwest Angle",
+      "Minnesota",
+      "Canada border",
+      "US history",
+      "mapping error",
+      "Danny Orlis"
+    ],
+    "cover_text": "Trapped in Canada",
+    "title_options": [
+      "Why Part of Minnesota Is Trapped in Canada",
+      "The US Territory Cut Off From America",
+      "How a Mapping Error Moved the US Border"
+    ],
+    "pinned_comment": "Would you ever visit the Northwest Angle?"
+  },
+  "scenes": [
+    {
+      "text": "This US territory is trapped inside Canada.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United States"
+        ],
+        "context": [
+          "Canada"
+        ],
+        "pins": [
+          {
+            "lon": -95.15,
+            "lat": 49.39
+          }
+        ],
+        "headline": "NORTHWEST ANGLE",
+        "kicker": "MINNESOTA",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "This is the Northwest Angle of Minnesota.",
+      "visual": {
+        "type": "footage",
+        "query": "aerial view pine forest lake minnesota",
+        "alt": [
+          "forest and lake from above"
+        ],
+        "must_show": [
+          "forest",
+          "water"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:192649"
+      }
+    },
+    {
+      "text": "It is the only part of the Lower 48 north of the 49th parallel.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Minnesota"
+        ],
+        "context": [
+          "Canada"
+        ],
+        "pins": [
+          {
+            "lon": -95.15,
+            "lat": 49.0
+          }
+        ],
+        "headline": "NORTHERN BORDER",
+        "kicker": "49TH PARALLEL",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "To drive here, Americans must travel 63 miles through Manitoba.",
+      "visual": {
+        "type": "footage",
+        "query": "car driving on remote gravel road",
+        "alt": [
+          "empty dirt road"
+        ],
+        "must_show": [
+          "road"
+        ],
+        "must_not_show": [
+          "beach",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:2165"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "63 mi",
+        "label": "DRIVE THROUGH CANADA",
+        "source": "Wikipedia",
+        "fact": "f4",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Or you can take a boat across the massive Lake of the Woods.",
+      "visual": {
+        "type": "footage",
+        "query": "speed boat on open lake water",
+        "alt": [
+          "boat on lake"
+        ],
+        "must_show": [
+          "water",
+          "boat"
+        ],
+        "must_not_show": [
+          "coastline",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:23011"
+      }
+    },
+    {
+      "text": "Only 149 people live in this isolated wilderness year round.",
+      "visual": {
+        "type": "footage",
+        "query": "small isolated cabin in forest",
+        "alt": [
+          "isolated cabin"
+        ],
+        "must_show": [
+          "cabin"
+        ],
+        "must_not_show": [
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:211275"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "149",
+        "label": "LOCAL RESIDENTS",
+        "source": "U.S. Census",
+        "fact": "f2",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "This isolation made it the perfect setting for the Danny Orlis mystery books.",
+      "visual": {
+        "type": "footage",
+        "query": "stack of old adventure novels",
+        "alt": [
+          "old books"
+        ],
+        "must_show": [
+          "books"
+        ],
+        "must_not_show": [
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:185092"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "MYSTERY BOOK SETTING",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "How did this bizarre border glitch even happen?",
+      "visual": {
+        "type": "footage",
+        "query": "magnifying glass over antique paper map",
+        "alt": [
+          "examining old map"
+        ],
+        "must_show": [
+          "map"
+        ],
+        "must_not_show": [
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s07.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:207982"
+      }
+    },
+    {
+      "text": "Negotiators in 1783 relied on an incredibly inaccurate map.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United States"
+        ],
+        "pins": [
+          {
+            "lon": -95.15,
+            "lat": 49.39
+          }
+        ],
+        "headline": "MAPPING ERROR",
+        "kicker": "1783 TREATY",
+        "zoom": "out"
+      }
+    },
+    {
+      "text": "They misplaced the source of the Mississippi River by miles.",
+      "visual": {
+        "type": "footage",
+        "query": "winding river through northern forest aerial",
+        "alt": [
+          "river through woods"
+        ],
+        "must_show": [
+          "river"
+        ],
+        "must_not_show": [
+          "city",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s09.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:14205"
+      }
+    },
+    {
+      "text": "The error was never fixed, leaving",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": []
+}

@@ -1,0 +1,118 @@
+{
+  "episode": "EP006_where-astronauts-are-closer-to-you-than-",
+  "video": "EP006_where-astronauts-are-closer-to-you-than-.mp4",
+  "cover": "EP006_where-astronauts-are-closer-to-you-than-_cover.jpg",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "versus",
+  "series": "Hidden Atlas #4",
+  "series_no": 4,
+  "playlist": "Versus",
+  "titles": [
+    "Where Astronauts Are Closer to You Than Anyone on Earth",
+    "Point Nemo: The Ocean Spot Closest to Space",
+    "Why Astronauts Are Your Closest Neighbors at Point Nemo"
+  ],
+  "description": "At Point Nemo in the South Pacific, the nearest human isn't on land. When the International Space Station passes overhead, astronauts are just 250 miles away.\n\nHidden Atlas #4\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Pole_of_inaccessibility\n- https://en.wikipedia.org/wiki/Finding_Nemo\n\nFootage & images:\n- Video by Cristian-Manieri on Pixabay https://pixabay.com/videos/id-236893/\n- Video by Relaxing_Guru on Pixabay https://pixabay.com/videos/id-37712/\n- Video by TonyDias7 on Pixabay https://pixabay.com/videos/id-206272/\n- Video by Macb3t on Pixabay https://pixabay.com/videos/id-16160/\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #geography #pointnemo #space #ocean",
+  "hashtags": "#shorts #geography #pointnemo #space #ocean",
+  "tags": [
+    "Point Nemo",
+    "Pole of Inaccessibility",
+    "International Space Station",
+    "geography facts",
+    "ocean",
+    "loneliest place on earth"
+  ],
+  "pinned_comment": "Would you spend a week at Point Nemo if you had satellite internet?",
+  "cover_text": "Space closer than land?",
+  "social": {
+    "tiktok": "Where Astronauts Are Closer to You Than Anyone on Earth  #geography #pointnemo #space #ocean #fyp",
+    "reels": "Where Astronauts Are Closer to You Than Anyone on Earth  #geography #pointnemo #space #ocean",
+    "facebook": "Where Astronauts Are Closer to You Than Anyone on Earth  #geography #pointnemo #space #ocean"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "ready",
+  "status_th": "พร้อมลง",
+  "reasons_th": [],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [
+      "scene 6: no fitting picture was found (shows the map instead)",
+      "scene 7: no fitting picture was found (shows the map instead)",
+      "scene 8: no fitting picture was found (shows the map instead)"
+    ],
+    "rights": [],
+    "editorial": [
+      "scene 8 is 6.6s long; the picture should change every <=5s"
+    ]
+  },
+  "duration": 50.57,
+  "loop": false,
+  "facts": [
+    {
+      "claim": "Point Nemo is located roughly 1,670 miles away from the nearest land.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The Northern pole of inaccessibility is 626 miles from the three closest landmasses.",
+      "value": "626 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The International Space Station orbits at an altitude of about 250 miles.",
+      "value": "250 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-22T04:06",
+  "metrics": {
+    "seconds": {
+      "voice": 88,
+      "footage": 115,
+      "draft_qc": 41,
+      "render": 472,
+      "final_review": 67,
+      "qc": 21,
+      "writing": 483
+    },
+    "total_seconds": 1343,
+    "api": {
+      "gemini_calls": 51,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 7,
+        "gemini-3.6-flash": 7,
+        "gemini-flash-latest": 7,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 7,
+        "gemini-3.7-flash": 7,
+        "gemini-3-flash-preview": 8,
+        "gemini-flash-lite-latest": 8,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 43,
+      "footage_api_calls": 238,
+      "downloads": 7,
+      "gemini_rate_limited": 41
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

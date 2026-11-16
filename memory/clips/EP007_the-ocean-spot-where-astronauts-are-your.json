@@ -1,0 +1,94 @@
+{
+  "episode": "EP007_the-ocean-spot-where-astronauts-are-your",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "shock_fact",
+  "title": "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+  "titles": [
+    "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+    "Why Astronauts Are Closer To Point Nemo Than Anyone On Earth",
+    "The Loneliest Place On Earth Is In The Ocean"
+  ],
+  "hook": "This is the most remote oceanic location.",
+  "words": 89,
+  "duration": 36.07,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 5,
+  "date": "2026-10-22",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.708,
+      "text": "This is the most remote oceanic location.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 2.708,
+      "end": 8.368,
+      "text": "It is about 1,670 miles away from the nearest land in any direction.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:184069"
+    },
+    {
+      "i": 2,
+      "start": 8.368,
+      "end": 13.297,
+      "text": "That extreme isolation creates a very strange space trivia fact.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:1175"
+    },
+    {
+      "i": 3,
+      "start": 13.297,
+      "end": 18.356,
+      "text": "When the International Space Station passes overhead at about 250 miles high",
+      "kind": "video",
+      "overlay": null,
+      "media": "nasa:JPL-20231122-MARSODf-0001-Mars Report Odyssey November 2023"
+    },
+    {
+      "i": 4,
+      "start": 18.356,
+      "end": 23.793,
+      "text": "those astronauts are over 6 times closer to Point Nemo than any human on land.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "nasa:ksc_050406_sssr"
+    },
+    {
+      "i": 5,
+      "start": 23.793,
+      "end": 28.757,
+      "text": "Space agencies even use this empty region as a spacecraft cemetery.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:5377"
+    },
+    {
+      "i": 6,
+      "start": 28.757,
+      "end": 33.686,
+      "text": "More than 200 discarded machines now rest on the dark seafloor below.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:244754"
+    },
+    {
+      "i": 7,
+      "start": 33.686,
+      "end": 36.05,
+      "text": "It turns out your closest neighbors up there are",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

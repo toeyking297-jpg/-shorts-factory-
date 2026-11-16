@@ -1,0 +1,103 @@
+{
+  "episode": "EP010_this-tiny-sea-creature-punches-faster-th",
+  "topic": "The Mantis Shrimp",
+  "format": "shock_fact",
+  "title": "This Tiny Sea Creature Punches Faster Than a Bullet",
+  "titles": [
+    "This Tiny Sea Creature Punches Faster Than a Bullet",
+    "Why the Mantis Shrimp Has the Deadliest Punch in the Ocean",
+    "The Animal With Eyes That Can See Impossible Colors"
+  ],
+  "hook": "This shrimp punches faster than a bullet.",
+  "words": 81,
+  "duration": 30.47,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 7,
+  "date": "2026-10-22",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.436,
+      "text": "This shrimp punches faster than a bullet.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 2.436,
+      "end": 5.656,
+      "text": "Its club-like claw accelerates at an incredible rate.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 2,
+      "start": 5.656,
+      "end": 8.993,
+      "text": "It hits with so much force that it boils surrounding water.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:49883"
+    },
+    {
+      "i": 3,
+      "start": 8.993,
+      "end": 13.156,
+      "text": "The collapsing bubbles create a second shockwave that stuns prey.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:360621"
+    },
+    {
+      "i": 4,
+      "start": 13.156,
+      "end": 16.635,
+      "text": "They can inflict painful wounds if handled incautiously.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:123272"
+    },
+    {
+      "i": 5,
+      "start": 16.635,
+      "end": 19.677,
+      "text": "However, their vision is even more extreme.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 6,
+      "start": 19.677,
+      "end": 24.394,
+      "text": "Humans have four visual pigments compared to the many more found in mantis shrimp.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:345717"
+    },
+    {
+      "i": 7,
+      "start": 24.394,
+      "end": 26.953,
+      "text": "These mantis shrimp have up to sixteen.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 26.953,
+      "end": 30.436,
+      "text": "They see deep ultraviolet and polarized light we cannot",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

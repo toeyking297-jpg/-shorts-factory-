@@ -1,0 +1,299 @@
+{
+  "id": "EP000",
+  "topic": "Why Singapore is so rich",
+  "format": "map_explains",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Singapore's GDP per person was about $90,700 in 2024.",
+      "value": "$90,700",
+      "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SG-US",
+      "source_name": "World Bank"
+    },
+    {
+      "id": "f2",
+      "claim": "US GDP per person was about $85,800 in 2024.",
+      "value": "$85,800",
+      "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SG-US",
+      "source_name": "World Bank"
+    },
+    {
+      "id": "f3",
+      "claim": "Singapore separated from Malaysia and became independent in 1965.",
+      "value": "1965",
+      "source": "https://en.wikipedia.org/wiki/History_of_Singapore",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "The Strait of Malacca is one of the busiest shipping lanes, linking the Indian Ocean and the Pacific.",
+      "value": "",
+      "source": "https://en.wikipedia.org/wiki/Strait_of_Malacca",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SG-US",
+    "https://en.wikipedia.org/wiki/History_of_Singapore",
+    "https://en.wikipedia.org/wiki/Strait_of_Malacca"
+  ],
+  "meta": {
+    "title": "How a Tiny Island With No Resources Got Richer Than the US",
+    "description": "Singapore has no oil, almost no farmland and imports much of its water. Its location on the Strait of Malacca changed everything.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "singapore",
+      "economy",
+      "maps"
+    ],
+    "tags": [
+      "Singapore",
+      "Strait of Malacca",
+      "geography",
+      "economy",
+      "why is singapore rich",
+      "maps"
+    ],
+    "cover_text": "No oil. Still rich?",
+    "title_options": [
+      "How a Tiny Island With No Resources Got Richer Than the US",
+      "Singapore Has No Oil. So Why Is It So Rich?",
+      "The Shipping Lane That Made Singapore Rich"
+    ],
+    "pinned_comment": "Which country do you think is the next Singapore?"
+  },
+  "scenes": [
+    {
+      "text": "No oil. No farms. Not even enough water.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Singapore"
+        ],
+        "pins": [
+          {
+            "place": "Singapore"
+          }
+        ],
+        "headline": "NO OIL. NO WATER.",
+        "kicker": "A TINY ISLAND",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "Yet Singapore is one of the richest countries on Earth.",
+      "visual": {
+        "type": "footage",
+        "query": "singapore skyline aerial",
+        "alt": [
+          "modern city skyline"
+        ],
+        "must_show": [
+          "modern skyline"
+        ],
+        "must_not_show": [
+          "people close-up",
+          "text"
+        ]
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "$90,700",
+        "label": "GDP per person",
+        "source": "World Bank",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "In 1965, it split from Malaysia and was suddenly on its own.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Singapore"
+        ],
+        "context": [
+          "Malaysia"
+        ],
+        "pins": [
+          {
+            "place": "Singapore"
+          }
+        ],
+        "headline": "1965",
+        "kicker": "ON ITS OWN",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "Its secret is location.",
+      "visual": {
+        "type": "footage",
+        "query": "aerial view container port ships",
+        "alt": [
+          "container terminal cranes"
+        ],
+        "must_show": [
+          "container ships or port cranes"
+        ],
+        "must_not_show": [
+          "people"
+        ]
+      }
+    },
+    {
+      "text": "A huge share of ships between the Middle East and East Asia sail right past it.",
+      "visual": {
+        "type": "map",
+        "route": [
+          [
+            56.3,
+            26.5
+          ],
+          [
+            72.8,
+            19.0
+          ],
+          [
+            80.5,
+            5.9
+          ],
+          [
+            95.3,
+            5.8
+          ],
+          [
+            103.8,
+            1.2
+          ],
+          [
+            110.0,
+            5.0
+          ],
+          [
+            121.5,
+            31.2
+          ]
+        ],
+        "route_from": "Middle East",
+        "route_to": "China",
+        "vehicle": "ship",
+        "pins": [
+          {
+            "label": "Strait of Malacca",
+            "lon": 100.5,
+            "lat": 3.0
+          }
+        ],
+        "headline": "THE WORLD'S SHORTCUT",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "So it became the world's pit stop.",
+      "visual": {
+        "type": "footage",
+        "query": "container ship docked port cranes",
+        "alt": [
+          "cargo ship harbor"
+        ],
+        "must_show": [
+          "ship at a port"
+        ]
+      },
+      "overlay": {
+        "type": "icons",
+        "title": "THE WORLD'S PIT STOP",
+        "items": [
+          {
+            "icon": "gas-pump",
+            "label": "REFUEL"
+          },
+          {
+            "icon": "wrench",
+            "label": "REPAIR"
+          },
+          {
+            "icon": "box",
+            "label": "RELOAD"
+          }
+        ],
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Then it added banks, low taxes, and famously strict rules.",
+      "visual": {
+        "type": "footage",
+        "query": "singapore financial district skyline",
+        "alt": [
+          "modern city skyscrapers"
+        ]
+      },
+      "overlay": {
+        "type": "icons",
+        "title": "THE SMART MOVE",
+        "items": [
+          {
+            "icon": "building-columns",
+            "label": "BANKS"
+          },
+          {
+            "icon": "arrow-trend-down",
+            "label": "LOW TAXES"
+          },
+          {
+            "icon": "scale-balanced",
+            "label": "STRICT RULES"
+          }
+        ],
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Money from all over the world followed.",
+      "visual": {
+        "type": "footage",
+        "query": "city skyline at night lights",
+        "alt": [
+          "night city skyline"
+        ]
+      }
+    },
+    {
+      "text": "Today, it earns more per person than the United States.",
+      "visual": {
+        "type": "footage",
+        "query": "marina bay singapore night",
+        "alt": [
+          "city skyline at night"
+        ]
+      },
+      "overlay": {
+        "type": "compare",
+        "title": "GDP per person",
+        "items": [
+          {
+            "label": "Singapore",
+            "value": 90700,
+            "display": "$90,700"
+          },
+          {
+            "label": "USA",
+            "value": 85800,
+            "display": "$85,800"
+          }
+        ],
+        "source": "World Bank",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "All from a tiny island that had",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ]
+}

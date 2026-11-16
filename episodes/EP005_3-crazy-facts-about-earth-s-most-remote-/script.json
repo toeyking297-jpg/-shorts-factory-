@@ -1,0 +1,278 @@
+{
+  "id": "EP005",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "three_things",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Point Nemo is about 1,670 miles from the nearest land mass.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "Finding Nemo grossed $871 million worldwide.",
+      "value": "$871 million",
+      "source": "https://en.wikipedia.org/wiki/Finding_Nemo",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "The International Space Station passes overhead at an altitude of about 258 miles.",
+      "value": "258 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "Over 263 spacecraft have been deorbited in the oceanic pole of inaccessibility area.",
+      "value": "263",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ],
+  "meta": {
+    "title": "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+    "description": "Point Nemo is so far out in the Pacific Ocean that astronauts overhead are closer to it than anyone standing on land.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "pointnemo",
+      "space",
+      "ocean"
+    ],
+    "tags": [
+      "Point Nemo",
+      "pole of inaccessibility",
+      "space graveyard",
+      "geography facts",
+      "ISS",
+      "Pacific Ocean"
+    ],
+    "cover_text": "Loneliest spot on Earth?",
+    "title_options": [
+      "3 Crazy Facts About Earth's Most Remote Ocean Spot",
+      "Why Astronauts Are Closer to Point Nemo Than You",
+      "The Ocean Graveyard Where Spacecraft Go to Die"
+    ],
+    "pinned_comment": "Would you ever sail to the loneliest spot on Earth?"
+  },
+  "scenes": [
+    {
+      "text": "this is the loneliest spot on Earth.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "LONELIEST SPOT ON EARTH",
+        "kicker": "POINT NEMO",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "Deep in the South Pacific lies Point Nemo, the ocean's pole of inaccessibility.",
+      "visual": {
+        "type": "footage",
+        "query": "deep blue ocean water horizon aerial",
+        "alt": [
+          "open Pacific ocean blue water"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "land",
+          "boats",
+          "people",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:33194"
+      }
+    },
+    {
+      "text": "First, it sits about 1,670 miles from the nearest piece of land.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "distance": {
+          "from": [
+            -123.39,
+            -48.88
+          ],
+          "to": [
+            -124.79,
+            -24.68
+          ],
+          "label": "1,670 MI",
+          "fact": "f1"
+        },
+        "headline": "1,670 MILES TO LAND",
+        "kicker": "THING 1",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "While Finding Nemo made 871 million dollars, real Nemo means no one.",
+      "visual": {
+        "type": "footage",
+        "query": "underwater ocean light rays deep sea",
+        "alt": [
+          "deep ocean water rays"
+        ],
+        "must_show": [
+          "underwater ocean"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:336799"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "$871 million",
+        "label": "Finding Nemo box office",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "Second, when the Space Station passes directly overhead, astronauts are only 258 miles up.",
+      "visual": {
+        "type": "footage",
+        "query": "international space station orbiting earth",
+        "source": "nasa",
+        "alt": [
+          "space station over earth"
+        ],
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "nasa:GSFC_20170802_m12602_Dellingr_deployment"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "258 miles",
+        "label": "ISS orbital height",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "They are six times closer to Point Nemo than any human on land.",
+      "visual": {
+        "type": "footage",
+        "query": "astronaut looking at earth from space window",
+        "source": "nasa",
+        "alt": [
+          "astronaut looking down at earth"
+        ],
+        "must_show": [
+          "astronaut or earth from space"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "6X CLOSER THAN LAND",
+        "kicker": "THING 2",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Third, space agencies use this watery desert as a giant spacecraft graveyard.",
+      "visual": {
+        "type": "footage",
+        "query": "spacecraft reentering atmosphere glowing trail animation",
+        "alt": [
+          "space debris re-entry"
+        ],
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:371290"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "263",
+        "label": "sunken spacecraft",
+        "source": "Wikipedia",
+        "fact": "f4"
+      }
+    },
+    {
+      "text": "Over 260 spacecraft have been crashed here, with the Space Station joining them.",
+      "visual": {
+        "type": "footage",
+        "query": "space station orbit view ocean below",
+        "source": "nasa",
+        "alt": [
+          "space station over ocean"
+        ],
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s07.jpg",
+        "_kind": "image",
+        "_media_id": "nasa:iss073e0775543"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SPACE GRAVEYARD",
+        "kicker": "THING 3",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "And that's why in the middle of the Pacific,",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "id": "EP009",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "three_things",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Point Nemo is roughly 1,670 miles away from the nearest landmasses.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The International Space Station is planned to crash into the ocean near Point Nemo in 2031.",
+      "value": "2031",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Finding_Nemo"
+  ],
+  "meta": {
+    "title": "Point Nemo: Why Astronauts Are Your Closest Neighbors",
+    "description": "At Point Nemo in the South Pacific, passing astronauts in orbit are closer to you than any human on land.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "pointnemo",
+      "space",
+      "ocean"
+    ],
+    "tags": [
+      "Point Nemo",
+      "geography",
+      "ISS",
+      "International Space Station",
+      "oceanic pole of inaccessibility",
+      "spacecraft cemetery"
+    ],
+    "cover_text": "Closest Humans in Space",
+    "title_options": [
+      "Point Nemo: Why Astronauts Are Your Closest Neighbors",
+      "The Earth Spot Where Astronauts Are Closer Than Land",
+      "Point Nemo: The Spacecraft Graveyard in the Ocean"
+    ],
+    "pinned_comment": "Would you ever travel to the most isolated spot on Earth?"
+  },
+  "scenes": [
+    {
+      "text": "Where are astronauts closer than land?",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "POINT NEMO",
+        "kicker": "OCEANIC POLE",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "Deep in the South Pacific ocean lies Point Nemo.",
+      "visual": {
+        "type": "footage",
+        "query": "deep ocean open water aerial",
+        "alt": [
+          "vast empty blue ocean"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "land",
+          "coastline",
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "FACT 1. It is the place in the ocean farthest from land.",
+      "visual": {
+        "type": "footage",
+        "query": "endless ocean horizon calm water",
+        "alt": [
+          "empty ocean horizon"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "land",
+          "boats",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "FARTHEST FROM LAND",
+        "kicker": "FACT 1",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "You are about 1,670 miles from the nearest coastline.",
+      "visual": {
+        "type": "map",
+        "distance": {
+          "from": [
+            -123.39,
+            -48.88
+          ],
+          "to": [
+            -124.79,
+            -24.68
+          ],
+          "label": "1,670 MILES",
+          "fact": "f1"
+        },
+        "headline": "DISTANCE TO LAND",
+        "zoom": "out",
+        "pins": []
+      }
+    },
+    {
+      "text": "No regular marine or air traffic routes pass nearby.",
+      "visual": {
+        "type": "footage",
+        "query": "vast empty water surface",
+        "alt": [
+          "isolated ocean expanse"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "city",
+          "land",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "FACT 2. Your closest neighbors are actually in space.",
+      "visual": {
+        "type": "footage",
+        "query": "international space station orbit Earth view",
+        "alt": [
+          "ISS orbiting above Earth"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "space station"
+        ],
+        "must_not_show": [
+          "ground people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "NEIGHBORS IN SPACE",
+        "kicker": "FACT 2",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "When the International Space Station passes overhead, it is remarkably close.",
+      "visual": {
+        "type": "footage",
+        "query": "view of Earth curve from space station",
+        "alt": [
+          "earth curve seen from orbit"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "earth from space"
+        ],
+        "must_not_show": [
+          "land close-up",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "Astronauts can sometimes be the closest human beings when the ISS passes overhead.",
+      "visual": {
+        "type": "footage",
+        "query": "astronaut working inside space station module",
+        "alt": [
+          "astronaut in space module"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "astronaut"
+        ],
+        "must_not_show": [
+          "ground",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "FACT 3. It serves as a graveyard for spacecraft.",
+      "visual": {
+        "type": "footage",
+        "query": "satellite model floating in dark space",
+        "alt": [
+          "decommissioned satellite"
+        ],
+        "source": "nasa",
+        "must_show": [
+          "spacecraft"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SPACECRAFT CEMETERY",
+        "kicker": "FACT 3",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Hundreds of retired satellites and stations are crashed into these waters.",
+      "visual": {
+        "type": "footage",
+        "query": "large ocean water splash aerial view",
+        "alt": [
+          "water splash in open ocean"
+        ],
+        "must_show": [
+          "open ocean"
+        ],
+        "must_not_show": [
+          "city",
+          "land",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "Even the International Space Station is scheduled to crash here in 2031.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.88
+          }
+        ],
+        "headline": "CRASH SITE 2031",
+        "kicker": "ISS FINAL RESTING PLACE",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "This safely keeps falling space debris far away from populated cities.",
+      "visual": {
+        "type": "footage",
+        "query": "peaceful modern city skyline at sunset",
+        "alt": [
+          "city skyline view"
+        ],
+        "must_show": [
+          "city skyline"
+        ],
+        "must_not_show": [
+          "debris",
+          "fire",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      }
+    },
+    {
+      "text": "Many people wonder,",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": [
+    "scene 5: overclaim: \"Your closest neighbors are actually in space.\" -> State that astronauts are only the closest humans sometimes, specifically when the ISS passes overhead."
+  ]
+}

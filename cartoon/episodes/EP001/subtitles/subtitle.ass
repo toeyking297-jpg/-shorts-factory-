@@ -1,0 +1,29 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Kanit SemiBold,70,&H00FFFFFF,&H000000FF,&H00201418,&H64000000,0,0,0,0,100,100,0,0,1,7,2,2,120,120,400,222
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.12,0:00:01.84,Sub,D01,0,0,0,,หลบหน่อยหนู {\c&H0030D7FF&}ป้ามาก่อน{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.87,0:00:05.72,Sub,D02,0,0,0,,ป้าครับ ผมยืนต่อคิวตรงนี้\Nตั้งแต่ร้าน{\c&H0030D7FF&}ยังไม่เปิด{\c&H00FFFFFF&}เลยครับ
+Dialogue: 0,0:00:05.75,0:00:08.49,Sub,D03,0,0,0,,ป้าก็มาก่อนหนูนั่นแหละ\Nแค่ไป{\c&H0030D7FF&}เข้าห้องน้ำ{\c&H00FFFFFF&}มา
+Dialogue: 0,0:00:08.52,0:00:11.10,Sub,D04,0,0,0,,ร้านเพิ่งเปิดได้\N{\c&H0030D7FF&}สามนาที{\c&H00FFFFFF&}เองนะครับ
+Dialogue: 0,0:00:11.15,0:00:12.59,Sub,D05,0,0,0,,ป้าเข้าห้องน้ำ{\c&H0030D7FF&}เร็ว{\c&H00FFFFFF&}
+Dialogue: 0,0:00:13.39,0:00:15.69,Sub,D06,0,0,0,,บัตรคิว{\c&H0030D7FF&}สี่สิบห้า{\c&H00FFFFFF&}\Nมารับของได้เลยค่ะ
+Dialogue: 0,0:00:15.99,0:00:17.62,Sub,D07,0,0,0,,สี่สิบห้า {\c&H0030D7FF&}ของป้า{\c&H00FFFFFF&}เอง!
+Dialogue: 0,0:00:17.65,0:00:18.93,Sub,D08,0,0,0,,ป้าครับ บัตรนั้นมัน…
+Dialogue: 0,0:00:18.96,0:00:21.04,Sub,D09,0,0,0,,ไม่ต้องพูดเยอะ ป้ารีบ\N{\c&H0030D7FF&}ป้ามาก่อน{\c&H00FFFFFF&}
+Dialogue: 0,0:00:21.07,0:00:23.26,Sub,D16,0,0,0,,ของป้า{\c&H0030D7FF&}ห่อเดียว{\c&H00FFFFFF&} เร็วๆ เลยหนู
+Dialogue: 0,0:00:23.31,0:00:26.03,Sub,D10,0,0,0,,คิวสี่สิบห้านะคะ\Nข้าวมันไก่ {\c&H0030D7FF&}ห้าสิบห่อ{\c&H00FFFFFF&}ค่ะ
+Dialogue: 0,0:00:26.18,0:00:28.10,Sub,D11,0,0,0,,ทั้งหมด {\c&H0030D7FF&}สองพันห้าร้อย{\c&H00FFFFFF&}บาทค่ะ
+Dialogue: 0,0:00:28.90,0:00:30.40,Sub,D12,0,0,0,,ห้า…สิบห่อ เลยเหรอ?
+Dialogue: 0,0:00:30.50,0:00:32.17,Sub,D13,0,0,0,,ของ{\c&H0030D7FF&}ออฟฟิศ{\c&H00FFFFFF&}ผมเองครับ
+Dialogue: 0,0:00:32.37,0:00:33.74,Sub,D14,0,0,0,,หนู… ป้า{\c&H0030D7FF&}คืนให้{\c&H00FFFFFF&}
+Dialogue: 0,0:00:33.89,0:00:36.19,Sub,D15,0,0,0,,ไม่เป็นไรครับ เชิญเลย\N{\c&H0030D7FF&}ป้ามาก่อน{\c&H00FFFFFF&}

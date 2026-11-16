@@ -1,0 +1,103 @@
+{
+  "episode": "EP011_how-a-premier-league-legend-transformed-",
+  "topic": "Cesc Fàbregas and Como 1907",
+  "format": "shock_fact",
+  "title": "How a Premier League Legend Transformed Como Into a European Giant",
+  "titles": [
+    "How a Premier League Legend Transformed Como Into a European Giant",
+    "How Cesc Fàbregas Transformed Como 1907",
+    "From Premier League Star to Serie A Manager"
+  ],
+  "hook": "How a Premier League legend conquered Italy.",
+  "words": 95,
+  "duration": 35.86,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 8,
+  "date": "2026-10-22",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.519,
+      "text": "How a Premier League legend conquered Italy.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 2.519,
+      "end": 7.814,
+      "text": "Cesc Fàbregas carved open defenses for Arsenal and Barcelona for years.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:10827"
+    },
+    {
+      "i": 2,
+      "start": 7.814,
+      "end": 12.543,
+      "text": "Then in 2022, he shocked the football world by joining Italian club Como.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 12.543,
+      "end": 15.326,
+      "text": "He started as a player and bought a stake in the club.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 4,
+      "start": 15.326,
+      "end": 19.052,
+      "text": "Soon, he hung up his boots and took charge from the touchline.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 5,
+      "start": 19.052,
+      "end": 24.418,
+      "text": "His legendary vision translated instantly into brilliant tactics on the pitch.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 6,
+      "start": 24.418,
+      "end": 30.196,
+      "text": "In the 2025-26 season, Como stunned Italy by finishing fourth in Serie A.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 7,
+      "start": 30.196,
+      "end": 33.91,
+      "text": "Securing a historic spot in the UEFA Champions League tournament.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 33.91,
+      "end": 35.861,
+      "text": "Proving that a true genius can",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

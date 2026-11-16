@@ -1,0 +1,112 @@
+{
+  "episode": "EP006_where-astronauts-are-closer-to-you-than-",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "versus",
+  "title": "Where Astronauts Are Closer to You Than Anyone on Earth",
+  "titles": [
+    "Where Astronauts Are Closer to You Than Anyone on Earth",
+    "Point Nemo: The Ocean Spot Closest to Space",
+    "Why Astronauts Are Your Closest Neighbors at Point Nemo"
+  ],
+  "hook": "Where are astronauts closer than anyone on land?",
+  "words": 109,
+  "duration": 50.57,
+  "loop": false,
+  "status": "ready",
+  "series_no": 4,
+  "date": "2026-10-22",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 3.01,
+      "text": "Where are astronauts closer than anyone on land?",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 3.01,
+      "end": 8.033,
+      "text": "The Arctic pole of inaccessibility sits frozen on ocean pack ice.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:236893"
+    },
+    {
+      "i": 2,
+      "start": 8.033,
+      "end": 13.293,
+      "text": "That frozen northern location sits about 626 miles from any landmass.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 13.293,
+      "end": 18.139,
+      "text": "However, the South Pacific holds an even more remote oceanic location.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:37712"
+    },
+    {
+      "i": 4,
+      "start": 18.139,
+      "end": 23.929,
+      "text": "Point Nemo sits roughly 1,670 miles away from the nearest island.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 5,
+      "start": 23.929,
+      "end": 29.212,
+      "text": "If you float at this exact coordinate, human civilization is immensely far.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:206272"
+    },
+    {
+      "i": 6,
+      "start": 29.212,
+      "end": 33.835,
+      "text": "Yet when the space station passes directly overhead, that changes completely.",
+      "kind": "none",
+      "overlay": "label",
+      "media": null
+    },
+    {
+      "i": 7,
+      "start": 33.835,
+      "end": 38.293,
+      "text": "Astronauts orbit just 250 miles above your head in space.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 38.293,
+      "end": 44.873,
+      "text": "That compares a 1,670 mile distance to land with a 250 mile orbital height.",
+      "kind": "none",
+      "overlay": "compare",
+      "media": null
+    },
+    {
+      "i": 9,
+      "start": 44.873,
+      "end": 50.568,
+      "text": "When passing directly overhead, astronauts become your nearest living neighbors.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:16160"
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

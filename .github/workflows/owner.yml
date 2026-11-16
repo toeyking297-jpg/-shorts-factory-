@@ -1,0 +1,50 @@
+name: Owner command
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "use | discard | bind | confirm | voice | undo_change | redo_change"
+        required: true
+      target:
+        description: "Episode (EP001...) or analyst change id (c3)"
+        required: false
+        default: ""
+      value:
+        description: "YouTube link for bind, engine:voice for voice"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shorts-factory-memory
+  cancel-in-progress: false
+
+jobs:
+  owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: บันทึกคำสั่ง
+        env:
+          IN_ACTION: ${{ inputs.action }}
+          IN_TARGET: ${{ inputs.target }}
+          IN_VALUE: ${{ inputs.value }}
+        run: python -m engine.run owner --action "$IN_ACTION" --target "$IN_TARGET" --value "$IN_VALUE"
+      - name: บันทึกลง repo
+        run: |
+          git config user.name "shorts-factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add memory config/channel.json
+          git commit -q -m "Owner: ${{ inputs.action }} ${{ inputs.target }}" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 6; done
+          echo "::error::could not save the command, please press it again"; exit 1

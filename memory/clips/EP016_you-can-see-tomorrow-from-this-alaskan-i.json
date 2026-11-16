@@ -1,0 +1,103 @@
+{
+  "episode": "EP016_you-can-see-tomorrow-from-this-alaskan-i",
+  "topic": "The Big and Little Diomede Islands",
+  "format": "map_explains",
+  "title": "You Can See Tomorrow From This Alaskan Island",
+  "titles": [
+    "You Can See Tomorrow From This Alaskan Island",
+    "Two Islands Only 2.4 Miles Apart With a 21-Hour Time Difference",
+    "The Alaskan Island Where You Can Look Into Tomorrow"
+  ],
+  "hook": "You can look straight into tomorrow here.",
+  "words": 82,
+  "duration": 30.0,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 12,
+  "date": "2026-10-23",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 2.189,
+      "text": "You can look straight into tomorrow here.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 2.189,
+      "end": 5.785,
+      "text": "These two rocky islands sit right in the Bering Strait.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:53907"
+    },
+    {
+      "i": 2,
+      "start": 5.785,
+      "end": 8.722,
+      "text": "Little Diomede belongs to the United States.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:383986"
+    },
+    {
+      "i": 3,
+      "start": 8.722,
+      "end": 10.644,
+      "text": "Big Diomede belongs to Russia.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:22619"
+    },
+    {
+      "i": 4,
+      "start": 10.644,
+      "end": 14.406,
+      "text": "At their closest points, they are about 2.4 miles apart.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 5,
+      "start": 14.406,
+      "end": 17.943,
+      "text": "Yet right between them runs the International Date Line.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:306155"
+    },
+    {
+      "i": 6,
+      "start": 17.943,
+      "end": 20.007,
+      "text": "This creates a massive time warp.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:213424"
+    },
+    {
+      "i": 7,
+      "start": 20.007,
+      "end": 26.458,
+      "text": "Big Diomede is 21 hours ahead due to locally defined time zones and the International Date Line.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 26.458,
+      "end": 29.988,
+      "text": "Locals on the US island can literally look across and see",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

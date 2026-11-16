@@ -1,0 +1,305 @@
+{
+  "id": "EP015",
+  "topic": "Pheasant Island (Isla de los Faisanes)",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Pheasant Island is administered by Spain from February 1st to July 31st.",
+      "value": "6 months",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "According to the terms of the Treaty of the Pyrenees in 1659, the island remains a condominium under joint sovereignty.",
+      "value": "1659",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "As of January 2018, the island was approximately 200 metres long and 40 metres wide.",
+      "value": "200 meters",
+      "source": "https://en.wikipedia.org/wiki/Pheasant_Island",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pheasant_Island",
+    "https://en.wikipedia.org/wiki/Pheasant_Island_(film)"
+  ],
+  "meta": {
+    "title": "The Tiny Island That Changes Countries Every Six Months",
+    "description": "Pheasant Island sits in a river between France and Spain. Under a centuries-old treaty, it switches countries twice a year.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "europe",
+      "spain",
+      "france"
+    ],
+    "tags": [
+      "Pheasant Island",
+      "France Spain border",
+      "geography facts",
+      "condominium",
+      "Bidasoa river"
+    ],
+    "cover_text": "Switches countries twice a year!",
+    "title_options": [
+      "The Tiny Island That Changes Countries Every Six Months",
+      "Why This River Island Switches Between Spain and France",
+      "The World's Strangest Shared Island Border"
+    ],
+    "pinned_comment": "Would you want to visit this tiny island?"
+  },
+  "scenes": [
+    {
+      "text": "This tiny river island changes countries twice every year.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Spain",
+          "France"
+        ],
+        "pins": [
+          {
+            "label": "Pheasant Island",
+            "lon": -1.78,
+            "lat": 43.33
+          }
+        ],
+        "headline": "BORDER-SWAPPING ISLAND",
+        "kicker": "RIVER ENCLAVE",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "It sits in the Bidasoa river right between France and Spain.",
+      "visual": {
+        "type": "footage",
+        "query": "river flowing through green valley europe",
+        "alt": [
+          "river landscape trees"
+        ],
+        "must_show": [
+          "river"
+        ],
+        "must_not_show": [
+          "beach",
+          "ocean",
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:218082"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "BIDASOA RIVER",
+        "kicker": "BORDER WATERS",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "For the first six months, it is officially part of Spain.",
+      "visual": {
+        "type": "footage",
+        "query": "aerial view river island europe",
+        "alt": [
+          "small island in river"
+        ],
+        "must_show": [
+          "small river island"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "pixabay:28671"
+        ],
+        "_asset": "s02.jpg",
+        "_kind": "image",
+        "_media_id": "wikimedia:31171600"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "6 months",
+        "label": "Spanish rule",
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "Then on August first, governance shifts entirely to France.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "France",
+          "Spain"
+        ],
+        "pins": [
+          {
+            "label": "Pheasant Island",
+            "lon": -1.78,
+            "lat": 43.33
+          }
+        ],
+        "headline": "FRENCH SOVEREIGNTY",
+        "kicker": "AUGUST 1ST",
+        "zoom": "none"
+      }
+    },
+    {
+      "text": "This bizarre arrangement started back in sixteen fifty-nine.",
+      "visual": {
+        "type": "footage",
+        "query": "old stone monument historic europe",
+        "alt": [
+          "historic monolith stone"
+        ],
+        "must_show": [
+          "stone structure"
+        ],
+        "must_not_show": [
+          "people",
+          "modern vehicles",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "pixabay:237451"
+        ],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:278353"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "1659",
+        "label": "Treaty of Pyrenees",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "Leaders signed a treaty here to end a brutal war.",
+      "visual": {
+        "type": "footage",
+        "query": "historic European castle stone architecture",
+        "alt": [
+          "historic building stone"
+        ],
+        "must_show": [
+          "historic architecture"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [
+          "pixabay:315767"
+        ],
+        "_asset": "s05.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:370145"
+      }
+    },
+    {
+      "text": "Today, the uninhabited island is roughly two hundred meters long.",
+      "visual": {
+        "type": "footage",
+        "query": "river island trees aerial drone shot",
+        "alt": [
+          "lush green island in river"
+        ],
+        "must_show": [
+          "island"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:219302"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "200 meters",
+        "label": "Island length",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "Visitors are strictly banned to protect the fragile land.",
+      "visual": {
+        "type": "footage",
+        "query": "dense forest trees river bank",
+        "alt": [
+          "wild river bank trees"
+        ],
+        "must_show": [
+          "trees"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s07.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:86173"
+      },
+      "overlay": {
+        "type": "icons",
+        "title": "RESTRICTED ACCESS",
+        "items": [
+          {
+            "icon": "ban",
+            "label": "NO ENTRY"
+          },
+          {
+            "icon": "tree",
+            "label": "PROTECTED"
+          }
+        ],
+        "pos": "top"
+      }
+    },
+    {
+      "text": "Only naval commanders and local mayors ever step ashore.",
+      "visual": {
+        "type": "footage",
+        "query": "small boat river patrol water",
+        "alt": [
+          "boat on river"
+        ],
+        "must_show": [
+          "boat on water"
+        ],
+        "must_not_show": [
+          "people on island",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s08.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:239038"
+      }
+    },
+    {
+      "text": "Proving that even borders can",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": []
+}

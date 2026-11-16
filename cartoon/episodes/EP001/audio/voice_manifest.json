@@ -1,0 +1,226 @@
+{
+ "D01": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D01.mp3",
+  "hash": "120dd1f478b49a80"
+ },
+ "D02": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-NiwatNeural",
+   "rate": "-12%",
+   "pitch": "-2Hz",
+   "volume": "+0%",
+   "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+   "clone": false
+  },
+  "file": "audio/raw/D02.mp3",
+  "hash": "69782e7ece839b1e"
+ },
+ "D03": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D03.mp3",
+  "hash": "6267eb9b3454ff39"
+ },
+ "D04": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-NiwatNeural",
+   "rate": "-12%",
+   "pitch": "-2Hz",
+   "volume": "+0%",
+   "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+   "clone": false
+  },
+  "file": "audio/raw/D04.mp3",
+  "hash": "c4fea44b6b2133e1"
+ },
+ "D05": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D05.mp3",
+  "hash": "784f15802ae3f548"
+ },
+ "D07": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D07.mp3",
+  "hash": "5a127e96e311f103"
+ },
+ "D08": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-NiwatNeural",
+   "rate": "-12%",
+   "pitch": "-2Hz",
+   "volume": "+0%",
+   "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+   "clone": false
+  },
+  "file": "audio/raw/D08.mp3",
+  "hash": "1ceea870f080b6e2"
+ },
+ "D09": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D09.mp3",
+  "hash": "8b3d872a38de61f4"
+ },
+ "D12": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D12.mp3",
+  "hash": "72bb20382b12a26c"
+ },
+ "D13": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-NiwatNeural",
+   "rate": "-12%",
+   "pitch": "-2Hz",
+   "volume": "+0%",
+   "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+   "clone": false
+  },
+  "file": "audio/raw/D13.mp3",
+  "hash": "46b9d10a0d0d11a9"
+ },
+ "D14": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D14.mp3",
+  "hash": "d4debb182b3c189f"
+ },
+ "D15": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-NiwatNeural",
+   "rate": "-12%",
+   "pitch": "-2Hz",
+   "volume": "+0%",
+   "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+   "clone": false
+  },
+  "file": "audio/raw/D15.mp3",
+  "hash": "b985d73a3aeed4f7"
+ },
+ "D06": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+4%",
+   "pitch": "+16Hz",
+   "volume": "+0%",
+   "style_note": "สดใส เสียงบริการ (ใช้เสียงฐานเดียวกับ C02 แต่ปรับ pitch +16Hz / rate +10% เพราะ endpoint ฟรีมีเสียงไทยหญิงแค่ Premwadee; th-TH-AcharaNeural ใช้ไม่ได้ในรอบทดสอบ 2026-10-22)",
+   "clone": false
+  },
+  "file": "audio/raw/D06.mp3",
+  "hash": "7a7475cf2ceb7a80"
+ },
+ "D10": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+4%",
+   "pitch": "+16Hz",
+   "volume": "+0%",
+   "style_note": "สดใส เสียงบริการ (ใช้เสียงฐานเดียวกับ C02 แต่ปรับ pitch +16Hz / rate +10% เพราะ endpoint ฟรีมีเสียงไทยหญิงแค่ Premwadee; th-TH-AcharaNeural ใช้ไม่ได้ในรอบทดสอบ 2026-10-22)",
+   "clone": false
+  },
+  "file": "audio/raw/D10.mp3",
+  "hash": "08ed5a9548d0e7e2"
+ },
+ "D11": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+4%",
+   "pitch": "+16Hz",
+   "volume": "+0%",
+   "style_note": "สดใส เสียงบริการ (ใช้เสียงฐานเดียวกับ C02 แต่ปรับ pitch +16Hz / rate +10% เพราะ endpoint ฟรีมีเสียงไทยหญิงแค่ Premwadee; th-TH-AcharaNeural ใช้ไม่ได้ในรอบทดสอบ 2026-10-22)",
+   "clone": false
+  },
+  "file": "audio/raw/D11.mp3",
+  "hash": "016d183d0590ca05"
+ },
+ "D16": {
+  "source": "edge-tts",
+  "voice": {
+   "engine": "edge-tts",
+   "voice_id": "th-TH-PremwadeeNeural",
+   "rate": "+0%",
+   "pitch": "-14Hz",
+   "volume": "+0%",
+   "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+   "clone": false
+  },
+  "file": "audio/raw/D16.mp3",
+  "hash": "a4a33c6284de7bbb"
+ }
+}

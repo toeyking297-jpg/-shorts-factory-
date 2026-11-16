@@ -1,0 +1,103 @@
+{
+  "episode": "EP003_why-the-ocean-isn-t-where-most-people-dr",
+  "topic": "Where do most drownings actually happen?",
+  "format": "shock_fact",
+  "title": "Why the Ocean Isn't Where Most People Drown",
+  "titles": [
+    "Why the Ocean Isn't Where Most People Drown",
+    "The Shocking Truth About Water Safety",
+    "Where Do Most Drownings Actually Happen?"
+  ],
+  "hook": "Most drownings don't happen in the ocean.",
+  "words": 91,
+  "duration": 16.17,
+  "loop": true,
+  "status": "ready",
+  "series_no": 1,
+  "date": "2026-10-21",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 1.183,
+      "text": "Most drownings don't happen in the ocean.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:214592"
+    },
+    {
+      "i": 1,
+      "start": 1.183,
+      "end": 3.276,
+      "text": "When thinking of water danger, we usually picture massive ocean waves.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:349452"
+    },
+    {
+      "i": 2,
+      "start": 3.276,
+      "end": 4.962,
+      "text": "In reality, only 10% of drownings take place in seawater.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:308046"
+    },
+    {
+      "i": 3,
+      "start": 4.962,
+      "end": 7.084,
+      "text": "Instead, an overwhelming 90% happen in freshwater like lakes and rivers.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:216058"
+    },
+    {
+      "i": 4,
+      "start": 7.084,
+      "end": 9.417,
+      "text": "People let their guard down around calm water, making freshwater far deadlier.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:44259"
+    },
+    {
+      "i": 5,
+      "start": 9.417,
+      "end": 11.328,
+      "text": "In fact, alcohol plays a role in roughly 50% of fatal drownings.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:84633"
+    },
+    {
+      "i": 6,
+      "start": 11.328,
+      "end": 13.422,
+      "text": "Even scarier, people have drowned in as little as 1.2 inches of water.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:17013"
+    },
+    {
+      "i": 7,
+      "start": 13.422,
+      "end": 15.642,
+      "text": "The deep sea feels terrifying, but local freshwater holds the real danger.",
+      "kind": "video",
+      "overlay": "label",
+      "media": "pixabay:188595"
+    },
+    {
+      "i": 8,
+      "start": 15.642,
+      "end": 16.142,
+      "text": "And that's why",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

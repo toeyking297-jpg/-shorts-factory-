@@ -1,0 +1,25 @@
+﻿shot_id,character_id,outfit,prop,position,gaze,expression,asset
+SH01,C03,white tee / teal apron #2A9D8F / dark grey trousers / silver hoops,-,right (behind counter),screen-left,cheerful,C03_full_cheerful
+SH01,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags + P02 ticket,left,screen-right,neutral_deadpan,C01_full_neutral
+SH01,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan,centre,screen-left,bossy,C02_full_bossy
+SH02,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,close-up centre,screen-right,neutral_deadpan,C01_bust_deadpan
+SH03,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,left,screen-right,neutral_deadpan,C01_full_neutral
+SH03,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan,right (behind counter),screen-left,bossy,C02_full_bossy
+SH04,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,close-up centre,screen-right,neutral_deadpan,C01_bust_deadpan
+SH05,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan,close-up centre,screen-left,proud,C02_bust_proud
+SH06,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,close-up centre,screen-right,neutral_deadpan,C01_bust_deadpan
+SH07,C03,white tee / teal apron #2A9D8F / dark grey trousers / silver hoops,-,close-up centre,screen-left,cheerful,C03_bust_cheerful
+SH09,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,left,screen-right,neutral_deadpan,C01_full_neutral
+SH09,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan + P02 ticket,right (behind counter),screen-left,impatient,C02_full_ticket
+SH10,C03,white tee / teal apron #2A9D8F / dark grey trousers / silver hoops,P04 bag stack on counter,close-up centre,screen-left,cheerful,C03_bust_bags
+SH11,C03,white tee / teal apron #2A9D8F / dark grey trousers / silver hoops,P04 bag stack on counter,right (behind counter),screen-left,cheerful,C03_full_cheerful
+SH11,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,left,screen-right,neutral_deadpan,C01_full_neutral
+SH11,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan + P02 ticket,centre,screen-left,impatient,C02_full_ticket
+SH12,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan + P02 ticket,close-up centre,screen-left,shocked,C02_bust_shocked
+SH13,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,close-up centre,screen-right,neutral_deadpan,C01_bust_deadpan
+SH14,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,left,screen-right,neutral_deadpan,C01_full_neutral
+SH14,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan + P02 ticket,right (behind counter),screen-left,sheepish,C02_full_sheepish
+SH15,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,close-up centre,screen-right,tiny_smile,C01_bust_smile
+SH16,C03,white tee / teal apron #2A9D8F / dark grey trousers / silver hoops,P04 bag stack on counter,right (behind counter),screen-left,cheerful,C03_full_cheerful
+SH16,C01,mustard hoodie #E3A21A / grey slacks #7A7F87 / white sneakers / round black glasses,P01 silver bags,left,screen-right,tiny_smile,C01_full_gesture
+SH16,C02,coral floral blouse #D6453D / navy trousers #2B2F4A / brown sandals / gold chain,P03 fan + P02 ticket,centre,screen-right,shocked,C02_full_shocked

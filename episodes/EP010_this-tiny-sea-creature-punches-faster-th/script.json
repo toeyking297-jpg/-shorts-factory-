@@ -1,0 +1,266 @@
+{
+  "id": "EP010",
+  "topic": "The Mantis Shrimp",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The peacock mantis shrimp strikes with a speed of 51 mph from a standing start.",
+      "value": "51 mph",
+      "source": "https://en.wikipedia.org/wiki/Odontodactylus_scyllarus",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The acceleration of a peacock mantis shrimp strike is about 10,400 g.",
+      "value": "10,400 g",
+      "source": "https://en.wikipedia.org/wiki/Odontodactylus_scyllarus",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "Some mantis shrimp have up to 16 types of photoreceptor cells in their eyes.",
+      "value": "16 types",
+      "source": "https://en.wikipedia.org/wiki/Mantis_shrimp",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Odontodactylus_scyllarus",
+    "https://en.wikipedia.org/wiki/Mantis_shrimp"
+  ],
+  "meta": {
+    "title": "This Tiny Sea Creature Punches Faster Than a Bullet",
+    "description": "The mantis shrimp has incredible vision and punches with the force of a bullet.",
+    "hashtags": [
+      "shorts",
+      "animals",
+      "nature",
+      "science",
+      "ocean"
+    ],
+    "tags": [
+      "mantis shrimp",
+      "ocean animals",
+      "marine biology",
+      "peacock mantis shrimp",
+      "animal facts"
+    ],
+    "cover_text": "Faster than a bullet",
+    "title_options": [
+      "This Tiny Sea Creature Punches Faster Than a Bullet",
+      "Why the Mantis Shrimp Has the Deadliest Punch in the Ocean",
+      "The Animal With Eyes That Can See Impossible Colors"
+    ],
+    "pinned_comment": "Would you want to keep one of these in a glass aquarium?"
+  },
+  "scenes": [
+    {
+      "text": "This shrimp punches faster than a bullet.",
+      "visual": {
+        "type": "footage",
+        "query": "peacock mantis shrimp underwater",
+        "alt": [
+          "colorful mantis shrimp in ocean"
+        ],
+        "must_show": [
+          "mantis shrimp"
+        ],
+        "must_not_show": [
+          "people",
+          "beach",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "51 mph",
+        "label": "strike speed",
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "Its club-like claw accelerates at an incredible rate.",
+      "visual": {
+        "type": "footage",
+        "query": "peacock mantis shrimp moving coral reef",
+        "alt": [
+          "crustacean on seabed"
+        ],
+        "must_show": [
+          "mantis shrimp"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "10,400 g",
+        "label": "acceleration",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "It hits with so much force that it boils surrounding water.",
+      "visual": {
+        "type": "footage",
+        "query": "underwater bubbles stream ocean floor",
+        "alt": [
+          "bubbles underwater"
+        ],
+        "must_show": [
+          "water bubbles"
+        ],
+        "must_not_show": [
+          "people",
+          "beach",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s02.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:49883"
+      }
+    },
+    {
+      "text": "The collapsing bubbles create a second shockwave that stuns prey.",
+      "visual": {
+        "type": "footage",
+        "query": "crab on coral reef underwater",
+        "alt": [
+          "marine crustacean"
+        ],
+        "must_show": [
+          "marine animal"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s03.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:360621"
+      }
+    },
+    {
+      "text": "They can inflict painful wounds if handled incautiously.",
+      "visual": {
+        "type": "footage",
+        "query": "diver holding underwater camera reef",
+        "alt": [
+          "marine research"
+        ],
+        "must_show": [
+          "underwater"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s04.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:123272"
+      }
+    },
+    {
+      "text": "However, their vision is even more extreme.",
+      "visual": {
+        "type": "footage",
+        "query": "mantis shrimp eyes macro underwater",
+        "alt": [
+          "shrimp stalk eyes"
+        ],
+        "must_show": [
+          "eyes"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "Humans have four visual pigments compared to the many more found in mantis shrimp.",
+      "visual": {
+        "type": "footage",
+        "query": "human eye close up macro",
+        "alt": [
+          "eye close up"
+        ],
+        "must_show": [
+          "eye"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s06.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:345717"
+      }
+    },
+    {
+      "text": "These mantis shrimp have up to sixteen.",
+      "visual": {
+        "type": "footage",
+        "query": "peacock mantis shrimp vibrant colors reef",
+        "alt": [
+          "colorful crustacean"
+        ],
+        "must_show": [
+          "mantis shrimp"
+        ],
+        "must_not_show": [
+          "people",
+          "watermark or big text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "16 types",
+        "label": "photoreceptors",
+        "source": "Wikipedia",
+        "fact": "f3"
+      }
+    },
+    {
+      "text": "They see deep ultraviolet and polarized light we cannot",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": [
+    "scene 6: unsupported: \"Humans have four visual pigments compared to the many more found in mantis shrimp.\" -> State that humans have four visual pigments (three for color) while mantis shrimp have between 12 and 16 types of photoreceptor cells."
+  ]
+}

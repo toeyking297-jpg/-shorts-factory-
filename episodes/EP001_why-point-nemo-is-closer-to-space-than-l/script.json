@@ -1,0 +1,176 @@
+{
+  "id": "EP001",
+  "topic": "Point Nemo",
+  "format": "shock_fact",
+  "loop": true,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility#Oceanic_pole_of_inaccessibility",
+    "https://en.wikipedia.org/wiki/Spacecraft_cemetery",
+    "https://en.wikipedia.org/wiki/Pole_of_inaccessibility"
+  ],
+  "meta": {
+    "title": "Why Point Nemo Is Closer to Space Than Land",
+    "description": "Point Nemo is the most isolated spot on Earth. When astronauts orbit overhead, they are closer than any person on dry land.",
+    "hashtags": [
+      "shorts",
+      "geography",
+      "space",
+      "pointnemo"
+    ],
+    "tags": [
+      "Point Nemo",
+      "spacecraft cemetery",
+      "geography facts",
+      "ISS",
+      "Pacific Ocean",
+      "remote places"
+    ],
+    "title_options": [
+      "Why Point Nemo Is Closer to Space Than Land",
+      "The Ocean Graveyard for Spacecraft",
+      "Earth's Most Isolated Spot"
+    ]
+  },
+  "scenes": [
+    {
+      "text": "Astronauts are Point Nemo's closest living neighbors.",
+      "visual": {
+        "type": "image",
+        "query": "Oceanic pole of inaccessibility Point Nemo",
+        "source": "wikimedia"
+      },
+      "overlay": {
+        "type": "label",
+        "text": "Point Nemo",
+        "pos": "top"
+      }
+    },
+    {
+      "text": "It is the most remote spot in the South Pacific Ocean.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Chile"
+        ],
+        "context": [
+          "New Zealand"
+        ],
+        "pins": [
+          {
+            "label": "Point Nemo",
+            "lon": -123.39,
+            "lat": -48.87
+          }
+        ],
+        "zoom": "out"
+      }
+    },
+    {
+      "text": "The nearest shore is sixteen hundred seventy miles away.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "location",
+          "place": "Point Nemo",
+          "region": "South Pacific Ocean",
+          "coords": "48°52′S 123°23′W"
+        }
+      }
+    },
+    {
+      "text": "That is farther than a flight from New York to Denver.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "compare",
+          "title": "Distance from Point Nemo",
+          "items": [
+            {
+              "label": "Nearest Island",
+              "value": 1670,
+              "display": "1,670 mi"
+            },
+            {
+              "label": "NYC to Denver",
+              "value": 1626,
+              "display": "1,626 mi"
+            }
+          ],
+          "source": "NOAA, 2024"
+        }
+      }
+    },
+    {
+      "text": "Yet the Space Station orbits just two hundred fifty miles overhead.",
+      "visual": {
+        "type": "image",
+        "query": "International Space Station orbiting Earth",
+        "source": "nasa",
+        "_asset": "s04.jpg",
+        "_kind": "image"
+      }
+    },
+    {
+      "text": "When astronauts pass by, they are the only humans nearby.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "stat",
+          "value": "250 mi",
+          "label": "ISS altitude",
+          "source": "NASA"
+        }
+      }
+    },
+    {
+      "text": "In fact, they are six times closer than anyone on land.",
+      "visual": {
+        "type": "footage",
+        "query": "earth from space international space station perspective",
+        "alt": [
+          "blue planet from orbit"
+        ]
+      }
+    },
+    {
+      "text": "This total isolation makes it the perfect graveyard for spacecraft.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "title",
+          "text": "Spacecraft Cemetery",
+          "sub": "Global dumping ground"
+        }
+      }
+    },
+    {
+      "text": "Over two hundred sixty retired vessels lie on the seabed.",
+      "visual": {
+        "type": "graphic",
+        "graphic": {
+          "type": "stat",
+          "value": "263+",
+          "label": "scuttled craft",
+          "sub": "including Mir station",
+          "source": "Space Agency Records"
+        }
+      }
+    },
+    {
+      "text": "Even the giant Space Station will eventually crash here.",
+      "visual": {
+        "type": "footage",
+        "query": "satellite falling atmosphere re entry flames",
+        "alt": [
+          "spacecraft burning in upper atmosphere"
+        ]
+      }
+    },
+    {
+      "text": "The ocean is so empty that",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ]
+}

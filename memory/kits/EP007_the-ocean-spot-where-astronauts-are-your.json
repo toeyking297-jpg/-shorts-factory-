@@ -1,0 +1,140 @@
+{
+  "episode": "EP007_the-ocean-spot-where-astronauts-are-your",
+  "video": "EP007_the-ocean-spot-where-astronauts-are-your.mp4",
+  "cover": "EP007_the-ocean-spot-where-astronauts-are-your_cover.jpg",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "shock_fact",
+  "series": "Hidden Atlas #5",
+  "series_no": 5,
+  "playlist": "Strange But True",
+  "titles": [
+    "The Ocean Spot Where Astronauts Are Your Closest Neighbors",
+    "Why Astronauts Are Closer To Point Nemo Than Anyone On Earth",
+    "The Loneliest Place On Earth Is In The Ocean"
+  ],
+  "description": "Point Nemo is so isolated in the South Pacific that people on the International Space Station are closer to it than anyone on Earth.\n\nHidden Atlas #5\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Pole_of_inaccessibility\n- https://en.wikipedia.org/wiki/Finding_Nemo\n\nFootage & images:\n- Video by Radds on Pixabay https://pixabay.com/videos/id-184069/\n- Video by TBIT on Pixabay https://pixabay.com/videos/id-1175/\n- NASA (JPL): What Would Mars Look Like if an Astronaut Could Orbit the Planet? (Mars Report - Nov. 2023) https://images.nasa.gov/details/JPL-20231122-MARSODf-0001-Mars Report Odyssey November 2023\n- NASA (KSC): KSC-06-S-00128 https://images.nasa.gov/details/ksc_050406_sssr\n- Video by tommyvideo on Pixabay https://pixabay.com/videos/id-5377/\n- Video by PaulsAdventures on Pixabay https://pixabay.com/videos/id-244754/\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #space #ocean #geography #science",
+  "hashtags": "#shorts #space #ocean #geography #science",
+  "tags": [
+    "Point Nemo",
+    "space station",
+    "ocean of inaccessibility",
+    "geography",
+    "spacecraft cemetery",
+    "NASA"
+  ],
+  "pinned_comment": "Would you ever want to visit the loneliest spot in the ocean?",
+  "cover_text": "Astronauts are closer",
+  "social": {
+    "tiktok": "The Ocean Spot Where Astronauts Are Your Closest Neighbors  #space #ocean #geography #science #fyp",
+    "reels": "The Ocean Spot Where Astronauts Are Your Closest Neighbors  #space #ocean #geography #science",
+    "facebook": "The Ocean Spot Where Astronauts Are Your Closest Neighbors  #space #ocean #geography #science"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "needs_review",
+  "status_th": "ต้องดูก่อน",
+  "reasons_th": [
+    "[ข้อเท็จจริง] claim audit: scene 1: wrong_source: \"It is about 1,670 miles away from the nearest land in any direction.\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this fact to the NOAA Ocean Service as per the research notes.",
+    "[ข้อเท็จจริง] claim audit: scene 1: wrong_source: \"scene 1 overlay.value: 1,670 miles\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this figure to the NOAA Ocean Service.",
+    "[ข้อเท็จจริง] claim audit: scene 3: wrong_source: \"When the International Space Station passes overhead at about 250 miles high\" -> The ISS altitude of 250 miles is not in the cited Wikipedia article; attribute this to NASA as per the research notes.",
+    "[ข้อเท็จจริง] claim audit: scene 4: wrong_source: \"those astronauts are over 6 times closer to Point Nemo than any human on land.\" -> The proximity comparison is not in the cited Wikipedia article; attribute this calculation to NASA data.",
+    "[ข้อเท็จจริง] claim audit: scene 4: overclaim: \"scene 4 overlay.value: 6 times\" -> Change to 'Over 6 times' or '6x+' to match the research (Fact 3 and Web Note 4).",
+    "[ข้อเท็จจริง] claim audit: scene 4: wrong_source: \"scene 4 overlay.value: 6 times\" -> Attribute the proximity comparison to NASA rather than the Wikipedia page on poles of inaccessibility.",
+    "[ข้อเท็จจริง] claim audit: scene 5: overclaim: \"scene 5 overlay.value: 263 spacecraft\" -> Change to 'More than 263' or '263+' as the research (Fact 4 and Web Note 6) states this is a minimum count.",
+    "[ข้อเท็จจริง] claim audit: scene 5: wrong_source: \"scene 5 overlay.value: 263 spacecraft\" -> The count of 263 spacecraft is not in the cited Wikipedia article; attribute this to the ESA (European Space Agency)."
+  ],
+  "categories": {
+    "technical": [],
+    "factual": [
+      "claim audit: scene 1: wrong_source: \"It is about 1,670 miles away from the nearest land in any direction.\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this fact to the NOAA Ocean Service as per the research notes.",
+      "claim audit: scene 1: wrong_source: \"scene 1 overlay.value: 1,670 miles\" -> The distance of 1,670 miles is not in the cited Wikipedia article; attribute this figure to the NOAA Ocean Service.",
+      "claim audit: scene 3: wrong_source: \"When the International Space Station passes overhead at about 250 miles high\" -> The ISS altitude of 250 miles is not in the cited Wikipedia article; attribute this to NASA as per the research notes.",
+      "claim audit: scene 4: wrong_source: \"those astronauts are over 6 times closer to Point Nemo than any human on land.\" -> The proximity comparison is not in the cited Wikipedia article; attribute this calculation to NASA data.",
+      "claim audit: scene 4: overclaim: \"scene 4 overlay.value: 6 times\" -> Change to 'Over 6 times' or '6x+' to match the research (Fact 3 and Web Note 4).",
+      "claim audit: scene 4: wrong_source: \"scene 4 overlay.value: 6 times\" -> Attribute the proximity comparison to NASA rather than the Wikipedia page on poles of inaccessibility.",
+      "claim audit: scene 5: overclaim: \"scene 5 overlay.value: 263 spacecraft\" -> Change to 'More than 263' or '263+' as the research (Fact 4 and Web Note 6) states this is a minimum count.",
+      "claim audit: scene 5: wrong_source: \"scene 5 overlay.value: 263 spacecraft\" -> The count of 263 spacecraft is not in the cited Wikipedia article; attribute this to the ESA (European Space Agency)."
+    ],
+    "visual": [
+      "final review (score 6): Abstract dark blue graphic with lens flare does not clearly represent isolation or space trivia.",
+      "final review (score 6): Severe text overlap and low contrast making the caption completely unreadable.",
+      "final review (score 6): Repeated visual from frame 1, making the ending repetitive."
+    ],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 36.07,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "Point Nemo is about 1,670 miles away from the nearest land in any direction.",
+      "value": "1,670 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "The International Space Station orbits at roughly 250 miles above Earth.",
+      "value": "250 miles",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Astronauts on the space station are over 6 times closer to Point Nemo than anyone on dry land.",
+      "value": "6 times",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Space agencies have deorbited more than 263 spacecraft into the Point Nemo region.",
+      "value": "263 spacecraft",
+      "source": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-22T04:43",
+  "metrics": {
+    "seconds": {
+      "voice": 40,
+      "footage": 70,
+      "draft_qc": 31,
+      "render": 160,
+      "final_review": 57,
+      "qc": 15,
+      "writing": 544
+    },
+    "total_seconds": 1030,
+    "api": {
+      "gemini_calls": 37,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 5,
+        "gemini-3.6-flash": 5,
+        "gemini-flash-latest": 5,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 5,
+        "gemini-3.7-flash": 5,
+        "gemini-3-flash-preview": 5,
+        "gemini-flash-lite-latest": 7,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 29,
+      "footage_api_calls": 112,
+      "downloads": 13,
+      "gemini_rate_limited": 29
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

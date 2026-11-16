@@ -1,0 +1,67 @@
+{
+ "reviewer": "Claude (model) on rendered frames + measurements, 2026-10-22; no human has watched or listened yet",
+ "items": [
+  {
+   "check": "visual staging review of rendered frames (model)",
+   "status": "PASS",
+   "evidence": "preview/qa/contact_rendered_shots.jpg, contact_rendered_subtitles.jpg: speaker visible in each shot, counter always screen-right, gaze consistent, ticket ownership correct, insert SH08 shows ticket 45 alone ~0.5 s before the grab. Minor: a small dark bracket artifact top-right of placeholder BG01M."
+  },
+  {
+   "check": "art quality / style DNA (final look)",
+   "status": "FAIL",
+   "evidence": "all characters and backgrounds are code-drawn PLACEHOLDERS; 37 asset files still to be made (prompts/prompts.md). Cannot judge the SOI DNA look until real art exists."
+  },
+  {
+   "check": "voice listening review: pronunciation, acting, pauses",
+   "status": "NOT_REVIEWED",
+   "evidence": "nobody has listened yet. ASR lines worth listening to first: D01 (CER 0.25: 'ลบในหนูป้ามาก่อน'); D08 (CER 0.167: 'ป๊าครับบัดนั้นมัน'); D16 (CER 0.136: 'ของป่าห่อดีเอาเร็วๆเลยหนู'); D14 (CER 0.125: 'หนูประคืนให้')"
+  },
+  {
+   "check": "voices distinct per character",
+   "status": "NOT_REVIEWED",
+   "evidence": "C02 (auntie) and C03 (staff) share edge voice th-TH-PremwadeeNeural with different pitch/rate (-14Hz/+0% vs +16Hz/+4%) because th-TH-AcharaNeural failed on the free endpoint; needs a human ear."
+  },
+  {
+   "check": "lip-sync",
+   "status": "NOT_REVIEWED",
+   "evidence": "approximate mouth flap from audio loudness (rest/open/wide/round), not phoneme lip-sync; non-speaker mouth frames = 0."
+  },
+  {
+   "check": "safe area on a real phone (YouTube/TikTok UI)",
+   "status": "NOT_REVIEWED",
+   "evidence": "preview/qa/safe_area_check.jpg uses approximate zones; not checked on a device."
+  }
+ ],
+ "rubric": {
+  "hook": {
+   "max": 20,
+   "score": 16,
+   "why": "conflict line starts at 0.12 s and is understood without context; placeholder art weakens the first frame"
+  },
+  "story_logic": {
+   "max": 20,
+   "score": 17,
+   "why": "want/obstacle clear by 5 s, pressure turn at ~15 s (ticket snatch), auntie loses through her own behaviour (not listening), not because the script makes her stupid"
+  },
+  "payoff": {
+   "max": 20,
+   "score": 16,
+   "why": "50-box order is planted 4 ways (bags, 'บัตรนั้นมัน…', 'ห่อเดียว', insert) and the end is a callback of 'ป้ามาก่อน'; strength depends on voice acting not yet heard"
+  },
+  "continuity": {
+   "max": 15,
+   "score": 13,
+   "why": "automatic prop/ticket/bag checks pass and matrix is consistent; real art may introduce drift and must be re-checked"
+  },
+  "voice_timing": {
+   "max": 15,
+   "score": null,
+   "why": "NOT_REVIEWED: timing is built from real audio, but pronunciation and comic delivery need a listener"
+  },
+  "caption_readability": {
+   "max": 10,
+   "score": 9,
+   "why": "max 2 lines, widest line inside 840 px, keywords in yellow, sits below the chin and above the title area (approx zones)"
+  }
+ }
+}

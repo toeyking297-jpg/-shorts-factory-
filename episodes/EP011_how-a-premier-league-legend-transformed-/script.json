@@ -1,0 +1,232 @@
+{
+  "id": "EP011",
+  "topic": "Cesc Fàbregas and Como 1907",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Cesc Fàbregas joined Italian club Como as a player and minority stakeholder in August 2022.",
+      "value": "2022",
+      "source": "https://en.wikipedia.org/wiki/Como_1907",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "Como secured qualification for European competition by finishing 4th in the 2025-26 Serie A season.",
+      "value": "4th",
+      "source": "https://en.wikipedia.org/wiki/Como_1907",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Como_1907",
+    "https://en.wikipedia.org/wiki/Cesc_Fàbregas"
+  ],
+  "meta": {
+    "title": "How a Premier League Legend Transformed Como Into a European Giant",
+    "description": "Cesc Fàbregas went from midfield maestro at Arsenal and Barcelona to managing Como 1907 into European competition.",
+    "hashtags": [
+      "shorts",
+      "football",
+      "soccer",
+      "fabregas",
+      "como"
+    ],
+    "tags": [
+      "Cesc Fabregas",
+      "Como 1907",
+      "Serie A",
+      "football",
+      "soccer manager",
+      "Arsenal",
+      "Barcelona"
+    ],
+    "cover_text": "Legend to manager",
+    "title_options": [
+      "How Cesc Fàbregas Transformed Como 1907",
+      "From Premier League Star to Serie A Manager",
+      "The Incredible Rise of Como Under Fàbregas"
+    ],
+    "pinned_comment": "Can Como win Serie A next season?"
+  },
+  "scenes": [
+    {
+      "text": "How a Premier League legend conquered Italy.",
+      "visual": {
+        "type": "footage",
+        "query": "professional football player passing the ball",
+        "alt": [
+          "soccer match action"
+        ],
+        "must_show": [
+          "football match"
+        ],
+        "must_not_show": [
+          "people close-up",
+          "text",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "Cesc Fàbregas carved open defenses for Arsenal and Barcelona for years.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer player celebrating goal stadium",
+        "alt": [
+          "stadium celebration"
+        ],
+        "must_show": [
+          "football stadium"
+        ],
+        "must_not_show": [
+          "fans close-up",
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_asset": "s01.mp4",
+        "_kind": "video",
+        "_media_id": "pixabay:10827"
+      }
+    },
+    {
+      "text": "Then in 2022, he shocked the football world by joining Italian club Como.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "Como"
+        ],
+        "pins": [
+          {
+            "place": "Como"
+          }
+        ],
+        "headline": "COMO",
+        "kicker": "ITALY",
+        "zoom": "in"
+      }
+    },
+    {
+      "text": "He started as a player and bought a stake in the club.",
+      "visual": {
+        "type": "footage",
+        "query": "soccer player running on pitch",
+        "alt": [
+          "player training"
+        ],
+        "must_show": [
+          "football pitch"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "2022",
+        "label": "joined Como",
+        "source": "Wikipedia",
+        "fact": "f1"
+      }
+    },
+    {
+      "text": "Soon, he hung up his boots and took charge from the touchline.",
+      "visual": {
+        "type": "footage",
+        "query": "football manager giving instructions touchline",
+        "alt": [
+          "manager on sideline"
+        ],
+        "must_show": [
+          "coach on sideline"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "His legendary vision translated instantly into brilliant tactics on the pitch.",
+      "visual": {
+        "type": "footage",
+        "query": "football team celebrating victory on pitch",
+        "alt": [
+          "team celebration"
+        ],
+        "must_show": [
+          "team celebrating"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "In the 2025-26 season, Como stunned Italy by finishing fourth in Serie A.",
+      "visual": {
+        "type": "footage",
+        "query": "stadium lights night celebration wide shot",
+        "alt": [
+          "illuminated stadium"
+        ],
+        "must_show": [
+          "stadium at night"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "cropped text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "4th",
+        "label": "FINISH",
+        "source": "Wikipedia",
+        "fact": "f2"
+      }
+    },
+    {
+      "text": "Securing a historic spot in the UEFA Champions League tournament.",
+      "visual": {
+        "type": "footage",
+        "query": "trophy celebration stadium confetti",
+        "alt": [
+          "trophy and celebration"
+        ],
+        "must_show": [
+          "celebration"
+        ],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ],
+        "_rejected": [],
+        "_kind": "none"
+      }
+    },
+    {
+      "text": "Proving that a true genius can",
+      "visual": {
+        "type": "loop"
+      }
+    }
+  ],
+  "qc_audit": []
+}

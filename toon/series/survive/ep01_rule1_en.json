@@ -1,0 +1,257 @@
+{
+ "channel": "SURVIVE DAY 1",
+ "series": "SURVIVE DAY 1",
+ "episode": "Blackout · Rule 1",
+ "lang": "en",
+ "voice": {
+  "engine": "edge",
+  "edge_voice": "en-US-AndrewMultilingualNeural",
+  "rate": "-4%"
+ },
+ "end_card": {
+  "kicker": "NEXT · RULE #2",
+  "title": "THE GENERATOR"
+ },
+ "facts": [
+  {
+   "claim": "A closed refrigerator keeps food safe for up to 4 hours during a power outage; a full freezer about 48 hours.",
+   "value": "4 hours / 48 hours",
+   "source": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+   "source_name": "FoodSafety.gov"
+  }
+ ],
+ "meta": {
+  "title": "Your Power Just Went Out. Don't Open This.",
+  "title_options": [
+   "Your Power Just Went Out. Don't Open This.",
+   "Blackout Rule #1 Most People Break",
+   "The 4-Hour Rule Nobody Tells You"
+  ],
+  "description": "Blackout rule #1: keep the fridge shut. Closed, it keeps food safe for up to 4 hours; a full freezer about 48 hours. Source: FoodSafety.gov",
+  "hashtags": [
+   "shorts",
+   "survival",
+   "blackout",
+   "animation"
+  ],
+  "pinned_comment": "Be honest: would you have opened it?"
+ },
+ "scenes": [
+  {
+   "text": "The whole city just went dark.",
+   "pause_after": 0.5,
+   "shot": {
+    "set": "city",
+    "fx": [
+     "lights_out"
+    ],
+    "cam": "push",
+    "title": true,
+    "counter": {
+     "value": "9:42 PM",
+     "label": "POWER OUT",
+     "color": [
+      255,
+      214,
+      10
+     ],
+     "x": 540,
+     "y": 600,
+     "at": 0.35
+    }
+   }
+  },
+  {
+   "text": "And the first thing you'll do is wrong.",
+   "pause_after": 0.7,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "pose": "scared",
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "You open the fridge. Just to check.",
+   "pause_after": 0.4,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.45
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 940,
+      "to": 620,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "But every time you do, the cold escapes.",
+   "pause_after": 0.4,
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge",
+      "open_at": 0.0
+     },
+     {
+      "kind": "gas",
+      "x": 420,
+      "y": 1350
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Rule number one.",
+   "pause_after": 1.2,
+   "shot": {
+    "set": "kitchen",
+    "cam": "still",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "zip": {
+     "x": 880,
+     "y": 420,
+     "from": [
+      1250,
+      200
+     ]
+    },
+    "card": {
+     "n": 1,
+     "at": 0.05,
+     "text": "Keep the fridge shut"
+    },
+    "cast": [
+     {
+      "who": "nora",
+      "x": 560,
+      "pose": "point",
+      "mood": "determined",
+      "look": -1
+     },
+     {
+      "who": "max",
+      "x": 860,
+      "mood": "scared",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "Keep it shut, and your fridge keeps food safe for up to four hours.",
+   "pause_after": 0.6,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 520,
+     "at": 0.15,
+     "source": "FoodSafety.gov",
+     "value": "4 HOURS",
+     "label": "FOOD STAYS SAFE"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "A full freezer? About two days.",
+   "pause_after": 0.7,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "counter": {
+     "x": 540,
+     "y": 520,
+     "at": 0.15,
+     "source": "FoodSafety.gov",
+     "color": [
+      64,
+      224,
+      255
+     ],
+     "value": "48 HOURS",
+     "label": "FULL FREEZER"
+    },
+    "cast": [
+     {
+      "who": "max",
+      "x": 700,
+      "mood": "smile",
+      "look": -1
+     }
+    ]
+   }
+  },
+  {
+   "text": "So be honest. Would you have opened it?",
+   "pause_after": 0.0,
+   "shot": {
+    "set": "kitchen",
+    "cam": "push",
+    "props": [
+     {
+      "kind": "fridge"
+     }
+    ],
+    "cast": [
+     {
+      "who": "max",
+      "x": 640,
+      "mood": "neutral",
+      "look": -1
+     }
+    ]
+   }
+  }
+ ]
+}

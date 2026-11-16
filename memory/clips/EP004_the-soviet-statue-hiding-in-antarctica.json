@@ -1,0 +1,130 @@
+{
+  "episode": "EP004_the-soviet-statue-hiding-in-antarctica",
+  "topic": "Point Nemo: the ocean spot where astronauts can be closer than anyone on land",
+  "format": "myth_vs_fact",
+  "title": "The Soviet Statue Hiding in Antarctica",
+  "titles": [
+    "The Soviet Statue Hiding in Antarctica",
+    "Why is there a Lenin statue in the ice?",
+    "Earth's Most Remote Landmark Is Buried"
+  ],
+  "hook": "A Soviet statue is hiding in Antarctica.",
+  "words": 106,
+  "duration": 39.47,
+  "loop": true,
+  "status": "needs_review",
+  "series_no": 2,
+  "date": "2026-10-21",
+  "scenes": [
+    {
+      "i": 0,
+      "start": 0.0,
+      "end": 3.085,
+      "text": "A Soviet statue is hiding in Antarctica.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 1,
+      "start": 3.085,
+      "end": 5.915,
+      "text": "It sits at the world’s most remote spot.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 2,
+      "start": 5.915,
+      "end": 8.757,
+      "text": "This is the Southern Pole of Inaccessibility.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 3,
+      "start": 8.757,
+      "end": 11.847,
+      "text": "The station is about 808 miles from the South Pole.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 4,
+      "start": 11.847,
+      "end": 15.774,
+      "text": "Another point here is about 988 miles from water.",
+      "kind": "video",
+      "overlay": "stat",
+      "media": "pixabay:24216"
+    },
+    {
+      "i": 5,
+      "start": 15.774,
+      "end": 18.179,
+      "text": "That is further than driving from New York to Florida.",
+      "kind": "map",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 6,
+      "start": 18.179,
+      "end": 23.109,
+      "text": "In 1958, Soviet explorers reached this point and built a base.",
+      "kind": "none",
+      "overlay": "stat",
+      "media": null
+    },
+    {
+      "i": 7,
+      "start": 23.109,
+      "end": 26.859,
+      "text": "They placed a plastic bust of Vladimir Lenin on the roof.",
+      "kind": "none",
+      "overlay": "label",
+      "media": null
+    },
+    {
+      "i": 8,
+      "start": 26.859,
+      "end": 31.045,
+      "text": "The statue still faces Moscow across the frozen desert.",
+      "kind": "video",
+      "overlay": null,
+      "media": "pixabay:338857"
+    },
+    {
+      "i": 9,
+      "start": 31.045,
+      "end": 34.854,
+      "text": "Since then, decades of snow have buried the entire station.",
+      "kind": "none",
+      "overlay": null,
+      "media": null
+    },
+    {
+      "i": 10,
+      "start": 34.854,
+      "end": 38.474,
+      "text": "Now, only the yellowed head stares out above the ice.",
+      "kind": "none",
+      "overlay": "label",
+      "media": null
+    },
+    {
+      "i": 11,
+      "start": 38.474,
+      "end": 39.434,
+      "text": "And that is why",
+      "kind": "loop",
+      "overlay": null,
+      "media": null
+    }
+  ],
+  "video_id": null,
+  "video_confirmed": false
+}

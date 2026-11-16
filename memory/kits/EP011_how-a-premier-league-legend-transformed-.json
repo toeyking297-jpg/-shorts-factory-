@@ -1,0 +1,123 @@
+{
+  "episode": "EP011_how-a-premier-league-legend-transformed-",
+  "video": "EP011_how-a-premier-league-legend-transformed-.mp4",
+  "cover": "EP011_how-a-premier-league-legend-transformed-_cover.jpg",
+  "topic": "Cesc Fàbregas and Como 1907",
+  "format": "shock_fact",
+  "series": "Hidden Atlas #8",
+  "series_no": 8,
+  "playlist": "Strange But True",
+  "titles": [
+    "How a Premier League Legend Transformed Como Into a European Giant",
+    "How Cesc Fàbregas Transformed Como 1907",
+    "From Premier League Star to Serie A Manager"
+  ],
+  "description": "Cesc Fàbregas went from midfield maestro at Arsenal and Barcelona to managing Como 1907 into European competition.\n\nHidden Atlas #8\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Como_1907\n- https://en.wikipedia.org/wiki/Cesc_Fàbregas\n\nFootage & images:\n- Video by Matthias_Groeneveld on Pixabay https://pixabay.com/videos/id-202749/\n- Video by Coverr-Free-Footage on Pixabay https://pixabay.com/videos/id-10827/\n- Video by Coverr-Free-Footage on Pixabay https://pixabay.com/videos/id-10783/\n- Video by LumJakupi on Pixabay https://pixabay.com/videos/id-158633/\n- Video by xtrovarts on Pixabay https://pixabay.com/videos/id-201013/\n- Video by 素君 on Pixabay https://pixabay.com/videos/id-212404/\n- Video by hirken8 on Pixabay https://pixabay.com/videos/id-121985/\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #football #soccer #fabregas #como",
+  "hashtags": "#shorts #football #soccer #fabregas #como",
+  "tags": [
+    "Cesc Fabregas",
+    "Como 1907",
+    "Serie A",
+    "football",
+    "soccer manager",
+    "Arsenal",
+    "Barcelona"
+  ],
+  "pinned_comment": "Can Como win Serie A next season?",
+  "cover_text": "Legend to manager",
+  "social": {
+    "tiktok": "How a Premier League Legend Transformed Como Into a European Giant  #football #soccer #fabregas #como #fyp",
+    "reels": "How a Premier League Legend Transformed Como Into a European Giant  #football #soccer #fabregas #como",
+    "facebook": "How a Premier League Legend Transformed Como Into a European Giant  #football #soccer #fabregas #como"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "needs_review",
+  "status_th": "ต้องดูก่อน",
+  "reasons_th": [
+    "[ภาพ/ตัวหนังสือ] final review (score 3): The map showing Africa does not match the narration about conquering Italy or Premier League legends.",
+    "[ภาพ/ตัวหนังสือ] final review (score 3): Map of Africa/Indian Ocean labeled COMO does not match Italy or the football world context.",
+    "[ภาพ/ตัวหนังสือ] final review (score 3): Repeated map background with text overlay '2022 JOINED COMO'.",
+    "[ภาพ/ตัวหนังสือ] final review (score 3): Same repeated Africa map background with incomplete caption fragment."
+  ],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [
+      "scene 0: no fitting picture was found (shows the map instead)",
+      "scene 3: no fitting picture was found (shows the map instead)",
+      "scene 4: no fitting picture was found (shows the map instead)",
+      "scene 5: no fitting picture was found (shows the map instead)",
+      "scene 6: no fitting picture was found (shows the map instead)",
+      "scene 7: no fitting picture was found (shows the map instead)",
+      "final review (score 3): The map showing Africa does not match the narration about conquering Italy or Premier League legends.",
+      "final review (score 3): Map of Africa/Indian Ocean labeled COMO does not match Italy or the football world context.",
+      "final review (score 3): Repeated map background with text overlay '2022 JOINED COMO'.",
+      "final review (score 3): Same repeated Africa map background with incomplete caption fragment."
+    ],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 35.86,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "Cesc Fàbregas joined Italian club Como as a player and minority stakeholder in August 2022.",
+      "value": "2022",
+      "source": "https://en.wikipedia.org/wiki/Como_1907",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Como secured qualification for European competition by finishing 4th in the 2025-26 Serie A season.",
+      "value": "4th",
+      "source": "https://en.wikipedia.org/wiki/Como_1907",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-22T23:21",
+  "metrics": {
+    "seconds": {
+      "voice": 27,
+      "footage": 185,
+      "draft_qc": 32,
+      "render": 219,
+      "final_review": 60,
+      "qc": 15,
+      "writing": 104
+    },
+    "total_seconds": 672,
+    "api": {
+      "gemini_calls": 53,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 8,
+        "gemini-3.6-flash": 8,
+        "gemini-flash-latest": 7,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 7,
+        "gemini-3.7-flash": 7,
+        "gemini-3-flash-preview": 7,
+        "gemini-flash-lite-latest": 9,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 43,
+      "footage_api_calls": 148,
+      "downloads": 9,
+      "gemini_rate_limited": 42
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

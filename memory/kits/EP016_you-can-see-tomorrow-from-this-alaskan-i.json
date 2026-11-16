@@ -1,0 +1,118 @@
+{
+  "episode": "EP016_you-can-see-tomorrow-from-this-alaskan-i",
+  "video": "EP016_you-can-see-tomorrow-from-this-alaskan-i.mp4",
+  "cover": "EP016_you-can-see-tomorrow-from-this-alaskan-i_cover.jpg",
+  "topic": "The Big and Little Diomede Islands",
+  "format": "map_explains",
+  "series": "Hidden Atlas #12",
+  "series_no": 12,
+  "playlist": "Maps That Explain",
+  "titles": [
+    "You Can See Tomorrow From This Alaskan Island",
+    "Two Islands Only 2.4 Miles Apart With a 21-Hour Time Difference",
+    "The Alaskan Island Where You Can Look Into Tomorrow"
+  ],
+  "description": "Two islands in the Bering Strait are only 2.4 miles apart, but their time zones differ by 21 hours.\n\nHidden Atlas #12\n\nSources:\n- Wikipedia https://en.wikipedia.org/wiki/Diomede_Islands\n- Wikipedia https://en.wikipedia.org/wiki/Little_Diomede_Island\n\nFootage & images:\n- Video by spalla67 on Pixabay https://pixabay.com/videos/id-53907/\n- Video by Razzak_100 on Pixabay https://pixabay.com/videos/id-383986/\n- Video by bellergy on Pixabay https://pixabay.com/videos/id-22619/\n- Video by Mario_Krimer on Pixabay https://pixabay.com/videos/id-306155/\n- Video by TungArt7 on Pixabay https://pixabay.com/videos/id-213424/\n- Earth imagery: NASA Blue Marble (public domain). Borders: Natural Earth (public domain)\n\n#shorts #geography #alaska #russia #maps",
+  "hashtags": "#shorts #geography #alaska #russia #maps",
+  "tags": [
+    "Diomede Islands",
+    "Alaska",
+    "Russia",
+    "Bering Strait",
+    "geography",
+    "time zones"
+  ],
+  "pinned_comment": "Would you rather live on Yesterday Island or Tomorrow Island?",
+  "cover_text": "Look into tomorrow",
+  "social": {
+    "tiktok": "You Can See Tomorrow From This Alaskan Island  #geography #alaska #russia #maps #fyp",
+    "reels": "You Can See Tomorrow From This Alaskan Island  #geography #alaska #russia #maps",
+    "facebook": "You Can See Tomorrow From This Alaskan Island  #geography #alaska #russia #maps"
+  },
+  "post_times": [
+    {
+      "et": "08:00",
+      "th": "19:00"
+    },
+    {
+      "et": "12:30",
+      "th": "23:30"
+    },
+    {
+      "et": "19:00",
+      "th": "06:00"
+    }
+  ],
+  "status": "needs_review",
+  "status_th": "ต้องดูก่อน",
+  "reasons_th": [
+    "[ภาพ/ตัวหนังสือ] final review (score 6): The globe image in frame 7 is identical to the globe image in frame 8, resulting in a repeated picture.",
+    "[ภาพ/ตัวหนังสือ] final review (score 6): The globe image in frame 8 is an exact repetition of the picture in frame 7."
+  ],
+  "categories": {
+    "technical": [],
+    "factual": [],
+    "visual": [
+      "final review (score 6): The globe image in frame 7 is identical to the globe image in frame 8, resulting in a repeated picture.",
+      "final review (score 6): The globe image in frame 8 is an exact repetition of the picture in frame 7."
+    ],
+    "rights": [],
+    "editorial": []
+  },
+  "duration": 30.0,
+  "loop": true,
+  "facts": [
+    {
+      "claim": "At their closest points, the two Diomede islands are about 2.4 miles away from each other.",
+      "value": "2.4 miles",
+      "source": "https://en.wikipedia.org/wiki/Diomede_Islands",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Big Diomede is 21 hours ahead of Little Diomede due to locally defined time zones and the International Date Line.",
+      "value": "21 hours",
+      "source": "https://en.wikipedia.org/wiki/Diomede_Islands",
+      "source_name": "Wikipedia"
+    },
+    {
+      "claim": "Little Diomede Island is located about 16 miles west of mainland Alaska.",
+      "value": "16 miles",
+      "source": "https://en.wikipedia.org/wiki/Little_Diomede_Island",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "made": "2026-10-23T22:15",
+  "metrics": {
+    "seconds": {
+      "voice": 27,
+      "footage": 21,
+      "draft_qc": 12,
+      "render": 101,
+      "final_review": 7,
+      "qc": 7,
+      "writing": 122
+    },
+    "total_seconds": 295,
+    "api": {
+      "gemini_calls": 4,
+      "gemini_by_model": {
+        "gemini-3.5-flash": 0,
+        "gemini-3.6-flash": 0,
+        "gemini-flash-latest": 0,
+        "gemini-2.5-flash": 0,
+        "gemini-3.8-flash": 0,
+        "gemini-3.7-flash": 0,
+        "gemini-3-flash-preview": 0,
+        "gemini-flash-lite-latest": 4,
+        "gemini-3.5-flash-lite": 0
+      },
+      "gemini_errors": 0,
+      "footage_api_calls": 14,
+      "downloads": 7,
+      "gemini_rate_limited": 0
+    }
+  },
+  "checklist": [
+    "'Altered or synthetic content': NO for real footage + AI voice; YES only if realistic AI-made people/places/events are shown"
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "id": "EP013",
+  "topic": "The Aberfan Spoil Tip Collapse and Liquefaction",
+  "format": "shock_fact",
+  "loop": true,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Tip 7 at Aberfan was 111 feet high at the time of collapse.",
+      "value": "111 feet",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f2",
+      "claim": "The landslide debris moved at a maximum speed of 21 miles per hour.",
+      "value": "21 mph",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f3",
+      "claim": "About 140,000 cubic yards of spoil slipped down the mountain.",
+      "value": "140,000 cu yd",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f4",
+      "claim": "The disaster resulted in 144 total deaths.",
+      "value": "144",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f5",
+      "claim": "The slurry wave reached heights of 30 feet.",
+      "value": "30 feet",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    },
+    {
+      "id": "f6",
+      "claim": "The Aberfan colliery spoil tip collapsed on October 21, 1966.",
+      "value": "1966",
+      "source": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "source_name": "Wikipedia"
+    }
+  ],
+  "meta": {
+    "title": "The Engineering Mistake That Buried a School",
+    "title_options": [
+      "The Engineering Mistake That Buried a School",
+      "Why a Mountain of Waste Turned Into Liquid",
+      "The Tragic Science of the Aberfan Disaster"
+    ],
+    "description": "In 1966, a coal waste tip in Wales underwent liquefaction, leading to a tragic disaster that changed engineering laws forever.",
+    "hashtags": [
+      "shorts",
+      "history",
+      "engineering",
+      "disaster"
+    ],
+    "tags": [
+      "Aberfan",
+      "Wales",
+      "Mining",
+      "Liquefaction",
+      "History",
+      "Engineering Failure"
+    ],
+    "cover_text": "Solid Rock. Liquid Mud.",
+    "pinned_comment": "Should the engineers have been held criminally liable for this?"
+  },
+  "scenes": [
+    {
+      "text": "Solid rock can turn into liquid mud.",
+      "visual": {
+        "type": "map",
+        "pins": [
+          {
+            "label": "Aberfan, Wales",
+            "lon": -3.35,
+            "lat": 51.69
+          }
+        ],
+        "headline": "ABERFAN, 1966",
+        "kicker": "UNITED KINGDOM",
+        "zoom": "in"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "In 1966, the village of Aberfan learned this the hard way.",
+      "visual": {
+        "type": "footage",
+        "query": "1960s small village aerial",
+        "must_show": [
+          "village houses"
+        ],
+        "must_not_show": [
+          "modern cars",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "OCTOBER 1966",
+        "pos": "top"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "A massive pile of coal waste stood 111 feet tall above the houses.",
+      "visual": {
+        "type": "footage",
+        "query": "coal mining waste pile heap",
+        "must_show": [
+          "mound of black waste"
+        ],
+        "must_not_show": [
+          "trees",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "111 feet",
+        "label": "HEIGHT OF TIP 7",
+        "source": "Wikipedia",
+        "fact": "f1"
+      },
+      "scroll_test": 9
+    },
+    {
+      "text": "But engineers had ignored historical maps of the area.",
+      "visual": {
+        "type": "map",
+        "focus": [
+          "United Kingdom"
+        ],
+        "pins": [
+          {
+            "label": "Merthyr Tydfil",
+            "lon": -3.38,
+            "lat": 51.74
+          }
+        ],
+        "headline": "THE FATAL MISTAKE",
+        "kicker": "ENGINEERING ERROR",
+        "zoom": "none"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "The mountain was built directly over active natural springs.",
+      "visual": {
+        "type": "image",
+        "query": "old geological map water springs",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "HIDDEN SPRINGS",
+        "pos": "top"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "After heavy rain, the water pressure inside reached a breaking point.",
+      "visual": {
+        "type": "footage",
+        "query": "heavy rain storm mountain",
+        "must_show": [
+          "rain"
+        ],
+        "must_not_show": [
+          "sunny sky",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "CRITICAL PRESSURE",
+        "pos": "top"
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "140,000 cubic yards of debris suddenly underwent liquefaction.",
+      "visual": {
+        "type": "footage",
+        "query": "soil liquefaction experiment",
+        "must_show": [
+          "shaking soil"
+        ],
+        "must_not_show": [
+          "beach",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "140,000 cu yd",
+        "label": "WASTE VOLUME",
+        "source": "Wikipedia",
+        "fact": "f3"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "It transformed from solid earth into a heavy, black slurry.",
+      "visual": {
+        "type": "footage",
+        "query": "thick mud flow",
+        "must_show": [
+          "mud"
+        ],
+        "must_not_show": [
+          "clear water",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "BLACK SLURRY",
+        "pos": "top"
+      },
+      "scroll_test": 9
+    },
+    {
+      "text": "A 30-foot wave of mud roared downhill at 21 miles per hour.",
+      "visual": {
+        "type": "footage",
+        "query": "landslide mudflow aerial",
+        "must_show": [
+          "moving earth"
+        ],
+        "must_not_show": [
+          "ocean",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "21 mph",
+        "label": "SLURRY SPEED",
+        "source": "Wikipedia",
+        "fact": "f2"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "It hit the village school, claiming 144 lives.",
+      "visual": {
+        "type": "image",
+        "query": "Aberfan disaster memorial garden",
+        "source": "wikimedia",
+        "must_show": [],
+        "must_not_show": [
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "stat",
+        "value": "144",
+        "label": "TOTAL DEATHS",
+        "source": "Wikipedia",
+        "fact": "f4"
+      },
+      "scroll_test": 10
+    },
+    {
+      "text": "The tragedy permanently changed global engineering and mining laws.",
+      "visual": {
+        "type": "footage",
+        "query": "modern mining engineering site",
+        "must_show": [
+          "engineers"
+        ],
+        "must_not_show": [
+          "old machines",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "label",
+        "text": "SAFETY REFORMS",
+        "pos": "top"
+      },
+      "scroll_test": 7
+    },
+    {
+      "text": "It proved that mountains of waste must never sit on water.",
+      "visual": {
+        "type": "footage",
+        "query": "mountain side drainage pipes",
+        "must_show": [
+          "stabilized hill"
+        ],
+        "must_not_show": [
+          "collapse",
+          "watermark or big text",
+          "watermark or big text"
+        ]
+      },
+      "overlay": {
+        "type": "icons",
+        "title": "NEW STANDARDS",
+        "items": [
+          {
+            "icon": "droplet",
+            "label": "NO SPRINGS",
+            "state": "no"
+          },
+          {
+            "icon": "faucet-drip",
+            "label": "DRAINAGE",
+            "state": "check"
+          }
+        ]
+      },
+      "scroll_test": 8
+    },
+    {
+      "text": "And it showed how easily",
+      "visual": {
+        "type": "loop"
+      },
+      "scroll_test": 10
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Aberfan_disaster",
+    "https://en.wikipedia.org/wiki/Coal_mining"
+  ],
+  "qc_audit": [
+    "scene 0: overclaim: \"Solid rock can turn into liquid mud.\" -> Saturated coal waste can turn into liquid mud.",
+    "scene 0: overclaim: \"meta.cover_text: Solid Rock. Liquid Mud.\" -> Coal Waste. Liquid Mud.",
+    "scene 10: unsupported: \"The tragedy permanently changed global engineering and mining laws.\" -> The tragedy led to a massive inquiry and the removal of remaining tips.",
+    "scene 10: unsupported: \"scene 10 overlay.text: SAFETY REFORMS\" -> OFFICIAL INQUIRY",
+    "scene 11: unsupported: \"scene 11 overlay.title: NEW STANDARDS\" -> TIPS REMOVED"
+  ]
+}

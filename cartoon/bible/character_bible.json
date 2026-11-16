@@ -1,0 +1,235 @@
+{
+ "style_id": "SOI_DNA_v1",
+ "style_prompt": "Original 2D cartoon style 'SOI DNA': clean flat cel look, bold dark-indigo (#23203A) outlines of even thickness, flat colours with at most one soft shadow tone, warm restrained palette of coral, teal, mustard and cream, oversized bean-shaped heads (head about 40% of body height), small black dot eyes with one white highlight, thick expressive eyebrows, small rosy cheeks, simple 4-finger hands, clear silhouettes. No text, no logo, no watermark.",
+ "line_color": "#23203A",
+ "characters": [
+  {
+   "character_id": "C01",
+   "name": "พี่จ๊อบ",
+   "spoken_name": false,
+   "role": "ตัวเอก หนุ่มออฟฟิศที่ถูกส่งมารับข้าวให้ทั้งแผนก",
+   "personality": "deadpan: ตาครึ่งปิด พูดเรียบ สุภาพเสมอ ไม่ขึ้นเสียง ไม่เถียงยาว ความตลกมาจากความนิ่ง",
+   "face": "หัวทรงถั่วรีกว้าง คางมน ตาจุดดำครึ่งปิดใต้เปลือกตาหนา คิ้วตรงหนา",
+   "hair": "ผมดำยุ่งสั้น มีจุกชี้หนึ่งเส้นกลางหัว",
+   "proportion": "หัว 42% ของความสูงตัว ตัวป้อมเล็กน้อย",
+   "relative_height": 1.0,
+   "outfit_lock": {
+    "glasses": {
+     "name": "แว่นกรอบกลมดำหนา",
+     "hex": "#1E1E24"
+    },
+    "top": {
+     "name": "ฮู้ดดี้สีมัสตาร์ด มีเชือกฮู้ดสีครีม",
+     "hex": "#E3A21A",
+     "accent_hex": "#F6E7C8"
+    },
+    "pants": {
+     "name": "สแล็กส์เทา",
+     "hex": "#7A7F87"
+    },
+    "shoes": {
+     "name": "ผ้าใบขาว พื้นยางเทาอ่อน",
+     "hex": "#F4F1EA"
+    },
+    "skin": {
+     "hex": "#F1C7A0",
+     "cheek_hex": "#F09A8A"
+    }
+   },
+   "props_lock": [
+    {
+     "prop_id": "P01",
+     "name": "ถุงผ้าเก็บความร้อนสีเงินพับซ้อนกัน 5 ใบ คล้องไหล่ขวา",
+     "hex": "#C9CED6",
+     "from_shot": "SH01",
+     "until_shot": "END"
+    },
+    {
+     "prop_id": "P02",
+     "name": "บัตรคิวกระดาษครีม (เลข 45 ใส่ตอนตัดต่อ) เย็บติดใบสั่งยาว",
+     "hex": "#FFF4D6",
+     "from_shot": "SH01",
+     "until_shot": "SH08",
+     "change_event": "ถูก C02 แย่งไปใน SH08 แล้วอยู่ในมือ C02 ตั้งแต่ SH09"
+    }
+   ],
+   "voice": {
+    "engine": "edge-tts",
+    "voice_id": "th-TH-NiwatNeural",
+    "rate": "-12%",
+    "pitch": "-2Hz",
+    "volume": "+0%",
+    "style_note": "เรียบ ช้ากว่าคนอื่นเล็กน้อย",
+    "clone": false
+   },
+   "expressions": [
+    "neutral_deadpan",
+    "tiny_smile",
+    "confused",
+    "annoyed_flat",
+    "surprised_small"
+   ],
+   "mouths": [
+    "rest",
+    "open",
+    "wide",
+    "round"
+   ]
+  },
+  {
+   "character_id": "C02",
+   "name": "ป้าจุ๋ม",
+   "spoken_name": false,
+   "role": "คู่กรณี ป้ามั่นใจสูงที่แซงคิว",
+   "personality": "เอาแต่ใจ มั่นใจเต็มร้อย พูดเร็ว ไม่ฟังใคร แต่ไม่ใช่คนร้าย พอรู้ตัวก็หน้าม้าน",
+   "face": "หน้ากลม แก้มป่อง ตาจุดดำ คิ้วโก่งสูงเลิกได้ ปากกว้าง",
+   "hair": "ผมสั้นดัดลอนฟู สีน้ำตาลแดง",
+   "proportion": "หัว 40% ของความสูงตัว ตัวอวบเตี้ยกว่า C01",
+   "relative_height": 0.9,
+   "outfit_lock": {
+    "top": {
+     "name": "เสื้อลายดอกพื้นแดงปะการัง ดอกขาว",
+     "hex": "#D6453D",
+     "accent_hex": "#FFFFFF"
+    },
+    "necklace": {
+     "name": "สร้อยทองเส้นหนา",
+     "hex": "#D4A72C"
+    },
+    "pants": {
+     "name": "กางเกงผ้าขายาวสีกรมท่า",
+     "hex": "#2B2F4A"
+    },
+    "shoes": {
+     "name": "รองเท้าแตะหนังสีน้ำตาล",
+     "hex": "#7A4A2E"
+    },
+    "hair": {
+     "hex": "#8B3A2B"
+    },
+    "skin": {
+     "hex": "#E8B48C",
+     "cheek_hex": "#E98A7A"
+    }
+   },
+   "props_lock": [
+    {
+     "prop_id": "P03",
+     "name": "พัดพับสีปะการังอ่อน ซี่ครีม",
+     "hex": "#F28C6B",
+     "from_shot": "SH01",
+     "until_shot": "END",
+     "note": "ถือมือซ้ายตลอด"
+    },
+    {
+     "prop_id": "P02",
+     "name": "บัตรคิว (หลังแย่ง)",
+     "hex": "#FFF4D6",
+     "from_shot": "SH08",
+     "until_shot": "END"
+    }
+   ],
+   "voice": {
+    "engine": "edge-tts",
+    "voice_id": "th-TH-PremwadeeNeural",
+    "rate": "+0%",
+    "pitch": "-14Hz",
+    "volume": "+0%",
+    "style_note": "ดัง เร็ว มั่นใจ ช่วงท้ายเสียงเบาลง",
+    "clone": false
+   },
+   "expressions": [
+    "bossy",
+    "smug",
+    "proud",
+    "greedy",
+    "impatient",
+    "shocked",
+    "sheepish"
+   ],
+   "mouths": [
+    "rest",
+    "open",
+    "wide",
+    "round"
+   ]
+  },
+  {
+   "character_id": "C03",
+   "name": "น้องมิ้นท์",
+   "spoken_name": false,
+   "role": "พนักงานหน้าร้าน ผู้ประกาศคิว",
+   "personality": "ร่าเริงตามหน้าที่ ไม่รู้ดราม่า พูดเสียงบริการเท่ากันทุกประโยค",
+   "face": "หน้ารีเล็ก ตาจุดดำโต ยิ้มกว้าง",
+   "hair": "ผมบ็อบดำ หน้าม้าตรง",
+   "proportion": "หัว 40% ของความสูงตัว ตัวเพรียว",
+   "relative_height": 0.95,
+   "outfit_lock": {
+    "top": {
+     "name": "เสื้อยืดขาว",
+     "hex": "#FAFAF7"
+    },
+    "apron": {
+     "name": "ผ้ากันเปื้อนสีเขียวเทอร์คอยซ์ กระเป๋าหน้าสีครีม",
+     "hex": "#2A9D8F",
+     "accent_hex": "#F6E7C8"
+    },
+    "earrings": {
+     "name": "ต่างหูห่วงเงินเล็ก",
+     "hex": "#C0C4CC"
+    },
+    "pants": {
+     "name": "กางเกงเทาเข้ม (อยู่หลังเคาน์เตอร์ ไม่ค่อยเห็น)",
+     "hex": "#3C3F46"
+    },
+    "hair": {
+     "hex": "#15151A"
+    },
+    "skin": {
+     "hex": "#F3CDA9",
+     "cheek_hex": "#F2A08F"
+    }
+   },
+   "props_lock": [
+    {
+     "prop_id": "P04",
+     "name": "กองถุงกล่องข้าวมันไก่ 50 ห่อ บนเคาน์เตอร์",
+     "hex": "#FFFFFF",
+     "from_shot": "SH10",
+     "until_shot": "END",
+     "change_event": "C03 ยกขึ้นวางตอนอ่านออเดอร์ D10"
+    }
+   ],
+   "voice": {
+    "engine": "edge-tts",
+    "voice_id": "th-TH-PremwadeeNeural",
+    "rate": "+4%",
+    "pitch": "+16Hz",
+    "volume": "+0%",
+    "style_note": "สดใส เสียงบริการ (ใช้เสียงฐานเดียวกับ C02 แต่ปรับ pitch +16Hz / rate +10% เพราะ endpoint ฟรีมีเสียงไทยหญิงแค่ Premwadee; th-TH-AcharaNeural ใช้ไม่ได้ในรอบทดสอบ 2026-10-22)",
+    "clone": false
+   },
+   "expressions": [
+    "cheerful",
+    "neutral_pro"
+   ],
+   "mouths": [
+    "rest",
+    "open",
+    "wide",
+    "round"
+   ]
+  }
+ ],
+ "mouth_spec": {
+  "shapes": {
+   "rest": "closed line",
+   "open": "small open oval",
+   "wide": "big open, teeth hint",
+   "round": "small round 'o'"
+  },
+  "format": "transparent PNG, mouth centred on canvas, same canvas size for every shape of one character",
+  "anchor": "each pose image stores mouth_anchor [x,y] in assets/manifest.json; the sprite centre is placed on that point",
+  "note": "This is approximate mouth flap driven by audio loudness, not phoneme lip-sync."
+ }
+}

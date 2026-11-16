@@ -1,0 +1,920 @@
+{
+ "C01_full_neutral": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "neutral_deadpan",
+  "pose": "neutral",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C01_full_neutral.png",
+  "real": "characters/C01_full_neutral.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_full_neutral_blink": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "neutral_deadpan",
+  "pose": "neutral",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C01_full_neutral_blink.png",
+  "real": "characters/C01_full_neutral_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_full_gesture": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "tiny_smile",
+  "pose": "gesture",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "smile",
+  "blink": false,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C01_full_gesture.png",
+  "real": "characters/C01_full_gesture.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_full_gesture_blink": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "tiny_smile",
+  "pose": "gesture",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "smile",
+  "blink": true,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C01_full_gesture_blink.png",
+  "real": "characters/C01_full_gesture_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_bust_deadpan": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "neutral_deadpan",
+  "pose": "neutral",
+  "facing": 1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   661,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C01_bust_deadpan.png",
+  "real": "characters/C01_bust_deadpan.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_bust_deadpan_blink": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "neutral_deadpan",
+  "pose": "neutral",
+  "facing": 1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   661,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C01_bust_deadpan_blink.png",
+  "real": "characters/C01_bust_deadpan_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_bust_smile": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "tiny_smile",
+  "pose": "gesture",
+  "facing": 1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": false,
+  "mouth_anchor": [
+   661,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C01_bust_smile.png",
+  "real": "characters/C01_bust_smile.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_bust_smile_blink": {
+  "kind": "pose",
+  "character_id": "C01",
+  "expression": "tiny_smile",
+  "pose": "gesture",
+  "facing": 1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": true,
+  "mouth_anchor": [
+   661,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C01_bust_smile_blink.png",
+  "real": "characters/C01_bust_smile_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_bossy": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "bossy",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_bossy.png",
+  "real": "characters/C02_full_bossy.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_bossy_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "bossy",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_bossy_blink.png",
+  "real": "characters/C02_full_bossy_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_ticket": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "impatient",
+  "pose": "ticket",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_ticket.png",
+  "real": "characters/C02_full_ticket.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_ticket_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "impatient",
+  "pose": "ticket",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_ticket_blink.png",
+  "real": "characters/C02_full_ticket_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_sheepish": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "sheepish",
+  "pose": "sheepish",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_sheepish.png",
+  "real": "characters/C02_full_sheepish.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_sheepish_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "sheepish",
+  "pose": "sheepish",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_sheepish_blink.png",
+  "real": "characters/C02_full_sheepish_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_shocked": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "shocked",
+  "pose": "shocked",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "round",
+  "blink": false,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_shocked.png",
+  "real": "characters/C02_full_shocked.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_full_shocked_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "shocked",
+  "pose": "shocked",
+  "facing": 1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "round",
+  "blink": true,
+  "mouth_anchor": [
+   795,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C02_full_shocked_blink.png",
+  "real": "characters/C02_full_shocked_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_smug": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "smug",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_smug.png",
+  "real": "characters/C02_bust_smug.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_smug_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "smug",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_smug_blink.png",
+  "real": "characters/C02_bust_smug_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_proud": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "proud",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": false,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_proud.png",
+  "real": "characters/C02_bust_proud.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_proud_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "proud",
+  "pose": "bossy",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "rest",
+  "blink": true,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_proud_blink.png",
+  "real": "characters/C02_bust_proud_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_shocked": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "shocked",
+  "pose": "shocked",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "round",
+  "blink": false,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_shocked.png",
+  "real": "characters/C02_bust_shocked.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_bust_shocked_blink": {
+  "kind": "pose",
+  "character_id": "C02",
+  "expression": "shocked",
+  "pose": "shocked",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "round",
+  "blink": true,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C02_bust_shocked_blink.png",
+  "real": "characters/C02_bust_shocked_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_full_cheerful": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "cheerful",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "smile",
+  "blink": false,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C03_full_cheerful.png",
+  "real": "characters/C03_full_cheerful.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_full_cheerful_blink": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "cheerful",
+  "facing": -1,
+  "framing": "full",
+  "size": [
+   1440,
+   1664
+  ],
+  "rest_mouth": "smile",
+  "blink": true,
+  "mouth_anchor": [
+   644,
+   496
+  ],
+  "mouth_scale": 1.6,
+  "placeholder": "_placeholder/characters/C03_full_cheerful_blink.png",
+  "real": "characters/C03_full_cheerful_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_bust_cheerful": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "cheerful",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": false,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C03_bust_cheerful.png",
+  "real": "characters/C03_bust_cheerful.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_bust_cheerful_blink": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "cheerful",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": true,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C03_bust_cheerful_blink.png",
+  "real": "characters/C03_bust_cheerful_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_bust_bags": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "bags",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": false,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C03_bust_bags.png",
+  "real": "characters/C03_bust_bags.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_bust_bags_blink": {
+  "kind": "pose",
+  "character_id": "C03",
+  "expression": "cheerful",
+  "pose": "bags",
+  "facing": -1,
+  "framing": "bust",
+  "size": [
+   1188,
+   1500
+  ],
+  "rest_mouth": "smile",
+  "blink": true,
+  "mouth_anchor": [
+   527,
+   699
+  ],
+  "mouth_scale": 1.9,
+  "placeholder": "_placeholder/characters/C03_bust_bags_blink.png",
+  "real": "characters/C03_bust_bags_blink.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_mouth_rest": {
+  "kind": "mouth",
+  "character_id": "C01",
+  "shape": "rest",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C01_mouth_rest.png",
+  "real": "mouths/C01_mouth_rest.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_mouth_open": {
+  "kind": "mouth",
+  "character_id": "C01",
+  "shape": "open",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C01_mouth_open.png",
+  "real": "mouths/C01_mouth_open.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_mouth_wide": {
+  "kind": "mouth",
+  "character_id": "C01",
+  "shape": "wide",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C01_mouth_wide.png",
+  "real": "mouths/C01_mouth_wide.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_mouth_round": {
+  "kind": "mouth",
+  "character_id": "C01",
+  "shape": "round",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C01_mouth_round.png",
+  "real": "mouths/C01_mouth_round.png",
+  "status": "PLACEHOLDER"
+ },
+ "C01_mouth_smile": {
+  "kind": "mouth",
+  "character_id": "C01",
+  "shape": "smile",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C01_mouth_smile.png",
+  "real": "mouths/C01_mouth_smile.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_mouth_rest": {
+  "kind": "mouth",
+  "character_id": "C02",
+  "shape": "rest",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C02_mouth_rest.png",
+  "real": "mouths/C02_mouth_rest.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_mouth_open": {
+  "kind": "mouth",
+  "character_id": "C02",
+  "shape": "open",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C02_mouth_open.png",
+  "real": "mouths/C02_mouth_open.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_mouth_wide": {
+  "kind": "mouth",
+  "character_id": "C02",
+  "shape": "wide",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C02_mouth_wide.png",
+  "real": "mouths/C02_mouth_wide.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_mouth_round": {
+  "kind": "mouth",
+  "character_id": "C02",
+  "shape": "round",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C02_mouth_round.png",
+  "real": "mouths/C02_mouth_round.png",
+  "status": "PLACEHOLDER"
+ },
+ "C02_mouth_smile": {
+  "kind": "mouth",
+  "character_id": "C02",
+  "shape": "smile",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C02_mouth_smile.png",
+  "real": "mouths/C02_mouth_smile.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_mouth_rest": {
+  "kind": "mouth",
+  "character_id": "C03",
+  "shape": "rest",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C03_mouth_rest.png",
+  "real": "mouths/C03_mouth_rest.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_mouth_open": {
+  "kind": "mouth",
+  "character_id": "C03",
+  "shape": "open",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C03_mouth_open.png",
+  "real": "mouths/C03_mouth_open.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_mouth_wide": {
+  "kind": "mouth",
+  "character_id": "C03",
+  "shape": "wide",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C03_mouth_wide.png",
+  "real": "mouths/C03_mouth_wide.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_mouth_round": {
+  "kind": "mouth",
+  "character_id": "C03",
+  "shape": "round",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C03_mouth_round.png",
+  "real": "mouths/C03_mouth_round.png",
+  "status": "PLACEHOLDER"
+ },
+ "C03_mouth_smile": {
+  "kind": "mouth",
+  "character_id": "C03",
+  "shape": "smile",
+  "size": [
+   170,
+   110
+  ],
+  "reference_height": 1000,
+  "placeholder": "_placeholder/mouths/C03_mouth_smile.png",
+  "real": "mouths/C03_mouth_smile.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG01": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": false,
+  "placeholder": "_placeholder/backgrounds/BG01.png",
+  "real": "backgrounds/BG01.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG01_FG": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": true,
+  "placeholder": "_placeholder/backgrounds/BG01_FG.png",
+  "real": "backgrounds/BG01_FG.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG01M": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": false,
+  "placeholder": "_placeholder/backgrounds/BG01M.png",
+  "real": "backgrounds/BG01M.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG01M_FG": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": true,
+  "placeholder": "_placeholder/backgrounds/BG01M_FG.png",
+  "real": "backgrounds/BG01M_FG.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG02": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": false,
+  "placeholder": "_placeholder/backgrounds/BG02.png",
+  "real": "backgrounds/BG02.png",
+  "status": "PLACEHOLDER"
+ },
+ "BG03": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": false,
+  "placeholder": "_placeholder/backgrounds/BG03.png",
+  "real": "backgrounds/BG03.png",
+  "status": "PLACEHOLDER"
+ },
+ "INS01": {
+  "kind": "bg",
+  "size": [
+   1188,
+   2112
+  ],
+  "transparent": false,
+  "placeholder": "_placeholder/backgrounds/INS01.png",
+  "real": "backgrounds/INS01.png",
+  "status": "PLACEHOLDER"
+ },
+ "PROP_TICKET": {
+  "kind": "prop",
+  "size": [
+   520,
+   900
+  ],
+  "placeholder": "_placeholder/props/PROP_TICKET.png",
+  "real": "props/PROP_TICKET.png",
+  "status": "PLACEHOLDER"
+ },
+ "HAND_C02": {
+  "kind": "prop",
+  "size": [
+   900,
+   600
+  ],
+  "placeholder": "_placeholder/props/HAND_C02.png",
+  "real": "props/HAND_C02.png",
+  "status": "PLACEHOLDER"
+ },
+ "PROP_BAGS_WIDE": {
+  "kind": "prop",
+  "size": [
+   1188,
+   2112
+  ],
+  "placeholder": "_placeholder/props/PROP_BAGS_WIDE.png",
+  "real": "props/PROP_BAGS_WIDE.png",
+  "status": "PLACEHOLDER"
+ }
+}
