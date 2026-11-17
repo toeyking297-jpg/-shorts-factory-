@@ -1,0 +1,122 @@
+{
+ "id": "NEW3",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "new",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 200,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "pocket"
+    },
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 540,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "motion": "talk",
+     "talk": 1
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 880,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "wave",
+     "face": "happy"
+    }
+   ]
+  },
+  {
+   "name": "closeup",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 540,
+     "y": 2600,
+     "s": 2.0,
+     "depth": 0,
+     "pose": "relaxed"
+    }
+   ]
+  },
+  {
+   "name": "c2",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 540,
+     "y": 2600,
+     "s": 2.0,
+     "depth": 0,
+     "pose": "relaxed"
+    }
+   ]
+  },
+  {
+   "name": "c3",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 540,
+     "y": 2600,
+     "s": 2.0,
+     "depth": 0,
+     "pose": "relaxed"
+    }
+   ]
+  }
+ ]
+}

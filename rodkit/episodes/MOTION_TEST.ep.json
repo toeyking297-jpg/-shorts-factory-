@@ -1,0 +1,145 @@
+{
+ "id": "MOTION",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "walk",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 300,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "walk"
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 780,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "walk",
+     "t0": 0.3
+    }
+   ]
+  },
+  {
+   "name": "run",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 300,
+     "y": 1780,
+     "s": 0.75,
+     "depth": 0,
+     "motion": "run"
+    },
+    {
+     "type": "fig",
+     "who": "khaotu",
+     "x": 780,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "run",
+     "t0": 0.2
+    }
+   ]
+  },
+  {
+   "name": "sit",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 300,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "sit",
+     "chair": "office"
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 780,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "sitTalk",
+     "chair": "wood"
+    }
+   ]
+  },
+  {
+   "name": "sit2",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "yai",
+     "x": 300,
+     "y": 1780,
+     "s": 0.8,
+     "depth": 0,
+     "motion": "sit",
+     "chair": "plastic"
+    },
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 780,
+     "y": 1780,
+     "s": 0.75,
+     "depth": 0,
+     "motion": "sitType",
+     "chair": "plastic",
+     "face": "happy"
+    }
+   ]
+  }
+ ]
+}

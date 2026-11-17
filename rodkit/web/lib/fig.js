@@ -157,6 +157,24 @@
       return { back: cs.map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr + 2)}" fill="${ink(H.color)}"/>`).join("") + cs.map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr - 1.5)}" fill="${H.color}"/>`).join(""),
         front: cs.filter((c) => c[1] < -1150).map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr)}" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="2.6"/><path d="M${f(x - rr * 0.5)},${f(y)} a${f(rr * 0.4)},${f(rr * 0.4)} 0 1 1 ${f(rr * 0.6)},${f(rr * 0.2)}" fill="none" stroke="${H.hi}" stroke-width="2.6"/>`).join("") };
     },
+    quiff: (H, id) => ({ back: "", front:
+      `<defs><linearGradient id="qf${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${H.color}"/><stop offset="1" stop-color="${H.color}" stop-opacity="0"/></linearGradient></defs>` +
+      `<path d="M-66,-1160 Q-80,-1110 -70,-1066 L-58,-1100 Q-52,-1136 -42,-1160Z" fill="url(#qf${id})"/>` +
+      `<path d="M-72,-1128 Q-90,-1196 -44,-1230 Q4,-1262 58,-1258 Q104,-1250 112,-1206 Q114,-1180 102,-1162 Q96,-1182 76,-1188 Q40,-1196 8,-1184 Q-24,-1170 -44,-1150 Q-60,-1140 -72,-1128Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/>` +
+      `<path d="M98,-1166 Q108,-1150 96,-1136 Q92,-1150 84,-1160Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="2.4"/>` +
+      `<path d="M-46,-1214 Q20,-1250 96,-1222 M-30,-1196 Q30,-1230 104,-1200 M-10,-1180 Q40,-1206 98,-1180 M30,-1246 Q70,-1250 100,-1232" fill="none" stroke="${H.hi}" stroke-width="3.4" stroke-linecap="round" opacity=".85"/>` }),
+    long: (H) => {
+      const back = `<path d="M-98,-1130 Q-110,-1226 -40,-1250 Q40,-1264 96,-1218 Q112,-1180 106,-1130 Q104,-1080 98,-1040 Q92,-1030 86,-1040 L60,-1004 L-60,-990 Q-80,-960 -92,-900 Q-104,-850 -86,-800 Q-110,-790 -126,-830 Q-140,-880 -124,-950 Q-110,-1020 -110,-1060 Q-108,-1100 -98,-1130Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/>` +
+        `<path d="M-112,-1020 Q-128,-940 -116,-860 M-98,-1000 Q-110,-920 -100,-850" fill="none" stroke="${shd(H.color)}" stroke-width="5" stroke-linecap="round"/>`;
+      const front = `<path d="M-86,-1150 Q-88,-1222 -30,-1244 Q44,-1258 96,-1214 Q114,-1190 108,-1150 Q90,-1176 56,-1180 Q20,-1184 -6,-1166 Q-30,-1150 -44,-1120 Q-56,-1080 -58,-1030 Q-62,-990 -50,-956 Q-36,-920 -48,-880 Q-58,-850 -82,-842 Q-70,-870 -76,-900 Q-88,-940 -84,-1000 Q-80,-1080 -86,-1150Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/>` +
+        `<path d="M76,-1228 Q20,-1214 -10,-1166 M40,-1244 Q-10,-1220 -40,-1150 M-66,-1150 Q-74,-1060 -64,-980 Q-56,-930 -66,-880" fill="none" stroke="${H.hi}" stroke-width="3.2" stroke-linecap="round" opacity=".8"/>`;
+      return { back, front };
+    },
+    ponytail: (H) => ({
+      back: `<path d="M-88,-1150 Q-140,-1150 -150,-1080 Q-158,-1010 -132,-950 Q-120,-920 -102,-918 Q-118,-980 -112,-1040 Q-106,-1100 -82,-1124Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M-130,-1090 Q-140,-1020 -122,-960" fill="none" stroke="${H.hi}" stroke-width="3" stroke-linecap="round"/>`,
+      front: `<path d="M-82,-1110 Q-92,-1200 -34,-1234 Q40,-1250 92,-1206 Q108,-1184 104,-1150 Q86,-1176 56,-1182 Q26,-1186 4,-1172 Q-4,-1186 -24,-1186 Q-56,-1178 -70,-1140 Q-76,-1126 -82,-1110Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/>` +
+        `<path d="M-4,-1232 Q2,-1206 4,-1174 M30,-1236 Q50,-1210 80,-1196 M-30,-1228 Q-50,-1200 -60,-1150" fill="none" stroke="${H.hi}" stroke-width="3" stroke-linecap="round" opacity=".8"/>` +
+        `<ellipse cx="-92" cy="-1142" rx="14" ry="18" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/><path d="M-98,-1154 Q-90,-1142 -98,-1130" fill="none" stroke="${shd(H.tie)}" stroke-width="3"/>` }),
     pigtails: (H) => ({
       back: `<g transform="translate(-74,-1140) rotate(14)"><path d="M0,0 Q-36,30 -30,96 Q-24,130 -6,138 Q-10,80 14,20Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}"/></g><circle cx="-74" cy="-1140" r="12" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/><g transform="translate(98,-1170) rotate(-10)"><path d="M0,0 Q30,30 26,80 Q16,96 8,96 Q10,50 -10,10Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}"/></g>`,
       front: `<path d="M-74,-1120 Q-84,-1200 -30,-1230 Q40,-1246 90,-1200 Q104,-1180 100,-1150 L96,-1138 L-8,-1138 Q-40,-1134 -62,-1100Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M0,-1200 L-2,-1140 M30,-1210 L30,-1140 M60,-1200 L62,-1140" stroke="${H.hi}" stroke-width="3" opacity=".7"/><circle cx="96" cy="-1172" r="10" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.4"/>` }),
@@ -254,6 +272,16 @@
       s += `<path d="M-140,-960 L-34,-976 Q-24,-900 -12,-600 L-140,-600Z" fill="${V}" stroke="${ink(V)}" stroke-width="${OW}"/><path d="M46,-976 Q36,-900 34,-600 L140,-600 L140,-960Z" fill="${V}" stroke="${ink(V)}" stroke-width="${OW}"/>`;
       s += `<path d="M52,-940 Q64,-820 58,-600 L140,-600 L140,-940Z" fill="${shd(V)}"/>` + [-920, -860, -800, -740, -680].map((y) => `<circle cx="-18" cy="${y}" r="4" fill="${O.button}" stroke="${ink(V)}" stroke-width="1.6"/>`).join("");
       s += `<path d="M-120,-930 l0,300 M-90,-940 l0,320 M70,-930 l0,300" stroke="${ink(V)}" stroke-width="1.6" opacity=".35"/><rect x="-96" y="-720" width="50" height="44" rx="4" fill="${shd(V)}" stroke="${ink(V)}" stroke-width="2.4"/><path d="M-130,-612 L-14,-612 M38,-612 L140,-612" stroke="${shd(V)}" stroke-width="10"/>`;
+    } else if (O && O.type === "jacket") {
+      // แจ็กเก็ตยีนส์ เปิดหน้า มีปกเสื้อ กระเป๋าหน้าอกฝาปิด ตะเข็บด้ายสีอ่อน ขอบเอว
+      const V = O.color, st = RK.shade(V, 0.45);
+      s += `<path d="M-140,-960 L-34,-976 Q-26,-900 -16,-600 L-140,-600Z" fill="${V}" stroke="${ink(V)}" stroke-width="${OW}"/><path d="M46,-976 Q38,-900 36,-600 L140,-600 L140,-960Z" fill="${V}" stroke="${ink(V)}" stroke-width="${OW}"/>`;
+      s += `<path d="M54,-940 Q66,-820 60,-600 L140,-600 L140,-940Z" fill="${shd(V)}"/>`;
+      s += `<path d="M-128,-900 L-24,-904 M48,-904 L130,-900" stroke="${st}" stroke-width="2" stroke-dasharray="6 4" opacity=".8"/>`;
+      s += `<path d="M-30,-976 L-46,-930 L-20,-912 L-12,-952Z" fill="${hil(V)}" stroke="${ink(V)}" stroke-width="2.6" stroke-linejoin="round"/><path d="M44,-976 L58,-934 L40,-916 L34,-952Z" fill="${hil(V)}" stroke="${ink(V)}" stroke-width="2.6" stroke-linejoin="round"/>`;
+      s += [[-96, -880, 56], [52, -880, 40]].map(([x, y, w]) => `<rect x="${x}" y="${y}" width="${w}" height="46" rx="3" fill="${V}" stroke="${ink(V)}" stroke-width="2.4"/><path d="M${x},${y} L${x + w},${y} L${x + w - 4},${y + 16} L${x + w / 2},${y + 22} L${x + 4},${y + 16}Z" fill="${hil(V)}" stroke="${ink(V)}" stroke-width="2.4"/><circle cx="${x + w / 2}" cy="${y + 14}" r="3.6" fill="#C9A44A" stroke="#7A5E2A" stroke-width="1.2"/><rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="38" rx="2" fill="none" stroke="${st}" stroke-width="1.4" stroke-dasharray="4 3" opacity=".7"/>`).join("");
+      s += `<rect x="-140" y="-640" width="122" height="34" fill="${shd(V)}" stroke="${ink(V)}" stroke-width="2.4"/><rect x="36" y="-640" width="104" height="34" fill="${RK.shade(V, -0.24)}" stroke="${ink(V)}" stroke-width="2.4"/><path d="M-140,-630 L-18,-630 M36,-630 L140,-630" stroke="${st}" stroke-width="1.6" stroke-dasharray="5 4"/>` +
+        [-860, -780, -700].map((y) => `<circle cx="-26" cy="${y}" r="4.2" fill="#C9A44A" stroke="#7A5E2A" stroke-width="1.4"/>`).join("") + `<path d="M-90,-790 q20,-6 40,4 M60,-760 q16,-4 30,4" fill="none" stroke="${ink(V)}" stroke-width="2" opacity=".5"/>`;
     } else if (O && O.type === "apron") {
       const V = O.color;
       s += `<path d="M-60,-880 L76,-880 L90,-600 L-74,-600Z" fill="${V}" stroke="${ink(V)}" stroke-width="${OW}"/><path d="M-50,-880 Q-40,-950 -22,-974 M66,-880 Q60,-950 48,-972" fill="none" stroke="${V}" stroke-width="10"/><path d="M60,-870 Q70,-740 78,-600 L90,-600 L76,-880Z" fill="${shd(V)}"/>`;
@@ -264,6 +292,7 @@
       case "peter": s += `<path d="M-24,-980 Q-30,-950 -4,-946 Q10,-958 14,-972 Q30,-954 46,-958 Q56,-970 44,-976 Q10,-964 -24,-980Z" fill="#FFFFFF" stroke="#BFB8AA" stroke-width="2.6"/>`; break;
       case "polo": s += `<path d="M-24,-980 L-8,-938 L10,-952 L26,-938 L44,-976 Q10,-966 -24,-980Z" fill="${hil(tc)}" stroke="${ink(tc)}" stroke-width="2.6"/><path d="M10,-952 L12,-890" stroke="${ink(tc)}" stroke-width="2.4"/><circle cx="12" cy="-930" r="3.4" fill="#fff" stroke="${ink(tc)}" stroke-width="1.4"/><circle cx="12" cy="-906" r="3.4" fill="#fff" stroke="${ink(tc)}" stroke-width="1.4"/><path d="M40,-910 l14,0 l-3,8 l-8,0Z" fill="#fff" opacity=".8"/>`; break;
       case "shirt": s += `<path d="M-24,-980 L-14,-942 L8,-958 L26,-940 L44,-976 Q10,-966 -24,-980Z" fill="${hil(tc)}" stroke="${ink(tc)}" stroke-width="2.6"/><path d="M8,-958 L12,-604" stroke="${ink(tc)}" stroke-width="2"/>` + [-900, -850, -800, -750, -700].map((y) => `<circle cx="18" cy="${y}" r="3" fill="#EEE" stroke="${ink(tc)}" stroke-width="1.2"/>`).join("") + `<rect x="40" y="-916" width="30" height="30" rx="3" fill="none" stroke="${ink(tc)}" stroke-width="2"/><rect x="48" y="-926" width="5" height="22" rx="2" fill="#2F4F8C"/>`; break;
+      case "vneck": s += `<path d="M-24,-980 L10,-930 L44,-976 L36,-978 L10,-942 L-16,-982Z" fill="${shd(tc)}" stroke="${ink(tc)}" stroke-width="2.4" stroke-linejoin="round"/>`; break;
       case "mandarin": s += `<path d="M-24,-980 Q10,-962 44,-976 L44,-964 Q10,-950 -24,-966Z" fill="${hil(tc)}" stroke="${ink(tc)}" stroke-width="2.4"/><path d="M10,-958 L14,-604" stroke="${ink(tc)}" stroke-width="2"/>` + [-920, -870, -820, -770, -720, -670].map((y) => `<circle cx="14" cy="${y}" r="3.4" fill="${T.p2 || "#F2C14E"}" stroke="${ink(tc)}" stroke-width="1.2"/>`).join(""); break;
       default: s += `<path d="M-24,-980 Q10,-968 44,-976" fill="none" stroke="${ink(tc)}" stroke-width="3"/><path d="M-20,-976 Q10,-956 40,-972" fill="none" stroke="${shd(tc)}" stroke-width="5"/>`;
     }
@@ -274,7 +303,8 @@
   }
   function lower(C) {
     const B = C.bottom, c = B.color;
-    if (B.type === "skirt") return `<path d="M-88,-612 L80,-612 Q110,-500 118,-380 Q20,-368 -100,-380 Q-104,-500 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M-50,-600 L-60,-380 M0,-600 L6,-374 M44,-600 L66,-378" stroke="${ink(c)}" stroke-width="2.2" opacity=".6"/><path d="M60,-600 Q100,-500 110,-384 L118,-380 Q110,-500 80,-612Z" fill="${shd(c)}"/>`;
+    if (B.type === "skirt") { const yb = -612 + 232 * (B.len || 1), fl = 30 * (B.len || 1), yb2 = yb + 12;
+      return `<path d="M-88,-612 L80,-612 Q${f(80 + fl)},-500 ${f(88 + fl)},${f(yb)} Q20,${f(yb2)} ${f(-70 - fl)},${f(yb)} Q${f(-74 - fl * 0.6)},-500 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M-50,-600 L${f(-50 - fl * 0.6)},${f(yb + 2)} M0,-600 L6,${f(yb2)} M44,-600 L${f(44 + fl * 0.8)},${f(yb + 4)}" stroke="${ink(c)}" stroke-width="2.2" opacity=".6"/><path d="M60,-600 Q${f(70 + fl)},-500 ${f(80 + fl)},${f(yb + 2)} L${f(88 + fl)},${f(yb)} Q${f(80 + fl)},-500 80,-612Z" fill="${shd(c)}"/>` + (B.belt ? `<rect x="-88" y="-614" width="168" height="16" fill="${B.belt}" stroke="${ink(B.belt)}" stroke-width="2"/>` : ""); }
     if (B.type === "sarong") { let s = `<path d="M-88,-612 L80,-612 Q92,-300 96,-74 Q10,-62 -84,-74 Q-92,-300 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M60,-600 Q76,-300 80,-76 L96,-74 Q92,-300 80,-612Z" fill="${shd(c)}"/>`;
       s += [-230, -170, -114].map((y) => `<path d="M-86,${y} L94,${y}" stroke="${B.p1}" stroke-width="12" opacity=".85"/><path d="M-86,${y + 12} L94,${y + 12}" stroke="${B.p2}" stroke-width="3"/>`).join("");
       return s + `<path d="M-86,-600 L80,-600" stroke="${shd(c)}" stroke-width="12"/><path d="M50,-596 Q40,-300 60,-76" fill="none" stroke="${ink(c)}" stroke-width="2.4" opacity=".6"/>`; }
@@ -324,29 +354,113 @@
   };
   RK.POSE2 = POSE2;
 
+
+  // ---------- เก้าอี้ (สำหรับท่านั่ง) มุม 3/4 หันขวา: พนักพิงอยู่ด้านหลัง (ซ้าย) ----------
+  RK.figChair = function (kind, hipY, bw = 1) {
+    const sy = hipY + 46, k = Math.max(1, bw);
+    let g = "";
+    if (kind === "office") {
+      const c = "#2F3B4C", o = ink(c);
+      g += [-70, 0, 80].map((dx) => `<path d="M10,${f(sy + 70)} L${f(dx * k)},-18" stroke="#2A2A2E" stroke-width="10" stroke-linecap="round"/><circle cx="${f(dx * k)}" cy="-10" r="10" fill="#1E1E22"/>`).join("");
+      g += `<rect x="2" y="${f(sy + 20)}" width="16" height="${f(-sy - 40)}" fill="#55585E" stroke="#2A2A2E" stroke-width="3"/>`;
+      g += `<path d="M${f(-150 * k)},${f(sy - 380)} Q${f(-170 * k)},${f(sy - 200)} ${f(-130 * k)},${f(sy - 20)} L${f(-90 * k)},${f(sy - 20)} Q${f(-118 * k)},${f(sy - 200)} ${f(-100 * k)},${f(sy - 380)} Q${f(-126 * k)},${f(sy - 400)} ${f(-150 * k)},${f(sy - 380)}Z" fill="${c}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/>`;
+      g += `<path d="M${f(-128 * k)},${f(sy - 40)} L${f(-60 * k)},${f(sy + 6)}" stroke="#2A2A2E" stroke-width="12" stroke-linecap="round"/>`;
+      g += `<path d="M${f(-120 * k)},${f(sy)} Q${f(-124 * k)},${f(sy - 22)} ${f(-96 * k)},${f(sy - 24)} L${f(120 * k)},${f(sy - 24)} Q${f(146 * k)},${f(sy - 20)} ${f(140 * k)},${f(sy + 2)} L${f(132 * k)},${f(sy + 22)} L${f(-112 * k)},${f(sy + 22)}Z" fill="${c}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M${f(-110 * k)},${f(sy + 12)} L${f(134 * k)},${f(sy + 12)} L${f(132 * k)},${f(sy + 22)} L${f(-112 * k)},${f(sy + 22)}Z" fill="${shd(c)}"/>`;
+    } else if (kind === "plastic") {
+      const c = "#D8483B", o = ink(c);
+      g += [[-90, 1], [110, 1], [-60, 0.9], [130, 0.9]].map(([x, q]) => `<path d="M${f(x * k)},${f(sy + 10)} L${f(x * k * 1.06)},0" stroke="${o}" stroke-width="${f(18 * q + 3)}" stroke-linecap="round"/><path d="M${f(x * k)},${f(sy + 10)} L${f(x * k * 1.06)},0" stroke="${q < 1 ? shd(c) : c}" stroke-width="${f(18 * q)}" stroke-linecap="round"/>`).join("");
+      g += `<path d="M${f(-130 * k)},${f(sy - 320)} Q${f(-140 * k)},${f(sy - 160)} ${f(-112 * k)},${f(sy)} L${f(-84 * k)},${f(sy)} Q${f(-104 * k)},${f(sy - 160)} ${f(-94 * k)},${f(sy - 320)}Z" fill="${c}" stroke="${o}" stroke-width="${OW}"/>` + [0.25, 0.45, 0.65].map((q) => `<path d="M${f(-126 * k)},${f(sy - 320 * q)} L${f(-100 * k)},${f(sy - 320 * q)}" stroke="${o}" stroke-width="3"/>`).join("");
+      g += `<path d="M${f(-120 * k)},${f(sy - 10)} L${f(140 * k)},${f(sy - 18)} L${f(136 * k)},${f(sy + 14)} L${f(-118 * k)},${f(sy + 16)}Z" fill="${c}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/>`;
+    } else {
+      const c = "#9B6A43", o = ink(c);
+      g += [[-90, 1], [120, 1], [-60, 0.85], [140, 0.85]].map(([x, q]) => `<rect x="${f(x * k - 8)}" y="${f(sy)}" width="16" height="${f(-sy)}" fill="${q < 1 ? shd(c) : c}" stroke="${o}" stroke-width="2.6"/>`).join("");
+      g += `<rect x="${f(-112 * k)}" y="${f(sy - 330)}" width="22" height="${330}" fill="${c}" stroke="${o}" stroke-width="2.6"/>` + [0.3, 0.55, 0.8].map((q) => `<rect x="${f(-118 * k)}" y="${f(sy - 330 * q)}" width="34" height="18" fill="${hil(c)}" stroke="${o}" stroke-width="2.4"/>`).join("");
+      g += `<path d="M${f(-120 * k)},${f(sy - 8)} L${f(150 * k)},${f(sy - 14)} L${f(150 * k)},${f(sy + 10)} L${f(-120 * k)},${f(sy + 14)}Z" fill="${hil(c)}" stroke="${o}" stroke-width="${OW}"/>`;
+    }
+    return g;
+  };
+
+  // ---------- โมชั่น: ท่าที่ขยับตามเวลา ----------
+  // p.motion: idle | talk | wave | walk | run | sit | sitTalk | sitType · p.freq = รอบต่อวินาที (เดิน 0.9 วิ่ง 1.45)
+  // ค่ามุม: สะโพก/ไหล่ ค่าลบ = ไปข้างหน้า (ทิศที่หัน) · เข่า ค่าบวก = หน้าแข้งพับไปข้างหลัง · ศอก ค่าลบ = แขนท่อนล่างยกไปข้างหน้า
+  const MOT = {
+    walk: { A: 24, B: 46, arm: 20, elb: 14, lean: 2, freq: 0.9 },
+    run:  { A: 40, B: 96, arm: 42, elb: 92, lean: 9, freq: 1.45 },
+  };
+  function motionPose(p, t) {
+    const m = p.motion || "";
+    const base = POSE2[p.pose || "relaxed"] || POSE2.relaxed;
+    const Q = { near: base.near.slice(), far: base.far.slice(), legN: base.legN.slice(), legF: base.legF.slice(), lean: base.lean, lift: 0, footN: 0, footF: 0, sit: false, thighK: 1 };
+    if (m === "walk" || m === "run") {
+      const M = MOT[m], fr = p.freq || M.freq, ph = 2 * Math.PI * fr * (t - (p.t0 || 0));
+      const legAt = (ph2) => { const u = Math.sin(ph2), v = Math.cos(ph2); return [[-M.A * u + (m === "run" ? -6 : 0), M.B * Math.max(0, v) + (m === "run" ? 22 : 5)], -14 * Math.max(0, v) * (m === "run" ? 1.4 : 1)]; };
+      const [lN, fN] = legAt(ph), [lF, fF] = legAt(ph + Math.PI);
+      Q.legN = lN; Q.legF = lF; Q.footN = fN; Q.footF = fF;
+      const sw = Math.sin(ph);
+      if (m === "walk") { Q.near = [M.arm * sw * 0.9 + 4, -M.elb - 10 * Math.max(0, -sw), "relaxed"]; Q.far = [-M.arm * sw * 0.9 - 6, -M.elb - 10 * Math.max(0, sw), "relaxed"]; }
+      else { Q.near = [M.arm * sw - 6, -M.elb, "fist"]; Q.far = [-M.arm * sw - 10, -M.elb, "fist"]; Q.lift = 22 * Math.max(0, Math.sin(2 * ph - 0.6)); }
+      if (p.carry) Q.near = base.near.slice();
+      Q.lean = M.lean;
+    } else if (m === "sit" || m === "sitTalk" || m === "sitType") {
+      Q.sit = true; Q.thighK = 0.8;
+      Q.legN = [-86, 92]; Q.legF = [-80, 88];
+      Q.near = m === "sitType" ? [34, -96, "relaxed"] : [14, -62, "relaxed"];
+      Q.far = m === "sitType" ? [30, -92, "relaxed"] : [8, -58, "relaxed"];
+      if (m === "sitType") { const k = Math.sin(t * 13) * 3; Q.near[1] += k; Q.far[1] -= k; }
+      if (m === "sitTalk") { Q.near = [20, -96 + Math.sin(t * 4.2) * 10, "open", 0.62]; }
+      Q.lean = -2;
+    } else if (m === "talk") {
+      Q.near = [16 + Math.sin(t * 2.3) * 6, -100 + Math.sin(t * 4.1) * 12, "open", 0.62];
+    } else if (m === "wave") {
+      Q.near = [146, 34 + Math.sin(t * 9) * 18, "wave"];
+    } else if (m === "idle") {
+      Q.near[0] += Math.sin(t * 0.9) * 2; Q.far[0] += Math.sin(t * 0.9 + 1) * 2;
+    }
+    if (p.armN) Q.near = p.armN; if (p.armF) Q.far = p.armF;
+    return Q;
+  }
+  RK.figMotion = motionPose;
+  // ระยะที่ตัวละครเดิน/วิ่งได้ (หน่วยจอ) ตามความยาวขา ความถี่ และสเกล — ให้เท้าไม่ไถลบนพื้น
+  RK.figMoveX = function (A, t) {
+    if (!A.move || (A.motion !== "walk" && A.motion !== "run")) return 0;
+    const C = RK.FIG_CAST[A.who || "hero"]; if (!C) return 0;
+    const M = MOT[A.motion], fr = A.freq || M.freq, L = (278 + 262) * ((C.body || {}).hL || 1);
+    const v = 4 * L * Math.sin((M.A * Math.PI) / 180) * fr * (A.motion === "run" ? 1.15 : 0.92) * (A.s || 1);
+    const dt = Math.max(0, t - (A.t0 || 0)), dir = (A.facing || 1) < 0 ? -1 : 1;
+    let dx = v * dt * dir;
+    if (A.stopX != null) { const lim = A.stopX - A.x; if (Math.abs(dx) > Math.abs(lim)) dx = lim; }
+    return dx;
+  };
+
   RK.fig = function (p, t) {
     if (p.who === "cat") return RK.figCat(p, t);
     const C = RK.FIG_CAST[p.who || "hero"];
     if (!C) return "";
     const id = (p.who || "x") + (UID++ % 999);
-    const Q = POSE2[p.pose || "relaxed"] || POSE2.relaxed;
+    const Q = motionPose(p, t);
     const B = C.body || {}, bw = B.bw || 1, hL = B.hL || 1, tL = B.tL || 1, hs = B.hs || 1;
     const legW = 1 + Math.max(0, bw - 1) * 1.6, armW = 1 + Math.max(0, bw - 1) * 1.1, aL = (tL + hL) / 2;
-    const legLen1 = 278 * hL, legLen2 = 262 * hL, footH = 52 * Math.min(1, hL + 0.2), hipY = -(legLen1 + legLen2 + footH);
+    const legLen1 = 278 * hL, legLen2 = 262 * hL, footH = 52 * Math.min(1, hL + 0.2);
+    // ความสูงสะโพก: เท้าข้างที่ต่ำที่สุดแตะพื้นพอดี (เดิน/นั่งแล้วเท้าไม่ลอย ไม่จมพื้น)
+    const footY = (ang) => legLen1 * Q.thighK * Math.cos((ang[0] * Math.PI) / 180) + legLen2 * Math.cos(((ang[0] + ang[1]) * Math.PI) / 180);
+    const hipY = -(Math.max(footY(Q.legN), footY(Q.legF)) + 8 + footH) - (Q.lift || 0);
     const TT = `translate(0,${f(hipY)}) scale(${f(bw)},${f(tL)}) translate(0,592)`;
     const tp = (x, y) => [x * bw, hipY + (y + 592) * tL];
     const breathe = Math.sin(t * 2.2) * 2.4;
     let s = `<ellipse cx="10" cy="6" rx="${f(130 * bw)}" ry="18" fill="#000" opacity=".16"/>`;
+    if (Q.sit && p.chair) s += RK.figChair(p.chair, hipY, bw);
     const B2 = C.bottom, sarong = B2.type === "sarong", skirt = B2.type === "skirt", shorts = B2.type === "shorts";
+    let legN_pts = null;
     const leg = (hipX, ang, near) => {
-      const [h, k, a] = chain([hipX * bw, hipY + 8], ang[0], legLen1, ang[1], legLen2);
+      const [h, k, a] = chain([hipX * bw, hipY + 8], ang[0], legLen1 * Q.thighK, ang[1], legLen2);
       let g = "";
       const pc = B2.color, pants = B2.type === "pants", cloth = pants || shorts;
       if (pants) g += limb([h, k, a], [84 * legW, 62 * legW, 52 * legW], pc, { bulge: 0.02, crease: 1, folds: [[0, 0.2, 0.6], [1, 0.85, 0.7]] });
       else g += limb([h, k, a], [(cloth ? 80 : 70) * legW, 46 * legW, 32 * legW], C.skin, { bulge: 0.1, crease: 1 });
       if (shorts) { const kk = add(h, mul([k[0] - h[0], k[1] - h[1]], 0.82)); g += seg(h, kk, 92 * legW, 78 * legW, pc, { flatEnd: true, folds: [[0.3, 0.6]] }); }
       if (pants) g += `<path d="M${P(add(a, [-24 * legW, -14]))} Q${P(add(a, [0, -6]))} ${P(add(a, [24 * legW, -14]))}" fill="none" stroke="${ink(pc)}" stroke-width="2.4"/>`;
-      g += shoe(add(a, [0, footH * 0.85]), (near ? 1.05 : 0.95) * Math.min(1, 0.55 + hL * 0.5), C, near ? 7 : 2);
+      g += shoe(add(a, [0, footH * 0.85]), (near ? 1.05 : 0.95) * Math.min(1, 0.55 + hL * 0.5), C, (near ? 7 : 2) + (near ? Q.footN : Q.footF));
+      if (near) legN_pts = [h, k, a];
       return g;
     };
     // แขน: pass "all" | "under" (ส่วนบนไหล่ อยู่ใต้ลำตัว/เสื้อกั๊ก) | "over" (ส่วนที่เหลือ+มือ ทับลำตัว)
@@ -382,9 +496,19 @@
     s += arm(tp(70, -938), Q.far, false);
     // กระโปรง/ผ้าถุงอยู่หน้าขา · กางเกงต่อสะโพกก่อนแล้วขาใกล้ทับ
     // ผ้าถุง: เท้าวาดก่อนผ้า ให้ชายผ้าบังส้น เห็นแค่ปลายเท้าโผล่
-    if (sarong) s += shoe([-40 * bw + 4, -2], 1.05 * Math.min(1, 0.55 + hL * 0.5), C, 7);
-    if (skirt) s += leg(-40, Q.legN, true) + `<g transform="${TT}">${lower(C)}</g>`;
-    else { s += `<g transform="${TT}">${lower(C)}</g>`; if (!sarong) s += leg(-40, Q.legN, true); }
+    if (Q.sit && (skirt || sarong)) {
+      // นั่ง: กระโปรง/ผ้าถุงพาดบนตัก — วาดขาใกล้ก่อน แล้วผ้าคลุมต้นขา (ผ้าถุงคลุมถึงหน้าแข้ง)
+      s += `<g transform="${TT}"><clipPath id="wb${id}"><rect x="-200" y="-640" width="400" height="70"/></clipPath><g clip-path="url(#wb${id})">${lower(C)}</g></g>`;
+      s += leg(-40, Q.legN, true);
+      const [h, k, a] = legN_pts, c = B2.color, hb = add(h, [-70 * bw, -24]);
+      s += seg(hb, add(k, [8, -2]), (sarong ? 140 : 118) * bw, (sarong ? 100 : 86) * legW, c, { flatEnd: true, folds: [[0.45, 0.5], [0.75, 0.4]] });
+      if (sarong) s += seg(add(k, [6, -30]), add(k, mul([a[0] - k[0], a[1] - k[1]], 0.72)), 108 * legW, 116 * legW, c, { flatEnd: true }) + [0.35, 0.55].map((q) => `<path d="M${P(add(k, [-44 * legW, (a[1] - k[1]) * q]))} L${P(add(k, [56 * legW, (a[1] - k[1]) * q]))}" stroke="${B2.p1}" stroke-width="10" opacity=".85"/>`).join("");
+      else s += `<path d="M${P(add(k, [-30 * legW, -40]))} Q${P(add(k, [16, -46]))} ${P(add(k, [40 * legW, -30]))} L${P(add(k, [36 * legW, 22]))} Q${P(add(k, [0, 30]))} ${P(add(k, [-26 * legW, 24]))}Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M${P(add(k, [10 * legW, -30]))} L${P(add(k, [8 * legW, 22]))}" stroke="${ink(c)}" stroke-width="2" opacity=".5"/>`;
+    } else {
+      if (sarong) s += shoe([-40 * bw + 4, -2], 1.05 * Math.min(1, 0.55 + hL * 0.5), C, 7);
+      if (skirt) s += leg(-40, Q.legN, true) + `<g transform="${TT}">${lower(C)}</g>`;
+      else { s += `<g transform="${TT}">${lower(C)}</g>`; if (!sarong) s += leg(-40, Q.legN, true); }
+    }
     const shN = tp(-94, -934);
     s += arm(shN, Q.near, true, "under");
     const nk = tp(10, -968), HT = `translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,968)`;
@@ -427,6 +551,19 @@
   };
 
   RK.FIG_CAST = {
+    // ตัวละครหลักชุดใหม่ (หน้าตาดี นิสัยดี แต่งตัวดี)
+    phum: { skin: "#EBC09B", hair: { style: "quiff", color: "#1A1311", hi: "#5A463C" },
+      face: { shape: "sharp", brow: 7, eye: 1.02, iris: "#2E1E18" }, watch: 1, belt: "#6B4A2E",
+      body: { bw: 1.04, hL: 1.05, tL: 1.02 }, top: { color: "#A9CBEA", sleeve: "3q", collar: "shirt" },
+      bottom: { type: "pants", color: "#D2BE96" }, shoes: { type: "sneaker", color: "#FBFBF8", sole: "#E4DED2", stripe: "#2F4F8C" } },
+    prang: { skin: "#F5D3B8", hair: { style: "long", color: "#3B2419", hi: "#86563E" },
+      face: { shape: "soft", lashes: 1, blush: "#F29A94", lipstick: "#D65A6E", earrings: "#F4F1EA", brow: 4.2, eye: 1.06, iris: "#4A2C20" }, nails: "#E66A7E",
+      body: { tL: 0.95, hL: 0.98, bw: 0.88, waist: 0.84 }, top: { color: "#EBB8C3", sleeve: "short", collar: "vneck" },
+      bottom: { type: "skirt", color: "#F3EBDD", len: 1.55, belt: "#C9A06A" }, shoes: { type: "flat", color: "#D9B48A", bow: "#F3EBDD" } },
+    fah: { skin: "#EEC4A0", hair: { style: "ponytail", color: "#2A1A16", hi: "#5E4034", tie: "#F2B33D" },
+      face: { shape: "soft", lashes: 1, blush: "#F49A94", lipstick: "#E06F7C", brow: 4.5, eye: 1.1, iris: "#3A2418" }, watch: 1,
+      body: { tL: 0.93, hL: 0.97, bw: 0.86, waist: 0.86 }, top: { color: "#FAFAF7", sleeve: "short" }, outer: { type: "jacket", color: "#6F94C4", sleeves: true },
+      bottom: { type: "pants", color: "#EDE4D3" }, shoes: { type: "sneaker", color: "#FBFBF8", sole: "#E4DED2", stripe: "#F2B33D" } },
     hero: { skin: "#EFC29B", hair: { style: "dropcut", color: "#231916", hi: "#5C443B" },
       face: { shape: "sharp", glasses: "square", mole: 1, stubble: "#4A3A33" },
       body: {}, top: { color: "#2E9C9A", sleeve: "short" }, outer: { type: "vest", color: "#B79B66" },

@@ -50,6 +50,12 @@
       A.x = x + (A.dx || 0); A.y = y + (A.dy || 0); A.s = (cam.scaleAt(A.z) * cm / units) * (A.size || 1);
       A._z = A.z;
     } else { A._z = A.depth ?? 0; }
+    if (A.type === "fig" && RK.figMoveX) {
+      const dx = RK.figMoveX(A, t);
+      // ถึงจุดหยุดแล้ว → เปลี่ยนเป็นท่าที่กำหนด (ค่าเริ่ม idle) ไม่ย่ำเท้าอยู่กับที่
+      if (A.stopX != null && Math.abs((A.x || 0) + dx - A.stopX) < 0.5) { A.motion = A.after || "idle"; A.move = 0; }
+      A.x = (A.x || 0) + dx;
+    }
     return A;
   }
   function drawActor(A, t) {
@@ -117,6 +123,14 @@
     let out = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${DEFS}</defs>`;
     if (S.card) { out += card(S.card, t) + "</svg>"; return out; }
     const camP = RK.resolve(S.cam || {}, t);
+    // กล้องตามตัวละคร: cam.follow = ลำดับนักแสดง · cam.followX = ตำแหน่งบนจอที่ให้ตัวละครอยู่ (ค่าเริ่ม 540)
+    if (camP.follow != null && S.actors && S.actors[camP.follow]) {
+      const A0 = RK.resolve(S.actors[camP.follow], t), ax = (A0.x || 0) + (A0.type === "fig" && RK.figMoveX ? RK.figMoveX(A0, t) : 0);
+      camP.panX = (camP.panX || 0) + ((camP.followX ?? 540) - 540) / (camP.zoom || 1) + 540 - ax;
+    }
+    // ไม่ให้กล้องหลุดขอบโลกของฉาก (ฉากที่ประกาศขอบเขต RK.sets[x].BOUNDS = [ซ้าย, ขวา])
+    const BD = (RK.sets[S.set || "corridor"] || {}).BOUNDS;
+    if (BD) { const z = camP.zoom || 1, hi = 540 - 540 / z - BD[0], lo = 540 + 540 / z - BD[1]; camP.panX = Math.min(Math.max(camP.panX || 0, Math.min(lo, hi)), Math.max(lo, hi)); }
     const cam = RK.makeCam(camP);
     const env = RK.resolve(S.env || {}, t);
     const set = RK.sets[S.set || "corridor"](cam, t + (S.seed || 0), env);

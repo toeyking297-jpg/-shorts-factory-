@@ -1,0 +1,206 @@
+{
+ "id": "OFFICE_MOTION",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "1 กว้าง: ภูมิเดินเข้าออฟฟิศ",
+   "dur": 3.2,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 440,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "idle",
+     "pose": "relaxed",
+     "lookX": -1,
+     "facing": -1
+    },
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": -150,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "walk",
+     "move": 1,
+     "stopX": 150
+    }
+   ],
+   "fadeIn": 0.3
+  },
+  {
+   "name": "2 กลาง: ภูมิหยุด ทักทาย",
+   "dur": 2.4,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {
+    "zoom": 1.5,
+    "panX": 20,
+    "panY": -300
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 150,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "wave",
+     "face": "happy"
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 440,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "talk",
+     "talk": 1,
+     "facing": -1
+    }
+   ]
+  },
+  {
+   "name": "3 ตามกล้อง: ฟ้าเดินผ่าน",
+   "dur": 3,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {
+    "zoom": 1.35,
+    "panY": -260,
+    "follow": 0
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": -100,
+     "y": 1640,
+     "s": 0.6,
+     "depth": 0,
+     "motion": "walk",
+     "move": 1
+    }
+   ]
+  },
+  {
+   "name": "4 นั่งพิมพ์งาน",
+   "dur": 2.4,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "noon",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 1.7,
+    "panX": -150,
+    "panY": -330
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 470,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "sitType",
+     "chair": "office"
+    }
+   ]
+  },
+  {
+   "name": "5 ใกล้: ปรางคุย",
+   "dur": 2.2,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "noon"
+   },
+   "cam": {
+    "zoom": 2.6,
+    "panX": -20,
+    "panY": -150,
+    "roll": 0
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 540,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "talk",
+     "talk": 1
+    }
+   ]
+  },
+  {
+   "name": "6 บิ๊กวิ่ง กล้องเอียง",
+   "dur": 2.4,
+   "boardAt": 0.55,
+   "set": "office",
+   "env": {
+    "time": "evening"
+   },
+   "cam": {
+    "zoom": 1.3,
+    "panY": -230,
+    "roll": -4,
+    "follow": 0
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "big",
+     "x": -200,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "run",
+     "move": 1,
+     "face": "laugh"
+    }
+   ],
+   "fadeOut": 0.4
+  }
+ ]
+}

@@ -213,9 +213,6 @@
     { const r = RK.rng(31); let d = ""; for (let i = 0; i < 900; i++) { const y = WALL + 10 + Math.pow(r(), 0.7) * 900, x = -400 + r() * 1900; d += `<rect x="${f(x)}" y="${f(y)}" width="${f(2 + (y - WALL) / 300)}" height="1.6"/>`; } s += `<g fill="#6E7884" opacity=".35">${d}</g>`; }
     // แผ่นปิดสายไฟพาดพื้น + ช่องปลั๊กพื้น
     s += `<path d="M-500,1300 Q200,1290 560,1330 L560,1346 Q200,1306 -500,1316Z" fill="#6E747B" stroke="#4A5057" stroke-width="2"/>` + rect(250, 1500, 70, 30, "#B9BDC2", { rx: 4, w: 2 }) + rect(262, 1506, 20, 16, "#7A7F86", { w: 1 }) + rect(290, 1506, 20, 16, "#7A7F86", { w: 1 });
-    // กล่องเอกสารซ้อน + กระดาษ (ซ้ายล่าง)
-    s += box(-60, 1760, 230, 120, 0.04, "#C9A06A") + rect(-50, 1772, 210, 18, "#B58C58", { w: 1.6 }) + `<text x="55" y="1840" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="26" fill="#6B4E2A">เอกสาร 2568</text>`;
-    s += box(-30, 1660, 190, 100, 0.04, "#D4AE78") + rect(-10, 1640, 150, 24, "#FFFFFF", { w: 1.6 }) + rect(0, 1630, 130, 14, "#F4F1EA", { w: 1.2 }) + rect(60, 1700, 40, 16, "#B58C58", { rx: 6, w: 1.4 });
     // ถังขยะข้างโต๊ะฮีโร่ + กระดาษขยำ
     s += `<path d="M520,1600 L590,1600 L582,1700 L528,1700Z" fill="#5E7F8C" stroke="#3A5560" stroke-width="2.6"/><path d="M528,1630 L582,1630" stroke="#3A5560" stroke-width="2"/><circle cx="545" cy="1598" r="12" fill="#F4F1EA" stroke="#bbb" stroke-width="1.6"/><circle cx="566" cy="1594" r="10" fill="#FFF4A8" stroke="#D8C76A" stroke-width="1.6"/><circle cx="610" cy="1712" r="10" fill="#F4F1EA" stroke="#bbb" stroke-width="1.6"/>`;
     // แสงแดดจากหน้าต่างตกบนพื้น
@@ -323,7 +320,7 @@
   }
 
   // โต๊ะฮีโร่ (แถวหน้า ขวา) — ตัวละครยืน/นั่งด้านซ้ายของโต๊ะ หันขวา
-  function heroDesk(T, t) {
+  function heroDesk(T, t, o = {}) {
     const x = 560, y = 1690, w = 560, k = 1;
     const d = workDesk(x, y, w, k, { pins: [[24, 196, "#FFF4A8", -6], [84, 186, "#FFC9D6", 3], [150, 200, "#FFFFFF", -2], [420, 190, "#BFE3FF", 4]], part: "#3E8C8A", wood: "#DDBB8A" }, t);
     let s = d.s; const top = d.top;
@@ -343,9 +340,17 @@
     s += `<path d="M${x + 100},${top + 6} l14,0 l-2,-26 l-10,0Z" fill="#7A5BA6" stroke="#4E3A70" stroke-width="2"/>` + line(`M${x + 104},${top - 20} l-4,-18 M${x + 108},${top - 20} l2,-22 M${x + 111},${top - 20} l6,-16`, "#2A2A30", 2.4);
     s += rect(x + 180, top - 2, 34, 30, "#FFF4A8", { stroke: "#D8C76A", w: 1.4 }) + line(`M${x + 184},${top + 8} l24,0 M${x + 184},${top + 15} l18,0`, "#8C8270", 1.4);
     // เก้าอี้ฮีโร่ด้านซ้ายโต๊ะ
-    s += chair(x - 40, y, 1, "#2F3B4C");
+    if (o.chair !== false) s += chair(x - 40, y, 1, "#2F3B4C");
     // กระเป๋าเป้วางพื้น
     s += `<path d="M${x + 330},${y} Q${x + 320},${y - 90} ${x + 370},${y - 100} Q${x + 420},${y - 90} ${x + 410},${y}Z" fill="#4A6E8C" stroke="#2C4458" stroke-width="3"/><rect x="${x + 340}" y="${y - 50}" width="60" height="34" rx="6" fill="#3E5E78" stroke="#2C4458" stroke-width="2"/>`;
+    return s;
+  }
+
+  // กล่องเอกสารบนพื้นใกล้กล้อง (อยู่หน้าตัวละครที่ยืนลึกกว่า)
+  function floorBoxes() {
+    let s = "";
+    s += box(-30, 1660, 190, 100, 0.04, "#D4AE78") + rect(-10, 1640, 150, 24, "#FFFFFF", { w: 1.6 }) + rect(0, 1630, 130, 14, "#F4F1EA", { w: 1.2 }) + rect(60, 1700, 40, 16, "#B58C58", { rx: 6, w: 1.4 });
+    s += box(-60, 1760, 230, 120, 0.04, "#C9A06A") + rect(-50, 1772, 210, 18, "#B58C58", { w: 1.6 }) + `<text x="55" y="1840" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="26" fill="#6B4E2A">เอกสาร 2568</text>`;
     return s;
   }
 
@@ -361,10 +366,11 @@
     // ชั้นความลึก: ผนัง/ห้องผู้จัดการ (ไกลสุด) → แถวโต๊ะหลัง depth 5 → โต๊ะฮีโร่ depth 2 → ตัวละคร depth 0 → ฉากหน้า
     // ตัวละครที่ยืนหลังแถวโต๊ะ (เช่นหน้าห้องผู้จัดการ) ให้ใส่ depth 6 ขึ้นไป
     const s = ceiling(T) + backWall(T, t) + windows(T, t) + wallItems(T, t) + bossRoom(T, t) + services(T, t) + floor(T);
-    const layers = [{ depth: 5, svg: deskRow(T, t) }];
-    if (env.heroDesk !== false) layers.push({ depth: 2, svg: heroDesk(T, t) });
+    const layers = [{ depth: 5, svg: deskRow(T, t) }, { depth: -0.5, svg: floorBoxes() }];
+    if (env.heroDesk !== false) layers.push({ depth: 2, svg: heroDesk(T, t, { chair: env.heroChair !== false }) });
     let fg = env.fg ? foreground(T, t) : "";
     if (T.tintA) fg += `<rect x="-600" y="-500" width="2400" height="3000" fill="${T.tint}" opacity="${T.tintA}" style="mix-blend-mode:multiply"/>`;
     return { svg: s, layers, fg, dark: 0, tone: false };
   };
+  RK.sets.office.BOUNDS = [-440, 1520];
 })(window);
