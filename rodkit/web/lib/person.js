@@ -392,18 +392,18 @@
     L1 *= 1 - 0.3 * lift; L2 *= 1 - 0.2 * lift;
     const pants = B.type === "pants", shorts = B.type === "shorts";
     const thighC = pants || shorts ? B.color : S.skin, shinC = pants ? B.color : S.skin;
-    const tw0 = (pants || shorts ? 108 : 82) * sw * lw, tw1 = (pants ? 74 : 56) * sw * lw;
+    const tw0 = (pants || shorts ? 92 : 74) * sw * lw, tw1 = (pants ? 70 : 54) * sw * lw;
     const sw0 = (pants ? 72 : 56) * sw * lw, sw1 = (pants ? 58 : 36) * sw * lw;
     const shoe = shoes({ skin: S.skin, ...S.shoes }, side);
     let shin = taper(L2, sw0, sw1, shinC, pants ? B.hi : S.skinHi, pants ? 0.04 : 0.22);
     if (pants) shin += `<path d="M${f(-sw1 / 2 - 2)},${f(L2 - 4)} Q0,${f(L2 + 6)} ${f(sw1 / 2 + 2)},${f(L2 - 4)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`;
     const shinG = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${shin}<g transform="translate(${side * 10},${f(L2 + 4)}) scale(${f(shz * (S.footK || 1.12))})">${shoe}</g></g>`;
-    let thigh = taper(L1 + 6, tw0, tw1, thighC, pants || shorts ? B.hi : S.skinHi, 0.08);
+    let thigh = taper(L1 + 6, tw0, tw1, thighC, pants || shorts ? B.hi : S.skinHi, 0.03);
     if (shorts) thigh += `<path d="M${f(-tw0 / 2 - 3)},0 L${f(tw0 / 2 + 3)},0 L${f(tw1 / 2 + 8)},${f(L1 * 0.55)} L${f(-tw1 / 2 - 8)},${f(L1 * 0.55)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/><path d="M${f(-tw1 / 2 - 6)},${f(L1 * 0.5)} L${f(tw1 / 2 + 6)},${f(L1 * 0.5)}" stroke="${B.sh}" stroke-width="6"/>`;
     if (pants) thigh += `<path d="M${side * 8},10 Q${side * 2},${f(L1 * 0.6)} ${side * 10},${f(L1 - 6)}" fill="none" stroke="${B.sh}" stroke-width="5"/>`;
     const knee = lift > 0.15 ? `<ellipse cx="0" cy="${f(L1)}" rx="${f(tw1 * 0.5)}" ry="${f(12 + 18 * lift)}" fill="${pants ? B.sh : S.skinSh}" opacity=".6"/>` : "";
     // วาดหน้าแข้งก่อน แล้วต้นขาทับ = เข่าดูต่อกันเป็นธรรมชาติ
-    return `<g transform="translate(${f(side * 62 * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${shinG}${thigh}${knee}</g>`;
+    return `<g transform="translate(${f(side * (50 + 16 * lw) * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${shinG}${thigh}${knee}</g>`;
   }
   function shoes(Sh, side) {
     const c = Sh.color, cs = RK.shade(c, -0.18);
