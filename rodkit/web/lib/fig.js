@@ -108,7 +108,11 @@
     }
     g += fg + palm + mk;
     if (!cuff) g = `<rect x="${f(-hw + lw / 2)}" y="-14" width="${f(hw * 2 - lw)}" height="18" fill="${sk}"/>` + g;
-    return `<g transform="translate(${P(at)}) rotate(${f(ang)}) scale(${f(K)})">${g}</g>`;
+    // มือซ้าย/ขวา: ภาพวาดแต่ละท่าเป็นมือข้างใดข้างหนึ่ง (หลังมือขวา = นิ้วโป้ง +x, ฝ่ามือซ้าย = นิ้วโป้ง +x)
+    // ข้างใกล้กล้อง = มือขวา, ข้างไกล = มือซ้าย → ถ้าภาพวาดเป็นมือคนละข้างกับที่ต้องการ ให้กลับด้าน
+    const drawnRight = { relaxed: !!near, fist: true, point: true, open: false, wave: false }[type];
+    const mirror = drawnRight !== !!near;
+    return `<g transform="translate(${P(at)}) rotate(${f(ang)}) scale(${f(mirror ? -K : K)},${f(K)})">${g}</g>`;
   }
   RK.figHand = hand;
 
