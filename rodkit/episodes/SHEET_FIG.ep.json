@@ -1,0 +1,138 @@
+{
+ "id": "SHEET_FIG",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "ยืนล้วงกระเป๋า",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "ภูมิ · สไตล์ใหม่",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 1780,
+     "s": 1.3,
+     "depth": 0,
+     "pose": "pocket"
+    }
+   ]
+  },
+  {
+   "name": "คุย ผายมือ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 1780,
+     "s": 1.3,
+     "depth": 0,
+     "pose": "talk",
+     "talk": 1
+    }
+   ]
+  },
+  {
+   "name": "เท้าเอว",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 1780,
+     "s": 1.3,
+     "depth": 0,
+     "pose": "hips",
+     "face": "worried"
+    }
+   ]
+  },
+  {
+   "name": "โบกมือ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 1780,
+     "s": 1.3,
+     "depth": 0,
+     "pose": "wave"
+    }
+   ]
+  },
+  {
+   "name": "หน้าใกล้",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 5250,
+     "s": 4.0,
+     "depth": 0,
+     "pose": "relaxed"
+    }
+   ]
+  }
+ ]
+}
