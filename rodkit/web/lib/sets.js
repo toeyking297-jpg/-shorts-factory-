@@ -138,7 +138,7 @@
       items.push({ z: z + 0.01, draw: () => {
         const L = lv[i];
         let d = "";
-        const fx = quad(flat(-55, 55, CEIL + 1, z - 0.12, z + 0.12), L > 0.3 ? "#F1F8EC" : "#59605A");
+        const fx = quad(flat(-62, 62, CEIL + 0.5, z - 0.16, z + 0.16), "#B9BDB4") + quad(flat(-55, -8, CEIL + 1, z - 0.12, z + 0.12), L > 0.3 ? "#F1F8EC" : "#59605A") + quad(flat(8, 55, CEIL + 1, z - 0.12, z + 0.12), L > 0.3 ? "#F1F8EC" : "#59605A");
         const pool = P(0, FLOOR, z + 0.3), ps = cam.scaleAt(z + 0.3);
         d += `<ellipse cx="${f(pool[0])}" cy="${f(pool[1])}" rx="${f(190 * ps)}" ry="${f(46 * ps)}" fill="url(#poolGlow)" opacity="${f(0.75 * L)}"/>`;
         const wl = P(-CW, 20, z), wr = P(CW, 20, z), ws = cam.scaleAt(z);
@@ -151,6 +151,66 @@
       } });
     });
 
+    // ---------- รายละเอียดเล็กๆ ----------
+    const at = (x, y, z) => { const q = P(x, y, z); return `translate(${f(q[0])},${f(q[1])}) scale(${f(cam.scaleAt(z))})`; };
+    const R2 = RK.rng(909);
+    DOORS.forEach((z, i) => [-1, 1].forEach((side) => {
+      if (z + 1 <= nz) return;
+      items.push({ z: z + 0.02, draw: () => {
+        let d = "";
+        // บานพับ 2 ตัว (ฝั่งตรงข้ามลูกบิด)
+        const hz = side < 0 ? z + 0.04 : z + 0.96;
+        [ -40, 110 ].forEach((y) => { d += quad(wall(side, hz - 0.02, hz + 0.02, y, y + 18), "#8A7D5C", `stroke="${INK}" stroke-width="1"`); });
+        // ช่องระบายลมเหนือประตู (บานเกล็ด)
+        d += quad(wall(side, z + 0.1, z + 0.9, -112, -72), "#2A2620", `stroke="${INK}" stroke-width="1.2"`);
+        for (let y = -108; y < -74; y += 7) { const a = P(side * CW, y, z + 0.12), b = P(side * CW, y, z + 0.88); d += `<path d="M${f(a[0])},${f(a[1])}L${f(b[0])},${f(b[1])}" stroke="#57503F" stroke-width="${f(Math.max(0.8, 2.2 * cam.scaleAt(z)))}"/>`; }
+        // ช่องเสียบจดหมาย + รอยขีดข่วน + สติกเกอร์ซีด
+        d += quad(wall(side, z + 0.35, z + 0.65, 92, 100), "#2A2A2A");
+        if (i % 2 === 0) d += quad(wall(side, z + 0.2, z + 0.34, -24, -4), "#C9B97A", `opacity=".65"`);
+        const sc1 = P(side * CW, 20, z + 0.3), sc2 = P(side * CW, 48, z + 0.55);
+        d += `<path d="M${f(sc1[0])},${f(sc1[1])}L${f(sc2[0])},${f(sc2[1])}" stroke="#7E5E44" stroke-width="${f(Math.max(0.6, 1.6 * cam.scaleAt(z)))}" opacity=".8"/>`;
+        // สวิตช์ไฟ + ปลั๊ก ข้างวงกบ
+        const sz = side < 0 ? z + 1.2 : z - 0.2;
+        if (sz > nz) { d += quad(wall(side, sz, sz + 0.08, 30, 50), "#E8E2CF", `stroke="${INK}" stroke-width="1"`); d += quad(wall(side, sz, sz + 0.08, 140, 152), "#E8E2CF", `stroke="${INK}" stroke-width="1"`); }
+        return d;
+      } });
+    }));
+    // ร่มพิงประตู / กระถางต้นไม้ตาย / ชั้นวางรองเท้า
+    items.push({ z: 4.4, draw: () => `<g transform="${at(CW - 12, FLOOR, 4.4)}"><path d="M0,0 L-30,-120" stroke="#1C1C22" stroke-width="7"/><path d="M-30,-120 q-10,-10 -2,-18" fill="none" stroke="#1C1C22" stroke-width="6"/><path d="M-6,-10 L-34,-104 L-14,-108Z" fill="#7A1F2E" stroke="${INK}" stroke-width="3"/></g>` });
+    items.push({ z: 8.6, draw: () => `<g transform="${at(-CW + 24, FLOOR, 8.6)}"><path d="M-20,0 L-24,-40 L24,-40 L20,0Z" fill="#8C4A2E" stroke="${INK}" stroke-width="3"/><path d="M-4,-40 q-14,-50 -30,-60 M2,-40 q6,-40 22,-62 M0,-40 q2,-30 -4,-70" fill="none" stroke="#5E5A3A" stroke-width="4"/><path d="M-30,-100 q-6,6 -2,12 M24,-102 q8,4 4,12" fill="none" stroke="#6E6640" stroke-width="3"/></g>` });
+    items.push({ z: 17.2, draw: () => `<g transform="${at(CW - 26, FLOOR, 17.2)}"><rect x="-26" y="-70" width="52" height="70" fill="none" stroke="#4A3B2C" stroke-width="5"/><path d="M-26,-46 L26,-46 M-26,-22 L26,-22" stroke="#4A3B2C" stroke-width="5"/><ellipse cx="-10" cy="-50" rx="10" ry="4" fill="#D8D2C2"/><ellipse cx="10" cy="-26" rx="10" ry="4" fill="#2F3E58"/><ellipse cx="-8" cy="-4" rx="11" ry="4" fill="#9B2E2E"/></g>` });
+    // กล้องวงจรปิด / กระดิ่งไฟไหม้ / ไฟฉุกเฉิน
+    items.push({ z: 5, draw: () => `<g transform="${at(CW - 6, CEIL + 16, 5)}"><rect x="-6" y="-4" width="12" height="16" fill="#5C5F66"/><path d="M-34,10 L4,4 L6,26 L-30,28Z" fill="#E4E2DA" stroke="${INK}" stroke-width="3"/><circle cx="-30" cy="19" r="6" fill="#1A1A1E"/><circle cx="-2" cy="10" r="2.5" fill="${RK.noise1(t * 2, 4) > 0.5 ? "#FF3B30" : "#5A1A1A"}"/></g>` });
+    items.push({ z: 8.1, draw: () => `<g transform="${at(-CW + 2, -60, 8.1)}"><circle r="16" fill="#C62B26" stroke="${INK}" stroke-width="3"/><circle r="6" fill="#F0C8C2"/></g>` });
+    items.push({ z: 16, draw: () => `<g transform="${at(0, CEIL + 4, 16)}"><rect x="-34" y="0" width="68" height="20" rx="3" fill="#E9E6DC" stroke="${INK}" stroke-width="3"/><circle cx="-22" cy="22" r="8" fill="#F7F3D0"/><circle cx="22" cy="22" r="8" fill="#F7F3D0"/></g>` });
+    // หลอดไฟห้อย (หลอดดวงที่ 4 หลุดหนึ่งข้าง) + สายไฟห้อย
+    items.push({ z: 14.05, draw: () => { const a = P(-40, CEIL + 2, 14), b = P(30, CEIL + 50 + Math.sin(t * 1.8) * 4, 14); return `<path d="M${f(a[0])},${f(a[1])} L${f(b[0])},${f(b[1])}" stroke="#DDE3D8" stroke-width="${f(10 * cam.scaleAt(14))}" stroke-linecap="round"/>`; } });
+    items.push({ z: 10.5, draw: () => { const a = P(-60, CEIL, 10.5), sc = cam.scaleAt(10.5), sw = Math.sin(t * 1.4) * 6; return `<path d="M${f(a[0])},${f(a[1])} q${f(sw * sc)},${f(30 * sc)} ${f(4 * sc)},${f(60 * sc)} q${f(-6 * sc)},${f(10 * sc)} ${f(6 * sc)},${f(18 * sc)}" fill="none" stroke="#141418" stroke-width="${f(Math.max(1, 2.5 * sc))}"/>`; } });
+    // หยากไย่ตามมุมเพดาน
+    [3.6, 9.8, 19.5].forEach((z, k) => items.push({ z, draw: () => {
+      const sd = k % 2 ? 1 : -1, c = P(sd * CW, CEIL, z), sc = cam.scaleAt(z); let d = "";
+      for (let a = 0; a < 6; a++) { const ang = (a / 5) * Math.PI / 2, dx = -sd * Math.cos(ang) * 70 * sc, dy = Math.sin(ang) * 70 * sc; d += `M${f(c[0])},${f(c[1])} l${f(dx)},${f(dy)}`; }
+      for (let r = 1; r <= 3; r++) d += `M${f(c[0] - sd * r * 22 * sc)},${f(c[1])} Q${f(c[0] - sd * r * 14 * sc)},${f(c[1] + r * 14 * sc)} ${f(c[0])},${f(c[1] + r * 22 * sc)}`;
+      return `<path d="${d}" fill="none" stroke="#C9CCC4" stroke-width="${f(Math.max(0.6, 1.4 * sc))}" opacity=".5"/>`;
+    } }));
+    // ประกาศหอพัก
+    items.push({ z: 12.8, draw: () => quad(wall(-1, 12.8, 13.25, -50, 10), "#EDE6CC", `stroke="${INK}" stroke-width="1.2"`) + `<g transform="${at(-CW, -38, 13.02)}"><text x="0" y="0" font-family="Kanit" font-weight="700" font-size="9" fill="#9A2F2A" text-anchor="middle" transform="skewY(${f(-8)})">ห้ามส่งเสียงดัง</text><text x="0" y="12" font-family="Kanit" font-size="7" fill="#333" text-anchor="middle">หลัง 22.00 น.</text></g>` });
+    // พื้น: รอยร้าว, ก้นบุหรี่, กระดาษขยำ, แอ่งน้ำสะท้อนไฟ, ฝุ่นเป็นก้อน
+    for (let k = 0; k < 7; k++) {
+      const z = 1.6 + R2() * 20, x0 = (R2() - 0.5) * 220;
+      if (z <= nz) continue;
+      const pts = [P(x0, FLOOR, z)]; let x = x0, zz = z;
+      for (let j = 0; j < 5; j++) { x += (R2() - 0.5) * 40; zz += 0.12 + R2() * 0.2; pts.push(P(x, FLOOR, zz)); }
+      items.push({ z, draw: () => `<polyline points="${RK.pts(pts)}" fill="none" stroke="#24231F" stroke-width="${f(Math.max(0.8, 2.2 * cam.scaleAt(z)))}" opacity=".8"/>` });
+    }
+    for (let k = 0; k < 14; k++) {
+      const z = 1.4 + R2() * 18, x = (R2() - 0.5) * 260, rot = R2() * 180, kind = k % 3;
+      if (z <= nz) continue;
+      items.push({ z, draw: () => `<g transform="${at(x, FLOOR, z)} rotate(${f(rot)})">` + (kind === 0 ? `<rect x="-6" y="-2" width="12" height="4" fill="#E8E2D4"/><rect x="4" y="-2" width="4" height="4" fill="#C98B4A"/>` : kind === 1 ? `<path d="M-9,-3 L-4,-8 L5,-6 L9,1 L3,6 L-6,5Z" fill="#DCD6C6" stroke="${INK}" stroke-width="1"/>` : `<ellipse rx="8" ry="4" fill="#5E5A52" opacity=".6"/>`) + `</g>` });
+    }
+    items.push({ z: 6.6, draw: () => { const c = P(30, FLOOR, 6.6), sc = cam.scaleAt(6.6), L = lv[1]; return `<ellipse cx="${f(c[0])}" cy="${f(c[1])}" rx="${f(70 * sc)}" ry="${f(14 * sc)}" fill="#2B3236" opacity=".85"/><ellipse cx="${f(c[0] + 6 * sc)}" cy="${f(c[1] - 2 * sc)}" rx="${f(30 * sc)}" ry="${f(4 * sc)}" fill="#E9F5DD" opacity="${f(0.5 * L)}"/>`; } });
+    // คราบดำตามขอบพื้น-ผนัง
+    s += quad(wall(-1, nz, END, 140, FLOOR), "#1E2421", `opacity=".45"`) + quad(wall(1, nz, END, 140, FLOOR), "#1E2421", `opacity=".45"`);
     items.sort((a, b) => b.z - a.z);
     s += items.map((it) => it.draw()).join("");
     // ความมืดตามระยะ (หมอก) + ความมืดรวมตามไฟ

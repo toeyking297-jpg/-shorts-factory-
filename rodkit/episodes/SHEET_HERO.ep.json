@@ -1,0 +1,365 @@
+{
+ "id": "SHEET_HERO",
+ "fps": 30,
+ "shots": [
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "ตัวเต็ม ยืนปกติ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": false,
+     "x": 540,
+     "y": 1830,
+     "s": 1.5,
+     "pose": "idle",
+     "face": "calm"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "หน้า: ปกติ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2950,
+     "s": 3.0,
+     "pose": "idle",
+     "face": "calm"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "หน้า: กังวล",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2950,
+     "s": 3.0,
+     "pose": "idle",
+     "face": "nervous",
+     "lookX": 0.8
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "หน้า: กลัว",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2950,
+     "s": 3.0,
+     "pose": "idle",
+     "face": "scared"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "หน้า: สุดขีด",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2950,
+     "s": 3.0,
+     "pose": "idle",
+     "face": "terrified",
+     "glint": 1
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "หน้า: มุ่งมั่น",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2950,
+     "s": 3.0,
+     "pose": "idle",
+     "face": "determined"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "มือ: ยกมือ (นิ้วกาง)",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2300,
+     "s": 2.0,
+     "pose": "hands_up",
+     "face": "scared"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "มือ: ชี้ / กำ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": true,
+     "x": 540,
+     "y": 2200,
+     "s": 1.9,
+     "pose": "point",
+     "face": "determined",
+     "handL": "fist"
+    }
+   ]
+  },
+  {
+   "set": "corridor",
+   "cam": {
+    "vx": 540,
+    "vy": 700,
+    "F": 700,
+    "bgBlur": 14
+   },
+   "env": {
+    "lights": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "master": 1.4
+   },
+   "fx": {
+    "grain": 0.05
+   },
+   "name": "ถือไฟฉายเดินเข้ากล้อง",
+   "dur": 1,
+   "boardAt": 0.5,
+   "actors": [
+    {
+     "type": "hero",
+     "depth": 0,
+     "noShadow": false,
+     "x": 540,
+     "y": 1830,
+     "s": 1.5,
+     "pose": "torch_front",
+     "torch": "on",
+     "walk": 1,
+     "face": "nervous",
+     "beamAngle": 96,
+     "beamLen": 700,
+     "beamSpread": 260
+    }
+   ]
+  }
+ ]
+}
