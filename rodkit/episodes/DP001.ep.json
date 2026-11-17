@@ -1,0 +1,418 @@
+{
+ "id": "DP001",
+ "fps": 30,
+ "music": "morning",
+ "ambience": "room",
+ "title": "เช้านี้ ลองใจดีกับใครสักคน",
+ "shots": [
+  {
+   "name": "1 เปิด: เช้าวันจันทร์",
+   "dur": 3.4,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "heroChair": false
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": -160,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "walk",
+     "move": 1,
+     "stopX": 180,
+     "after": "idle"
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 470,
+     "y": 1700,
+     "s": 0.6,
+     "depth": 0,
+     "motion": "sitType",
+     "chair": "office",
+     "face": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เช้าวันจันทร์… ทุกคนรีบเร่งเหมือนเดิม"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "birds",
+     "at": 0.1,
+     "prompt": "morning birds chirping outside office window",
+     "len": 3
+    },
+    {
+     "name": "steps",
+     "at": 0.4,
+     "prompt": "footsteps on office carpet",
+     "len": 2
+    }
+   ],
+   "fadeIn": 0.4,
+   "hook": "เช้านี้ ลองใจดีกับใครสักคน",
+   "hookDur": 2.6
+  },
+  {
+   "name": "2 กลาง: ฟ้าเหนื่อย",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 1.55,
+    "panX": 100,
+    "panY": -300
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 180,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "relaxed"
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 470,
+     "y": 1700,
+     "s": 0.6,
+     "depth": 0,
+     "motion": "sitType",
+     "chair": "office",
+     "face": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ฟ้า… เมื่อคืนทำงานดึกอีกแล้วเหรอ"
+    },
+    {
+     "who": "fah",
+     "text": "อืม… งานไม่เสร็จสักทีเลย"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "typing",
+     "at": 0,
+     "prompt": "fast keyboard typing in quiet office",
+     "len": 2
+    }
+   ]
+  },
+  {
+   "name": "3 ใกล้: ภูมิ",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 2.6,
+    "panX": 330,
+    "panY": -160
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 180,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "motion": "talk",
+     "face": "happy"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "งั้นพักแป๊บนึงนะ เดี๋ยวเราช่วยดูให้"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "name": "4 หน้าตรง: ฟ้ายิ้ม",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 2.4,
+    "panX": 40,
+    "panY": -240
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 520,
+     "y": 1700,
+     "s": 0.6,
+     "depth": 0,
+     "view": "front",
+     "face": "happy"
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "จริงเหรอ… ขอบคุณนะภูมิ"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sparkle",
+     "line": 0,
+     "at": 0.3,
+     "prompt": "soft magical sparkle chime",
+     "len": 1.2
+    }
+   ]
+  },
+  {
+   "name": "5 ปรางเดินเข้ามา",
+   "dur": 3.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {
+    "zoom": 1.3,
+    "panY": -230
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": -120,
+     "y": 1680,
+     "s": 0.6,
+     "depth": 0,
+     "motion": "walk",
+     "move": 1,
+     "stopX": 200,
+     "after": "talk",
+     "face": "happy"
+    },
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 420,
+     "y": 1690,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "relaxed",
+     "facing": -1
+    }
+   ],
+   "say": [
+    {
+     "who": "prang",
+     "text": "อรุณสวัสดิ์ทุกคน! ซื้อขนมมาฝากด้วยนะ"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "pop",
+     "line": 0,
+     "at": 0.6,
+     "prompt": "cheerful cartoon pop",
+     "len": 0.6
+    }
+   ]
+  },
+  {
+   "name": "6 หัวหน้าที่ประตู",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {
+    "zoom": 1.5,
+    "panX": -260,
+    "panY": -120
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 870,
+     "y": 1062,
+     "s": 0.4,
+     "depth": 8,
+     "pose": "hips",
+     "face": "angry"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ความใจดีเล็กๆ… มันติดต่อกันได้เสมอ"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.2,
+     "prompt": "office glass door opening",
+     "len": 1
+    }
+   ]
+  },
+  {
+   "name": "7 หัวหน้ายิ้ม",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning"
+   },
+   "cam": {
+    "zoom": 2.2,
+    "panX": 20,
+    "panY": -200
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 540,
+     "y": 1700,
+     "s": 0.6,
+     "depth": 0,
+     "view": "front",
+     "face": "happy"
+    }
+   ],
+   "say": [
+    {
+     "who": "boss",
+     "text": "อืม… เช้านี้บรรยากาศดีจังนะ"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "name": "8 ปิด: ทุกคนยิ้ม",
+   "dur": 2.0,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 1.15,
+    "panY": -180
+   },
+   "fx": {
+    "grain": 0.012
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 250,
+     "y": 1690,
+     "s": 0.6,
+     "depth": 0,
+     "view": "front",
+     "motion": "wave",
+     "face": "happy"
+    },
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 420,
+     "y": 1680,
+     "s": 0.58,
+     "depth": 0,
+     "view": "front",
+     "face": "happy"
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 600,
+     "y": 1690,
+     "s": 0.58,
+     "depth": 0,
+     "view": "front",
+     "pose": "cheer",
+     "face": "laugh"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เช้านี้… ลองส่งรอยยิ้มให้ใครสักคนนะคะ"
+    },
+    {
+     "who": "narrator",
+     "text": "สวัสดีวันใหม่ จากดูเพลินค่ะ"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "line": 1,
+     "at": 0.1,
+     "prompt": "warm bright chime ending jingle",
+     "len": 2
+    }
+   ],
+   "fadeOut": 0.6
+  }
+ ],
+ "subY": 1640
+}

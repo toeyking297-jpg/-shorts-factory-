@@ -1,0 +1,72 @@
+name: rodkit produce (คลิปเต็มมีเสียง)
+
+# ทำงานเมื่อมีไฟล์งานใหม่ใน rodkit/jobs/ (Claude push เข้ามา) หรือกดสั่งเอง
+on:
+  push:
+    paths:
+      - "rodkit/jobs/**"
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "ไฟล์ตอน เช่น rodkit/episodes/DP001.ep.json"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rodkit-produce
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-thai-tlwg
+          pip install -q playwright pillow numpy requests edge-tts
+          [ -x /usr/bin/google-chrome ] || python -m playwright install --with-deps chromium
+      - name: Produce
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          EP_INPUT: ${{ github.event.inputs.episode }}
+        run: |
+          set -e
+          if [ -n "$EP_INPUT" ]; then EPS="$EP_INPUT"; else
+            EPS=$(python - <<'PY'
+          import json, pathlib
+          for p in sorted(pathlib.Path("rodkit/jobs").glob("*.json")):
+              j = json.loads(p.read_text("utf-8"))
+              if not j.get("done"):
+                  print(j["episode"])
+          PY
+          ); fi
+          echo "EPS=$EPS"
+          mkdir -p rodkit/out
+          for E in $EPS; do
+            python -m rodkit.produce "$E" 2>&1 | tee -a produce.log
+            ID=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$E")
+            cp "rodkit/build/$ID/$ID.mp4" "rodkit/out/$ID.mp4"
+            python - "$E" <<'PY'
+          import json, pathlib, sys
+          for p in pathlib.Path("rodkit/jobs").glob("*.json"):
+              j = json.loads(p.read_text("utf-8"))
+              if j.get("episode") == sys.argv[1]:
+                  j["done"] = True
+                  p.write_text(json.dumps(j, ensure_ascii=False, indent=1), "utf-8")
+          PY
+          done
+          echo "::notice::$(grep -m1 'เสียงพากย์' produce.log) · $(grep -m1 'ความยาวคลิป' produce.log)"
+      - name: Save clip back to repo
+        run: |
+          git config user.name "rodkit-bot"
+          git config user.email "rodkit-bot@users.noreply.github.com"
+          git add rodkit/out rodkit/jobs rodkit/cast.json
+          git commit -m "rodkit: produced clip [skip ci]" || echo "nothing new"
+          git pull --rebase -q && git push

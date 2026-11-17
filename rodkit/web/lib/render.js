@@ -26,6 +26,7 @@
   RK.load = function (ep) {
     EP = ep; STARTS = []; let t = 0;
     if (ep.prop && RK.PROPS) RK.PROP = RK.PROPS[ep.prop];
+    RK.SUBY = ep.subY || 1330;
     for (const s of ep.shots) { STARTS.push(t); t += s.dur; }
     EP.duration = t;
     if (!GRAIN) GRAIN = makeGrain();
@@ -101,7 +102,7 @@
   }
   function subtitle(text, t, dur) {
     if (!text) return "";
-    const lines = wrapThai(text, 22), y0 = 1330 - (lines.length - 1) * 92, a = RK.clamp(t / 0.12) * RK.clamp((dur - t) / 0.12);
+    const lines = wrapThai(text, 22), y0 = (RK.SUBY || 1330) - (lines.length - 1) * 92, a = RK.clamp(t / 0.12) * RK.clamp((dur - t) / 0.12);
     const pop = 1 + 0.06 * (1 - RK.clamp(t / 0.18));
     return `<g opacity="${f(a)}" transform="translate(540,${y0}) scale(${f(pop)})">` + lines.map((l, i) =>
       `<text x="0" y="${i * 92}" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="70" fill="#fff" stroke="#000" stroke-width="16" stroke-linejoin="round" paint-order="stroke">${RK.esc(l)}</text>`).join("") + `</g>`;

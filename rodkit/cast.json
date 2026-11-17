@@ -14,7 +14,7 @@
       }
     },
     "hero": {
-      "name": "ภูมิ",
+      "name": "ต้น",
       "voice": {
         "gender": "male",
         "age": "late 20s",
@@ -95,6 +95,39 @@
       "voice": {
         "type": "sfx",
         "tone": "เสียงแมวจริงจากคลังเสียงประกอบ"
+      }
+    },
+    "phum": {
+      "name": "ภูมิ",
+      "voice": {
+        "gender": "male",
+        "age": "late 20s",
+        "tone": "อบอุ่น สุภาพ ใจดี มั่นใจ",
+        "voice_id": "",
+        "stability": 0.5,
+        "style": 0.35
+      }
+    },
+    "prang": {
+      "name": "ปราง",
+      "voice": {
+        "gender": "female",
+        "age": "20s",
+        "tone": "อ่อนหวาน สดใส ยิ้มในเสียง",
+        "voice_id": "",
+        "stability": 0.5,
+        "style": 0.45
+      }
+    },
+    "fah": {
+      "name": "ฟ้า",
+      "voice": {
+        "gender": "female",
+        "age": "20s",
+        "tone": "ร่าเริง คล่องแคล่ว เป็นกันเอง",
+        "voice_id": "",
+        "stability": 0.45,
+        "style": 0.5
       }
     }
   }
