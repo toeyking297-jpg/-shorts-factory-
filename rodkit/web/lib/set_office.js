@@ -214,8 +214,8 @@
     // แผ่นปิดสายไฟพาดพื้น + ช่องปลั๊กพื้น
     s += `<path d="M-500,1300 Q200,1290 560,1330 L560,1346 Q200,1306 -500,1316Z" fill="#6E747B" stroke="#4A5057" stroke-width="2"/>` + rect(250, 1500, 70, 30, "#B9BDC2", { rx: 4, w: 2 }) + rect(262, 1506, 20, 16, "#7A7F86", { w: 1 }) + rect(290, 1506, 20, 16, "#7A7F86", { w: 1 });
     // กล่องเอกสารซ้อน + กระดาษ (ซ้ายล่าง)
-    s += box(-150, 1760, 230, 120, 0.04, "#C9A06A") + rect(-140, 1772, 210, 18, "#B58C58", { w: 1.6 }) + `<text x="-35" y="1840" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="26" fill="#6B4E2A">เอกสาร 2568</text>`;
-    s += box(-120, 1660, 190, 100, 0.04, "#D4AE78") + rect(-100, 1640, 150, 24, "#FFFFFF", { w: 1.6 }) + rect(-90, 1630, 130, 14, "#F4F1EA", { w: 1.2 }) + rect(-30, 1700, 40, 16, "#B58C58", { rx: 6, w: 1.4 });
+    s += box(-60, 1760, 230, 120, 0.04, "#C9A06A") + rect(-50, 1772, 210, 18, "#B58C58", { w: 1.6 }) + `<text x="55" y="1840" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="26" fill="#6B4E2A">เอกสาร 2568</text>`;
+    s += box(-30, 1660, 190, 100, 0.04, "#D4AE78") + rect(-10, 1640, 150, 24, "#FFFFFF", { w: 1.6 }) + rect(0, 1630, 130, 14, "#F4F1EA", { w: 1.2 }) + rect(60, 1700, 40, 16, "#B58C58", { rx: 6, w: 1.4 });
     // ถังขยะข้างโต๊ะฮีโร่ + กระดาษขยำ
     s += `<path d="M520,1600 L590,1600 L582,1700 L528,1700Z" fill="#5E7F8C" stroke="#3A5560" stroke-width="2.6"/><path d="M528,1630 L582,1630" stroke="#3A5560" stroke-width="2"/><circle cx="545" cy="1598" r="12" fill="#F4F1EA" stroke="#bbb" stroke-width="1.6"/><circle cx="566" cy="1594" r="10" fill="#FFF4A8" stroke="#D8C76A" stroke-width="1.6"/><circle cx="610" cy="1712" r="10" fill="#F4F1EA" stroke="#bbb" stroke-width="1.6"/>`;
     // แสงแดดจากหน้าต่างตกบนพื้น
@@ -266,28 +266,58 @@
     return { s, top, H };
   }
 
+  // พนักงานนั่งโต๊ะ หันหน้าเข้ากล้อง (อยู่หน้าพาร์ติชัน หลังโต๊ะ) — วาดหลังพาร์ติชันแต่ก่อนท็อปโต๊ะ
+  function worker(hx, top, i, t) {
+    const P2 = [["#6A8CAF", "#2A1E1A", "#E8BC96"], ["#C27A8A", "#3A2620", "#F2CDB0"], ["#8FAF6A", "#1E1614", "#D19B74"]][i];
+    const [shirt, hair, sk2] = P2, sway = Math.sin(t * 1.3 + i) * 2, x = hx + sway, fy = top - 104, blink = (t + i * 1.1) % 3.7 < 0.12;
+    let s = "";
+    // ลำตัว ไหล่ แขนวางบนโต๊ะ
+    s += `<path d="M${f(x - 44)},${f(top + 4)} L${f(x - 46)},${f(top - 46)} Q${f(x - 44)},${f(top - 64)} ${f(x - 20)},${f(top - 68)} L${f(x + 20)},${f(top - 68)} Q${f(x + 44)},${f(top - 64)} ${f(x + 46)},${f(top - 46)} L${f(x + 44)},${f(top + 4)}Z" fill="${shirt}" stroke="${ink(shirt)}" stroke-width="2.4" stroke-linejoin="round"/>`;
+    s += `<path d="M${f(x + 18)},${f(top - 66)} Q${f(x + 40)},${f(top - 60)} ${f(x + 44)},${f(top - 40)} L${f(x + 44)},${f(top + 4)} L${f(x + 24)},${f(top + 4)}Z" fill="${shd(shirt)}"/>`;
+    s += `<path d="M${f(x - 10)},${f(top - 68)} L${f(x)},${f(top - 56)} L${f(x + 10)},${f(top - 68)}" fill="none" stroke="${ink(shirt)}" stroke-width="2"/>`;
+    s += `<path d="M${f(x - 9)},${f(top - 80)} L${f(x - 10)},${f(top - 64)} Q${f(x)},${f(top - 58)} ${f(x + 10)},${f(top - 64)} L${f(x + 9)},${f(top - 80)}Z" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/>`;
+    // หัว หู ผม หน้า
+    s += `<ellipse cx="${f(x - 28)}" cy="${f(fy + 2)}" rx="5.5" ry="8.5" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/><ellipse cx="${f(x + 28)}" cy="${f(fy + 2)}" rx="5.5" ry="8.5" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/>`;
+    if (i === 1) s += `<path d="M${f(x - 32)},${f(fy - 14)} Q${f(x - 44)},${f(fy + 30)} ${f(x - 30)},${f(fy + 42)} L${f(x + 30)},${f(fy + 42)} Q${f(x + 44)},${f(fy + 30)} ${f(x + 32)},${f(fy - 14)}Z" fill="${hair}" stroke="${ink(hair)}" stroke-width="2"/>`;
+    s += `<path d="M${f(x - 26)},${f(fy - 6)} Q${f(x - 27)},${f(fy + 26)} ${f(x)},${f(fy + 30)} Q${f(x + 27)},${f(fy + 26)} ${f(x + 26)},${f(fy - 6)} Q${f(x + 24)},${f(fy - 32)} ${f(x)},${f(fy - 32)} Q${f(x - 24)},${f(fy - 32)} ${f(x - 26)},${f(fy - 6)}Z" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2.4"/>`;
+    s += `<path d="M${f(x - 28)},${f(fy - 4)} Q${f(x - 30)},${f(fy - 36)} ${f(x)},${f(fy - 36)} Q${f(x + 30)},${f(fy - 36)} ${f(x + 28)},${f(fy - 6)} Q${f(x + 10)},${f(fy - 22)} ${f(x - 14)},${f(fy - 18)} Q${f(x - 22)},${f(fy - 14)} ${f(x - 28)},${f(fy - 4)}Z" fill="${hair}" stroke="${ink(hair)}" stroke-width="2"/>`;
+    s += blink ? line(`M${f(x - 14)},${f(fy + 4)} l8,0 M${f(x + 6)},${f(fy + 4)} l8,0`, "#2A1A16", 2.4) : `<ellipse cx="${f(x - 10)}" cy="${f(fy + 3)}" rx="3" ry="3.8" fill="#2A1A16"/><ellipse cx="${f(x + 10)}" cy="${f(fy + 3)}" rx="3" ry="3.8" fill="#2A1A16"/><circle cx="${f(x - 9)}" cy="${f(fy + 2)}" r="1" fill="#fff"/><circle cx="${f(x + 11)}" cy="${f(fy + 2)}" r="1" fill="#fff"/>`;
+    s += line(`M${f(x - 16)},${f(fy - 7)} q6,-3 11,0 M${f(x + 5)},${f(fy - 7)} q6,-3 11,0`, hair, 2.6) + line(`M${f(x)},${f(fy + 8)} l-2,7 l3,1`, ink(sk2), 1.8) + line(`M${f(x - 7)},${f(fy + 19)} q7,${i === 1 ? 5 : 3} 14,0`, "#8C3B36", 2.2);
+    s += `<ellipse cx="${f(x - 17)}" cy="${f(fy + 13)}" rx="5.5" ry="3" fill="#F29A94" opacity=".4"/><ellipse cx="${f(x + 17)}" cy="${f(fy + 13)}" rx="5.5" ry="3" fill="#F29A94" opacity=".4"/>`;
+    if (i === 2) s += `<rect x="${f(x - 21)}" y="${f(fy - 4)}" width="17" height="13" rx="4" fill="none" stroke="#2A2A30" stroke-width="2.2"/><rect x="${f(x + 4)}" y="${f(fy - 4)}" width="17" height="13" rx="4" fill="none" stroke="#2A2A30" stroke-width="2.2"/>`;
+    return s;
+  }
+  function deskArms(x, top, i, t) {
+    const sk2 = ["#E8BC96", "#F2CDB0", "#D19B74"][i], shirt = ["#6A8CAF", "#C27A8A", "#8FAF6A"][i], typ = Math.sin(t * 14 + i * 2) * 1.5;
+    let s = "";
+    for (const sg of [-1, 1]) {
+      s += `<path d="M${f(x + sg * 40)},${f(top - 30)} Q${f(x + sg * 46)},${f(top - 6)} ${f(x + sg * 30)},${f(top + 2)}" fill="none" stroke="${ink(shirt)}" stroke-width="16" stroke-linecap="round"/><path d="M${f(x + sg * 40)},${f(top - 30)} Q${f(x + sg * 46)},${f(top - 6)} ${f(x + sg * 30)},${f(top + 2)}" fill="none" stroke="${shirt}" stroke-width="12" stroke-linecap="round"/>`;
+      s += `<ellipse cx="${f(x + sg * 22)}" cy="${f(top + 4 + (sg > 0 ? typ : -typ))}" rx="10" ry="6" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/>`;
+    }
+    return s;
+  }
+
   function deskRow(T, t) {
     let s = "";
-    // แถวหลัง (ไกล) — โต๊ะ 3 ตัว เห็นจอด้านหลัง + พนักงานคนอื่น (เงาร่างเรียบ ๆ)
+    // แถวหลัง (ไกล) — โต๊ะ 3 ตัว พนักงานนั่งหันหน้าเข้ากล้อง หลังจอ (เห็นหลังจอ วางเยื้องไปข้าง ไม่บังหน้า)
     const k = 0.62, y = 1210;
-    const extras = [["#6A8CAF", "#2A1E1A"], ["#C27A8A", "#3A2620"], ["#8FAF6A", "#1E1614"]];
     [[-60, 300], [300, 300], [660, 300]].forEach(([x, w], i) => {
-      const d = workDesk(x, y, w, k, { pins: [[30, 180, "#FFF4A8", -5], [90, 170, "#FFFFFF", 4], [200, 190, "#BFE3FF", -2]], part: i === 1 ? "#5A7FA8" : "#3E8C8A" }, t);
-      s += d.s;
-      // คนนั่งหลังพาร์ติชัน (หัว+ไหล่โผล่ ขยับเล็กน้อย)
-      const [shirt, hair] = extras[i], hx = x + w * 0.5 + Math.sin(t * 1.3 + i) * 3;
-      s += `<path d="M${f(hx - 46)},${f(d.top - 120)} Q${f(hx)},${f(d.top - 160)} ${f(hx + 46)},${f(d.top - 120)} L${f(hx + 50)},${f(d.top - 100)} L${f(hx - 50)},${f(d.top - 100)}Z" fill="${shirt}" stroke="${ink(shirt)}" stroke-width="2.4"/>`;
-      const sk2 = ["#E8BC96", "#F2CDB0", "#D19B74"][i], fy = d.top - 182, blink = (t + i * 1.1) % 3.7 < 0.12;
-      s += `<path d="M${f(hx - 9)},${f(d.top - 152)} L${f(hx - 10)},${f(d.top - 136)} L${f(hx + 10)},${f(d.top - 136)} L${f(hx + 9)},${f(d.top - 152)}Z" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/>`;
-      s += `<ellipse cx="${f(hx - 29)}" cy="${f(fy + 2)}" rx="6" ry="9" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/><ellipse cx="${f(hx + 29)}" cy="${f(fy + 2)}" rx="6" ry="9" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2"/>`;
-      s += `<ellipse cx="${f(hx)}" cy="${f(fy)}" rx="28" ry="32" fill="${sk2}" stroke="${ink(sk2)}" stroke-width="2.4"/>`;
-      s += blink ? line(`M${f(hx - 14)},${f(fy + 2)} l8,0 M${f(hx + 6)},${f(fy + 2)} l8,0`, "#2A1A16", 2.4) : `<ellipse cx="${f(hx - 10)}" cy="${f(fy + 1)}" rx="3" ry="4" fill="#2A1A16"/><ellipse cx="${f(hx + 10)}" cy="${f(fy + 1)}" rx="3" ry="4" fill="#2A1A16"/>`;
-      s += line(`M${f(hx - 16)},${f(fy - 9)} q6,-4 12,0 M${f(hx + 4)},${f(fy - 9)} q6,-4 12,0`, hair, 2.6) + line(`M${f(hx - 7)},${f(fy + 14)} q7,${i === 1 ? 6 : 4} 14,0`, "#8C3B36", 2.2) + `<ellipse cx="${f(hx - 17)}" cy="${f(fy + 10)}" rx="6" ry="3" fill="#F29A94" opacity=".4"/><ellipse cx="${f(hx + 17)}" cy="${f(fy + 10)}" rx="6" ry="3" fill="#F29A94" opacity=".4"/>`;
-      if (i === 1) s += `<path d="M${f(hx - 30)},${f(fy - 14)} Q${f(hx - 44)},${f(fy + 30)} ${f(hx - 30)},${f(fy + 40)} L${f(hx - 24)},${f(fy - 4)}Z M${f(hx + 30)},${f(fy - 14)} Q${f(hx + 44)},${f(fy + 30)} ${f(hx + 30)},${f(fy + 40)} L${f(hx + 24)},${f(fy - 4)}Z" fill="${hair}"/>`;
-      if (i === 2) s += `<rect x="${f(hx - 22)}" y="${f(fy - 8)}" width="18" height="14" rx="4" fill="none" stroke="#2A2A30" stroke-width="2.4"/><rect x="${f(hx + 4)}" y="${f(fy - 8)}" width="18" height="14" rx="4" fill="none" stroke="#2A2A30" stroke-width="2.4"/>`;
-      s += `<path d="M${f(hx - 30)},${f(d.top - 186)} Q${f(hx - 30)},${f(d.top - 222)} ${f(hx)},${f(d.top - 220)} Q${f(hx + 30)},${f(d.top - 222)} ${f(hx + 30)},${f(d.top - 190)} Q${f(hx)},${f(d.top - 200)} ${f(hx - 30)},${f(d.top - 186)}Z" fill="${hair}"/>`;
-      s += monitor(x + w * 0.5, d.top + 6, 0.62, "sheet", true) + mug(x + w * 0.18, d.top + 8, 0.55, ["#D8483B", "#F2B33D", "#3E7CB1"][i], false, t);
-      s += rect(x + w * 0.72, d.top - 14, 40, 14, ["#E7B24A", "#3E7CB1", "#C8483B"][i], { w: 1.4 }) + rect(x + w * 0.74, d.top - 24, 36, 10, "#FFFFFF", { w: 1.2 });
+      const H = 300 * k, top = y - H, cx = x + w * 0.42;
+      // 1) พาร์ติชัน + ของแปะ
+      const part = i === 1 ? "#5A7FA8" : "#3E8C8A", ph = 210 * k;
+      s += box(x + 10 * k, top - ph, w - 20 * k, ph, 0.03, part, { top: false }) + rect(x + 10 * k, top - ph - 8 * k, w - 20 * k, 10 * k, "#B9BDC2", { w: 2 });
+      [[18, 120, "#FFF4A8", -5], [w - 70, 112, "#FFFFFF", 4], [w - 120, 124, "#BFE3FF", -2]].forEach(([px, py, c, a]) => { s += `<g transform="rotate(${a} ${f(x + px)} ${f(top - py)})">${rect(x + px, top - py, 28, 32, c, { stroke: "#B9AE96", w: 1.2 })}${line(`M${f(x + px + 4)},${f(top - py + 10)} l18,0 M${f(x + px + 4)},${f(top - py + 17)} l14,0`, "#8C8270", 1.2)}</g>`; });
+      // 2) พนักงาน (นั่งหน้าพาร์ติชัน)
+      s += worker(cx, top, i, t);
+      // 3) โต๊ะ: ขา ตู้ลิ้นชัก ท็อป
+      s += box(x + 14 * k, top + 20 * k, 30 * k, H - 20 * k, 0.04, "#7A7F86");
+      s += box(x + w - 150 * k, top + 20 * k, 136 * k, H - 30 * k, 0.05, "#B9BDC2") + [0, 1, 2].map((j) => rect(x + w - 142 * k, top + (34 + j * 82) * k, 120 * k, 72 * k, "#C9CDD2", { w: 2 }) + rect(x + w - 104 * k, top + (52 + j * 82) * k, 44 * k, 8 * k, "#8E959C", { rx: 3, w: 1 })).join("");
+      s += box(x, top, w, 22 * k, 0.07, "#D9B98C");
+      // 4) ของบนโต๊ะ: แขน+มือบนคีย์บอร์ด จอ (หลัง) เยื้องขวา แก้ว แฟ้ม
+      s += `<path d="M${f(cx - 34)},${f(top + 2)} L${f(cx + 34)},${f(top + 2)} L${f(cx + 38)},${f(top + 10)} L${f(cx - 38)},${f(top + 10)}Z" fill="#E9E9E6" stroke="#8E8E8A" stroke-width="1.6"/>`;
+      s += deskArms(cx, top, i, t);
+      s += monitor(x + w * 0.8, top + 6, 0.5, "sheet", true) + mug(x + w * 0.12, top + 8, 0.55, ["#D8483B", "#F2B33D", "#3E7CB1"][i], i === 0, t);
+      s += rect(x + w * 0.6, top - 14, 34, 14, ["#E7B24A", "#3E7CB1", "#C8483B"][i], { w: 1.4 }) + rect(x + w * 0.61, top - 24, 30, 10, "#FFFFFF", { w: 1.2 });
     });
     return s;
   }

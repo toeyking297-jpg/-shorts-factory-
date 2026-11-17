@@ -76,16 +76,17 @@
     // ลำดับวาด: นิ้ว (รวมนิ้วโป้ง) ก่อน → ฝ่ามือ/หลังมือทับโคนนิ้ว → ขอบล่างของมือคือแนวข้อนิ้ว · ไม่มีนิ้วไหนวางทับบนมือ
     let fg = "", palm = "", mk = "";
     if (type === "relaxed" && near) {
-      // หลังมือขวา ห้อยข้างตัว นิ้วงอไปด้านหน้าเล็กน้อย นิ้วโป้งโผล่ด้านหน้า
-      fg += fing([[12, 14], [21, 28], [21, 42]], 10);
-      fg += fing([[-11.5, 32], [-15, 52], [-11, 62]], 8) + fing([[-5, 32], [-6, 58], [-1, 70]], 9.2) + fing([[3, 32], [3, 60], [8, 72]], 9.4) + fing([[11, 32], [13, 57], [16, 67]], 9);
-      fg += nail([-11.5, 59], 20) + nail([-1.5, 67], 20) + nail([7.5, 69], 20) + nail([15.5, 64], 20);
+      // หลังมือขวา ห้อยข้างตัว นิ้วตรงลงตามธรรมชาติ งอเล็กน้อยที่ปลาย นิ้วโป้งแนบด้านหน้า
+      fg += fing([[12, 14], [19, 30], [19, 44]], 10);
+      fg += fing([[-11.5, 32], [-12.5, 50], [-11, 60]], 8) + fing([[-4, 32], [-4.5, 56], [-2.5, 68]], 9.2) + fing([[3.5, 32], [3.5, 58], [5, 70]], 9.4) + fing([[11, 32], [11.5, 54], [12.5, 64]], 9);
+      fg += nail([-11, 57], 4) + nail([-2.5, 65], 4) + nail([5, 67], 4) + nail([12.5, 61], 4);
       palm = palmShape(-17, 40, 16, 42);
-      mk = `<path d="M-6,8 Q-10,22 -9,32 M2,10 Q1,22 2,32" fill="none" stroke="${sh}" stroke-width="2" stroke-linecap="round" opacity=".8"/>`;
+      mk = `<path d="M-6,8 Q-9,22 -8,32 M2,10 Q1,22 2,32" fill="none" stroke="${sh}" stroke-width="2" stroke-linecap="round" opacity=".8"/>` +
+        `<path d="M-14,50 q2,2 4,0 M-6,54 q2,2 4,0 M2,55 q2,2 4,0 M9,52 q2,2 4,0" fill="none" stroke="${o}" stroke-width="${f(lw * 0.55)}" opacity=".5"/>`;
     } else if (type === "relaxed") {
-      // มือซ้าย(ข้างไกล) เห็นด้านใน: นิ้วห้อยออกจากใต้ฝ่ามือ งอไปด้านหน้า นิ้วโป้งอยู่ข้างฝ่ามือด้านหน้า
-      fg += fing([[12, 12], [22, 26], [22, 42]], 10.5);
-      fg += fing([[-11.5, 32], [-15, 50], [-10, 60]], 8) + fing([[-5, 32], [-6, 56], [0, 66]], 9) + fing([[3, 32], [3, 58], [9, 67]], 9.2) + fing([[11, 32], [13, 54], [17, 62]], 9);
+      // มือซ้าย(ข้างไกล) เห็นด้านฝ่ามือ: นิ้วห้อยตรง ปลายนิ้วงอเข้าหาฝ่ามือ (สั้นลงตามมุม) นิ้วโป้งแนบด้านหน้า
+      fg += fing([[12, 12], [20, 28], [19, 42]], 10.5);
+      fg += fing([[-11.5, 32], [-12, 48], [-10.5, 56]], 8) + fing([[-4, 32], [-4.5, 52], [-3, 62]], 9) + fing([[3.5, 32], [3.5, 54], [4.5, 64]], 9.2) + fing([[11, 32], [11.5, 50], [12, 58]], 9);
       palm = palmShape(-17, 40, 16, 40);
       mk = `<path d="M-12,26 Q0,32 12,24" fill="none" stroke="${sh}" stroke-width="2.2" stroke-linecap="round"/>`;
     } else if (type === "fist") {
@@ -100,7 +101,8 @@
       fg += fing([[10, 12], [22, 22], [f(26 + 2 * sp), 34]], 10.5);
       [[-12.5, 24, -5], [-5, 31, -2], [4, 33, 1], [12, 29, 4]].forEach(([x, L, d]) => { const e = [x + d * sp, 36 + L]; fg += fing([[x, 30], [x + d * sp * 0.4, 36 + L * 0.5], e], x === -12.5 ? 8.4 : 9.4); });
       palm = palmShape(-19, 38, 18, 38);
-      mk = `<path d="M-14,30 Q0,25 16,30 M-2,10 Q0,22 -8,32" fill="none" stroke="${sh}" stroke-width="2.4" stroke-linecap="round"/>`;
+      mk = type === "wave" ? `<path d="M-14,30 Q0,25 16,30 M-2,10 Q0,22 -8,32" fill="none" stroke="${sh}" stroke-width="2.4" stroke-linecap="round"/>`
+        : `<path d="M-7,8 Q-10,22 -9,32 M2,10 Q1,22 2,32 M10,10 Q10,22 10,32" fill="none" stroke="${sh}" stroke-width="2" stroke-linecap="round" opacity=".8"/>`;
     } else if (type === "point") {
       fg += fing([[13, 12], [24, 28], [16, 44]], 10);
       fg += fing([[-12.5, 32], [-12, 50]], 9.5) + fing([[-5, 32], [-3, 53]], 10) + fing([[4, 32], [6, 53]], 10) + fing([[11, 32], [14, 58], [15, 80]], 9);
@@ -110,7 +112,7 @@
     if (!cuff) g = `<rect x="${f(-hw + lw / 2)}" y="-14" width="${f(hw * 2 - lw)}" height="18" fill="${sk}"/>` + g;
     // มือซ้าย/ขวา: ภาพวาดแต่ละท่าเป็นมือข้างใดข้างหนึ่ง (หลังมือขวา = นิ้วโป้ง +x, ฝ่ามือซ้าย = นิ้วโป้ง +x)
     // ข้างใกล้กล้อง = มือขวา, ข้างไกล = มือซ้าย → ถ้าภาพวาดเป็นมือคนละข้างกับที่ต้องการ ให้กลับด้าน
-    const drawnRight = { relaxed: !!near, fist: true, point: true, open: false, wave: false }[type];
+    const drawnRight = { relaxed: !!near, fist: true, point: true, open: true, wave: false }[type]; // open = หลังมือ นิ้วโป้งอยู่บนเมื่อยื่นมือไปข้างหน้า
     const mirror = drawnRight !== !!near;
     return `<g transform="translate(${P(at)}) rotate(${f(ang)}) scale(${f(mirror ? -K : K)},${f(K)})">${g}</g>`;
   }
@@ -273,25 +275,44 @@
   function lower(C) {
     const B = C.bottom, c = B.color;
     if (B.type === "skirt") return `<path d="M-88,-612 L80,-612 Q110,-500 118,-380 Q20,-368 -100,-380 Q-104,-500 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M-50,-600 L-60,-380 M0,-600 L6,-374 M44,-600 L66,-378" stroke="${ink(c)}" stroke-width="2.2" opacity=".6"/><path d="M60,-600 Q100,-500 110,-384 L118,-380 Q110,-500 80,-612Z" fill="${shd(c)}"/>`;
-    if (B.type === "sarong") { let s = `<path d="M-88,-612 L80,-612 Q92,-300 96,-42 Q10,-30 -84,-42 Q-92,-300 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M60,-600 Q76,-300 80,-44 L96,-42 Q92,-300 80,-612Z" fill="${shd(c)}"/>`;
-      s += [-200, -140, -84].map((y) => `<path d="M-86,${y} L94,${y}" stroke="${B.p1}" stroke-width="12" opacity=".85"/><path d="M-86,${y + 12} L94,${y + 12}" stroke="${B.p2}" stroke-width="3"/>`).join("");
-      return s + `<path d="M-86,-600 L80,-600" stroke="${shd(c)}" stroke-width="12"/><path d="M50,-596 Q40,-300 60,-44" fill="none" stroke="${ink(c)}" stroke-width="2.4" opacity=".6"/>`; }
+    if (B.type === "sarong") { let s = `<path d="M-88,-612 L80,-612 Q92,-300 96,-74 Q10,-62 -84,-74 Q-92,-300 -88,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M60,-600 Q76,-300 80,-76 L96,-74 Q92,-300 80,-612Z" fill="${shd(c)}"/>`;
+      s += [-230, -170, -114].map((y) => `<path d="M-86,${y} L94,${y}" stroke="${B.p1}" stroke-width="12" opacity=".85"/><path d="M-86,${y + 12} L94,${y + 12}" stroke="${B.p2}" stroke-width="3"/>`).join("");
+      return s + `<path d="M-86,-600 L80,-600" stroke="${shd(c)}" stroke-width="12"/><path d="M50,-596 Q40,-300 60,-76" fill="none" stroke="${ink(c)}" stroke-width="2.4" opacity=".6"/>`; }
     return `<path d="M-86,-612 L78,-612 Q86,-590 80,-560 L46,-548 L10,-566 L-24,-548 L-80,-560 Q-90,-590 -86,-612Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M10,-604 L10,-568" stroke="${ink(c)}" stroke-width="2.4"/>` + (C.belt ? `<path d="M-86,-612 L78,-612 L80,-596 L-86,-596Z" fill="${C.belt}" stroke="${ink(C.belt)}" stroke-width="2.4"/><rect x="0" y="-614" width="18" height="20" rx="2" fill="#C9A44A" stroke="#7A5E2A" stroke-width="2"/>` : `<path d="M-60,-596 q14,10 26,0 M30,-596 q12,10 24,0" fill="none" stroke="${ink(c)}" stroke-width="2.2" opacity=".7"/>`);
   }
-  function shoe(at, k, C) {
-    const S = C.shoes, c = S.color, sk = C.skin;
+  // รองเท้ามุม 3/4 (หันขวา-เข้าหากล้อง): ส้นอยู่หลังข้อเท้า ปลายเท้าสั้นลงตามมุมมอง เห็นหน้ารองเท้าด้านบน
+  // จุดกำเนิด = พื้นใต้ข้อเท้า · ข้อเท้าอยู่ที่ (0,-44) · rot = เอียงปลายเท้าลงเข้าหากล้อง
+  function shoe(at, k, C, rot = 0) {
+    const S = C.shoes, c = S.color, sk = C.skin, o = ink(c), so = S.sole || "#9A948A";
     let g = "";
+    const sole = (col) => `<path d="M-27,-4 Q-30,8 -18,10 L52,10 Q68,8 66,-6 L50,0 L-24,-2Z" fill="${col}" stroke="${ink(col)}" stroke-width="2.6" stroke-linejoin="round"/>`;
     if (S.type === "sandal" || S.type === "slipper") {
-      const so = S.sole || "#5A4636";
-      g = `<path d="M-30,6 Q-36,-6 -24,-12 L70,-10 Q84,-4 80,8 L-26,12Z" fill="${so}" stroke="${ink(so)}" stroke-width="2.8"/><path d="M-22,-10 Q-30,-30 -6,-36 Q30,-40 60,-26 Q76,-18 72,-8 L-20,-8Z" fill="${sk}" stroke="${ink(sk)}" stroke-width="${OW}"/>` + [52, 60, 67].map((x) => `<path d="M${x},-22 l0,10" stroke="${ink(sk)}" stroke-width="1.8"/>`).join("") + (S.type === "slipper" ? `<path d="M10,-34 Q34,-34 60,-22 L58,-12 L8,-12Z" fill="${c}" stroke="${ink(c)}" stroke-width="2.6"/>` : `<path d="M22,-34 L44,-12 M40,-30 L30,-12" stroke="${c}" stroke-width="6" stroke-linecap="round"/>`);
-    } else if (S.type === "flat" || S.type === "dress") {
-      g = `<path d="M-30,-4 Q-34,-30 -12,-34 Q20,-38 46,-24 Q74,-14 80,0 Q82,10 72,10 L-26,10 Q-34,6 -30,-4Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/>` + (S.type === "dress" ? `<path d="M-30,6 L78,6 L76,12 L-28,12Z" fill="#141414"/><path d="M40,-24 Q60,-16 72,-4" fill="none" stroke="#fff" stroke-width="3" opacity=".3"/>` : `<path d="M-10,-30 Q20,-26 40,-24" fill="none" stroke="${sk}" stroke-width="10"/><circle cx="40" cy="-22" r="5" fill="${S.bow || "#F7EBD3"}"/>`);
+      const sl = S.sole || "#5A4636";
+      g += `<path d="M-28,-2 Q-30,8 -18,9 L56,9 Q72,7 70,-6 L54,-2 L-24,-4Z" fill="${sl}" stroke="${ink(sl)}" stroke-width="2.6" stroke-linejoin="round"/>`;
+      // เท้า: ส้น หลังเท้า นิ้วเท้า 5 นิ้วเรียงเข้าหากล้อง
+      const ft = "M14,-48 Q20,-32 40,-22 Q58,-16 64,-8 Q64,-2 56,-2 L-22,-4 Q-30,-8 -27,-20 Q-24,-34 -14,-48";
+      g += `<path d="${ft}Z" fill="${sk}"/><path d="${ft}" fill="none" stroke="${ink(sk)}" stroke-width="${OW}" stroke-linejoin="round" stroke-linecap="round"/><path d="M-8,-30 q6,-6 12,0" fill="none" stroke="${shd(sk)}" stroke-width="2.4"/>`;
+      g += [[62, -8, 7.5], [53, -6, 6], [46, -5, 5.4], [40, -4, 5], [34, -4, 4.6]].reverse().map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * 0.9}" fill="${sk}" stroke="${ink(sk)}" stroke-width="2"/>`).join("");
+      g += `<path d="M-4,-30 Q10,-22 26,-20" fill="none" stroke="${shd(sk)}" stroke-width="3" stroke-linecap="round"/><ellipse cx="62" cy="-10" rx="4" ry="3" fill="${RK.shade(sk, 0.2)}"/>`;
+      g += S.type === "slipper" ? `<path d="M8,-30 Q30,-34 52,-18 L56,-6 L4,-6Z" fill="${c}" stroke="${ink(c)}" stroke-width="2.6" stroke-linejoin="round"/><path d="M14,-20 Q32,-22 48,-12" fill="none" stroke="${hil(c)}" stroke-width="3"/>` : `<path d="M34,-24 L44,-6 M48,-22 L36,-6" stroke="${ink(c)}" stroke-width="8" stroke-linecap="round"/><path d="M34,-24 L44,-6 M48,-22 L36,-6" stroke="${c}" stroke-width="5" stroke-linecap="round"/>`;
+    } else if (S.type === "flat") {
+      g += `<path d="M-14,-48 L14,-48 Q20,-36 30,-28 L-20,-30Z" fill="${sk}"/><path d="M14,-48 Q20,-36 30,-28 M-20,-30 L-14,-48" fill="none" stroke="${ink(sk)}" stroke-width="${OW}" stroke-linecap="round"/>`;
+      g += `<path d="M-22,-30 C-30,-22 -29,-6 -23,0 L50,2 C64,2 68,-8 62,-16 C54,-24 42,-28 28,-28 Q4,-26 -22,-30Z" fill="${c}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/>`;
+      g += `<path d="M-24,-2 L50,0 Q62,0 64,-6" fill="none" stroke="#141414" stroke-width="4"/><path d="M-26,-4 L-26,4 L-14,4 L-14,-2Z" fill="#141414"/>`;
+      g += `<path d="M30,-22 Q48,-20 58,-12" fill="none" stroke="${hil(c)}" stroke-width="3" stroke-linecap="round" opacity=".7"/><path d="M32,-30 l-8,-6 l2,10Z M32,-30 l8,-6 l-2,10Z" fill="${S.bow || "#F7EBD3"}" stroke="${ink(S.bow || "#F7EBD3")}" stroke-width="1.6"/><circle cx="32" cy="-30" r="3" fill="${S.bow || "#F7EBD3"}"/>`;
     } else {
-      const so = S.sole || "#9A948A";
-      g = `<path d="M-34,-6 Q-38,-34 -16,-40 Q14,-46 30,-30 Q62,-20 78,-6 Q84,6 74,10 L-30,10 Q-40,6 -34,-6Z" fill="${c}" stroke="${ink(c)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M-36,4 L78,4 Q82,12 74,14 L-30,14 Q-38,12 -36,4Z" fill="${so}" stroke="${ink(so)}" stroke-width="2.6"/><path d="M0,-38 Q16,-30 32,-30 M4,-30 l10,-6 M14,-26 l10,-6" fill="none" stroke="${ink(c)}" stroke-width="2.4"/><path d="M40,-22 Q62,-14 74,-4" fill="none" stroke="${shd(c)}" stroke-width="6" stroke-linecap="round"/>`;
+      // รองเท้าผ้าใบ / รองเท้าหนัง
+      const dress = S.type === "dress", sc = dress ? "#141414" : so;
+      g += sole(sc);
+      g += `<path d="M-22,-42 C-30,-32 -30,-12 -24,-2 L50,0 C62,0 66,-8 62,-16 C57,-26 44,-30 30,-33 L16,-44 Q-4,-50 -22,-42Z" fill="${c}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/>`;
+      g += `<path d="M-24,-14 Q14,-8 60,-10 L50,0 L-24,-2Z" fill="${shd(c)}"/>`;
+      g += `<ellipse cx="-3" cy="-44" rx="15" ry="4.5" fill="${RK.shade(c, -0.5)}"/>`;
+      if (dress) g += `<path d="M24,-28 Q46,-24 58,-14" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" opacity=".35"/><path d="M14,-40 L28,-31" stroke="${o}" stroke-width="2.4"/>`;
+      else g += `<path d="M14,-42 L32,-32 M16,-36 l10,-8 M22,-33 l10,-8 M28,-30 l9,-7" fill="none" stroke="${o}" stroke-width="2.4" stroke-linecap="round"/><path d="M40,-10 Q50,-22 62,-14" fill="none" stroke="${o}" stroke-width="2" opacity=".6"/><path d="M-16,-24 Q6,-26 22,-16" fill="none" stroke="${S.stripe || shd(c)}" stroke-width="4" stroke-linecap="round"/>`;
     }
-    return `<g transform="translate(${P(at)}) scale(${f(k)})">${g}</g>`;
+    return `<g transform="translate(${P(at)}) rotate(${f(rot)}) scale(${f(k)})">${g}</g>`;
   }
+  RK.figShoe = shoe;
 
   const POSE2 = {
     pocket:  { near: [8, -30, "pocket"], far: [-12, 10, "relaxed"], legN: [2, -2], legF: [-8, 8], lean: 0 },
@@ -325,7 +346,7 @@
       else g += limb([h, k, a], [(cloth ? 80 : 70) * legW, 46 * legW, 32 * legW], C.skin, { bulge: 0.1, crease: 1 });
       if (shorts) { const kk = add(h, mul([k[0] - h[0], k[1] - h[1]], 0.82)); g += seg(h, kk, 92 * legW, 78 * legW, pc, { flatEnd: true, folds: [[0.3, 0.6]] }); }
       if (pants) g += `<path d="M${P(add(a, [-24 * legW, -14]))} Q${P(add(a, [0, -6]))} ${P(add(a, [24 * legW, -14]))}" fill="none" stroke="${ink(pc)}" stroke-width="2.4"/>`;
-      g += shoe(add(a, [0, footH * 0.77]), (near ? 1 : 0.9) * Math.min(1, 0.55 + hL * 0.5), C);
+      g += shoe(add(a, [0, footH * 0.85]), (near ? 1.05 : 0.95) * Math.min(1, 0.55 + hL * 0.5), C, near ? 7 : 2);
       return g;
     };
     // แขน: pass "all" | "under" (ส่วนบนไหล่ อยู่ใต้ลำตัว/เสื้อกั๊ก) | "over" (ส่วนที่เหลือ+มือ ทับลำตัว)
@@ -360,9 +381,10 @@
     s += leg(40, Q.legF, false);
     s += arm(tp(70, -938), Q.far, false);
     // กระโปรง/ผ้าถุงอยู่หน้าขา · กางเกงต่อสะโพกก่อนแล้วขาใกล้ทับ
+    // ผ้าถุง: เท้าวาดก่อนผ้า ให้ชายผ้าบังส้น เห็นแค่ปลายเท้าโผล่
+    if (sarong) s += shoe([-40 * bw + 4, -2], 1.05 * Math.min(1, 0.55 + hL * 0.5), C, 7);
     if (skirt) s += leg(-40, Q.legN, true) + `<g transform="${TT}">${lower(C)}</g>`;
     else { s += `<g transform="${TT}">${lower(C)}</g>`; if (!sarong) s += leg(-40, Q.legN, true); }
-    if (sarong) s += shoe([-40 * bw + 4, -6], 1 * Math.min(1, 0.55 + hL * 0.5), C);
     const shN = tp(-94, -934);
     s += arm(shN, Q.near, true, "under");
     const nk = tp(10, -968), HT = `translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,968)`;
