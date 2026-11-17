@@ -19,3 +19,5 @@ cartoon/episodes/*/preview/
 cartoon/episodes/*/export/
 cartoon/episodes/*/audio/lines/
 cartoon/episodes/*/audio/mix*.wav
+rodkit/build/
+__pycache__/

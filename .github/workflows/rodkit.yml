@@ -1,0 +1,32 @@
+name: rodkit render
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "ไฟล์ตอน เช่น rodkit/episodes/TEST01.ep.json"
+        required: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q playwright pillow
+          [ -x /usr/bin/google-chrome ] || python -m playwright install --with-deps chromium
+      - name: Render
+        run: python -m rodkit.make "${{ github.event.inputs.episode }}"
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "${{ github.event.inputs.episode }}")
+          gh release delete "rodkit-$ID" -y --cleanup-tag 2>/dev/null || true
+          gh release create "rodkit-$ID" "rodkit/build/$ID/$ID.mp4" --title "rodkit $ID" --notes "เรนเดอร์จาก ${{ github.event.inputs.episode }}"
