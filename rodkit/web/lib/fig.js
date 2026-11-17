@@ -57,25 +57,45 @@
   function chain(base, a1, L1, a2, L2) { const e = add(base, rot([0, L1], a1)), w = add(e, rot([0, L2], a1 + a2)); return [base, e, w, a1 + a2]; }
 
   // ---------- มือ ----------
-  function hand(type, at, ang, sk, near, k = 1, nails) {
-    const o = ink(sk), sh = shd(sk);
+  // ข้อมือเนียน: บนสุดของมือไม่มีเส้นขอบ + แผ่นสีผิวปิดรอยต่อกับแขน · นิ้วโป้งอยู่ด้านหน้า (+x = ทิศที่หันหน้า) ทั้งมือใกล้และมือไกล
+  function hand(type, at, ang, sk, near, k = 1, nails, ww = 28, cuff = false) {
+    const o = ink(sk), sh = shd(sk), hw = ww / 2 / k;
+    const out = (d) => `<path d="${d}" fill="none" stroke="${o}" stroke-width="${OW / k}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const fill = (d, c = sk) => `<path d="${d}" fill="${c}"/>`;
     let s = "";
     if (type === "pocket") return "";
-    if (type === "open") {
-      s += `<path d="M-16,0 Q-22,22 -16,44 Q0,52 18,44 Q24,22 16,0Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/>`;
-      s += [[-13, 40, -8], [-4, 46, -3], [6, 45, 3], [15, 36, 8]].map(([x, L, sp]) => `<path d="M${x},38 q${sp * 0.5},${L * 0.5} ${sp},${L}" fill="none" stroke="${o}" stroke-width="${8.5 + OW}" stroke-linecap="round"/><path d="M${x},38 q${sp * 0.5},${L * 0.5} ${sp},${L}" fill="none" stroke="${sk}" stroke-width="8.5" stroke-linecap="round"/>`).join("");
-      s += `<path d="M-14,8 Q-34,18 -38,36" fill="none" stroke="${o}" stroke-width="${10 + OW}" stroke-linecap="round"/><path d="M-14,8 Q-34,18 -38,36" fill="none" stroke="${sk}" stroke-width="10" stroke-linecap="round"/>`;
-      s += `<path d="M-8,10 Q-2,24 -6,38 M-12,30 Q2,26 12,30" fill="none" stroke="${sh}" stroke-width="2.4"/>`;
-      if (nails) s += [[-17, 78], [-6, 84], [8, 83], [20, 74]].map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="3" ry="3.6" fill="${nails}"/>`).join("");
-    } else if (type === "fist") {
-      s += `<path d="M-18,0 Q-24,20 -20,38 Q-14,50 0,50 Q16,50 20,38 Q24,20 18,0Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/>`;
-      s += `<path d="M-14,38 q4,8 8,0 M-4,40 q4,8 8,0 M6,38 q4,8 8,0" fill="none" stroke="${sh}" stroke-width="2.6"/><path d="M-18,12 Q-26,26 -10,32" fill="none" stroke="${o}" stroke-width="2.6"/>`;
+    if (type === "fist") {
+      // กำมือ เห็นหลังมือ ข้อนิ้วชี้ลง/ไปข้างหลัง นิ้วโป้งพับอยู่ด้านหน้า
+      const body = `M${-hw},0 C${-hw - 4},16 ${-22},34 ${-20},48 C${-18},60 ${-6},64 ${6},62 C${18},60 ${24},50 ${22},36 C${20},22 ${hw + 2},12 ${hw},0`;
+      s += fill(body + "Z") + out(body);
+      s += `<path d="M-16,48 q5,6 10,0 M-5,52 q5,6 10,0 M6,50 q5,5 9,-1" fill="none" stroke="${o}" stroke-width="${2.2 / k}" stroke-linecap="round" opacity=".7"/>`;
+      s += `<path d="M${-hw + 4},14 Q-4,26 -14,38" fill="none" stroke="${sh}" stroke-width="${3 / k}"/>`;
+      const th = `M${hw - 2},10 C${hw + 12},16 ${hw + 12},34 ${hw + 2},42 C${hw - 4},46 ${hw - 10},42 ${hw - 8},36 C${hw - 6},28 ${hw - 8},20 ${hw - 10},14`;
+      s += fill(th + "Z") + out(th);
+    } else if (type === "open") {
+      // แบมือ เห็นฝ่ามือ นิ้วเรียงชิดกัน นิ้วโป้งกางด้านหน้า
+      const palm = `M${-hw},0 C${-hw - 4},14 -18,30 -17,42 L17,42 C18,30 ${hw + 4},14 ${hw},0`;
+      s += fill(palm + "Z") + out(`M${-hw},0 C${-hw - 4},14 -18,30 -17,42 M17,42 C18,30 ${hw + 4},14 ${hw},0`);
+      const F = [[-12.5, 34, -4], [-4, 40, -1], [4.5, 39, 1.5], [12.5, 30, 4]];
+      s += F.map(([x, L, sp]) => `<path d="M${x},36 q${sp * 0.5},${L * 0.5} ${sp},${L}" fill="none" stroke="${o}" stroke-width="${(8.2 + OW) / 1}" stroke-linecap="round"/>`).join("");
+      s += F.map(([x, L, sp]) => `<path d="M${x},36 q${sp * 0.5},${L * 0.5} ${sp},${L}" fill="none" stroke="${sk}" stroke-width="8.2" stroke-linecap="round"/>`).join("");
+      s += fill(`M-16,30 L16,30 L16,44 L-16,44Z`);
+      s += `<path d="M-8,14 Q-2,26 -6,36 M-13,32 Q0,28 13,32" fill="none" stroke="${sh}" stroke-width="2.4"/>`;
+      if (nails) s += F.map(([x, L, sp]) => `<ellipse cx="${f(x + sp)}" cy="${f(36 + L - 3)}" rx="2.6" ry="3.2" fill="${nails}"/>`).join("");
+      const th = `M${hw - 2},8 C${hw + 16},14 ${hw + 24},26 ${hw + 26},38`;
+      s += `<path d="${th}" fill="none" stroke="${o}" stroke-width="${9 + OW}" stroke-linecap="round"/><path d="${th}" fill="none" stroke="${sk}" stroke-width="9" stroke-linecap="round"/>`;
     } else {
-      const t = near ? 1 : -1;
-      s += `<path d="M${t * -12},0 C${t * -15},18 ${t * -16},36 ${t * -14},50 C${t * -12},64 ${t * -4},74 ${t * 6},74 C${t * 14},72 ${t * 16},62 ${t * 14},50 C${t * 14},34 ${t * 13},16 ${t * 12},0Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/>`;
-      s += `<path d="M${t * -13},48 Q0,54 ${t * 12},50 M${t * -4},52 L${t * -5},72 M${t * 4},52 L${t * 4},73" fill="none" stroke="${o}" stroke-width="2.2" opacity=".6" stroke-linecap="round"/>`;
-      s += `<path d="M${t * 10},10 Q${t * 22},28 ${t * 15},46" fill="none" stroke="${o}" stroke-width="${9 + OW}" stroke-linecap="round"/><path d="M${t * 10},10 Q${t * 22},28 ${t * 15},46" fill="none" stroke="${sk}" stroke-width="9" stroke-linecap="round"/>`;
+      // ปล่อยข้างตัว เห็นด้านข้าง/หลังมือ นิ้วงอเข้าเล็กน้อย นิ้วโป้งชี้ไปด้านหน้า
+      const body = `M${-hw},0 C${-hw - 3},18 -16,40 -14,56 C-12,70 -4,80 6,80 C14,79 18,72 16,62 C15,54 12,50 13,42 C14,30 ${hw + 2},14 ${hw},0`;
+      s += fill(body + "Z") + out(body);
+      s += `<path d="M-13,56 Q-2,60 12,56 M-6,60 Q-5,70 -2,77 M2,59 Q3,68 6,76" fill="none" stroke="${o}" stroke-width="${2.2 / k}" stroke-linecap="round" opacity=".55"/>`;
+      s += `<path d="M${-hw + 3},10 Q-14,30 -12,50" fill="none" stroke="${sh}" stroke-width="${4 / k}" stroke-linecap="round"/>`;
+      if (nails) s += `<ellipse cx="7" cy="76" rx="3" ry="2.6" fill="${nails}"/>`;
+      const th = `M${hw - 3},8 C${hw + 9},18 ${hw + 12},36 ${hw + 7},50 C${hw + 4},56 ${hw - 3},55 ${hw - 3},48 C${hw - 2},38 ${hw - 4},26 ${hw - 7},16`;
+      s += fill(th + "Z") + out(th);
+      if (!near) s += `<path d="M2,24 Q8,36 4,48" fill="none" stroke="${sh}" stroke-width="2.4"/>`;
     }
+    if (!cuff) s = `<rect x="${f(-hw + OW / 2)}" y="-14" width="${f(hw * 2 - OW)}" height="18" fill="${sk}"/>` + s;
     return `<g transform="translate(${P(at)}) rotate(${f(ang)}) scale(${f(k)})">${s}</g>`;
   }
 
@@ -123,13 +143,22 @@
       front: `<path d="M-74,-1120 Q-84,-1200 -30,-1230 Q40,-1246 90,-1200 Q104,-1180 100,-1150 L96,-1138 L-8,-1138 Q-40,-1134 -62,-1100Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="${OW}" stroke-linejoin="round"/><path d="M0,-1200 L-2,-1140 M30,-1210 L30,-1140 M60,-1200 L62,-1140" stroke="${H.hi}" stroke-width="3" opacity=".7"/><circle cx="96" cy="-1172" r="10" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.4"/>` }),
   };
 
+  // คอ: วาดก่อนลำตัว (คอเสื้อทับฐานคอ) ด้านข้างโค้งบานลงเป็นบ่า ไม่มีเส้นขอบล่าง
+  function neck(C) {
+    const sk = C.skin, o = ink(sk), sh = shd(sk);
+    const L = "M-32,-1030 C-30,-1000 -34,-976 -58,-950", Rr = "M46,-1026 C44,-1000 46,-978 66,-952";
+    return `<path d="M-32,-1030 C-30,-1000 -34,-976 -58,-950 L66,-952 C46,-978 44,-1000 46,-1026Z" fill="${sk}"/>` +
+      `<path d="M14,-1030 C12,-1000 16,-976 30,-952 L66,-952 C46,-978 44,-1000 46,-1026Z" fill="${sh}"/>` +
+      `<path d="M-32,-1006 Q8,-986 46,-1000 L46,-1026 L-32,-1030Z" fill="${sh}" opacity=".9"/>` +
+      `<path d="M-6,-978 Q4,-972 14,-978" fill="none" stroke="${sh}" stroke-width="3" stroke-linecap="round"/>` +
+      `<path d="${L}" fill="none" stroke="${o}" stroke-width="${OW}" stroke-linecap="round"/><path d="${Rr}" fill="none" stroke="${o}" stroke-width="${OW}" stroke-linecap="round"/>`;
+  }
   function head(C, p, t, id) {
     const sk = C.skin, o = ink(sk), sh = shd(sk), H = C.hair, F = C.face;
     const face = p.face || "smile", blink = (t + (C.blink || 0.7)) % 3.9 < 0.1, lx = p.lookX || 0, es = F.eye || 1;
     const hair = (HAIR[H.style] || HAIR.dropcut)(H, id);
     const fD = FACES[F.shape || "sharp"];
     let s = hair.back;
-    s += `<path d="M-30,-1014 L-34,-966 Q10,-954 50,-964 L46,-1010Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/><path d="M12,-1012 L8,-962 Q30,-958 48,-964 L44,-1010Z" fill="${sh}"/><path d="M-30,-1000 Q8,-984 46,-996" fill="none" stroke="${sh}" stroke-width="6"/>`;
     s += `<path d="M-60,-1100 Q-82,-1104 -82,-1078 Q-80,-1054 -58,-1050Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/><path d="M-64,-1092 Q-76,-1084 -66,-1062" fill="none" stroke="${sh}" stroke-width="3"/>`;
     if (F.earrings) s += `<circle cx="-70" cy="-1044" r="6" fill="${F.earrings}" stroke="${ink(F.earrings)}" stroke-width="2"/>`;
     s += `<path d="${fD}" fill="${sk}" stroke="${o}" stroke-width="${OW}" stroke-linejoin="round"/><clipPath id="face${id}"><path d="${fD}"/></clipPath>`;
@@ -289,6 +318,9 @@
       if (A[2] === "pocket") w = add(e, rot([0, 112 * aL], tot));
       const T = C.top, O = C.outer && C.outer.sleeves ? C.outer : null, sl = O ? "long" : T.sleeve, slc = O ? O.color : T.color;
       let g = "";
+      const hk = Math.min(1, 0.5 + aL * 0.55) * Math.sqrt(armW);
+      const mkHand = (cuff) => A[2] === "pocket" ? "" : hand(A[2], w, tot, C.skin, near, hk, C.nails, (cuff ? 30 : 28) * armW, cuff);
+      if (sl === "long") g += mkHand(true);
       if (sl === "long") {
         g += limb([s0, e, w], [56 * armW, 44 * armW, 38 * armW], slc, { crease: 1, folds: [[0, 0.85, 0.6], [1, 0.2, 0.5]], flatEnd: true });
         g += seg(add(w, rot([0, -16], tot)), w, 40 * armW, 38 * armW, shd(slc), { flatEnd: true, noShade: true });
@@ -300,7 +332,7 @@
       if (pass === "under") return g;
       if (C.watch && near && A[2] !== "pocket") g += `<g transform="translate(${P(add(w, rot([0, -12], tot)))}) rotate(${f(tot)})"><rect x="-17" y="-6" width="34" height="12" rx="4" fill="#2B2B33"/><circle cx="0" cy="0" r="4" fill="#E6E6E6"/></g>`;
       if (A[2] === "pocket") g += `<path d="M${P(add(w, [-26, -4]))} Q${P(add(w, [0, 14]))} ${P(add(w, [26, -2]))} L${P(add(w, [22, 16]))} Q${P(add(w, [0, 26]))} ${P(add(w, [-22, 14]))}Z" fill="${shd(B2.color)}" stroke="${ink(B2.color)}" stroke-width="${OW}"/>`;
-      else g += hand(A[2], w, tot, C.skin, near, Math.min(1, 0.5 + aL * 0.55) * Math.sqrt(armW), C.nails);
+      else if (sl !== "long") g += mkHand(false);
       if (pass === "over") {
         const u = rot([0, 1], A[0]), n = [-u[1], u[0]], c = add(s0, mul(u, 205 * aL * 0.2));
         const q = [add(c, mul(n, 3000)), add(c, mul(n, -3000)), add(add(c, mul(n, -3000)), mul(u, 4000)), add(add(c, mul(n, 3000)), mul(u, 4000))];
@@ -316,11 +348,12 @@
     if (sarong) s += shoe([-40 * bw + 4, -6], 1 * Math.min(1, 0.55 + hL * 0.5), C);
     const shN = tp(-94, -934);
     s += arm(shN, Q.near, true, "under");
+    const nk = tp(10, -968), HT = `translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,968)`;
+    s += `<g transform="${HT}">${neck(C)}</g>`;
     s += `<g transform="${TT} translate(0,${f(breathe * 0.4)})">${torso(C, id)}</g>`;
     s += arm(shN, Q.near, true, "over");
     if (Q.near[2] === "pocket" && !sarong && !skirt) s += `<g transform="${TT}"><path d="M-88,-604 Q-70,-596 -54,-604" fill="none" stroke="${ink(B2.color)}" stroke-width="3"/></g>`;
-    const nk = tp(10, -968);
-    s += `<g transform="translate(${f(nk[0])},${f(nk[1] + breathe)}) scale(${f(hs)}) translate(-10,968)">${head(C, p, t, id)}</g>`;
+    s += `<g transform="translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,${f(968 - (C.body.neck ?? 10))})">${head(C, p, t, id)}</g>`;
     const flip = (p.facing || 1) < 0 ? "scale(-1,1)" : "";
     return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)}) ${flip}"><g transform="rotate(${f(Q.lean + (B.hunch || 0))} 0 ${f(hipY)})">${s}</g></g>`;
   };
@@ -371,7 +404,7 @@
       bottom: { type: "sarong", color: "#7A2E2E", p1: "#B8862F", p2: "#E8C46A" }, shoes: { type: "slipper", color: "#4C7A5E" } },
     big: { skin: "#D9A27A", hair: { style: "buzz", color: "#1E1614", hi: "#4A3A33" },
       face: { shape: "round", blush: "#E08A70", brow: 8, eye: 0.85 },
-      body: { bw: 1.32, belly: 1, hL: 0.92, hs: 1.06 },
+      body: { bw: 1.32, belly: 1, hL: 0.92, hs: 1.06, neck: 0 },
       top: { color: "#F08A24", sleeve: "short", collar: "polo" },
       bottom: { type: "shorts", color: "#8A7A5C" }, shoes: { type: "sandal", color: "#2E2E2E", sole: "#4A3A2A" } },
     boss: { skin: "#E3B48E", hair: { style: "combover", color: "#2A2422", hi: "#6A5D58" },
