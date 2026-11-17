@@ -123,7 +123,15 @@
     const actors = (S.actors || []).map((a) => placeActor(a, cam, t)).sort((a, b) => b._z - a._z);
 
     let scene = `<g ${camP.bgBlur ? `filter="url(#blur${camP.bgBlur})"` : ""}>${set.svg}</g>`;
-    scene += actors.filter((A) => A.type !== "ghost").map((A) => drawActor(A, t)).join("");
+    // ชั้นฉากตามระยะลึก (set.layers [{depth, svg}]) สลับกับตัวละครตาม depth: ไกล (ค่ามาก) วาดก่อน
+    const L = (set.layers || []).slice().sort((a, b) => b.depth - a.depth);
+    let li = 0;
+    for (const A of actors.filter((A) => A.type !== "ghost")) {
+      while (li < L.length && L[li].depth > A._z) scene += L[li++].svg;
+      scene += drawActor(A, t);
+    }
+    while (li < L.length) scene += L[li++].svg;
+    if (set.fg) scene += set.fg;
     // ความมืดทั้งฉาก
     scene += `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#020308" opacity="${f(set.dark)}"/>`;
     // ผีเรืองแสงเอง: วาดหลังทาความมืด (มืดลงแค่บางส่วน)
@@ -140,8 +148,8 @@
     const flash = RK.kf((S.fx && S.fx.flash) || 0, t);
     if (flash) out += `<rect width="${W}" height="${H}" fill="#fff" opacity="${f(flash)}"/>`;
     // โทนสี + ขอบมืด + เกรน
-    out += `<rect width="${W}" height="${H}" fill="#123A3A" opacity=".16" style="mix-blend-mode:overlay"/>`;
-    out += `<rect width="${W}" height="${H}" fill="url(#vig)"/>`;
+    if (set.tone !== false) out += `<rect width="${W}" height="${H}" fill="#123A3A" opacity=".16" style="mix-blend-mode:overlay"/>`;
+    out += `<rect width="${W}" height="${H}" fill="url(#vig)"${set.tone === false ? ' opacity=".4"' : ""}/>`;
     const gr = (S.fx && S.fx.grain) ?? 0.09;
     if (gr) { const ox = Math.floor(RK.hash(Math.floor(T * 30)) * 256), oy = Math.floor(RK.hash(Math.floor(T * 30) + 9) * 256);
       out += `<defs><pattern id="gp" width="256" height="256" patternUnits="userSpaceOnUse" x="${ox}" y="${oy}"><image href="${GRAIN}" width="256" height="256"/></pattern></defs><rect width="${W}" height="${H}" fill="url(#gp)" opacity="${f(gr)}" style="mix-blend-mode:overlay"/>`; }

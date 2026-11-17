@@ -1,0 +1,166 @@
+{
+ "id": "SET_OFFICE",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "กว้าง เช้า",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "fg": false
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 420,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "relaxed"
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 230,
+     "y": 1640,
+     "s": 0.58,
+     "depth": 0,
+     "pose": "talk",
+     "talk": 1
+    }
+   ]
+  },
+  {
+   "name": "กว้าง เย็น",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "evening",
+    "fg": true
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 880,
+     "y": 1062,
+     "s": 0.4,
+     "depth": 8,
+     "pose": "hips",
+     "face": "angry"
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 420,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "pocket",
+     "face": "worried"
+    }
+   ]
+  },
+  {
+   "name": "กลาง เที่ยง",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "noon",
+    "fg": false
+   },
+   "cam": {
+    "zoom": 1.5,
+    "panX": -60,
+    "panY": -300
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 330,
+     "y": 1660,
+     "s": 0.6,
+     "depth": 0,
+     "pose": "hips",
+     "face": "laugh"
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 500,
+     "y": 1720,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "talk",
+     "talk": 1
+    }
+   ]
+  },
+  {
+   "name": "ใกล้ หน้าฮีโร่",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "morning",
+    "fg": false
+   },
+   "cam": {
+    "zoom": 3.0,
+    "panX": 60,
+    "panY": -170
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 440,
+     "y": 1720,
+     "s": 0.62,
+     "depth": 0,
+     "pose": "relaxed",
+     "lookX": 1
+    }
+   ]
+  },
+  {
+   "name": "ใกล้ โต๊ะ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "evening",
+    "fg": false
+   },
+   "cam": {
+    "zoom": 2.5,
+    "panX": -250,
+    "panY": -330
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": []
+  }
+ ]
+}
