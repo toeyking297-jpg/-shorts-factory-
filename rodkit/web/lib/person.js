@@ -385,8 +385,10 @@
     if (S.towel) s += `<path d="M60,-470 Q120,-470 150,-430 L150,-300 Q130,-290 120,-300 L118,-420 Q90,-440 50,-440Z" fill="${S.towel}" stroke="${INK}" stroke-width="5"/><path d="M128,-330 l20,0 M128,-316 l20,0" stroke="${RK.shade(S.towel, -0.2)}" stroke-width="3"/>`;
     return s;
   }
+  // ความหนาขาตามรูปร่าง: ตัวกว้างขึ้น ขาต้องใหญ่ขึ้นมากกว่าสัดส่วนเดียวกัน (คนอ้วนต้นขา/น่องใหญ่)
+  function legW(S) { const b = S.body || {}; return b.legW || (1 + Math.max(0, (b.bw || 1) - 1) * 1.6) * (b.thin || 1); }
   function bottomLeg(S, side, a, k, lift, L1, L2) { // ขา 1 ข้าง: ต้นขา/น่องเรียว เข่าซ้อนกัน + รองเท้า
-    const B = S.bottom, lw = S.body.legW || 1, sw = 1 + 0.08 * lift, shz = 1 + 0.18 * lift;
+    const B = S.bottom, lw = legW(S), sw = 1 + 0.08 * lift, shz = 1 + 0.18 * lift;
     L1 *= 1 - 0.3 * lift; L2 *= 1 - 0.2 * lift;
     const pants = B.type === "pants", shorts = B.type === "shorts";
     const thighC = pants || shorts ? B.color : S.skin, shinC = pants ? B.color : S.skin;
@@ -418,10 +420,10 @@
     if (B.type === "skirt") { const L = (B.len || 128) * ls; return `<path d="M${-w + 10},${hy - 20} L${w - 10},${hy - 20} L${w + 30},${f(hy + L)} Q0,${f(hy + L + 14)} ${-w - 30},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M-40,${hy} L-56,${f(hy + L)} M40,${hy} L56,${f(hy + L)} M0,${hy} L0,${f(hy + L + 8)}" stroke="${B.sh}" stroke-width="5"/>`; }
     if (B.type === "sarong") { const L = -hy - 30; return `<path d="M${-w + 4},${hy - 20} L${w - 4},${hy - 20} L${w + 6},${f(hy + L)} Q0,${f(hy + L + 10)} ${-w - 6},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M${-w + 4},${hy - 4} L${w - 4},${hy - 4}" stroke="${B.sh}" stroke-width="12"/>` + [0.35, 0.6, 0.85].map((k) => `<path d="M${-w},${f(hy + L * k)} L${w},${f(hy + L * k)}" stroke="${B.p1 || B.sh}" stroke-width="10" opacity=".8"/><path d="M${-w},${f(hy + L * k + 14)} L${w},${f(hy + L * k + 14)}" stroke="${B.p2 || "#E8C46A"}" stroke-width="4"/>`).join("") + `<path d="M${w - 30},${hy - 10} Q${w - 50},${f(hy + L * 0.5)} ${w - 20},${f(hy + L)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`; }
     if (B.type === "pants" || B.type === "shorts") { // สะโพก+เป้า ต่อขาสองข้างเป็นกางเกงตัวเดียว
-      const bw = S.body.bw || 1, X = (x) => f(x * bw), lw = S.body.legW || 1;
-      const d = `M${X(-120)},${hy - 30} L${X(120)},${hy - 30} Q${X(128)},${hy + 14} ${X(112 + 8 * lw)},${hy + 50} Q${X(46)},${hy + 70} ${X(6)},${hy + 44} L0,${hy + 40} L${X(-6)},${hy + 44} Q${X(-46)},${hy + 70} ${X(-112 - 8 * lw)},${hy + 50} Q${X(-128)},${hy + 14} ${X(-120)},${hy - 30}Z`;
+      const bw = S.body.bw || 1, X = (x) => f(x * bw), lw = legW(S);
+      const d = `M${X(-120)},${hy - 30} L${X(120)},${hy - 30} Q${X(128)},${hy - 4} ${X(112 + 10 * lw)},${hy + 18} Q${X(54)},${hy + 26} ${X(8)},${hy + 12} L0,${hy + 8} L${X(-8)},${hy + 12} Q${X(-54)},${hy + 26} ${X(-112 - 10 * lw)},${hy + 18} Q${X(-128)},${hy - 4} ${X(-120)},${hy - 30}Z`;
       let o = `<path d="${d}" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/>`;
-      o += `<path d="M0,${hy - 24} L0,${hy + 34}" stroke="${B.sh}" stroke-width="5"/><path d="M${X(-70)},${hy - 20} Q${X(-50)},${hy + 6} ${X(-30)},${hy - 20} M${X(70)},${hy - 20} Q${X(50)},${hy + 6} ${X(30)},${hy - 20}" fill="none" stroke="${B.sh}" stroke-width="4"/>`;
+      o += `<path d="M0,${hy - 24} L0,${hy + 8}" stroke="${B.sh}" stroke-width="5"/><path d="M${X(-70)},${hy - 20} Q${X(-50)},${hy + 6} ${X(-30)},${hy - 20} M${X(70)},${hy - 20} Q${X(50)},${hy + 6} ${X(30)},${hy - 20}" fill="none" stroke="${B.sh}" stroke-width="4"/>`;
       if (S.belt) o += `<rect x="${X(-116)}" y="${hy - 30}" width="${X(232)}" height="18" fill="${S.belt}" stroke="${INK}" stroke-width="4"/><rect x="-14" y="${hy - 32}" width="28" height="22" rx="3" fill="#C9A44A" stroke="${INK}" stroke-width="3"/>`;
       return o;
     }
