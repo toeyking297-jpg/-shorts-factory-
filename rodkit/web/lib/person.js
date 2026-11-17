@@ -6,7 +6,7 @@
 
   // ---------- ท่าทาง ----------
   const POSES = {
-    idle:        { la: 7,   le: -9,  ra: -7,   re: 9,   ll: 3,  lk: 0,  rl: -3, rk: 0,  lean: 0,  bob: 0, hl: "relaxed", hr: "relaxed" },
+    idle:        { la: 6,   le: -12, ra: -9,   re: 14,  ll: 3,  lk: -1, rl: -7, rk: 10, lean: 0,  bob: 0, tilt: 1.6, hl: "relaxed", hr: "relaxed" },
     wave:        { la: 7,   le: -9,  ra: -150, re: -30, ll: 3,  lk: 0,  rl: -3, rk: 0,  lean: -2, bob: 0, hl: "relaxed", hr: "open", waveR: 1 },
     hips:        { la: 40,  le: -110, ra: -40, re: 110, ll: 6,  lk: 0,  rl: -6, rk: 0,  lean: 0,  bob: 0, hl: "fist", hr: "fist" },
     cross:       { la: 22,  le: -128, ra: -22, re: 128, ll: 3,  lk: 0,  rl: -3, rk: 0,  lean: -2, bob: 0, hl: "fist", hr: "fist", crossed: 1 },
@@ -52,9 +52,29 @@
   };
   RK.FACES = FACES;
 
+
+  // สัดส่วนทั้งช่อง (ปรับได้ต่อตอน): A = น่ารัก ~2.5 หัว, B = สมจริงขึ้น ~3.5 หัว
+  RK.PROPS = { A: { leg: 1.25, torso: 1.15, head: 0.85 }, B: { leg: 1.8, torso: 1.45, head: 0.68 } };
+  RK.PROP = RK.PROPS.B;
+  function geom(S) {
+    const B = S.body || {}, P = S._prop || RK.PROP;
+    const ls = (B.ls || 1) * P.leg, ts = (B.ts || 1) * P.torso, hsz = (B.head || 1) * P.head, bw = B.bw || 1;
+    const thighL = 128 * ls, shinL = 118 * ls, hipY = -(thighL + shinL + 28), shY = hipY - 185 * ts;
+    const reach = hipY + thighL * 0.5 - shY; // ไหล่ → ปลายนิ้วอยู่กลางต้นขา
+    return { ls, ts, hsz, bw, thighL, shinL, hipY, shY, L1: reach * 0.4, L2: reach * 0.36, handK: ((reach * 0.24) / 112) * (S.handScale || 1), headY: shY - 22 * ts - 200 * hsz, shX: 150 * bw };
+  }
+  RK.personGeom = geom;
+  // ความสูงทั้งตัว (หน่วยวาด) ใช้แปลงเป็นซม.ในฉาก 3 มิติ
+  RK.personHeight = (who) => { const S = RK.CAST[who]; if (!S) return 900; const g = geom(S); return -g.headY + 250 * g.hsz; };
   // ---------- ตัวช่วยวาด ----------
-  function limb(len, w, fill, hi) {
-    return `<rect x="${f(-w / 2)}" y="${f(-w / 2)}" width="${f(w)}" height="${f(len + w / 2)}" rx="${f(w / 2)}" fill="${fill}" stroke="${INK}" stroke-width="${LW}"/>` + (hi ? `<rect x="${f(-w / 2 + 8)}" y="${f(-w / 2 + 10)}" width="${f(w * 0.22)}" height="${f(Math.max(0, len - 10))}" rx="${f(w * 0.11)}" fill="${hi}" opacity=".45"/>` : "");
+  function limb(len, w, fill, hi) { return taper(len, w, w * 0.82, fill, hi); }
+  // แขนขาเรียวแบบคน: โคนกว้าง ปลายแคบ มีโค้งกล้ามเนื้อ (ไม่ใช่ท่อตรง)
+  function taper(len, w0, w1, fill, hi, bulge = 0.1) {
+    const a = w0 / 2, b = w1 / 2, m = Math.max(a, b) * (1 + bulge);
+    const d = `M${f(-a)},0 C${f(-m)},${f(len * 0.35)} ${f(-b * 1.04)},${f(len * 0.78)} ${f(-b)},${f(len)} A${f(b)},${f(b * 0.9)} 0 0 0 ${f(b)},${f(len)} C${f(b * 1.04)},${f(len * 0.78)} ${f(m)},${f(len * 0.35)} ${f(a)},0 A${f(a)},${f(a * 0.75)} 0 0 0 ${f(-a)},0Z`;
+    let s = `<path d="${d}" fill="${fill}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/>`;
+    if (hi) s += `<path d="M${f(-a * 0.55)},${f(len * 0.12)} C${f(-m * 0.7)},${f(len * 0.4)} ${f(-b * 0.75)},${f(len * 0.7)} ${f(-b * 0.6)},${f(len * 0.88)}" fill="none" stroke="${hi}" stroke-width="${f(Math.max(4, w1 * 0.16))}" stroke-linecap="round" opacity=".55"/>`;
+    return s;
   }
   // ชิ้นที่ต่อกันหลายชิ้น: วาดขอบรวมก่อนแล้วเติมสี = ขอบนอกเส้นเดียว
   function merged(paths, fill, w = LW) {
@@ -293,13 +313,13 @@
   }
 
   // ---------- ลำตัว (วาดใน "พื้นที่ลำตัวมาตรฐาน" y: -470..-218 แล้วยืด/หดด้วย transform) ----------
-  function torsoPath(belly) {
-    const b = belly * 38;
-    return `M-128,-440 Q${-150 - b},${-330 + b} -122,-218 L122,-218 Q${150 + b},${-330 + b} 128,-440 Q0,-470 -128,-440Z`;
+  function torsoPath(belly, waist = 1) {
+    const b = belly * 42, w = 112 * waist + b;
+    return `M-50,-460 Q-112,-456 -142,-432 Q-152,-404 -134,-372 Q${f(-w - 6)},-320 ${f(-w)},-292 Q${f(-w + 4 - b * 0.3)},-250 -122,-218 L122,-218 Q${f(w - 4 + b * 0.3)},-250 ${f(w)},-292 Q${f(w + 6)},-320 134,-372 Q152,-404 142,-432 Q112,-456 50,-460 Q0,-440 -50,-460Z`;
   }
   function top(S) {
     const T = S.top, c = T.color, sh = T.sh || RK.shade(c, -0.2), hi = T.hi || RK.shade(c, 0.15), be = S.body.belly || 0;
-    let s = `<path d="${torsoPath(be)}" fill="${c}" stroke="${INK}" stroke-width="${LW}"/>`;
+    let s = `<path d="${torsoPath(be, S.body.waist || 1)}" fill="${c}" stroke="${INK}" stroke-width="${LW}"/>`;
     if (T.pattern === "floral") { const r = RK.rng(12); for (let i = 0; i < 26; i++) { const x = -110 + r() * 220, y = -440 + r() * 210; s += `<g transform="translate(${f(x)},${f(y)})">${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="0" cy="-9" rx="5" ry="8" fill="${T.p1 || "#F6E6F0"}" transform="rotate(${a})"/>`).join("")}<circle r="4" fill="${T.p2 || "#F2C14E"}"/></g>`; } }
     if (T.pattern === "hawaii") { const r = RK.rng(21); for (let i = 0; i < 14; i++) { const x = -110 + r() * 220, y = -430 + r() * 200; s += `<path d="M${f(x)},${f(y)} q14,-20 28,0 q-14,20 -28,0Z" fill="${T.p1 || "#F7D046"}" transform="rotate(${f(r() * 180)} ${f(x)} ${f(y)})"/><circle cx="${f(x + 30)}" cy="${f(y + 18)}" r="7" fill="${T.p2 || "#FFFFFF"}" opacity=".8"/>`; } }
     if (T.pattern === "star") s += `<path d="M0,-372 L14,-340 L48,-338 L22,-316 L30,-282 L0,-300 L-30,-282 L-22,-316 L-48,-338 L-14,-340Z" fill="${T.p1 || "#FFFFFF"}" stroke="${INK}" stroke-width="4"/>`;
@@ -322,10 +342,10 @@
     const c = O.color, sh = O.sh || RK.shade(c, -0.18), hi = O.hi || RK.shade(c, 0.15);
     let s = "";
     if (O.type === "vest") {
-      const vest = "M-176,-430 Q-178,-380 -160,-338 Q-150,-290 -140,-232 L-30,-226 L-14,-420 Q-40,-452 -78,-460 Q-140,-458 -176,-430Z";
+      const vest = "M-150,-440 Q-158,-400 -146,-364 Q-140,-300 -136,-232 L-30,-226 L-14,-420 Q-40,-452 -78,-460 Q-126,-458 -150,-440Z";
       s += `<path d="${vest}" fill="${c}" stroke="${INK}" stroke-width="${LW}"/><path d="${vest}" transform="scale(-1,1)" fill="${c}" stroke="${INK}" stroke-width="${LW}"/>`;
       s += `<path d="M-78,-458 Q-50,-440 -20,-420 L-36,-404 Q-60,-424 -84,-440Z" fill="${hi}" stroke="${INK}" stroke-width="4"/><path d="M78,-458 Q50,-440 20,-420 L36,-404 Q60,-424 84,-440Z" fill="${hi}" stroke="${INK}" stroke-width="4"/>`;
-      s += `<path d="M-174,-428 Q-176,-382 -160,-340 M174,-428 Q176,-382 160,-340" fill="none" stroke="${sh}" stroke-width="10"/>`;
+      s += `<path d="M-148,-436 Q-154,-398 -144,-364 M148,-436 Q154,-398 144,-364" fill="none" stroke="${sh}" stroke-width="9"/>`;
       s += `<path d="M-128,-300 L-30,-296 M128,-300 L30,-296" stroke="${sh}" stroke-width="6"/><path d="M-130,-250 L-32,-246 M130,-250 L32,-246" stroke="${O.stitch}" stroke-width="3" stroke-dasharray="8 6"/>`;
       s += `<path d="M-22,-418 L-30,-230" stroke="${O.stitch}" stroke-width="5"/>` + [-400, -370, -340, -310, -280, -250].map((y) => `<path d="M-30,${y} l10,4" stroke="#8A8A86" stroke-width="4"/>`).join("");
       const pocket = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${sh}" stroke="${INK}" stroke-width="5"/><rect x="${x + 6}" y="${y + 6}" width="${w - 12}" height="${h - 12}" rx="4" fill="none" stroke="${O.stitch}" stroke-width="3" stroke-dasharray="7 6"/><path d="M${x - 3},${y} L${x + w + 3},${y} L${x + w - 4},${y + 22} L${x + 4},${y + 22}Z" fill="${hi}" stroke="${INK}" stroke-width="5"/><circle cx="${x + w / 2}" cy="${y + 15}" r="5" fill="${O.stitch}"/>`;
@@ -346,19 +366,23 @@
     if (S.towel) s += `<path d="M60,-470 Q120,-470 150,-430 L150,-300 Q130,-290 120,-300 L118,-420 Q90,-440 50,-440Z" fill="${S.towel}" stroke="${INK}" stroke-width="5"/><path d="M128,-330 l20,0 M128,-316 l20,0" stroke="${RK.shade(S.towel, -0.2)}" stroke-width="3"/>`;
     return s;
   }
-  function bottomLeg(S, side, a, k, lift, L1, L2) { // ขา 1 ข้าง: กางเกง/ขาสั้น/ผิว + รองเท้า
-    const B = S.bottom, sw = 1 + 0.08 * lift, shz = 1 + 0.18 * lift;
-    const thighC = B.type === "skirt" || B.type === "sarong" ? S.skin : B.color;
-    const shinC = B.type === "pants" ? B.color : S.skin;
-    const thighW = (B.type === "pants" || B.type === "shorts" ? 72 : 52) * sw * (S.body.legW || 1), shinW = (B.type === "pants" ? 64 : 46) * sw * (S.body.legW || 1);
+  function bottomLeg(S, side, a, k, lift, L1, L2) { // ขา 1 ข้าง: ต้นขา/น่องเรียว เข่าซ้อนกัน + รองเท้า
+    const B = S.bottom, lw = S.body.legW || 1, sw = 1 + 0.08 * lift, shz = 1 + 0.18 * lift;
+    L1 *= 1 - 0.3 * lift; L2 *= 1 - 0.2 * lift;
+    const pants = B.type === "pants", shorts = B.type === "shorts";
+    const thighC = pants || shorts ? B.color : S.skin, shinC = pants ? B.color : S.skin;
+    const tw0 = (pants || shorts ? 80 : 64) * sw * lw, tw1 = (pants ? 62 : 50) * sw * lw;
+    const sw0 = (pants ? 60 : 48) * sw * lw, sw1 = (pants ? 52 : 32) * sw * lw;
     const shoe = shoes({ skin: S.skin, ...S.shoes }, side);
-    let sh2 = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${limb(L2, shinW, shinC, B.type === "pants" ? B.hi : S.skinHi)}`;
-    if (B.type === "pants") sh2 += `<path d="M${f(-shinW / 2)},${f(L2 - 6)} L${f(shinW / 2)},${f(L2 - 6)}" stroke="${B.sh}" stroke-width="7"/>`;
-    sh2 += `<g transform="translate(${side * 8},${f(L2 + 6)}) scale(${f(shz)})">${shoe}</g></g>`;
-    let thigh = limb(L1, thighW, thighC, B.type === "pants" || B.type === "shorts" ? B.hi : S.skinHi);
-    if (B.type === "shorts") thigh += `<rect x="${f(-thighW / 2)}" y="${f(L1 * 0.62)}" width="${f(thighW)}" height="${f(L1 * 0.38 + 20)}" fill="${S.skin}" stroke="${INK}" stroke-width="${LW}"/><path d="M${f(-thighW / 2)},${f(L1 * 0.62)} L${f(thighW / 2)},${f(L1 * 0.62)}" stroke="${B.sh}" stroke-width="8"/>`;
-    const knee = lift > 0.15 ? `<ellipse cx="0" cy="${f(L1)}" rx="${f(thighW * 0.5)}" ry="${f(14 + 20 * lift)}" fill="${B.type === "pants" ? B.sh : S.skinSh}" opacity=".6"/>` : "";
-    return `<g transform="translate(${f(side * 52 * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${thigh}${knee}${sh2}</g>`;
+    let shin = taper(L2, sw0, sw1, shinC, pants ? B.hi : S.skinHi, pants ? 0.04 : 0.22);
+    if (pants) shin += `<path d="M${f(-sw1 / 2 - 2)},${f(L2 - 4)} Q0,${f(L2 + 6)} ${f(sw1 / 2 + 2)},${f(L2 - 4)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`;
+    const shinG = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${shin}<g transform="translate(${side * 10},${f(L2 + 4)}) scale(${f(shz * (S.footK || 1))})">${shoe}</g></g>`;
+    let thigh = taper(L1 + 6, tw0, tw1, thighC, pants || shorts ? B.hi : S.skinHi, 0.08);
+    if (shorts) thigh += `<path d="M${f(-tw0 / 2 - 3)},0 L${f(tw0 / 2 + 3)},0 L${f(tw1 / 2 + 8)},${f(L1 * 0.55)} L${f(-tw1 / 2 - 8)},${f(L1 * 0.55)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/><path d="M${f(-tw1 / 2 - 6)},${f(L1 * 0.5)} L${f(tw1 / 2 + 6)},${f(L1 * 0.5)}" stroke="${B.sh}" stroke-width="6"/>`;
+    if (pants) thigh += `<path d="M${side * 8},10 Q${side * 2},${f(L1 * 0.6)} ${side * 10},${f(L1 - 6)}" fill="none" stroke="${B.sh}" stroke-width="5"/>`;
+    const knee = lift > 0.15 ? `<ellipse cx="0" cy="${f(L1)}" rx="${f(tw1 * 0.5)}" ry="${f(12 + 18 * lift)}" fill="${pants ? B.sh : S.skinSh}" opacity=".6"/>` : "";
+    // วาดหน้าแข้งก่อน แล้วต้นขาทับ = เข่าดูต่อกันเป็นธรรมชาติ
+    return `<g transform="translate(${f(side * 54 * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${shinG}${thigh}${knee}</g>`;
   }
   function shoes(Sh, side) {
     const c = Sh.color, cs = RK.shade(c, -0.18);
@@ -370,29 +394,46 @@
       default: return `<path d="M-42,-16 Q-48,22 -12,26 L54,26 Q66,4 42,-18Z" fill="${c}" stroke="${INK}" stroke-width="${LW}"/><path d="M-30,-6 L30,-8 M-26,4 L28,2" stroke="${Sh.lace || "#9C958A"}" stroke-width="4" stroke-linecap="round"/><path d="M40,-14 Q54,4 50,20" fill="none" stroke="${cs}" stroke-width="6"/><rect x="-44" y="18" width="104" height="13" rx="6" fill="${Sh.sole || "#8E887E"}" stroke="${INK}" stroke-width="5"/>`;
     }
   }
-  function skirtOver(S, ls) { // กระโปรง/ผ้าถุง ทับขา
+  function skirtOver(S, ls) { // กระโปรง/ผ้าถุง/กางเกงส่วนสะโพก ทับขา
     const B = S.bottom, hy = S._hipY, w = 132 * (S.body.bw || 1);
-    if (B.type === "skirt") { const L = B.len || 150 * ls; return `<path d="M${-w + 10},${hy - 20} L${w - 10},${hy - 20} L${w + 30},${f(hy + L)} Q0,${f(hy + L + 14)} ${-w - 30},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M-40,${hy} L-56,${f(hy + L)} M40,${hy} L56,${f(hy + L)} M0,${hy} L0,${f(hy + L + 8)}" stroke="${B.sh}" stroke-width="5"/>`; }
+    if (B.type === "skirt") { const L = (B.len || 128) * ls; return `<path d="M${-w + 10},${hy - 20} L${w - 10},${hy - 20} L${w + 30},${f(hy + L)} Q0,${f(hy + L + 14)} ${-w - 30},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M-40,${hy} L-56,${f(hy + L)} M40,${hy} L56,${f(hy + L)} M0,${hy} L0,${f(hy + L + 8)}" stroke="${B.sh}" stroke-width="5"/>`; }
     if (B.type === "sarong") { const L = -hy - 30; return `<path d="M${-w + 4},${hy - 20} L${w - 4},${hy - 20} L${w + 6},${f(hy + L)} Q0,${f(hy + L + 10)} ${-w - 6},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M${-w + 4},${hy - 4} L${w - 4},${hy - 4}" stroke="${B.sh}" stroke-width="12"/>` + [0.35, 0.6, 0.85].map((k) => `<path d="M${-w},${f(hy + L * k)} L${w},${f(hy + L * k)}" stroke="${B.p1 || B.sh}" stroke-width="10" opacity=".8"/><path d="M${-w},${f(hy + L * k + 14)} L${w},${f(hy + L * k + 14)}" stroke="${B.p2 || "#E8C46A"}" stroke-width="4"/>`).join("") + `<path d="M${w - 30},${hy - 10} Q${w - 50},${f(hy + L * 0.5)} ${w - 20},${f(hy + L)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`; }
-    if (B.type === "pants" || B.type === "shorts") return `<path d="M${-w + 18},${hy - 22} L${w - 18},${hy - 22} L${w - 14},${hy + 10} L${-w + 14},${hy + 10}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/>` + (S.belt ? `<rect x="${-w + 16}" y="${hy - 18}" width="${2 * w - 32}" height="18" fill="${S.belt}" stroke="${INK}" stroke-width="4"/><rect x="-14" y="${hy - 20}" width="28" height="22" rx="3" fill="#C9A44A" stroke="${INK}" stroke-width="3"/>` : "");
+    if (B.type === "pants" || B.type === "shorts") { // สะโพก+เป้า ต่อขาสองข้างเป็นกางเกงตัวเดียว
+      const bw = S.body.bw || 1, X = (x) => f(x * bw), lw = S.body.legW || 1;
+      const d = `M${X(-118)},${hy - 30} L${X(118)},${hy - 30} Q${X(124)},${hy + 10} ${X(96 + 14 * lw)},${hy + 46} Q${X(40)},${hy + 64} ${X(6)},${hy + 40} L0,${hy + 36} L${X(-6)},${hy + 40} Q${X(-40)},${hy + 64} ${X(-96 - 14 * lw)},${hy + 46} Q${X(-124)},${hy + 10} ${X(-118)},${hy - 30}Z`;
+      let o = `<path d="${d}" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/>`;
+      o += `<path d="M0,${hy - 24} L0,${hy + 34}" stroke="${B.sh}" stroke-width="5"/><path d="M${X(-70)},${hy - 20} Q${X(-50)},${hy + 6} ${X(-30)},${hy - 20} M${X(70)},${hy - 20} Q${X(50)},${hy + 6} ${X(30)},${hy - 20}" fill="none" stroke="${B.sh}" stroke-width="4"/>`;
+      if (S.belt) o += `<rect x="${X(-116)}" y="${hy - 30}" width="${X(232)}" height="18" fill="${S.belt}" stroke="${INK}" stroke-width="4"/><rect x="-14" y="${hy - 32}" width="28" height="22" rx="3" fill="#C9A44A" stroke="${INK}" stroke-width="3"/>`;
+      return o;
+    }
     return "";
   }
   function arm(S, side, a, e, opts, foreOnly) {
-    const B = S.body, sx = side * 146 * (B.bw || 1), as = B.armS || 1, L1 = 150 * as, L2 = 134 * as * (opts.fore || 1), sy = opts.sy || 1;
+    const g = S._g, sx = side * g.shX, L1 = g.L1, L2 = g.L2 * (opts.fore || 1), sy = opts.sy || 1, aw = S.body.armW || 1;
     const T = S.top, O = S.outer && S.outer.sleeves ? S.outer : null;
-    const sleeveC = O ? O.color : T.color, sleeveHi = O ? (O.hi || RK.shade(O.color, 0.15)) : (T.hi || RK.shade(T.color, 0.15));
+    const sleeveC = O ? O.color : T.color, sleeveHi = O ? (O.hi || RK.shade(O.color, 0.15)) : (T.hi || RK.shade(T.color, 0.15)), sleeveSh = RK.shade(sleeveC, -0.2);
     const sl = O ? "long" : T.sleeve || "short";
-    const foreC = sl === "long" ? sleeveC : S.skin;
     const ht = opts.hand || "relaxed";
     let handG = ht === "torchF" ? hand("torchF", side, S) + torchFront() : opts.torch && side === 1 ? torchSide() + hand("grip", side, S) : hand(ht, side, S);
+    handG = `<g transform="scale(${f(g.handK)})">${handG}</g>`;
     if (opts.wave) handG = `<g transform="rotate(${f(Math.sin(opts.t * 10) * 18)})">${handG}</g>`;
-    let fore = limb(L2, sl === "long" ? 50 : 44, foreC, sl === "long" ? sleeveHi : S.skinHi);
-    if (sl === "3q") fore = limb(L2, 44, S.skin, S.skinHi) + `<rect x="-26" y="-22" width="52" height="${f(L2 * 0.45 + 22)}" rx="20" fill="${sleeveC}" stroke="${INK}" stroke-width="${LW}"/>`;
-    if (sl === "long") fore += `<rect x="-27" y="${f(L2 - 18)}" width="54" height="20" rx="8" fill="${RK.shade(sleeveC, -0.12)}" stroke="${INK}" stroke-width="5"/>`;
-    if (S.watch && side === -1) fore += `<rect x="-24" y="${f(L2 - 26)}" width="48" height="18" rx="5" fill="#2B2B33" stroke="${INK}" stroke-width="3"/><circle cx="0" cy="${f(L2 - 17)}" r="6" fill="#E6E6E6"/>`;
-    const foreG = `<g transform="translate(0,${f(L1)}) rotate(${f(e)})">${fore}<g transform="translate(0,${f(L2 + 4)})">${handG}</g></g>`;
-    const upper = limb(L1, 62, sleeveC, sleeveHi) + (sl === "short" ? `<path d="M-31,${f(L1 - 32)} L31,${f(L1 - 32)}" stroke="${RK.shade(sleeveC, -0.2)}" stroke-width="8"/><path d="M-31,${f(L1 - 26)} Q0,${f(L1 - 18)} 31,${f(L1 - 26)}" stroke="${INK}" stroke-width="4" fill="none"/>` : "");
-    return `<g transform="translate(${f(sx)},${f(S._shY)}) rotate(${f(a)}) scale(1,${f(sy)})">${foreOnly ? "" : upper}${foreG}</g>`;
+    // แขนท่อนล่าง: เรียวจากศอกไปข้อมือ
+    let fore = sl === "long" ? taper(L2, 50 * aw, 42 * aw, sleeveC, sleeveHi, 0.06) : taper(L2, 42 * aw, 30 * aw, S.skin, S.skinHi, 0.16);
+    if (sl === "3q") fore += `<path d="M${f(-26 * aw)},-10 L${f(26 * aw)},-10 L${f(22 * aw)},${f(L2 * 0.45)} L${f(-22 * aw)},${f(L2 * 0.45)}Z" fill="${sleeveC}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/><path d="M${f(-22 * aw)},${f(L2 * 0.42)} L${f(22 * aw)},${f(L2 * 0.42)}" stroke="${sleeveSh}" stroke-width="6"/>`;
+    if (sl === "long") fore += `<path d="M${f(-23 * aw)},${f(L2 - 14)} L${f(23 * aw)},${f(L2 - 14)} L${f(22 * aw)},${f(L2 + 4)} L${f(-22 * aw)},${f(L2 + 4)}Z" fill="${RK.shade(sleeveC, -0.1)}" stroke="${INK}" stroke-width="5"/>`;
+    if (S.watch && side === -1) fore += `<rect x="${f(-18 * aw)}" y="${f(L2 - 22)}" width="${f(36 * aw)}" height="16" rx="5" fill="#2B2B33" stroke="${INK}" stroke-width="3"/><circle cx="0" cy="${f(L2 - 14)}" r="5" fill="#E6E6E6"/>`;
+    const foreG = `<g transform="translate(0,${f(L1)}) rotate(${f(e)})">${fore}<g transform="translate(0,${f(L2 + 2)})">${handG}</g></g>`;
+    // แขนท่อนบน: ผิว + แขนเสื้อสั้น/ยาวที่กว้างกว่าเล็กน้อย (บานตรงปลาย)
+    let upper;
+    if (sl === "long") upper = taper(L1 + 8, 64 * aw, 52 * aw, sleeveC, sleeveHi, 0.08);
+    else {
+      upper = taper(L1 + 8, 52 * aw, 42 * aw, S.skin, S.skinHi, 0.14);
+      const sL = L1 * (sl === "3q" ? 1.05 : 0.55);
+      upper += `<path d="M${f(-33 * aw)},-6 C${f(-38 * aw)},${f(sL * 0.4)} ${f(-36 * aw)},${f(sL * 0.8)} ${f(-35 * aw)},${f(sL)} L${f(35 * aw)},${f(sL)} C${f(36 * aw)},${f(sL * 0.8)} ${f(38 * aw)},${f(sL * 0.4)} ${f(33 * aw)},-6 A${f(33 * aw)},26 0 0 0 ${f(-33 * aw)},-6Z" fill="${sleeveC}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/><path d="M${f(-33 * aw)},${f(sL - 8)} L${f(33 * aw)},${f(sL - 8)}" stroke="${sleeveSh}" stroke-width="6"/>`;
+      if (T.hi) upper += `<path d="M${f(-22 * aw)},4 Q${f(-26 * aw)},${f(sL * 0.5)} ${f(-24 * aw)},${f(sL - 14)}" fill="none" stroke="${sleeveHi}" stroke-width="6" opacity=".5" stroke-linecap="round"/>`;
+    }
+    // ท่อนล่างวาดก่อน แล้วท่อนบนทับ = ศอกต่อกันเหมือนจริง
+    return `<g transform="translate(${f(sx)},${f(S._shY + 8)}) rotate(${f(a)}) scale(1,${f(sy)})">${foreG}${foreOnly ? "" : upper}</g>`;
   }
 
   // ---------- วาดตัวละคร ----------
@@ -400,10 +441,11 @@
   RK.person = function (who, p, t) {
     const S0 = typeof who === "string" ? RK.CAST[who] : who;
     if (!S0) return "";
-    const S = p.outfit && S0.outfits && S0.outfits[p.outfit] ? { ...S0, ...S0.outfits[p.outfit] } : S0;
-    const B = S.body || {}, ls = B.ls || 1, ts = B.ts || 1, bw = B.bw || 1;
-    S._hipY = -250 * ls; S._shY = S._hipY - 185 * ts;
-    const L1 = 125 * ls, L2 = 115 * ls, headY = S._shY - 210 * (B.neck || 1), hs = B.head || 1;
+    const S = p.outfit && S0.outfits && S0.outfits[p.outfit] ? { ...S0, ...S0.outfits[p.outfit] } : { ...S0 };
+    S._prop = p.prop ? RK.PROPS[p.prop] : null;
+    const B = S.body || {}, g = geom(S), ls = g.ls, ts = g.ts, bw = g.bw;
+    S._g = g; S._hipY = g.hipY; S._shY = g.shY;
+    const L1 = g.thighL, L2 = g.shinL, headY = g.headY, hs = g.hsz;
     let P = blendPose(p.pose || "idle", p.pose2 || p.pose || "idle", p.poseMix || 0);
     let liftL = 0, liftR = 0, syL = 1, syR = 1, sway = 0;
     if (p.walk) {
@@ -423,6 +465,7 @@
     const lo = { hand: p.handL || P.hl, sy: syL, t };
     const ro = { hand: p.handR || P.hr, torch: p.torch && P.hr !== "torchF", sy: syR, fore: P.foreR, wave: P.waveR, t };
     const torsoTr = `translate(0,${f(S._hipY + 245 * ts)}) scale(${f(bw)},${f(ts)})`;
+    const tilt = P.tilt || 0; // ทิ้งน้ำหนักขาข้างเดียว: สะโพกเอียง ไหล่เอียงสวน
     const body = `<g transform="${torsoTr}">${top(S)}${outer(S)}</g>`;
     // แขนเสื้อต้องอยู่ใต้เสื้อตัวนอก: วาดแขนทั้งท่อนก่อนลำตัว แล้ววาดเฉพาะท่อนล่าง+มือทับ
     const upper = arm(S, -1, P.la, P.le, lo) + arm(S, 1, P.ra, P.re, ro) + body + arm(S, -1, P.la, P.le, lo, true) + arm(S, 1, P.ra, P.re, ro, true);
@@ -430,20 +473,20 @@
     const flip = (p.facing || 1) < 0 ? "scale(-1,1)" : "";
     const shadow = p.noShadow ? "" : `<ellipse cx="0" cy="8" rx="${f(170 * bw)}" ry="26" fill="#000" opacity=".28"/>`;
     const lean = P.lean + sway + (B.hunch || 0);
-    return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)})">${shadow}<g transform="${flip} translate(0,${f(P.bob)}) rotate(${f(lean)})">${legs}${skirtOver(S, ls)}<g transform="translate(0,${f(breathe * 0.3)})">${upper}${headG}</g></g></g>`;
+    return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)})">${shadow}<g transform="${flip} translate(0,${f(P.bob)}) rotate(${f(lean)})">${legs}<g transform="rotate(${f(tilt)} 0 ${f(S._hipY)})">${skirtOver(S, ls)}<g transform="translate(0,${f(breathe * 0.3)}) rotate(${f(-tilt * 1.6)} 0 ${f(S._hipY)})">${upper}${headG}</g></g></g></g>`;
   };
   RK.personTorchTip = function (who, p) {
-    const S = RK.CAST[who] || RK.CAST.hero, B = S.body || {};
+    const S = RK.CAST[who] || RK.CAST.hero, g = geom(S);
     const P = blendPose(p.pose || "idle", p.pose2 || p.pose || "idle", p.poseMix || 0);
-    const s = p.s || 1, dir = p.facing || 1, fore = P.foreR || 1, as = B.armS || 1;
-    const shY = -250 * (B.ls || 1) - 185 * (B.ts || 1);
+    const s = p.s || 1, dir = p.facing || 1, fore = P.foreR || 1;
     const a = (P.ra * Math.PI) / 180, e = ((P.ra + P.re) * Math.PI) / 180;
-    let x = 146 * (B.bw || 1), y = shY;
-    x += -Math.sin(a) * 150 * as; y += Math.cos(a) * 150 * as;
-    const L2 = 134 * as * fore + 4;
+    let x = g.shX, y = g.shY + 8;
+    x += -Math.sin(a) * g.L1; y += Math.cos(a) * g.L1;
+    const L2 = g.L2 * fore + 2;
     x += -Math.sin(e) * L2; y += Math.cos(e) * L2;
-    if (P.hr === "torchF") { x += -Math.sin(e) * 74; y += Math.cos(e) * 74; }
-    else { x += -Math.sin(e) * 46 + Math.cos(e) * 112; y += Math.cos(e) * 46 + Math.sin(e) * 112; }
+    const k = g.handK;
+    if (P.hr === "torchF") { x += -Math.sin(e) * 74 * k; y += Math.cos(e) * 74 * k; }
+    else { x += (-Math.sin(e) * 46 + Math.cos(e) * 112) * k; y += (Math.cos(e) * 46 + Math.sin(e) * 112) * k; }
     return [p.x + x * s * dir, p.y + y * s, e];
   };
 })(window);

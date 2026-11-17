@@ -1,0 +1,290 @@
+{
+ "id": "SHEET_PROP",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "เทียบสัดส่วน",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "เลือกสัดส่วน",
+    "labels": [
+     {
+      "x": 290,
+      "y": 1790,
+      "text": "แบบ A (น่ารัก)"
+     },
+     {
+      "x": 790,
+      "y": 1790,
+      "text": "แบบ B (สมส่วน)"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 290,
+     "y": 1700,
+     "s": 0.95,
+     "depth": 0,
+     "face": "smile",
+     "prop": "A"
+    },
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 790,
+     "y": 1700,
+     "s": 0.95,
+     "depth": 0,
+     "face": "smile",
+     "prop": "B"
+    }
+   ]
+  },
+  {
+   "name": "แบบ B แถว 1",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "แบบ B · สมส่วน",
+    "labels": [
+     {
+      "x": 150,
+      "y": 1790,
+      "text": "ภูมิ"
+     },
+     {
+      "x": 400,
+      "y": 1790,
+      "text": "มายด์"
+     },
+     {
+      "x": 665,
+      "y": 1790,
+      "text": "บิ๊ก"
+     },
+     {
+      "x": 930,
+      "y": 1790,
+      "text": "บอสวิทย์"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 150,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "smile",
+     "prop": "B"
+    },
+    {
+     "type": "person",
+     "who": "mind",
+     "x": 400,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "smile",
+     "prop": "B",
+     "pose": "wave"
+    },
+    {
+     "type": "person",
+     "who": "big",
+     "x": 665,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "happy",
+     "prop": "B"
+    },
+    {
+     "type": "person",
+     "who": "boss",
+     "x": 930,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "annoyed",
+     "prop": "B",
+     "pose": "hips"
+    }
+   ]
+  },
+  {
+   "name": "แบบ B แถว 2",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "แบบ B · สมส่วน",
+    "labels": [
+     {
+      "x": 150,
+      "y": 1790,
+      "text": "ยายศรี"
+     },
+     {
+      "x": 400,
+      "y": 1790,
+      "text": "ป้าแจ๋ว"
+     },
+     {
+      "x": 665,
+      "y": 1790,
+      "text": "น้องข้าวตู"
+     },
+     {
+      "x": 930,
+      "y": 1790,
+      "text": "ส้มฉุน"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "yai",
+     "x": 150,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "warm",
+     "prop": "B"
+    },
+    {
+     "type": "person",
+     "who": "jaew",
+     "x": 400,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "laugh",
+     "prop": "B",
+     "pose": "hips"
+    },
+    {
+     "type": "person",
+     "who": "khaotu",
+     "x": 665,
+     "y": 1700,
+     "s": 0.58,
+     "depth": 0,
+     "face": "happy",
+     "prop": "B"
+    },
+    {
+     "type": "cat",
+     "x": 930,
+     "y": 1700,
+     "s": 0.6,
+     "depth": 0
+    }
+   ]
+  },
+  {
+   "name": "แบบ A แถว 1",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "แบบ A · น่ารัก",
+    "labels": [
+     {
+      "x": 150,
+      "y": 1790,
+      "text": "ภูมิ"
+     },
+     {
+      "x": 400,
+      "y": 1790,
+      "text": "มายด์"
+     },
+     {
+      "x": 665,
+      "y": 1790,
+      "text": "บิ๊ก"
+     },
+     {
+      "x": 930,
+      "y": 1790,
+      "text": "บอสวิทย์"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 150,
+     "y": 1700,
+     "s": 0.66,
+     "depth": 0,
+     "face": "smile",
+     "prop": "A"
+    },
+    {
+     "type": "person",
+     "who": "mind",
+     "x": 400,
+     "y": 1700,
+     "s": 0.66,
+     "depth": 0,
+     "face": "smile",
+     "prop": "A",
+     "pose": "wave"
+    },
+    {
+     "type": "person",
+     "who": "big",
+     "x": 665,
+     "y": 1700,
+     "s": 0.66,
+     "depth": 0,
+     "face": "happy",
+     "prop": "A"
+    },
+    {
+     "type": "person",
+     "who": "boss",
+     "x": 930,
+     "y": 1700,
+     "s": 0.66,
+     "depth": 0,
+     "face": "annoyed",
+     "prop": "A",
+     "pose": "hips"
+    }
+   ]
+  }
+ ]
+}

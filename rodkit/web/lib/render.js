@@ -25,6 +25,7 @@
 
   RK.load = function (ep) {
     EP = ep; STARTS = []; let t = 0;
+    if (ep.prop && RK.PROPS) RK.PROP = RK.PROPS[ep.prop];
     for (const s of ep.shots) { STARTS.push(t); t += s.dur; }
     EP.duration = t;
     if (!GRAIN) GRAIN = makeGrain();
@@ -42,8 +43,11 @@
     const A = RK.resolve(a, t);
     if (A.z != null) { // วางในโลก 3 มิติ
       const [x, y] = cam.proj(A.x || 0, RK.sets.corridor.FLOOR, A.z);
-      const k = A.type === "ghost" ? 1.2 : 1;
-      A.x = x + (A.dx || 0); A.y = y + (A.dy || 0); A.s = (cam.scaleAt(A.z) / 5.3) * k * (A.size || 1);
+      // ผี ~200 ซม. สูง 1100 หน่วย · คน: ความสูงจริงตามสเปก (ผู้ใหญ่ ~172 ซม.)
+      const who = A.type === "hero" ? "hero" : A.who;
+      const units = A.type === "ghost" ? 1100 : RK.personHeight ? RK.personHeight(who) : 900;
+      const cm = A.type === "ghost" ? 200 : A.cm || ((RK.CAST[who] && RK.CAST[who].cm) || 172);
+      A.x = x + (A.dx || 0); A.y = y + (A.dy || 0); A.s = (cam.scaleAt(A.z) * cm / units) * (A.size || 1);
       A._z = A.z;
     } else { A._z = A.depth ?? 0; }
     return A;

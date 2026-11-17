@@ -24,7 +24,7 @@
   };
 
   C.mind = { // นางเอก "มายด์": ผมบ็อบ แสกข้าง กิ๊บเหลือง คาร์ดิแกนสีปะการัง ปากไว
-    id: "mind", name: "มายด์",
+    cm: 162, id: "mind", name: "มายด์",
     skin: "#F6D2B5", skinSh: "#E0AE8C", skinHi: "#FCE4D0", cheek: "#F29A94",
     head: "soft", eyes: "lash", nose: "button", browStyle: "thin", browColor: "#3B2620",
     extras: { blush: true, lipstick: "#D9576B", earrings: "#F2C14E" },
@@ -38,7 +38,7 @@
   };
 
   C.yai = { // ยาย "ยายศรี": ผมหงอกเกล้ามวย แว่นอ่านหนังสือมีสายคล้อง เสื้อลายดอก ผ้าถุง
-    id: "yai", name: "ยายศรี",
+    cm: 150, id: "yai", name: "ยายศรี",
     skin: "#E6B58E", skinSh: "#C99372", skinHi: "#F2CBA8", cheek: "#E4917E",
     head: "old", eyes: "old", nose: "old", browStyle: "thin", browColor: "#D9D4CC",
     extras: { wrinkles: true, blush: true },
@@ -51,7 +51,7 @@
   };
 
   C.big = { // เพื่อนซี้ "บิ๊ก": อ้วน หัวเกรียน ตาตี่ เสื้อโปโลส้ม ขาสั้น รองเท้าแตะ
-    id: "big", name: "บิ๊ก",
+    cm: 175, id: "big", name: "บิ๊ก",
     skin: "#D9A27A", skinSh: "#BC8460", skinHi: "#E8BA96", cheek: "#E08A70",
     head: "round", eyes: "small", nose: "wide", browStyle: "bushy", browW: 0.9,
     extras: { blush: true },
@@ -63,7 +63,7 @@
   };
 
   C.boss = { // หัวหน้า "บอสวิทย์": หัวล้านหวีปิด หนวดหนา คิ้วดก เสื้อเชิ้ตขาว เนกไทแดง พุงยื่น
-    id: "boss", name: "บอสวิทย์",
+    cm: 170, id: "boss", name: "บอสวิทย์",
     skin: "#E3B48E", skinSh: "#C2906C", skinHi: "#EEC6A4", cheek: "#E0937A",
     head: "boxy", eyes: "narrow", nose: "wide", browStyle: "bushy", browW: 1.1,
     extras: { mustache: "thick", wrinkles: true },
@@ -76,7 +76,7 @@
   };
 
   C.jaew = { // ป้าแม่ค้า "ป้าแจ๋ว": ผมดัดฟู ลิปแดง ต่างหูทอง เสื้อลายใบไม้ ผ้ากันเปื้อนมีกระเป๋าเงิน ผ้าขนหนูพาดบ่า
-    id: "jaew", name: "ป้าแจ๋ว",
+    cm: 156, id: "jaew", name: "ป้าแจ๋ว",
     skin: "#D8A07A", skinSh: "#B9805C", skinHi: "#E6B892", cheek: "#E07F6E",
     head: "soft", eyes: "lash", nose: "button", browStyle: "thin", browColor: "#2A1A16",
     extras: { lipstick: "#C8283A", earrings: "#F2C14E", blush: true },
@@ -89,7 +89,7 @@
   };
 
   C.khaotu = { // หลาน "น้องข้าวตู": ผมจุกสองข้าง ตาโต เสื้อเหลืองลายดาว ขาสั้นชมพู
-    id: "khaotu", name: "น้องข้าวตู",
+    cm: 112, id: "khaotu", name: "น้องข้าวตู",
     skin: "#F7D6BC", skinSh: "#E3B595", skinHi: "#FDE6D4", cheek: "#F49A9A",
     head: "kid", eyes: "kid", nose: "button", browStyle: "thin", browColor: "#2A1A16",
     extras: { blush: true },
