@@ -285,6 +285,84 @@
      "pose": "hips"
     }
    ]
+  },
+  {
+   "name": "มือ: ห้อย/โบก/ชี้/กำ",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "ทดสอบมือ",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 300,
+     "y": 1700,
+     "s": 0.95,
+     "depth": 0,
+     "face": "smile",
+     "prop": "B",
+     "pose": "wave"
+    },
+    {
+     "type": "person",
+     "who": "mind",
+     "x": 800,
+     "y": 1700,
+     "s": 0.95,
+     "depth": 0,
+     "face": "smile",
+     "prop": "B",
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "name": "มือ: ชูมือ/เท้าเอว",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1700,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "big",
+     "x": 300,
+     "y": 1700,
+     "s": 0.8,
+     "depth": 0,
+     "face": "shock",
+     "prop": "B",
+     "pose": "hands_up"
+    },
+    {
+     "type": "person",
+     "who": "boss",
+     "x": 800,
+     "y": 1700,
+     "s": 0.85,
+     "depth": 0,
+     "face": "angry",
+     "prop": "B",
+     "pose": "hips"
+    }
+   ]
   }
  ]
 }

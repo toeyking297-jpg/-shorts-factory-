@@ -54,14 +54,14 @@
 
 
   // สัดส่วนทั้งช่อง (ปรับได้ต่อตอน): A = น่ารัก ~2.5 หัว, B = สมจริงขึ้น ~3.5 หัว
-  RK.PROPS = { A: { leg: 1.25, torso: 1.15, head: 0.85 }, B: { leg: 1.8, torso: 1.45, head: 0.68 } };
+  RK.PROPS = { A: { leg: 1.25, torso: 1.15, head: 0.85 }, B: { leg: 2.05, torso: 1.32, head: 0.68 } };
   RK.PROP = RK.PROPS.B;
   function geom(S) {
     const B = S.body || {}, P = S._prop || RK.PROP;
     const ls = (B.ls || 1) * P.leg, ts = (B.ts || 1) * P.torso, hsz = (B.head || 1) * P.head, bw = B.bw || 1;
     const thighL = 128 * ls, shinL = 118 * ls, hipY = -(thighL + shinL + 28), shY = hipY - 185 * ts;
     const reach = hipY + thighL * 0.5 - shY; // ไหล่ → ปลายนิ้วอยู่กลางต้นขา
-    return { ls, ts, hsz, bw, thighL, shinL, hipY, shY, L1: reach * 0.4, L2: reach * 0.36, handK: ((reach * 0.24) / 112) * (S.handScale || 1), headY: shY - 22 * ts - 200 * hsz, shX: 150 * bw };
+    return { ls, ts, hsz, bw, thighL, shinL, hipY, shY, L1: reach * 0.4, L2: reach * 0.36, handK: ((reach * 0.24) / 112) * (S.handScale || 1), headY: shY - 22 * ts - 200 * hsz, shX: 140 * bw };
   }
   RK.personGeom = geom;
   // ความสูงทั้งตัว (หน่วยวาด) ใช้แปลงเป็นซม.ในฉาก 3 มิติ
@@ -81,44 +81,63 @@
     return paths.map((d) => `<path d="${d}" fill="${INK}" stroke="${INK}" stroke-width="${w * 2}" stroke-linejoin="round"/>`).join("") + paths.map((d) => `<path d="${d}" fill="${fill}"/>`).join("");
   }
 
-  // ---------- มือ (ข้อมือ 0,0 ชี้ลง) ----------
+  // ---------- มือ (ข้อมือ 0,0 · มือชี้ไปทาง +y ของแขน) ----------
+  // sd = ข้างของแขนบนจอ (-1 ซ้าย, +1 ขวา) · แต่ละแบบวาดตามทิศจริงของมือ:
+  //  relaxed = มือห้อยข้างตัว เห็น "สันมือด้านนิ้วโป้ง" (ฝ่ามือหันเข้าต้นขา) นิ้วโป้งอยู่หน้า นิ้วงอเข้า
+  //  open    = แบฝ่ามือหันหาคนดู (โบก/ชูมือ/ตกใจ) นิ้วโป้งอยู่ฝั่งที่ชี้เข้าหาหัวเมื่อยกแขน
+  //  fist/grip = กำ เห็นหลังมือ + ข้อนิ้ว 4 ข้อ นิ้วโป้งพับอยู่ด้านใน
+  //  point   = หลังมือ + นิ้วชี้เหยียด (นิ้วชี้อยู่ฝั่งเดียวกับนิ้วโป้ง)
   function hand(type, sd, S) {
-    const th = -sd, sk = S.skin, sh = S.skinSh, segs = [];
-    const k = S.handScale || 1;
-    const palm = `M-24,-2 Q-31,26 -25,54 Q0,64 25,54 Q31,26 24,-2Z`;
-    const fing = (x, L, bend, spread = 0) => {
-      const by = 54, mx = x + spread * 0.5, my = by + L * (0.55 - 0.25 * bend);
-      const tx = x + spread - bend * x * 0.15, ty = by + L * (1 - 0.75 * bend);
-      return `M${f(x)},${by} Q${f(mx)},${f(my + bend * 10)} ${f(tx)},${f(ty)}`;
-    };
-    let thumb = "";
-    switch (type) {
-      case "open":
-        [[-18, 56, -14], [-6, 64, -5], [6, 62, 5], [18, 50, 14]].forEach(([x, L, sp]) => segs.push([fing(x, L, 0, sp), 12]));
-        thumb = `M${th * 22},12 Q${th * 46},28 ${th * 56},50`; break;
-      case "fist": case "grip":
-        [-18, -6, 6, 18].forEach((x) => segs.push([`M${x},46 Q${x},70 ${x - th * 4},66`, 13]));
-        thumb = `M${th * 26},18 Q${th * 18},48 ${-th * 2},54`; break;
-      case "point":
-        segs.push([fing(-6 * th, 70, 0, 0), 12]);
-        [6 * th, -6 * th, -18 * th].forEach((x) => segs.push([`M${x},46 Q${x},68 ${x},64`, 13]));
-        thumb = `M${th * 26},18 Q${th * 22},46 ${th * 6},54`; break;
-      case "torchF":
-        [-18, -6, 6, 18].forEach((x) => segs.push([`M${x},40 Q${x},62 ${x},58`, 13]));
-        thumb = `M${th * 28},10 Q${th * 30},36 ${th * 18},48`; break;
-      default:
-        [[-18, 54, 0.32], [-6, 62, 0.26], [6, 60, 0.28], [18, 48, 0.36]].forEach(([x, L, b]) => segs.push([fing(x, L, b, 0), 12]));
-        thumb = `M${th * 22},12 Q${th * 34},30 ${th * 28},52`;
+    const sk = S.skin, sh = S.skinSh, o = sd; // o = ฝั่งนอก (หลังมือ/นิ้วก้อย) ในพิกัดมือ เมื่อแขนห้อย
+    const outline = (d, w) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${w + LW * 2 - 2}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const fillS = (d, w) => `<path d="${d}" fill="none" stroke="${sk}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const shape = (d) => `<path d="${d}" fill="${sk}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/>`;
+    let out = "";
+    if (type === "relaxed") {
+      // หลังมือ+นิ้วที่งอ มองจากด้านนิ้วโป้ง: กว้างแค่ ~40 (บางกว่าฝ่ามือมาก)
+      const body = `M${o * 15},-2 C${o * 19},20 ${o * 21},44 ${o * 19},62 C${o * 18},84 ${o * 10},100 ${-o * 2},104 C${-o * 12},106 ${-o * 18},98 ${-o * 16},86 C${-o * 14},74 ${-o * 18},62 ${-o * 20},48 C${-o * 21},30 ${-o * 18},10 ${-o * 15},-2Z`;
+      out += shape(body);
+      // ร่องนิ้วที่งอ (เห็นปลายนิ้ว 3 นิ้วซ้อนกัน)
+      out += `<path d="M${o * 17},64 Q${o * 4},70 ${-o * 8},66 M${o * 14},80 Q${o * 2},86 ${-o * 10},82 M${o * 8},94 Q${-o * 2},98 ${-o * 10},94" fill="none" stroke="${sh}" stroke-width="3.5" stroke-linecap="round"/>`;
+      out += `<path d="M${o * 19},30 q${o * 4},8 0,16" fill="none" stroke="${sh}" stroke-width="3" opacity=".7"/>`; // ข้อนิ้วด้านนอก
+      // นิ้วโป้งอยู่หน้า (ใกล้กล้อง) ชี้ลงเฉียงเข้าหาตัว
+      const th = `M${-o * 12},16 Q${-o * 26},40 ${-o * 18},66`;
+      out += outline(th, 15) + fillS(th, 15) + `<path d="M${-o * 15},58 q${-o * 3},6 ${-o * 1},10" fill="none" stroke="${sh}" stroke-width="3"/>`;
+      out += `<ellipse cx="${-o * 17}" cy="66" rx="5" ry="4" fill="${RK.shade(sk, 0.15)}" opacity=".8"/>`; // เล็บโป้ง
+    } else if (type === "open") {
+      const t = sd; // นิ้วโป้งอยู่ฝั่ง sd ในพิกัดมือ → เมื่อยกแขน จะชี้เข้าหาหัว
+      const palm = `M-24,-2 Q-31,26 -25,54 Q0,64 25,54 Q31,26 24,-2Z`;
+      const fingers = [[-18, 56, -14], [-6, 66, -5], [6, 64, 5], [18, 50, 14]].map(([x, L, sp]) => `M${f(x)},52 Q${f(x + sp * 0.5)},${f(52 + L * 0.55)} ${f(x + sp)},${f(52 + L)}`);
+      const thumb = `M${t * 22},12 Q${t * 46},28 ${t * 54},50`;
+      out += `<path d="${palm}" fill="${INK}" stroke="${INK}" stroke-width="${LW * 2}" stroke-linejoin="round"/>` + fingers.map((d) => outline(d, 12)).join("") + outline(thumb, 15);
+      out += `<path d="${palm}" fill="${sk}"/>` + fingers.map((d) => fillS(d, 12)).join("") + fillS(thumb, 15);
+      // ลายมือ: เส้นชีวิตโค้งรอบโคนนิ้วโป้ง + เส้นใจขวางใต้โคนนิ้ว
+      out += `<path d="M${t * 16},8 Q${-t * 2},26 ${t * 2},50" fill="none" stroke="${sh}" stroke-width="3.5" stroke-linecap="round"/><path d="M${-t * 22},38 Q${-t * 4},32 ${t * 10},40" fill="none" stroke="${sh}" stroke-width="3" stroke-linecap="round"/>`;
+      out += [[-18, 66], [-6, 74], [6, 72], [18, 62]].map(([x, y]) => `<path d="M${x - 4},${y} l8,0" stroke="${sh}" stroke-width="2.5"/>`).join("");
+      if (S.nails) out += [[-32, 106], [-11, 116], [11, 114], [32, 100]].map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="4" ry="5" fill="${S.nails}"/>`).join("");
+    } else if (type === "point") {
+      const i = -o; // นิ้วชี้อยู่ฝั่งเดียวกับนิ้วโป้ง (ฝั่งใน)
+      const back = `M-24,-2 Q-30,26 -26,52 Q-22,64 -8,64 L14,64 Q26,62 26,48 Q30,24 24,-2Z`;
+      const idx = `M${i * 14},54 L${i * 16},120`;
+      out += shape(back) + outline(idx, 14) + fillS(idx, 14);
+      out += [-0.5, 0.5].map((k) => `<path d="M${f(o * 12 + k * 14)},56 q0,10 ${f(-o * 2)},12" fill="none" stroke="${sh}" stroke-width="3"/>`).join("");
+      out += `<path d="M-16,20 l0,24 M0,18 l0,28 M14,20 l0,24" stroke="${sh}" stroke-width="3" opacity=".55"/>`; // เส้นเอ็นหลังมือ
+      const th = `M${i * 20},14 Q${i * 30},36 ${i * 18},52`;
+      out += outline(th, 14) + fillS(th, 14);
+    } else if (type === "torchF") {
+      const fist = `M-26,-2 Q-32,24 -26,50 Q0,62 26,50 Q32,24 26,-2Z`;
+      out += shape(fist) + [-15, -5, 5, 15].map((x) => `<path d="M${x},44 q0,8 0,10" stroke="${sh}" stroke-width="3"/>`).join("");
+      const th = `M${-o * 26},8 Q${-o * 30},32 ${-o * 16},44`;
+      out += outline(th, 14) + fillS(th, 14);
+    } else { // fist / grip: หลังมือหันหาคนดู ข้อนิ้วเป็นปุ่ม 4 ปุ่ม
+      const fist = `M-26,-2 Q-32,22 -28,46 Q-30,64 -14,66 L14,66 Q30,64 28,46 Q32,22 26,-2Z`;
+      out += shape(fist);
+      out += [-15, -5, 5, 15].map((x) => `<path d="M${x - 6},52 Q${x},62 ${x + 6},52" fill="none" stroke="${sh}" stroke-width="3.5"/>`).join("");
+      out += `<path d="M-14,14 l0,22 M0,12 l0,26 M14,14 l0,22" stroke="${sh}" stroke-width="3" opacity=".55"/>`;
+      const th = `M${-o * 26},14 Q${-o * 30},40 ${-o * 12},50`;
+      out += outline(th, 14) + fillS(th, 14);
     }
-    segs.push([thumb, 14]);
-    let out = `<path d="${palm}" fill="${INK}" stroke="${INK}" stroke-width="${LW * 2}" stroke-linejoin="round"/>`;
-    out += segs.map(([d, w]) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${w + LW * 2 - 2}" stroke-linecap="round"/>`).join("");
-    out += `<path d="${palm}" fill="${sk}"/>` + segs.map(([d, w]) => `<path d="${d}" fill="none" stroke="${sk}" stroke-width="${w}" stroke-linecap="round"/>`).join("");
-    if (type === "fist" || type === "grip" || type === "torchF") out += [-12, 0, 12].map((x) => `<path d="M${x},${type === "torchF" ? 44 : 52} l0,14" stroke="${sh}" stroke-width="3"/>`).join("");
-    else out += `<path d="M-12,48 l0,10 M0,48 l0,12 M12,48 l0,10" stroke="${sh}" stroke-width="3" stroke-linecap="round"/><path d="M-14,20 Q0,30 14,20" fill="none" stroke="${sh}" stroke-width="3" opacity=".6"/>`;
-    if (S.nails) out += type === "open" ? [[-25, 104], [-11, 114], [11, 112], [32, 98]].map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="4" ry="5" fill="${S.nails}"/>`).join("") : "";
-    out += `<path d="M${th * 8},22 Q${th * 14},34 ${th * 6},44" fill="none" stroke="${sh}" stroke-width="4" opacity=".8"/>`;
-    return k !== 1 ? `<g transform="scale(${k})">${out}</g>` : out;
+    return out;
   }
   function torchSide() {
     return `<g transform="translate(0,46) rotate(-90)"><rect x="-16" y="-20" width="32" height="96" rx="8" fill="#3A3F4A" stroke="${INK}" stroke-width="${LW}"/><path d="M-16,10 L16,10 M-16,24 L16,24 M-16,38 L16,38" stroke="#262A32" stroke-width="4"/><path d="M-24,76 L24,76 L20,112 L-20,112Z" fill="#575E6B" stroke="${INK}" stroke-width="${LW}"/><rect x="-20" y="108" width="40" height="8" fill="#FFF6C8"/></g>`;
@@ -315,7 +334,7 @@
   // ---------- ลำตัว (วาดใน "พื้นที่ลำตัวมาตรฐาน" y: -470..-218 แล้วยืด/หดด้วย transform) ----------
   function torsoPath(belly, waist = 1) {
     const b = belly * 42, w = 112 * waist + b;
-    return `M-50,-460 Q-112,-456 -142,-432 Q-152,-404 -134,-372 Q${f(-w - 6)},-320 ${f(-w)},-292 Q${f(-w + 4 - b * 0.3)},-250 -122,-218 L122,-218 Q${f(w - 4 + b * 0.3)},-250 ${f(w)},-292 Q${f(w + 6)},-320 134,-372 Q152,-404 142,-432 Q112,-456 50,-460 Q0,-440 -50,-460Z`;
+    return `M-50,-460 Q-108,-456 -134,-434 Q-146,-404 -132,-372 Q${f(-w - 6)},-320 ${f(-w)},-292 Q${f(-w + 2 - b * 0.3)},-250 -124,-218 L124,-218 Q${f(w - 2 + b * 0.3)},-250 ${f(w)},-292 Q${f(w + 6)},-320 132,-372 Q146,-404 134,-434 Q108,-456 50,-460 Q0,-440 -50,-460Z`;
   }
   function top(S) {
     const T = S.top, c = T.color, sh = T.sh || RK.shade(c, -0.2), hi = T.hi || RK.shade(c, 0.15), be = S.body.belly || 0;
@@ -371,18 +390,18 @@
     L1 *= 1 - 0.3 * lift; L2 *= 1 - 0.2 * lift;
     const pants = B.type === "pants", shorts = B.type === "shorts";
     const thighC = pants || shorts ? B.color : S.skin, shinC = pants ? B.color : S.skin;
-    const tw0 = (pants || shorts ? 80 : 64) * sw * lw, tw1 = (pants ? 62 : 50) * sw * lw;
-    const sw0 = (pants ? 60 : 48) * sw * lw, sw1 = (pants ? 52 : 32) * sw * lw;
+    const tw0 = (pants || shorts ? 108 : 82) * sw * lw, tw1 = (pants ? 74 : 56) * sw * lw;
+    const sw0 = (pants ? 72 : 56) * sw * lw, sw1 = (pants ? 58 : 36) * sw * lw;
     const shoe = shoes({ skin: S.skin, ...S.shoes }, side);
     let shin = taper(L2, sw0, sw1, shinC, pants ? B.hi : S.skinHi, pants ? 0.04 : 0.22);
     if (pants) shin += `<path d="M${f(-sw1 / 2 - 2)},${f(L2 - 4)} Q0,${f(L2 + 6)} ${f(sw1 / 2 + 2)},${f(L2 - 4)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`;
-    const shinG = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${shin}<g transform="translate(${side * 10},${f(L2 + 4)}) scale(${f(shz * (S.footK || 1))})">${shoe}</g></g>`;
+    const shinG = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${shin}<g transform="translate(${side * 10},${f(L2 + 4)}) scale(${f(shz * (S.footK || 1.12))})">${shoe}</g></g>`;
     let thigh = taper(L1 + 6, tw0, tw1, thighC, pants || shorts ? B.hi : S.skinHi, 0.08);
     if (shorts) thigh += `<path d="M${f(-tw0 / 2 - 3)},0 L${f(tw0 / 2 + 3)},0 L${f(tw1 / 2 + 8)},${f(L1 * 0.55)} L${f(-tw1 / 2 - 8)},${f(L1 * 0.55)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/><path d="M${f(-tw1 / 2 - 6)},${f(L1 * 0.5)} L${f(tw1 / 2 + 6)},${f(L1 * 0.5)}" stroke="${B.sh}" stroke-width="6"/>`;
     if (pants) thigh += `<path d="M${side * 8},10 Q${side * 2},${f(L1 * 0.6)} ${side * 10},${f(L1 - 6)}" fill="none" stroke="${B.sh}" stroke-width="5"/>`;
     const knee = lift > 0.15 ? `<ellipse cx="0" cy="${f(L1)}" rx="${f(tw1 * 0.5)}" ry="${f(12 + 18 * lift)}" fill="${pants ? B.sh : S.skinSh}" opacity=".6"/>` : "";
     // วาดหน้าแข้งก่อน แล้วต้นขาทับ = เข่าดูต่อกันเป็นธรรมชาติ
-    return `<g transform="translate(${f(side * 54 * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${shinG}${thigh}${knee}</g>`;
+    return `<g transform="translate(${f(side * 62 * (S.body.bw || 1))},${f(S._hipY)}) rotate(${f(a)})">${shinG}${thigh}${knee}</g>`;
   }
   function shoes(Sh, side) {
     const c = Sh.color, cs = RK.shade(c, -0.18);
@@ -400,7 +419,7 @@
     if (B.type === "sarong") { const L = -hy - 30; return `<path d="M${-w + 4},${hy - 20} L${w - 4},${hy - 20} L${w + 6},${f(hy + L)} Q0,${f(hy + L + 10)} ${-w - 6},${f(hy + L)}Z" fill="${B.color}" stroke="${INK}" stroke-width="${LW}"/><path d="M${-w + 4},${hy - 4} L${w - 4},${hy - 4}" stroke="${B.sh}" stroke-width="12"/>` + [0.35, 0.6, 0.85].map((k) => `<path d="M${-w},${f(hy + L * k)} L${w},${f(hy + L * k)}" stroke="${B.p1 || B.sh}" stroke-width="10" opacity=".8"/><path d="M${-w},${f(hy + L * k + 14)} L${w},${f(hy + L * k + 14)}" stroke="${B.p2 || "#E8C46A"}" stroke-width="4"/>`).join("") + `<path d="M${w - 30},${hy - 10} Q${w - 50},${f(hy + L * 0.5)} ${w - 20},${f(hy + L)}" fill="none" stroke="${B.sh}" stroke-width="6"/>`; }
     if (B.type === "pants" || B.type === "shorts") { // สะโพก+เป้า ต่อขาสองข้างเป็นกางเกงตัวเดียว
       const bw = S.body.bw || 1, X = (x) => f(x * bw), lw = S.body.legW || 1;
-      const d = `M${X(-118)},${hy - 30} L${X(118)},${hy - 30} Q${X(124)},${hy + 10} ${X(96 + 14 * lw)},${hy + 46} Q${X(40)},${hy + 64} ${X(6)},${hy + 40} L0,${hy + 36} L${X(-6)},${hy + 40} Q${X(-40)},${hy + 64} ${X(-96 - 14 * lw)},${hy + 46} Q${X(-124)},${hy + 10} ${X(-118)},${hy - 30}Z`;
+      const d = `M${X(-120)},${hy - 30} L${X(120)},${hy - 30} Q${X(128)},${hy + 14} ${X(112 + 8 * lw)},${hy + 50} Q${X(46)},${hy + 70} ${X(6)},${hy + 44} L0,${hy + 40} L${X(-6)},${hy + 44} Q${X(-46)},${hy + 70} ${X(-112 - 8 * lw)},${hy + 50} Q${X(-128)},${hy + 14} ${X(-120)},${hy - 30}Z`;
       let o = `<path d="${d}" fill="${B.color}" stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"/>`;
       o += `<path d="M0,${hy - 24} L0,${hy + 34}" stroke="${B.sh}" stroke-width="5"/><path d="M${X(-70)},${hy - 20} Q${X(-50)},${hy + 6} ${X(-30)},${hy - 20} M${X(70)},${hy - 20} Q${X(50)},${hy + 6} ${X(30)},${hy - 20}" fill="none" stroke="${B.sh}" stroke-width="4"/>`;
       if (S.belt) o += `<rect x="${X(-116)}" y="${hy - 30}" width="${X(232)}" height="18" fill="${S.belt}" stroke="${INK}" stroke-width="4"/><rect x="-14" y="${hy - 32}" width="28" height="22" rx="3" fill="#C9A44A" stroke="${INK}" stroke-width="3"/>`;
