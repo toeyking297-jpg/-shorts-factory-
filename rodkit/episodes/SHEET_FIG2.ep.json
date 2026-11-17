@@ -1,0 +1,135 @@
+{
+ "id": "SHEET_FIG2",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "x",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "ดูเพลิน · สไตล์ใหม่",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 200,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "pocket"
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 540,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "talk",
+     "talk": 1
+    },
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 880,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "hips",
+     "face": "laugh"
+    }
+   ]
+  },
+  {
+   "name": "x",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 190,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "hips",
+     "face": "angry"
+    },
+    {
+     "type": "fig",
+     "who": "yai",
+     "x": 540,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "relaxed",
+     "face": "happy"
+    },
+    {
+     "type": "fig",
+     "who": "jaew",
+     "x": 880,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "wave",
+     "face": "laugh"
+    }
+   ]
+  },
+  {
+   "name": "x",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.02
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "khaotu",
+     "x": 380,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": "cheer",
+     "face": "laugh"
+    },
+    {
+     "type": "fig",
+     "who": "cat",
+     "x": 720,
+     "y": 1780,
+     "s": 0.86,
+     "depth": 0,
+     "pose": ""
+    }
+   ]
+  }
+ ]
+}
