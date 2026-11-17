@@ -1,0 +1,416 @@
+{
+ "id": "VIEWS",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "hero",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "mind",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "mind",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "big",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "big",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "boss",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "boss",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "yai",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "yai",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "yai",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "yai",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "jaew",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "jaew",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "jaew",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "jaew",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "khaotu",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "khaotu",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "khaotu",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "khaotu",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "phum",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "prang",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "fah",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1780
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.01
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 200,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "front"
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 540,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0
+    },
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 880,
+     "y": 1780,
+     "s": 0.72,
+     "depth": 0,
+     "view": "back"
+    }
+   ]
+  }
+ ]
+}

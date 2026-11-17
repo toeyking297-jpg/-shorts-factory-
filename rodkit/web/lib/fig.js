@@ -117,6 +117,7 @@
     return `<g transform="translate(${P(at)}) rotate(${f(ang)}) scale(${f(mirror ? -K : K)},${f(K)})">${g}</g>`;
   }
   RK.figHand = hand;
+  RK.figParts = { limb: (...a) => limb(...a), seg: (...a) => seg(...a), chain: (...a) => chain(...a), hand: (...a) => hand(...a) };
 
   // ---------- หัว (3/4 หันขวา) ----------
   const FACES = {
@@ -183,11 +184,11 @@
   // คอ: วาดก่อนลำตัว (คอเสื้อทับฐานคอ) ด้านข้างโค้งบานลงเป็นบ่า ไม่มีเส้นขอบล่าง
   function neck(C) {
     const sk = C.skin, o = ink(sk), sh = shd(sk);
-    const L = "M-32,-1030 C-30,-1000 -34,-976 -58,-950", Rr = "M46,-1026 C44,-1000 46,-978 66,-952";
-    return `<path d="M-32,-1030 C-30,-1000 -34,-976 -58,-950 L66,-952 C46,-978 44,-1000 46,-1026Z" fill="${sk}"/>` +
-      `<path d="M14,-1030 C12,-1000 16,-976 30,-952 L66,-952 C46,-978 44,-1000 46,-1026Z" fill="${sh}"/>` +
-      `<path d="M-32,-1006 Q8,-986 46,-1000 L46,-1026 L-32,-1030Z" fill="${sh}" opacity=".9"/>` +
-      `<path d="M-6,-978 Q4,-972 14,-978" fill="none" stroke="${sh}" stroke-width="3" stroke-linecap="round"/>` +
+    // คอเรียว (กว้างราว 2/3 ของขากรรไกร) บานออกเล็กน้อยที่ฐาน
+    const L = "M-20,-1030 C-19,-1004 -20,-984 -30,-960", Rr = "M36,-1028 C35,-1004 36,-986 46,-962";
+    return `<path d="M-20,-1030 C-19,-1004 -20,-984 -30,-960 L46,-962 C36,-986 35,-1004 36,-1028Z" fill="${sk}"/>` +
+      `<path d="M14,-1030 C13,-1004 15,-984 22,-962 L46,-962 C36,-986 35,-1004 36,-1028Z" fill="${sh}"/>` +
+      `<path d="M-20,-1008 Q8,-994 36,-1004 L36,-1028 L-20,-1030Z" fill="${sh}" opacity=".9"/>` +
       `<path d="${L}" fill="none" stroke="${o}" stroke-width="${OW}" stroke-linecap="round"/><path d="${Rr}" fill="none" stroke="${o}" stroke-width="${OW}" stroke-linecap="round"/>`;
   }
   function head(C, p, t, id) {
@@ -249,7 +250,8 @@
   // ---------- ลำตัว ----------
   function torsoD(b, w) {
     const k = (v) => f(v);
-    return `M-100,-944 Q-60,-978 -24,-980 Q10,-968 44,-976 Q70,-966 80,-946 Q90,-900 ${k(84 + 20 * b)},-862 Q${k(74 + 70 * b)},-790 ${k(70 * w + 70 * b)},-720 Q${k(74 + 50 * b)},-660 ${k(78 + 20 * b)},-604 L${k(-84 - 10 * b)},-606 Q${k(-80 - 14 * b)},-660 ${k(-80 * w - 20 * b)},-720 Q${k(-86 - 10 * b)},-800 -98,-870 Q-108,-914 -100,-944Z`;
+    // ไหล่ลาดจากคอลงมาเป็นหัวไหล่โค้งมน (ไม่ยกตั้ง)
+    return `M-110,-924 Q-96,-956 -24,-980 Q10,-968 44,-976 Q76,-962 88,-930 Q96,-900 ${k(84 + 20 * b)},-862 Q${k(74 + 70 * b)},-790 ${k(70 * w + 70 * b)},-720 Q${k(74 + 50 * b)},-660 ${k(78 + 20 * b)},-604 L${k(-84 - 10 * b)},-606 Q${k(-80 - 14 * b)},-660 ${k(-80 * w - 20 * b)},-720 Q${k(-86 - 10 * b)},-800 -100,-870 Q-116,-896 -110,-924Z`;
   }
   function pocket(x, y, w, h, V) { return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${shd(V)}" stroke="${ink(V)}" stroke-width="2.8"/><rect x="${x + 4}" y="${y + 4}" width="${w - 8}" height="${h - 8}" rx="3" fill="none" stroke="${ink(V)}" stroke-width="1.6" stroke-dasharray="5 4" opacity=".7"/><path d="M${x - 2},${y} L${x + w + 2},${y} L${x + w - 3},${y + 14} L${x + 3},${y + 14}Z" fill="${hil(V)}" stroke="${ink(V)}" stroke-width="2.6"/><circle cx="${x + w / 2}" cy="${y + 9}" r="3" fill="${ink(V)}"/>`; }
   function torso(C, id) {
@@ -436,6 +438,7 @@
     if (p.who === "cat") return RK.figCat(p, t);
     const C = RK.FIG_CAST[p.who || "hero"];
     if (!C) return "";
+    if ((p.view === "front" || p.view === "back") && RK.figFB) return RK.figFB(p, t, C, p.view === "back");
     const id = (p.who || "x") + (UID++ % 999);
     const Q = motionPose(p, t);
     const B = C.body || {}, bw = B.bw || 1, hL = B.hL || 1, tL = B.tL || 1, hs = B.hs || 1;
@@ -486,14 +489,15 @@
       if (A[2] === "pocket") g += `<path d="M${P(add(w, [-26, -4]))} Q${P(add(w, [0, 14]))} ${P(add(w, [26, -2]))} L${P(add(w, [22, 16]))} Q${P(add(w, [0, 26]))} ${P(add(w, [-22, 14]))}Z" fill="${shd(B2.color)}" stroke="${ink(B2.color)}" stroke-width="${OW}"/>`;
       else if (sl !== "long") g += mkHand(false);
       if (pass === "over") {
-        const u = rot([0, 1], A[0]), n = [-u[1], u[0]], c = add(s0, mul(u, 205 * aL * 0.2));
+        // ส่วนที่ทับลำตัว: ตัดหัวแขนเสื้อทิ้ง (หัวไหล่จริงมาจากรอบ under ที่อยู่หลังลำตัว) (หัวแขนเสื้อ) ทิ้ง ให้ลำตัว/หัวไหล่เป็นตัวต่อ ไม่ให้แขนเสื้อโผล่ยกเหนือไหล่
+        const u = rot([0, 1], A[0]), n = [-u[1], u[0]], c = add(s0, mul(u, 205 * aL * (near ? 0.2 : 0.16)));
         const q = [add(c, mul(n, 3000)), add(c, mul(n, -3000)), add(add(c, mul(n, -3000)), mul(u, 4000)), add(add(c, mul(n, 3000)), mul(u, 4000))];
-        return `<clipPath id="arm${id}"><path d="M${q.map(P).join(" L")}Z"/></clipPath><g clip-path="url(#arm${id})">${g}</g>`;
+        return `<clipPath id="arm${id}${near ? "n" : "f"}"><path d="M${q.map(P).join(" L")}Z"/></clipPath><g clip-path="url(#arm${id}${near ? "n" : "f"})">${g}</g>`;
       }
       return g;
     };
     s += leg(40, Q.legF, false);
-    s += arm(tp(70, -938), Q.far, false);
+    s += arm(tp(66, -918), Q.far, false);
     // กระโปรง/ผ้าถุงอยู่หน้าขา · กางเกงต่อสะโพกก่อนแล้วขาใกล้ทับ
     // ผ้าถุง: เท้าวาดก่อนผ้า ให้ชายผ้าบังส้น เห็นแค่ปลายเท้าโผล่
     if (Q.sit && (skirt || sarong)) {
@@ -509,14 +513,14 @@
       if (skirt) s += leg(-40, Q.legN, true) + `<g transform="${TT}">${lower(C)}</g>`;
       else { s += `<g transform="${TT}">${lower(C)}</g>`; if (!sarong) s += leg(-40, Q.legN, true); }
     }
-    const shN = tp(-94, -934);
+    const shN = tp(-90, -914);
     s += arm(shN, Q.near, true, "under");
     const nk = tp(10, -968), HT = `translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,968)`;
     s += `<g transform="${HT}">${neck(C)}</g>`;
     s += `<g transform="${TT} translate(0,${f(breathe * 0.4)})">${torso(C, id)}</g>`;
     s += arm(shN, Q.near, true, "over");
     if (Q.near[2] === "pocket" && !sarong && !skirt) s += `<g transform="${TT}"><path d="M-88,-604 Q-70,-596 -54,-604" fill="none" stroke="${ink(B2.color)}" stroke-width="3"/></g>`;
-    s += `<g transform="translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,${f(968 - (C.body.neck ?? 10))})">${head(C, p, t, id)}</g>`;
+    s += `<g transform="translate(${f(nk[0])},${f(nk[1] + breathe * 0.4)}) scale(${f(hs)}) translate(-10,${f(968 - (C.body.neck ?? 0))})">${head(C, p, t, id)}</g>`;
     const flip = (p.facing || 1) < 0 ? "scale(-1,1)" : "";
     return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)}) ${flip}"><g transform="rotate(${f(Q.lean + (B.hunch || 0))} 0 ${f(hipY)})">${s}</g></g>`;
   };

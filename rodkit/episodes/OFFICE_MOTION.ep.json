@@ -197,7 +197,135 @@
      "depth": 0,
      "motion": "run",
      "move": 1,
-     "face": "laugh"
+     "face": "laugh",
+     "freq": 1.15
+    }
+   ]
+  },
+  {
+   "name": "7 หน้าตรง: ภูมิกับปรางคุยกัน",
+   "dur": 2.6,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "noon"
+   },
+   "cam": {
+    "zoom": 1.6,
+    "panX": -40,
+    "panY": -300
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 400,
+     "y": 1700,
+     "s": 0.62,
+     "depth": 0,
+     "view": "front",
+     "motion": "talk",
+     "talk": 1
+    },
+    {
+     "type": "fig",
+     "who": "prang",
+     "x": 640,
+     "y": 1690,
+     "s": 0.6,
+     "depth": 0,
+     "view": "front",
+     "face": "happy"
+    }
+   ]
+  },
+  {
+   "name": "8 ข้ามไหล่: หลังฮีโร่ มองฟ้า",
+   "dur": 2.6,
+   "boardAt": 0.5,
+   "set": "office",
+   "env": {
+    "time": "noon"
+   },
+   "cam": {
+    "zoom": 1.4,
+    "panX": 40,
+    "panY": -280
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "fah",
+     "x": 620,
+     "y": 1600,
+     "s": 0.56,
+     "depth": 0,
+     "view": "front",
+     "motion": "talk",
+     "talk": 1
+    },
+    {
+     "type": "fig",
+     "who": "hero",
+     "x": 360,
+     "y": 1960,
+     "s": 0.95,
+     "depth": -1,
+     "view": "back"
+    }
+   ]
+  },
+  {
+   "name": "9 เดินเข้าหากล้อง",
+   "dur": 2.6,
+   "boardAt": 0.6,
+   "set": "office",
+   "env": {
+    "time": "evening",
+    "heroChair": false
+   },
+   "cam": {
+    "zoom": 1.2,
+    "panY": -200
+   },
+   "fx": {
+    "grain": 0.015
+   },
+   "actors": [
+    {
+     "type": "fig",
+     "who": "phum",
+     "x": 380,
+     "y": [
+      [
+       0,
+       1240
+      ],
+      [
+       2.6,
+       1780
+      ]
+     ],
+     "s": [
+      [
+       0,
+       0.38
+      ],
+      [
+       2.6,
+       0.7
+      ]
+     ],
+     "depth": 0,
+     "view": "front",
+     "motion": "walk",
+     "face": "happy"
     }
    ],
    "fadeOut": 0.4
