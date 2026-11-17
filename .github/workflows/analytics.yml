@@ -1,8 +1,7 @@
 name: Results and Analyst
 
 on:
-  schedule:
-    - cron: "30 22 * * *"   # every day 05:30 Thailand time; the analyst also runs on Sundays
+  # schedule ปิดไว้หลังย้ายบัญชี (เปิดใหม่เมื่อพร้อม)
   workflow_dispatch:
     inputs:
       analyst:
