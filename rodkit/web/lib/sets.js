@@ -222,3 +222,16 @@
   RK.sets.corridor.FLOOR = FLOOR;
   RK.sets.corridor.CW = CW;
 })(window);
+
+// ฉากสตูดิโอเปล่า (ใช้ทำตารางตัวละคร)
+(function (G) {
+  const RK = G.RK;
+  RK.sets.studio = function (cam, t, env = {}) {
+    let s = `<defs><linearGradient id="stBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EBDD"/><stop offset="1" stop-color="#E2D3BC"/></linearGradient></defs>`;
+    s += `<rect x="-200" y="-200" width="1480" height="2320" fill="url(#stBg)"/><rect x="-200" y="${env.floor || 1500}" width="1480" height="900" fill="#CDBB9E"/>`;
+    for (let y = (env.floor || 1500) - 100; y > 200; y -= 100) s += `<path d="M0,${y} L1080,${y}" stroke="#C9B89C" stroke-width="2" stroke-dasharray="10 10"/>`;
+    if (env.title) s += `<text x="540" y="150" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="64" fill="#3A2E24">${RK.esc(env.title)}</text>`;
+    (env.labels || []).forEach(({ x, y, text: txt }) => { s += `<text x="${x}" y="${y}" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="34" fill="#3A2E24">${RK.esc(txt)}</text>`; });
+    return { svg: s, dark: 0 };
+  };
+})(window);

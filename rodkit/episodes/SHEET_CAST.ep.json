@@ -1,0 +1,384 @@
+{
+ "id": "SHEET_CAST",
+ "fps": 30,
+ "shots": [
+  {
+   "name": "ตัวหลัก 1",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1320,
+    "title": "ดูเพลิน · ตัวละครหลัก",
+    "labels": [
+     {
+      "x": 150,
+      "y": 1400,
+      "text": "ภูมิ"
+     },
+     {
+      "x": 400,
+      "y": 1400,
+      "text": "มายด์"
+     },
+     {
+      "x": 665,
+      "y": 1400,
+      "text": "บิ๊ก"
+     },
+     {
+      "x": 930,
+      "y": 1400,
+      "text": "บอสวิทย์"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 150,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "smile"
+    },
+    {
+     "type": "person",
+     "who": "mind",
+     "x": 400,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "smile",
+     "pose": "wave"
+    },
+    {
+     "type": "person",
+     "who": "big",
+     "x": 665,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "happy"
+    },
+    {
+     "type": "person",
+     "who": "boss",
+     "x": 930,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "annoyed",
+     "pose": "hips"
+    }
+   ]
+  },
+  {
+   "name": "ตัวหลัก 2",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1320,
+    "title": "ดูเพลิน · ครอบครัว & ตลาด",
+    "labels": [
+     {
+      "x": 150,
+      "y": 1400,
+      "text": "ยายศรี"
+     },
+     {
+      "x": 400,
+      "y": 1400,
+      "text": "ป้าแจ๋ว"
+     },
+     {
+      "x": 665,
+      "y": 1400,
+      "text": "น้องข้าวตู"
+     },
+     {
+      "x": 930,
+      "y": 1400,
+      "text": "ส้มฉุน"
+     }
+    ]
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "yai",
+     "x": 150,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "warm"
+    },
+    {
+     "type": "person",
+     "who": "jaew",
+     "x": 400,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "laugh",
+     "pose": "hips"
+    },
+    {
+     "type": "person",
+     "who": "khaotu",
+     "x": 665,
+     "y": 1320,
+     "s": 0.62,
+     "depth": 0,
+     "face": "happy",
+     "pose": "cheer"
+    },
+    {
+     "type": "cat",
+     "x": 930,
+     "y": 1320,
+     "s": 0.75,
+     "depth": 0
+    }
+   ]
+  },
+  {
+   "name": "หน้า hero",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "calm",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "หน้า mind",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "mind",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "smug",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "หน้า yai",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "yai",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "warm",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "หน้า big",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "big",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "laugh",
+     "noShadow": true,
+     "laughShake": 1
+    }
+   ]
+  },
+  {
+   "name": "หน้า boss",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "boss",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "angry",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "หน้า jaew",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "jaew",
+     "x": 540,
+     "y": 2700,
+     "s": 2.6,
+     "depth": 0,
+     "face": "laugh",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "หน้า khaotu",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "khaotu",
+     "x": 540,
+     "y": 1720,
+     "s": 2.3,
+     "depth": 0,
+     "face": "happy",
+     "noShadow": true
+    }
+   ]
+  },
+  {
+   "name": "ภูมิ ชุดทำงาน/อยู่บ้าน",
+   "dur": 1,
+   "boardAt": 0.5,
+   "set": "studio",
+   "env": {
+    "floor": 1560,
+    "title": "ภูมิ: ชุดทำงาน · ชุดอยู่บ้าน",
+    "labels": []
+   },
+   "cam": {},
+   "fx": {
+    "grain": 0.03
+   },
+   "actors": [
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 280,
+     "y": 1560,
+     "s": 1.1,
+     "depth": 0,
+     "face": "determined",
+     "outfit": "office",
+     "pose": "point"
+    },
+    {
+     "type": "person",
+     "who": "hero",
+     "x": 800,
+     "y": 1560,
+     "s": 1.1,
+     "depth": 0,
+     "face": "happy",
+     "outfit": "home"
+    }
+   ]
+  }
+ ]
+}

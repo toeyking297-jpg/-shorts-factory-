@@ -1,0 +1,101 @@
+{
+  "_note": "DNA เสียงของตัวละครช่องดูเพลิน (ElevenLabs) — voice_id ใส่ตอนต่อคีย์แล้ว ห้ามเปลี่ยนเสียงตัวละครระหว่างตอน",
+  "model": "eleven_v3",
+  "characters": {
+    "narrator": {
+      "name": "ผู้บรรยาย",
+      "voice": {
+        "gender": "female",
+        "age": "30s",
+        "tone": "อบอุ่น ชัด จังหวะนุ่ม",
+        "voice_id": "",
+        "stability": 0.5,
+        "style": 0.35
+      }
+    },
+    "hero": {
+      "name": "ภูมิ",
+      "voice": {
+        "gender": "male",
+        "age": "late 20s",
+        "tone": "สดใส เป็นกันเอง ซื่อๆ ตลกในตัว",
+        "voice_id": "",
+        "stability": 0.45,
+        "style": 0.5
+      }
+    },
+    "mind": {
+      "name": "มายด์",
+      "voice": {
+        "gender": "female",
+        "age": "late 20s",
+        "tone": "มั่นใจ ปากไว ประชดเก่ง",
+        "voice_id": "",
+        "stability": 0.45,
+        "style": 0.55
+      }
+    },
+    "yai": {
+      "name": "ยายศรี",
+      "voice": {
+        "gender": "female",
+        "age": "70s",
+        "tone": "นุ่ม ช้า ใจดี มีเสียงหัวเราะเบาๆ",
+        "voice_id": "",
+        "stability": 0.6,
+        "style": 0.3
+      }
+    },
+    "big": {
+      "name": "บิ๊ก",
+      "voice": {
+        "gender": "male",
+        "age": "late 20s",
+        "tone": "เสียงใหญ่ ทุ้ม ขี้เล่น หัวเราะดัง",
+        "voice_id": "",
+        "stability": 0.4,
+        "style": 0.6
+      }
+    },
+    "boss": {
+      "name": "บอสวิทย์",
+      "voice": {
+        "gender": "male",
+        "age": "50s",
+        "tone": "ขึงขัง เสียงดัง จริงจังจนตลก",
+        "voice_id": "",
+        "stability": 0.5,
+        "style": 0.5
+      }
+    },
+    "jaew": {
+      "name": "ป้าแจ๋ว",
+      "voice": {
+        "gender": "female",
+        "age": "50s",
+        "tone": "แหลม ดัง เร็ว แม่ค้าตลาด",
+        "voice_id": "",
+        "stability": 0.4,
+        "style": 0.65
+      }
+    },
+    "khaotu": {
+      "name": "น้องข้าวตู",
+      "voice": {
+        "gender": "female child",
+        "age": "6",
+        "tone": "เด็กเล็ก ใส ไร้เดียงสา",
+        "voice_id": "",
+        "stability": 0.5,
+        "style": 0.5
+      }
+    },
+    "cat": {
+      "name": "ส้มฉุน",
+      "voice": {
+        "type": "sfx",
+        "tone": "เสียงแมวจริงจากคลังเสียงประกอบ"
+      }
+    }
+  }
+}

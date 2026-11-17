@@ -50,7 +50,9 @@
   }
   function drawActor(A, t) {
     if (A.hidden) return "";
-    if (A.type === "hero") return RK.hero(A, t);
+    if (A.type === "hero") return RK.person("hero", A, t);
+    if (A.type === "person") return RK.person(A.who, A, t);
+    if (A.type === "cat") return RK.cat(A, t);
     if (A.type === "ghost") return RK.ghost(A, t);
     if (A.type === "hand") return ghostHand(A, t);
     return "";
