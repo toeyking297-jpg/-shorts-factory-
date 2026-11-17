@@ -18,6 +18,7 @@
     torch:    { la: 10, le: 8,   ra: -62, re: -38, ll: 3, lk: 0,  rl: -3, rk: 0, lean: 2, bob: 0 },
     scared:   { la: 35, le: 95,  ra: -35, re: -95, ll: 8, lk: 6,  rl: -8, rk: -6, lean: -4, bob: 18 },
     cower:    { la: 120, le: 70, ra: -120, re: -70, ll: 14, lk: 20, rl: -14, rk: -20, lean: 6, bob: 70 },
+    torch_front: { la: 10, le: 8, ra: -18, re: 58, ll: 3, lk: 0, rl: -3, rk: 0, lean: 1, bob: 0 },
     point:    { la: 10, le: 6,   ra: -105, re: -8, ll: 3, lk: 0,  rl: -3, rk: 0, lean: 3, bob: 0 },
     shush:    { la: 8,  le: 6,   ra: -40, re: -140, ll: 3, lk: 0, rl: -3, rk: 0, lean: 0, bob: 0 },
     hands_up: { la: 150, le: 20, ra: -150, re: -20, ll: 6, lk: 0, rl: -6, rk: 0, lean: -3, bob: 0 },
@@ -130,15 +131,18 @@
     return s;
   }
   function arm(side, a, e, opts, foreOnly) {
+    const sy = opts.sy || 1;
     const sx = side * 112, L1 = 150, L2 = 136;
     const fore = `<g transform="translate(0,${L1}) rotate(${f(e)})">${limb(L2, 46, C.skin, INK)}<g transform="translate(0,${L2})">${opts.torch && side === 1 ? torch(opts.torchOn) + hand(false) : hand(opts.open)}</g></g>`;
     const upper = limb(L1, 62, C.tee, INK) + `<path d="M-31,${L1 - 30} L31,${L1 - 30}" stroke="${C.teeSh}" stroke-width="8"/>`;
-    return `<g transform="translate(${sx},-430) rotate(${f(a)})">${foreOnly ? "" : upper}${fore}</g>`;
+    return `<g transform="translate(${sx},-430) rotate(${f(a)}) scale(1,${f(sy)})">${foreOnly ? "" : upper}${fore}</g>`;
   }
-  function leg(side, a, k) {
-    const hx = side * 52, L1 = 125, L2 = 115;
-    const shin = `<g transform="translate(0,${L1}) rotate(${f(k)})">${limb(L2, 64, C.pants, INK)}<g transform="translate(${side * 8},${L2 + 6})"><path d="M-40,-14 Q-44,22 -10,24 L52,24 Q62,4 40,-16Z" fill="${C.shoe}" stroke="${INK}" stroke-width="${LW}"/><rect x="-42" y="16" width="100" height="12" rx="6" fill="${C.sole}" stroke="${INK}" stroke-width="5"/></g></g>`;
-    return `<g transform="translate(${hx},-245) rotate(${f(a)})">${limb(L1, 72, C.pants, INK)}${shin}</g>`;
+  // lift 0..1 = ขาที่ก้าวเข้าหากล้อง (มุมหน้าตรง): ต้นขา/หน้าแข้งสั้นลงเพราะพุ่งเข้าหาเรา รองเท้าใหญ่ขึ้นเพราะใกล้กล้อง
+  function leg(side, a, k, lift = 0) {
+    const hx = side * 52, L1 = 125 * (1 - 0.3 * lift), L2 = 115 * (1 - 0.2 * lift), sw = 1 + 0.08 * lift, sh = 1 + 0.18 * lift;
+    const shin = `<g transform="translate(0,${f(L1)}) rotate(${f(k)})">${limb(L2, 64 * sw, C.pants, INK)}<g transform="translate(${side * 8},${f(L2 + 6)}) scale(${f(sh)})"><path d="M-40,-14 Q-44,22 -10,24 L52,24 Q62,4 40,-16Z" fill="${C.shoe}" stroke="${INK}" stroke-width="${LW}"/><rect x="-42" y="16" width="100" height="12" rx="6" fill="${C.sole}" stroke="${INK}" stroke-width="5"/></g></g>`;
+    const knee = lift > 0.15 ? `<ellipse cx="0" cy="${f(L1)}" rx="${f(38 * sw)}" ry="${f(14 + 20 * lift)}" fill="${C.pantsSh}" opacity=".7"/>` : "";
+    return `<g transform="translate(${hx},-245) rotate(${f(a)})">${limb(L1, 72 * sw, C.pants, INK)}${knee}${shin}</g>`;
   }
   function body() {
     let s = "";
@@ -164,25 +168,39 @@
   // p: x,y (ตำแหน่งเท้าบนจอ), s (scale), pose, pose2, mix, walk (0..1 ความเร็วเดิน), face, look, blink ...
   RK.hero = function (p, t) {
     let P = blendPose(p.pose || "idle", p.pose2 || p.pose || "idle", p.poseMix || 0);
+    let liftL = 0, liftR = 0, armSyL = 1, armSyR = 1, sway = 0;
     if (p.walk) {
       const ph = t * (p.walkRate || 7.5) + (p.phase || 0), w = p.walk;
-      P.ll += Math.sin(ph) * 28 * w; P.rl += Math.sin(ph + Math.PI) * 28 * w;
-      P.lk += Math.max(0, Math.sin(ph + 1.6)) * 30 * w; P.rk += Math.max(0, Math.sin(ph + Math.PI + 1.6)) * 30 * w;
-      if ((p.pose || "idle") !== "torch") { P.ra += Math.sin(ph) * 22 * w; }
-      P.la += Math.sin(ph + Math.PI) * 22 * w;
-      P.bob += Math.abs(Math.sin(ph)) * -14 * w;
+      if ((p.walkView || "front") === "front") {
+        // เดินเข้าหากล้อง/ออกจากกล้อง: ขาสลับยกก้าว (ไม่เหวี่ยงซ้ายขวา) ตัวยุบ-ยืด สะโพกโยกเล็กน้อย
+        liftL = Math.max(0, Math.sin(ph)) * w; liftR = Math.max(0, Math.sin(ph + Math.PI)) * w;
+        P.lk += liftL * 8; P.rk -= liftR * 8;
+        P.bob += -Math.abs(Math.sin(ph)) * 16 * w + 8 * w;
+        sway = Math.sin(ph) * 2.2 * w;
+        // แขนแกว่งหน้า-หลัง: แขนที่ไปข้างหน้าดูสั้นลง (พุ่งเข้าหากล้อง) และหุบเข้าเล็กน้อย
+        armSyL = 1 - 0.16 * Math.max(0, Math.sin(ph + Math.PI)) * w; P.la += Math.sin(ph + Math.PI) * -6 * w;
+        if ((p.pose || "idle") !== "torch") { armSyR = 1 - 0.16 * Math.max(0, Math.sin(ph)) * w; P.ra += Math.sin(ph) * 6 * w; }
+      } else {
+        // มุมข้าง: ขาเหวี่ยงหน้า-หลังตามแนวจอ
+        P.ll += Math.sin(ph) * 28 * w; P.rl += Math.sin(ph + Math.PI) * 28 * w;
+        P.lk += Math.max(0, Math.sin(ph + 1.6)) * 30 * w; P.rk += Math.max(0, Math.sin(ph + Math.PI + 1.6)) * 30 * w;
+        if ((p.pose || "idle") !== "torch") { P.ra += Math.sin(ph) * 22 * w; }
+        P.la += Math.sin(ph + Math.PI) * 22 * w;
+        P.bob += Math.abs(Math.sin(ph)) * -14 * w;
+      }
     }
     const breathe = Math.sin(t * 2.4) * 4;
     const blink = p.blink ?? ((t * 1.0 + (p.phase || 0)) % 3.7 < 0.11);
-    const legs = leg(-1, P.ll, P.lk) + leg(1, P.rl, P.rk);
+    // ขาที่ยกก้าวมาข้างหน้าต้องวาดทีหลัง (อยู่ใกล้กล้องกว่า)
+    const legs = liftL > liftR ? leg(1, P.rl, P.rk, liftR) + leg(-1, P.ll, P.lk, liftL) : leg(-1, P.ll, P.lk, liftL) + leg(1, P.rl, P.rk, liftR);
     // แขนเสื้อต้องอยู่ใต้เสื้อกั๊กเสมอ: วาดแขนทั้งท่อนก่อนตัว แล้ววาดเฉพาะแขนท่อนล่าง+มือทับอีกที
-    const ro = { open: p.openHands, torch: p.torch, torchOn: p.torch !== "off" };
+    const ro = { open: p.openHands, torch: p.torch, torchOn: p.torch !== "off", sy: armSyR };
     const upper =
-      arm(-1, P.la, P.le, { open: p.openHands }) + arm(1, P.ra, P.re, ro) + body() + arm(1, P.ra, P.re, ro, true);
+      arm(-1, P.la, P.le, { open: p.openHands, sy: armSyL }) + arm(1, P.ra, P.re, ro) + body() + arm(1, P.ra, P.re, ro, true);
     const headG = `<g transform="translate(0,${f(-640 + breathe)}) rotate(${f((p.tilt || 0))})">${head({ ...p, blink }, t)}</g>`;
     const flip = (p.facing || 1) < 0 ? "scale(-1,1)" : "";
     const shadow = p.noShadow ? "" : `<ellipse cx="0" cy="8" rx="170" ry="26" fill="#000" opacity=".28"/>`;
-    return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)})">${shadow}<g transform="${flip} translate(0,${f(P.bob)}) rotate(${f(P.lean)})">${legs}<g transform="translate(0,${f(breathe * 0.3)})">${upper}${headG}</g></g></g>`;
+    return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)})">${shadow}<g transform="${flip} translate(0,${f(P.bob)}) rotate(${f(P.lean + sway)})">${legs}<g transform="translate(0,${f(breathe * 0.3)})">${upper}${headG}</g></g></g>`;
   };
 
   // จุดปลายไฟฉาย (ใช้วาดลำแสง) — คืนพิกัดบนจอโดยประมาณ

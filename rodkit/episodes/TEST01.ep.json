@@ -70,17 +70,8 @@
               "out"
             ]
           ],
-          "x": [
-            [
-              0,
-              -60
-            ],
-            [
-              4.5,
-              -40
-            ]
-          ],
-          "pose": "torch",
+          "x": -30,
+          "pose": "torch_front",
           "walk": [
             [
               0,
@@ -115,9 +106,10 @@
             ]
           ],
           "torch": "on",
-          "beamAngle": 70,
-          "beamLen": 1300,
-          "beamSpread": 230
+          "beamAngle": 96,
+          "beamLen": 900,
+          "beamSpread": 300,
+          "walkView": "front"
         }
       ],
       "hook": "ตีสาม ห้ามหันไป|มองท้ายทางเดิน",
