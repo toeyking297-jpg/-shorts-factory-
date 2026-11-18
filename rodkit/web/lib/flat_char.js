@@ -93,6 +93,8 @@
     const holding = A.prop && (A.propHand || "n") === side;
     if (holding) return "grip";
     const pose = (A.armMix ?? 0) > 0.5 && A.arms2 ? A.arms2 : A.arms;
+    const OP = RK.FLAT_OPEN || {};
+    if (OP[pose] && OP[pose].includes(side)) return "open";
     if (side === "n" && (pose === "wave" || pose === "take" || pose === "shrug" || pose === "stretch")) return "open";
     if (side === "n" && pose === "point") return "point";
     return "relaxed";
@@ -100,8 +102,10 @@
 
   // ---------- ใบหน้า: ด้านข้าง (หันขวา) จุดกำเนิด = กลางศีรษะ ----------
   function eyeSide(C, ex, ey, blink, mood) {
-    const open = 1 - blink;
-    if (mood === "happy" || open < 0.15) {
+    if (mood === "shock") return `<ellipse cx="${f(ex + 1)}" cy="${f(ey - 1)}" rx="11" ry="16" fill="#FFFDF8" stroke="#2A1C19" stroke-width="2.5"/>` + circ(ex + 4, ey, 4.5, C.iris) + circ(ex + 5, ey - 2, 1.5, "#fff");
+    if (mood === "pain") return `<path d="M${P(ex - 9, ey - 9)} L${P(ex + 7, ey)} L${P(ex - 9, ey + 9)}" stroke="#2A1C19" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const open = (mood === "sleep" || mood === "yawn") ? 0 : 1 - blink;
+    if (mood === "happy" || mood === "laugh" || open < 0.15) {
       return `<path d="M${P(ex - 11, ey + 1)} Q${P(ex + 1, ey - 9 * (mood === "happy" ? 1 : 0.2))} ${P(ex + 12, ey + 2)}" stroke="#2A1C19" stroke-width="5" fill="none" stroke-linecap="round"/>`;
     }
     let s = `<ellipse cx="${f(ex + 1)}" cy="${f(ey)}" rx="8.5" ry="${f(13 * open)}" fill="${C.iris}"/>`;
@@ -111,6 +115,9 @@
     return s;
   }
   function mouthSide(C, mx, my, talk, mood) {
+    if (mood === "yawn") return `<ellipse cx="${f(mx - 4)}" cy="${f(my + 8)}" rx="11" ry="17" fill="#6E2B2B"/><ellipse cx="${f(mx - 4)}" cy="${f(my + 18)}" rx="7" ry="5" fill="#D9776E"/>`;
+    if (mood === "shock") return `<ellipse cx="${f(mx - 2)}" cy="${f(my + 4)}" rx="6" ry="9" fill="#6E2B2B"/>`;
+    if (mood === "pain") return `<path d="M${P(mx - 12, my + 2)} L${P(mx - 6, my - 2)} L${P(mx - 1, my + 3)} L${P(mx + 5, my - 2)}" stroke="#7A3530" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
     if (talk > 0.08) {
       const o = 4 + talk * 14;
       return `<path d="M${P(mx - 12, my - 2)} Q${P(mx - 2, my - 5)} ${P(mx + 6, my - 3)} Q${P(mx + 4, my + o)} ${P(mx - 8, my + o * 0.8)} Z" fill="#6E2B2B"/>` +
@@ -178,8 +185,10 @@
 
   // ---------- ใบหน้า: ด้านหน้า ----------
   function eyeFront(C, ex, ey, blink, mood, look, side) {
-    const open = 1 - blink;
-    if (mood === "happy" || open < 0.15) return `<path d="M${P(ex - 14, ey + 3)} Q${P(ex, ey - 10 * (mood === "happy" ? 1 : 0.2))} ${P(ex + 14, ey + 3)}" stroke="#2A1C19" stroke-width="5.5" fill="none" stroke-linecap="round"/>`;
+    if (mood === "shock") return `<ellipse cx="${f(ex)}" cy="${f(ey - 2)}" rx="18" ry="21" fill="#FFFDF8" stroke="#2A1C19" stroke-width="3"/>` + circ(ex + look * 4, ey, 6, C.iris) + circ(ex + look * 4 + 2, ey - 2, 2, "#fff");
+    if (mood === "pain") return `<path d="M${P(ex - side * 12, ey - 10)} L${P(ex + side * 8, ey)} L${P(ex - side * 12, ey + 10)}" stroke="#2A1C19" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const open = (mood === "sleep" || mood === "yawn") ? 0 : 1 - blink;
+    if (mood === "happy" || mood === "laugh" || open < 0.15) return `<path d="M${P(ex - 14, ey + 3)} Q${P(ex, ey - 10 * (mood === "happy" ? 1 : 0.2))} ${P(ex + 14, ey + 3)}" stroke="#2A1C19" stroke-width="5.5" fill="none" stroke-linecap="round"/>`;
     let s = `<ellipse cx="${f(ex)}" cy="${f(ey)}" rx="15" ry="${f(15 * open)}" fill="#FFFDF8"/>`;
     s += `<ellipse cx="${f(ex + look * 4)}" cy="${f(ey + 1)}" rx="10.5" ry="${f(12.5 * open)}" fill="${C.iris}"/>`;
     s += `<ellipse cx="${f(ex + look * 4)}" cy="${f(ey + 2)}" rx="5" ry="${f(6 * open)}" fill="#120B0A"/>`;
@@ -191,6 +200,9 @@
   }
   function mouthFront(C, talk, mood) {
     const y = 60;
+    if (mood === "yawn") return `<ellipse cx="0" cy="${y + 10}" rx="16" ry="26" fill="#6E2B2B"/><ellipse cx="0" cy="${y + 26}" rx="10" ry="7" fill="#D9776E"/>`;
+    if (mood === "shock") return `<ellipse cx="0" cy="${y + 6}" rx="10" ry="14" fill="#6E2B2B"/>`;
+    if (mood === "pain") return `<path d="M -16,${y + 2} L -8,${y - 3} L 0,${y + 3} L 8,${y - 3} L 16,${y + 2}" stroke="#7A3530" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
     if (talk > 0.08) {
       const o = 5 + talk * 16, w = 15 - talk * 3;
       return `<path d="M${P(-w, y - 2)} Q${P(0, y - 6)} ${P(w, y - 2)} Q${P(w * 0.7, y + o)} ${P(0, y + o + 2)} Q${P(-w * 0.7, y + o)} ${P(-w, y - 2)}Z" fill="#6E2B2B"/>` +
@@ -239,6 +251,21 @@
     return s;
   }
 
+  // ---------- ศีรษะด้านหลัง ----------
+  function headBack(C, o) {
+    const sk = C.skin, h = C.hair, hi = C.hairHi;
+    let s = `<ellipse cx="-84" cy="14" rx="14" ry="20" fill="${sh(sk, -0.08)}"/><ellipse cx="84" cy="14" rx="14" ry="20" fill="${sh(sk, -0.08)}"/>`;
+    s += path(`M -82,-22 C -84,-104 84,-104 82,-22 C 82,26 66,72 30,92 C 14,100 -14,100 -30,92 C -66,72 -82,26 -82,-22 Z`, sh(sk, -0.04));
+    if (RK.FLAT_HAIR && RK.FLAT_HAIR[C.style] && RK.FLAT_HAIR[C.style].back) return s + RK.FLAT_HAIR[C.style].back(C, o.sway || 0);
+    s += path(`M -94,-10 C -110,-112 110,-112 94,-10 C 92,30 80,60 52,76 C 20,88 -20,88 -52,76 C -80,60 -92,30 -94,-10 Z`, h);
+    s += path(`M -52,76 C -20,88 20,88 52,76 C 40,62 20,56 0,56 C -20,56 -40,62 -52,76 Z`, sh(h, 0.18), 'opacity=".55"');
+    s += path(`M -60,-70 C -20,-98 30,-98 66,-70`, "none", `stroke="${hi}" stroke-width="11" stroke-linecap="round" opacity=".7"`);
+    s += path(`M 6,-60 m -14,0 a 14,12 0 1,0 14,-12 a 8,7 0 1,0 8,7`, "none", `stroke="${sh(h, -0.35)}" stroke-width="3.5" opacity=".7"`);
+    s += [-60, -36, -12, 12, 36, 60].map((x) => path(`M ${x},-20 C ${x * 1.05},10 ${x * 1.08},40 ${x * 0.9},66`, "none", `stroke="${sh(h, -0.3)}" stroke-width="3" opacity=".45"`)).join("");
+    if (C.style === "long") s += path(`M -96,-10 C -100,80 -100,170 -90,240 C -40,256 40,256 90,240 C 100,170 100,80 96,-10 Z`, h) + path(`M -40,40 C -44,120 -44,190 -40,240 M 40,40 C 44,120 44,190 40,240`, "none", `stroke="${hi}" stroke-width="5" opacity=".4"`);
+    return s;
+  }
+
   // ---------- รองเท้า ----------
   function shoeSide(C, a, ang, far) {
     if (C.shoeKind && RK.FLAT_SHOE && RK.FLAT_SHOE[C.shoeKind]) return RK.FLAT_SHOE[C.shoeKind].side(C, a, ang, far);
@@ -274,7 +301,7 @@
     const sk = C.skin, pose = armPose(A, t);
     const walkP = A._walkP, walking = A._walking;
     // ท่าเดินจากวงจรคีย์โพส (flat_walk.js)
-    const WP = walking > 0 && !A.sit && RK.flatWalkPose ? RK.flatWalkPose(A.who, walkP, walking) : null;
+    const WP = walking > 0 && !A.sit && RK.flatWalkPose ? RK.flatWalkPose(A.who, walkP, walking, !!A.run) : null;
     const breathe = Math.sin(t * 2.2 + (A.seed || 0)) * 3;
     let bob = 0, legs, arms = pose;
     // ขา
@@ -298,13 +325,16 @@
       legs = { n: [3 + st, 4, 0], f: [-3 - st, 4, 0] };
     }
     if (A.sit) legs = { n: [80, 85, 0], f: [76, 85, 0] };
-    const hip = [0, -LEG - 18 + bob], lean = (A.lean || 0) + (C.hunch || 0) + (WP ? WP.lean : 0);
+    if (A.free) legs = { n: [A.legNT || 0, A.legNK || 0, A.legNF || 0], f: [A.legFT || 0, A.legFK || 0, A.legFF || 0] };
+    const life = (WP || A.free || (A.sitK || 0) > 0) ? 0 : (A.life ?? 1);
+    const hip = [A.free ? (A.hipShift || 0) : 0, A.free ? -LEG - 30 + (A.hipDrop || 0) : -LEG - 18 + bob];
+    const lean = (A.lean || 0) + (C.hunch || 0) + (WP ? WP.lean : 0) + life * 1.3 * Math.sin(t * 0.5 + (A.seed || 0) * 1.7);
     const sho = [hip[0] + Math.sin(lean * D2R) * 290, hip[1] - 290 + breathe * 0.4];
     const kneeOf = (l) => pol(hip, THIGH, l[0]);
     const ankOf = (l) => pol(kneeOf(l), SHIN, l[0] - l[1]);
     // ถ้าเท้ายืนอยู่กับพื้น ให้ยกตัวพอดี (ขาที่ต่ำสุดแตะพื้น)
     const lowY = Math.max(ankOf(legs.n)[1], ankOf(legs.f)[1]);
-    const dy = A.sit ? 0 : -(lowY - (-30)) + (walking > 0 ? 5 * walking * (1 - Math.cos(walkP * 4 * Math.PI)) * 0.5 - 3 * walking : 0);
+    const dy = (A.sit || A.free) ? 0 : -(lowY - (-30)) + (walking > 0 ? 5 * walking * (1 - Math.cos(walkP * 4 * Math.PI)) * 0.5 - 3 * walking : 0);
     const off = (p) => [p[0], p[1] + dy];
     let H = off(hip), S = off(sho), IK = null;
     // ---- เดิน: เท้าล็อกกับพื้นตามจุดหมุน (ส้น/ปลายเท้า) + IK สองท่อน ----
@@ -320,9 +350,24 @@
         IK[k] = { K: ik.K, A: ik.A, ang: F.ang * w };
       }
     }
+    // ---- นั่งลง/ลุกขึ้น: เท้าวางนิ่ง สะโพกเคลื่อนเป็นโค้งไปหลัง-ลง ลำตัวโน้มหน้าถ่ายน้ำหนัก ----
+    if (!WP && (A.sitK || 0) > 0) {
+      const k = RK.clamp(A.sitK), sm = (x) => { x = RK.clamp(x); return x * x * (3 - 2 * x); };
+      const kx = sm(k * 1.25), ky = sm((k - 0.12) / 0.88);
+      H = [(A.seatX ?? -78) * kx, H[1] + ((A.seatY ?? -262) - H[1]) * ky];
+      const lean2 = lean + 32 * Math.sin(Math.PI * Math.min(1, k)) * (1 - 0.45 * k);
+      S = [H[0] + Math.sin(lean2 * D2R) * 290, H[1] - 290 + breathe * 0.4];
+      const st = { n: off(ankOf(legs.n)), f: off(ankOf(legs.f)) }, seatA = { n: [44, -30], f: [26, -30] };
+      IK = {};
+      for (const kk of ["n", "f"]) { const tg = [st[kk][0] + (seatA[kk][0] - st[kk][0]) * ky, -30]; const ik = RK.flatIK(H, tg); IK[kk] = { K: ik.K, A: ik.A, ang: 0 }; }
+    }
+    const lg = A.laugh || 0;
+    if (lg) S = [S[0] - 4 * lg, S[1] - Math.abs(Math.sin(t * 15)) * 7 * lg];
+    A._H = H;
     const pantsW = C.bottomKind === "wide" ? [70, 66] : [66, 54];
     const farC = (c) => sh(c, -0.22);
     let s = "";
+    const ROT = A.torsoRot ? `<g transform="rotate(${f(A.torsoRot)} ${f(H[0])} ${f(H[1])})">` : "";
     const bw = C.bodyW || 1, bel = C.belly || 0, hk = C.headK || 1, hun = C.hunch || 0, BK = C.bottomKind || "chino";
     const PL = ({ shorts: 0.5, skirt: 0, pencil: 0, sarong: 0, sin: 0 })[BK] ?? 1;
     const ctx = { A, t, view: "side", far: false };
@@ -356,7 +401,7 @@
       A._hand = A._hand || {}; A._hand[far ? "f" : "n"] = { p: wr, ang: ha };
       return r;
     };
-    s += drawArm(arms.f, true);
+    { const m0 = s.length; s += drawArm(arms.f, true); if (ROT) s = s.slice(0, m0) + ROT + s.slice(m0) + "</g>"; }
     // ขาไกล
     const drawLeg = (l, far) => {
       const ik = IK && IK[far ? "f" : "n"];
@@ -382,6 +427,7 @@
     };
     s += drawLeg(legs.f, true);
     s += drawLeg(legs.n, false);
+    const UP0 = s.length;
     // ลำตัว (กว้าง/พุงตามรูปร่าง)
     const tx = S[0] - H[0], ty = S[1] - H[1];
     const T = (x, y) => { let xx = x * bw; if (x > 0 && bel) xx += bel * Math.pow(Math.max(0, Math.sin(Math.PI * RK.clamp((-y + 10) / 250))), 1.3); return [H[0] + xx + tx * (-y / 290), H[1] + y * (ty / -290)]; };
@@ -423,33 +469,45 @@
     if (RK.FLAT_TOP && RK.FLAT_TOP[C.topKind]) s += RK.FLAT_TOP[C.topKind].side(C, T, ctx);
     if (RK.FLAT_BOTTOM && RK.FLAT_BOTTOM[BK]) s += RK.FLAT_BOTTOM[BK].side(C, T, ctx);
     // หัว
-    const nod = (A.nod || 0) + (A.talk ? Math.sin(t * 9) * 2 * A.talk : 0) + (WP ? WP.headTilt : 0);
+    const nod = (A.nod || 0) + (A.talk ? Math.sin(t * 9) * 2 * A.talk : 0) + (WP ? WP.headTilt : 0) - 8 * lg + (life ? 2.5 * Math.sin(t * 0.7 + (A.seed || 0)) * life : 0);
     const hp = hp0;
     s += `<g transform="translate(${P(hp[0], hp[1])}) rotate(${f((A.tilt || 0) + nod + hun * 0.6)}) scale(${f(hk)})">` + headSide(C, A) + `</g>`;
     // ปกเสื้อ (ทับคอ)
     s += path(`M ${P(...T(-30, -296))} Q ${P(...T(0, -306))} ${P(...T(30, -298))} L ${P(...T(26, -286))} Q ${P(...T(0, -292))} ${P(...T(-26, -284))} Z`, sh(C.top, -0.12));
     if (RK.flatBodyAcc) s += RK.flatBodyAcc(C, A, "side", ctx);
     s += drawArm(arms.n, false);
-    A._head = hp;
+    if (ROT) s = s.slice(0, UP0) + ROT + s.slice(UP0) + "</g>";
+    A._head = A.torsoRot ? (() => { const a = A.torsoRot * D2R, dx = hp[0] - H[0], dy2 = hp[1] - H[1]; return [H[0] + dx * Math.cos(a) - dy2 * Math.sin(a), H[1] + dx * Math.sin(a) + dy2 * Math.cos(a)]; })() : hp;
     return s;
   }
 
   // ---------- ตัว: ด้านหน้า ----------
   function bodyFront(C, A, t) {
-    const sk = C.skin, pose = armPose(A, t), breathe = Math.sin(t * 2.2 + (A.seed || 0)) * 3;
-    const H = [0, -LEG - 18 + 18], S = [0, H[1] - 290 + breathe * 0.4];
+    const sk = C.skin, pose = armPose(A, t), breathe = Math.sin(t * 2.2 + (A.seed || 0)) * 3, back = A.view === "back";
+    // เดินเข้า/ออกจากกล้อง: ใช้จังหวะเดียวกับวงจรเดินด้านข้าง (สะโพกขึ้นลง ถ่ายน้ำหนักซ้ายขวา แขนแกว่ง)
+    const fw = A._fw || 0, fp = A._fwP || 0, FW = fw > 0 && RK.flatWalkPose ? RK.flatWalkPose(A.who, fp, fw) : null;
+    const life = FW ? 0 : (A.life ?? 1);
+    const hx = (FW ? 8 * fw * Math.sin(2 * Math.PI * (fp - 0.08)) : 0) + life * 5 * Math.sin(t * 0.5 + (A.seed || 0) * 1.7);
+    const hbob = FW ? (FW.hipY - (-30 - (225 + 205) * FW.g.crouch)) * 1.1 : 0;
+    const lg = A.laugh || 0;
+    const H = [hx, -LEG + hbob], S = [hx, H[1] - 290 + breathe * 0.4 - Math.abs(Math.sin(t * 15)) * 7 * lg];
+    if (FW) { pose.n = [FW.arms.n[0] * 0.8, FW.arms.n[1] * 0.6]; pose.f = [FW.arms.f[0] * 0.8, FW.arms.f[1] * 0.6]; }
+    const tiltT = FW ? -2.2 * fw * Math.sin(2 * Math.PI * (fp - 0.08)) : 0;
     const pantsW = C.bottomKind === "wide" ? [72, 68] : [66, 56];
     const bw = C.bodyW || 1, bel = C.belly || 0, hk = C.headK || 1, hun = C.hunch || 0, BK = C.bottomKind || "chino";
     const PL = ({ shorts: 0.5, skirt: 0, pencil: 0, sarong: 0, sin: 0 })[BK] ?? 1;
     const ctx = { A, t, view: "front", S, H, hk, bw, bel };
     const nod0 = (A.nod || 0) + (A.talk ? Math.sin(t * 9) * 2 * A.talk : 0);
     const HY = S[1] - 112 - (hk - 1) * 80 + hun * 2.2;
-    let s = `<g transform="translate(0,${f(HY)}) rotate(${f((A.tilt || 0) + nod0 * 0.5)}) scale(${f(hk)})">${hairFront(C, A.sway || 0).back}</g>`;
+    let s = back ? "" : `<g transform="translate(${f(hx * 0.6)},${f(HY)}) rotate(${f((A.tilt || 0) + nod0 * 0.5)}) scale(${f(hk)})">${hairFront(C, A.sway || 0).back}</g>`;
     if (RK.flatBodyAcc) s += RK.flatBodyAcc(C, A, "frontBack", ctx);
     // ขา
     for (const sd of [-1, 1]) {
-      const hp = [sd * 32, H[1] + 34], an = [sd * 34, -36];
-      const kn = [sd * 33, (hp[1] + an[1]) / 2];
+      const u = (((fp + (sd > 0 ? 0 : 0.5)) % 1) + 1) % 1, swing = FW && u > 0.6 ? Math.pow(Math.sin(Math.PI * (u - 0.6) / 0.4), 1.1) * fw : 0;
+      const down = FW && u < 0.6 ? Math.max(0, Math.sin(Math.PI * u / 0.6)) * 0.25 * fw : 0;
+      const hp = [sd * 32 + hx * 0.6, H[1] + 34], an = [sd * 34, -36 - 58 * swing];
+      const kn = [sd * (33 + 5 * swing) + hx * 0.3, (hp[1] + an[1]) / 2 - 30 * swing + 6 * down];
+      A._fwSwing = A._fwSwing || {}; A._fwSwing[sd] = swing;
       const pc = sh(C.bottom, sd < 0 ? -0.06 : 0), skc = sh(sk, sd < 0 ? -0.05 : 0);
       if (PL >= 1) {
         s += taper(hp, kn, pantsW[0], pantsW[0] - 4, pc) + taper(kn, an, pantsW[0] - 4, pantsW[1], pc);
@@ -461,8 +519,10 @@
         s += taper(hp, kn, 54, 46, skc) + taper(kn, an, 46, 36, skc);
       }
       s += taper(an, [an[0], an[1] + 10], 24, 24, C.sock || sk);
-      s += (C.shoeKind && RK.FLAT_SHOE && RK.FLAT_SHOE[C.shoeKind]) ? RK.FLAT_SHOE[C.shoeKind].front(C, sd) : `<g transform="translate(${P(sd * 36, -10)})">` + path(`M -30,-6 C -32,-30 32,-30 30,-6 C 32,8 26,14 0,14 C -26,14 -32,8 -30,-6 Z`, C.shoe) + path(`M -30,6 C -26,14 26,14 30,6 L 30,10 C 26,18 -26,18 -30,10 Z`, sh(C.shoe, -0.35)) + `</g>`;
+      const shoeT = swing ? `<g transform="translate(0,${f(-58 * swing)}) translate(${sd * 36},-10) scale(${f(1 + (A._fwDir || 1) * 0.1 * swing)}) translate(${-sd * 36},10)">` : "<g>";
+      s += shoeT + ((C.shoeKind && RK.FLAT_SHOE && RK.FLAT_SHOE[C.shoeKind]) ? RK.FLAT_SHOE[C.shoeKind].front(C, sd) : `<g transform="translate(${P(sd * 36, -10)})">` + path(`M -30,-6 C -32,-30 32,-30 30,-6 C 32,8 26,14 0,14 C -26,14 -32,8 -30,-6 Z`, C.shoe) + path(`M -30,6 C -26,14 26,14 30,6 L 30,10 C 26,18 -26,18 -30,10 Z`, sh(C.shoe, -0.35)) + `</g>`) + "</g>";
     }
+    const UPF = s.length;
     // แขน (หน้า: มุมกางออกด้านข้าง)
     const drawArm = (sd, a) => {
       const sp = [sd * 62 * bw, S[1] + 34];
@@ -502,10 +562,10 @@
     const tp = [[-70, H[1] + 10], [-64, H[1] - 60], [-56, H[1] - 150], [-66, H[1] - 230], [-74, S[1] + 22], [-40, S[1] - 6], [40, S[1] - 6], [74, S[1] + 22], [66, H[1] - 230], [56, H[1] - 150], [64, H[1] - 60], [70, H[1] + 10]].map(([x, y]) => [x * bw + Math.sign(x) * bb(y), y]);
     s += path(RK.smooth(tp, true), C.top);
     ctx.tpD = RK.smooth(tp, true); ctx.tp = tp;
-    if (C.topKind === "tee") {
+    if (C.topKind === "tee" && !back) {
       s += path(`M -36,${f(S[1] - 4)} Q 0,${f(S[1] + 34)} 36,${f(S[1] - 4)}`, "none", `stroke="${sh(C.top, -0.3)}" stroke-width="8" stroke-linecap="round"`);
       s += `<g transform="translate(0,${f(S[1] + 110)})">` + circ(0, 0, 30, C.print) + path(`M -14,-2 L 0,-18 L 14,-2 L 6,-2 L 6,16 L -6,16 L -6,-2 Z`, C.top) + `</g>`;
-    } else if (C.topKind === "blouse") {
+    } else if (C.topKind === "blouse" && !back) {
       s += path(`M -30,${f(S[1] - 5)} L 0,${f(S[1] + 34)} L 30,${f(S[1] - 5)} Z`, sh(sk, -0.04));
       s += path(`M -24,${f(S[1] + 18)} Q -12,${f(S[1] + 24)} -4,${f(S[1] + 22)} M 24,${f(S[1] + 18)} Q 12,${f(S[1] + 24)} 4,${f(S[1] + 22)}`, "none", `stroke="${sh(sk, -0.2)}" stroke-width="2.5" opacity=".6" stroke-linecap="round"`);
       s += path(`M -44,${f(S[1] - 8)} L -30,${f(S[1] - 5)} L 0,${f(S[1] + 34)} L -10,${f(S[1] + 44)} Z M 44,${f(S[1] - 8)} L 30,${f(S[1] - 5)} L 0,${f(S[1] + 34)} L 10,${f(S[1] + 44)} Z`, sh(C.top, -0.06));
@@ -517,14 +577,17 @@
       s += path(`M -36,${f(H[1] - 10)} L 36,${f(H[1] - 10)} L 38,${f(H[1] + 40)} L -38,${f(H[1] + 40)} Z`, sh(C.apron, -0.1)) + path(`M 0,${f(H[1] - 10)} L 0,${f(H[1] + 40)}`, "none", `stroke="${sh(C.apron, -0.25)}" stroke-width="3"`);
       s += path(`M -66,${f(H[1] - 120)} L 66,${f(H[1] - 120)}`, "none", `stroke="${sh(C.apron, -0.12)}" stroke-width="10"`);
     }
-    if (RK.FLAT_TOP && RK.FLAT_TOP[C.topKind]) s += RK.FLAT_TOP[C.topKind].front(C, ctx);
-    if (RK.FLAT_BOTTOM && RK.FLAT_BOTTOM[BK]) s += RK.FLAT_BOTTOM[BK].front(C, ctx);
+    if (!back && RK.FLAT_TOP && RK.FLAT_TOP[C.topKind]) s += RK.FLAT_TOP[C.topKind].front(C, ctx);
+    if (!back && RK.FLAT_BOTTOM && RK.FLAT_BOTTOM[BK]) s += RK.FLAT_BOTTOM[BK].front(C, ctx);
+    if (back) s += path(`M -40,${f(S[1] - 6)} Q 0,${f(S[1] + 8)} 40,${f(S[1] - 6)}`, "none", `stroke="${sh(C.top, -0.25)}" stroke-width="7" stroke-linecap="round"`) + path(`M 0,${f(S[1] + 20)} L 0,${f(H[1] - 30)}`, "none", `stroke="${sh(C.top, -0.12)}" stroke-width="3" opacity=".5"`);
     s += drawArm(-1, pose.f) + drawArm(1, pose.n);
     const nod = (A.nod || 0) + (A.talk ? Math.sin(t * 9) * 2 * A.talk : 0);
-    const hp = [0, HY];
-    s += `<g transform="translate(${P(hp[0], hp[1])}) rotate(${f((A.tilt || 0) + nod * 0.5)}) scale(${f(hk)})">` + headFront(C, Object.assign({}, A, { noBack: true })) + `</g>`;
+    const hp = [0, HY + (FW ? FW.headDy : 0)];
+    s += `<g transform="translate(${P(hp[0], hp[1])}) rotate(${f((A.tilt || 0) + nod * 0.5 - tiltT * 0.6 - 6 * lg)}) scale(${f(hk)})">` + (back ? headBack(C, A) : headFront(C, Object.assign({}, A, { noBack: true }))) + `</g>`;
     if (RK.flatBodyAcc) s += RK.flatBodyAcc(C, A, "front", ctx);
-    A._head = hp;
+    if (hx) s = s.slice(0, UPF) + `<g transform="translate(${f(hx * 0.6)},0)">` + s.slice(UPF) + "</g>";
+    if (tiltT) s = s.slice(0, UPF) + `<g transform="rotate(${f(tiltT)} ${f(H[0])} ${f(H[1])})">` + s.slice(UPF) + "</g>";
+    A._head = hp; A._H = H;
     return s;
   }
 
@@ -546,14 +609,15 @@
     A.blink = Math.max(A.blink || 0, bp < 0.14 ? Math.sin(bp / 0.14 * Math.PI) : 0);
     A.sway = A.sway ?? (Math.sin(t * 1.6 + (A.seed || 0)) * 0.25 + ((A._walking > 0 && A.view !== "front" && RK.flatWalkPose) ? RK.flatWalkPose(A.who, A._walkP, A._walking).sway * 3 : 0));
     A._hand = {};
-    const body = (A.view === "front" ? bodyFront : bodySide)(C, A, t);
+    const body = ((A.view === "front" || A.view === "back") ? bodyFront : bodySide)(C, A, t);
+    const pre = RK.flatActorPre ? RK.flatActorPre(C, A, t) : "", post = RK.flatActorPost ? RK.flatActorPost(C, A, t) : "";
     let prop = "";
-    if (A.prop && RK.FLAT_PROPS[A.prop] && !(RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) && A._hand[A.propHand || "n"] && A.view === "front") {
+    if (A.prop && RK.FLAT_PROPS[A.prop] && !(RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) && A._hand[A.propHand || "n"] && A.view !== "side") {
       const h = A._hand[A.propHand || "n"];
       prop = `<g transform="translate(${P(h.p[0] + (A.view === "front" ? 0 : 6), h.p[1] + 22)})">${RK.FLAT_PROPS[A.prop](A.propColor)}</g>`;
     }
     const sc = (A.s || 0.5) * C.h, dir = A.dir || 1;
     const shadow = `<ellipse cx="0" cy="0" rx="${f(150 * sc * (A.view === "front" ? 0.9 : 1.15))}" ry="${f(22 * sc)}" fill="#000" opacity=".28" filter="url(#fBlur8)"/>`;
-    return `<g data-actor="${A.who}" transform="translate(${f(A.x)},${f(A.y)})">${shadow}<g transform="scale(${f(sc * dir)},${f(sc)})" filter="url(#${A.light || "litR"})">${body}${prop}</g></g>`;
+    return `<g data-actor="${A.who}" transform="translate(${f(A.x)},${f(A.y)})">${shadow}<g transform="scale(${f(sc * dir * (A.sx ?? 1))},${f(sc)})" filter="url(#${A.light || "litR"})">${pre}${body}${prop}${post}</g></g>`;
   };
 })(window);

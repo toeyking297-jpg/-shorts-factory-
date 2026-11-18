@@ -55,9 +55,13 @@
     chai: { strideK: 0.88, bounce: 1.15, armF: 14, armB: 11, elb0: 20, armFwd: 9, lean: -0.5, leanOsc: 1.8, cadence: 0.86, asymLift: 0.93 },
     piak: { strideK: 0.9, bounce: 1.05, armF: 17, armB: 13, lean: 2, cadence: 0.95 },
   };
-  RK.flatGait = (who) => Object.assign({}, BASE, RK.FLAT_GAIT[who] || {});
+  // วิ่ง: ช่วงรับน้ำหนักสั้น มีช่วงลอยตัว ส้นเตะสูง แขนงอเกือบฉากแกว่งแรง ลำตัวเอนหน้า
+  const RUN = { strideK: 1.75, beta: 0.36, heelStrike: 4, toeOff: 44, swX: [0.1, 0.72], swY: [150, 100, 26], lift: 1, armF: 38, armB: 34, armFwd: 8,
+    elb0: 78, elb1: 16, wrist: 6, lean: 9, leanOsc: 2.2, crouch: 0.94, shoulder: 8, headStab: 0.7, cadence: 1.45,
+    hipKeys: [[0, 0], [0.12, 14], [0.3, -4], [0.42, -16], [0.5, 0], [0.62, 14], [0.8, -4], [0.92, -16]] };
+  RK.flatGait = (who, run) => Object.assign({}, BASE, RK.FLAT_GAIT[who] || {}, run ? RUN : {});
   RK.FLAT_STRIDE_BASE = 520;
-  RK.flatStride = (who) => RK.FLAT_STRIDE_BASE * RK.flatGait(who).strideK;
+  RK.flatStride = (who, run) => RK.FLAT_STRIDE_BASE * RK.flatGait(who, run).strideK;
 
   // ---------- เท้า 1 ข้าง ณ เฟสขา u (0 = ส้นแตะพื้น) ----------
   // คืน ankle (เทียบสะโพกแกน x, y ในพิกัดตัว), ang (องศา + = ปลายเท้าทิ่มลง), stance, pivot (จุดล็อกกับพื้น)
@@ -78,9 +82,10 @@
     if (u <= B) return stanceAt(u);
     // ช่วงเหวี่ยง: Hermite จากท่าปลายเท้าถีบ → Contact รอบถัดไป
     const s = (u - B) / (1 - B), a0 = stanceAt(B), a1 = stanceAt(0), sw = 1 - B;
-    const x = open([[0, a0.A[0]], [0.3, lerp(a0.A[0], a1.A[0], 0.22)], [0.6, lerp(a0.A[0], a1.A[0], 0.66)], [1, a1.A[0]]], s, -L * 0.25 * sw, -L * 0.18 * sw);
+    const sx = g.swX || [0.22, 0.66], sy = g.swY || [62, 36, 10];
+    const x = open([[0, a0.A[0]], [0.3, lerp(a0.A[0], a1.A[0], sx[0])], [0.6, lerp(a0.A[0], a1.A[0], sx[1])], [1, a1.A[0]]], s, -L * 0.25 * sw, -L * 0.18 * sw);
     const yTop = ANK_Y;
-    const y = open([[0, a0.A[1]], [0.28, yTop - 62 * g.lift * liftK], [0.58, yTop - 36 * g.lift * liftK], [0.86, yTop - 10 * g.lift * liftK], [1, a1.A[1]]], s, -60 * sw, 30 * sw);
+    const y = open([[0, a0.A[1]], [0.28, yTop - sy[0] * g.lift * liftK], [0.58, yTop - sy[1] * g.lift * liftK], [0.86, yTop - sy[2] * g.lift * liftK], [1, a1.A[1]]], s, -60 * sw, 30 * sw);
     const ang = open([[0, a0.ang], [0.3, g.toeOff * 0.55], [0.62, 2], [0.9, -g.heelStrike * 0.85], [1, a1.ang]], s, -20 * sw, 0);
     return { A: [x, y], ang, stance: false };
   }
@@ -98,12 +103,12 @@
   };
 
   // ---------- ท่าเดินทั้งตัว ณ เฟส p (ขาใกล้) ----------
-  RK.flatWalkPose = function (who, p, w = 1) {
-    const g = RK.flatGait(who);
+  RK.flatWalkPose = function (who, p, w = 1, run = false) {
+    const g = RK.flatGait(who, run);
     const fn = footAt(g, p, 1), ff = footAt(g, p + 0.5, g.asymLift);
     // สะโพก: คีย์ต่อครึ่งรอบ (Contact 0, Down .09, Passing .22, Up .33) ค่าบวก = ลง
     const hk = (o) => [[0 + o, 2], [0.09 + o, 9], [0.22 + o, 0], [0.33 + o, -7], [0.43 + o, -2]];
-    const hipKeys = [...hk(0), ...hk(0.5).map(([u, v]) => [u, v * 0.94])];
+    const hipKeys = g.hipKeys || [...hk(0), ...hk(0.5).map(([u, v]) => [u, v * 0.94])];
     let hipDy = cyc(hipKeys, p) * g.bounce;
     const stand = ANK_Y - LEGL * g.crouch;
     let hy = stand + hipDy;

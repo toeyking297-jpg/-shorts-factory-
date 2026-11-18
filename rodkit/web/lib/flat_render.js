@@ -84,15 +84,22 @@
     const A = RK.resolve(a, t);
     const sc = (A.s || 0.5) * ((RK.FLAT_CAST[A.who] || {}).h || 1);
     const x1 = RK.kf(a.x, t - 0.04), x2 = RK.kf(a.x, t + 0.04), sp = Math.abs(x2 - x1) / 0.08;
-    const strideW = (RK.flatStride ? RK.flatStride(A.who) : RK.FLAT_STRIDE) * sc;
-    A._walking = A.view === "front" ? 0 : RK.clamp(sp / (strideW * 0.55));
+    const strideW = (RK.flatStride ? RK.flatStride(A.who, !!A.run) : RK.FLAT_STRIDE) * sc;
+    const side = A.view !== "front" && A.view !== "back";
+    A._walking = side && !A.free && !(A.sitK > 0) ? RK.clamp(sp / (strideW * 0.55)) : 0;
     A._walkP = ((A.x * (A.dir || 1)) / strideW % 1 + 1) % 1;
+    if (!side) { // เดินเข้า/ออกจากกล้อง: จังหวะจากระยะที่เคลื่อนในแนวลึก
+      const y1 = RK.kf(a.y, t - 0.04), y2 = RK.kf(a.y, t + 0.04), spY = Math.abs(y2 - y1) / 0.08, strideY = strideW * 0.32;
+      A._fw = RK.clamp(spY / (strideY * 0.55)); A._fwP = ((Math.abs(A.y) / strideY) % 1 + 1) % 1; A._fwDir = Math.sign(y2 - y1) || 1;
+    }
     // พูด: ช่วงเวลา say [[t0,t1],...]
     A.talk = 0;
     for (const [s0, s1] of a.say || []) if (t >= s0 && t <= s1) {
       const n = RK.noise1(t * 11, 3) * 0.7 + RK.noise1(t * 23, 7) * 0.3;
       A.talk = RK.clamp((n - 0.2) * 1.5) * RK.clamp((t - s0) / 0.08) * RK.clamp((s1 - t) / 0.08);
     }
+    if (A.laugh > 0) { A.talk = Math.max(A.talk, (0.45 + 0.55 * Math.abs(Math.sin(t * 15))) * A.laugh); if (A.mood !== "laugh") A.mood = "laugh"; }
+    if (a.chew) for (const [s0, s1] of a.chew) if (t >= s0 && t <= s1) A.talk = Math.max(A.talk, 0.15 + 0.15 * Math.abs(Math.sin(t * 9)));
     if (a.blinkAt) for (const b of a.blinkAt) { const d = Math.abs(t - b); if (d < 0.08) A.blink = 1 - d / 0.08; }
     return A;
   }

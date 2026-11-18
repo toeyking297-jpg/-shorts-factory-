@@ -6,11 +6,11 @@ const who = process.argv.slice(2).length ? process.argv.slice(2) : ["phum", "pra
 const FPS = 30, CYC = 3;
 const rows = [];
 for (const w of who) {
-  const g = RK.flatGait(w), L = RK.flatStride(w), N = Math.round(FPS / g.cadence * CYC);
+  const RUNM = process.env.RUN === "1", g = RK.flatGait(w, RUNM), L = RK.flatStride(w, RUNM), N = Math.round(FPS / g.cadence * CYC);
   let slide = 0, sink = 0, kneeJump = 0, stretch = 0, prevK = null, seam = 0, prev = null, maxKnee = 0, minKnee = 999;
   const lock = { n: null, f: null };
   for (let i = 0; i <= N; i++) {
-    const p = (i / N) * CYC, bodyX = p * L, P = RK.flatWalkPose(w, p % 1, 1);
+    const p = (i / N) * CYC, bodyX = p * L, P = RK.flatWalkPose(w, p % 1, 1, RUNM);
     const H = [0, P.hipY];
     for (const k of ["n", "f"]) {
       const Fo = P.feet[k], ik = RK.flatIK(H, Fo.A);
