@@ -181,11 +181,20 @@
     return s;
   }
   function crowd(t) {
-    let s = `<g opacity=".55">`;
-    const r = RK.rng(5), cols = ["#6C7A89", "#8E6F7E", "#7C8E6A", "#A0806A", "#5E6E8E"];
-    for (let i = 0; i < 16; i++) {
-      const x = -1600 + i * 210 + r() * 80 + ((t * (r() < 0.5 ? 20 : -16)) % 200), y = -330 + r() * 40, k = 0.8 + r() * 0.3, c = cols[i % 5], bob = Math.sin(t * 6 + i) * 4;
-      s += `<g transform="translate(${f(x)},${f(y + bob)}) scale(${f(k)})">` + C(0, -320, 38, "#B98C6E") + Pth("M -50,-280 C -60,-200 -56,-120 -46,0 L 46,0 C 56,-120 60,-200 50,-280 Z", c) + `</g>`;
+    let s = `<g opacity=".92">`;
+    const r = RK.rng(5), shirts = ["#6C8FA6", "#C96F4A", "#86A85E", "#E3B062", "#8E6FA8", "#F2F4F6", "#2F5E6B", "#D98E6A"], pants = ["#3B3F5C", "#5A4A42", "#2F3A4A", "#6B5A4A"], skins = ["#E8B690", "#D7A079", "#C48A5E", "#F1C6A2"], hair = ["#1C1414", "#2A201C", "#4A403A", "#E8E4DE"];
+    for (let i = 0; i < 18; i++) {
+      const dir = r() < 0.5 ? 1 : -1, sp = 14 + r() * 14, x = ((-1800 + i * 200 + r() * 90 + dir * t * sp) % 3600 + 3600) % 3600 - 1800, y = -340 + r() * 50, k = 0.62 + r() * 0.18;
+      const sc = shirts[i % 8], pc = pants[i % 4], skc = skins[i % 4], hc = hair[i % 4], ph = t * 5 + i, sw = Math.sin(ph) * 10, bob = Math.abs(Math.sin(ph)) * 4;
+      let g = `<g transform="translate(${f(x)},${f(y - bob)}) scale(${f(k * dir)},${f(k)})">`;
+      g += E(0, 4 + bob, 70, 12, "#000", 'opacity=".15"');
+      g += Pth(`M -18,-300 L ${f(-30 + sw)},0 L ${f(-6 + sw)},0 L 0,-250 L ${f(6 - sw)},0 L ${f(30 - sw)},0 L 18,-300 Z`, pc);
+      g += RR(-46, -560, 92, 280, 30, sc) + Pth(`M -46,-520 L ${f(-60 - sw * 0.6)},-340 L ${f(-44 - sw * 0.6)},-336 L -30,-480 Z M 46,-520 L ${f(60 + sw * 0.6)},-340 L ${f(44 + sw * 0.6)},-336 L 30,-480 Z`, sh(sc, -0.08));
+      g += C(f(-52 - sw * 0.6), -330, 12, skc) + C(f(52 + sw * 0.6), -330, 12, skc);
+      g += R(-12, -600, 24, 44, skc) + C(0, -640, 42, skc) + Pth("M -42,-640 C -44,-700 44,-700 42,-640 C 30,-662 -30,-662 -42,-640 Z", hc);
+      if (i % 4 === 0) g += Pth("M -70,-680 L 70,-680 L 40,-720 L -40,-720 Z", "#E8D6A8") + E(0, -680, 74, 12, "#D9C28A");
+      if (i % 3 === 1) g += Pth(`M ${f(56 + sw * 0.6)},-330 l 10,0 l 6,70 l -40,0 l 6,-70 Z`, "#FFFFFF", 'opacity=".9"') + Pth(`M ${f(60 + sw * 0.6)},-300 q 10,30 -10,40`, "none", ST("#E4572E", 3));
+      s += g + `</g>`;
     }
     return s + `</g>`;
   }
@@ -208,7 +217,7 @@
     return s;
   }
   function stall(x, y, w, t, goods, cloth) {
-    let s = R(x - w / 2, y, w, 26, "#8C5E3C") + R(x - w / 2 + 20, y + 26, 22, 330 + Math.abs(y), "#6B4A33") + R(x + w / 2 - 42, y + 26, 22, 330 + Math.abs(y), "#6B4A33");
+    let s = R(x - w / 2, y, w, 26, "#8C5E3C") + R(x - w / 2 + 20, y + 26, 22, 274, "#6B4A33") + R(x + w / 2 - 42, y + 26, 22, 274, "#6B4A33") + E(x, y + 300, w * 0.55, 22, "#1E1410", 'opacity=".25"');
     s += Pth(`M ${x - w / 2 - 10},${y + 20} L ${x + w / 2 + 10},${y + 20} L ${x + w / 2 + 10},${y + 160} L ${x - w / 2 - 10},${y + 160} Z`, cloth) + R(x - w / 2 - 10, y + 140, w + 20, 20, sh(cloth, -0.2));
     const slots = goods.length;
     goods.forEach((g, i) => {
