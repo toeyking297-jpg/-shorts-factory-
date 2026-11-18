@@ -1,0 +1,188 @@
+{
+ "id": "SETS_WORK",
+ "engine": "flat",
+ "fps": 30,
+ "set": "office",
+ "shots": [
+  {
+   "name": "office_day",
+   "set": "office",
+   "dur": 1,
+   "cam": {
+    "x": -100,
+    "y": -700,
+    "z": 0.64
+   },
+   "actors": []
+  },
+  {
+   "name": "office_staff",
+   "set": "office",
+   "dur": 1,
+   "cam": {
+    "x": -120,
+    "y": -380,
+    "z": 1.0
+   },
+   "dof": {
+    "bg": 2
+   },
+   "actors": [
+    {
+     "who": "te",
+     "light": "litL",
+     "seed": 0,
+     "y": 20,
+     "s": 0.62,
+     "mood": "laugh",
+     "view": "front",
+     "x": -403,
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0
+    },
+    {
+     "who": "jan",
+     "light": "litL",
+     "seed": 1,
+     "y": 20,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 173,
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0
+    },
+    {
+     "who": "phum",
+     "light": "litL",
+     "seed": 2,
+     "y": 230,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": 520,
+     "dir": -1
+    }
+   ]
+  },
+  {
+   "name": "office_late",
+   "set": "office",
+   "setOpts": {
+    "late": true
+   },
+   "dur": 1,
+   "cam": {
+    "x": -100,
+    "y": -480,
+    "z": 0.8
+   },
+   "actors": [
+    {
+     "who": "te",
+     "light": "litL",
+     "seed": 0,
+     "y": 20,
+     "s": 0.62,
+     "mood": "yawn",
+     "view": "front",
+     "x": -403,
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0
+    }
+   ]
+  },
+  {
+   "name": "market_wide",
+   "set": "market",
+   "dur": 1,
+   "cam": {
+    "x": 0,
+    "y": -760,
+    "z": 0.6
+   },
+   "actors": []
+  },
+  {
+   "name": "market_piak",
+   "set": "market",
+   "dur": 1,
+   "cam": {
+    "x": 60,
+    "y": -420,
+    "z": 0.95
+   },
+   "dof": {
+    "bg": 2
+   },
+   "actors": [
+    {
+     "who": "piak",
+     "light": "litL",
+     "seed": 1,
+     "y": 20,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 0,
+     "layer": "back",
+     "clipY": 0,
+     "arms": "wave"
+    },
+    {
+     "who": "mali",
+     "light": "litL",
+     "seed": 1,
+     "y": 240,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": 470,
+     "dir": -1
+    }
+   ]
+  },
+  {
+   "name": "market_walk",
+   "set": "market",
+   "dur": 1,
+   "cam": {
+    "x": -600,
+    "y": -440,
+    "z": 0.85
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 260,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": -700,
+     "dir": 1
+    },
+    {
+     "who": "boon",
+     "light": "litL",
+     "seed": 3,
+     "y": 240,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": -880,
+     "dir": 1,
+     "prop": "cane",
+     "arms": "cane"
+    }
+   ]
+  }
+ ]
+}

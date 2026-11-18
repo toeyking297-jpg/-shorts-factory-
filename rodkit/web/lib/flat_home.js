@@ -134,6 +134,8 @@
     return s;
   }
 
+  RK._kit = { plant, books, clock, calendar, frame, pendant, floor, baseboard, windowView, curtains, familyPic };
+
   // ======================= ห้องนั่งเล่น =======================
   const LW = { x: -1180, y: -1450, w: 520, h: 620 };
   function lWall(t, o) {
