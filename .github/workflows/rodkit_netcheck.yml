@@ -18,5 +18,6 @@ jobs:
             echo "== $u (key, v4)";      curl -4 -m 25 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" "$u" || true
             echo "== $u (key, v6)";      curl -6 -m 25 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" "$u" || true
           done
-          echo "== user (key)"; curl -4 -m 25 -sS -w "\n%{http_code} %{time_total}s\n" -H "xi-api-key: $K" https://api.elevenlabs.io/v1/user/subscription | tail -c 300 || true
+          echo "== user (key)"; curl -4 -m 90 -sS -H "xi-api-key: $K" https://api.elevenlabs.io/v1/user/subscription | python3 -c "import json,sys;j=json.load(sys.stdin);print('tier=',j.get('tier'),'used=',j.get('character_count'),'limit=',j.get('character_limit'),'status=',j.get('status'))" || true
+          echo "key tail: ${K: -4}"
           echo "== voices (key)"; curl -4 -m 40 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" https://api.elevenlabs.io/v1/voices || true
