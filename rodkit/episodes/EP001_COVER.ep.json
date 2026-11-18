@@ -1,0 +1,115 @@
+{
+ "id": "EP001_COVER",
+ "engine": "flat",
+ "fps": 30,
+ "set": "porch",
+ "shots": [
+  {
+   "name": "cover",
+   "dur": 3,
+   "cam": {
+    "x": 250,
+    "y": -300,
+    "z": 2.15
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "boon",
+     "light": "litL",
+     "seed": 3,
+     "y": 230,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 90,
+     "prop": "cane",
+     "arms": "cane"
+    },
+    {
+     "who": "prang",
+     "light": "litL",
+     "seed": 1,
+     "y": 230,
+     "s": 0.62,
+     "mood": "worried",
+     "view": "front",
+     "x": 410,
+     "prop": "mug",
+     "arms": "hold",
+     "sweat": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "lightleak",
+     "t0": 0,
+     "t1": 9
+    },
+    {
+     "type": "rays",
+     "t0": 0,
+     "t1": 9,
+     "x": 1000
+    },
+    {
+     "type": "sparkle",
+     "t0": 0,
+     "t1": 9,
+     "x": 540,
+     "y": 1500,
+     "r": 420
+    },
+    {
+     "type": "petals",
+     "t0": 0,
+     "t1": 9,
+     "n": 14
+    }
+   ],
+   "ui": [
+    {
+     "type": "pop",
+     "t0": 0,
+     "t1": 9,
+     "text": "กลัวพลาด…?",
+     "y": 330,
+     "size": 170,
+     "rot": -5,
+     "color": "#FFD23F"
+    },
+    {
+     "type": "pop",
+     "t0": 0,
+     "t1": 9,
+     "text": "ฟังที่ยายพูดก่อน",
+     "y": 520,
+     "size": 96,
+     "rot": 3,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "bubble",
+     "t0": 0,
+     "t1": 9,
+     "x": 770,
+     "y": 700,
+     "w": 400,
+     "h": 120,
+     "text": "พรีเซนต์ครั้งแรก!",
+     "size": 40,
+     "tx": -0.3
+    },
+    {
+     "type": "badge",
+     "t0": 0,
+     "t1": 9,
+     "x": 540,
+     "y": 1820
+    }
+   ]
+  }
+ ]
+}
