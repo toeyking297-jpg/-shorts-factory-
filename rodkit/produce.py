@@ -79,7 +79,7 @@ class Eleven:
 
     def voices(self):
         if self._voices is None:
-            self._voices = self._req("GET", "https://api.elevenlabs.io/v1/voices").json().get("voices", [])
+            self._voices = self._req("GET", "https://api.elevenlabs.io/v2/voices", params={"page_size": 100}).json().get("voices", [])
         return self._voices
 
     def voice_for(self, who: str) -> dict:

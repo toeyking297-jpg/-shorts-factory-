@@ -57,7 +57,14 @@ def main():
     if not KEY:
         raise SystemExit("ไม่พบ ELEVENLABS_API_KEY — ใส่ใน GitHub → Settings → Secrets and variables → Actions")
     tier, left = credits()
-    voices = req("GET", "/v1/voices").json().get("voices", [])
+    voices, token = [], None
+    for _ in range(20):
+        params = {"page_size": 100}
+        if token: params["next_page_token"] = token
+        j = req("GET", "/v2/voices", timeout=120, params=params).json()
+        voices += j.get("voices", [])
+        if not j.get("has_more"): break
+        token = j.get("next_page_token")
     print(f"คีย์ใช้ได้ ✓  แพ็กเกจ {tier}  เครดิตเหลือ {left if left is None else f'{left:,}'}")
     print(f"เสียงในบัญชี {len(voices)} เสียง")
     cast = json.loads(CAST.read_text("utf-8"))
