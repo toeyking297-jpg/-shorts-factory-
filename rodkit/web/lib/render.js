@@ -143,7 +143,7 @@
     let li = 0;
     for (const A of actors.filter((A) => A.type !== "ghost")) {
       while (li < L.length && L[li].depth > A._z) scene += L[li++].svg;
-      scene += drawActor(A, t);
+      scene += `<g data-actor="${A.who || A.type}">${drawActor(A, t)}</g>`;
     }
     while (li < L.length) scene += L[li++].svg;
     if (set.fg) scene += set.fg;

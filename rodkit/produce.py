@@ -141,6 +141,9 @@ def main():
     vdir = out / "voice"; vdir.mkdir(parents=True, exist_ok=True)
     EL = Eleven() if not a.dry else None
     engine = "dry" if a.dry else ("elevenlabs" if EL.ok else "edge")
+    # เสียงต้องเป็น ElevenLabs เท่านั้น (ยกเว้นตั้ง allowFallback ในไฟล์ตอน) — ไม่ส่งคลิปเสียงบอทอีก
+    if engine == "edge" and not ep.get("allowFallback"):
+        raise SystemExit("หยุด: ไม่พบ ELEVENLABS_API_KEY ใน GitHub Secrets — ใส่คีย์ก่อน แล้วสั่งทำใหม่ (ไม่ใช้เสียงบอทแทน)")
     log(f"เสียงพากย์: {engine}")
 
     def synth(who, text):
@@ -153,6 +156,8 @@ def main():
             try:
                 EL.tts(who, text, p); return p
             except Exception as e:  # noqa: BLE001
+                if not ep.get("allowFallback"):
+                    raise SystemExit(f"หยุด: ElevenLabs ทำเสียงไม่สำเร็จ ({e}) — ไม่ใช้เสียงบอทแทน")
                 log(f"  ElevenLabs ใช้ไม่ได้ ({e}) → Edge TTS")
         if nonlocal_engine in ("elevenlabs", "edge"):
             try:
@@ -187,6 +192,15 @@ def main():
                 for (s0, s1) in talks[w]:
                     kf += [[max(0, s0 - 0.01), 0], [s0, 1], [s1, 1], [s1 + 0.01, 0]]
                 A["talk"] = kf
+                # ท่าทางประกอบคำพูด: ยกมือก่อนพูดนิดนึง ค้างระหว่างพูด แล้วค่อย ๆ ลด (รวมช่วงที่ติดกันเป็นช่วงเดียว)
+                iv = []
+                for (s0, s1) in sorted(talks[w]):
+                    if iv and s0 - iv[-1][1] < 0.7: iv[-1][1] = s1
+                    else: iv.append([s0, s1])
+                gk = [[0, 0]]
+                for (s0, s1) in iv:
+                    gk += [[max(0, s0 - 0.25), 0], [s0 + 0.2, 1], [max(s0 + 0.25, s1 - 0.1), 1], [s1 + 0.4, 0]]
+                if A.get("gesture", True): A["gest"] = gk
         for X in S.get("sfx", []):
             at = X.get("at", 0) if "line" not in X else line_t[min(X["line"], len(line_t) - 1)] + X.get("at", 0) if line_t else X.get("at", 0)
             sfx_events.append((T + at, X))

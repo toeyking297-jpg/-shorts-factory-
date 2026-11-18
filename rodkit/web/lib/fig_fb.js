@@ -24,24 +24,28 @@
     const c = H.color, o = ink(c), hi = H.hi, st = stroke(c);
     const line = (d, w = 3.2) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="${w}" stroke-linecap="round" opacity=".8"/>`;
     switch (H.style) {
-      case "dropcut": return { back: "", front: `<path d="M-96,-1120 Q-104,-1210 -50,-1244 Q0,-1266 50,-1244 Q104,-1210 96,-1120 L88,-1150 L78,-1128 L70,-1160 L56,-1136 L44,-1164 L30,-1140 L16,-1166 L2,-1140 L-12,-1166 L-26,-1140 L-40,-1164 L-54,-1136 L-68,-1160 L-78,-1128 L-88,-1150Z" fill="${c}" ${st}/>` + `<path d="M-96,-1118 L-92,-1070 M96,-1118 L92,-1070" stroke="${c}" stroke-width="8" opacity=".45"/>` + line("M-60,-1226 Q0,-1250 60,-1226 M-76,-1204 Q0,-1236 76,-1204") };
-      case "quiff": return { back: "", front: `<path d="M-94,-1124 Q-104,-1200 -60,-1238 Q-10,-1272 50,-1262 Q100,-1246 98,-1186 Q96,-1150 94,-1124 Q80,-1166 50,-1180 Q10,-1194 -30,-1178 Q-70,-1162 -94,-1124Z" fill="${c}" ${st}/>` + line("M-60,-1222 Q10,-1258 80,-1230 M-40,-1204 Q20,-1236 88,-1204 M-20,-1188 Q30,-1210 90,-1180") };
+      case "dropcut": return { back: "", front: `<path d="M-96,-1110 C-104,-1200 -56,-1256 0,-1258 C56,-1256 104,-1200 96,-1110 C92,-1130 86,-1146 78,-1150 C70,-1140 60,-1138 52,-1150 C44,-1140 32,-1138 24,-1150 C16,-1140 4,-1138 -4,-1150 C-12,-1140 -24,-1138 -32,-1150 C-40,-1140 -52,-1140 -60,-1150 C-70,-1146 -82,-1134 -88,-1112 Z" fill="${c}" ${st}/>` + `<path d="M-96,-1112 C-98,-1090 -98,-1070 -94,-1056 M96,-1112 C98,-1090 98,-1070 94,-1056" stroke="${c}" stroke-width="8" opacity=".35" stroke-linecap="round"/>` + line("M-60,-1230 Q0,-1252 60,-1230 M-80,-1196 Q0,-1232 80,-1196 M-40,-1176 Q0,-1196 40,-1176") };
+      case "quiff": return { back: "", front: `<path d="M-94,-1120 C-104,-1196 -60,-1250 0,-1260 C50,-1274 100,-1252 104,-1200 C106,-1170 98,-1146 94,-1124 C86,-1160 66,-1180 40,-1186 C10,-1192 -20,-1186 -44,-1172 C-70,-1158 -88,-1140 -94,-1120Z" fill="${c}" ${st}/>` + line("M-60,-1222 C-10,-1258 50,-1262 90,-1230 M-40,-1200 C0,-1230 50,-1236 96,-1206 M-70,-1160 C-40,-1184 0,-1192 40,-1188") };
       case "buzz": { const r = RK.rng(56); let d = ""; for (let i = 0; i < 200; i++) { const x = -90 + r() * 180, y = -1240 + r() * 90; if (y < -1170 + Math.abs(x) * 0.1 && x * x / 8100 + ((y + 1150) * (y + 1150)) / 9000 < 1) d += `<circle cx="${f(x)}" cy="${f(y)}" r="1.4"/>`; }
         return { back: "", front: `<path d="M-94,-1120 Q-100,-1214 -40,-1240 Q0,-1250 40,-1240 Q100,-1214 94,-1120 Q76,-1170 0,-1176 Q-76,-1170 -94,-1120Z" fill="${c}" ${st} opacity=".92"/><g fill="${hi}" opacity=".6">${d}</g>` }; }
-      case "combover": return { back: "", front: `<path d="M-96,-1060 Q-100,-1130 -84,-1170 Q-70,-1150 -74,-1060Z M96,-1060 Q100,-1130 84,-1170 Q70,-1150 74,-1060Z" fill="${c}" ${st}/><path d="M-70,-1206 Q0,-1234 70,-1200 M-60,-1218 Q0,-1240 66,-1214" fill="none" stroke="${c}" stroke-width="5" stroke-linecap="round"/><ellipse cx="0" cy="-1214" rx="34" ry="9" fill="#fff" opacity=".3"/>` };
+      case "combover": return { back: "", front: `<path d="M-90,-1180 C-100,-1160 -104,-1130 -102,-1108 L-94,-1110 C-94,-1130 -92,-1156 -84,-1176Z M90,-1180 C100,-1160 104,-1130 102,-1108 L94,-1110 C94,-1130 92,-1156 84,-1176Z" fill="${c}" stroke="${ink(c)}" stroke-width="2.2" stroke-linejoin="round"/><path d="M-56,-1196 Q0,-1214 56,-1192 M-46,-1206 Q0,-1220 52,-1204" fill="none" stroke="${c}" stroke-width="4" stroke-linecap="round"/><ellipse cx="0" cy="-1214" rx="34" ry="9" fill="#fff" opacity=".28"/>` };
       case "bob": return { back: `<path d="M-112,-1120 Q-116,-1222 -40,-1252 Q0,-1262 40,-1252 Q116,-1222 112,-1120 L110,-1000 Q90,-984 70,-998 L-70,-998 Q-90,-984 -110,-1000Z" fill="${c}" ${st}/>`,
         front: `<path d="M-100,-1140 Q-104,-1230 -30,-1250 Q40,-1260 96,-1214 Q110,-1180 104,-1130 Q80,-1170 40,-1182 Q-20,-1192 -60,-1160 Q-84,-1140 -88,-1100 L-92,-1006 Q-104,-1010 -104,-1040Z" fill="${c}" ${st}/>` + line("M60,-1236 Q0,-1222 -50,-1170 M-84,-1150 L-88,-1020") + `<g transform="translate(64,-1186) rotate(-18)"><rect x="-18" y="-5" width="36" height="10" rx="5" fill="${H.clip || "#F2B33D"}" stroke="${ink(H.clip || "#F2B33D")}" stroke-width="2.4"/></g>` };
       case "long": return { back: `<path d="M-110,-1130 Q-116,-1226 -40,-1254 Q0,-1262 40,-1254 Q116,-1226 110,-1130 Q116,-1040 112,-940 Q120,-860 100,-820 Q70,-830 60,-900 L60,-1000 L-60,-1000 L-60,-900 Q-70,-830 -100,-820 Q-120,-860 -112,-940 Q-116,-1040 -110,-1130Z" fill="${c}" ${st}/>`,
         front: `<path d="M-98,-1130 Q-104,-1226 -20,-1250 Q60,-1258 98,-1200 Q106,-1170 100,-1130 Q76,-1180 20,-1190 Q-10,-1192 -30,-1176 Q-60,-1150 -78,-1100 Q-88,-1040 -84,-980 Q-80,-930 -90,-880 Q-104,-900 -104,-980 Q-104,-1060 -98,-1130Z" fill="${c}" ${st}/><path d="M100,-1130 Q104,-1060 98,-990 Q94,-930 104,-880 Q90,-880 84,-940 Q80,-1010 86,-1090Z" fill="${c}" ${st}/>` + line("M40,-1240 Q-20,-1216 -56,-1150 M-90,-1100 Q-96,-1010 -90,-920 M96,-1080 Q90,-1000 96,-920") };
       case "bun": return { back: `<circle cx="0" cy="-1258" r="40" fill="${c}" ${st}/><path d="M-28,-1270 Q0,-1294 28,-1270" fill="none" stroke="${shd(c)}" stroke-width="3"/><path d="M14,-1300 L30,-1240" stroke="#9C3A30" stroke-width="5" stroke-linecap="round"/>`,
         front: `<path d="M-94,-1110 Q-100,-1210 -30,-1240 Q30,-1250 90,-1214 Q100,-1180 94,-1110 Q76,-1180 0,-1186 Q-76,-1180 -94,-1110Z" fill="${c}" ${st}/><path d="M-80,-1150 Q-40,-1214 0,-1220 M80,-1150 Q40,-1214 0,-1220 M0,-1224 L0,-1186" fill="none" stroke="${shd(c)}" stroke-width="3" stroke-linecap="round"/>` };
-      case "ponytail": return { back: `<path d="M60,-1170 Q120,-1150 124,-1060 Q126,-990 104,-940 Q96,-990 98,-1050 Q96,-1110 52,-1140Z" fill="${c}" ${st}/>`,
-        front: `<path d="M-96,-1110 Q-102,-1214 -30,-1244 Q40,-1254 94,-1206 Q102,-1170 96,-1110 Q80,-1170 30,-1186 Q6,-1190 -6,-1176 Q-20,-1190 -50,-1180 Q-86,-1160 -96,-1110Z" fill="${c}" ${st}/>` + line("M-6,-1244 L-4,-1180 M40,-1240 Q70,-1214 86,-1180 M-40,-1238 Q-70,-1210 -86,-1170") + `<ellipse cx="84" cy="-1170" rx="12" ry="16" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/>` };
+      case "ponytail": return { back: `<path d="M60,-1170 C110,-1160 126,-1110 124,-1060 C122,-1000 110,-960 100,-944 C92,-980 96,-1030 96,-1070 C94,-1110 80,-1136 52,-1146Z" fill="${c}" ${st}/>`,
+        front: `<path d="M-96,-1110 C-102,-1200 -50,-1252 6,-1252 C64,-1254 102,-1210 96,-1110 C88,-1150 70,-1178 40,-1186 C10,-1192 -30,-1186 -56,-1166 C-78,-1150 -90,-1132 -96,-1110Z" fill="${c}" ${st}/>` + line("M-20,-1246 C-40,-1220 -60,-1190 -76,-1150 M30,-1244 C56,-1224 76,-1196 86,-1160 M0,-1248 C4,-1220 6,-1200 8,-1188") + `<ellipse cx="84" cy="-1170" rx="12" ry="16" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/>` };
       case "pigtails": return { back: `<g transform="translate(-100,-1150) rotate(16)"><path d="M0,0 Q-40,40 -30,110 Q-22,140 -4,146 Q-8,80 16,20Z" fill="${c}" ${st}/></g><g transform="translate(100,-1150) rotate(-16)"><path d="M0,0 Q40,40 30,110 Q22,140 4,146 Q8,80 -16,20Z" fill="${c}" ${st}/></g>`,
         front: `<path d="M-98,-1110 Q-104,-1210 -30,-1242 Q30,-1252 98,-1210 Q104,-1170 98,-1110 L92,-1134 L-92,-1134Z" fill="${c}" ${st}/>` + line("M-40,-1200 L-42,-1140 M0,-1210 L0,-1140 M40,-1200 L42,-1140", 3) + `<circle cx="-100" cy="-1150" r="12" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/><circle cx="100" cy="-1150" r="12" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/>` };
-      case "perm": { const r = RK.rng(404), cs = []; for (let i = 0; i < 34; i++) { const a = Math.PI * (0.92 + (i / 33) * 1.16), rad = 126 + r() * 16; cs.push([Math.cos(a) * rad, -1120 + Math.sin(a) * rad, 20 + r() * 8]); } for (let i = 0; i < 10; i++) cs.push([-70 + r() * 140, -1230 - r() * 30, 20 + r() * 8]);
-        return { back: cs.map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr + 2)}" fill="${o}"/>`).join("") + cs.map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr - 1.5)}" fill="${c}"/>`).join(""),
-          front: cs.filter((q) => q[1] < -1170).map(([x, y, rr]) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr)}" fill="${c}" stroke="${o}" stroke-width="2.6"/><path d="M${f(x - rr * 0.5)},${f(y)} a${f(rr * 0.4)},${f(rr * 0.4)} 0 1 1 ${f(rr * 0.6)},${f(rr * 0.2)}" fill="none" stroke="${hi}" stroke-width="2.6"/>`).join("") }; }
+      case "perm": { const N = 26, rx = 128, ry = 120, cy = -1146; let d = "";
+        for (let i = 0; i <= N; i++) { const a = Math.PI * (0.78 + 1.44 * i / N), x = Math.cos(a) * rx, y = cy + Math.sin(a) * ry; if (!i) d += `M${f(x)},${f(y)}`; else { const am = Math.PI * (0.78 + 1.44 * (i - 0.5) / N); d += ` Q${f(Math.cos(am) * rx * 1.12)},${f(cy + Math.sin(am) * ry * 1.12)} ${f(x)},${f(y)}`; } }
+        d += " Q0,-1060 " + f(Math.cos(Math.PI * 0.78) * rx) + "," + f(cy + Math.sin(Math.PI * 0.78) * ry) + "Z";
+        const r = RK.rng(404); let cu = ""; for (let i = 0; i < 18; i++) { const x = -100 + r() * 200, y = -1250 + r() * 100; cu += `<path d="M${f(x - 7)},${f(y)} a8,8 0 1 1 10,6" fill="none" stroke="${hi}" stroke-width="2.6" stroke-linecap="round" opacity=".75"/>`; }
+        let fr = "M-92,-1140"; for (let i = 0; i < 8; i++) { const x0 = -92 + i * 23, y0 = -1150 - 10 * Math.cos((x0 + 11.5) / 92 * 1.4); fr += ` Q${f(x0 + 11.5)},${f(y0 + 22)} ${f(x0 + 23)},${f(-1150 - 10 * Math.cos((x0 + 23) / 92 * 1.4))}`; } fr += " C100,-1220 54,-1266 0,-1266 C-54,-1266 -100,-1220 -92,-1140Z";
+        return { back: `<path d="${d}" fill="${c}" ${st}/>`, front: `<path d="${fr}" fill="${c}" stroke="${o}" stroke-width="2.8" stroke-linejoin="round"/>` + cu }; }
+
     }
     return { back: "", front: "" };
   }
@@ -56,32 +60,13 @@
     if (F.wrinkles) s += `<path d="M-40,-1176 Q0,-1186 40,-1176 M-34,-1162 Q0,-1170 34,-1162" fill="none" stroke="${sh}" stroke-width="2.6"/>`;
     s += `</g>`;
     if (F.blush) s += `<ellipse cx="-50" cy="-1066" rx="17" ry="9" fill="${F.blush}" opacity=".45"/><ellipse cx="50" cy="-1066" rx="17" ry="9" fill="${F.blush}" opacity=".45"/>`;
-    const eye = (cx, mirror) => {
-      if (face === "happy" || face === "laugh") return `<path d="M${cx - 15},-1100 Q${cx},-1116 ${cx + 15},-1100" fill="none" stroke="#2A1A16" stroke-width="3.6" stroke-linecap="round"/>`;
-      if (blink) return `<path d="M${cx - 15},-1104 Q${cx},-1098 ${cx + 15},-1104" fill="none" stroke="${o}" stroke-width="3.4" stroke-linecap="round"/>`;
-      const hh = (face === "surprised" ? 13 : 8.5) * es, ww = 15 * Math.sqrt(es);
-      let e = `<path d="M${f(cx - ww)},-1104 Q${cx},${f(-1104 - hh * 1.5)} ${f(cx + ww)},-1104 Q${cx},${f(-1104 + hh)} ${f(cx - ww)},-1104Z" fill="#FBFAF6"/>`;
-      const ir = 6.6 * es; e += `<circle cx="${f(cx + lx)}" cy="-1103" r="${f(ir)}" fill="${F.iris || "#3B2620"}"/><circle cx="${f(cx + lx)}" cy="-1103" r="${f(ir * 0.46)}" fill="#120C0A"/><circle cx="${f(cx + lx + 2)}" cy="${f(-1103 - ir * 0.4)}" r="${f(1.6 * es)}" fill="#fff"/>`;
-      e += `<path d="M${f(cx - ww - 2)},-1103 Q${cx},${f(-1106 - hh * 1.6)} ${f(cx + ww + 2)},-1103" fill="none" stroke="#2A1A16" stroke-width="3.6" stroke-linecap="round"/>`;
-      if (F.lashes) e += `<path d="M${f(cx + mirror * (ww + 1))},-1104 l${mirror * 6},-5 M${f(cx + mirror * (ww - 3))},-1108 l${mirror * 5},-6" stroke="#2A1A16" stroke-width="2.4" stroke-linecap="round"/>`;
-      return e + `<path d="M${f(cx - ww * 0.6)},-1094 Q${cx},-1091 ${f(cx + ww * 0.6)},-1094" fill="none" stroke="${sh}" stroke-width="2"/>`;
-    };
-    s += eye(-36, -1) + eye(36, 1);
-    const br = face === "surprised" ? -8 : face === "worried" ? -4 : face === "angry" ? 4 : 0, tl = face === "worried" ? 6 : face === "angry" ? -8 : 0, bwid = F.brow || 6.5, bc = F.browColor || H.color;
-    s += `<path d="M-56,${-1126 + br - tl * 0.4} Q-38,${-1136 + br} -18,${-1128 + br + tl}" fill="none" stroke="${bc}" stroke-width="${bwid}" stroke-linecap="round"/><path d="M56,${-1126 + br - tl * 0.4} Q38,${-1136 + br} 18,${-1128 + br + tl}" fill="none" stroke="${bc}" stroke-width="${bwid}" stroke-linecap="round"/>`;
+    const EO = { iris: F.iris || "#3B2620", fem: !!F.lashes, face, blink, lx: lx / 3, sk, wr: !!F.wrinkles, id: "fr" };
+    s += RK.figEye(-36, -1102, 16 * Math.sqrt(es), 8.5 * es, -1, EO) + RK.figEye(36, -1102, 16 * Math.sqrt(es), 8.5 * es, 1, EO);
+    const br = face === "surprised" ? -8 : face === "worried" ? -3 : face === "angry" ? 4 : 0, tl = face === "worried" ? 6 : face === "angry" ? -7 : 0, bwid = F.brow || 6.5, bc = F.browColor || H.color, arch = F.lashes ? 7 : 3;
+    s += RK.figBrow(-14, -1130 + br + tl, -58, -1124 + br - tl * 0.4, arch, bwid * 1.1, bc) + RK.figBrow(14, -1130 + br + tl, 58, -1124 + br - tl * 0.4, arch, bwid * 1.1, bc);
     if (F.mole) s += `<circle cx="-30" cy="-1080" r="2.8" fill="#3A2420"/>`;
-    s += `<path d="M2,-1092 Q8,-1070 10,-1062 Q4,-1056 -4,-1060" fill="none" stroke="${o}" stroke-width="2.8" stroke-linecap="round"/><path d="M-8,-1058 q4,3 8,0 M4,-1058 q4,3 8,0" fill="none" stroke="${o}" stroke-width="2" opacity=".6"/>`;
-    const lc = F.lipstick || "#8C3B36";
-    const mouths = {
-      smile: `<path d="M-20,-1032 Q0,-1020 20,-1032" fill="none" stroke="${lc}" stroke-width="${F.lipstick ? 4.6 : 3.4}" stroke-linecap="round"/>`,
-      happy: `<path d="M-22,-1036 Q0,-1036 22,-1036 Q14,-1012 0,-1010 Q-14,-1012 -22,-1036Z" fill="#6E2A2A" stroke="${lc}" stroke-width="2.8"/><path d="M-18,-1035 L18,-1035 L16,-1028 L-16,-1028Z" fill="#fff"/>`,
-      laugh: `<path d="M-24,-1040 Q0,-1040 24,-1040 Q16,${f(-1004 - Math.abs(Math.sin(t * 16)) * 4)} 0,-1002 Q-16,-1004 -24,-1040Z" fill="#6E2A2A" stroke="${lc}" stroke-width="2.8"/><path d="M-20,-1039 L20,-1039 L18,-1031 L-18,-1031Z" fill="#fff"/><ellipse cx="0" cy="-1012" rx="9" ry="4" fill="#D85E6E"/>`,
-      talk: `<path d="M-18,-1034 Q0,${f(-1034 + 6 + Math.abs(Math.sin(t * 16)) * 12)} 18,-1034 Q0,-1036 -18,-1034Z" fill="#6E2A2A" stroke="${lc}" stroke-width="2.6"/>`,
-      surprised: `<ellipse cx="0" cy="-1026" rx="9" ry="12" fill="#6E2A2A" stroke="${lc}" stroke-width="2.6"/>`,
-      worried: `<path d="M-18,-1026 Q0,-1036 18,-1026" fill="none" stroke="${lc}" stroke-width="3.2" stroke-linecap="round"/>`,
-      angry: `<path d="M-20,-1030 Q0,-1040 20,-1030 L16,-1022 Q0,-1028 -16,-1022Z" fill="#6E2A2A" stroke="${lc}" stroke-width="2.6"/>`,
-    };
-    s += mouths[p.talk ? "talk" : face] || mouths.smile;
+    s += `<path d="M4,-1100 Q8,-1080 10,-1066" fill="none" stroke="${sh}" stroke-width="3" opacity=".6" stroke-linecap="round"/><path d="M-9,-1060 Q-4,-1054 0,-1056 Q4,-1054 9,-1060" fill="none" stroke="${o}" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="0" cy="-1068" rx="4" ry="2.4" fill="#fff" opacity=".3"/>`;
+    s += RK.figLips(0, -1030, 40, { lip: F.lipstick || null, face: p.talk ? "smile" : face, talk: p.talk ? 1 : 0, t, sk });
     if (F.mustache) s += `<path d="M-30,-1042 Q-14,-1058 0,-1048 Q14,-1058 30,-1042 Q20,-1036 8,-1040 Q0,-1042 -8,-1040 Q-20,-1036 -30,-1042Z" fill="${H.color}" stroke="${ink(H.color)}" stroke-width="2.4"/>`;
     if (F.glasses === "square") s += `<rect x="-66" y="-1124" width="56" height="42" rx="9" fill="rgba(210,232,255,.16)" stroke="#1C1C22" stroke-width="6"/><rect x="10" y="-1124" width="56" height="42" rx="9" fill="rgba(210,232,255,.16)" stroke="#1C1C22" stroke-width="6"/><path d="M-10,-1108 Q0,-1114 10,-1108 M-66,-1110 L-90,-1104 M66,-1110 L90,-1104" fill="none" stroke="#1C1C22" stroke-width="5"/>`;
     if (F.glasses === "reading") s += `<circle cx="-36" cy="-1098" r="22" fill="rgba(210,232,255,.14)" stroke="#8A5A3C" stroke-width="3.6"/><circle cx="36" cy="-1098" r="22" fill="rgba(210,232,255,.14)" stroke="#8A5A3C" stroke-width="3.6"/><path d="M-14,-1100 Q0,-1106 14,-1100" fill="none" stroke="#8A5A3C" stroke-width="3"/>`;
@@ -95,17 +80,17 @@
     const L = (d) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="3.2" stroke-linecap="round" opacity=".8"/>`;
     switch (H.style) {
       case "dropcut": case "quiff": case "buzz":
-        // ผมสั้นด้านหลัง: คลุมหัวลงมาถึงท้ายทอย ขอบล่างโค้งตามกะโหลก + ไล่เฉดบาง ๆ ที่ต้นคอ
-        s += `<path d="M-94,-1080 Q-60,-1040 0,-1036 Q60,-1040 94,-1080 Q80,-1030 40,-1016 Q0,-1010 -40,-1016 Q-80,-1030 -94,-1080Z" fill="${c}" opacity=".28"/>`;
-        s += `<path d="M-96,-1110 C-100,-1200 -60,-1250 0,-1250 C60,-1250 100,-1200 96,-1110 Q94,-1084 88,-1070 Q50,-1052 0,-1050 Q-50,-1052 -88,-1070 Q-94,-1084 -96,-1110Z" fill="${c}" ${st}/>` + L("M-60,-1222 Q0,-1240 60,-1222 M-80,-1186 Q0,-1210 80,-1186 M-86,-1130 Q0,-1150 86,-1130");
+        // ผมสั้นด้านหลัง: ขอบล่างโค้งลงเป็นจอนท้ายทอย ไม่ตัดตรงเป็นกะลา + ไล่เฉดบาง ๆ ที่ต้นคอ
+        s += `<path d="M-90,-1090 C-80,-1056 -44,-1022 0,-1016 C44,-1022 80,-1056 90,-1090 C84,-1040 50,-1002 0,-998 C-50,-1002 -84,-1040 -90,-1090Z" fill="${c}" opacity=".3"/>`;
+        s += `<path d="M-96,-1110 C-100,-1200 -60,-1250 0,-1250 C60,-1250 100,-1200 96,-1110 C94,-1096 90,-1088 86,-1082 C70,-1060 40,-1036 0,-1030 C-40,-1036 -70,-1060 -86,-1082 C-90,-1088 -94,-1096 -96,-1110Z" fill="${c}" ${st}/>` + L("M-60,-1222 Q0,-1240 60,-1222 M-80,-1186 Q0,-1210 80,-1186 M-86,-1140 Q0,-1162 86,-1140 M-70,-1096 Q0,-1112 70,-1096");
         break;
-      case "combover": s += `<path d="M-92,-1110 Q-90,-1084 -60,-1094 Q0,-1104 60,-1094 Q90,-1084 92,-1110 Q96,-1060 64,-1044 Q0,-1036 -64,-1044 Q-96,-1060 -92,-1110Z" fill="${c}" ${st}/><path d="M-80,-1070 Q0,-1058 80,-1070" fill="none" stroke="${hi}" stroke-width="2.4" opacity=".6"/><path d="M-60,-1200 Q0,-1230 60,-1200 M-50,-1214 Q0,-1240 50,-1214" fill="none" stroke="${c}" stroke-width="5" stroke-linecap="round"/><ellipse cx="0" cy="-1210" rx="40" ry="14" fill="#fff" opacity=".25"/>`; break;
+      case "combover": s += `<path d="M-96,-1110 C-100,-1190 -60,-1236 0,-1238 C60,-1236 100,-1190 96,-1110 C94,-1096 90,-1088 86,-1082 C70,-1060 40,-1036 0,-1030 C-40,-1036 -70,-1060 -86,-1082 C-90,-1088 -94,-1096 -96,-1110Z" fill="${c}" ${st}/><ellipse cx="0" cy="-1196" rx="58" ry="34" fill="${sk}"/><ellipse cx="0" cy="-1196" rx="58" ry="34" fill="none" stroke="${c}" stroke-width="5" opacity=".5"/><ellipse cx="-8" cy="-1206" rx="26" ry="10" fill="#fff" opacity=".22"/>` + L("M-80,-1150 Q-60,-1120 -50,-1090 M80,-1150 Q60,-1120 50,-1090 M-70,-1096 Q0,-1110 70,-1096"); break;
       case "bob": s += `<path d="M-112,-1120 Q-116,-1222 -40,-1252 Q0,-1262 40,-1252 Q116,-1222 112,-1120 L110,-996 Q60,-984 0,-986 Q-60,-984 -110,-996Z" fill="${c}" ${st}/>` + L("M-70,-1220 Q-90,-1100 -84,-1000 M0,-1250 L0,-990 M70,-1220 Q90,-1100 84,-1000") + `<g transform="translate(-60,-1170) rotate(20)"><rect x="-18" y="-5" width="36" height="10" rx="5" fill="${H.clip || "#F2B33D"}" stroke="${ink(H.clip || "#F2B33D")}" stroke-width="2.4"/></g>`; break;
       case "long": s += `<path d="M-112,-1130 Q-118,-1226 -40,-1256 Q0,-1264 40,-1256 Q118,-1226 112,-1130 Q118,-1000 110,-880 Q100,-820 60,-812 Q0,-806 -60,-812 Q-100,-820 -110,-880 Q-118,-1000 -112,-1130Z" fill="${c}" ${st}/>` + L("M-60,-1230 Q-90,-1060 -70,-830 M0,-1256 Q-10,-1040 0,-816 M60,-1230 Q90,-1060 70,-830"); break;
       case "bun": s += `<path d="M-94,-1110 C-98,-1200 -60,-1244 0,-1244 C60,-1244 98,-1200 94,-1110 Q60,-1070 0,-1070 Q-60,-1070 -94,-1110Z" fill="${c}" ${st}/><circle cx="0" cy="-1226" r="42" fill="${c}" ${st}/><path d="M-28,-1236 Q0,-1260 28,-1236 M-30,-1216 Q0,-1240 30,-1216" fill="none" stroke="${shd(c)}" stroke-width="3"/><path d="M-30,-1268 L30,-1196" stroke="#9C3A30" stroke-width="5" stroke-linecap="round"/>`; break;
       case "ponytail": s += `<path d="M-96,-1110 C-100,-1200 -60,-1250 0,-1250 C60,-1250 100,-1200 96,-1110 Q60,-1060 0,-1062 Q-60,-1060 -96,-1110Z" fill="${c}" ${st}/>` + L("M-70,-1200 Q-30,-1160 0,-1150 M70,-1200 Q30,-1160 0,-1150") + `<path d="M-20,-1150 Q-40,-1040 -16,-930 Q0,-900 16,-930 Q40,-1040 20,-1150Z" fill="${c}" ${st}/><ellipse cx="0" cy="-1150" rx="18" ry="14" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/>`; break;
       case "pigtails": s += `<path d="M-96,-1110 C-100,-1200 -60,-1250 0,-1250 C60,-1250 100,-1200 96,-1110 Q60,-1070 0,-1072 Q-60,-1070 -96,-1110Z" fill="${c}" ${st}/><path d="M0,-1250 L0,-1078" stroke="${shd(c)}" stroke-width="3"/>` + [-1, 1].map((sg) => `<g transform="translate(${sg * 96},-1150) rotate(${-sg * 14})"><path d="M0,0 Q${sg * 40},40 ${sg * 30},110 Q${sg * 22},140 ${sg * 4},146 Q${sg * 8},80 ${-sg * 16},20Z" fill="${c}" ${st}/></g><circle cx="${sg * 96}" cy="-1150" r="12" fill="${H.tie}" stroke="${ink(H.tie)}" stroke-width="2.6"/>`).join(""); break;
-      case "perm": { const r = RK.rng(405); let d = "", e = ""; for (let i = 0; i < 46; i++) { const a = Math.PI * 2 * r(), rr = Math.sqrt(r()) * 110, x = Math.cos(a) * rr, y = -1130 + Math.sin(a) * rr * 0.95, q = 20 + r() * 8; d += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(q + 2)}" fill="${ink(c)}"/>`; e += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(q - 1.5)}" fill="${c}"/><path d="M${f(x - q * 0.5)},${f(y)} a${f(q * 0.4)},${f(q * 0.4)} 0 1 1 ${f(q * 0.6)},${f(q * 0.2)}" fill="none" stroke="${hi}" stroke-width="2.4"/>`; } s += d + e; break; }
+      case "perm": { const hf = hairFront(H); s += hf.back; const r = RK.rng(405); for (let i = 0; i < 30; i++) { const x = -100 + r() * 200, y = -1250 + r() * 160; s += `<path d="M${f(x - 7)},${f(y)} a8,8 0 1 1 10,6" fill="none" stroke="${hi}" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>`; } break; }
     }
     return s;
   }
@@ -123,7 +108,7 @@
   }
   function torsoFB(C, id, back) {
     const T = C.top, b = C.body.belly || 0, w = C.body.waist || 1, tD = torsoFBD(b, w), tc = T.color;
-    let s = `<path d="${tD}" fill="${tc}" stroke="${ink(tc)}" stroke-width="${OW}"/><clipPath id="tfb${id}"><path d="${tD}"/></clipPath><g clip-path="url(#tfb${id})">`;
+    let s = `<path d="${tD}" fill="${tc}"/><clipPath id="tfb${id}"><path d="${tD}"/></clipPath><g clip-path="url(#tfb${id})">`;
     if (T.pattern === "floral") { const r = RK.rng(12); for (let i = 0; i < 26; i++) { const x = -110 + r() * 220, y = -960 + r() * 350; s += `<g transform="translate(${f(x)},${f(y)}) scale(.55)">${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="0" cy="-9" rx="5" ry="8" fill="${T.p1}" transform="rotate(${a})"/>`).join("")}<circle r="4" fill="${T.p2}"/></g>`; } }
     if (T.pattern === "leaf") { const r = RK.rng(21); for (let i = 0; i < 16; i++) { const x = -110 + r() * 220, y = -960 + r() * 350; s += `<path d="M${f(x)},${f(y)} q10,-14 20,0 q-10,14 -20,0Z" fill="${T.p1}" transform="rotate(${f(r() * 180)} ${f(x)} ${f(y)})"/>`; } }
     if (T.pattern === "star" && !back) s += `<path d="M0,-860 L9,-840 L31,-838 L14,-824 L20,-802 L0,-814 L-20,-802 L-14,-824 L-31,-838 L-9,-840Z" fill="${T.p1}" stroke="${ink(T.p1)}" stroke-width="2.4"/>`;
@@ -148,7 +133,7 @@
         s += `<path d="M-64,-880 L64,-880 L82,-600 L-82,-600Z" fill="${V}" ${st}/><path d="M-54,-880 Q-50,-950 -36,-980 M54,-880 Q50,-950 36,-980" fill="none" stroke="${V}" stroke-width="10"/><path d="M40,-870 Q56,-740 66,-600 L82,-600 L64,-880Z" fill="${shd(V)}"/><rect x="-50" y="-760" width="100" height="56" rx="6" fill="${shd(V)}" stroke="${ink(V)}" stroke-width="2.8"/><rect x="-38" y="-756" width="24" height="16" fill="#7BB661"/><rect x="-6" y="-754" width="24" height="14" fill="#C9A05A"/>`;
       }
     }
-    s += `</g><path d="${tD}" fill="none" stroke="${ink(tc)}" stroke-width="${OW}"/>`;
+    s += `</g>`;
     if (!back) {
       switch (T.collar) {
         case "peter": s += `<path d="M-30,-982 Q-36,-950 -4,-946 Q0,-960 0,-972 Q0,-960 4,-946 Q36,-950 30,-982 Q0,-970 -30,-982Z" fill="#FFFFFF" stroke="#BFB8AA" stroke-width="2.6"/>`; break;
@@ -217,15 +202,18 @@
       return g;
     };
     const arm = (sx, A, pass = "all") => {
-      const sh0 = tp(sx * 108, -916);
+      const rz = Math.max(0, Math.min(1, (A[0] - 30) / 120)), sh0 = tp(sx * (104 - 8 * rz), -914 - 24 * rz);
       let [s0, e, w, tot] = X.chain(sh0, -A[0] * sx, 205 * aL, -A[1] * sx, 188 * aL * (A[3] || 1));
       const T = C.top, O = C.outer && C.outer.sleeves ? C.outer : null, sl = O ? "long" : T.sleeve, slc = O ? O.color : T.color;
       let g = "";
       const hk = Math.min(1, 0.5 + aL * 0.55) * Math.sqrt(armW);
       const hd = () => { const hs2 = X.hand(A[2] || "relaxed", w, tot, C.skin, true, hk, back ? null : C.nails, (sl === "long" ? 30 : 28) * armW, sl === "long"); return sx > 0 ? `<g transform="translate(${P(w)}) scale(-1,1) translate(${f(-w[0])},${f(-w[1])})">${hs2}</g>` : hs2; };
-      if (sl === "long") g += hd() + X.limb([s0, e, w], [56 * armW, 44 * armW, 38 * armW], slc, { flatEnd: true });
-      else { g += X.limb([s0, e, w], [50 * armW, 36 * armW, 28 * armW], C.skin, { bulge: 0.1 }) + hd();
-        g += sl === "3q" ? X.limb([s0, e, add(e, rot([0, 44 * aL], tot))], [60 * armW, 50 * armW, 48 * armW], slc, { flatEnd: true }) : X.seg(s0, add(s0, rot([0, 100 * aL], -A[0] * sx)), 60 * armW, 54 * armW, slc, { flatEnd: true }); }
+      if (sl === "long") g += hd() + X.limb([s0, e, w], [56 * armW, 44 * armW, 38 * armW], slc, { flatEnd: true, noStroke: true, sideFrom: 0.26 });
+      else { g += X.limb([s0, e, w], [50 * armW, 36 * armW, 28 * armW], C.skin, { bulge: 0.1, noStroke: true, sideFrom: 0.5 }) + hd();
+        const cuff = sl === "3q" ? add(e, rot([0, 30 * aL], tot)) : add(s0, rot([0, 96 * aL], -A[0] * sx));
+        g += sl === "3q" ? X.limb([s0, e, cuff], [60 * armW, 50 * armW, 46 * armW], slc, { flatEnd: true, noStroke: true, sideFrom: 0.26 }) : X.seg(s0, cuff, 60 * armW, 54 * armW, slc, { flatEnd: true, noStroke: true, sideFrom: 0.26, noShade: true });
+        const uu = rot([0, 1], sl === "3q" ? tot : -A[0] * sx), nn = [-uu[1], uu[0]], cw = (sl === "3q" ? 46 : 54) * armW / 2;
+        g += `<path d="M${P(add(cuff, mul(nn, cw)))} Q${P(add(cuff, mul(uu, 5)))} ${P(add(cuff, mul(nn, -cw)))}" fill="none" stroke="${ink(slc)}" stroke-width="${OW}" stroke-linecap="round"/>`; }
       if (C.watch && sx < 0 && !back) g += `<g transform="translate(${P(add(w, rot([0, -12], tot)))}) rotate(${f(tot)})"><rect x="-17" y="-6" width="34" height="12" rx="4" fill="#2B2B33"/></g>`;
       if (pass === "over") { // ส่วนแขนที่อยู่หน้าขอบลำตัว: ตัดหัวไหล่ทิ้ง
         const u = rot([0, 1], -A[0] * sx), n = [-u[1], u[0]], c = add(s0, mul(u, 205 * aL * 0.22));
@@ -239,7 +227,9 @@
     let AL = [7, -3, "relaxed"], AR = [7, -3, "relaxed"];
     if (walk) { const sw = Math.sin(ph); AL = [7, -4 - 14 * Math.max(0, sw), m === "run" ? "fist" : "relaxed", 1 - 0.3 * Math.max(0, sw)]; AR = [7, -4 - 14 * Math.max(0, -sw), m === "run" ? "fist" : "relaxed", 1 - 0.3 * Math.max(0, -sw)]; }
     if (m === "wave" || p.pose === "wave") AL = [150, 30 + Math.sin(t * 9) * 16, "wave"];
-    if (m === "talk") AR = [12, -44 + Math.sin(t * 4) * 10, "open", 0.55];
+    { const g0 = p.gest != null ? p.gest : (m === "talk" ? 1 : 0), k = g0 * g0 * (3 - 2 * g0);
+      if (k > 0.001) { const T2 = [12, -44 + Math.sin(t * 4) * 10, "open", 0.55]; AR = [AR[0] + (T2[0] - AR[0]) * k, AR[1] + (T2[1] - AR[1]) * k, k > 0.5 ? "open" : AR[2], 1 - 0.45 * k]; } }
+    { const ph1 = (String(p.who || "").length * 1.3) % 6.28; if (!walk) { AL = [AL[0] + Math.sin(t * 0.8 + ph1) * 1.6, AL[1] + Math.sin(t * 0.8 + ph1 - 0.5) * 2, AL[2], AL[3]]; AR = [AR[0] + Math.sin(t * 0.8 + ph1 + 1.2) * 1.6, AR[1], AR[2], AR[3]]; } }
     if (p.pose === "hips") { AL = [44, -84, "fist"]; AR = [44, -84, "fist"]; }
     if (p.pose === "cheer") { AL = [150, 10, "fist"]; AR = [150, 10, "fist"]; }
     // มุมหลัง: สลับซ้าย-ขวา (แขนที่โบกเป็นแขนเดิมของตัวละคร)
@@ -250,12 +240,14 @@
     if (sarong) s += `<g transform="${TT}">${lowerFB(C, back)}</g>`;
     else s += `<g transform="${TT}">${lowerFB(C, back)}</g>`;
     if (back) { s += `<g transform="translate(${f(tp(0, -968)[0])},${f(tp(0, -968)[1] + breathe * 0.4)}) scale(${f(hs)}) translate(0,968)">${neckFB(C, true)}</g>`; }
-    s += arm(-1, AL) + arm(1, AR);
     if (!back) s += `<g transform="translate(${f(tp(0, -968)[0])},${f(tp(0, -968)[1] + breathe * 0.4)}) scale(${f(hs)}) translate(0,968)">${neckFB(C, false)}</g>`;
-    s += `<g transform="${TT} translate(0,${f(breathe * 0.4)})">${torsoFB(C, (p.who || "x") + (back ? "b" : "f"), back)}</g>`;
-    s += arm(-1, AL, "over") + arm(1, AR, "over");
+    const fid = `olfb${(p.who || "x")}${back ? "b" : "f"}${Math.round(Math.random() * 1e6)}`;
+    s += `<filter id="${fid}" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feMorphology in="SourceGraphic" operator="dilate" radius="2.2" result="d"/><feComponentTransfer in="d" result="k"><feFuncR type="linear" slope=".58"/><feFuncG type="linear" slope=".55"/><feFuncB type="linear" slope=".55"/></feComponentTransfer><feMerge><feMergeNode in="k"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+    s += `<g filter="url(#${fid})"><g transform="${TT} translate(0,${f(breathe * 0.4)})">${torsoFB(C, (p.who || "x") + (back ? "b" : "f"), back)}</g>${arm(-1, AL)}${arm(1, AR)}</g>`;
     const HT = `translate(${f(tp(0, -968)[0])},${f(tp(0, -968)[1] + breathe * 0.4)}) scale(${f(hs)}) translate(0,968)`;
-    s += `<g transform="${HT}">${back ? headBack(C) : headFront(C, p, t)}</g>`;
+    const ph0 = (String(p.who || "").length * 1.7) % 6.28, gst = p.gest != null ? p.gest : (m === "talk" ? 1 : 0);
+    const tilt = Math.sin(t * 0.45 + ph0) * 1.4 + (Math.sin(t * 2.1 + ph0) * 2.4 + Math.sin(t * 3.7) * 1.2) * gst, nod = -Math.abs(Math.sin(t * 6.2)) * 2.4 * gst;
+    s += `<g transform="translate(0,${f(nod)}) rotate(${f(tilt)} 0 ${f(tp(0, -968)[1])})"><g transform="${HT}">${back ? headBack(C) : headFront(C, p, t)}</g></g>`;
     return `<g transform="translate(${f(p.x)},${f(p.y)}) scale(${f(p.s || 1)})">${s}</g>`;
   };
 })(window);

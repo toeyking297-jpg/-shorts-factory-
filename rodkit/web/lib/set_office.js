@@ -305,14 +305,14 @@
       s += box(x + 10 * k, top - ph, w - 20 * k, ph, 0.03, part, { top: false }) + rect(x + 10 * k, top - ph - 8 * k, w - 20 * k, 10 * k, "#B9BDC2", { w: 2 });
       [[18, 120, "#FFF4A8", -5], [w - 70, 112, "#FFFFFF", 4], [w - 120, 124, "#BFE3FF", -2]].forEach(([px, py, c, a]) => { s += `<g transform="rotate(${a} ${f(x + px)} ${f(top - py)})">${rect(x + px, top - py, 28, 32, c, { stroke: "#B9AE96", w: 1.2 })}${line(`M${f(x + px + 4)},${f(top - py + 10)} l18,0 M${f(x + px + 4)},${f(top - py + 17)} l14,0`, "#8C8270", 1.2)}</g>`; });
       // 2) พนักงาน (นั่งหน้าพาร์ติชัน)
-      s += worker(cx, top, i, t);
+      // พนักงาน: ตัวละครระบบเดียวกับตัวหลัก (มุมหน้าตรง) นั่งหลังโต๊ะ — ตัดส่วนที่อยู่ใต้ท็อปโต๊ะออก
+      s += `<clipPath id="wk${i}"><rect x="${f(cx - 220)}" y="${f(top - 420)}" width="440" height="424"/></clipPath><g clip-path="url(#wk${i})">${RK.fig({ who: ["ex1", "ex2", "ex3"][i], view: "front", x: cx, y: top + 205, s: 0.34, motion: "idle", lookX: [0.6, -0.4, 0.2][i] }, t + i * 1.7)}</g>`;
       // 3) โต๊ะ: ขา ตู้ลิ้นชัก ท็อป
       s += box(x + 14 * k, top + 20 * k, 30 * k, H - 20 * k, 0.04, "#7A7F86");
       s += box(x + w - 150 * k, top + 20 * k, 136 * k, H - 30 * k, 0.05, "#B9BDC2") + [0, 1, 2].map((j) => rect(x + w - 142 * k, top + (34 + j * 82) * k, 120 * k, 72 * k, "#C9CDD2", { w: 2 }) + rect(x + w - 104 * k, top + (52 + j * 82) * k, 44 * k, 8 * k, "#8E959C", { rx: 3, w: 1 })).join("");
       s += box(x, top, w, 22 * k, 0.07, "#D9B98C");
       // 4) ของบนโต๊ะ: แขน+มือบนคีย์บอร์ด จอ (หลัง) เยื้องขวา แก้ว แฟ้ม
       s += `<path d="M${f(cx - 34)},${f(top + 2)} L${f(cx + 34)},${f(top + 2)} L${f(cx + 38)},${f(top + 10)} L${f(cx - 38)},${f(top + 10)}Z" fill="#E9E9E6" stroke="#8E8E8A" stroke-width="1.6"/>`;
-      s += deskArms(cx, top, i, t);
       s += monitor(x + w * 0.8, top + 6, 0.5, "sheet", true) + mug(x + w * 0.12, top + 8, 0.55, ["#D8483B", "#F2B33D", "#3E7CB1"][i], i === 0, t);
       s += rect(x + w * 0.6, top - 14, 34, 14, ["#E7B24A", "#3E7CB1", "#C8483B"][i], { w: 1.4 }) + rect(x + w * 0.61, top - 24, 30, 10, "#FFFFFF", { w: 1.2 });
     });
