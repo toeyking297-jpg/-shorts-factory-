@@ -1,0 +1,147 @@
+{
+ "id": "SETS_MORNING",
+ "engine": "flat",
+ "fps": 30,
+ "set": "porch",
+ "shots": [
+  {
+   "name": "porch_dawn",
+   "set": "porch",
+   "dur": 1,
+   "cam": {
+    "x": 0,
+    "y": -640,
+    "z": 0.6
+   },
+   "actors": []
+  },
+  {
+   "name": "porch_prang",
+   "set": "porch",
+   "dur": 1,
+   "cam": {
+    "x": 300,
+    "y": -420,
+    "z": 0.95
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "prang",
+     "light": "litL",
+     "seed": 1,
+     "y": 200,
+     "s": 0.62,
+     "mood": "laugh",
+     "view": "front",
+     "x": 200,
+     "arms": "surprise"
+    }
+   ]
+  },
+  {
+   "name": "porch_day",
+   "set": "porch",
+   "setOpts": {
+    "dawn": false
+   },
+   "dur": 1,
+   "cam": {
+    "x": 500,
+    "y": -520,
+    "z": 0.75
+   },
+   "actors": [
+    {
+     "who": "chai",
+     "light": "litL",
+     "seed": 3,
+     "y": 220,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": 280,
+     "dir": 1
+    }
+   ]
+  },
+  {
+   "name": "park_dawn",
+   "set": "park",
+   "dur": 1,
+   "cam": {
+    "x": 0,
+    "y": -640,
+    "z": 0.6
+   },
+   "actors": []
+  },
+  {
+   "name": "park_run",
+   "set": "park",
+   "dur": 1,
+   "cam": {
+    "x": 0,
+    "y": -420,
+    "z": 0.95
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "light": "litL",
+     "seed": 2,
+     "y": 230,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": -100,
+     "dir": 1,
+     "arms": "idle"
+    }
+   ]
+  },
+  {
+   "name": "park_day",
+   "set": "park",
+   "setOpts": {
+    "dawn": false
+   },
+   "dur": 1,
+   "cam": {
+    "x": 600,
+    "y": -480,
+    "z": 0.8
+   },
+   "actors": [
+    {
+     "who": "boon",
+     "light": "litL",
+     "seed": 3,
+     "y": 200,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 760,
+     "prop": "cane",
+     "arms": "cane"
+    },
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 240,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 420,
+     "arms": "wave"
+    }
+   ]
+  }
+ ]
+}
