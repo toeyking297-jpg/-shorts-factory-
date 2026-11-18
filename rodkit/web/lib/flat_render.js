@@ -59,15 +59,17 @@
   }
   // ---------- ซับไตเติล (คำเน้นสีเหลือง เด้งเข้าทีละคำ) ----------
   function subtitle(sb, t) {
+    if (Array.isArray(sb)) sb = { t0: sb[0], t1: sb[1], text: String(sb[2]).trim().replace(/\s+/g, "|") };
     const a = t - sb.t0, b = sb.t1 - t; if (a < 0 || b < 0) return "";
     const k = RK.clamp(a / 0.18) * RK.clamp(b / 0.15);
     const parts = sb.text.split("|"), hl = sb.hl || [];
-    const fs = sb.size || 62, y = sb.y || 1560;
-    // ประมาณความกว้าง
+    let fs = sb.size || 62; const y = sb.y || 1560;
+    // ประมาณความกว้าง (ย่อฟอนต์อัตโนมัติถ้ายาวเกินจอ)
     const ctx = (RK._ctx = RK._ctx || document.createElement("canvas").getContext("2d"));
     ctx.font = `700 ${fs}px Kanit`;
-    const widths = parts.map((p) => ctx.measureText(p).width);
-    const total = widths.reduce((x, y) => x + y, 0) + (parts.length - 1) * 14;
+    let widths = parts.map((p) => ctx.measureText(p).width);
+    let total = widths.reduce((x, y) => x + y, 0) + (parts.length - 1) * 14;
+    if (total > 940) { const r = 940 / total; fs *= r; widths = widths.map((w) => w * r); total = 940; }
     let x = CX - total / 2, s = `<g opacity="${f(k)}">`;
     s += `<rect x="${f(x - 34)}" y="${f(y - fs - 14)}" width="${f(total + 68)}" height="${f(fs + 46)}" rx="22" fill="#15111A" opacity=".66"/>`;
     parts.forEach((p, i) => {

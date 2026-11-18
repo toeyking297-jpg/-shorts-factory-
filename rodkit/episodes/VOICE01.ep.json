@@ -1,0 +1,256 @@
+{
+ "id": "VOICE01",
+ "engine": "flat",
+ "set": "kitchen",
+ "fps": 30,
+ "music": "family",
+ "ambience": "kitchen",
+ "ambienceGain": 0.3,
+ "shots": [
+  {
+   "name": "morning",
+   "dur": 3,
+   "fadeIn": 0.4,
+   "cam": {
+    "x": [
+     [
+      0,
+      -120
+     ],
+     [
+      6,
+      80,
+      "linear"
+     ]
+    ],
+    "y": -380,
+    "z": 0.72
+   },
+   "dof": {
+    "bg": 4,
+    "fg": 0
+   },
+   "actors": [
+    {
+     "who": "mali",
+     "light": "litL",
+     "seed": 1,
+     "y": 140,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "dir": 1,
+     "x": -260,
+     "arms": "idle"
+    },
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 140,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "dir": -1,
+     "x": [
+      [
+       0,
+       700
+      ],
+      [
+       2.2,
+       180
+      ]
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "ข้าวหอม ตื่นแล้วเหรอลูก มากินข้าวเร็ว"
+    },
+    {
+     "who": "khaohom",
+     "text": "หอมจังเลยค่ะแม่ ทำอะไรอยู่คะ"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sizzle",
+     "at": 0.0,
+     "gain": 0.5
+    },
+    {
+     "name": "steps",
+     "at": 0.2,
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "name": "dad",
+   "dur": 3,
+   "cam": {
+    "x": 0,
+    "y": -400,
+    "z": [
+     [
+      0,
+      0.8
+     ],
+     [
+      5,
+      0.86
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 5,
+    "fg": 0
+   },
+   "actors": [
+    {
+     "who": "chai",
+     "light": "litL",
+     "seed": 3,
+     "y": 140,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": -260,
+     "arms": "idle",
+     "arms2": "wave",
+     "armMix": [
+      [
+       0,
+       0
+      ],
+      [
+       0.4,
+       1
+      ],
+      [
+       2.0,
+       1
+      ],
+      [
+       2.4,
+       0
+      ]
+     ]
+    },
+    {
+     "who": "mali",
+     "light": "litL",
+     "seed": 1,
+     "y": 140,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 60
+    },
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 140,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 330
+    }
+   ],
+   "say": [
+    {
+     "who": "chai",
+     "text": "อรุณสวัสดิ์ครับทุกคน วันนี้พ่อหิวมากเลย"
+    },
+    {
+     "who": "mali",
+     "text": "ไข่เจียวร้อนๆ มาแล้วจ้า"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.0,
+     "gain": 0.5
+    },
+    {
+     "name": "cup",
+     "line": 1,
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "name": "happy",
+   "dur": 2.5,
+   "cam": {
+    "x": 330,
+    "y": -380,
+    "z": [
+     [
+      0,
+      0.95
+     ],
+     [
+      4,
+      1.0
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 6,
+    "fg": 0
+   },
+   "actors": [
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 520,
+     "s": 1.25,
+     "mood": "laugh",
+     "view": "front",
+     "x": 330,
+     "arms": "idle",
+     "arms2": "wave",
+     "armMix": [
+      [
+       0,
+       0
+      ],
+      [
+       0.5,
+       1
+      ],
+      [
+       2.5,
+       1
+      ]
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "khaohom",
+     "text": "ขอบคุณค่ะแม่ อร่อยที่สุดในโลกเลย"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sparkle",
+     "line": 0,
+     "at": 0.4
+    },
+    {
+     "name": "kids_laugh",
+     "line": 0,
+     "at": 1.8,
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}
