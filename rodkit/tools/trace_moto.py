@@ -159,24 +159,39 @@ coil += f'<rect x="-15" y="-4" width="30" height="8" rx="3" fill="#E9B93A" trans
 layers.append(coil)
 defs_extra += '<linearGradient id="tChr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F8792"/><stop offset=".35" stop-color="#F4F6F8"/><stop offset=".65" stop-color="#AEB5BE"/><stop offset="1" stop-color="#6E757F"/></linearGradient>'
 layers.append(f'<path d="{mpath(gld, 1.2, 30)}" fill="#D9A92E" stroke="#9C7417" stroke-width="1.5"/>')
-# เส้นต่อชิ้นงาน (ขอบคมยาว ๆ จากภาพ) วาดเป็นร่องมืด + ขอบสว่างคู่กัน
-gray = cv2.GaussianBlur(cv2.cvtColor(src, cv2.COLOR_BGR2GRAY), (0, 0), 2.2)
-edges = cv2.Canny(gray, 50, 135)
-keepz = cv2.erode(fg, np.ones((7, 7), np.uint8))
-edges[keepz == 0] = 0; edges[cv2.dilate(wheelzone, np.ones((9, 9), np.uint8)) == 1] = 0; edges[bask == 1] = 0
-mz = np.zeros((h, w), np.uint8); cv2.line(mz, (232, 704), (636, 816), 1, 70); edges[mz == 1] = 0
-edges[seat == 1] = 0
-ecs, _ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
-dk, lt = "", ""
-for c in ecs:
-    if cv2.arcLength(c, False) < 120: continue
-    ap = cv2.approxPolyDP(c, 1.8, False).reshape(-1, 2).astype(float)
-    if len(ap) < 2: continue
-    dk += "M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in ap)
-    lt += "M" + " L".join(f"{x+1.2:.1f},{y+1.6:.1f}" for x, y in ap)
-layers.append(f'<path d="{lt}" fill="none" stroke="#F2F4F7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>')
-layers.append(f'<path d="{dk}" fill="none" stroke="#2A2C31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>')
-
+# เส้นต่อชิ้นงานจากภาพแบบร่าง (blueprint) จัดตำแหน่งด้วยศูนย์กลางล้อ 2 ล้อ
+BP = sys.argv[4] if len(sys.argv) > 4 else None
+if BP:
+    bp = cv2.imread(BP); g = cv2.cvtColor(bp, cv2.COLOR_BGR2GRAY)
+    circ_ = cv2.HoughCircles(cv2.GaussianBlur(g[20:630, 250:1380], (0, 0), 2), cv2.HOUGH_GRADIENT, 1.5, 300, param1=120, param2=60, minRadius=140, maxRadius=170)
+    cc = sorted([(c[0] + 250, c[1] + 20) for c in circ_[0] if c[2] > 150][:2])
+    Mbp, _ = cv2.estimateAffinePartial2D(np.float32(cc), np.float32([WH["rear"][0], WH["front"][0]]))
+    bgm_ = cv2.medianBlur(g, 21); ln = ((g.astype(int) - bgm_.astype(int)) > 26).astype(np.uint8)
+    ln[612:, :] = 0; ln[:, :255] = 0; ln[:, 1380:] = 0; ln[:120, :] = 0
+    for (a_, b_, c_, d_) in [(440, 205, 610, 270), (935, 298, 1025, 326), (880, 378, 950, 404), (815, 456, 895, 482)]:
+        ln[b_:d_, a_:c_] = 0                      # ตัดตัวอักษรแบรนด์/รุ่น
+    hl = cv2.morphologyEx(ln, cv2.MORPH_OPEN, np.ones((1, 160), np.uint8)); ln[hl == 1] = 0   # เส้นไกด์แนวนอน
+    W_ = cv2.warpAffine(ln * 255, Mbp, (w, h), flags=cv2.INTER_LINEAR) > 110
+    W_ = W_.astype(np.uint8)
+    fork = np.zeros((h, w), np.uint8); cv2.fillPoly(fork, [np.array([(1185, 560), (1250, 545), (1300, 790), (1250, 805)])], 1)
+    for (cx_, cy_), r_ in WH.values():
+        W_[(np.hypot(XX - cx_, YY - cy_) < TIRE + 6) & (fork == 0)] = 0
+    W_[bask == 1] &= 0
+    inner = cv2.erode(cv2.morphologyEx(fg, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8)), np.ones((9, 9), np.uint8))
+    W_[inner == 0] = 0; W_[cv2.dilate(seat, np.ones((9, 9), np.uint8)) == 1] = 0
+    from skimage.morphology import skeletonize
+    sk = skeletonize(W_ > 0).astype(np.uint8)
+    n_, lab_, st_, _ = cv2.connectedComponentsWithStats(sk, connectivity=8)
+    keep_ = np.zeros_like(sk)
+    for i in range(1, n_):
+        if st_[i, cv2.CC_STAT_AREA] >= 45: keep_[lab_ == i] = 1
+    cs_, _ = cv2.findContours(keep_, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+    dl = ""
+    for c in cs_:
+        ap = cv2.approxPolyDP(c, 1.0, False).reshape(-1, 2)
+        if len(ap) >= 2: dl += "M" + " L".join(f"{x},{y}" for x, y in ap)
+    layers.append(f'<path d="{dl}" fill="none" stroke="#F3F5F8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity=".45" transform="translate(1.2,1.5)"/>')
+    layers.append(f'<path d="{dl}" fill="none" stroke="#25272C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/>')
 # ---------- ชิ้นส่วนวาดใหม่ทีละชิ้น (ตำแหน่งวัดจากภาพ) ----------
 P = []
 # คอท่อโครเมียม (จากเครื่องไปปลายท่อ)
@@ -190,9 +205,9 @@ P.append('<path d="M180,384 L270,416 L284,460 L266,470 L226,454 Z" fill="#EEF1F4
          "".join(f'<path d="M{186+i*12},{398+i*5} L{204+i*12},{446+i*2}" stroke="#AEB5BE" stroke-width="1.5" opacity=".9"/>' for i in range(7)) +
          '<path d="M190,398 L258,430" stroke="#FFFFFF" stroke-width="3" opacity=".9"/><path d="M226,458 L268,470" stroke="#5E6670" stroke-width="2"/>')
 # ไฟหน้า/หน้ากากบน + แฮนด์ + ปลายแฮนด์น้ำเงิน + สวิตช์ + มือเบรก
-P.append('<path d="M1008,236 L1028,200 C1060,190 1102,196 1124,214 C1134,232 1140,260 1136,288 L1114,320 C1082,328 1050,324 1032,318 L1014,282 Z" fill="#1C1D21"/>'
+P.append('<path d="M1006,240 L1030,200 L1092,196 L1126,214 L1142,262 L1122,316 L1038,322 L1014,286 Z" fill="#1C1D21" stroke="#2E3036" stroke-width="2" stroke-linejoin="round"/><path d="M1030,206 L1124,220 L1134,250" stroke="#4A4D55" stroke-width="3" fill="none"/>'
          '<path d="M1030,204 C1062,196 1100,200 1120,218" stroke="#5A5D66" stroke-width="4" fill="none"/><path d="M1040,214 L1090,212 L1112,226 L1052,232 Z" fill="#2C2E33"/><rect x="1056" y="214" width="34" height="10" rx="3" fill="#8FD0FF" opacity=".7"/>'
-         '<path d="M1098,244 C1116,248 1132,262 1136,286 L1116,318 C1100,304 1092,276 1098,244 Z" fill="url(#tLens)" stroke="#8C939C" stroke-width="2"/><path d="M1106,256 C1118,264 1126,276 1128,290" stroke="#FFFFFF" stroke-width="3" fill="none" opacity=".9"/>')
+         '<path d="M1100,248 L1138,266 L1124,310 L1106,300 Z" fill="url(#tLens)" stroke="#8C939C" stroke-width="2" stroke-linejoin="round"/><path d="M1108,258 L1130,270" stroke="#FFFFFF" stroke-width="3" opacity=".9"/>')
 P.append('<path d="M1012,262 L962,272 L960,290 L1014,282 Z" fill="#1F2024"/><rect x="918" y="270" width="48" height="34" rx="10" fill="#26272C" transform="rotate(-14 942 287)"/>' + "".join(f'<line x1="{924+i*7}" y1="{276-i*1.7:.1f}" x2="{926+i*7}" y2="{298-i*1.7:.1f}" stroke="#3A3C42" stroke-width="2"/>' for i in range(5)) +
          '<rect x="958" y="268" width="22" height="22" rx="5" fill="#2F3136"/><circle cx="966" cy="276" r="3.5" fill="#E9B93A"/><circle cx="974" cy="284" r="3" fill="#9AA1AA"/>'
          '<circle cx="1004" cy="236" r="11" fill="#2A7BE4" stroke="#123A8C" stroke-width="2"/><circle cx="1000" cy="232" r="3.5" fill="#BFE6FF"/>'
