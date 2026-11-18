@@ -116,7 +116,13 @@
     const dof = RK.resolve(S.dof || {}, t);
     const blurG = (inner, px) => px > 0.3 ? `<g filter="url(#dof${Math.round(px)})">${inner}</g>` : inner;
     const actors = (S.actors || []).map((a) => prepActor(a, t));
-    const drawActors = (layer) => actors.filter((A) => (A.layer || "front") === layer).sort((p, q) => (p.y || 0) - (q.y || 0)).map((A) => RK.flatActor(A, T)).join("");
+    const drawActors = (layer) => actors.filter((A) => (A.layer || "front") === layer).sort((p, q) => (p.y || 0) - (q.y || 0)).map((A, i) => {
+      const g = RK.flatActor(A, T);
+      if (A.sink == null && A.clipY == null) return g;
+      // นั่งหลังโต๊ะ/เคาน์เตอร์ (มุมหน้า): เลื่อนตัวลงแล้วตัดส่วนล่างทิ้ง
+      const id = `ck${layer}${i}`, cy = A.clipY ?? 0;
+      return `<clipPath id="${id}"><rect x="-8000" y="-8000" width="16000" height="${f(8000 + cy)}"/></clipPath><g clip-path="url(#${id})"><g transform="translate(0,${f(A.sink || 0)})">${g}</g></g>`;
+    }).join("");
     let defs = RK.flatDefs;
     for (const px of new Set([dof.bg, dof.mid, dof.fg ?? 9, dof.act].filter((v) => v > 0.3).map(Math.round))) defs += `<filter id="dof${px}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${px}"/></filter>`;
 

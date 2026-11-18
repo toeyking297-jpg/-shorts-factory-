@@ -1,0 +1,221 @@
+{
+ "id": "SETS_HOME",
+ "engine": "flat",
+ "fps": 30,
+ "set": "living",
+ "shots": [
+  {
+   "name": "living_day",
+   "set": "living",
+   "dur": 1,
+   "cam": {
+    "x": -120,
+    "y": -560,
+    "z": 0.66
+   },
+   "actors": []
+  },
+  {
+   "name": "living_day_fam",
+   "set": "living",
+   "dur": 1,
+   "cam": {
+    "x": -40,
+    "y": -400,
+    "z": 0.95
+   },
+   "dof": {
+    "bg": 2
+   },
+   "actors": [
+    {
+     "who": "chai",
+     "light": "litL",
+     "seed": 3,
+     "y": 210,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": -330,
+     "layer": "front"
+    },
+    {
+     "who": "mali",
+     "light": "litL",
+     "seed": 1,
+     "y": 210,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": -110,
+     "layer": "front"
+    },
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 210,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 110,
+     "layer": "front",
+     "arms": "wave"
+    },
+    {
+     "who": "boon",
+     "light": "litL",
+     "seed": 3,
+     "y": 210,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 320,
+     "layer": "front",
+     "prop": "cane",
+     "arms": "cane"
+    }
+   ]
+  },
+  {
+   "name": "living_night",
+   "set": "living",
+   "setOpts": {
+    "night": true
+   },
+   "dur": 1,
+   "cam": {
+    "x": 300,
+    "y": -480,
+    "z": 0.8
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "light": "litL",
+     "seed": 1,
+     "y": 200,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "side",
+     "x": 700,
+     "dir": -1
+    },
+    {
+     "who": "prang",
+     "light": "litL",
+     "seed": 1,
+     "y": 200,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": 380
+    }
+   ]
+  },
+  {
+   "name": "dining_eve",
+   "set": "dining",
+   "dur": 1,
+   "cam": {
+    "x": -200,
+    "y": -560,
+    "z": 0.66
+   },
+   "actors": []
+  },
+  {
+   "name": "dining_fam",
+   "set": "dining",
+   "dur": 1,
+   "cam": {
+    "x": -40,
+    "y": -380,
+    "z": 1.2
+   },
+   "dof": {
+    "bg": 2
+   },
+   "actors": [
+    {
+     "who": "chai",
+     "light": "litL",
+     "seed": 3,
+     "y": 20,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": -302,
+     "layer": "back",
+     "sink": 55,
+     "clipY": 0
+    },
+    {
+     "who": "mali",
+     "light": "litL",
+     "seed": 1,
+     "y": 20,
+     "s": 0.62,
+     "mood": "smile",
+     "view": "front",
+     "x": -43,
+     "layer": "back",
+     "sink": 55,
+     "clipY": 0
+    },
+    {
+     "who": "khaohom",
+     "light": "litL",
+     "seed": 2,
+     "y": 20,
+     "s": 0.62,
+     "mood": "laugh",
+     "view": "front",
+     "x": 216,
+     "layer": "back",
+     "sink": 12,
+     "clipY": 0
+    }
+   ]
+  },
+  {
+   "name": "dining_night",
+   "set": "dining",
+   "setOpts": {
+    "night": true
+   },
+   "dur": 1,
+   "cam": {
+    "x": 250,
+    "y": -560,
+    "z": 0.7
+   },
+   "actors": [
+    {
+     "who": "chai",
+     "light": "litL",
+     "seed": 3,
+     "view": "front",
+     "x": -43,
+     "y": 20,
+     "s": 0.62,
+     "mood": "smile",
+     "layer": "back",
+     "sink": 55,
+     "clipY": 0
+    },
+    {
+     "who": "te",
+     "light": "litL",
+     "seed": 0,
+     "view": "side",
+     "dir": -1,
+     "x": 520,
+     "y": 200,
+     "s": 0.62,
+     "mood": "smile"
+    }
+   ]
+  }
+ ]
+}
