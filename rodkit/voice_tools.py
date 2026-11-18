@@ -50,6 +50,25 @@ def catalog():
     print(f"เสร็จ ✓ เสียงไทย {len(out)} เสียง")
 
 
+def design(who, v, ch):
+    """สร้างเสียงใหม่ด้วย Voice Design (ใช้เมื่อคลังเสียงไทยไม่มีเสียงที่เหมาะ/ใช้ไม่ได้)"""
+    import base64
+    j = req("POST", "/v1/text-to-voice/design", timeout=240, json={
+        "voice_description": v["design"], "model_id": "eleven_ttv_v3",
+        "text": ch.get("sample", "") + " " + ch.get("sample", "") + " วันนี้เป็นวันที่ดีจริงๆ เลยนะ",
+    }).json()
+    prevs = j.get("previews", [])
+    if not prevs: raise RuntimeError(f"design ไม่มีตัวอย่าง: {str(j)[:200]}")
+    for i, pv in enumerate(prevs, 1):
+        (OUT / f"{who}_design{i}.mp3").write_bytes(base64.b64decode(pv["audio_base_64"]))
+    pick = prevs[min(v.get("design_pick", 1), len(prevs)) - 1]
+    r = req("POST", "/v1/text-to-voice", timeout=120, json={
+        "voice_name": f"{ch['name']} ({who})", "voice_description": v["design"], "generated_voice_id": pick["generated_voice_id"]}).json()
+    v.update({"voice_id": r["voice_id"], "voice_name": f"designed: {ch['name']}", "in_account": True})
+    v.pop("public_owner_id", None)
+    print(f"  ออกแบบเสียงใหม่ให้ {who} → {r['voice_id']}", flush=True)
+
+
 def lock():
     cast = json.loads(CAST.read_text("utf-8"))
     model = cast.get("model", "eleven_v3")
@@ -58,6 +77,9 @@ def lock():
     lines = ["# เสียงที่ล็อกแล้ว (ElevenLabs)", ""]
     for who, ch in cast["characters"].items():
         v = ch.get("voice", {})
+        if v.get("design") and not v.get("voice_id") and ch.get("sample"):
+            try: design(who, v, ch)
+            except RuntimeError as e: print(f"  ออกแบบเสียง {who} ไม่ได้: {e}")
         if not v.get("voice_id") or v.get("type") == "sfx" or not ch.get("sample"):
             continue
         if v.get("public_owner_id") and not v.get("in_account"):
