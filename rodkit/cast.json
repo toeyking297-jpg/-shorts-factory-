@@ -125,7 +125,10 @@
         "stability": 0.5,
         "style": 0.45,
         "pitch": 0,
-        "design": "A young Thai woman in her early twenties, native Central Thai (Bangkok) accent. Sweet, bright and gentle voice with a natural smile in it, light and soft but clear, friendly and caring, medium-high pitch, warm, perfect for a kind cheerful cartoon heroine."
+        "design": "A young Thai woman in her early twenties, native Central Thai (Bangkok) accent. Sweet, bright and gentle voice with a natural smile in it, light and soft but clear, friendly and caring, medium-high pitch, warm, perfect for a kind cheerful cartoon heroine.",
+        "voice_id": "JSI3Aa4qW0LrAb5mP6De",
+        "voice_name": "designed: ปราง",
+        "in_account": true
       },
       "sample": "อรุณสวัสดิ์ค่ะ ขอให้วันนี้เป็นวันที่ดีของทุกคนนะคะ"
     },
