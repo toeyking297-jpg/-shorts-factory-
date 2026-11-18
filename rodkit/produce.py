@@ -25,9 +25,12 @@ import wave
 import numpy as np
 
 from . import audio as AU
+from . import sfx_build as SFXB
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CAST = ROOT / "cast.json"
+SFXLIB = json.loads((ROOT / "sfx_lib.json").read_text("utf-8"))
+SFXLIB_DIR = ROOT / "sfx_lib"
 
 # สำรอง (Edge TTS ภาษาไทย มี 3 เสียง: ปรับ pitch/rate ให้แต่ละตัวต่างกัน)
 EDGE = {
@@ -82,6 +85,8 @@ class Eleven:
     def voice_for(self, who: str) -> dict:
         ch = self.cast["characters"].get(who) or self.cast["characters"].setdefault(who, {"name": who, "voice": {"gender": "female", "age": "30s", "voice_id": ""}})
         v = ch["voice"]
+        if not v.get("voice_id") and not os.environ.get("RODKIT_AUTOPICK"):
+            raise SystemExit(f"หยุด: ตัวละคร {who} ยังไม่ได้ล็อกเสียงใน rodkit/cast.json — ล็อกก่อน จะได้ไม่ใช้เสียงมั่ว")
         if not v.get("voice_id"):
             used = {c["voice"].get("voice_id") for c in self.cast["characters"].values() if c["voice"].get("voice_id")}
             g = v.get("gender", "").split()[0]
@@ -218,7 +223,16 @@ def main():
     for at, X in sfx_events:
         name = X["name"]
         x = None
-        if EL and EL.ok and X.get("prompt"):
+        lib_p = SFXLIB_DIR / f"{name}.mp3"
+        spec = SFXLIB.get("sfx", {}).get(name) or SFXLIB.get("ambience", {}).get(name)
+        if not X.get("prompt") and spec and EL and EL.ok and not lib_p.exists():
+            try:
+                SFXB.build(name, spec, EL.key); log(f"  สร้างเสียงประกอบเข้าคลัง: {name}")
+            except Exception as e:  # noqa: BLE001
+                log(f"  สร้างเสียงประกอบ {name} ไม่ได้ ({e})")
+        if not X.get("prompt") and lib_p.exists():
+            x = to_np(lib_p)
+        elif EL and EL.ok and X.get("prompt"):
             sp = sdir / f"{hashlib.md5(X['prompt'].encode()).hexdigest()[:10]}.mp3"
             try:
                 if not sp.exists(): EL.sound(X["prompt"], X.get("len", 1.5), sp)
@@ -237,8 +251,16 @@ def main():
     duck = 1 - 0.6 * np.clip(env / (env.max() + 1e-6) * 3, 0, 1)
     mix = vbus * 1.0 + fbus * 0.9 + mbus * (0.32 * duck)[:, None]
     if ep.get("ambience"):
-        amb = AU.sfx(ep["ambience"]); reps = int(np.ceil(n / len(amb)))
-        mix += np.tile(amb, reps)[:n, None] * 0.6
+        an = ep["ambience"]; ap_ = SFXLIB_DIR / f"{an}.mp3"; spec = SFXLIB.get("ambience", {}).get(an)
+        if spec and EL and EL.ok and not ap_.exists():
+            try: SFXB.build(an, spec, EL.key)
+            except Exception as e: log(f"  สร้างเสียงบรรยากาศ {an} ไม่ได้ ({e})")  # noqa: E701,BLE001
+        if ap_.exists():
+            amb = to_np(ap_); reps = int(np.ceil(n / len(amb)))
+            mix += np.tile(amb, (reps, 1))[:n] * ep.get("ambienceGain", 0.35)
+        else:
+            amb = AU.sfx(an); reps = int(np.ceil(n / len(amb)))
+            mix += np.tile(amb, reps)[:n, None] * 0.6
     mix = mix / max(1.0, np.abs(mix).max() / 0.95)
     wav = out / f"{eid}_mix.wav"
     AU.save_wav(wav, mix)

@@ -1,0 +1,36 @@
+name: rodkit SFX library (ElevenLabs)
+
+# สร้างคลังเสียงประกอบครั้งเดียว (ข้ามตัวที่มีแล้ว) แล้วเก็บไว้ใน rodkit/sfx_lib
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "เฉพาะชื่อ (เว้นว่าง = ทั้งหมด) เช่น steps,door"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  sfx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Build SFX library
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: python -m rodkit.sfx_build ${{ github.event.inputs.only }} | tee sfx.log
+      - name: Save
+        run: |
+          echo "::notice::$(tail -1 sfx.log)"
+          git config user.name "rodkit-bot"
+          git config user.email "rodkit-bot@users.noreply.github.com"
+          git add rodkit/sfx_lib
+          git commit -m "rodkit: SFX library [skip ci]" || echo "nothing new"
+          git pull --rebase -q && git push

@@ -2,7 +2,7 @@
 ใช้: python -m rodkit.voice_test [who1,who2,...]   (คีย์อ่านจาก ELEVENLABS_API_KEY เท่านั้น)
 ผลลัพธ์: rodkit/voice_samples/<who>_<n>.mp3 + choices.md (เลขตัวเลือก → ชื่อเสียง/voice_id)
 """
-import json, os, pathlib, sys, requests
+import json, os, pathlib, sys, time, requests
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CAST = ROOT / "cast.json"
@@ -12,11 +12,28 @@ KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
 FLAT = ["narrator", "phum", "prang", "fah", "mali", "chai", "khaohom", "boon", "te", "jan", "piak"]
 
 
-def req(m, path, **kw):
-    r = requests.request(m, API + path, headers={"xi-api-key": KEY}, timeout=180, **kw)
-    if r.status_code >= 400:
-        raise SystemExit(f"ElevenLabs ตอบ {r.status_code} ที่ {path}: {r.text[:300]}")
-    return r
+def req(m, path, timeout=90, tries=3, **kw):
+    last = None
+    for i in range(tries):
+        try:
+            r = requests.request(m, API + path, headers={"xi-api-key": KEY}, timeout=timeout, **kw)
+        except requests.RequestException as e:
+            last = e; print(f"  เชื่อมต่อ {path} ไม่ได้ ({type(e).__name__}) ลองใหม่ {i+1}/{tries}"); time.sleep(5 * (i + 1)); continue
+        if r.status_code in (429, 500, 502, 503, 504):
+            last = r.status_code; time.sleep(5 * (i + 1)); continue
+        if r.status_code >= 400:
+            raise SystemExit(f"ElevenLabs ตอบ {r.status_code} ที่ {path}: {r.text[:300]}")
+        return r
+    raise SystemExit(f"ElevenLabs ไม่ตอบที่ {path} ({last})")
+
+
+def credits():
+    try:
+        sub = req("GET", "/v1/user/subscription", timeout=30, tries=2).json()
+        return sub.get("tier"), sub.get("character_limit", 0) - sub.get("character_count", 0)
+    except SystemExit as e:
+        print(f"  ดูเครดิตไม่ได้ ({e}) — ข้ามไปทำเสียงต่อ")
+        return "?", None
 
 
 def score(vo, gender, age):
@@ -39,10 +56,9 @@ def score(vo, gender, age):
 def main():
     if not KEY:
         raise SystemExit("ไม่พบ ELEVENLABS_API_KEY — ใส่ใน GitHub → Settings → Secrets and variables → Actions")
-    sub = req("GET", "/v1/user/subscription").json()
-    used, lim = sub.get("character_count", 0), sub.get("character_limit", 0)
-    print(f"คีย์ใช้ได้ ✓  แพ็กเกจ {sub.get('tier')}  ใช้ไป {used:,}/{lim:,} ตัวอักษร  เหลือ {lim-used:,}")
+    tier, left = credits()
     voices = req("GET", "/v1/voices").json().get("voices", [])
+    print(f"คีย์ใช้ได้ ✓  แพ็กเกจ {tier}  เครดิตเหลือ {left if left is None else f'{left:,}'}")
     print(f"เสียงในบัญชี {len(voices)} เสียง")
     cast = json.loads(CAST.read_text("utf-8"))
     model = cast.get("model", "eleven_v3")
@@ -50,7 +66,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     for f in OUT.glob("*.mp3"):
         f.unlink()
-    md = [f"# เสียงตัวอย่าง ElevenLabs (โมเดล {model})", "", f"เครดิตเหลือ {lim-used:,} ตัวอักษร", "",
+    md = [f"# เสียงตัวอย่าง ElevenLabs (โมเดล {model})", "", f"เครดิตเหลือ {left} ก่อนทดสอบ", "",
           "ฟังไฟล์ `<ตัวละคร>_<เลข>.mp3` แล้วบอก Claude เช่น `มะลิ 2, ชัย 1`", ""]
     picks = {}
     for who in who_list:
@@ -63,17 +79,17 @@ def main():
         for i, vo in enumerate(ranked, 1):
             body = {"text": text, "model_id": model,
                     "voice_settings": {"stability": v.get("stability", 0.5), "similarity_boost": 0.8, "style": v.get("style", 0.35)}}
-            r = req("POST", f"/v1/text-to-speech/{vo['voice_id']}", params={"output_format": "mp3_44100_128"}, json=body)
+            r = req("POST", f"/v1/text-to-speech/{vo['voice_id']}", timeout=150, params={"output_format": "mp3_44100_128"}, json=body)
             (OUT / f"{who}_{i}.mp3").write_bytes(r.content)
             lb = vo.get("labels") or {}
             md.append(f"- **{i}** {vo.get('name')} · {lb.get('gender','?')} {lb.get('age','')} {lb.get('accent','')} · `{vo['voice_id']}`")
             picks[who].append({"n": i, "name": vo.get("name"), "voice_id": vo["voice_id"]})
             print(f"  {who}_{i}.mp3 ← {vo.get('name')}")
         md.append("")
+    (OUT / "catalog.json").write_text(json.dumps([{k: vo.get(k) for k in ("voice_id", "name", "labels", "description", "category", "verified_languages")} for vo in voices], ensure_ascii=False, indent=1), "utf-8")
     (OUT / "choices.md").write_text("\n".join(md), "utf-8")
     (OUT / "choices.json").write_text(json.dumps(picks, ensure_ascii=False, indent=1), "utf-8")
-    sub = req("GET", "/v1/user/subscription").json()
-    print(f"เสร็จ ✓  เครดิตเหลือ {sub.get('character_limit',0)-sub.get('character_count',0):,} ตัวอักษร")
+    print(f"เสร็จ ✓  เครดิตเหลือ {credits()[1]}")
 
 
 if __name__ == "__main__":

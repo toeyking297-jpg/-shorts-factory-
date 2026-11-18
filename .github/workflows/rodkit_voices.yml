@@ -24,6 +24,7 @@ jobs:
       - name: Voice samples
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          PYTHONUNBUFFERED: "1"
         run: python -m rodkit.voice_test ${{ github.event.inputs.who }} | tee vt.log
       - name: Publish samples
         env:
@@ -31,5 +32,5 @@ jobs:
         run: |
           echo "::notice::$(grep -m1 'คีย์ใช้ได้' vt.log) · $(tail -1 vt.log)"
           gh release delete rodkit-voices --yes --cleanup-tag 2>/dev/null || true
-          gh release create rodkit-voices rodkit/voice_samples/*.mp3 rodkit/voice_samples/choices.md \
+          gh release create rodkit-voices rodkit/voice_samples/*.mp3 rodkit/voice_samples/choices.md rodkit/voice_samples/catalog.json rodkit/voice_samples/choices.json \
             --title "เสียงตัวอย่างตัวละคร (ElevenLabs)" --notes-file rodkit/voice_samples/choices.md
