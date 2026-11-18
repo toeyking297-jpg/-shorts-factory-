@@ -21,6 +21,7 @@
   };
   // ผมด้านหน้า (มุมหน้าตรง) และผมด้านหลังหัว: แต่ละทรงคืน {back, front} — back วาดก่อนหน้า, front วาดทับหน้า
   function hairFront(H) {
+    if (RK.HAIR2F && RK.HAIR2F[H.style]) { const r = RK.HAIR2F[H.style](H); return { back: r.back, front: r.front }; }
     const c = H.color, o = ink(c), hi = H.hi, st = stroke(c);
     const line = (d, w = 3.2) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="${w}" stroke-linecap="round" opacity=".8"/>`;
     switch (H.style) {
@@ -78,6 +79,7 @@
     for (const sg of [-1, 1]) s += `<path d="M${sg * 86},-1104 Q${sg * 106},-1110 ${sg * 106},-1080 Q${sg * 104},-1054 ${sg * 84},-1052Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/>`;
     s += `<path d="M-92,-1120 C-92,-1190 -60,-1236 0,-1236 C60,-1236 92,-1190 92,-1120 C92,-1060 70,-1010 36,-996 L-36,-996 C-70,-1010 -92,-1060 -92,-1120Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/>`;
     const L = (d) => `<path d="${d}" fill="none" stroke="${hi}" stroke-width="3.2" stroke-linecap="round" opacity=".8"/>`;
+    if (RK.HAIR2B && RK.HAIR2B[H.style]) return s + RK.HAIR2B[H.style](H);
     switch (H.style) {
       case "dropcut": case "quiff": case "buzz":
         // ผมสั้นด้านหลัง: ขอบล่างโค้งลงเป็นจอนท้ายทอย ไม่ตัดตรงเป็นกะลา + ไล่เฉดบาง ๆ ที่ต้นคอ

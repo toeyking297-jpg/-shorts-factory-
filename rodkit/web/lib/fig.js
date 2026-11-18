@@ -275,7 +275,7 @@
   function head(C, p, t, id) {
     const sk = C.skin, o = ink(sk), sh = shd(sk), H = C.hair, F = C.face;
     const face = p.face || "smile", blink = (t + (C.blink || 0.7)) % 3.9 < 0.1, lx = p.lookX || 0, es = F.eye || 1;
-    const hair = (HAIR[H.style] || HAIR.dropcut)(H, id);
+    const hair = (RK.HAIR2 && RK.HAIR2[H.style]) ? RK.HAIR2[H.style](H, id) : (HAIR[H.style] || HAIR.dropcut)(H, id);
     const fD = FACES[F.shape || "sharp"];
     let s = hair.back;
     s += `<path d="M-60,-1100 Q-82,-1104 -82,-1078 Q-80,-1054 -58,-1050Z" fill="${sk}" stroke="${o}" stroke-width="${OW}"/><path d="M-64,-1092 Q-76,-1084 -66,-1062" fill="none" stroke="${sh}" stroke-width="3"/>`;
@@ -658,15 +658,15 @@
     ex3: { skin: "#D19B74", hair: { style: "buzz", color: "#1E1614", hi: "#4A3A33" }, face: { shape: "boxy", glasses: "square", brow: 7 }, body: { bw: 1.08 },
       top: { color: "#8FAF6A", sleeve: "short", collar: "polo" }, bottom: { type: "pants", color: "#4A4036" }, shoes: { type: "sneaker", color: "#EEE", sole: "#999" } },
     // ตัวละครหลักชุดใหม่ (หน้าตาดี นิสัยดี แต่งตัวดี)
-    phum: { skin: "#EBC09B", hair: { style: "quiff", color: "#1A1311", hi: "#5A463C" },
+    phum: { skin: "#EBC09B", hair: { style: "comma", color: "#1E1614", hi: "#5A463C" },
       face: { shape: "sharp", brow: 7, eye: 1.02, iris: "#2E1E18" }, watch: 1, belt: "#6B4A2E",
       body: { bw: 1.04, hL: 1.05, tL: 1.02 }, top: { color: "#A9CBEA", sleeve: "3q", collar: "shirt" },
       bottom: { type: "pants", color: "#D2BE96" }, shoes: { type: "sneaker", color: "#FBFBF8", sole: "#E4DED2", stripe: "#2F4F8C" } },
-    prang: { skin: "#F5D3B8", hair: { style: "long", color: "#3B2419", hi: "#86563E" },
+    prang: { skin: "#F5D3B8", hair: { style: "layered", color: "#3E2619", hi: "#86563E" },
       face: { shape: "soft", lashes: 1, blush: "#F29A94", lipstick: "#D65A6E", earrings: "#F4F1EA", brow: 4.2, eye: 1.06, iris: "#4A2C20" }, nails: "#E66A7E",
       body: { tL: 0.95, hL: 0.98, bw: 0.88, waist: 0.84 }, top: { color: "#EBB8C3", sleeve: "short", collar: "vneck" },
       bottom: { type: "skirt", color: "#F3EBDD", len: 1.55, belt: "#C9A06A" }, shoes: { type: "flat", color: "#D9B48A", bow: "#F3EBDD" } },
-    fah: { skin: "#EEC4A0", hair: { style: "ponytail", color: "#2A1A16", hi: "#5E4034", tie: "#F2B33D" },
+    fah: { skin: "#EEC4A0", hair: { style: "highpony", color: "#2C1C17", hi: "#5E4034", tie: "#F2B33D" },
       face: { shape: "soft", lashes: 1, blush: "#F49A94", lipstick: "#E06F7C", brow: 4.5, eye: 1.1, iris: "#3A2418" }, watch: 1,
       body: { tL: 0.93, hL: 0.97, bw: 0.86, waist: 0.86 }, top: { color: "#FAFAF7", sleeve: "short" }, outer: { type: "jacket", color: "#6F94C4", sleeves: true },
       bottom: { type: "pants", color: "#EDE4D3" }, shoes: { type: "sneaker", color: "#FBFBF8", sole: "#E4DED2", stripe: "#F2B33D" } },
