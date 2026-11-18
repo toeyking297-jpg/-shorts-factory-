@@ -53,19 +53,65 @@ def score(vo, gender, age):
     return s
 
 
+PREMADE = {  # เสียงมาตรฐานของ ElevenLabs (ใช้ได้ทุกบัญชี) — สำรองเมื่อไม่มีเสียงไทยที่เหมาะ
+    ("male", "young"): [("Liam", "TX3LPaxmHKxFdv7VOQHJ"), ("Will", "bIHbv24MWmeRgasZH58o")],
+    ("male", "middle_aged"): [("Brian", "nPczCjzI2devNBz1zQrb"), ("Eric", "cjVigY5qzO86Huf0OWal")],
+    ("male", "old"): [("Bill", "pqHfZKP75CvOlQylNhV4"), ("George", "JBFqnCBsd6RMkjVDRZzb")],
+    ("female", "young"): [("Jessica", "cgSgspJ2msm6clMCkdW9"), ("Sarah", "EXAVITQu4vr4xnSDxMaL")],
+    ("female", "middle_aged"): [("Matilda", "XrExE9yKIg1WjnnlVkGX"), ("Laura", "FGY2WhTYpPnrIDTdsKH5")],
+    ("female", "old"): [("Alice", "Xb7hH8MSUJpSbSDYk0k2"), ("Lily", "pFZP5JQG7iQjIQuC4Bku")],
+}
+ADDED = []
+
+
+def age_key(v):
+    g = v.get("gender", ""); a = v.get("age", "")
+    if "child" in g or a.isdigit() and int(a) < 13: return "young"
+    if any(x in a for x in ("60", "70", "old")): return "old"
+    if "20" in a: return "young"
+    return "middle_aged"
+
+
+def candidates(v):
+    g = v.get("gender", "female").split()[0]; ak = age_key(v)
+    out = []
+    try:
+        j = req("GET", "/v1/shared-voices", timeout=60, tries=2,
+                params={"language": "th", "gender": g, "age": ak, "page_size": 12, "sort": "usage_character_count_1y"}).json()
+        for sv in j.get("voices", []):
+            if len(out) >= 2: break
+            out.append({"voice_id": sv["voice_id"], "name": sv.get("name"), "public_owner_id": sv.get("public_owner_id"),
+                        "labels": {"gender": sv.get("gender"), "age": sv.get("age"), "accent": sv.get("accent"), "lang": sv.get("language")},
+                        "description": (sv.get("description") or "")[:120]})
+    except SystemExit as e:
+        print(f"  ค้นคลังเสียงไทยไม่ได้ ({e})")
+    for name, vid in PREMADE[(g if g in ("male", "female") else "female", ak)]:
+        if len(out) >= 3: break
+        out.append({"voice_id": vid, "name": name + " (มาตรฐาน)", "labels": {"gender": g, "age": ak}})
+    return out
+
+
+def speak(vo, body):
+    path = f"/v1/text-to-speech/{vo['voice_id']}"
+    prm = {"output_format": "mp3_44100_128"}
+    try:
+        return req("POST", path, timeout=150, params=prm, json=body)
+    except SystemExit as e:
+        if not vo.get("public_owner_id"):
+            raise
+        print(f"  เพิ่มเสียง {vo['name']} เข้าบัญชีก่อน ({str(e)[:80]})")
+        nm = ("rk " + (vo.get("name") or "voice"))[:40]
+        req("POST", f"/v1/voices/add/{vo['public_owner_id']}/{vo['voice_id']}", timeout=60, json={"new_name": nm})
+        ADDED.append(vo["voice_id"])
+        return req("POST", path, timeout=150, params=prm, json=body)
+
+
 def main():
     if not KEY:
         raise SystemExit("ไม่พบ ELEVENLABS_API_KEY — ใส่ใน GitHub → Settings → Secrets and variables → Actions")
     tier, left = credits()
-    voices, token = [], None
-    for _ in range(20):
-        params = {"page_size": 100}
-        if token: params["next_page_token"] = token
-        j = req("GET", "/v2/voices", timeout=120, params=params).json()
-        voices += j.get("voices", [])
-        if not j.get("has_more"): break
-        token = j.get("next_page_token")
-    print(f"คีย์ใช้ได้ ✓  แพ็กเกจ {tier}  เครดิตเหลือ {left if left is None else f'{left:,}'}")
+    voices = []  # รายชื่อเสียงในบัญชีโหลดช้ามาก (timeout) → ใช้คลังเสียงไทยจาก Voice Library + เสียงมาตรฐานแทน
+    print(f"คีย์ใช้ได้ ✓  แพ็กเกจ {tier}  เครดิตเหลือ {left if left is None else f'{left:,}'}", flush=True)
     print(f"เสียงในบัญชี {len(voices)} เสียง")
     cast = json.loads(CAST.read_text("utf-8"))
     model = cast.get("model", "eleven_v3")
@@ -80,20 +126,23 @@ def main():
         ch = cast["characters"][who]
         v = ch["voice"]
         text = ch.get("sample", "สวัสดีครับ")
-        ranked = sorted(voices, key=lambda vo: -score(vo, v.get("gender", ""), v.get("age", "")))[:3]
+        ranked = candidates(v)
         md.append(f"## {ch['name']} ({who}) — {v.get('gender')} {v.get('age')} · {v.get('tone','')}")
         picks[who] = []
         for i, vo in enumerate(ranked, 1):
             body = {"text": text, "model_id": model,
                     "voice_settings": {"stability": v.get("stability", 0.5), "similarity_boost": 0.8, "style": v.get("style", 0.35)}}
-            r = req("POST", f"/v1/text-to-speech/{vo['voice_id']}", timeout=150, params={"output_format": "mp3_44100_128"}, json=body)
+            try:
+                r = speak(vo, body)
+            except SystemExit as e:
+                print(f"  ข้าม {vo.get('name')} ({e})"); continue
             (OUT / f"{who}_{i}.mp3").write_bytes(r.content)
             lb = vo.get("labels") or {}
             md.append(f"- **{i}** {vo.get('name')} · {lb.get('gender','?')} {lb.get('age','')} {lb.get('accent','')} · `{vo['voice_id']}`")
-            picks[who].append({"n": i, "name": vo.get("name"), "voice_id": vo["voice_id"]})
+            picks[who].append({"n": i, "name": vo.get("name"), "voice_id": vo["voice_id"], "labels": vo.get("labels"), "public_owner_id": vo.get("public_owner_id"), "description": vo.get("description")})
             print(f"  {who}_{i}.mp3 ← {vo.get('name')}")
         md.append("")
-    (OUT / "catalog.json").write_text(json.dumps([{k: vo.get(k) for k in ("voice_id", "name", "labels", "description", "category", "verified_languages")} for vo in voices], ensure_ascii=False, indent=1), "utf-8")
+    (OUT / "catalog.json").write_text(json.dumps({"added_to_account": ADDED}, ensure_ascii=False, indent=1), "utf-8")
     (OUT / "choices.md").write_text("\n".join(md), "utf-8")
     (OUT / "choices.json").write_text(json.dumps(picks, ensure_ascii=False, indent=1), "utf-8")
     print(f"เสร็จ ✓  เครดิตเหลือ {credits()[1]}")
