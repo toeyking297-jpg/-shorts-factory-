@@ -1,0 +1,35 @@
+name: rodkit voice test (ElevenLabs)
+
+# กด Run workflow → เช็กคีย์ + ทำเสียงตัวอย่างตัวละครละ 3 เสียง → ฟังได้ที่หน้า Releases "rodkit-voices"
+on:
+  workflow_dispatch:
+    inputs:
+      who:
+        description: "ตัวละคร (เว้นว่าง = ทุกตัว) เช่น mali,chai"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  voices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Voice samples
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python -m rodkit.voice_test ${{ github.event.inputs.who }} | tee vt.log
+      - name: Publish samples
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "::notice::$(grep -m1 'คีย์ใช้ได้' vt.log) · $(tail -1 vt.log)"
+          gh release delete rodkit-voices --yes --cleanup-tag 2>/dev/null || true
+          gh release create rodkit-voices rodkit/voice_samples/*.mp3 rodkit/voice_samples/choices.md \
+            --title "เสียงตัวอย่างตัวละคร (ElevenLabs)" --notes-file rodkit/voice_samples/choices.md
