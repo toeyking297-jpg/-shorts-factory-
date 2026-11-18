@@ -482,6 +482,24 @@
   }
 
   // ---------- ตัว: ด้านหน้า ----------
+  // ท่าแขนมุมหน้า: แปลงมุมแขนด้านข้าง → [ต้นแขนกาง, ปลายแขน, ความยาวปลายแขน] และใช้ท่าเฉพาะมุมหน้า (FLAT_ARM_FRONT) ถ้ามี
+  const ARM_FRONT = RK.FLAT_ARM_FRONT = Object.assign(RK.FLAT_ARM_FRONT || {}, {
+    open2: { n: [42, 92], f: [42, 92] }, hugopen: { n: [78, 98], f: [78, 98] }, explain: { n: [30, 82] },
+    offer: { n: [26, 62] }, give: { n: [26, 58] }, take: { n: [24, 56] }, point: { n: [82, 86] }, shrug: { n: [22, 96], f: [22, 96] },
+  });
+  function sideToFront(a) {
+    const raised = a[0] > 90, up = raised ? a[0] * 0.85 : Math.max(-10, a[0] * 0.35 + 8);
+    return [up, raised ? up + a[1] * 0.75 : up - a[1] * 0.85, raised ? 1 : 1 - 0.3 * Math.sin(Math.min(90, a[1]) * D2R)];
+  }
+  function frontArm(A, t, side, a) {
+    const base = sideToFront(a);
+    const ovA = ARM_FRONT[A.arms] && ARM_FRONT[A.arms][side], ovB = A.arms2 && ARM_FRONT[A.arms2] && ARM_FRONT[A.arms2][side];
+    if (!ovA && !ovB) return base;
+    const k = A.arms2 ? RK.clamp(A.armMix ?? 0) : 0;
+    const ref = (name) => sideToFront((RK.FLAT_ARM[name] || RK.FLAT_ARM.idle)[side]);
+    const va = ovA ? [ovA[0], ovA[1], 1] : ref(A.arms), vb = A.arms2 ? (ovB ? [ovB[0], ovB[1], 1] : ref(A.arms2)) : va;
+    return [0, 1, 2].map((j) => va[j] + (vb[j] - va[j]) * k);
+  }
   function bodyFront(C, A, t) {
     const sk = C.skin, pose = armPose(A, t), breathe = Math.sin(t * 2.2 + (A.seed || 0)) * 3, back = A.view === "back";
     // เดินเข้า/ออกจากกล้อง: ใช้จังหวะเดียวกับวงจรเดินด้านข้าง (สะโพกขึ้นลง ถ่ายน้ำหนักซ้ายขวา แขนแกว่ง)
@@ -526,7 +544,7 @@
     // แขน (หน้า: มุมกางออกด้านข้าง)
     const drawArm = (sd, a) => {
       const sp = [sd * 62 * bw, S[1] + 34];
-      const up = a[0] > 90 ? a[0] * 0.85 : Math.max(-10, a[0] * 0.35 + 8), raised = a[0] > 90, fa = raised ? up + a[1] * 0.75 : up - a[1] * 0.85, el = pol(sp, 150, sd * up), wr = pol(el, raised ? 135 : 135 * (1 - 0.3 * Math.sin(Math.min(90, a[1]) * D2R)), sd * fa);
+      const [up, fa, fl] = frontArm(A, t, sd > 0 ? "n" : "f", a), el = pol(sp, 150, sd * up), wr = pol(el, 135 * fl, sd * fa);
       let r = taper(sp, el, 42, 36, sk) + taper(el, wr, 36, 30, sk);
       const slv = C.sleeve || (C.topKind === "tee" ? "short" : "rolled"), lp = (k) => [el[0] + (wr[0] - el[0]) * k, el[1] + (wr[1] - el[1]) * k];
       if (slv === "short") r += taper([sp[0], sp[1] - 8], pol(sp, 92, sd * up), 58, 52, C.top) + taper(pol(sp, 84, sd * up), pol(sp, 92, sd * up), 54, 54, sh(C.top, -0.1));
@@ -534,7 +552,8 @@
       else if (slv === "full") { r += taper([sp[0], sp[1] - 8], el, 56, 50, C.top) + taper(el, lp(0.9), 50, 44, C.top) + taper(lp(0.78), lp(0.9), 48, 46, C.cuff || sh(C.top, -0.12)); if (C.shirtCuff) r += taper(lp(0.9), lp(0.95), 40, 38, C.shirtCuff); }
       const kind = handKind(A, sd > 0 ? "n" : "f");
       if (kind === "grip" && RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) r += RK.FLAT_GRIP[A.prop](wr, sd, C, false, "front");
-      r += `<g transform="translate(${P(wr[0], wr[1])}) rotate(${f(-sd * fa)}) scale(${sd > 0 ? -1 : 1},1)">` + hand(kind, sk) + `</g>`;
+      // ฝ่ามือหันหาคน (open): นิ้วโป้งต้องอยู่ฝั่งกลางลำตัวเมื่อยกมือ → กลับด้านจากมือห้อยปกติ
+      r += `<g transform="translate(${P(wr[0], wr[1])}) rotate(${f(-sd * fa)}) scale(${(kind === "open" ? -sd : sd) > 0 ? -1 : 1},1)">` + hand(kind, sk) + `</g>`;
       A._hand = A._hand || {}; A._hand[sd > 0 ? "n" : "f"] = { p: wr, ang: 0 };
       return r;
     };
