@@ -93,18 +93,21 @@ def smooth_path(cnt):
         c1 = p1 + (p2 - p0) / 6; c2 = p2 - (p3 - p1) / 6
         d += f"C{c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}"
     return d + "Z"
-def mpath(mk, eps=1.6, mina=30):
+def mpath(mk, eps=2.0, mina=60):
     cs, _ = cv2.findContours(mk.astype(np.uint8), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
     return "".join(smooth_path(cv2.approxPolyDP(c, eps, True)) for c in cs if cv2.contourArea(c) >= mina)
-def band(mk, lo, hi, blur=3.0):
-    q = np.quantile(lum[mk == 1], [lo, hi]) if mk.sum() else (0, 0)
-    sel = ((lum >= q[0]) & (lum <= q[1]) & (mk == 1)).astype(np.float32)
+lumS = cv2.GaussianBlur(lum, (0, 0), 7)
+def band(mk, lo, hi, blur=4.0, src_l=None):
+    LL = lumS if src_l is None else src_l
+    q = np.quantile(LL[mk == 1], [lo, hi]) if mk.sum() else (0, 0)
+    sel = ((LL >= q[0]) & (LL <= q[1]) & (mk == 1)).astype(np.float32)
     sel = cv2.GaussianBlur(sel, (0, 0), blur) > 0.5
-    return clean(sel & (mk == 1), 5, 120)
+    return clean(sel & (mk == 1), 7, 400)
+lumM = cv2.GaussianBlur(lum, (0, 0), 3)
 layers = []
 sil = clean(M["silver"], 5, 200); blk = clean(M["black"], 5, 200)
 blu = clean(M["blue"], 7, 300); red = clean(M["red"], 3, 60); gld = clean(M["gold"] & (wheelzone == 0) | (M["gold"] & (np.hypot(XX - 1281.6, YY - 783.3) < 130)), 3, 40)
-defs_extra = """<radialGradient id="tDisc" cx=".45" cy=".4"><stop offset="0" stop-color="#EEF0F3"/><stop offset="1" stop-color="#9AA1AA"/></radialGradient><linearGradient id="tSil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C3C9CF"/><stop offset=".5" stop-color="#A2A9B2"/><stop offset="1" stop-color="#7C838D"/></linearGradient>
+defs_extra = """<radialGradient id="tDisc" cx=".45" cy=".4"><stop offset="0" stop-color="#EEF0F3"/><stop offset="1" stop-color="#9AA1AA"/></radialGradient><linearGradient id="tSil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9BFC6"/><stop offset=".5" stop-color="#99A0A9"/><stop offset="1" stop-color="#737A84"/></linearGradient>
 <linearGradient id="tBlk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34363C"/><stop offset="1" stop-color="#17181B"/></linearGradient>
 <linearGradient id="tBlue" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-20 520 760)"><stop offset="0" stop-color="#8AD6FF"/><stop offset=".3" stop-color="#2F8BEE"/><stop offset=".6" stop-color="#173DA8"/><stop offset="1" stop-color="#3A88E6"/></linearGradient>
 <pattern id="tMesh" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(28)"><rect width="12" height="12" fill="#3D4046"/><path d="M0,0 L0,12 M0,0 L12,0" stroke="#0F1012" stroke-width="3.6"/></pattern>"""
@@ -112,8 +115,8 @@ defs_extra = """<radialGradient id="tDisc" cx=".45" cy=".4"><stop offset="0" sto
 layers.append(f'<path d="{mpath(sil)}" fill="url(#tSil)" fill-rule="evenodd" stroke="#A8AFB8" stroke-width="1.5"/>')
 layers.append(f'<path d="{mpath(band(sil, 0, .3))}" fill="#8F96A0" fill-rule="evenodd" opacity=".75"/>')
 layers.append(f'<path d="{mpath(band(sil, 0, .1))}" fill="#6F7681" fill-rule="evenodd" opacity=".75"/>')
-layers.append(f'<path d="{mpath(band(sil, .8, 1))}" fill="#D6DADF" fill-rule="evenodd" opacity=".75"/>')
-layers.append(f'<path d="{mpath(band(sil, .95, 1, 2))}" fill="#F4F6F8" fill-rule="evenodd" opacity=".8"/>')
+layers.append(f'<path d="{mpath(band(sil, .8, 1))}" fill="#CDD2D8" fill-rule="evenodd" opacity=".7"/>')
+layers.append(f'<path d="{mpath(band(sil, .95, 1, 2.5, lumM), 1.6, 40)}" fill="#F4F6F8" fill-rule="evenodd" opacity=".85"/>')
 # ดำ: พื้น + เงาสะท้อน (พลาสติกหุ้มเบาะ/เครื่อง)
 layers.append(f'<path d="{mpath(blk)}" fill="url(#tBlk)" fill-rule="evenodd" stroke="#1E1F23" stroke-width="1.5"/>')
 nonseat = blk & (1 - seat)
@@ -156,19 +159,59 @@ coil += f'<rect x="-15" y="-4" width="30" height="8" rx="3" fill="#E9B93A" trans
 layers.append(coil)
 defs_extra += '<linearGradient id="tChr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F8792"/><stop offset=".35" stop-color="#F4F6F8"/><stop offset=".65" stop-color="#AEB5BE"/><stop offset="1" stop-color="#6E757F"/></linearGradient>'
 layers.append(f'<path d="{mpath(gld, 1.2, 30)}" fill="#D9A92E" stroke="#9C7417" stroke-width="1.5"/>')
-# เส้นรายละเอียด (ขอบชิ้นงาน/ร่อง/น็อต)
-edges = cv2.Canny(cv2.GaussianBlur(cv2.cvtColor(src, cv2.COLOR_BGR2GRAY), (0, 0), 1.5), 45, 120)
-edges[fg == 0] = 0; mz = np.zeros((h, w), np.uint8); cv2.line(mz, (232, 704), (636, 816), 1, 60); edges[mz == 1] = 0; edges[cv2.dilate(wheelzone, np.ones((3, 3), np.uint8)) == 1] = 0; edges[bask == 1] = 0
+# เส้นต่อชิ้นงาน (ขอบคมยาว ๆ จากภาพ) วาดเป็นร่องมืด + ขอบสว่างคู่กัน
+gray = cv2.GaussianBlur(cv2.cvtColor(src, cv2.COLOR_BGR2GRAY), (0, 0), 2.2)
+edges = cv2.Canny(gray, 50, 135)
+keepz = cv2.erode(fg, np.ones((7, 7), np.uint8))
+edges[keepz == 0] = 0; edges[cv2.dilate(wheelzone, np.ones((9, 9), np.uint8)) == 1] = 0; edges[bask == 1] = 0
+mz = np.zeros((h, w), np.uint8); cv2.line(mz, (232, 704), (636, 816), 1, 70); edges[mz == 1] = 0
+edges[seat == 1] = 0
 ecs, _ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
-det = ""
+dk, lt = "", ""
 for c in ecs:
-    if cv2.arcLength(c, False) < 80: continue
-    ap = cv2.approxPolyDP(c, 1.2, False).reshape(-1, 2)
-    det += "M" + " L".join(f"{x},{y}" for x, y in ap)
-layers.append(f'<path d="{det}" fill="none" stroke="#202227" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity=".28"/>')
+    if cv2.arcLength(c, False) < 120: continue
+    ap = cv2.approxPolyDP(c, 1.8, False).reshape(-1, 2).astype(float)
+    if len(ap) < 2: continue
+    dk += "M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in ap)
+    lt += "M" + " L".join(f"{x+1.2:.1f},{y+1.6:.1f}" for x, y in ap)
+layers.append(f'<path d="{lt}" fill="none" stroke="#F2F4F7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>')
+layers.append(f'<path d="{dk}" fill="none" stroke="#2A2C31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>')
+
+# ---------- ชิ้นส่วนวาดใหม่ทีละชิ้น (ตำแหน่งวัดจากภาพ) ----------
+P = []
+# คอท่อโครเมียม (จากเครื่องไปปลายท่อ)
+P.append('<path d="M902,772 C912,826 892,846 846,848 L636,830" fill="none" stroke="#6E757F" stroke-width="20" stroke-linecap="round"/><path d="M902,772 C912,826 892,846 846,848 L636,830" fill="none" stroke="url(#tChr)" stroke-width="15" stroke-linecap="round"/><path d="M898,780 C906,826 888,840 846,842 L640,825" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".7"/>')
+# ฝาครอบคาร์บอน + ป้ายทอง (ไม่มีตัวอักษร)
+P.append('<ellipse cx="818" cy="772" rx="54" ry="46" fill="#141518"/><ellipse cx="818" cy="772" rx="48" ry="40" fill="url(#tCarb)"/><ellipse cx="818" cy="772" rx="48" ry="40" fill="none" stroke="#4A4D55" stroke-width="2.5"/><path d="M780,752 C796,736 834,734 852,748" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity=".3"/>')
+P.append('<rect x="790" y="778" width="56" height="14" rx="7" fill="#141518" stroke="#D9A92E" stroke-width="2"/><rect x="798" y="782" width="40" height="6" rx="3" fill="#D9A92E"/>')
+P.append("".join(f'<circle cx="{818+np.cos(a)*51:.1f}" cy="{772+np.sin(a)*43:.1f}" r="3.2" fill="#9AA1AA"/>' for a in np.linspace(0, 2*np.pi, 9)[:-1]))
+# ไฟท้าย: เลนส์ใสเหลี่ยมเพชร + ไส้แดง
+P.append('<path d="M180,384 L270,416 L284,460 L266,470 L226,454 Z" fill="#EEF1F4" stroke="#8C939C" stroke-width="2"/><path d="M196,396 L262,422 L272,456 L230,446 Z" fill="#E4572E" opacity=".35"/>' +
+         "".join(f'<path d="M{186+i*12},{398+i*5} L{204+i*12},{446+i*2}" stroke="#AEB5BE" stroke-width="1.5" opacity=".9"/>' for i in range(7)) +
+         '<path d="M190,398 L258,430" stroke="#FFFFFF" stroke-width="3" opacity=".9"/><path d="M226,458 L268,470" stroke="#5E6670" stroke-width="2"/>')
+# ไฟหน้า/หน้ากากบน + แฮนด์ + ปลายแฮนด์น้ำเงิน + สวิตช์ + มือเบรก
+P.append('<path d="M1008,236 L1028,200 C1060,190 1102,196 1124,214 C1134,232 1140,260 1136,288 L1114,320 C1082,328 1050,324 1032,318 L1014,282 Z" fill="#1C1D21"/>'
+         '<path d="M1030,204 C1062,196 1100,200 1120,218" stroke="#5A5D66" stroke-width="4" fill="none"/><path d="M1040,214 L1090,212 L1112,226 L1052,232 Z" fill="#2C2E33"/><rect x="1056" y="214" width="34" height="10" rx="3" fill="#8FD0FF" opacity=".7"/>'
+         '<path d="M1098,244 C1116,248 1132,262 1136,286 L1116,318 C1100,304 1092,276 1098,244 Z" fill="url(#tLens)" stroke="#8C939C" stroke-width="2"/><path d="M1106,256 C1118,264 1126,276 1128,290" stroke="#FFFFFF" stroke-width="3" fill="none" opacity=".9"/>')
+P.append('<path d="M1012,262 L962,272 L960,290 L1014,282 Z" fill="#1F2024"/><rect x="918" y="270" width="48" height="34" rx="10" fill="#26272C" transform="rotate(-14 942 287)"/>' + "".join(f'<line x1="{924+i*7}" y1="{276-i*1.7:.1f}" x2="{926+i*7}" y2="{298-i*1.7:.1f}" stroke="#3A3C42" stroke-width="2"/>' for i in range(5)) +
+         '<rect x="958" y="268" width="22" height="22" rx="5" fill="#2F3136"/><circle cx="966" cy="276" r="3.5" fill="#E9B93A"/><circle cx="974" cy="284" r="3" fill="#9AA1AA"/>'
+         '<circle cx="1004" cy="236" r="11" fill="#2A7BE4" stroke="#123A8C" stroke-width="2"/><circle cx="1000" cy="232" r="3.5" fill="#BFE6FF"/>'
+         '<path d="M1016,268 L1040,312 L1032,316 L1008,272 Z" fill="#9AA1AA"/>')
+# พวงกุญแจ
+P.append('<circle cx="1036" cy="400" r="9" fill="#26272C"/><circle cx="1036" cy="400" r="3.5" fill="#C9CED5"/><circle cx="1036" cy="420" r="9" fill="none" stroke="#C9CED5" stroke-width="2.5"/><path d="M1036,429 L1030,452 L1042,452 Z" fill="#D9DEE4"/><circle cx="1031" cy="464" r="6" fill="none" stroke="#C9CED5" stroke-width="2"/>')
+# ไฟเลี้ยวหน้า
+P.append('<path d="M1122,440 L1186,470 L1180,492 L1132,476 Z" fill="#EEF1F4" stroke="#8C939C" stroke-width="2"/><path d="M1132,448 L1178,470 L1174,484 L1138,472 Z" fill="#F2C14E" opacity=".5"/><path d="M1128,444 L1182,470" stroke="#FFFFFF" stroke-width="2.5"/>')
+# น็อตสีน้ำเงินตามตัวถัง (ตำแหน่งในภาพ)
+for (bx, by) in [(1010, 592), (884, 702), (1060, 752), (1192, 640), (556, 520)]:
+    P.append(f'<circle cx="{bx}" cy="{by}" r="6.5" fill="#123A8C"/><circle cx="{bx}" cy="{by}" r="5" fill="#2A7BE4"/><circle cx="{bx-1.6}" cy="{by-1.6}" r="1.8" fill="#BFE6FF"/>')
+layers += P
+defs_extra += '<pattern id="tCarb" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#24252A"/><rect width="4.5" height="4.5" fill="#363840"/><rect x="4.5" y="4.5" width="4.5" height="4.5" fill="#363840"/></pattern>'
+defs_extra += '<linearGradient id="tLens" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#DCE8F2"/><stop offset="1" stop-color="#9FB3C6"/></linearGradient>'
 # เส้นขอบตัวรถ (outline การ์ตูน)
-cs, _ = cv2.findContours(fg, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-outline = "".join(smooth_path(cv2.approxPolyDP(c, 1.2, True)) for c in cs if cv2.contourArea(c) > 200)
+fgo = fg.copy(); cv2.line(fgo, (232, 704), (636, 816), 1, 48)
+fgo = cv2.morphologyEx(fgo, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8))
+cs, _ = cv2.findContours(fgo, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+outline = "".join(smooth_path(cv2.approxPolyDP(c, 1.6, True)) for c in cs if cv2.contourArea(c) > 20000)
 
 # ---------- 4) ล้อวาดใหม่ด้วยโค้ด ----------
 def wheel(cx, cy, front):
