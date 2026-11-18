@@ -30,11 +30,11 @@ def chrome_path() -> str | None:
     return None  # ใช้ Chromium ของ playwright
 
 
-def open_page(pw, scale: float):
+def open_page(pw, scale: float, web=None):
     exe = chrome_path()
     br = pw.chromium.launch(executable_path=exe, args=["--allow-file-access-from-files", "--disable-gpu"]) if exe else pw.chromium.launch(args=["--allow-file-access-from-files"])
     pg = br.new_page(viewport={"width": 1080, "height": 1920}, device_scale_factor=scale)
-    pg.goto(WEB.as_uri())
+    pg.goto((web or WEB).as_uri())
     pg.wait_for_function("window.RK_READY === true", timeout=30000)
     return br, pg
 
@@ -82,7 +82,7 @@ def main():
     fps = a.fps or ep.get("fps", 30)
 
     with sync_playwright() as pw:
-        br, pg = open_page(pw, a.scale if (a.storyboard or a.stills) else 1.0)
+        br, pg = open_page(pw, a.scale if (a.storyboard or a.stills) else 1.0, ROOT / "web" / ("flat.html" if ep.get("engine") == "flat" else "index.html"))
         dur = load(pg, ep)
 
         if a.storyboard:

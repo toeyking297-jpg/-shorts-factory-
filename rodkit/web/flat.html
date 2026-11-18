@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Kanit;font-weight:500;src:url(../../assets/fonts/Kanit-Medium.ttf)}
+@font-face{font-family:Kanit;font-weight:700;src:url(../../assets/fonts/Kanit-Bold.ttf)}
+@font-face{font-family:Kanit;font-weight:900;src:url(../../assets/fonts/Kanit-Black.ttf)}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{width:1080px;height:1920px}
+#stage svg{display:block}
+</style></head>
+<body><div id="stage"></div>
+<script src="lib/core.js"></script>
+<script src="lib/flat_walk.js"></script>
+<script src="lib/flat_char.js"></script>
+<script src="lib/flat_cast2.js"></script>
+<script src="lib/flat_kitchen.js"></script>
+<script src="lib/flat_render.js"></script>
+<script>
+Promise.all(["500","700","900"].map(w=>document.fonts.load(w+" 40px Kanit","ทดสอบ"))).then(()=>{window.RK_READY=true});
+</script>
+</body></html>

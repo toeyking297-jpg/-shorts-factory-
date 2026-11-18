@@ -150,7 +150,7 @@ def sfx(name: str) -> np.ndarray:
         tt = t(0.6); n = rng.uniform(-1, 1, tt.size); env = np.sin(np.pi * tt / 0.6) ** 2
         n = np.convolve(n, np.ones(12) / 12, mode="same"); return 0.5 * n * env
     if name == "cup":
-        return bell(1800, 0.5, 0.25) + bell(2600, 0.4, 0.12)
+        return bell(1800, 0.5, 0.25) + np.pad(bell(2600, 0.4, 0.12), (0, int(0.1 * SR)))
     if name == "typing":
         out = np.zeros(int(1.6 * SR))
         for i in range(18):
