@@ -67,10 +67,17 @@ def lock():
             except RuntimeError as e:
                 if "already" not in str(e).lower(): print("  เพิ่มเสียงไม่ได้:", e)
             v["in_account"] = True
-        body = {"text": ch["sample"], "model_id": model,
+        body = {"text": ch["sample"], "model_id": v.get("model", model),
                 "voice_settings": {"stability": v.get("stability", 0.5), "similarity_boost": 0.8, "style": v.get("style", 0.35)}}
         try:
-            r = req("POST", f"/v1/text-to-speech/{v['voice_id']}", timeout=180, params={"output_format": "mp3_44100_128"}, json=body)
+            try:
+                r = req("POST", f"/v1/text-to-speech/{v['voice_id']}", timeout=180, params={"output_format": "mp3_44100_128"}, json=body)
+            except RuntimeError as e:
+                if "400" not in str(e)[:5]: raise
+                print(f"  {who}: {body['model_id']} ใช้ไม่ได้กับเสียงนี้ ({str(e)[:160]}) → ลอง eleven_flash_v2_5", flush=True)
+                body["model_id"] = "eleven_flash_v2_5"
+                r = req("POST", f"/v1/text-to-speech/{v['voice_id']}", timeout=180, params={"output_format": "mp3_44100_128"}, json=body)
+                v["model"] = "eleven_flash_v2_5"
             (OUT / f"{who}.mp3").write_bytes(r.content)
             VFX.apply(OUT / f"{who}.mp3", v.get("pitch", 0.0), v.get("tempo", 1.0))
             print(f"  {who}.mp3 ← {v.get('voice_name')}", flush=True)

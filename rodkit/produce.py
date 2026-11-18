@@ -106,7 +106,7 @@ class Eleven:
 
     def tts(self, who: str, text: str, out: pathlib.Path):
         v = self.voice_for(who)
-        body = {"text": text, "model_id": self.cast.get("model", "eleven_v3"),
+        body = {"text": text, "model_id": v.get("model") or self.cast.get("model", "eleven_v3"),
                 "voice_settings": {"stability": v.get("stability", 0.5), "similarity_boost": 0.8, "style": v.get("style", 0.35)}}
         try:
             r = self._req("POST", f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}", params={"output_format": "mp3_44100_128"}, json=body)
