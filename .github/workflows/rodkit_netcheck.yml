@@ -1,0 +1,22 @@
+name: rodkit ElevenLabs network check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Probe
+        env:
+          K: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          echo "key length: ${#K}"
+          for u in https://api.elevenlabs.io/v1/models https://api.us.elevenlabs.io/v1/models; do
+            echo "== $u (no key, v4)";   curl -4 -m 25 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" "$u" || true
+            echo "== $u (key, v4)";      curl -4 -m 25 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" "$u" || true
+            echo "== $u (key, v6)";      curl -6 -m 25 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" "$u" || true
+          done
+          echo "== user (key)"; curl -4 -m 25 -sS -w "\n%{http_code} %{time_total}s\n" -H "xi-api-key: $K" https://api.elevenlabs.io/v1/user/subscription | tail -c 300 || true
+          echo "== voices (key)"; curl -4 -m 40 -sS -o /dev/null -w "%{http_code} %{time_total}s\n" -H "xi-api-key: $K" https://api.elevenlabs.io/v1/voices || true
