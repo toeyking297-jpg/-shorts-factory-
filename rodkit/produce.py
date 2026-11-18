@@ -26,6 +26,7 @@ import numpy as np
 
 from . import audio as AU
 from . import sfx_build as SFXB
+from . import voicefx as VFX
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CAST = ROOT / "cast.json"
@@ -114,6 +115,7 @@ class Eleven:
             body["model_id"] = "eleven_multilingual_v2"
             r = self._req("POST", f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}", params={"output_format": "mp3_44100_128"}, json=body)
         out.write_bytes(r.content)
+        VFX.apply(out, v.get("pitch", 0.0), v.get("tempo", 1.0))
 
     def sound(self, prompt: str, seconds: float, out: pathlib.Path):
         r = self._req("POST", "https://api.elevenlabs.io/v1/sound-generation", json={"text": prompt, "duration_seconds": max(0.5, min(22, seconds)), "prompt_influence": 0.5})

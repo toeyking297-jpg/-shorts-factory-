@@ -1,5 +1,5 @@
 {
-  "_note": "DNA เสียงของตัวละครช่องดูเพลิน (ElevenLabs) — voice_id ใส่ตอนต่อคีย์แล้ว ห้ามเปลี่ยนเสียงตัวละครระหว่างตอน",
+  "_note": "DNA เสียงตัวละครช่องดูเพลิน (ElevenLabs) — ล็อกแล้ว ห้ามเปลี่ยน voice_id ระหว่างซีรีส์ · pitch = ปรับเสียงสูงต่ำ (ครึ่งเสียง), tempo = ความเร็วพูด (ทำหลังสร้างเสียง)",
   "model": "eleven_v3",
   "characters": {
     "narrator": {
@@ -8,9 +8,11 @@
         "gender": "female",
         "age": "30s",
         "tone": "อบอุ่น ชัด จังหวะนุ่ม",
-        "voice_id": "",
+        "voice_id": "8NwLQzLG93MiNxGxKyvC",
         "stability": 0.5,
-        "style": 0.35
+        "style": 0.3,
+        "voice_name": "Nikita - Polished Thai Broadcaster.",
+        "public_owner_id": "9f262288a053ae7c59211e57cc0b2f10c35a7ab70eb5c0f7a79f23f09fa0c7f8"
       },
       "sample": "เช้าวันใหม่ที่บ้านหลังเล็ก เต็มไปด้วยเสียงหัวเราะ"
     },
@@ -104,9 +106,11 @@
         "gender": "male",
         "age": "late 20s",
         "tone": "อบอุ่น สุภาพ ใจดี มั่นใจ",
-        "voice_id": "",
+        "voice_id": "bcdIY58WBBzAMmef52NW",
         "stability": 0.5,
-        "style": 0.35
+        "style": 0.35,
+        "voice_name": "Zie - Friendly Thai Tech Narrator",
+        "public_owner_id": "e3e069e13fc8163f47dd841cc5499ec65ddea75a397cde7cd9678e678f995dc8"
       },
       "sample": "สวัสดีครับ วันนี้อากาศดีมาก ออกไปเดินเล่นกันไหมครับ"
     },
@@ -116,9 +120,12 @@
         "gender": "female",
         "age": "20s",
         "tone": "อ่อนหวาน สดใส ยิ้มในเสียง",
-        "voice_id": "",
+        "voice_id": "7XW5JhaNn90bnFojQ5DA",
         "stability": 0.5,
-        "style": 0.45
+        "style": 0.45,
+        "voice_name": "Mali - Natural & Clear Thai",
+        "public_owner_id": "df99dd34bbe3d9ca279939bd865de10e7f60c50588512bfa80a93ff9e383ae5d",
+        "pitch": 0.5
       },
       "sample": "อรุณสวัสดิ์ค่ะ ขอให้วันนี้เป็นวันที่ดีของทุกคนนะคะ"
     },
@@ -128,9 +135,13 @@
         "gender": "female",
         "age": "20s",
         "tone": "ร่าเริง คล่องแคล่ว เป็นกันเอง",
-        "voice_id": "",
+        "voice_id": "gbZNaSxK771GgOTJIKRB",
         "stability": 0.45,
-        "style": 0.5
+        "style": 0.55,
+        "voice_name": "Mind - Thai Storyteller & Explainer",
+        "public_owner_id": "5d6a76e760b5e31977c3d161384d7d7f95c3d73b1da2cf0ae325d6c570999999",
+        "pitch": 0.8,
+        "tempo": 1.04
       },
       "sample": "ไปกันเลย วันนี้เราจะไปตลาดนัดกัน สนุกแน่นอน"
     },
@@ -140,9 +151,12 @@
         "gender": "female",
         "age": "40s",
         "tone": "อบอุ่น ใจดี พูดเร็วนิดๆ แบบแม่บ้านขี้บ่น",
-        "voice_id": "",
-        "stability": 0.5,
-        "style": 0.4
+        "voice_id": "tBiVUbaPjPf0J5lIPaQq",
+        "stability": 0.45,
+        "style": 0.5,
+        "voice_name": "Tatar - Sweet, Cheerful & Engaging Thai",
+        "public_owner_id": "6dfed9570312c7fcb60db20b66826919e3c244c79860570a0227462cf294c95e",
+        "tempo": 1.03
       },
       "sample": "วันนี้แม่ทำไข่เจียวให้นะลูก กินให้หมดเลย ห้ามเหลือ"
     },
@@ -152,9 +166,13 @@
         "gender": "male",
         "age": "40s",
         "tone": "ทุ้ม ใจดี ขำๆ มุกพ่อ",
-        "voice_id": "",
+        "voice_id": "yq05eeRaHPMGuWTVpqeP",
         "stability": 0.5,
-        "style": 0.45
+        "style": 0.5,
+        "voice_name": "Tonce - Friendly",
+        "public_owner_id": "533f7383597d999c8dd586733aa3481430242f7a7ddc285c8d9d28b0e7a7e875",
+        "pitch": -0.5,
+        "tempo": 0.98
       },
       "sample": "พ่อบอกแล้วไง ตื่นเช้าแล้วชีวิตจะดีขึ้นเยอะเลย ฮ่าๆ"
     },
@@ -164,9 +182,13 @@
         "gender": "female child",
         "age": "7",
         "tone": "เด็กเล็ก ใส ร่าเริง ช่างถาม",
-        "voice_id": "",
+        "voice_id": "u14IW5Q2cGXcEj6L2joU",
         "stability": 0.45,
-        "style": 0.55
+        "style": 0.55,
+        "voice_name": "Emily - Podcast",
+        "public_owner_id": "d4973cdb4b654e8d869f4648ce7556c383fe743823228cfeb1454489a1fc72da",
+        "pitch": 4.0,
+        "tempo": 1.06
       },
       "sample": "แม่จ๋า ทำไมท้องฟ้าถึงเป็นสีฟ้าล่ะคะ"
     },
@@ -176,9 +198,13 @@
         "gender": "female",
         "age": "70s",
         "tone": "แก่ นุ่ม ช้า ใจดี",
-        "voice_id": "",
+        "voice_id": "MYZYcGOqrkYQcwDunXl7",
         "stability": 0.6,
-        "style": 0.3
+        "style": 0.3,
+        "voice_name": "Hammy - Warm& friendly",
+        "public_owner_id": "75b43854bb7d12781c18d023340f37f10c09beb3a20921ee7eb59ad1a8f56b6d",
+        "pitch": -1.5,
+        "tempo": 0.9
       },
       "sample": "หลานเอ๊ย มานั่งตรงนี้ เดี๋ยวยายเล่าเรื่องสมัยก่อนให้ฟัง"
     },
@@ -188,9 +214,13 @@
         "gender": "male",
         "age": "20s",
         "tone": "วัยรุ่น ไฮเปอร์ เร็ว ตลก",
-        "voice_id": "",
+        "voice_id": "ezkLs9Yt73bdKnjZ9EBR",
         "stability": 0.4,
-        "style": 0.6
+        "style": 0.6,
+        "voice_name": "Ton - Shy Geek",
+        "public_owner_id": "5d1dc8146a899e4f3ee70d6a29b5aadd75b0bf5d1dbda9aba6d6ca572e659425",
+        "pitch": 0.5,
+        "tempo": 1.08
       },
       "sample": "เฮ้ย จริงดิ วันนี้ได้โบนัสเหรอ เลี้ยงหมูกระทะเลยดิ"
     },
@@ -200,9 +230,11 @@
         "gender": "female",
         "age": "30s",
         "tone": "สาวออฟฟิศ มั่นใจ ชัดถ้อยชัดคำ",
-        "voice_id": "",
+        "voice_id": "tGGux8xjvENVgMFDc2sw",
         "stability": 0.5,
-        "style": 0.4
+        "style": 0.4,
+        "voice_name": "Ning - Calm Friendly & Podcast Host",
+        "public_owner_id": "b14494c95ec283fbd43098d99383a56d32d51d6e091e7cf91e583ee60939d5b9"
       },
       "sample": "ประชุมเก้าโมงตรงนะคะ ใครมาสายเลี้ยงกาแฟทั้งแผนก"
     },
@@ -212,9 +244,12 @@
         "gender": "male",
         "age": "50s",
         "tone": "ลุงข้างบ้าน เสียงดัง อารมณ์ดี",
-        "voice_id": "",
+        "voice_id": "KhBRXgEQjvfdIyXOu7G3",
         "stability": 0.45,
-        "style": 0.55
+        "style": 0.55,
+        "voice_name": "PapaAndy - Friendly Thai Native, Reviewer",
+        "public_owner_id": "b122d5327ef8a49ffe13f82fb2bb7e426e5a616e81cdc6e719b40a3816ab1078",
+        "pitch": -1.0
       },
       "sample": "อ้าว ไอ้หนู ไปไหนมาแต่เช้า มากินกาแฟกับลุงก่อน"
     }

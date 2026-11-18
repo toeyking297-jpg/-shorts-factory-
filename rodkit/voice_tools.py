@@ -3,6 +3,7 @@
   python -m rodkit.voice_tools lock      → เพิ่มเสียงที่เลือกใน cast.json เข้าบัญชี (ถ้าจำเป็น) + ทำเสียงยืนยันตัวละครละ 1 ไฟล์
 """
 import json, os, pathlib, sys, time, requests
+from . import voicefx as VFX
 
 ROOT = pathlib.Path(__file__).resolve().parent
 API = "https://api.elevenlabs.io"
@@ -71,6 +72,7 @@ def lock():
         try:
             r = req("POST", f"/v1/text-to-speech/{v['voice_id']}", timeout=180, params={"output_format": "mp3_44100_128"}, json=body)
             (OUT / f"{who}.mp3").write_bytes(r.content)
+            VFX.apply(OUT / f"{who}.mp3", v.get("pitch", 0.0), v.get("tempo", 1.0))
             print(f"  {who}.mp3 ← {v.get('voice_name')}", flush=True)
             lines.append(f"- **{ch['name']}** ({who}) → {v.get('voice_name')} · `{v['voice_id']}`")
         except RuntimeError as e:
