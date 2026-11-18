@@ -67,6 +67,7 @@ jobs:
         run: |
           git config user.name "rodkit-bot"
           git config user.email "rodkit-bot@users.noreply.github.com"
-          git add rodkit/out rodkit/jobs rodkit/cast.json rodkit/sfx_lib
+          mkdir -p rodkit/music_lib && touch rodkit/music_lib/.gitkeep
+          git add rodkit/out rodkit/jobs rodkit/cast.json rodkit/sfx_lib rodkit/music_lib
           git commit -m "rodkit: produced clip [skip ci]" || echo "nothing new"
           git pull --rebase -q && git push

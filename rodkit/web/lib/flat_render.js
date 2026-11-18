@@ -138,7 +138,8 @@
     s += `<rect width="${W}" height="${H}" fill="url(#gradeTop)"/><rect width="${W}" height="${H}" fill="url(#vigF)"/>`;
     s += `<image href="${GRAIN}" width="${W}" height="${H}" preserveAspectRatio="none" opacity=".03" style="mix-blend-mode:overlay"/>`;
     // UI
-    for (const u of S.ui || []) s += u.type === "chip" ? chip(u, t) : card(u, t);
+    if (RK.flatFx) s += RK.flatFx(S, t);
+    for (const u of S.ui || []) s += u.type === "chip" ? chip(u, t) : (RK.flatUi && RK.flatUi[u.type]) ? RK.flatUi[u.type](u, t) : card(u, t);
     for (const sb of S.subs || []) s += subtitle(sb, t);
     // เฟดเข้า/ออก + แฟลชตัดช็อต
     let fade = 0;
@@ -146,6 +147,7 @@
     if (S.fadeOut) fade = Math.max(fade, 1 - RK.clamp((S.dur - t) / S.fadeOut));
     if (fade > 0) s += `<rect width="${W}" height="${H}" fill="#120C0E" opacity="${f(fade)}"/>`;
     if (si > 0 && t < 0.12) s += `<rect width="${W}" height="${H}" fill="#FFF6E0" opacity="${f((1 - t / 0.12) * 0.25)}"/>`;
+    if (S.flash && t < 0.3) s += `<rect width="${W}" height="${H}" fill="#FFFFFF" opacity="${f((1 - t / 0.3) * 0.85)}"/>`;
     return s + `</svg>`;
   };
   RK.mount = function (T) { document.getElementById("stage").innerHTML = RK.frame(T); };

@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import json
+import json, re
 import os
 import pathlib
 import subprocess
@@ -74,7 +74,7 @@ class Eleven:
 
     def _req(self, method, url, **kw):
         import requests
-        r = requests.request(method, url, headers={"xi-api-key": self.key, **kw.pop("headers", {})}, timeout=180, **kw)
+        r = requests.request(method, url, headers={"xi-api-key": self.key, **kw.pop("headers", {})}, timeout=kw.pop("timeout", 240), **kw)
         r.raise_for_status()
         return r
 
@@ -116,6 +116,10 @@ class Eleven:
             r = self._req("POST", f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}", params={"output_format": "mp3_44100_128"}, json=body)
         out.write_bytes(r.content)
         VFX.apply(out, v.get("pitch", 0.0), v.get("tempo", 1.0))
+
+    def music(self, prompt: str, ms: int, out: pathlib.Path):
+        r = self._req("POST", "https://api.elevenlabs.io/v1/music", timeout=600, json={"prompt": prompt, "music_length_ms": max(10000, min(300000, ms))})
+        out.write_bytes(r.content)
 
     def sound(self, prompt: str, seconds: float, out: pathlib.Path):
         r = self._req("POST", "https://api.elevenlabs.io/v1/sound-generation", json={"text": prompt, "duration_seconds": max(0.5, min(22, seconds)), "prompt_influence": 0.5})
@@ -185,7 +189,7 @@ def main():
             p = synth(L["who"], L["text"])
             d = dur_of(p)
             voices.append((T + t, p, L.get("gain", 1.0)))
-            subs.append([round(t, 3), round(t + d, 3), L.get("sub", L["text"])])
+            subs.append([round(t, 3), round(t + d, 3), L.get("sub", re.sub(r"\[[^\]]*\]\s*", "", L["text"]).strip())])
             talks.setdefault(L["who"], []).append((t, t + d))
             line_t.append(t)
             t += d + L.get("pause", GAP)
@@ -245,7 +249,19 @@ def main():
             y = AU.sfx(name); x = np.stack([y, y], 1) if y.ndim == 1 else y
         i = int(at * AU.SR); k = min(len(x), n - i)
         if k > 0: fbus[i:i + k] += x[:k] * X.get("gain", 0.8)
-    mus = AU.music(total + 0.5, ep.get("music", "morning"))[:n]
+    mus = None
+    if ep.get("musicPrompt") and EL and EL.ok:
+        mp = ROOT / "music_lib" / f"{hashlib.md5(ep['musicPrompt'].encode()).hexdigest()[:12]}.mp3"
+        try:
+            if not mp.exists():
+                mp.parent.mkdir(exist_ok=True); EL.music(ep["musicPrompt"], int((total + 1.5) * 1000), mp); log(f"  ดนตรี ElevenLabs: {mp.name}")
+            mus = to_np(mp)
+            if len(mus) < n: mus = np.concatenate([mus, np.zeros((n - len(mus), 2), np.float32)])
+            fo = int(1.5 * AU.SR); mus = mus[:n].copy(); mus[-fo:] *= np.linspace(1, 0, fo)[:, None]
+            mus *= ep.get("musicGain", 1.6)
+        except Exception as e:  # noqa: BLE001
+            log(f"  ดนตรี ElevenLabs ใช้ไม่ได้ ({e}) ใช้ดนตรีสำรอง"); mus = None
+    if mus is None: mus = AU.music(total + 0.5, ep.get("music", "morning"))[:n]
     mbus = np.zeros((n, 2), np.float32); mbus[: len(mus)] = mus
     # ลดเสียงดนตรีตอนมีคนพูด
     env = np.abs(vbus).max(1)

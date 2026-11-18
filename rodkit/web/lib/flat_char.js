@@ -202,6 +202,7 @@
     const y = 60;
     if (mood === "yawn") return `<ellipse cx="0" cy="${y + 10}" rx="16" ry="26" fill="#6E2B2B"/><ellipse cx="0" cy="${y + 26}" rx="10" ry="7" fill="#D9776E"/>`;
     if (mood === "shock") return `<ellipse cx="0" cy="${y + 6}" rx="10" ry="14" fill="#6E2B2B"/>`;
+    if (mood === "worried" && talk < 0.15) return `<path d="M -16,${y + 6} Q -8,${y} 0,${y + 5} Q 8,${y + 10} 16,${y + 4}" stroke="#7A3530" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
     if (mood === "pain") return `<path d="M -16,${y + 2} L -8,${y - 3} L 0,${y + 3} L 8,${y - 3} L 16,${y + 2}" stroke="#7A3530" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
     if (talk > 0.08) {
       const o = 5 + talk * 16, w = 15 - talk * 3;
@@ -242,8 +243,9 @@
     s += `<ellipse cx="-46" cy="34" rx="18" ry="10" fill="#F28C82" opacity="${C.sex === "f" ? 0.38 : 0.16}"/><ellipse cx="46" cy="34" rx="18" ry="10" fill="#F28C82" opacity="${C.sex === "f" ? 0.38 : 0.16}"/>`;
     s += eyeFront(C, -34, 4, o.blink || 0, o.mood, lk, -1) + eyeFront(C, 34, 4, o.blink || 0, o.mood, lk, 1);
     const by = o.brow || 0, bw = C.browW ? C.browW + 1 : (C.sex === "f" ? 5.5 : 8);
-    s += path(`M ${P(-50, -24 - by)} Q ${P(-34, -32 - by * 1.3)} ${P(-16, -25 - by)}`, "none", `stroke="${C.brow || sh(C.hair, -0.1)}" stroke-width="${bw}" stroke-linecap="round"`);
-    s += path(`M ${P(16, -25 - by)} Q ${P(34, -32 - by * 1.3)} ${P(50, -24 - by)}`, "none", `stroke="${C.brow || sh(C.hair, -0.1)}" stroke-width="${bw}" stroke-linecap="round"`);
+    const wb = o.mood === "worried" ? 10 : 0; // คิ้วขมวดชี้ขึ้นด้านใน
+    s += path(`M ${P(-50, -24 - by + wb * 0.4)} Q ${P(-34, -32 - by * 1.3)} ${P(-16, -25 - by - wb)}`, "none", `stroke="${C.brow || sh(C.hair, -0.1)}" stroke-width="${bw}" stroke-linecap="round"`);
+    s += path(`M ${P(16, -25 - by - wb)} Q ${P(34, -32 - by * 1.3)} ${P(50, -24 - by + wb * 0.4)}`, "none", `stroke="${C.brow || sh(C.hair, -0.1)}" stroke-width="${bw}" stroke-linecap="round"`);
     s += path(`M -6,34 Q 0,38 6,34`, "none", `stroke="${sh(sk, -0.3)}" stroke-width="3.5" stroke-linecap="round"`) + path(`M 3,12 L 6,30`, "none", `stroke="${sh(sk, -0.12)}" stroke-width="3" stroke-linecap="round"`);
     s += mouthFront(C, o.talk || 0, o.mood);
     s += hr.front;
@@ -485,7 +487,7 @@
   // ท่าแขนมุมหน้า: แปลงมุมแขนด้านข้าง → [ต้นแขนกาง, ปลายแขน, ความยาวปลายแขน] และใช้ท่าเฉพาะมุมหน้า (FLAT_ARM_FRONT) ถ้ามี
   const ARM_FRONT = RK.FLAT_ARM_FRONT = Object.assign(RK.FLAT_ARM_FRONT || {}, {
     open2: { n: [42, 92], f: [42, 92] }, hugopen: { n: [78, 98], f: [78, 98] }, explain: { n: [30, 82] },
-    offer: { n: [26, 62] }, give: { n: [26, 58] }, take: { n: [24, 56] }, point: { n: [82, 86] }, shrug: { n: [22, 96], f: [22, 96] },
+    offer: { n: [26, 62] }, clap: { n: [14, -48], f: [14, -48] }, clap2: { n: [22, -10], f: [22, -10] }, cheer: { n: [150, 162], f: [150, 162] }, give: { n: [26, 58] }, take: { n: [24, 56] }, point: { n: [82, 86] }, shrug: { n: [22, 96], f: [22, 96] },
   });
   function sideToFront(a) {
     const raised = a[0] > 90, up = raised ? a[0] * 0.85 : Math.max(-10, a[0] * 0.35 + 8);
