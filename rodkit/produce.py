@@ -149,7 +149,7 @@ def main():
     ep = json.loads(pathlib.Path(a.episode).read_text("utf-8"))
     eid = ep["id"]
     out = ROOT / "build" / eid
-    vdir = out / "voice"; vdir.mkdir(parents=True, exist_ok=True)
+    vdir = pathlib.Path(__file__).parent / "voice_lib" / ep["id"]; vdir.mkdir(parents=True, exist_ok=True)  # เก็บเสียงพากย์ใน repo: แก้ภาพแล้วผลิตใหม่ไม่เสียเครดิต
     EL = Eleven() if not a.dry else None
     engine = "dry" if a.dry else ("elevenlabs" if EL.ok else "edge")
     # เสียงต้องเป็น ElevenLabs เท่านั้น (ยกเว้นตั้ง allowFallback ในไฟล์ตอน) — ไม่ส่งคลิปเสียงบอทอีก

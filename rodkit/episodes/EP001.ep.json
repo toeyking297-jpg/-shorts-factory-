@@ -131,7 +131,8 @@
      "mood": "shock",
      "arms": "shrug",
      "sweat": 1,
-     "seed": 1
+     "seed": 1,
+     "apron": false
     }
    ],
    "props": [
@@ -166,15 +167,15 @@
     "x": [
      [
       0,
-      -220
+      -190
      ],
      [
       4,
-      -160
+      -130
      ]
     ],
     "y": -330,
-    "z": 1.15
+    "z": 1.05
    },
    "dof": {
     "bg": 3
@@ -191,7 +192,22 @@
      "x": -403,
      "light": "litL",
      "mood": "smile",
-     "seed": 1
+     "seed": 1,
+     "apron": false
+    },
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 20,
+     "s": 0.62,
+     "view": "front",
+     "who": "phum",
+     "x": 173,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 5,
+     "listen": false
     },
     {
      "who": "te",
@@ -199,7 +215,7 @@
      "y": 250,
      "view": "side",
      "light": "litL",
-     "x": 150,
+     "x": 30,
      "dir": -1,
      "mood": "laugh",
      "seed": 0
@@ -208,7 +224,7 @@
    "props": [
     {
      "type": "orchid",
-     "x": -220,
+     "x": -192,
      "y": -180,
      "s": 0.62,
      "bloom": 0.2
@@ -251,7 +267,7 @@
    "set": "office",
    "dur": 1.8,
    "cam": {
-    "x": -170,
+    "x": -160,
     "y": [
      [
       0,
@@ -289,13 +305,14 @@
      "x": -403,
      "light": "litL",
      "mood": "smile",
-     "seed": 1
+     "seed": 1,
+     "apron": false
     }
    ],
    "props": [
     {
      "type": "orchid",
-     "x": -220,
+     "x": -192,
      "y": -180,
      "s": 0.62,
      "bloom": 0.2,
@@ -366,7 +383,8 @@
      "x": -760,
      "arms": "explain",
      "mood": "smile",
-     "seed": 1
+     "seed": 1,
+     "apron": false
     }
    ],
    "props": [
@@ -562,7 +580,8 @@
      "mood": "worried",
      "sweat": 1,
      "seed": 1,
-     "arms": "rubhead"
+     "arms": "rubhead",
+     "apron": false
     }
    ],
    "props": [
@@ -757,7 +776,8 @@
      "x": 640,
      "dir": -1,
      "mood": "smile",
-     "seed": 1
+     "seed": 1,
+     "apron": true
     }
    ],
    "props": [
@@ -898,7 +918,8 @@
        "smile"
       ]
      ],
-     "seed": 1
+     "seed": 1,
+     "apron": false
     }
    ],
    "props": [
@@ -984,7 +1005,8 @@
      ],
      "arms": "explain",
      "mood": "happy",
-     "seed": 1
+     "seed": 1,
+     "apron": false
     }
    ],
    "props": [
@@ -1190,7 +1212,8 @@
      "x": -900,
      "mood": "happy",
      "seed": 1,
-     "arms": "hugopen"
+     "arms": "hugopen",
+     "apron": false
     }
    ],
    "props": [
@@ -1464,7 +1487,8 @@
      "mood": "laugh",
      "arms": "clap",
      "seed": 1,
-     "laugh": 1
+     "laugh": 1,
+     "apron": false
     },
     {
      "who": "te",
