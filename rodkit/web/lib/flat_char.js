@@ -649,6 +649,7 @@
 
   // ---------- วาดนักแสดง ----------
   RK.flatActor = function (A, t) {
+    RK._curA = A; RK._curT = t;
     const C = Object.assign({}, RK.FLAT_CAST[A.who] || RK.FLAT_CAST.prang, A.look2 || {});
     if (A.apron != null) C.apron = A.apron ? (typeof A.apron === "string" ? A.apron : "#8FAE96") : null; else if (C.apron === undefined && A.who === "prang") C.apron = null;
     // กระพริบตา

@@ -30,6 +30,12 @@
     piak: { gait: { bounce: 1.1, swing: 1.0, strideK: 0.9, lean: 2 }, name: "ลุงเปี๊ยก", sex: "m", age: 55, skin: "#C48A5E", hair: "#4A4442", hairHi: "#6E6662", style: "towel", towel: "#3F9BC4", mustache: "thin",
       top: "#F1EFEA", topKind: "tank", sleeve: "none", apron: "#C8553D", bottom: "#4E5A3E", bottomKind: "shorts",
       shoe: "#2E6FB0", shoeKind: "slipper", lips: "#9E5B48", iris: "#2A1E1A", h: 1.0, bodyW: 1.08, belly: 24, browW: 8 },
+    jaew: { gait: { bounce: 1.2, swing: 1.1, strideK: 0.85, lean: 2 }, name: "ป้าแจ๋ว", sex: "f", age: 52, skin: "#D9A27C", hair: "#3A2A24", hairHi: "#5E463A", style: "curly",
+      top: "#E8457A", topKind: "floral", print1: "#FFD84A", print2: "#FFFFFF", sleeve: "short", apron: "#2F8F4F", bottom: "#2E3F6E", bottomKind: "sarong", band: "#F2C14E",
+      shoe: "#E4572E", shoeKind: "slipper", lips: "#C2303A", lipstick: "#C2303A", iris: "#2A1E1A", h: 0.93, bodyW: 1.22, belly: 30, earring: "#E9C46A", chain: true, browW: 7 },
+    yai: { gait: { bounce: 0.4, swing: 0.4, strideK: 0.6, lean: 1, lift: 0.5, crouch: 0.95 }, name: "ยายศรี", sex: "f", age: 74, skin: "#D8A884", hair: "#B9B4AE", hairHi: "#E2DED8", style: "bun", pin: "#2E5E4E",
+      top: "#4F79A8", topKind: "blouse", sleeve: "short", apron: "#C9A27A", bottom: "#5A3E2E", bottomKind: "sarong", band: "#D9A441",
+      shoe: "#6B4A33", shoeKind: "slipper", lips: "#A9604F", iris: "#3A2C26", h: 0.85, hunch: 9, bodyW: 1.0, belly: 8, glasses: "round", glassesC: "#2B2230", earring: "#E9C46A", browW: 5 },
   });
   RK.FLAT_ARM.cane = { n: [14, 4], f: [6, 16] };
   RK.FLAT_ARM.tablet = { n: [12, 100], f: [8, 92] };

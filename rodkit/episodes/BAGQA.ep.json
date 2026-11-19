@@ -1,0 +1,8 @@
+{"id":"BAGQA","engine":"flat","fps":30,"set":"market","shots":[
+ {"dur":2,"cam":{"x":0,"y":-380,"z":1.0},"setOpts":{"stall":"veg"},
+  "actors":[{"who":"jaew","view":"front","x":-200,"y":0,"s":0.62,"layer":"back"},{"who":"yai","view":"front","x":150,"y":0,"s":0.62,"layer":"back","mood":"happy"},{"who":"te","view":"front","x":-420,"y":230,"s":0.62,"prop":"bag","bagFill":0.3,"bagItems":3},{"who":"te","view":"side","dir":1,"x":380,"y":260,"s":0.62,"prop":"bag","bagFill":0.9,"bagItems":8}],
+  "props":[{"type":"cat","x":-100,"y":300,"s":0.8,"walk":1,"layer":"front"}],
+  "ui":[{"type":"count","t0":0,"t1":2,"n":3,"of":10},{"type":"notes","t0":0,"t1":2,"x":300,"y":700}]},
+ {"dur":2,"set":"kitchen","cam":{"x":0,"y":-380,"z":1.0},
+  "props":[{"type":"pot","x":200,"y":-240,"s":1,"lid":1},{"type":"bag","x":-200,"y":-220,"s":1,"fill":1.4,"items":10,"rip":1},{"type":"cat","x":0,"y":300,"s":0.8,"sit":1,"lime":1,"layer":"front"}],
+  "ui":[{"type":"count","t0":0,"t1":2,"n":10,"of":10},{"type":"mission","t0":0,"t1":2,"text":"ของ 10 อย่าง"}]}]}
