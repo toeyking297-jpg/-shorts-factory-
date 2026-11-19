@@ -18,7 +18,7 @@ CANON = {
     "prang": "พนักงานออฟฟิศ", "phum": "พนักงานออฟฟิศ", "fah": "พนักงานออฟฟิศ", "te": "เพื่อนซุ่มซ่าม", "jan": "หัวหน้า",
     "piak": "พ่อค้าตลาด", "jaew": "แม่ค้าตลาด", "yai": "แม่ค้าตลาด", "narrator": "ผู้บรรยาย",
 }
-SEC_PER_CHAR = 1 / 11.0  # เสียงไทย ElevenLabs ≈ 11 ตัวอักษร/วินาที (วัดจาก EP001/EP002 ประมาณการ)
+SEC_PER_CHAR = 1 / 10.7  # วัดจริงจาก ST003: 874 ตัวอักษร = 81.4 วิ
 
 
 def load(p):
@@ -26,8 +26,10 @@ def load(p):
 
 
 def est_dur(b):
+    # ปรับเทียบจาก ST003: เสียงจริง 10.7 ตัวอักษร/วิ + ช่องว่างหัวท้ายประโยค ~0.6 วิ + ภาพประกอบต่อจังหวะ ~1.2 วิ
+    n = len(b.get("lines", [])) + (1 if b.get("vo") else 0)
     talk = sum(len(L["text"]) for L in b.get("lines", [])) * SEC_PER_CHAR + len(b.get("vo", "")) * SEC_PER_CHAR
-    return max(1.5, talk + 0.6) if talk else float(b.get("dur", 2.0))
+    return (talk + 0.6 * n + 1.2) if talk else float(b.get("dur", 2.0))
 
 
 def check(st, quiet=False):
@@ -93,12 +95,48 @@ def check(st, quiet=False):
     for p in st.get("ending", {}).get("twist_plants", []):
         if p not in plants:
             err.append(f"หักมุมอ้าง '{p}' ที่ไม่มีใน plants")
+    # มุมมองเปลี่ยน (แนวช่อง GUIDE ข้อ 0)
+    pv = st.get("perspective")
+    if pv is None:
+        warn.append("ไม่มีช่อง perspective (แนวช่อง: เรื่องเปลี่ยนมุมมอง)")
+    else:
+        for k in ("initial_belief", "why_plausible", "hidden_context", "reveal_method", "reveal_plants", "new_meaning", "early_beat", "info_mode"):
+            if not pv.get(k):
+                err.append(f"perspective: ขาด '{k}'")
+        for pl in pv.get("reveal_plants", []):
+            if pl not in plants:
+                err.append(f"perspective: หลักฐานเฉลย '{pl}' ไม่เคยปูในบท")
+        ids = [b.get("id") for b in beats]
+        if pv.get("early_beat") in ids and ids.index(pv["early_beat"]) > len(ids) // 3:
+            warn.append("early_beat ควรอยู่ช่วงต้นเรื่อง (ภาพตอนต้นที่ความหมายเปลี่ยนตอนท้าย)")
+        try:
+            mem = load(MEM)["stories"]
+            recent = [m.get("reveal_method") for m in mem[-3:] if m.get("reveal_method")]
+            if pv.get("reveal_method") in recent:
+                err.append(f"วิธีเฉลย '{pv['reveal_method']}' ซ้ำกับ 3 เรื่องล่าสุด")
+            cliche = ("diary", "letter", "cctv", "secret_notebook")
+            if pv.get("reveal_method") in cliche and any(m.get("reveal_method") in cliche for m in mem[-5:]):
+                err.append("เฉลยด้วยสมุดลับ/จดหมาย/กล้องวงจรปิด ซ้ำในช่วง 5 เรื่องล่าสุด")
+        except Exception:  # noqa: BLE001
+            pass
+    tgt = st.get("target_sec")
+    if tgt and beats:
+        acc, hook_end = 0.0, None
+        for b in beats:
+            acc += est_dur(b)
+            if hook_end is None and ("harder" in b.get("function", []) or "info" in b.get("function", [])):
+                hook_end = acc
+        if hook_end and hook_end > 8:
+            warn.append(f"ฮุกจบที่ ~{hook_end:.0f} วิ (แนวทาง ≤ 8 วิ)")
     hp = st.get("hero_prop")
     if hp and len(hp.get("beats", [])) < 3:
         warn.append("ของพระเอกเห็นน้อยกว่า 3 ครั้ง")
     dur = sum(est_dur(b) for b in beats)
-    if not 40 <= dur <= 120:
-        warn.append(f"ความยาวประมาณ {dur:.0f} วิ (เป้า 45–120)")
+    tg = st.get("target_sec")
+    if tg and not 0.7 * tg <= dur <= 1.0 * tg:
+        warn.append(f"เสียงพูด+ช็อตเงียบประมาณ {dur:.0f} วิ เทียบเป้า {tg} วิ — ช่วงที่ปรับได้ควรเหลือ 0–30%")
+    elif not tg and not 40 <= dur <= 150:
+        warn.append(f"ความยาวประมาณ {dur:.0f} วิ")
     if not quiet:
         for e in err:
             print("ERROR ", e)

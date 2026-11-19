@@ -84,6 +84,10 @@
       s += basket(x + 160, 120); for (let i = 0; i < 8; i++) { const mx = x + 90 + (i % 4) * 46, my = y - 12 - Math.floor(i / 4) * 36; s += R(mx - 7, my - 26, 14, 26, "#F2E6D2") + Pth(`M ${f(mx - 26)},${f(my - 22)} Q ${f(mx)},${f(my - 58)} ${f(mx + 26)},${f(my - 22)} Z`, "#C9A27A", `stroke="#8C6A48" stroke-width="3"`); } // เห็ด
       s += RR(x + 360, y - 120, 140, 120, 14, "#E4572E") + C(x + 430, y - 80, 36, "#FFFDF6") + L(x + 430, y - 80, x + 430 + Math.sin(t * 2) * 20, y - 100, "#2B2F3A", 4) + R(x + 340, y - 140, 180, 20, "#BFC4C8"); // ตาชั่ง
       s += tag(x - 260, y - 120, "฿120") + tag(x + 160, y - 130, "฿25");
+    } else if (kind === "food") { // ร้านกับข้าวถุง: หม้อแกง + ถาด + กล่อง
+      for (let i = 0; i < 4; i++) { const bx = x - 450 + i * 170, c = ["#E46F3A", "#C9A15A", "#5FA64A", "#B8452A"][i]; s += RR(bx - 70, y - 80, 140, 82, 14, "#9AA4AE", `stroke="#6E7882" stroke-width="3"`) + E(bx, y - 80, 70, 14, c) + E(bx - 20, y - 82, 12, 5, "#FFFFFF", 'opacity=".3"'); for (let k = 0; k < 2; k++) { const ph = (t * 0.4 + k / 2 + i * 0.3) % 1; s += Pth(`M ${f(bx - 10 + k * 16)},${f(y - 96 - ph * 90)} q 10,-14 0,-28 q -10,-14 0,-28`, "none", ST("#FFFFFF", 7, (1 - ph) * 0.45)); } }
+      for (let i = 0; i < 3; i++) s += RR(x + 300 + (i % 2) * 6, y - 40 - i * 40, 130, 38, 6, "#F7F4EC", `stroke="#C9C0B0" stroke-width="2.5"`);
+      s += tag(x - 450, y - 150, "฿40") + tag(x - 110, y - 150, "฿40") + tag(x + 230, y - 150, "฿50");
     } else if (kind === "spice") {
       for (let i = 0; i < 5; i++) { const bx = x - 460 + i * 150, c = ["#D7263D", "#E3A548", "#8C3B1E", "#F2C14E", "#3E8F3E"][i]; s += E(bx, y + 2, 64, 16, "#7A5A3E") + Pth(`M ${f(bx - 60)},${f(y)} Q ${f(bx)},${f(y - 90)} ${f(bx + 60)},${f(y)} Z`, c) + E(bx - 16, y - 40, 10, 6, "#FFFFFF", 'opacity=".25"'); } // กองพริกแกง/เครื่องเทศ
       for (let i = 0; i < 4; i++) { const bx = x + 300 + i * 50; s += RR(bx - 16, y - 110, 32, 110, 8, "#8A4B1E", 'opacity=".9"') + R(bx - 9, y - 140, 18, 32, "#8A4B1E") + R(bx - 11, y - 152, 22, 14, "#C9493B") + R(bx - 14, y - 80, 28, 34, "#F7E8C8"); } // น้ำปลา

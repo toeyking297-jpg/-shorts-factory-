@@ -11,6 +11,10 @@
   "signature": {"conflict": "", "decision": "", "outcome": "", "hook": "", "ending": ""},
   "cast": [{"who": "khaohom", "role": "main|support|extra", "want": "", "canon": "ลูก"}],
   "hero_prop": {"name": "", "beats": ["b1", "b4", "b9"]},
+  "target_sec": 120,
+  "perspective": {"initial_belief": "สิ่งที่คน/คนดูเชื่อตอนแรก", "why_plausible": "ทำไมเชื่อแบบนั้นได้", "hidden_context": "บริบทอีกด้าน",
+                  "reveal_method": "slug วิธีเฉลย เช่น action_consequence", "reveal_plants": ["id หลักฐานที่ปูไว้"], "early_beat": "b2",
+                  "new_meaning": "ภาพ/คำพูดใน early_beat มีความหมายใหม่ว่าอะไร", "info_mode": "ก|ข|ค"},
   "beats": [
     {"id": "b1", "set": "dining", "link": "open|because|but|and",
      "function": ["info|harder|choice|consequence|relationship"],

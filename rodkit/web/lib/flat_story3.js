@@ -81,7 +81,22 @@
   function bowl(p) { return E(0, 4, 50, 8, "#000", 'opacity=".2"') + Pth("M -46,-30 Q -40,6 0,6 Q 40,6 46,-30 Z", "#F6F1E6", `stroke="#C9C0B0" stroke-width="2.5"`) + R(-44, -24, 88, 6, "#4F8FC0", 'opacity=".6"') + E(0, -30, 46, 9, (p.fish ?? 1) > 0.5 ? "#D9B98A" : "#EFE8DA"); }
   function slippers(p) { return slipper(-26, 0, "#3E8F7A") + slipper(30, 8, "#3E8F7A") + ((p.wet ?? 1) > 0.5 ? E(0, 10, 70, 12, "#3E5A68", 'opacity=".35"') + E(-30, -2, 10, 3, "#FFFFFF", 'opacity=".6"') : ""); }
   function bucket(p) { return E(0, 4, 60, 10, "#000", 'opacity=".2"') + Pth("M -50,-90 L 50,-90 L 40,0 L -40,0 Z", "#4A86C4", `stroke="#2E5E86" stroke-width="3"`) + E(0, -90, 50, 10, "#9FD3E8") + Pth("M -50,-90 Q 0,-150 50,-90", "none", ST("#2E5E86", 5)) + L(30, -100, 120, -330, "#C9A27A", 9) + Pth("M 100,-300 l 50,-60 l 20,20 l -50,60 Z", "#E8E2D6"); }
-  const DRAW3 = { plate, tin, cooker, carrier, rack, prints, bowl, slippers, bucket };
+  function spoon(p) { // ช้อนวางบนโต๊ะ
+    return E(0, 2, 34, 4, "#000", 'opacity=".15"') + `<g transform="rotate(${f(p.ang ?? -8)})">` + E(-22, -4, 14, 7, "#D8DEE4", `stroke="#8E98A2" stroke-width="2"`) + E(-24, -6, 6, 2.5, "#FFFFFF", 'opacity=".8"') + RR(-10, -6.5, 46, 5, 2.5, "#C3CBD3", `stroke="#8E98A2" stroke-width="1.5"`) + `</g>`;
+  }
+  function soup(p, t, TT) { // ชามแกงจืด (full 0..1)
+    const full = p.full ?? 1;
+    let s = E(0, 4, 62, 9, "#000", 'opacity=".2"') + Pth("M -58,-40 Q -52,8 0,8 Q 52,8 58,-40 Z", "#FFFFFF", `stroke="#C9C0B0" stroke-width="2.5"`) + R(-56, -30, 112, 6, "#4F8FC0", 'opacity=".6"');
+    s += E(0, -40, 58, 11, full > 0.05 ? "#E9DDB0" : "#F4EFE6");
+    if (full > 0.05) { s += E(-18, -41, 10 * full, 4, "#5FA64A") + E(14, -40, 12 * full, 4, "#F2F2E6", `stroke="#D8D2C0" stroke-width="1"`) + E(30, -42, 6 * full, 3, "#E46F3A"); for (let i = 0; i < 2; i++) { const ph = (TT * 0.5 + i / 2) % 1; s += Pth(`M ${f(-10 + i * 18)},${f(-52 - ph * 70)} q 9,-12 0,-24 q -9,-12 0,-24`, "none", ST("#FFFFFF", 6, (1 - ph) * 0.5 * full)); } }
+    return s;
+  }
+  function foodbox(p) { // กล่องข้าวซื้อ ซ้อน n กล่อง (ทศนิยม = กล่องบนสุดกำลังวาง)
+    const n = p.n ?? 1; let s = E(0, 4, 70, 8, "#000", 'opacity=".2"');
+    for (let i = 0; i < Math.ceil(n); i++) { const op = Math.min(1, n - i), y = -i * 44; s += `<g opacity="${f(op)}" transform="translate(${f((i % 2) * 6 - 3)},${f(y)})">` + RR(-62, -40, 124, 40, 6, "#F7F4EC", `stroke="#C9C0B0" stroke-width="2.5"`) + R(-62, -24, 124, 4, "#C9C0B0") + RR(-20, -36, 40, 10, 3, "#E46F3A", 'opacity=".8"') + `</g>`; }
+    return s;
+  }
+  const DRAW3 = { plate, tin, cooker, carrier, rack, prints, bowl, slippers, bucket, spoon, soup, foodbox };
   const prev = RK.flatProps;
   RK.flatProps = function (S, t, T, layer) {
     let s = prev ? prev(S, t, T, layer) : "";

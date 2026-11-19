@@ -1,0 +1,18 @@
+{
+ "id": "ST004",
+ "command": "สร้างคลิปความยาว 2 นาที",
+ "steps": {
+  "read": "done",
+  "ideate": "done",
+  "select": "done",
+  "write": "done",
+  "check": "done",
+  "review": "done r1 86",
+  "ep_json": "done",
+  "dry": "done (120.0 วิ, TTS 344 ตัวอักษร, SFX 16, music preset family ใหม่)",
+  "storyboard": "done แก้ s07/s08/s18",
+  "produce": "pushed",
+  "qa": "todo",
+  "deliver": "todo"
+ }
+}

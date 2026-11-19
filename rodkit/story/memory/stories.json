@@ -1,5 +1,5 @@
 {
- "_readme": "ความจำเรื่องเก่าของดูเพลิน · เพิ่ม 1 รายการต่อเรื่องที่ผลิตหรือเสนอ · signature ใช้ตรวจซ้ำระดับโครงเหตุการณ์ (story_tool dup) · owner_feedback เก็บคำพูดเจ้าของช่องตามจริงพร้อมวันที่ · ห้ามสรุปแนวช่องจากความเห็นตอนเดียว",
+ "_readme": "ความจำเรื่องเก่าของดูเพลิน · เพิ่ม 1 รายการต่อเรื่องที่ผลิตหรือเสนอ · signature ใช้ตรวจซ้ำระดับโครงเหตุการณ์ (story_tool dup) · owner_feedback เก็บคำพูดเจ้าของช่องตามจริงพร้อมวันที่ · ห้ามสรุปแนวช่องจากความเห็นตอนเดียว · ฟิลด์ใหม่ (2026-11-20): initial_belief, hidden_truth, reveal_method, key_object — ใช้ตรวจวิธีเฉลยซ้ำ",
  "stories": [
   {
    "id": "DP001",
@@ -29,7 +29,11 @@
     "ending": "narrator_moral"
    },
    "emotion": "อบอุ่นแบบบอกเล่า",
-   "owner_feedback": []
+   "owner_feedback": [],
+   "initial_belief": "",
+   "hidden_truth": "",
+   "reveal_method": "none",
+   "key_object": "none"
   },
   {
    "id": "EP001v1",
@@ -71,7 +75,11 @@
      "date": "2026-11-19",
      "text": "ดอกไม้ที่เรื่องชูแทบมองไม่เห็น — สิ่งที่ชูต้องโดดเด่น"
     }
-   ]
+   ],
+   "initial_belief": "",
+   "hidden_truth": "",
+   "reveal_method": "none",
+   "key_object": "orchid"
   },
   {
    "id": "EP001",
@@ -113,7 +121,11 @@
      "date": "2026-11-19",
      "text": "เลือกเวอร์ชันกล้วยไม้ (ข) · หลังดูคลิป: มีจังหวะซูมสะดุด (เรื่องภาพ) · ยังไม่ได้ให้ความเห็นเนื้อเรื่อง"
     }
-   ]
+   ],
+   "initial_belief": "",
+   "hidden_truth": "",
+   "reveal_method": "improvise_whiteboard",
+   "key_object": "orchid"
   },
   {
    "id": "EP002",
@@ -157,7 +169,11 @@
      "date": "2026-11-19",
      "text": "อนุมัติบทโดยไม่แก้ ('ผลิต') · ยังไม่มีความเห็นหลังดูคลิป"
     }
-   ]
+   ],
+   "initial_belief": "",
+   "hidden_truth": "",
+   "reveal_method": "callback_object_missing",
+   "key_object": "yellow bag"
   },
   {
    "id": "ST003",
@@ -198,7 +214,11 @@
     "ending": "callback_tag_twist"
    },
    "emotion": "ลุ้น→อบอุ่น→ขำ",
-   "owner_feedback": []
+   "owner_feedback": [],
+   "initial_belief": "แมวส้มฉุนขโมยปลา",
+   "hidden_truth": "ยายเอาปลาไปเลี้ยงแมวจรแม่ลูกอ่อน ส้มฉุนเฝ้าลูกแมว",
+   "reveal_method": "physical_clue_trail",
+   "key_object": "จานก้างเรียงแถว"
   }
  ],
  "owner_taste": {

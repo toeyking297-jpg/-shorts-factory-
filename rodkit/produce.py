@@ -219,8 +219,34 @@ def main():
         AU.save_wav(p.with_suffix(".wav"), np.zeros(int(sec * AU.SR)))
         return p.with_suffix(".wav")
 
+    # 0) ความยาวเป้าหมาย (ep.targetSec): วัดเสียงจริงก่อน แล้วปรับเฉพาะช่วงภาพ/ความเงียบ ไม่เร่งหรือตัดเสียงพูด
+    LEAD, GAP, TAIL = 0.35, 0.28, 0.55
+    if ep.get("targetSec"):
+        need = []
+        for S in ep["shots"]:
+            if S.get("say"):
+                t = LEAD + sum(dur_of(synth(L["who"], L["text"])) + L.get("pause", GAP) for L in S["say"]) - GAP + TAIL
+                need.append(max(S.get("dur", 0), t))
+            else:
+                need.append(S.get("dur", 2.0))
+        total0, target = sum(need), float(ep["targetSec"])
+        delta = target - total0
+        # ช็อตที่ยืด/หดได้: ช็อตไม่มีบทพูด (0.75–1.8 เท่า) + ช็อตมีบทพูดยืดค้างท้ายได้ ≤ 1.2 วิ (ห้ามหด)
+        room = []
+        for S, d in zip(ep["shots"], need):
+            if S.get("lockDur"): room.append((0, 0)); continue
+            if S.get("say"): room.append((0.0, 1.2))
+            else: room.append((max(0.0, d - max(1.0, d * 0.75)), d * 0.8))
+        cap = sum(r[1] for r in room) if delta > 0 else sum(r[0] for r in room)
+        k = 0 if cap <= 0 else min(1.0, abs(delta) / cap)
+        for S, d, r in zip(ep["shots"], need, room):
+            S["dur"] = round(d + (k * r[1] if delta > 0 else -k * r[0]), 3)
+        log(f"ความยาวเป้าหมาย {target:.0f} วิ · เสียงจริงต้องการ {total0:.1f} วิ · ปรับช่วงภาพ/เงียบแล้วได้ {sum(S['dur'] for S in ep['shots']):.1f} วิ")
+        if abs(sum(S['dur'] for S in ep['shots']) - target) > 3:
+            log("  เตือน: ปรับด้วยช่วงภาพอย่างเดียวไม่พอ — ต้องแก้บท (ย่อ/เพิ่มเหตุการณ์) ไม่ใช่เร่งเสียง")
+
     # 1) เสียงพากย์ + เวลา
-    T, voices, sfx_events, LEAD, GAP, TAIL = 0.0, [], [], 0.35, 0.28, 0.55
+    T, voices, sfx_events = 0.0, [], []
     for S in ep["shots"]:
         t = LEAD
         subs, talks, envs = [], {}, {}

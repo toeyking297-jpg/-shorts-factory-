@@ -1,0 +1,394 @@
+{
+ "id": "ST004",
+ "title": "เค็มไป",
+ "slot": "family",
+ "format": "duo",
+ "mechanism": "audience_less",
+ "target_sec": 120,
+ "logline": "ยายบุญติกับข้าวลูกสาวทุกวัน มะลิเลยเลิกทำแล้วซื้อแทน — คำติหายไป พร้อมกับที่ยายแทบไม่กิน",
+ "question": "ทำไมแม่ถึงติทุกวัน และเมื่อเลิกติแล้วทำไมแม่ไม่กิน",
+ "seven": {
+  "who": "แม่มะลิ",
+  "want": "ทำกับข้าวโดยไม่ต้องโดนแม่ติทุกมื้อ",
+  "obstacle": "แม่บุญติทุกมื้อ ครอบครัวยังล้อ",
+  "stakes": "ความรู้สึกดีระหว่างแม่ลูก และสุขภาพยายที่กินน้อยลง",
+  "decision": "เลิกทำกับข้าว ซื้อกับข้าวสำเร็จแทน",
+  "consequence": "คำติหายไป แต่ยายกินน้อยลงและนั่งรอคนเดียวทุกเย็น",
+  "change": "มะลิเข้าใจว่าคำติคือคำชวน กลับมาทำกับข้าวและนั่งกินกับแม่ ครอบครัวมาร่วมโต๊ะ"
+ },
+ "signature": {
+  "conflict": "misread_criticism",
+  "decision": "withdraw_effort",
+  "outcome": "reconnect_by_sitting_down",
+  "hook": "repeated_complaint",
+  "ending": "mirrored_line_new_meaning"
+ },
+ "perspective": {
+  "initial_belief": "แม่บุญจู้จี้ ติฝีมือลูกสาวทุกวัน",
+  "why_plausible": "ติทุกมื้อจริง ครอบครัวก็ล้อ มะลิเหนื่อยจากงานบ้าน",
+  "hidden_context": "ยายกินข้าวคนเดียวทุกวัน คำติเป็นทางเดียวที่ทำให้ลูกสาวมานั่งชิมข้างๆ โดยไม่ต้องขอให้เป็นภาระ",
+  "reveal_method": "absence_behavior_contrast",
+  "reveal_plants": [
+   "two_spoons",
+   "invite_line",
+   "spoon_back",
+   "gma_watches"
+  ],
+  "early_beat": "b01",
+  "new_meaning": "คำว่า 'เค็มไป' ตอนต้นคือคำชวนให้มานั่งกินด้วยกัน — ประโยคเดียวกันตอนจบกลายเป็นคำหยอกที่ทั้งคู่เข้าใจ",
+  "info_mode": "ก"
+ },
+ "cast": [
+  {
+   "who": "mali",
+   "role": "main",
+   "want": "ไม่โดนติ / ให้แม่กินอิ่ม",
+   "canon": "แม่ของข้าวหอม"
+  },
+  {
+   "who": "boon",
+   "role": "support",
+   "want": "ได้นั่งกินกับลูกสาวโดยไม่เป็นภาระ",
+   "canon": "ยายของข้าวหอม"
+  },
+  {
+   "who": "chai",
+   "role": "extra",
+   "want": "",
+   "canon": "พ่อของข้าวหอม"
+  },
+  {
+   "who": "khaohom",
+   "role": "extra",
+   "want": "",
+   "canon": "ลูก"
+  },
+  {
+   "who": "jaew",
+   "role": "extra",
+   "want": "",
+   "canon": "แม่ค้าตลาด"
+  },
+  {
+   "who": "narrator",
+   "role": "extra",
+   "want": "",
+   "canon": "ผู้บรรยาย"
+  }
+ ],
+ "hero_prop": {
+  "name": "ช้อนคันที่สองข้างชามยาย",
+  "beats": [
+   "b01",
+   "b06",
+   "b09",
+   "b13"
+  ]
+ },
+ "beats": [
+  {
+   "id": "b01",
+   "set": "dining",
+   "link": "open",
+   "function": [
+    "info",
+    "harder"
+   ],
+   "on_screen": [
+    "boon"
+   ],
+   "action": "ช็อตใกล้: ยายบุญนั่งโต๊ะคนเดียว ชิมแกงจืดหนึ่งช้อน แล้ววางช้อนคันที่สองไว้ข้างชามฝั่งเก้าอี้ว่าง · ตัดไปแม่มะลิในครัวถือทัพพี หน้าเหนื่อย",
+   "lines": [
+    {
+     "who": "boon",
+     "text": "เค็มไป…"
+    }
+   ],
+   "plants": [
+    "two_spoons"
+   ]
+  },
+  {
+   "id": "b02",
+   "set": "dining",
+   "link": "because",
+   "function": [
+    "info",
+    "relationship"
+   ],
+   "on_screen": [
+    "boon",
+    "mali"
+   ],
+   "action": "ตัดเร็ว 3 วัน (ป้ายวันลอย): วันจันทร์ยายตบเก้าอี้ข้างตัว มะลิเดินผ่านพร้อมตะกร้าผ้า · วันอังคาร มะลิคุยโทรศัพท์งาน · วันพุธ มะลิกวาดบ้าน ยายมองตามทุกครั้ง",
+   "lines": [
+    {
+     "who": "boon",
+     "text": "จืดไปนะลูก มาชิมดูสิ"
+    },
+    {
+     "who": "mali",
+     "text": "หนูยุ่งค่ะแม่"
+    },
+    {
+     "who": "boon",
+     "text": "เผ็ดไป… มานั่งชิมก่อน"
+    },
+    {
+     "who": "mali",
+     "text": "เดี๋ยวค่ะแม่"
+    }
+   ],
+   "plants": [
+    "invite_line",
+    "gma_watches"
+   ]
+  },
+  {
+   "id": "b03",
+   "set": "kitchen",
+   "link": "because",
+   "function": [
+    "relationship",
+    "harder"
+   ],
+   "on_screen": [
+    "chai",
+    "khaohom",
+    "mali"
+   ],
+   "action": "พ่อชัยกับข้าวหอมกระซิบกันหน้าตู้เย็น ข้าวหอมทำเสียงล้อเลียน มะลิได้ยินจากหลังประตู มือกำทัพพีแน่น",
+   "lines": [
+    {
+     "who": "chai",
+     "text": "ยายติอีกแล้วเหรอ"
+    },
+    {
+     "who": "khaohom",
+     "text": "เค็มไป~ จืดไป~"
+    }
+   ]
+  },
+  {
+   "id": "b04",
+   "set": "kitchen",
+   "link": "because",
+   "function": [
+    "choice"
+   ],
+   "decider": "mali",
+   "on_screen": [
+    "mali"
+   ],
+   "action": "กลางคืน ครัวมืด มะลิเก็บทัพพีใส่ลิ้นชัก ปิดดังปัง",
+   "lines": [
+    {
+     "who": "mali",
+     "text": "พรุ่งนี้ไม่ทำแล้ว ซื้อเอา จะได้ไม่ต้องโดนติ"
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "set": "market",
+   "link": "because",
+   "function": [
+    "consequence",
+    "info"
+   ],
+   "on_screen": [
+    "mali",
+    "jaew"
+   ],
+   "action": "มะลิซื้อกับข้าวใส่กล่องจากร้านป้าแจ๋ว",
+   "lines": [
+    {
+     "who": "jaew",
+     "text": "อ้าว ปกติแม่มะลิทำเองไม่ใช่เหรอ"
+    },
+    {
+     "who": "mali",
+     "text": "ทำไปก็โดนติค่ะป้า"
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "set": "dining",
+   "link": "but",
+   "function": [
+    "consequence",
+    "info"
+   ],
+   "on_screen": [
+    "boon",
+    "mali"
+   ],
+   "action": "เย็นวันแรกที่ซื้อ: ยายนั่งกับกล่องข้าว ไม่พูดอะไร มะลิแอบรอฟังในครัว ไม่มีเสียงติ มะลิยิ้มมุมปาก · ยายวางช้อนคันที่สอง มองประตูครัว แล้วเก็บช้อนคืน",
+   "plants": [
+    "spoon_back"
+   ],
+   "payoffs": [
+    "two_spoons"
+   ],
+   "dur": 8
+  },
+  {
+   "id": "b07",
+   "set": "kitchen",
+   "link": "but",
+   "function": [
+    "harder"
+   ],
+   "on_screen": [
+    "mali"
+   ],
+   "action": "กล่องข้าวที่แทบไม่ได้แตะวางซ้อนบนเคาน์เตอร์ วันละกล่อง เป็นสามกล่อง",
+   "vo": "สามวันแล้ว ยายไม่ติอะไรเลยสักคำ… แต่ก็แทบไม่ได้กินด้วย",
+   "plants": [
+    "boxes_pile"
+   ]
+  },
+  {
+   "id": "b08",
+   "set": "kitchen",
+   "link": "because",
+   "function": [
+    "info",
+    "harder"
+   ],
+   "on_screen": [
+    "mali",
+    "khaohom"
+   ],
+   "action": "มะลิมองกองกล่อง ข้าวหอมเดินมาหยิบนม",
+   "lines": [
+    {
+     "who": "mali",
+     "text": "ยายไม่สบายรึเปล่าลูก"
+    },
+    {
+     "who": "khaohom",
+     "text": "ไม่หรอก ยายถามทุกวันว่าแม่ยุ่งอยู่มั้ย"
+    }
+   ],
+   "payoffs": [
+    "gma_watches"
+   ]
+  },
+  {
+   "id": "b09",
+   "set": "dining",
+   "link": "because",
+   "function": [
+    "info",
+    "relationship"
+   ],
+   "on_screen": [
+    "boon",
+    "mali"
+   ],
+   "action": "หกโมงเย็น มะลิแอบดูจากประตู: ยายจัดช้อนสองคัน นั่งรอ มองไปทางครัว นาฬิกาเดิน ยายเก็บช้อนคันหนึ่งกลับ ตักข้าวเข้าปากคำเดียว แล้ววางช้อน",
+   "payoffs": [
+    "two_spoons",
+    "spoon_back"
+   ],
+   "dur": 12
+  },
+  {
+   "id": "b10",
+   "set": "dining",
+   "link": "because",
+   "function": [
+    "info"
+   ],
+   "on_screen": [
+    "boon",
+    "mali"
+   ],
+   "action": "ภาพแวบสั้น 3 ช็อตไม่มีเสียงพูดใหม่: มือยายตบเก้าอี้ข้างตัว (วันจันทร์/อังคาร/พุธ) ทุกครั้งที่ติ — มะลิเข้าใจ น้ำตาคลอ",
+   "thought": "ที่แม่ติ… คือชวนให้นั่งด้วยกัน",
+   "payoffs": [
+    "invite_line"
+   ],
+   "dur": 6
+  },
+  {
+   "id": "b11",
+   "set": "kitchen",
+   "link": "because",
+   "function": [
+    "choice",
+    "consequence"
+   ],
+   "decider": "mali",
+   "on_screen": [
+    "mali"
+   ],
+   "action": "เย็นวันต่อมา มะลิหยิบทัพพีออกจากลิ้นชัก ทำแกงจืด ชิม แล้วตักใส่ชามสองใบ",
+   "lines": [],
+   "dur": 7
+  },
+  {
+   "id": "b12",
+   "set": "dining",
+   "link": "because",
+   "function": [
+    "relationship",
+    "consequence"
+   ],
+   "on_screen": [
+    "mali",
+    "boon"
+   ],
+   "action": "มะลิวางชามสองใบ นั่งลงข้างยายก่อนยายจะพูดอะไร ยายนิ่ง แล้วยิ้ม ชิมหนึ่งช้อน",
+   "lines": [
+    {
+     "who": "boon",
+     "text": "เค็มไปนิดนึงนะ"
+    },
+    {
+     "who": "mali",
+     "text": "งั้นแม่ช่วยกินให้หมดนะคะ"
+    }
+   ]
+  },
+  {
+   "id": "b13",
+   "set": "dining",
+   "link": "because",
+   "function": [
+    "relationship"
+   ],
+   "on_screen": [
+    "mali",
+    "boon",
+    "chai",
+    "khaohom"
+   ],
+   "action": "ภาพจบ: ช้อนสองคันในชามสองใบที่ว่างเปล่า · พ่อชัยกับข้าวหอมถือชามมานั่งเพิ่ม เก้าอี้เต็มโต๊ะ",
+   "lines": [],
+   "dur": 7
+  }
+ ],
+ "ending": {
+  "answers": "แม่ติเพราะอยากให้ลูกมานั่งด้วย เมื่อมะลินั่งลง ยายกินจนหมด",
+  "twist_plants": [
+   "two_spoons"
+  ]
+ },
+ "production": {
+  "sets": [
+   "dining",
+   "kitchen",
+   "market"
+  ],
+  "new": [
+   "ช้อน (วางบนโต๊ะ/เลื่อนหาย)",
+   "ชามแกงจืด",
+   "กล่องข้าวซื้อ (ซ้อนได้)",
+   "แผงกับข้าวถุง (stall food)",
+   "ทัพพีถือ (มีแล้ว ladle)"
+  ]
+ }
+}
