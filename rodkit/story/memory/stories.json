@@ -1,0 +1,33 @@
+{
+ "_readme": "ความจำเรื่องเก่าของดูเพลิน · เพิ่ม 1 รายการต่อเรื่องที่ผลิตหรือเสนอ · signature ใช้ตรวจซ้ำระดับโครงเหตุการณ์ (story_tool dup) · owner_feedback เก็บคำพูดเจ้าของช่องตามจริงพร้อมวันที่ · ห้ามสรุปแนวช่องจากความเห็นตอนเดียว",
+ "stories": [
+  {"id": "DP001", "title": "เช้านี้ ลองใจดีกับใครสักคน", "status": "produced 2026-11-18", "slot": "morning", "format": "group", "mechanism": "none",
+   "cast": {"main": "phum", "support": ["fah", "prang", "boss"]},
+   "want": "ไม่ชัด (ภูมิอยากช่วยฟ้า?)", "conflict": "ไม่มี — ฟ้าเหนื่อย ภูมิช่วย ทุกคนยิ้ม",
+   "decision": "ไม่มีจุดเลือก", "evidence": [], "ending": "ผู้บรรยายสรุปข้อคิด",
+   "signature": {"conflict": "none", "decision": "none", "outcome": "everyone_happy", "hook": "narrator_time", "ending": "narrator_moral"},
+   "emotion": "อบอุ่นแบบบอกเล่า", "owner_feedback": []},
+  {"id": "EP001v1", "title": "กล้วยไม้ไม่ได้บานในวันเดียว (v1)", "status": "produced 2026-11-19", "slot": "morning", "format": "single", "mechanism": "known_problem",
+   "cast": {"main": "prang", "support": ["boon", "phum", "jan", "te"]},
+   "want": "พรีเซนต์ครั้งแรกให้ผ่าน", "conflict": "ความกลัวในใจเท่านั้น",
+   "decision": "ไม่มี — ยายพูดแล้วปรางฮึด", "evidence": ["orchid"], "ending": "พรีเซนต์สำเร็จทันที + คำคม",
+   "signature": {"conflict": "inner_fear", "decision": "none", "outcome": "win_easily", "hook": "narrator_time", "ending": "narrator_moral"},
+   "emotion": "ให้กำลังใจ", "owner_feedback": [{"date": "2026-11-19", "text": "1/10 · คุณภาพไม่ดี ตัดต่อไม่เนียน ไม่ชอบกล่องข้อความขาว การหยิบแก้วผิด เนื้อเรื่องไม่เข้มข้น"}, {"date": "2026-11-19", "text": "ดอกไม้ที่เรื่องชูแทบมองไม่เห็น — สิ่งที่ชูต้องโดดเด่น"}]},
+  {"id": "EP001", "title": "กล้วยไม้ไม่ได้บานในวันเดียว (v2)", "status": "produced 2026-11-19", "slot": "morning", "format": "single", "mechanism": "known_problem",
+   "cast": {"main": "prang", "support": ["boon", "te"], "extra": ["chai(ใช้เป็นลูกค้า — ผิดบทบาท)", "jan", "phum"]},
+   "want": "ปิดดีลลูกค้าใหญ่", "conflict": "โน้ตบุ๊กดับกลางพรีเซนต์",
+   "decision": "ทิ้งสไลด์ ไปเขียนไวต์บอร์ด", "evidence": ["orchid", "laptop 1%"], "ending": "ลูกค้าชอบ + ดอกบาน + หักมุมปลั๊กไม่ได้เปิด + คำคม",
+   "signature": {"conflict": "tool_failure_deadline", "decision": "improvise", "outcome": "win", "hook": "flash_forward_disaster", "ending": "small_twist_plus_quote"},
+   "emotion": "ลุ้น→โล่ง", "owner_feedback": [{"date": "2026-11-19", "text": "เลือกเวอร์ชันกล้วยไม้ (ข) · หลังดูคลิป: มีจังหวะซูมสะดุด (เรื่องภาพ) · ยังไม่ได้ให้ความเห็นเนื้อเรื่อง"}]},
+  {"id": "EP002", "title": "เต้ไปตลาด", "status": "produced 2026-11-19", "slot": "comedy", "format": "relay", "mechanism": "audience_more",
+   "cast": {"main": "te", "support": ["mali(ใช้เป็นแม่เต้ — ผิดบทบาท)", "jaew", "piak", "yai"], "extra": ["cat", "phum", "jan"]},
+   "want": "ซื้อของให้แม่ให้ครบ", "conflict": "ฟังผิด 10 ลูก→10 อย่าง",
+   "decision": "แทบไม่มี — แม่ค้าเลือกให้", "evidence": ["yellow bag", "headphones"], "ending": "ของครบชุดต้มยำแต่ไม่มีมะนาว · แมวคาบมะนาวมา + คำคม",
+   "signature": {"conflict": "mishearing", "decision": "passive", "outcome": "accidental_success_missing_one", "hook": "flash_forward_result", "ending": "small_twist_plus_quote"},
+   "emotion": "ขำ", "owner_feedback": [{"date": "2026-11-19", "text": "อนุมัติบทโดยไม่แก้ ('ผลิต') · ยังไม่มีความเห็นหลังดูคลิป"}]}
+ ],
+ "owner_taste": {
+  "likes": ["มีของพระเอกเชื่อมเรื่องและเห็นชัด (2026-11-19)", "ตัวละครหลายคนหลายสถานที่เมื่อเรื่องต้องการ (2026-11-19)", "สลับรูปแบบเรื่อง เดี่ยว/สองคน/กลุ่ม/ส่งต่อ (2026-11-19)"],
+  "dislikes": ["เรื่องไม่เข้มข้น (EP001 v1, 1/10)", "กล่องข้อความสีขาวสำหรับความคิด/คำคม", "จำกัดทุกเรื่องที่ 1–2 ตัว 1–2 ฉาก"]
+ }
+}
