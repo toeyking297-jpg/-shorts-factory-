@@ -127,7 +127,8 @@
     if (whip) cam.x += whip * wdir * 700 / cam.z;
     RK._camPx = cam.x; RK._camPy = cam.y;
     const set = RK.flatSets[S.set || EP.set || "kitchen"], o = Object.assign({}, EP.setOpts || {}, S.setOpts || {}, { _t: t });
-    const camT = (par = 1) => `translate(${CX},${CY}) scale(${f(cam.z * par)}) translate(${f(-cam.x)},${f(-cam.y)})`;
+    const f4 = (n) => (Math.round(n * 10000) / 10000).toString(); // กล้องต้องละเอียด ไม่งั้นซูมกระตุกเป็นขั้นบันได
+    const camT = (par = 1) => `translate(${CX},${CY}) scale(${f4(cam.z * par)}) translate(${f4(-cam.x)},${f4(-cam.y)})`;
     const dof = RK.resolve(S.dof || {}, t);
     const blurG = (inner, px) => px > 0.3 ? `<g filter="url(#dof${Math.round(px)})">${inner}</g>` : inner;
     const actors = (S.actors || []).map((a) => prepActor(a, t));
