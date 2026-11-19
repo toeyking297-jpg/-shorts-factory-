@@ -106,7 +106,7 @@ class Eleven:
 
     def tts(self, who: str, text: str, out: pathlib.Path):
         v = self.voice_for(who)
-        body = {"text": text, "model_id": v.get("model") or self.cast.get("model", "eleven_v3"),
+        body = {"text": text.replace("*", ""), "model_id": v.get("model") or self.cast.get("model", "eleven_v3"),
                 "voice_settings": {"stability": v.get("stability", 0.5), "similarity_boost": 0.8, "style": v.get("style", 0.35)}}
         try:
             r = self._req("POST", f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}", params={"output_format": "mp3_44100_128"}, json=body)
@@ -183,14 +183,23 @@ def main():
     T, voices, sfx_events, LEAD, GAP, TAIL = 0.0, [], [], 0.35, 0.28, 0.55
     for S in ep["shots"]:
         t = LEAD
-        subs, talks = [], {}
+        subs, talks, envs = [], {}, {}
         line_t = []
         for L in S.get("say", []):
             p = synth(L["who"], L["text"])
             d = dur_of(p)
-            voices.append((T + t, p, L.get("gain", 1.0)))
+            # J-cut: "jcut": 0.4 → เสียงประโยคนี้เริ่มก่อนตัดเข้าช็อต 0.4 วินาที (ได้ยินก่อนเห็น)
+            voices.append((max(0.0, T + t - L.get("jcut", 0)), p, L.get("gain", 1.0)))
             subs.append([round(t, 3), round(t + d, 3), L.get("sub", re.sub(r"\[[^\]]*\]\s*", "", L["text"]).strip())])
             talks.setdefault(L["who"], []).append((t, t + d))
+            # ลิปซิงก์: ความดังเสียงพูด 30 ครั้ง/วินาที → ความกว้างปาก
+            try:
+                xx = to_np(p).mean(1); hop = AU.SR // 30
+                rms = np.sqrt(np.add.reduceat(xx[: len(xx) // hop * hop] ** 2, np.arange(0, len(xx) // hop * hop, hop)) / hop)
+                rms = rms / (np.percentile(rms, 92) + 1e-6)
+                envs.setdefault(L["who"], []).append([round(t, 3), 30, [round(float(min(1.0, max(0.0, v - 0.08))), 2) for v in rms]])
+            except Exception:  # noqa: BLE001
+                pass
             line_t.append(t)
             t += d + L.get("pause", GAP)
         if S.get("say"):
@@ -203,6 +212,7 @@ def main():
                 for (s0, s1) in talks[w]:
                     kf += [[max(0, s0 - 0.01), 0], [s0, 1], [s1, 1], [s1 + 0.01, 0]]
                 A["talk"] = kf
+                if w in envs: A["env"] = envs[w]
                 # ท่าทางประกอบคำพูด: ยกมือก่อนพูดนิดนึง ค้างระหว่างพูด แล้วค่อย ๆ ลด (รวมช่วงที่ติดกันเป็นช่วงเดียว)
                 iv = []
                 for (s0, s1) in sorted(talks[w]):
@@ -212,6 +222,10 @@ def main():
                 for (s0, s1) in iv:
                     gk += [[max(0, s0 - 0.25), 0], [s0 + 0.2, 1], [max(s0 + 0.25, s1 - 0.1), 1], [s1 + 0.4, 0]]
                 if A.get("gesture", True): A["gest"] = gk
+        if talks:
+            allsp = sorted(x for v in talks.values() for x in v)
+            for A in S.get("actors", []):
+                if A.get("who") not in talks and A.get("listen", True): A["listenAt"] = [[round(s0, 3), round(s1, 3)] for (s0, s1) in allsp]
         for X in S.get("sfx", []):
             at = X.get("at", 0) if "line" not in X else line_t[min(X["line"], len(line_t) - 1)] + X.get("at", 0) if line_t else X.get("at", 0)
             sfx_events.append((T + at, X))

@@ -89,6 +89,27 @@
     r += taper([14, 6], [21, 32], 13, 11, c, `stroke="${d}" stroke-width="2"`) + `<path d="M 17,28 q 3,2 5,0" stroke="${d2}" stroke-width="1.5" fill="none"/>`;
     return r;
   }
+  function mugHeldFront(wr, sd, fa, sk, mc) {
+    const d = sh(sk, -0.22), c = mc || "#F7F3EA", hc = pol(wr, 34, sd * fa), x = hc[0], y = hc[1] + 6, w = 34, hgt = 64;
+    let r = "";
+    // ฝ่ามือด้านหลังแก้ว (เห็นขอบฝั่งนอก)
+    r += `<ellipse cx="${f(x + sd * 26)}" cy="${f(y + 2)}" rx="15" ry="26" fill="${sh(sk, -0.06)}" stroke="${d}" stroke-width="2"/>`;
+    // ตัวแก้ว + หู (หูหันออกด้านนอก) + ไอร้อน
+    r += path(`M ${P(x - w, y - hgt / 2)} L ${P(x + w, y - hgt / 2)} L ${P(x + w * 0.86, y + hgt / 2 - 4)} C ${P(x + w * 0.8, y + hgt / 2 + 4)} ${P(x - w * 0.8, y + hgt / 2 + 4)} ${P(x - w * 0.86, y + hgt / 2 - 4)} Z`, c, `stroke="${sh(c, -0.25)}" stroke-width="2.5"`);
+    r += `<ellipse cx="${f(x)}" cy="${f(y - hgt / 2)}" rx="${w}" ry="7" fill="#6B3E26" stroke="${sh(c, -0.25)}" stroke-width="2.5"/>`;
+    r += `<rect x="${f(x - w + 2)}" y="${f(y - 4)}" width="${f(2 * w - 4)}" height="10" fill="#E46F5B"/>`;
+    // นิ้ว 4 นิ้วโอบหน้าแก้ว จากฝั่งนอกเข้าหาตรงกลาง (ก้อยสั้นสุด)
+    const L = [30, 36, 34, 26];
+    L.forEach((len, i) => {
+      const yy = y - 12 + i * 12, x0 = x + sd * (w + 4), x1 = x0 - sd * len;
+      r += `<path d="M ${P(x0, yy - 5.5)} L ${P(x1, yy - 5)} A 5.5 5.5 0 0 ${sd > 0 ? 0 : 1} ${P(x1, yy + 5.5)} L ${P(x0, yy + 5.5)} Z" fill="${sk}" stroke="${d}" stroke-width="1.8"/>`;
+      r += `<path d="M ${P(x1 + sd * 9, yy - 4)} q ${f(-sd * 2)},4 0,8" stroke="${d}" stroke-width="1.4" fill="none" opacity=".7"/>`;
+    });
+    // นิ้วโป้งพาดขอบบนฝั่งใน
+    r += `<path d="M ${P(x + sd * (w - 2), y - hgt / 2 + 6)} Q ${P(x + sd * 6, y - hgt / 2 - 4)} ${P(x - sd * 6, y - hgt / 2 + 4)}" stroke="${sk}" stroke-width="11" stroke-linecap="round" fill="none"/>`;
+    r += `<path d="M ${P(x + sd * (w - 2), y - hgt / 2 + 6)} Q ${P(x + sd * 6, y - hgt / 2 - 4)} ${P(x - sd * 6, y - hgt / 2 + 4)}" stroke="${d}" stroke-width="1.6" fill="none" opacity=".5"/>`;
+    return r;
+  }
   function handKind(A, side) {
     const holding = A.prop && (A.propHand || "n") === side;
     if (holding) return "grip";
@@ -397,7 +418,7 @@
       if (kind === "grip" && RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) r += RK.FLAT_GRIP[A.prop](pol(wr, 26, ha), ha, C, far, "side");
       else if (kind === "grip" && RK.FLAT_PROPS[A.prop]) { // แก้วอยู่ใต้มือ หูแก้วอยู่ในกำมือ
         const hc = pol(wr, 26, ha);
-        r += `<g transform="translate(${P(hc[0] + 31, hc[1] + 2)})">${RK.FLAT_PROPS[A.prop](A.propColor, true)}</g>`;
+        r += `<g transform="translate(${P(hc[0] + 36, hc[1] + 8)}) scale(1.25)">${RK.FLAT_PROPS[A.prop](A.propColor, true)}</g>`;
       }
       r += `<g transform="translate(${P(wr[0], wr[1])}) rotate(${f(-ha + (a[2] || 0))})">` + hand(kind, skc) + `</g>`;
       A._hand = A._hand || {}; A._hand[far ? "f" : "n"] = { p: wr, ang: ha };
@@ -487,7 +508,7 @@
   // ท่าแขนมุมหน้า: แปลงมุมแขนด้านข้าง → [ต้นแขนกาง, ปลายแขน, ความยาวปลายแขน] และใช้ท่าเฉพาะมุมหน้า (FLAT_ARM_FRONT) ถ้ามี
   const ARM_FRONT = RK.FLAT_ARM_FRONT = Object.assign(RK.FLAT_ARM_FRONT || {}, {
     open2: { n: [42, 92], f: [42, 92] }, hugopen: { n: [78, 98], f: [78, 98] }, explain: { n: [30, 82] },
-    offer: { n: [26, 62] }, clap: { n: [14, -48], f: [14, -48] }, clap2: { n: [22, -10], f: [22, -10] }, cheer: { n: [150, 162], f: [150, 162] }, give: { n: [26, 58] }, take: { n: [24, 56] }, point: { n: [82, 86] }, shrug: { n: [22, 96], f: [22, 96] },
+    offer: { n: [26, 62] }, hold: { n: [8, -128] }, clap: { n: [14, -48], f: [14, -48] }, clap2: { n: [22, -10], f: [22, -10] }, cheer: { n: [150, 162], f: [150, 162] }, give: { n: [26, 58] }, take: { n: [24, 56] }, point: { n: [82, 86] }, shrug: { n: [22, 96], f: [22, 96] },
   });
   function sideToFront(a) {
     const raised = a[0] > 90, up = raised ? a[0] * 0.85 : Math.max(-10, a[0] * 0.35 + 8);
@@ -553,6 +574,11 @@
       else if (slv === "rolled") r += taper([sp[0], sp[1] - 8], el, 54, 48, C.top) + taper(el, lp(0.55), 48, 46, C.top) + taper(lp(0.49), lp(0.55), 52, 52, sh(C.top, -0.08));
       else if (slv === "full") { r += taper([sp[0], sp[1] - 8], el, 56, 50, C.top) + taper(el, lp(0.9), 50, 44, C.top) + taper(lp(0.78), lp(0.9), 48, 46, C.cuff || sh(C.top, -0.12)); if (C.shirtCuff) r += taper(lp(0.9), lp(0.95), 40, 38, C.shirtCuff); }
       const kind = handKind(A, sd > 0 ? "n" : "f");
+      if (kind === "grip" && A.prop === "mug") { // ถือแก้วมุมหน้า: แก้วอยู่ในอุ้งมือ นิ้วโอบด้านหน้าแก้ว นิ้วโป้งอยู่ด้านบนฝั่งใน
+        r += mugHeldFront(wr, sd, fa, sk, A.propColor);
+        A._hand = A._hand || {}; A._hand[sd > 0 ? "n" : "f"] = { p: wr, ang: 0, held: true };
+        return r;
+      }
       if (kind === "grip" && RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) r += RK.FLAT_GRIP[A.prop](wr, sd, C, false, "front");
       // ฝ่ามือหันหาคน (open): นิ้วโป้งต้องอยู่ฝั่งกลางลำตัวเมื่อยกมือ → กลับด้านจากมือห้อยปกติ
       r += `<g transform="translate(${P(wr[0], wr[1])}) rotate(${f(-sd * fa)}) scale(${(kind === "open" ? -sd : sd) > 0 ? -1 : 1},1)">` + hand(kind, sk) + `</g>`;
@@ -633,7 +659,7 @@
     const body = ((A.view === "front" || A.view === "back") ? bodyFront : bodySide)(C, A, t);
     const pre = RK.flatActorPre ? RK.flatActorPre(C, A, t) : "", post = RK.flatActorPost ? RK.flatActorPost(C, A, t) : "";
     let prop = "";
-    if (A.prop && RK.FLAT_PROPS[A.prop] && !(RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) && A._hand[A.propHand || "n"] && A.view !== "side") {
+    if (A.prop && RK.FLAT_PROPS[A.prop] && !(RK.FLAT_GRIP && RK.FLAT_GRIP[A.prop]) && A._hand[A.propHand || "n"] && !A._hand[A.propHand || "n"].held && A.view !== "side") {
       const h = A._hand[A.propHand || "n"];
       prop = `<g transform="translate(${P(h.p[0] + (A.view === "front" ? 0 : 6), h.p[1] + 22)})">${RK.FLAT_PROPS[A.prop](A.propColor)}</g>`;
     }

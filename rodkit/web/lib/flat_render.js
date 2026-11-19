@@ -39,11 +39,11 @@
     if (typeof u.value === "number") num = Math.round(u.value * RK.ease.out(RK.clamp(a / (u.count || 0.9))));
     let s = `<g transform="translate(${f(x)},${f(y)}) scale(${f(k)})" opacity="${f(op)}">`;
     s += `<rect x="6" y="10" width="${w}" height="${h}" rx="26" fill="#000" opacity=".22" filter="url(#fBlur8)"/>`;
-    s += `<rect width="${w}" height="${h}" rx="26" fill="#FFFBF2" opacity=".95"/>`;
+    s += `<rect width="${w}" height="${h}" rx="26" fill="#1E1A24" opacity=".78"/><rect width="${w}" height="${h}" rx="26" fill="none" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/>`;
     s += `<rect width="14" height="${h}" rx="7" fill="${acc}"/>`;
     s += `<g transform="translate(80,${h / 2})"><circle r="46" fill="${acc}" opacity=".18"/>${(ICON[u.icon] || ICON.sun)(acc)}</g>`;
-    s += `<text x="148" y="${h / 2 - 22}" font-family="Kanit" font-weight="500" font-size="30" fill="#7A6A5E">${RK.esc(u.title || "")}</text>`;
-    s += `<text x="148" y="${h / 2 + 40}" font-family="Kanit" font-weight="900" font-size="64" fill="#2B2230">${RK.esc(String(num))}<tspan font-size="32" font-weight="700" fill="${acc}" dx="10">${RK.esc(u.unit || "")}</tspan></text>`;
+    s += `<text x="148" y="${h / 2 - 22}" font-family="Kanit" font-weight="500" font-size="30" fill="#D9CFE6">${RK.esc(u.title || "")}</text>`;
+    s += `<text x="148" y="${h / 2 + 40}" font-family="Kanit" font-weight="900" font-size="64" fill="#FFFFFF">${RK.esc(String(num))}<tspan font-size="32" font-weight="700" fill="${acc}" dx="10">${RK.esc(u.unit || "")}</tspan></text>`;
     if (u.bar != null) {
       const bw = w - 170, pr = RK.clamp(a / 1.2) * u.bar;
       s += `<rect x="148" y="${h - 26}" width="${bw}" height="10" rx="5" fill="#EADFCF"/><rect x="148" y="${h - 26}" width="${f(bw * pr)}" height="10" rx="5" fill="${acc}"/>`;
@@ -63,7 +63,7 @@
     const a = t - sb.t0, b = sb.t1 - t; if (a < 0 || b < 0) return "";
     const k = RK.clamp(a / 0.18) * RK.clamp(b / 0.15);
     const parts = sb.text.split("|"), hl = sb.hl || [];
-    let fs = sb.size || 62; const y = sb.y || 1560;
+    let fs = sb.size || 66; const y = sb.y || 1500;
     // ประมาณความกว้าง (ย่อฟอนต์อัตโนมัติถ้ายาวเกินจอ)
     const ctx = (RK._ctx = RK._ctx || document.createElement("canvas").getContext("2d"));
     ctx.font = `700 ${fs}px Kanit`;
@@ -71,11 +71,14 @@
     let total = widths.reduce((x, y) => x + y, 0) + (parts.length - 1) * 14;
     if (total > 940) { const r = 940 / total; fs *= r; widths = widths.map((w) => w * r); total = 940; }
     let x = CX - total / 2, s = `<g opacity="${f(k)}">`;
-    s += `<rect x="${f(x - 34)}" y="${f(y - fs - 14)}" width="${f(total + 68)}" height="${f(fs + 46)}" rx="22" fill="#15111A" opacity=".66"/>`;
+    // ไม่มีกล่อง: ตัวหนังสือขาวขอบเข้มหนา + เงานุ่ม · คำที่ครอบด้วย *...* เป็นคำเน้น (สีเหลือง ใหญ่ขึ้น)
+    const per = Math.min(0.12, Math.max(0.05, ((sb.t1 - sb.t0) * 0.55) / Math.max(1, parts.length)));
     parts.forEach((p, i) => {
-      const pop = RK.ease.back(RK.clamp((a - i * 0.12) / 0.25)), isH = hl.includes(i);
-      const cx = x + widths[i] / 2;
-      s += `<g transform="translate(${f(cx)},${f(y)}) scale(${f(0.6 + 0.4 * pop)})" opacity="${f(RK.clamp(pop * 1.5))}"><text text-anchor="middle" font-family="Kanit" font-weight="700" font-size="${fs}" fill="${isH ? "#FFD25A" : "#FFFFFF"}" stroke="#15111A" stroke-width="2" paint-order="stroke">${RK.esc(p)}</text></g>`;
+      const pop = RK.ease.back(RK.clamp((a - i * per) / 0.22)), isH = hl.includes(i) || /^\*.*\*$/.test(p), txt = p.replace(/\*/g, "");
+      const cx = x + widths[i] / 2, sz = fs * (isH ? 1.12 : 1);
+      s += `<g transform="translate(${f(cx)},${f(y)}) scale(${f(0.7 + 0.3 * pop)})" opacity="${f(RK.clamp(pop * 1.5))}">` +
+        `<text text-anchor="middle" y="6" font-family="Kanit" font-weight="800" font-size="${f(sz)}" fill="#000" opacity=".35" filter="url(#fBlur8)">${RK.esc(txt)}</text>` +
+        `<text text-anchor="middle" font-family="Kanit" font-weight="800" font-size="${f(sz)}" fill="${isH ? "#FFD84A" : "#FFFFFF"}" stroke="#1A1220" stroke-width="${f(sz * 0.2)}" stroke-linejoin="round" paint-order="stroke">${RK.esc(txt)}</text></g>`;
       x += widths[i] + 14;
     });
     return s + `</g>`;
@@ -83,7 +86,7 @@
 
   // ---------- นักแสดง: เดินอัตโนมัติจากความเร็วแกน x ----------
   function prepActor(a, t) {
-    const A = RK.resolve(a, t);
+    const A = RK.resolve(a, t); if (A.y == null) A.y = 0; if (A.x == null) A.x = 0;
     const sc = (A.s || 0.5) * ((RK.FLAT_CAST[A.who] || {}).h || 1);
     const x1 = RK.kf(a.x, t - 0.04), x2 = RK.kf(a.x, t + 0.04), sp = Math.abs(x2 - x1) / 0.08;
     const strideW = (RK.flatStride ? RK.flatStride(A.who, !!A.run) : RK.FLAT_STRIDE) * sc;
@@ -100,6 +103,10 @@
       const n = RK.noise1(t * 11, 3) * 0.7 + RK.noise1(t * 23, 7) * 0.3;
       A.talk = RK.clamp((n - 0.2) * 1.5) * RK.clamp((t - s0) / 0.08) * RK.clamp((s1 - t) / 0.08);
     }
+    // ลิปซิงก์จริงจากความดังของเสียง (produce ใส่ env: [[t0, fps, [ค่า...]], ...])
+    if (a.env) for (const [e0, fps, v] of a.env) { const i = Math.floor((t - e0) * fps); if (i >= 0 && i < v.length) { const fr = (t - e0) * fps - i, x = v[i] * (1 - fr) + (v[i + 1] ?? 0) * fr; A.talk = RK.clamp(x * 1.15); } }
+    // ท่าคนฟัง: พยักหน้าเบาๆ + เอียงหัว ตอนอีกคนพูด
+    if (a.listenAt) for (const [s0, s1] of a.listenAt) if (t >= s0 && t <= s1 + 0.4) { const k = RK.clamp((t - s0) / 0.3) * RK.clamp((s1 + 0.4 - t) / 0.3); A.nod = (A.nod || 0) + k * Math.max(0, Math.sin((t - s0) * 4.2)) * 4; A.tilt = (A.tilt || 0) + k * 3; }
     if (A.laugh > 0) { A.talk = Math.max(A.talk, (0.45 + 0.55 * Math.abs(Math.sin(t * 15))) * A.laugh); if (A.mood !== "laugh") A.mood = "laugh"; }
     if (a.chew) for (const [s0, s1] of a.chew) if (t >= s0 && t <= s1) A.talk = Math.max(A.talk, 0.15 + 0.15 * Math.abs(Math.sin(t * 9)));
     if (a.blinkAt) for (const b of a.blinkAt) { const d = Math.abs(t - b); if (d < 0.08) A.blink = 1 - d / 0.08; }
@@ -109,7 +116,15 @@
   RK.frame = function (T) {
     const [S, t, si] = shotAt(T);
     const cam = RK.resolve(S.cam || { x: 0, y: -600, z: 0.8 }, t);
-    cam.x += Math.sin(T * 0.7) * 3 * (S.shake ?? 1); cam.y += Math.cos(T * 0.53) * 2.5 * (S.shake ?? 1);
+    const hh = S.shake ?? EP.handheld ?? 1; // กล้องมือถือ: สั่นนุ่มๆ ไม่เป็นจังหวะ
+    cam.x += (RK.noise1(T * 0.9, 11) - 0.5) * 14 * hh / cam.z; cam.y += (RK.noise1(T * 0.8, 29) - 0.5) * 10 * hh / cam.z;
+    const rot = (RK.noise1(T * 0.6, 41) - 0.5) * 0.9 * hh;
+    // whip-pan: ปลายช็อตเหวี่ยงออก ต้นช็อตถัดไปเหวี่ยงเข้า (แทนแฟลชขาว)
+    const nx = EP.shots[si + 1], WIN = 0.16;
+    let whip = 0, wdir = S.whipDir || 1;
+    if (nx && (nx.cut || EP.cut) === "whip" && S.dur - t < WIN) whip = -Math.pow(1 - (S.dur - t) / WIN, 2);
+    if (si > 0 && (S.cut || EP.cut) === "whip" && t < WIN) whip = Math.pow(1 - t / WIN, 2);
+    if (whip) cam.x += whip * wdir * 700 / cam.z;
     RK._camPx = cam.x; RK._camPy = cam.y;
     const set = RK.flatSets[S.set || EP.set || "kitchen"], o = Object.assign({}, EP.setOpts || {}, S.setOpts || {});
     const camT = (par = 1) => `translate(${CX},${CY}) scale(${f(cam.z * par)}) translate(${f(-cam.x)},${f(-cam.y)})`;
@@ -126,14 +141,17 @@
     let defs = RK.flatDefs;
     for (const px of new Set([dof.bg, dof.mid, dof.fg ?? 9, dof.act].filter((v) => v > 0.3).map(Math.round))) defs += `<filter id="dof${px}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${px}"/></filter>`;
 
+    const wb = Math.round(Math.abs(whip) * 60);
+    if (wb > 1) defs += `<filter id="whipB" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur stdDeviation="${wb} 0"/></filter>`;
     let s = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${defs}</defs>`;
-    s += `<rect width="${W}" height="${H}" fill="#2A1E1C"/>`;
+    s += `<rect width="${W}" height="${H}" fill="#2A1E1C"/><g ${wb > 1 ? 'filter="url(#whipB)"' : ""} transform="rotate(${f(rot)} ${CX} ${CY}) translate(${CX},${CY}) scale(1.02) translate(${-CX},${-CY})">`;
     s += blurG(`<g transform="${camT()}">${set.wall(T, o)}${set.lamps(T, o)}</g>`, dof.bg || 0);
     s += blurG(`<g transform="${camT()}">${drawActors("back")}</g>`, dof.act || 0);
     s += blurG(`<g transform="${camT()}">${set.island(T, o)}</g>`, dof.mid || 0);
     s += blurG(`<g transform="${camT()}">${drawActors("front")}</g>`, dof.act || 0);
     s += `<g transform="${camT()}">${set.sunlight(T, o)}</g>`;
     s += blurG(`<g transform="${camT(1.25)}">${set.foreground(T, o)}</g>`, dof.fg ?? 9);
+    s += `</g>`;
     // เกรดสี + ขอบมืด + เกรน
     s += `<rect width="${W}" height="${H}" fill="url(#gradeTop)"/><rect width="${W}" height="${H}" fill="url(#vigF)"/>`;
     s += `<image href="${GRAIN}" width="${W}" height="${H}" preserveAspectRatio="none" opacity=".03" style="mix-blend-mode:overlay"/>`;
@@ -146,8 +164,7 @@
     if (S.fadeIn) fade = Math.max(fade, 1 - RK.clamp(t / S.fadeIn));
     if (S.fadeOut) fade = Math.max(fade, 1 - RK.clamp((S.dur - t) / S.fadeOut));
     if (fade > 0) s += `<rect width="${W}" height="${H}" fill="#120C0E" opacity="${f(fade)}"/>`;
-    if (si > 0 && t < 0.12) s += `<rect width="${W}" height="${H}" fill="#FFF6E0" opacity="${f((1 - t / 0.12) * 0.25)}"/>`;
-    if (S.flash && t < 0.3) s += `<rect width="${W}" height="${H}" fill="#FFFFFF" opacity="${f((1 - t / 0.3) * 0.85)}"/>`;
+    if (S.flash && t < 0.2) s += `<rect width="${W}" height="${H}" fill="#FFFFFF" opacity="${f((1 - t / 0.2) * 0.35)}"/>`;
     return s + `</svg>`;
   };
   RK.mount = function (T) { document.getElementById("stage").innerHTML = RK.frame(T); };

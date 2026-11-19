@@ -74,34 +74,34 @@
       const k = RK.ease.back(RK.clamp(a / 0.35)) * RK.clamp(b / 0.25), wob = Math.sin(a * 14) * Math.exp(-a * 4) * 6;
       return `<g transform="translate(${f(u.x ?? W / 2)},${f(u.y ?? 520)}) rotate(${f((u.rot ?? -6) + wob)}) scale(${f(k)})">` + outlineText(6, 10, u.text, u.size || 150, "#000", "#000", 26, 'opacity=".25"') + outlineText(0, 0, u.text, u.size || 150, u.color || "#FFD23F", "#2B2230", 22) + `</g>`;
     },
-    title(u, t) { // ชื่อตอนเปิดเรื่อง
+    title(u, t) { // ชื่อตอน: ตัวหนังสือใหญ่ขอบหนา เด้งเข้าทีละคำ ไม่มีกล่อง
       const a = t - u.t0, b = u.t1 - t; if (a < 0 || b < 0) return "";
-      const k = RK.clamp(a / 0.5) * RK.clamp(b / 0.4), y = (u.y ?? 380) + (1 - RK.ease.out(RK.clamp(a / 0.6))) * 40;
-      let s = `<g opacity="${f(k)}">`;
-      s += `<rect x="70" y="${f(y - 120)}" width="940" height="${u.sub ? 250 : 180}" rx="40" fill="#1E1A24" opacity=".55"/>`;
-      s += `<g transform="translate(${W / 2},${f(y - 70)})"><rect x="-110" y="-26" width="220" height="52" rx="26" fill="#F2C14E"/>` + `<text x="0" y="13" text-anchor="middle" font-family="Kanit" font-weight="800" font-size="32" fill="#2B2230">ดูเพลิน</text></g>`;
-      s += outlineText(W / 2, y + 30, u.text, u.size || 66, "#FFFFFF", "#2B2230", 10);
-      if (u.sub) s += `<text x="${W / 2}" y="${f(y + 92)}" text-anchor="middle" font-family="Kanit" font-weight="500" font-size="38" fill="#FFE7C2">${esc(u.sub)}</text>`;
+      const out = RK.clamp(b / 0.4), y = u.y ?? 420, words = String(u.text).split(/\s+/);
+      let s = `<g opacity="${f(out)}">`;
+      const pill = RK.ease.back(RK.clamp(a / 0.35));
+      s += `<g transform="translate(${W / 2},${f(y - 120)}) scale(${f(pill)})"><rect x="-104" y="-28" width="208" height="56" rx="28" fill="#F2C14E"/><text x="0" y="12" text-anchor="middle" font-family="Kanit" font-weight="800" font-size="32" fill="#2B2230">ดูเพลิน</text></g>`;
+      const lineH = (u.size || 92) * 1.15;
+      words.forEach((w, i) => { const k = RK.ease.back(RK.clamp((a - 0.25 - i * 0.22) / 0.3)); s += `<g transform="translate(${W / 2},${f(y + i * lineH)}) scale(${f(k)}) rotate(${f((i % 2 ? 2 : -2) * (1 - k))})">` + outlineText(5, 8, w, u.size || 92, "#000", "#000", 22, 'opacity=".25"') + outlineText(0, 0, w, u.size || 92, i === words.length - 1 ? (u.color || "#FFD84A") : "#FFFFFF", "#2B2230", 20) + `</g>`; });
+      if (u.sub) s += outlineText(W / 2, y + words.length * lineH - 10, u.sub, 40, "#FFE7C2", "#2B2230", 9, `opacity="${f(RK.clamp((a - 0.9) / 0.4))}"`);
       return s + `</g>`;
     },
-    bubble(u, t) { // ฟองความคิด/คำพูดในใจ
+    bubble(u, t) { // เสียงในใจ: ตัวหนังสือลอย เขียนทีละคำ (ไม่มีกล่อง)
       const a = t - u.t0, b = u.t1 - t; if (a < 0 || b < 0) return "";
-      const k = RK.ease.back(RK.clamp(a / 0.35)) * RK.clamp(b / 0.3), w = u.w || 520, h = u.h || 150, x = u.x ?? 300, y = u.y ?? 500, bob = Math.sin(t * 2.4) * 6;
-      let s = `<g transform="translate(${f(x)},${f(y + bob)}) scale(${f(k)})">`;
-      s += `<ellipse cx="0" cy="0" rx="${w / 2}" ry="${h / 2}" fill="#FFFFFF" stroke="#2B2230" stroke-width="6"/>`;
-      if (u.think !== false) s += `<circle cx="${f((u.tx ?? 0.2) * w)}" cy="${f(h / 2 + 34)}" r="20" fill="#FFF" stroke="#2B2230" stroke-width="5"/><circle cx="${f((u.tx ?? 0.2) * w + 26)}" cy="${f(h / 2 + 76)}" r="11" fill="#FFF" stroke="#2B2230" stroke-width="4"/>`;
-      s += `<text x="0" y="16" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="${u.size || 46}" fill="${u.color || "#2B2230"}">${esc(u.text)}</text>`;
+      const out = RK.clamp(b / 0.3), x = u.x ?? W / 2, y = (u.y ?? 500) + Math.sin(t * 1.8 + x) * 6, words = String(u.text).split(/\s+/), sz = u.size || 58;
+      const ctx = (RK._ctx = RK._ctx || document.createElement("canvas").getContext("2d")); ctx.font = `700 ${sz}px Kanit`;
+      const ws = words.map((w) => ctx.measureText(w).width), tot = ws.reduce((p, q) => p + q, 0) + (words.length - 1) * 16;
+      let cx = x - tot / 2, s = `<g opacity="${f(out)}">`;
+      words.forEach((w, i) => { const k = RK.clamp((a - i * 0.18) / 0.25); s += `<g transform="translate(${f(cx + ws[i] / 2)},${f(y - (1 - k) * 20)})" opacity="${f(k)}">` + outlineText(0, 0, w, sz, u.color || "#FFFFFF", "#3A2440", sz * 0.2, 'font-style="italic"') + `</g>`; cx += ws[i] + 16; });
+      if (u.think !== false) for (let i = 0; i < 3; i++) s += `<circle cx="${f(x + (u.tx ?? 0.2) * 300 + i * 18)}" cy="${f(y + 40 + i * 26)}" r="${f(9 - i * 2.5)}" fill="#FFFFFF" stroke="#3A2440" stroke-width="3" opacity="${f(RK.clamp((a - 0.2 * i) / 0.2))}"/>`;
       return s + `</g>`;
     },
-    quote(u, t) { // การ์ดคำคมตอนจบ
+    quote(u, t) { // คำคมตอนจบ: วางบนภาพตรงๆ ภาพหลังมืดลงนิด ตัวหนังสือพิมพ์ทีละบรรทัด
       const a = t - u.t0, b = u.t1 - t; if (a < 0 || b < 0) return "";
-      const k = RK.clamp(a / 0.6) * RK.clamp(b / 0.5), lines = u.lines || [u.text];
-      const y0 = (u.y ?? 700) + (1 - RK.ease.out(RK.clamp(a / 0.7))) * 60, h = 140 + lines.length * 96;
-      let s = `<g opacity="${f(k)}"><rect width="${W}" height="${H}" fill="#120C14" opacity=".35"/>`;
-      s += `<rect x="80" y="${f(y0)}" width="920" height="${h}" rx="44" fill="url(#fxCard)"/><rect x="80" y="${f(y0)}" width="920" height="16" rx="8" fill="${u.color || "#E46FA8"}"/>`;
-      s += `<text x="150" y="${f(y0 + 120)}" font-family="Georgia" font-size="140" fill="${u.color || "#E46FA8"}" opacity=".35">“</text>`;
-      lines.forEach((ln, i) => { const ap = RK.clamp((a - 0.35 - i * 0.35) / 0.4); s += `<text x="${W / 2}" y="${f(y0 + 140 + i * 96)}" text-anchor="middle" font-family="Kanit" font-weight="${i === lines.length - 1 ? 800 : 600}" font-size="${i === lines.length - 1 ? 60 : 54}" fill="${i === lines.length - 1 ? (u.color || "#C2457F") : "#2B2230"}" opacity="${f(ap)}">${esc(ln)}</text>`; });
-      s += `<g transform="translate(${W / 2},${f(y0 + h + 70)})" opacity="${f(RK.clamp((a - 0.9) / 0.4))}"><rect x="-130" y="-34" width="260" height="68" rx="34" fill="#F2C14E"/><text x="0" y="16" text-anchor="middle" font-family="Kanit" font-weight="800" font-size="40" fill="#2B2230">ดูเพลิน</text></g>`;
+      const out = RK.clamp(b / 0.5), lines = u.lines || [u.text], y0 = u.y ?? 760;
+      let s = `<g opacity="${f(out)}"><rect width="${W}" height="${H}" fill="#120C14" opacity="${f(0.42 * RK.clamp(a / 0.8))}"/>`;
+      lines.forEach((ln, i) => { const k = RK.clamp((a - 0.3 - i * 0.6) / 0.5), last = i === lines.length - 1; s += `<g transform="translate(${W / 2},${f(y0 + i * 120 + (1 - RK.ease.out(k)) * 30)})" opacity="${f(k)}">` + outlineText(0, 0, String(ln).replace(/\*/g, ""), last ? 78 : 66, last ? (u.color || "#FFD84A") : "#FFFFFF", "#1A1220", last ? 16 : 13) + `</g>`; });
+      const kb = RK.clamp((a - 0.6 - lines.length * 0.6) / 0.4);
+      s += `<g transform="translate(${W / 2},${f(y0 + lines.length * 120 + 40)}) scale(${f(RK.ease.back(kb))})"><rect x="-120" y="-32" width="240" height="64" rx="32" fill="#F2C14E"/><text x="0" y="14" text-anchor="middle" font-family="Kanit" font-weight="800" font-size="38" fill="#2B2230">ดูเพลิน</text></g>`;
       return s + `</g>`;
     },
     badge(u, t) { // โลโก้ช่องมุมจอ
