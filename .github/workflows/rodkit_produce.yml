@@ -64,6 +64,7 @@ jobs:
           done
           echo "::notice::$(grep -m1 'เสียงพากย์' produce.log) · $(grep -m1 'ความยาวคลิป' produce.log)"
       - name: Save clip back to repo
+        if: always()
         run: |
           git config user.name "rodkit-bot"
           git config user.email "rodkit-bot@users.noreply.github.com"
