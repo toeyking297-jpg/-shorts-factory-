@@ -21,3 +21,4 @@ cartoon/episodes/*/audio/lines/
 cartoon/episodes/*/audio/mix*.wav
 rodkit/build/
 __pycache__/
+rodkit/voice_lib/**/*.wav

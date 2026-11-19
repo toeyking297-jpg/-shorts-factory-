@@ -126,7 +126,7 @@
     if (si > 0 && (S.cut || EP.cut) === "whip" && t < WIN) whip = Math.pow(1 - t / WIN, 2);
     if (whip) cam.x += whip * wdir * 700 / cam.z;
     RK._camPx = cam.x; RK._camPy = cam.y;
-    const set = RK.flatSets[S.set || EP.set || "kitchen"], o = Object.assign({}, EP.setOpts || {}, S.setOpts || {});
+    const set = RK.flatSets[S.set || EP.set || "kitchen"], o = Object.assign({}, EP.setOpts || {}, S.setOpts || {}, { _t: t });
     const camT = (par = 1) => `translate(${CX},${CY}) scale(${f(cam.z * par)}) translate(${f(-cam.x)},${f(-cam.y)})`;
     const dof = RK.resolve(S.dof || {}, t);
     const blurG = (inner, px) => px > 0.3 ? `<g filter="url(#dof${Math.round(px)})">${inner}</g>` : inner;
