@@ -320,19 +320,20 @@
     s += R(x0 - w / 2 - 22, top + drop - 30, w + 44, 14, "#B5523F", 'opacity=".7"');
     s += RR(x0 - w / 2 - 20, top - 22, w + 40, 30, 10, "#8C5E3C");
     s += R(x0 - w / 2 - 10, top - 28, w + 20, 10, "#F7F1E6");
+    if (o.bare) return s; // โต๊ะเปล่า (ใช้ของในฉากจาก S.props แทน)
     // อาหารไทยบนโต๊ะ
     const steam = (x, y, k) => { let r = ""; for (let i = 0; i < 3; i++) { const ph = t * 1.2 + i * 1.7, yy = y - ((ph * 40) % 120); r += Pth(`M ${f(x + (i - 1) * 22 * k)},${f(y)} C ${f(x + (i - 1) * 22 * k - 20 * k)},${f(y - 40 * k)} ${f(x + (i - 1) * 22 * k + 20 * k)},${f(y - 80 * k)} ${f(x + (i - 1) * 22 * k)},${f(y - 120 * k)}`, "none", `stroke="url(#hSteam)" stroke-width="${f(10 * k)}" stroke-linecap="round" opacity="${f(0.55 + 0.25 * Math.sin(ph))}"`); } return r; };
     const plate = (x, y, rx, c) => E(x, y, rx + 14, (rx + 14) * 0.28, "#FFFDF6", 'stroke="#D9CDB8" stroke-width="3"') + E(x, y - 4, rx, rx * 0.26, c);
     const bowl = (x, y, rx, c) => Pth(`M ${x - rx},${y - rx * 0.3} C ${x - rx},${y + rx * 0.5} ${x + rx},${y + rx * 0.5} ${x + rx},${y - rx * 0.3} Z`, "#FFFDF6", 'stroke="#D9CDB8" stroke-width="3"') + E(x, y - rx * 0.3, rx, rx * 0.22, c) + Pth(`M ${x - rx * 0.8},${y + rx * 0.05} l ${rx * 1.6},0`, "none", ST("#6C8FA6", 4, 0.8));
     const y0 = top - 20;
     // หม้อข้าว
-    s += RR(x0 - 700, y0 - 140, 170, 140, 30, "#E6E2DA", 'stroke="#BDB6A8" stroke-width="3"') + E(x0 - 615, y0 - 140, 90, 22, "#D3CEC4") + RR(x0 - 640, y0 - 175, 50, 22, 10, "#9C8F7E") + R(x0 - 690, y0 - 70, 150, 12, "#E46F5B");
+    if (!o.noPot) s += RR(x0 - 700, y0 - 140, 170, 140, 30, "#E6E2DA", 'stroke="#BDB6A8" stroke-width="3"') + E(x0 - 615, y0 - 140, 90, 22, "#D3CEC4") + RR(x0 - 640, y0 - 175, 50, 22, 10, "#9C8F7E") + R(x0 - 690, y0 - 70, 150, 12, "#E46F5B");
     // ไข่เจียว
     s += plate(x0 - 380, y0 - 10, 110, "#F2B53A") + Pth(`M ${x0 - 440},${y0 - 18} q 30,-14 60,0 q 30,-12 60,2`, "none", ST("#D98B2B", 5)) + E(x0 - 400, y0 - 20, 16, 6, "#5FA25F");
     // แกงเขียวหวาน + ไอ
     s += bowl(x0 - 100, y0 - 10, 90, "#7FA35A") + C(x0 - 120, y0 - 32, 10, "#F7F1E6") + C(x0 - 80, y0 - 34, 9, "#5E8A3B") + steam(x0 - 100, y0 - 50, 0.8);
     // ปลาทอด
-    s += plate(x0 + 170, y0 - 10, 130, "#F4E6C8") + `<g transform="translate(${x0 + 170},${y0 - 22})">` + Pth("M -90,0 C -60,-30 40,-30 70,0 C 40,26 -60,26 -90,0 Z", "#C9822F") + Pth("M 70,0 L 105,-24 L 100,24 Z", "#B06E25") + C(-62, -4, 6, "#3A2A26") + Pth("M -30,-14 q 10,14 0,28 M 0,-16 q 10,16 0,32 M 30,-12 q 8,12 0,24", "none", ST("#9C5C1E", 3)) + `</g>`;
+    if (!o.noFish) s += plate(x0 + 170, y0 - 10, 130, "#F4E6C8") + `<g transform="translate(${x0 + 170},${y0 - 22})">` + Pth("M -90,0 C -60,-30 40,-30 70,0 C 40,26 -60,26 -90,0 Z", "#C9822F") + Pth("M 70,0 L 105,-24 L 100,24 Z", "#B06E25") + C(-62, -4, 6, "#3A2A26") + Pth("M -30,-14 q 10,14 0,28 M 0,-16 q 10,16 0,32 M 30,-12 q 8,12 0,24", "none", ST("#9C5C1E", 3)) + `</g>`;
     // ต้มจืด + ไอ
     s += bowl(x0 + 440, y0 - 10, 100, "#E8D8A8") + C(x0 + 420, y0 - 34, 12, "#86A85E") + C(x0 + 460, y0 - 36, 10, "#F7F1E6") + steam(x0 + 440, y0 - 52, 0.9);
     // ผัดผักบุ้ง

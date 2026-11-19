@@ -154,6 +154,7 @@
     s += `<g transform="${camT()}">${set.sunlight(T, o)}</g>`;
     s += blurG(`<g transform="${camT(1.25)}">${set.foreground(T, o)}</g>`, dof.fg ?? 9);
     s += `</g>`;
+    if (RK.flatGrade) s += RK.flatGrade(S, t);
     // เกรดสี + ขอบมืด + เกรน
     s += `<rect width="${W}" height="${H}" fill="url(#gradeTop)"/><rect width="${W}" height="${H}" fill="url(#vigF)"/>`;
     s += `<image href="${GRAIN}" width="${W}" height="${H}" preserveAspectRatio="none" opacity=".03" style="mix-blend-mode:overlay"/>`;

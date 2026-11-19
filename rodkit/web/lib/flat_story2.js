@@ -96,8 +96,9 @@
   // ---------- แมวส้มฉุน (มุมข้าง หันขวา dir 1) ----------
   function cat(p, t, TT) {
     const walk = p.walk ?? 0, sit = p.sit ?? 0, ph = (p.phase ?? TT) * 9, dir = p.dir ?? 1;
-    const O = "#F09A3E", OD = "#C66F1E", WH = "#FFF4E6";
-    let s = `<g transform="scale(${dir},1)">` + E(0, 4, 90, 10, "#000", 'opacity=".22"');
+    const gray = p.col === "gray", O = gray ? "#9AA0A6" : "#F09A3E", OD = gray ? "#6E747A" : "#C66F1E", WH = gray ? "#E6E8EA" : "#FFF4E6";
+    const thin = p.thin ? 0.82 : 1;
+    let s = `<g transform="scale(${dir},1)">` + E(0, 4, 90, 10, "#000", 'opacity=".22"') + `<g transform="scale(1,${thin}) translate(0,0)">`;
     const leg = (x0, a) => { const sw = Math.sin(ph + a) * 22 * walk; return Pth(`M ${f(x0)},-40 L ${f(x0 + sw * 0.5)},-20 L ${f(x0 + sw)},0`, "none", ST(OD, 15)) + E(x0 + sw + 4, -2, 10, 6, WH); };
     const bob = Math.abs(Math.sin(ph)) * 4 * walk;
     // หาง
@@ -115,7 +116,9 @@
     s += Pth(`M ${hx + 6},${hy + 6} l 6,0 l -3,4 Z`, "#E46F82") + Pth(`M ${hx + 9},${hy + 10} q -5,6 -10,2 M ${hx + 9},${hy + 10} q 5,6 10,2`, "none", ST("#2B2230", 2));
     for (const sgn of [-1, 1]) s += L(hx + 24, hy + 8 + sgn * 4, hx + 54, hy + 4 + sgn * 10, "#FFFFFF", 2, 'opacity=".8"');
     if (p.lime) s += C(hx + 22, hy + 26, 15, "#86B84A", `stroke="#5E8A2E" stroke-width="2"`) + C(hx + 18, hy + 21, 4, "#C6E28A"); // คาบมะนาว
-    return s + `</g>`;
+    if (p.fish) s += `<g transform="translate(${hx + 30},${hy + 22}) rotate(20)">` + Pth("M -26,0 C -16,-10 14,-10 22,-2 L 34,-12 L 32,2 L 36,14 L 22,4 C 14,10 -16,10 -26,0 Z", "#C9A15A", `stroke="#7E5A2A" stroke-width="2"`) + `</g>`; // คาบหางปลาทู
+    if (p.lick) s += Pth(`M ${hx + 8},${hy + 14} q 4,10 10,4`, "#E46F82");
+    return s + `</g></g>`;
   }
   // ---------- หม้อต้มยำบนเตา ----------
   function pot(p, t, TT) {
