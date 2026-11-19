@@ -130,6 +130,43 @@ class Eleven:
             CAST.write_text(json.dumps(self.cast, ensure_ascii=False, indent=2) + "\n", "utf-8")
 
 
+MUSIC_PRESETS = json.loads((ROOT / "music_presets.json").read_text("utf-8")) if (ROOT / "music_presets.json").exists() else {}
+MUSIC_MS = 180000
+
+
+def music_source(ep):
+    """ดนตรี: ep.music = ชื่อชุดสำเร็จรูป (สร้างครั้งเดียว ใช้ซ้ำทุกตอน) หรือ ep.musicPrompt (สร้างใหม่ต่อ prompt)"""
+    if ep.get("music") in MUSIC_PRESETS:
+        pr = MUSIC_PRESETS[ep["music"]]
+        return pr, ROOT / "music_lib" / f"preset_{ep['music']}.mp3"
+    if ep.get("musicPrompt"):
+        return ep["musicPrompt"], ROOT / "music_lib" / f"{hashlib.md5(ep['musicPrompt'].encode()).hexdigest()[:12]}.mp3"
+    return None, None
+
+
+def credit_report(ep, vdir):
+    """ประมาณงาน ElevenLabs ที่ยังไม่มีในคลัง (ใช้ตอน --dry ก่อนส่งผลิตจริง)"""
+    tts_chars, tts_lines, sfx_new, sfx_sec = 0, 0, 0, 0.0
+    for S in ep["shots"]:
+        for L in S.get("say", []):
+            h = hashlib.md5(f"elevenlabs|{L['who']}|{L['text']}".encode()).hexdigest()[:12]
+            if not (vdir / f"{L['who']}_{h}.mp3").exists():
+                tts_chars += len(L["text"]); tts_lines += 1
+        for X in S.get("sfx", []):
+            if X.get("prompt"):
+                sp = SFXLIB_DIR / "prompt" / f"{hashlib.md5(X['prompt'].encode()).hexdigest()[:10]}.mp3"
+                if not sp.exists(): sfx_new += 1; sfx_sec += X.get("len", 1.5)
+            elif not (SFXLIB_DIR / f"{X['name']}.mp3").exists() and (SFXLIB.get("sfx", {}).get(X["name"])):
+                sfx_new += 1; sfx_sec += 2.0
+    mp, mpath = music_source(ep)
+    music_new = bool(mp) and not mpath.exists()
+    log("— งาน ElevenLabs ที่ยังไม่มีในคลัง (จะเสียเครดิตตอนผลิตจริง) —")
+    log(f"  เสียงพากย์ใหม่ {tts_lines} ประโยค · {tts_chars} ตัวอักษร")
+    log(f"  เสียงประกอบใหม่ {sfx_new} เสียง · รวม {sfx_sec:.1f} วินาที")
+    log(f"  ดนตรีใหม่: {'ใช่ — ' + mpath.name if music_new else 'ไม่ (ใช้จากคลัง)'}")
+    return dict(tts_lines=tts_lines, tts_chars=tts_chars, sfx_new=sfx_new, sfx_sec=round(sfx_sec, 1), music_new=music_new)
+
+
 def edge_tts(who: str, text: str, out: pathlib.Path):
     import asyncio
     import edge_tts as E
@@ -151,6 +188,8 @@ def main():
     out = ROOT / "build" / eid
     out.mkdir(parents=True, exist_ok=True)
     vdir = pathlib.Path(__file__).parent / "voice_lib" / ep["id"]; vdir.mkdir(parents=True, exist_ok=True)  # เก็บเสียงพากย์ใน repo: แก้ภาพแล้วผลิตใหม่ไม่เสียเครดิต
+    if a.dry:
+        credit_report(ep, vdir)
     EL = Eleven() if not a.dry else None
     engine = "dry" if a.dry else ("elevenlabs" if EL.ok else "edge")
     # เสียงต้องเป็น ElevenLabs เท่านั้น (ยกเว้นตั้ง allowFallback ในไฟล์ตอน) — ไม่ส่งคลิปเสียงบอทอีก
@@ -240,7 +279,7 @@ def main():
     for at, p, g in voices:
         x = to_np(p); i = int(at * AU.SR); k = min(len(x), n - i)
         if k > 0: vbus[i:i + k] += x[:k] * g
-    sdir = out / "sfx"; sdir.mkdir(exist_ok=True)
+    sdir = SFXLIB_DIR / "prompt"; sdir.mkdir(parents=True, exist_ok=True)  # เสียงประกอบจาก prompt เก็บใน repo: ผลิตซ้ำไม่เสียเครดิต
     for at, X in sfx_events:
         name = X["name"]
         x = None
@@ -265,13 +304,19 @@ def main():
         i = int(at * AU.SR); k = min(len(x), n - i)
         if k > 0: fbus[i:i + k] += x[:k] * X.get("gain", 0.8)
     mus = None
-    if ep.get("musicPrompt") and EL and EL.ok:
-        mp = ROOT / "music_lib" / f"{hashlib.md5(ep['musicPrompt'].encode()).hexdigest()[:12]}.mp3"
+    mprompt, mpath = music_source(ep)
+    if mprompt and EL and EL.ok:
+        mp = mpath
         try:
             if not mp.exists():
-                mp.parent.mkdir(exist_ok=True); EL.music(ep["musicPrompt"], int((total + 1.5) * 1000), mp); log(f"  ดนตรี ElevenLabs: {mp.name}")
+                mp.parent.mkdir(exist_ok=True); EL.music(mprompt, MUSIC_MS if ep.get("music") in MUSIC_PRESETS else int((total + 1.5) * 1000), mp); log(f"  ดนตรี ElevenLabs: {mp.name}")
             mus = to_np(mp)
-            if len(mus) < n: mus = np.concatenate([mus, np.zeros((n - len(mus), 2), np.float32)])
+            if len(mus) < n:  # วนซ้ำเพลงแทนการเติมความเงียบ (ใช้เพลงชุดเดิมกับคลิปยาวได้ ไม่ต้องสร้างใหม่)
+                xf = int(1.0 * AU.SR); parts = [mus]
+                while sum(len(q) for q in parts) < n + xf:
+                    nxt = mus.copy(); prev = parts[-1]
+                    ramp = np.linspace(0, 1, xf)[:, None]; prev[-xf:] = prev[-xf:] * (1 - ramp) + nxt[:xf] * ramp; parts.append(nxt[xf:])
+                mus = np.concatenate(parts)
             fo = int(1.5 * AU.SR); mus = mus[:n].copy(); mus[-fo:] *= np.linspace(1, 0, fo)[:, None]
             mus *= ep.get("musicGain", 1.6)
         except Exception as e:  # noqa: BLE001
