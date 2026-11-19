@@ -1,0 +1,5 @@
+{"id":"MEETQA","engine":"flat","fps":30,"set":"meeting","shots":[
+ {"dur":2,"cam":{"x":0,"y":-560,"z":0.62},"setOpts":{"tv":1,"draw":1},
+  "actors":[{"who":"chai","view":"front","x":-216,"y":0,"s":0.62,"layer":"back","sink":95,"clipY":0,"mood":"smile"},{"who":"jan","view":"front","x":302,"y":0,"s":0.62,"layer":"back","sink":95,"clipY":0},{"who":"prang","view":"front","x":-760,"y":230,"s":0.62,"arms":"explain"},{"who":"te","view":"front","x":820,"y":230,"s":0.62}],
+  "props":[{"type":"laptop","x":60,"y":-182,"s":0.7,"on":1,"bat":1},{"type":"orchid","x":-560,"y":-182,"s":0.75,"bloom":0.2}]},
+ {"dur":2,"cam":{"x":-560,"y":-360,"z":2.6},"dof":{"bg":6},"setOpts":{"tv":0},"props":[{"type":"orchid","x":-560,"y":-182,"s":0.75,"bloom":[[0,0.2],[2,1]],"glow":1},{"type":"laptop","x":-220,"y":-182,"s":0.7,"on":0}]}]}

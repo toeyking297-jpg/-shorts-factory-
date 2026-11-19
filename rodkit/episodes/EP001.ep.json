@@ -2,322 +2,29 @@
  "id": "EP001",
  "engine": "flat",
  "fps": 30,
- "set": "porch",
- "setOpts": {},
+ "set": "meeting",
  "title": "กล้วยไม้ไม่ได้บานในวันเดียว",
  "music": "morning",
- "musicPrompt": "Gentle uplifting acoustic morning music for a heartwarming cartoon short: soft piano, warm ukulele and light strings, slow hopeful start, builds to a joyful triumphant chorus near the end, then a calm warm outro. No vocals.",
- "musicGain": 1.5,
- "ambience": "morning",
- "ambienceGain": 0.25,
+ "musicPrompt": "Cartoon short score: starts with tense ticking suspense (clock, low pulse) for an office disaster, a short warm nostalgic piano flashback, then builds to a hopeful uplifting triumphant swell with strings and bells, ending light and playful. No vocals.",
+ "musicGain": 1.3,
+ "ambience": "office",
+ "ambienceGain": 0.18,
+ "handheld": 1,
  "shots": [
   {
-   "name": "dawn",
-   "set": "porch",
-   "dur": 4.5,
-   "fadeIn": 0.8,
+   "name": "hook_screen",
+   "set": "meeting",
+   "dur": 2.2,
    "cam": {
-    "x": [
-     [
-      0,
-      -200
-     ],
-     [
-      6,
-      40
-     ]
-    ],
+    "x": 60,
     "y": [
      [
       0,
-      -900
+      -262
      ],
      [
-      6,
-      -640
-     ]
-    ],
-    "z": [
-     [
-      0,
-      0.5
-     ],
-     [
-      6,
-      0.66
-     ]
-    ]
-   },
-   "dof": {
-    "bg": 1
-   },
-   "actors": [
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 230,
-     "s": 0.62,
-     "mood": "worried",
-     "view": "side",
-     "x": 520,
-     "dir": -1,
-     "prop": "mug",
-     "arms": "hold"
-    }
-   ],
-   "fx": [
-    {
-     "type": "lightleak",
-     "t0": 0,
-     "t1": 99
-    },
-    {
-     "type": "bokeh",
-     "t0": 0.3,
-     "t1": 99
-    },
-    {
-     "type": "rays",
-     "t0": 0,
-     "t1": 99,
-     "x": 980
-    }
-   ],
-   "ui": [
-    {
-     "type": "title",
-     "t0": 0.4,
-     "t1": 4.2,
-     "text": "กล้วยไม้ไม่ได้บานในวันเดียว",
-     "sub": "เรื่องเล็กๆ ที่ให้กำลังใจทุกเช้า",
-     "y": 420
-    },
-    {
-     "type": "chip",
-     "t0": 1.0,
-     "t1": 99,
-     "x": 40,
-     "y": 120,
-     "text": "06:00 • บ้านปราง",
-     "icon": "sun",
-     "w": 360
-    }
-   ],
-   "say": [
-    {
-     "who": "narrator",
-     "text": "เช้านี้… ปรางตื่นเร็วกว่าปกติ เพราะหัวใจเต้นแรงตั้งแต่ตีห้า"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "rooster",
-     "at": 0.2,
-     "gain": 0.35
-    },
-    {
-     "name": "chime",
-     "at": 2.2,
-     "gain": 0.35
-    }
-   ]
-  },
-  {
-   "name": "worry",
-   "set": "porch",
-   "dur": 3,
-   "cam": {
-    "x": 330,
-    "y": -280,
-    "z": [
-     [
-      0,
-      1.5
-     ],
-     [
-      6,
-      1.65
-     ]
-    ]
-   },
-   "dof": {
-    "bg": 4
-   },
-   "actors": [
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 230,
-     "s": 0.62,
-     "mood": "worried",
-     "view": "front",
-     "x": 330,
-     "prop": "mug",
-     "arms": "hold",
-     "sweat": [
-      [
-       0,
-       0
-      ],
-      [
-       1.5,
-       0
-      ],
-      [
-       2,
-       1
-      ]
-     ]
-    }
-   ],
-   "fx": [
-    {
-     "type": "pulse",
-     "t0": 0.3,
-     "t1": 99,
-     "bpm": 118
-    }
-   ],
-   "ui": [
-    {
-     "type": "bubble",
-     "t0": 1.6,
-     "t1": 99,
-     "x": 300,
-     "y": 420,
-     "w": 540,
-     "text": "ถ้าพูดผิดล่ะ…?",
-     "tx": 0.3
-    },
-    {
-     "type": "bubble",
-     "t0": 3.0,
-     "t1": 99,
-     "x": 760,
-     "y": 620,
-     "w": 520,
-     "text": "ถ้าทุกคนหัวเราะล่ะ…?",
-     "tx": -0.3,
-     "size": 42
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "[sighs] วันนี้ต้องพรีเซนต์งานครั้งแรก… ถ้าพูดผิดล่ะ… ถ้าทุกคนหัวเราะล่ะ"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "heartbeat",
-     "prompt": "soft cartoon heartbeat, nervous, thump thump thump",
-     "len": 3,
-     "at": 0.2,
-     "gain": 0.6
-    }
-   ]
-  },
-  {
-   "name": "grandma",
-   "set": "porch",
-   "dur": 3,
-   "cam": {
-    "x": [
-     [
-      0,
-      40
-     ],
-     [
-      5,
-      140
-     ]
-    ],
-    "y": -330,
-    "z": 1.0
-   },
-   "dof": {
-    "bg": 3
-   },
-   "actors": [
-    {
-     "who": "boon",
-     "light": "litL",
-     "seed": 3,
-     "y": 220,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "side",
-     "x": [
-      [
-       0,
-       -640
-      ],
-      [
-       2.4,
-       -80
-      ]
-     ],
-     "dir": 1,
-     "prop": "cane",
-     "arms": "cane"
-    },
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 230,
-     "s": 0.62,
-     "mood": "worried",
-     "view": "side",
-     "x": 380,
-     "dir": -1,
-     "prop": "mug",
-     "arms": "hold"
-    }
-   ],
-   "say": [
-    {
-     "who": "boon",
-     "text": "หลานเอ๊ย… ดูกล้วยไม้นั่นสิ"
-    },
-    {
-     "who": "prang",
-     "text": "บานสวยจังค่ะยาย"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "steps",
-     "at": 0.1,
-     "gain": 0.4
-    }
-   ]
-  },
-  {
-   "name": "orchid",
-   "set": "porch",
-   "dur": 4,
-   "cam": {
-    "x": [
-     [
-      0,
-      -150
-     ],
-     [
-      7,
-      -140
-     ]
-    ],
-    "y": [
-     [
-      0,
-      -880
-     ],
-     [
-      7,
-      -900
+      2.2,
+      -262
      ]
     ],
     "z": [
@@ -326,821 +33,233 @@
       3.0
      ],
      [
-      7,
+      2.2,
       3.4
      ]
     ]
    },
    "dof": {
-    "bg": 5
+    "bg": 7
    },
-   "actors": [],
-   "fx": [
+   "setOpts": {
+    "tv": 0
+   },
+   "props": [
     {
-     "type": "petals",
-     "t0": 0.3,
-     "t1": 99,
-     "n": 18
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": [
+      [
+       0,
+       1
+      ],
+      [
+       0.9,
+       1
+      ],
+      [
+       1.0,
+       0.3
+      ],
+      [
+       1.12,
+       0
+      ]
+     ],
+     "bat": 1
     },
     {
-     "type": "sparkle",
-     "t0": 0.5,
-     "t1": 99,
-     "x": 540,
-     "y": 820,
-     "r": 360
-    },
-    {
-     "type": "rays",
-     "t0": 0,
-     "t1": 99,
-     "x": 900
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2
     }
    ],
-   "say": [
-    {
-     "who": "boon",
-     "text": "มันไม่ได้บานในวันเดียวหรอก… มันค่อยๆ โต ทีละนิด ทุกวัน… หลานก็เหมือนกันนะ"
-    }
+   "subs": [
+    [
+     0.15,
+     2.2,
+     "จอดับ… *ต่อหน้าลูกค้า*"
+    ]
    ],
    "sfx": [
     {
-     "name": "sparkle",
-     "at": 0.4,
-     "gain": 0.5
-    },
-    {
-     "name": "chime",
-     "line": 0,
-     "at": 3.2,
-     "gain": 0.35
+     "name": "pwrdown",
+     "prompt": "laptop power shutting down, electronic descending tone then silence, cartoon",
+     "len": 1.2,
+     "at": 0.85,
+     "gain": 0.8
     }
    ]
   },
   {
-   "name": "smile",
-   "set": "porch",
-   "dur": 2.6,
-   "flash": true,
+   "name": "hook_face",
+   "set": "meeting",
+   "dur": 1.3,
    "cam": {
-    "x": 330,
-    "y": -300,
+    "x": -760,
+    "y": -370,
     "z": [
      [
       0,
-      1.3
+      2.3
      ],
      [
-      4,
-      1.42
+      1.3,
+      2.6
      ]
     ]
    },
    "dof": {
-    "bg": 4
+    "bg": 6,
+    "mid": 4
+   },
+   "setOpts": {
+    "tv": 0
    },
    "actors": [
     {
      "who": "prang",
-     "light": "litL",
-     "seed": 1,
+     "s": 0.62,
      "y": 230,
-     "s": 0.62,
-     "mood": "laugh",
      "view": "front",
-     "x": 330,
-     "arms": "hold",
-     "arms2": "cheer",
-     "armMix": [
-      [
-       0,
-       0
-      ],
-      [
-       0.9,
-       0
-      ],
-      [
-       1.3,
-       1
-      ]
-     ]
-    }
-   ],
-   "fx": [
-    {
-     "type": "burst",
-     "t0": 0.9,
-     "t1": 99,
-     "y": 700
-    },
-    {
-     "type": "sparkle",
-     "t0": 1.0,
-     "t1": 99,
-     "y": 700,
-     "r": 420
-    },
-    {
-     "type": "lightleak",
-     "t0": 0,
-     "t1": 99
-    }
-   ],
-   "ui": [
-    {
-     "type": "pop",
-     "t0": 1.3,
-     "t1": 99,
-     "text": "สู้ๆ!",
-     "y": 430,
-     "color": "#FFD23F"
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "[excited] ค่ะยาย! ปรางจะลองดู!"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "boing",
-     "at": 1.2,
-     "gain": 0.5
-    },
-    {
-     "name": "sparkle",
-     "at": 1.3,
-     "gain": 0.5
-    }
-   ]
-  },
-  {
-   "name": "run",
-   "set": "park",
-   "dur": 3.4,
-   "cam": {
-    "x": [
-     [
-      0,
-      -760
-     ],
-     [
-      2.4,
-      -160
-     ],
-     [
-      5,
-      -60
-     ]
-    ],
-    "y": -330,
-    "z": 0.95
-   },
-   "dof": {
-    "bg": 3
-   },
-   "actors": [
-    {
-     "who": "prang",
      "light": "litL",
-     "seed": 1,
-     "y": 240,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "side",
-     "x": [
-      [
-       0,
-       -1100
-      ],
-      [
-       2.4,
-       -260
-      ]
-     ],
-     "dir": 1,
-     "run": true,
-     "look2": {}
-    },
+     "x": -760,
+     "mood": "shock",
+     "arms": "shrug",
+     "sweat": 1,
+     "seed": 1
+    }
+   ],
+   "props": [
     {
-     "who": "phum",
-     "light": "litL",
-     "seed": 2,
-     "y": 250,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "side",
-     "x": 180,
-     "dir": -1,
-     "arms": "idle",
-     "arms2": "wave",
-     "armMix": [
-      [
-       0,
-       0
-      ],
-      [
-       2.2,
-       0
-      ],
-      [
-       2.6,
-       1
-      ],
-      [
-       3.6,
-       1
-      ],
-      [
-       4,
-       0
-      ]
-     ]
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2
     }
    ],
    "fx": [
     {
      "type": "speed",
      "t0": 0,
-     "t1": 2.4,
-     "fo": 0.3
+     "t1": 0.5
+    }
+   ],
+   "sfx": [
+    {
+     "name": "startle",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "name": "desk_morning",
+   "set": "office",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -220
+     ],
+     [
+      4,
+      -160
+     ]
+    ],
+    "y": -330,
+    "z": 1.15
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 20,
+     "s": 0.62,
+     "view": "front",
+     "who": "prang",
+     "x": -403,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 1
     },
     {
-     "type": "lightleak",
-     "t0": 0,
-     "t1": 99
+     "who": "te",
+     "s": 0.62,
+     "y": 250,
+     "view": "side",
+     "light": "litL",
+     "x": 150,
+     "dir": -1,
+     "mood": "laugh",
+     "seed": 0
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": -220,
+     "y": -180,
+     "s": 0.62,
+     "bloom": 0.2
     }
    ],
    "ui": [
     {
      "type": "chip",
-     "t0": 0.2,
-     "t1": 99,
+     "t0": 0.1,
+     "t1": 2.2,
      "x": 40,
-     "y": 120,
-     "text": "06:45 • สวนสาธารณะ",
-     "icon": "sun",
-     "w": 420
+     "y": 150,
+     "w": 340,
+     "icon": "clock",
+     "text": "3 ชั่วโมงก่อน"
     }
    ],
    "say": [
     {
-     "who": "phum",
-     "text": "อ้าว ปราง! วันนี้พรีเซนต์ใช่ไหม สู้ๆ นะ!",
-     "pause": 0.2
+     "who": "te",
+     "text": "ต้นไม้ยังไม่บานเลย เอามาวางทำไมเนี่ย ฮ่าๆ",
+     "sub": "ต้นไม้ยังไม่บานเลย|เอามาวางทำไม|555"
     },
     {
      "who": "prang",
-     "text": "[laughs] ขอบใจนะภูมิ!"
+     "text": "ยายบุญให้มา ยายบอกว่ามันจะบาน ในวันสำคัญ",
+     "sub": "ยายบุญให้มา|บอกว่ามันจะบาน|*วันสำคัญ*"
     }
    ],
    "sfx": [
     {
-     "name": "steps_run",
+     "name": "typing",
      "at": 0.0,
-     "gain": 0.5
-    },
-    {
-     "name": "steps_run",
-     "at": 1.4,
-     "gain": 0.4
+     "gain": 0.25
     }
    ]
   },
   {
-   "name": "practice",
-   "set": "park",
-   "dur": 3.2,
+   "name": "hero1",
+   "set": "office",
+   "dur": 1.8,
    "cam": {
-    "x": [
+    "x": -170,
+    "y": [
      [
       0,
       -300
      ],
      [
-      6,
-      60
-     ]
-    ],
-    "y": -520,
-    "z": 0.7
-   },
-   "dof": {
-    "bg": 1
-   },
-   "actors": [
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 260,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "side",
-     "x": [
-      [
-       0,
-       -500
-      ],
-      [
-       6,
-       120
-      ]
-     ],
-     "dir": 1,
-     "arms": "idle",
-     "arms2": "explain",
-     "armMix": [
-      [
-       0,
-       0
-      ],
-      [
-       0.6,
-       1
-      ]
-     ]
-    }
-   ],
-   "fx": [
-    {
-     "type": "bokeh",
-     "t0": 0,
-     "t1": 99
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "[softly] สวัสดีค่ะทุกคน… วันนี้ปรางจะมาเล่าว่า…"
-    }
-   ],
-   "sfx": []
-  },
-  {
-   "name": "office_start",
-   "set": "office",
-   "dur": 3,
-   "flash": true,
-   "cam": {
-    "x": [
-     [
-      0,
-      140
-     ],
-     [
-      5,
-      240
-     ]
-    ],
-    "y": -320,
-    "z": [
-     [
-      0,
-      0.92
-     ],
-     [
-      5,
-      1.0
-     ]
-    ]
-   },
-   "dof": {
-    "bg": 2
-   },
-   "actors": [
-    {
-     "who": "te",
-     "light": "litL",
-     "seed": 0,
-     "y": 20,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "front",
-     "x": -403,
-     "layer": "back",
-     "sink": 95,
-     "clipY": 0
-    },
-    {
-     "who": "jan",
-     "light": "litL",
-     "seed": 1,
-     "y": 20,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "front",
-     "x": 173,
-     "layer": "back",
-     "sink": 95,
-     "clipY": 0
-    },
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 250,
-     "s": 0.62,
-     "mood": "worried",
-     "view": "front",
-     "x": 560,
-     "arms": "idle",
-     "sweat": 1
-    }
-   ],
-   "fx": [
-    {
-     "type": "pulse",
-     "t0": 0,
-     "t1": 99,
-     "bpm": 126
-    }
-   ],
-   "ui": [
-    {
-     "type": "chip",
-     "t0": 0.2,
-     "t1": 99,
-     "x": 40,
-     "y": 120,
-     "text": "09:00 • ห้องประชุม",
-     "icon": "clock",
-     "w": 400
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "[nervous] สวัสดีค่ะทุกคน…"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "heartbeat",
-     "prompt": "soft cartoon heartbeat, nervous, thump thump thump",
-     "len": 3,
-     "at": 0.1,
-     "gain": 0.5
-    }
-   ]
-  },
-  {
-   "name": "present",
-   "set": "office",
-   "dur": 3.2,
-   "cam": {
-    "x": 560,
-    "y": -300,
-    "z": [
-     [
-      0,
-      1.25
-     ],
-     [
-      5,
-      1.32
-     ]
-    ]
-   },
-   "dof": {
-    "bg": 4
-   },
-   "actors": [
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 250,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "front",
-     "x": 560,
-     "arms": "explain"
-    }
-   ],
-   "fx": [
-    {
-     "type": "sparkle",
-     "t0": 1.4,
-     "t1": 99,
-     "x": 540,
-     "y": 560,
-     "r": 300
-    }
-   ],
-   "ui": [
-    {
-     "type": "card",
-     "t0": 0.6,
-     "t1": 99,
-     "x": 330,
-     "y": 360,
-     "w": 640,
-     "h": 170,
-     "title": "ยอดขายเดือนนี้",
-     "value": 35,
-     "unit": "%",
-     "icon": "sun",
-     "bar": 0.85,
-     "color": "#2F8F4F"
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "เดือนนี้ยอดขายของเราเพิ่มขึ้น สามสิบห้าเปอร์เซ็นต์ค่ะ!"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "pop",
-     "at": 0.6,
-     "gain": 0.6
-    },
-    {
-     "name": "chime",
-     "line": 0,
-     "at": 1.6,
-     "gain": 0.4
-    }
-   ]
-  },
-  {
-   "name": "applause",
-   "set": "office",
-   "dur": 3.2,
-   "cam": {
-    "x": [
-     [
-      0,
-      -120
-     ],
-     [
-      5,
-      -60
-     ]
-    ],
-    "y": -330,
-    "z": 1.0
-   },
-   "dof": {
-    "bg": 2
-   },
-   "actors": [
-    {
-     "who": "te",
-     "light": "litL",
-     "seed": 0,
-     "y": 20,
-     "s": 0.62,
-     "mood": "laugh",
-     "view": "front",
-     "x": -403,
-     "layer": "back",
-     "sink": 95,
-     "clipY": 0,
-     "arms": "clap",
-     "arms2": "clap2",
-     "armMix": [
-      [
-       0,
-       0
-      ],
-      [
-       0.15,
-       1
-      ],
-      [
-       0.3,
-       0
-      ],
-      [
-       0.45,
-       1
-      ],
-      [
-       0.6,
-       0
-      ],
-      [
-       0.75,
-       1
-      ],
-      [
-       0.9,
-       0
-      ],
-      [
-       1.05,
-       1
-      ],
-      [
-       1.2,
-       0
-      ],
-      [
-       1.35,
-       1
-      ],
-      [
-       1.5,
-       0
-      ],
-      [
-       1.65,
-       1
-      ],
-      [
-       1.8,
-       0
-      ],
-      [
-       1.95,
-       1
-      ],
-      [
-       2.1,
-       0
-      ],
-      [
-       2.25,
-       1
-      ],
-      [
-       2.4,
-       0
-      ],
-      [
-       2.55,
-       1
-      ],
-      [
-       2.7,
-       0
-      ]
-     ]
-    },
-    {
-     "who": "jan",
-     "light": "litL",
-     "seed": 1,
-     "y": 20,
-     "s": 0.62,
-     "mood": "smile",
-     "view": "front",
-     "x": 173,
-     "layer": "back",
-     "sink": 95,
-     "clipY": 0,
-     "arms": "idle",
-     "arms2": "clap",
-     "armMix": [
-      [
-       0,
-       0
-      ],
-      [
-       0.4,
-       1
-      ]
-     ]
-    }
-   ],
-   "fx": [
-    {
-     "type": "confetti",
-     "t0": 1.6,
-     "t1": 99
-    }
-   ],
-   "say": [
-    {
-     "who": "jan",
-     "text": "ดีมากเลยปราง ชัดเจนมาก"
-    },
-    {
-     "who": "te",
-     "text": "[excited] เย้! เก่งที่สุดเลย!"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "applause",
-     "at": 0.1,
-     "gain": 0.7
-    },
-    {
-     "name": "laugh_crowd",
-     "line": 1,
-     "at": 0.6,
-     "gain": 0.35
-    }
-   ]
-  },
-  {
-   "name": "proud",
-   "set": "office",
-   "dur": 2.6,
-   "flash": true,
-   "cam": {
-    "x": 560,
-    "y": -300,
-    "z": [
-     [
-      0,
-      1.35
-     ],
-     [
-      4,
-      1.5
-     ]
-    ]
-   },
-   "dof": {
-    "bg": 5
-   },
-   "actors": [
-    {
-     "who": "prang",
-     "light": "litL",
-     "seed": 1,
-     "y": 250,
-     "s": 0.62,
-     "mood": "laugh",
-     "view": "front",
-     "x": 560,
-     "arms": "cheer",
-     "hearts": 1
-    }
-   ],
-   "fx": [
-    {
-     "type": "burst",
-     "t0": 0,
-     "t1": 99,
-     "y": 700,
-     "color": "#FFE7A0"
-    },
-    {
-     "type": "sparkle",
-     "t0": 0,
-     "t1": 99,
-     "y": 700
-    },
-    {
-     "type": "confetti",
-     "t0": 0,
-     "t1": 99,
-     "seed": 9
-    }
-   ],
-   "ui": [
-    {
-     "type": "pop",
-     "t0": 0.3,
-     "t1": 99,
-     "text": "ทำได้แล้ว!",
-     "y": 420,
-     "size": 130,
-     "color": "#7CE08A"
-    }
-   ],
-   "say": [
-    {
-     "who": "prang",
-     "text": "[happy] ทำได้แล้ว… ขอบคุณนะคะยาย"
-    }
-   ],
-   "sfx": [
-    {
-     "name": "chime",
-     "at": 0.2,
-     "gain": 0.6
-    },
-    {
-     "name": "sparkle",
-     "at": 0.3,
-     "gain": 0.5
-    }
-   ]
-  },
-  {
-   "name": "ending",
-   "set": "porch",
-   "dur": 5,
-   "fadeOut": 1.0,
-   "cam": {
-    "x": -148,
-    "y": [
-     [
-      0,
-      -880
-     ],
-     [
-      8,
-      -900
+      1.8,
+      -320
      ]
     ],
     "z": [
@@ -1149,21 +268,509 @@
       2.8
      ],
      [
-      8,
-      3.0
+      1.8,
+      3.2
      ]
     ]
    },
    "dof": {
-    "bg": 6
+    "bg": 8,
+    "act": 6
    },
-   "actors": [],
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 20,
+     "s": 0.62,
+     "view": "front",
+     "who": "prang",
+     "x": -403,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 1
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": -220,
+     "y": -180,
+     "s": 0.62,
+     "bloom": 0.2,
+     "glow": 0.35
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.3,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "name": "meet_start",
+   "set": "meeting",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -360
+     ],
+     [
+      4,
+      -300
+     ]
+    ],
+    "y": -440,
+    "z": 1.02
+   },
+   "setOpts": {
+    "tv": 1
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "chai",
+     "x": -216,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 2
+    },
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "jan",
+     "x": 302,
+     "light": "litL",
+     "seed": 4
+    },
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": -760,
+     "arms": "explain",
+     "mood": "smile",
+     "seed": 1
+    }
+   ],
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": 1
+    },
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2
+    }
+   ],
+   "say": [
+    {
+     "who": "prang",
+     "text": "สวัสดีค่ะ วันนี้ปรางจะมานำเสนอ แผนการตลาดปีหน้านะคะ",
+     "sub": "สวัสดีค่ะ|วันนี้ปรางจะนำเสนอ|*แผนการตลาดปีหน้า*"
+    }
+   ]
+  },
+  {
+   "name": "power_off",
+   "set": "meeting",
+   "dur": 1.6,
+   "cam": {
+    "x": 60,
+    "y": -262,
+    "z": 3.2
+   },
+   "dof": {
+    "bg": 7
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": [
+      [
+       0,
+       1
+      ],
+      [
+       0.45,
+       1
+      ],
+      [
+       0.55,
+       0.3
+      ],
+      [
+       0.66,
+       0
+      ]
+     ],
+     "bat": 1
+    },
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2
+    }
+   ],
+   "sfx": [
+    {
+     "name": "pwrdown",
+     "prompt": "laptop power shutting down, electronic descending tone then silence, cartoon",
+     "len": 1.2,
+     "at": 0.4,
+     "gain": 0.8
+    },
+    {
+     "name": "bonk",
+     "at": 1.2,
+     "gain": 0.25
+    }
+   ]
+  },
+  {
+   "name": "client_react",
+   "set": "meeting",
+   "cam": {
+    "x": 40,
+    "y": -420,
+    "z": [
+     [
+      0,
+      1.35
+     ],
+     [
+      3,
+      1.45
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 4
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "chai",
+     "x": -216,
+     "light": "litL",
+     "mood": "worried",
+     "arms": "cross",
+     "seed": 2
+    },
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "jan",
+     "x": 302,
+     "light": "litL",
+     "mood": "worried",
+     "seed": 4
+    }
+   ],
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": 0
+    }
+   ],
+   "say": [
+    {
+     "who": "chai",
+     "text": "เอ่อ… มีปัญหาอะไรรึเปล่าครับ",
+     "sub": "เอ่อ…|*มีปัญหาอะไร*|รึเปล่าครับ"
+    }
+   ]
+  },
+  {
+   "name": "panic",
+   "set": "meeting",
+   "dur": 2.3,
+   "cam": {
+    "x": -760,
+    "y": -380,
+    "z": [
+     [
+      0,
+      2.0
+     ],
+     [
+      2.3,
+      2.7
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 7,
+    "mid": 5
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": -760,
+     "mood": "worried",
+     "sweat": 1,
+     "seed": 1,
+     "arms": "rubhead"
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2
+    }
+   ],
    "fx": [
     {
-     "type": "petals",
+     "type": "pulse",
      "t0": 0,
-     "t1": 99
+     "t1": 99,
+     "bpm": 130
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 2.3,
+     "x": 540,
+     "y": 480,
+     "text": "ไฟล์ทั้งหมด อยู่ในนั้น…",
+     "color": "#FFFFFF"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "heartbeat",
+     "prompt": "tense cartoon heartbeat, fast thump thump",
+     "len": 2.5,
+     "at": 0,
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "name": "te_whisper",
+   "set": "meeting",
+   "cam": {
+    "x": 820,
+    "y": -380,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 7
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": 820,
+     "mood": "worried",
+     "seed": 0
+    }
+   ],
+   "say": [
+    {
+     "who": "te",
+     "text": "[whispers] พี่ปราง… ขอเลื่อนไปก่อนมั้ย",
+     "sub": "พี่ปราง…|*ขอเลื่อน*|ไปก่อนมั้ย",
+     "jcut": 0.35
+    }
+   ]
+  },
+  {
+   "name": "hero2",
+   "set": "meeting",
+   "dur": 2.0,
+   "cam": {
+    "x": -540,
+    "y": [
+     [
+      0,
+      -300
+     ],
+     [
+      2,
+      -320
+     ]
+    ],
+    "z": [
+     [
+      0,
+      2.6
+     ],
+     [
+      2,
+      3.1
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 8
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2,
+     "glow": [
+      [
+       0,
+       0
+      ],
+      [
+       0.6,
+       0.9
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.35,
+     "gain": 0.6
     },
+    {
+     "name": "sparkle",
+     "at": 0.5,
+     "gain": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "type": "lightleak",
+     "t0": 0.5,
+     "t1": 99
+    }
+   ]
+  },
+  {
+   "name": "flash_grandma",
+   "set": "porch",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      300
+     ],
+     [
+      4,
+      360
+     ]
+    ],
+    "y": -330,
+    "z": 1.05
+   },
+   "dof": {
+    "bg": 3
+   },
+   "setOpts": {
+    "dawn": true
+   },
+   "actors": [
+    {
+     "who": "boon",
+     "s": 0.62,
+     "y": 220,
+     "view": "side",
+     "light": "litL",
+     "x": 200,
+     "dir": 1,
+     "prop": "cane",
+     "arms": "cane",
+     "mood": "smile",
+     "seed": 3
+    },
+    {
+     "who": "prang",
+     "s": 0.56,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "x": 640,
+     "dir": -1,
+     "mood": "smile",
+     "seed": 1
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": 470,
+     "y": -143,
+     "s": 0.6,
+     "bloom": 0.2,
+     "glow": 0.25
+    }
+   ],
+   "fx": [
     {
      "type": "lightleak",
      "t0": 0,
@@ -1175,30 +782,803 @@
      "t1": 99
     }
    ],
-   "ui": [
+   "say": [
     {
-     "type": "quote",
-     "t0": 0.5,
-     "t1": 99,
-     "lines": [
-      "เราไม่จำเป็นต้องเก่งในวันเดียว",
-      "แค่ดีขึ้นทีละนิด ทุกวัน 🌸"
+     "who": "boon",
+     "text": "กล้วยไม้มันไม่ได้บานในวันเดียวหรอกลูก",
+     "sub": "กล้วยไม้|*ไม่ได้บานในวันเดียว*|หรอกลูก"
+    }
+   ]
+  },
+  {
+   "name": "flash_roots",
+   "set": "porch",
+   "cam": {
+    "x": 470,
+    "y": [
+     [
+      0,
+      -230
      ],
-     "y": 640
+     [
+      3,
+      -250
+     ]
+    ],
+    "z": [
+     [
+      0,
+      2.8
+     ],
+     [
+      3,
+      3.2
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 8
+   },
+   "setOpts": {
+    "dawn": true
+   },
+   "props": [
+    {
+     "type": "orchid",
+     "x": 470,
+     "y": -143,
+     "s": 0.6,
+     "bloom": 0.2,
+     "glow": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "type": "lightleak",
+     "t0": 0,
+     "t1": 99
+    },
+    {
+     "type": "petals",
+     "t0": 0,
+     "t1": 99,
+     "n": 10
     }
    ],
    "say": [
     {
-     "who": "narrator",
-     "text": "เราไม่จำเป็นต้องเก่งในวันเดียว… แค่ดีขึ้น ทีละนิด ทุกวัน",
-     "pause": 1.6
+     "who": "boon",
+     "text": "มันบานได้… เพราะรากมันแข็งแรง",
+     "sub": "มันบานได้…|เพราะ*รากมันแข็งแรง*",
+     "jcut": 0.2
+    }
+   ]
+  },
+  {
+   "name": "resolve",
+   "set": "meeting",
+   "cut": "whip",
+   "dur": 2.0,
+   "cam": {
+    "x": -760,
+    "y": -380,
+    "z": [
+     [
+      0,
+      2.6
+     ],
+     [
+      2,
+      2.3
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 7,
+    "mid": 5
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": -760,
+     "mood": [
+      [
+       0,
+       "sleep"
+      ],
+      [
+       0.7,
+       "smile"
+      ]
+     ],
+     "seed": 1
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2,
+     "glow": 0.4
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.6,
+     "t1": 2.0,
+     "x": 540,
+     "y": 470,
+     "text": "รากของเรา คือสิ่งที่เตรียมมา",
+     "color": "#FFE7A0",
+     "think": false
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.6,
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "name": "to_board",
+   "set": "meeting",
+   "cam": {
+    "x": [
+     [
+      0,
+      -520
+     ],
+     [
+      3,
+      -600
+     ]
+    ],
+    "y": -460,
+    "z": 1.1
+   },
+   "setOpts": {
+    "tv": 0,
+    "draw": 0
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "chai",
+     "x": -216,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 2
+    },
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": [
+      [
+       0,
+       -760
+      ],
+      [
+       1.4,
+       -900
+      ]
+     ],
+     "arms": "explain",
+     "mood": "happy",
+     "seed": 1
+    }
+   ],
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": 0
+    },
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2,
+     "glow": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "prang",
+     "text": "ขอเวลาห้านาทีนะคะ ไม่ใช้สไลด์ค่ะ",
+     "sub": "ขอเวลา|*5 นาที*|ไม่ใช้สไลด์ค่ะ"
+    }
+   ]
+  },
+  {
+   "name": "drawing",
+   "set": "meeting",
+   "dur": 2.6,
+   "cam": {
+    "x": -800,
+    "y": -900,
+    "z": [
+     [
+      0,
+      1.55
+     ],
+     [
+      2.6,
+      1.7
+     ]
+    ]
+   },
+   "setOpts": {
+    "tv": 0,
+    "draw": [
+     [
+      0,
+      0
+     ],
+     [
+      2.5,
+      1
+     ]
+    ]
+   },
+   "sfx": [
+    {
+     "name": "marker",
+     "prompt": "marker pen squeaking quickly on whiteboard, drawing",
+     "len": 2.6,
+     "at": 0,
+     "gain": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "speed",
+     "t0": 0,
+     "t1": 0.4
+    }
+   ]
+  },
+  {
+   "name": "lean_in",
+   "set": "meeting",
+   "dur": 1.4,
+   "cam": {
+    "x": 40,
+    "y": -420,
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      1.4,
+      1.5
+     ]
+    ]
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 80,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "chai",
+     "x": -216,
+     "light": "litL",
+     "mood": "happy",
+     "seed": 2
+    },
+    {
+     "layer": "back",
+     "sink": 82,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "jan",
+     "x": 302,
+     "light": "litL",
+     "mood": "smile",
+     "seed": 4
+    }
+   ],
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": 0
+    }
+   ]
+  },
+  {
+   "name": "te_wow",
+   "set": "meeting",
+   "dur": 1.1,
+   "cam": {
+    "x": 820,
+    "y": -390,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 7
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": 820,
+     "mood": "shock",
+     "seed": 0
+    }
+   ],
+   "sfx": [
+    {
+     "name": "pop",
+     "at": 0.15,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "name": "praise",
+   "set": "meeting",
+   "cam": {
+    "x": -540,
+    "y": -460,
+    "z": 1.08
+   },
+   "setOpts": {
+    "tv": 0,
+    "draw": 1
+   },
+   "actors": [
+    {
+     "layer": "back",
+     "sink": 95,
+     "clipY": 0,
+     "y": 0,
+     "s": 0.62,
+     "view": "front",
+     "who": "chai",
+     "x": -216,
+     "light": "litL",
+     "mood": "happy",
+     "arms": "clap",
+     "seed": 2
+    },
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": -900,
+     "mood": "happy",
+     "seed": 1,
+     "arms": "hugopen"
+    }
+   ],
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": 0
+    },
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 0.2,
+     "glow": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "chai",
+     "text": "ชัดกว่าสไลด์อีกครับ ผมชอบแบบนี้",
+     "sub": "ชัดกว่าสไลด์อีก|*ผมชอบแบบนี้*"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "applause",
+     "line": 0,
+     "at": 1.8,
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "name": "bloom",
+   "set": "meeting",
+   "dur": 2.8,
+   "cam": {
+    "x": -540,
+    "y": [
+     [
+      0,
+      -330
+     ],
+     [
+      2.8,
+      -310
+     ]
+    ],
+    "z": [
+     [
+      0,
+      3.1
+     ],
+     [
+      2.8,
+      2.7
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 8
+   },
+   "setOpts": {
+    "tv": 0,
+    "draw": 1
+   },
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": [
+      [
+       0.2,
+       0.2
+      ],
+      [
+       2.3,
+       1
+      ]
+     ],
+     "glow": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "sparkle",
+     "t0": 0.3,
+     "t1": 99,
+     "x": 540,
+     "y": 760,
+     "r": 380
+    },
+    {
+     "type": "petals",
+     "t0": 0.6,
+     "t1": 99,
+     "n": 14
+    },
+    {
+     "type": "lightleak",
+     "t0": 0,
+     "t1": 99
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sparkle",
+     "at": 0.3,
+     "gain": 0.6
+    },
+    {
+     "name": "chime",
+     "at": 1.0,
+     "gain": 0.6
+    },
+    {
+     "name": "chime",
+     "at": 2.0,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "name": "twist_plug",
+   "set": "meeting",
+   "cut": "whip",
+   "cam": {
+    "x": 760,
+    "y": -150,
+    "z": 1.5
+   },
+   "dof": {
+    "bg": 5
+   },
+   "setOpts": {
+    "tv": 0
+   },
+   "actors": [
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": 860,
+     "mood": "shock",
+     "arms": "point",
+     "seed": 0
+    }
+   ],
+   "props": [
+    {
+     "type": "plug",
+     "x": 640,
+     "y": 200,
+     "s": 1.1,
+     "layer": "front",
+     "on": [
+      [
+       0,
+       0
+      ],
+      [
+       0.5,
+       1
+      ]
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "te",
+     "text": "อ้าว… ปลั๊กมันไม่ได้เปิดสวิตช์นี่หว่า!",
+     "sub": "อ้าว…|*ปลั๊กไม่ได้เปิดสวิตช์*|นี่หว่า!"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "click",
+     "prompt": "plastic power switch click",
+     "len": 0.5,
+     "at": 0.45,
+     "gain": 0.8
+    }
+   ]
+  },
+  {
+   "name": "laptop_on",
+   "set": "meeting",
+   "dur": 1.3,
+   "cam": {
+    "x": 60,
+    "y": -262,
+    "z": 3.2
+   },
+   "dof": {
+    "bg": 7
+   },
+   "setOpts": {
+    "tv": 1
+   },
+   "props": [
+    {
+     "type": "laptop",
+     "x": 60,
+     "y": -182,
+     "s": 0.7,
+     "on": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       1
+      ]
+     ]
+    },
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 1
+    }
+   ],
+   "sfx": [
+    {
+     "name": "boot",
+     "prompt": "cheerful computer startup chime",
+     "len": 1.2,
+     "at": 0.25,
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "name": "laugh",
+   "set": "meeting",
+   "cam": {
+    "x": [
+     [
+      0,
+      -90
+     ],
+     [
+      3,
+      -60
+     ]
+    ],
+    "y": -420,
+    "z": 1.3
+   },
+   "setOpts": {
+    "tv": 1,
+    "draw": 1
+   },
+   "actors": [
+    {
+     "who": "prang",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": -300,
+     "mood": "laugh",
+     "arms": "clap",
+     "seed": 1,
+     "laugh": 1
+    },
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "x": 170,
+     "mood": "laugh",
+     "seed": 0,
+     "arms": "rubhead"
+    }
+   ],
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 1,
+     "glow": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "prang",
+     "text": "[laughs] ได้บทเรียนเลยวันนี้",
+     "sub": "ได้บทเรียน|*เลยวันนี้*"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "kids_laugh",
+     "at": 0.2,
+     "gain": 0.0
+    }
+   ]
+  },
+  {
+   "name": "ending",
+   "set": "meeting",
+   "cut": "whip",
+   "dur": 5.0,
+   "cam": {
+    "x": -540,
+    "y": [
+     [
+      0,
+      -320
+     ],
+     [
+      5,
+      -340
+     ]
+    ],
+    "z": [
+     [
+      0,
+      2.4
+     ],
+     [
+      5,
+      2.7
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 8
+   },
+   "setOpts": {
+    "tv": 1,
+    "draw": 1
+   },
+   "props": [
+    {
+     "type": "orchid",
+     "x": -560,
+     "y": -182,
+     "s": 0.75,
+     "bloom": 1,
+     "glow": 0.8
+    }
+   ],
+   "fx": [
+    {
+     "type": "petals",
+     "t0": 0,
+     "t1": 99,
+     "n": 12
+    },
+    {
+     "type": "lightleak",
+     "t0": 0,
+     "t1": 99
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.4,
+     "t1": 5.0,
+     "y": 1180,
+     "lines": [
+      "กล้วยไม้ไม่ได้บานในวันเดียว",
+      "แต่*รากที่แข็งแรง*",
+      "ทำให้บานได้ในวันสำคัญ"
+     ]
     }
    ],
    "sfx": [
     {
      "name": "chime",
      "at": 0.4,
-     "gain": 0.4
+     "gain": 0.5
     }
    ]
   }

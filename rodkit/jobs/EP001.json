@@ -1,4 +1,5 @@
 {
  "episode": "rodkit/episodes/EP001.ep.json",
- "done": true
+ "done": false,
+ "v": 2
 }

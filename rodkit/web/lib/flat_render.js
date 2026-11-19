@@ -147,8 +147,9 @@
     s += `<rect width="${W}" height="${H}" fill="#2A1E1C"/><g ${wb > 1 ? 'filter="url(#whipB)"' : ""} transform="rotate(${f(rot)} ${CX} ${CY}) translate(${CX},${CY}) scale(1.02) translate(${-CX},${-CY})">`;
     s += blurG(`<g transform="${camT()}">${set.wall(T, o)}${set.lamps(T, o)}</g>`, dof.bg || 0);
     s += blurG(`<g transform="${camT()}">${drawActors("back")}</g>`, dof.act || 0);
-    s += blurG(`<g transform="${camT()}">${set.island(T, o)}</g>`, dof.mid || 0);
+    s += blurG(`<g transform="${camT()}">${set.island(T, o)}${RK.flatProps ? RK.flatProps(S, t, T, "mid") : ""}</g>`, dof.mid || 0);
     s += blurG(`<g transform="${camT()}">${drawActors("front")}</g>`, dof.act || 0);
+    if (RK.flatProps) s += blurG(`<g transform="${camT()}">${RK.flatProps(S, t, T, "front")}</g>`, dof.pf || 0);
     s += `<g transform="${camT()}">${set.sunlight(T, o)}</g>`;
     s += blurG(`<g transform="${camT(1.25)}">${set.foreground(T, o)}</g>`, dof.fg ?? 9);
     s += `</g>`;
