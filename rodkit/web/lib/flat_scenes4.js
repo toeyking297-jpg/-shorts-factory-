@@ -203,6 +203,9 @@
   function hfSun(t, o) { return ""; }
 
   const wrap = (fn, back, ground) => (t, o) => (back ? R(-4000, -5000, 8000, 5000 + WALL_Y * K, back(o || {})) + R(-4000, WALL_Y * K, 8000, 4000, ground) : "") + `<g transform="scale(${K})">${fn(t, o || {})}</g>`;
+  // ฉากสีเรียบ (ใช้ทำปก: เรนเดอร์บนเขียวแล้วตัดพื้นออก)
+  const plainW = (t, o) => R(-6000, -6000, 12000, 12000, o.color || "#00FF00"), nil = () => "";
+  RK.flatSets.plain = { wall: plainW, lamps: nil, island: nil, foreground: nil, sunlight: nil, WALL_Y: WALL_Y * K };
   RK.flatSets.backyard = { wall: wrap(byWall, (o) => (o.eve ? "#2E3570" : "#3F86C9"), "url(#s4Dirt)"), lamps: wrap(byLamps), island: wrap(byIsland), foreground: wrap(byFore), sunlight: wrap(bySun), WALL_Y: WALL_Y * K };
   RK.flatSets.housefront = { wall: wrap(hfWall, (o) => (o.day ? "#3F86C9" : "#2E3570"), "#A6A39C"), lamps: wrap(hfLamps), island: wrap(hfIsland), foreground: wrap(hfFore), sunlight: wrap(hfSun), WALL_Y: WALL_Y * K };
 })(window);
