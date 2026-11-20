@@ -1,0 +1,6 @@
+{"id":"ST003_COVER","engine":"flat","fps":30,"set":"dining","shots":[
+ {"dur":3,"setOpts":{"eve":true,"bare":true,"chairs":[-420,-60,300,620]},"cam":{"x":0,"y":-210,"z":2.0},"dof":{"bg":6},"shake":0,
+  "actors":[{"who":"khaohom","view":"front","x":120,"y":230,"s":0.62,"mood":"worried","prop":"magnifier","arms":"hold","light":"litL"}],
+  "props":[{"type":"plate","x":-150,"y":-187,"s":1.0,"kind":"bones","toothpick":1},{"type":"cat","x":-60,"y":40,"s":0.5,"sit":1,"layer":"front"},{"type":"carrier","x":-240,"y":260,"s":0.75,"layer":"front"}],
+  "fx":[{"type":"rays","t0":0,"t1":99,"x":540}],
+  "ui":[{"type":"title","t0":0,"t1":99,"y":300,"text":"ใครขโมย ปลาทู?","size":110,"color":"#FFD84A","sub":"หาตัวจริงให้ได้ ก่อนข้าวสุก!"}]}]}

@@ -140,6 +140,15 @@
       return `<clipPath id="${id}"><rect x="-8000" y="-8000" width="16000" height="${f(8000 + cy)}"/></clipPath><g clip-path="url(#${id})"><g transform="translate(0,${f(A.sink || 0)})">${g}</g></g>`;
     }).join("");
     let defs = RK.flatDefs;
+    // ตัวละครเด่นจากฉาก: ขยายตัว + เส้นขอบเข้ม (หนาคงที่บนจอ ไม่ขึ้นกับซูม) + ฉากหลังหรี่/ลดสี
+    RK._actorK = EP.actorK ?? 1.22;
+    const olW = S.outline ?? EP.outline ?? 3.2;
+    if (olW > 0) {
+      const zr = Math.max(0.6, cam.z), rr = (Math.round(olW / zr * 100) / 100), oid = `olin${Math.round(rr * 100)}`;
+      RK._olin = oid;
+      defs += `<filter id="${oid}" x="-5%" y="-5%" width="110%" height="110%"><feMorphology in="SourceAlpha" operator="dilate" radius="${rr}" result="d"/><feFlood flood-color="#2B1C18" flood-opacity=".92"/><feComposite in2="d" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+    } else RK._olin = null;
+    const bgDim = S.bgDim ?? EP.bgDim ?? 0.22;
     for (const px of new Set([dof.bg, dof.mid, dof.fg ?? 9, dof.act].filter((v) => v > 0.3).map(Math.round))) defs += `<filter id="dof${px}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${px}"/></filter>`;
 
     const wb = Math.round(Math.abs(whip) * 60);
@@ -147,6 +156,7 @@
     let s = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${defs}</defs>`;
     s += `<rect width="${W}" height="${H}" fill="#2A1E1C"/><g ${wb > 1 ? 'filter="url(#whipB)"' : ""} transform="rotate(${f(rot)} ${CX} ${CY}) translate(${CX},${CY}) scale(1.02) translate(${-CX},${-CY})">`;
     s += blurG(`<g transform="${camT()}">${set.wall(T, o)}${set.lamps(T, o)}</g>`, dof.bg || 0);
+    if (bgDim > 0) s += `<rect x="${-W}" y="${-H}" width="${3 * W}" height="${3 * H}" fill="${S.bgDimColor || EP.bgDimColor || "#24324A"}" opacity="${bgDim}" style="mix-blend-mode:multiply"/>`;
     s += blurG(`<g transform="${camT()}">${drawActors("back")}</g>`, dof.act || 0);
     s += blurG(`<g transform="${camT()}">${set.island(T, o)}${RK.flatProps ? RK.flatProps(S, t, T, "mid") : ""}</g>`, dof.mid || 0);
     s += blurG(`<g transform="${camT()}">${drawActors("front")}</g>`, dof.act || 0);

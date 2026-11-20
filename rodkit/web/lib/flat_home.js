@@ -17,7 +17,7 @@
   RK.flatDefs += `
   <linearGradient id="hWallL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D7C0"/><stop offset="1" stop-color="#D8E2CF"/></linearGradient>
   <linearGradient id="hWallLn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E7F78"/><stop offset="1" stop-color="#8A9387"/></linearGradient>
-  <linearGradient id="hWallD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBD3B0"/><stop offset="1" stop-color="#F3E0C2"/></linearGradient>
+  <linearGradient id="hWallD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E97A3"/><stop offset="1" stop-color="#7FA6AE"/></linearGradient>
   <linearGradient id="hWallDn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A7A64"/><stop offset="1" stop-color="#B58E6E"/></linearGradient>
   <linearGradient id="hFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B78457"/><stop offset="1" stop-color="#7E5536"/></linearGradient>
   <linearGradient id="hSkyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EC6EA"/><stop offset=".7" stop-color="#D9EEF5"/><stop offset="1" stop-color="#F6E9C8"/></linearGradient>
@@ -31,7 +31,7 @@
   <linearGradient id="hCloth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F1E6"/><stop offset="1" stop-color="#E9DDC8"/></linearGradient>
   <linearGradient id="hSteam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
   <pattern id="hRug" width="120" height="60" patternUnits="userSpaceOnUse"><rect width="120" height="60" fill="#B5523F"/><path d="M0,30 L30,10 L60,30 L30,50 Z M60,30 L90,10 L120,30 L90,50 Z" fill="#D9844A"/><circle cx="30" cy="30" r="7" fill="#F3D9A4"/><circle cx="90" cy="30" r="7" fill="#2F5E6B"/></pattern>
-  <pattern id="hPaper" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M45,10 C55,25 55,35 45,45 C35,35 35,25 45,10 Z" fill="#E2C59D" opacity=".55"/><circle cx="0" cy="0" r="4" fill="#E2C59D" opacity=".5"/><circle cx="90" cy="90" r="4" fill="#E2C59D" opacity=".5"/></pattern>`;
+  <pattern id="hPaper" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M45,10 C55,25 55,35 45,45 C35,35 35,25 45,10 Z" fill="#5C8592" opacity=".55"/><circle cx="0" cy="0" r="4" fill="#5C8592" opacity=".5"/><circle cx="90" cy="90" r="4" fill="#5C8592" opacity=".5"/></pattern>`;
 
   // ---------- ของใช้ร่วม ----------
   const rngPick = (r, arr) => arr[Math.floor(r() * arr.length)];
@@ -266,10 +266,10 @@
   function dWall(t, o) {
     const n = !!o.night, eve = o.eve ?? !n;
     let s = R(-1700, -2400, 3400, 2400 + WALL_Y, n ? "url(#hWallDn)" : "url(#hWallD)") + R(-1700, -2400, 3400, 2400 + WALL_Y, "url(#hPaper)", 'opacity=".9"');
-    s += R(-1700, -1760, 3400, 44, n ? "#7E6250" : "#F4E8D6") + R(-1700, -1718, 3400, 10, n ? "#6B5244" : "#D6BF9C");
-    s += R(-1700, -640, 3400, 20, n ? "#6B5244" : "#C9A980"); // คิ้วผนัง (chair rail)
-    s += R(-1700, -620, 3400, 550, n ? "#7E6250" : "#E3CBA6");
-    for (let x = -1700; x < 1700; x += 60) s += L(x, -620, x, WALL_Y, n ? "#6B5244" : "#D3B88F", 3);
+    s += R(-1700, -1760, 3400, 44, n ? "#7E6250" : "#E9DCC4") + R(-1700, -1718, 3400, 10, n ? "#6B5244" : "#4B6F7A");
+    s += R(-1700, -640, 3400, 20, n ? "#6B5244" : "#3F5F69"); // คิ้วผนัง (chair rail)
+    s += R(-1700, -620, 3400, 550, n ? "#7E6250" : "#4E7480");
+    for (let x = -1700; x < 1700; x += 60) s += L(x, -620, x, WALL_Y, n ? "#6B5244" : "#41656F", 3);
     // หน้าต่างขวา (ฟ้ายามเย็น)
     s += windowView(DW.x, DW.y, DW.w, DW.h, t, Object.assign({}, o, { eve }), "hDWin") + curtains(DW.x, DW.y, DW.w, DW.h, t, n ? "#6E4E5E" : "#B5523F", true);
     // ตู้ไม้โชว์จาน (ซ้าย)
@@ -363,5 +363,5 @@
     if (n) s += R(-1700, -2400, 3400, 4000, "#0E1430", 'opacity=".15"');
     return s;
   }
-  RK.flatSets.dining = { wall: wrap(dWall, (o) => (o.night ? "#9A7A64" : "#EBD3B0")), lamps: wrap(dLamps), island: wrap(dIsland), foreground: wrap(dFore), sunlight: wrap(dSun), WALL_Y: WALL_Y * K };
+  RK.flatSets.dining = { wall: wrap(dWall, (o) => (o.night ? "#9A7A64" : "#6E97A3")), lamps: wrap(dLamps), island: wrap(dIsland), foreground: wrap(dFore), sunlight: wrap(dSun), WALL_Y: WALL_Y * K };
 })(window);

@@ -1,0 +1,6 @@
+{"id":"EP002_COVER","engine":"flat","fps":30,"set":"market","shots":[
+ {"dur":3,"cam":{"x":0,"y":-330,"z":1.35},"dof":{"bg":5},"setOpts":{"stall":"veg"},"shake":0,
+  "actors":[{"who":"te","view":"front","x":0,"y":230,"s":0.62,"mood":"shock","sweat":1,"prop":"bag","bagHug":1,"bagFill":1.45,"bagItems":10,"bagRip":1,"arms":"hugopen","light":"litL"}],
+  "props":[{"type":"cat","x":250,"y":330,"s":0.85,"sit":1,"lime":1,"layer":"front"}],
+  "fx":[{"type":"rays","t0":0,"t1":99,"x":540},{"type":"speed","t0":0,"t1":99}],
+  "ui":[{"type":"title","t0":0,"t1":99,"y":280,"text":"ให้ไปซื้อมะนาว… ได้มาแบบนี้!?","size":96,"color":"#FFD84A","sub":"ภารกิจของ 10 อย่างของเต้ 😂"}]}]}

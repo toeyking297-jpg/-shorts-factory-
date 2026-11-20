@@ -33,7 +33,7 @@
     <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shC"/><feMergeNode in="rimC"/></feMerge></filter>
   <linearGradient id="kSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FC3E6"/><stop offset=".55" stop-color="#F7D9B5"/><stop offset="1" stop-color="#FFC48C"/></linearGradient>
   <radialGradient id="kSun"><stop offset="0" stop-color="#FFFBE8"/><stop offset=".25" stop-color="#FFF0C2" stop-opacity=".9"/><stop offset="1" stop-color="#FFD59A" stop-opacity="0"/></radialGradient>
-  <linearGradient id="kWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D8BE"/><stop offset="1" stop-color="#F2E4CD"/></linearGradient>
+  <linearGradient id="kWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C99A4A"/><stop offset="1" stop-color="#D6AA5C"/></linearGradient>
   <linearGradient id="kFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98A5E"/><stop offset="1" stop-color="#8E623F"/></linearGradient>
   <linearGradient id="kBeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF3CF" stop-opacity=".55"/><stop offset=".6" stop-color="#FFE6B0" stop-opacity=".18"/><stop offset="1" stop-color="#FFE6B0" stop-opacity="0"/></linearGradient>
   <radialGradient id="kPatch"><stop offset="0" stop-color="#FFE9B8" stop-opacity=".55"/><stop offset="1" stop-color="#FFE9B8" stop-opacity="0"/></radialGradient>
@@ -70,9 +70,9 @@
   function wall(t) {
     let s = R(-1500, -2200, 3000, 2200 + WALL_Y, "url(#kWall)");
     // ลายผนังจางๆ
-    for (let x = -1500; x < 1500; x += 120) s += L(x, -2200, x, WALL_Y, "#DCC8A8", 2, 'opacity=".35"');
+    for (let x = -1500; x < 1500; x += 120) s += L(x, -2200, x, WALL_Y, "#B4863C", 2, 'opacity=".35"');
     // บัวเพดาน + คาน
-    s += R(-1500, -1700, 3000, 40, "#D2BC9A") + R(-1500, -1662, 3000, 10, "#C4AA84");
+    s += R(-1500, -1700, 3000, 40, "#9E7434") + R(-1500, -1662, 3000, 10, "#7E5A28");
     // หน้าต่าง
     s += `<g clip-path="url(#kWinClip)"><g transform="translate(${f(RK._camPx * 0.35)},${f(RK._camPy * 0.15)})">${outside(t)}</g></g>`;
     s += `<rect x="${WIN.x - 26}" y="${WIN.y - 26}" width="${WIN.w + 52}" height="${WIN.h + 52}" fill="none" stroke="#9C7651" stroke-width="40"/>`;

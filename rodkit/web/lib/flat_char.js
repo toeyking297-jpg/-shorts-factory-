@@ -664,8 +664,8 @@
       const h = A._hand[A.propHand || "n"];
       prop = `<g transform="translate(${P(h.p[0] + (A.view === "front" ? 0 : 6), h.p[1] + 22)})">${RK.FLAT_PROPS[A.prop](A.propColor)}</g>`;
     }
-    const sc = (A.s || 0.5) * C.h, dir = A.dir || 1;
+    const sc = (A.s || 0.5) * C.h * (RK._actorK || 1), dir = A.dir || 1;
     const shadow = `<ellipse cx="0" cy="0" rx="${f(150 * sc * (A.view === "front" ? 0.9 : 1.15))}" ry="${f(22 * sc)}" fill="#000" opacity=".28" filter="url(#fBlur8)"/>`;
-    return `<g data-actor="${A.who}" transform="translate(${f(A.x)},${f(A.y)})">${shadow}<g transform="scale(${f(sc * dir * (A.sx ?? 1))},${f(sc)})" filter="url(#${A.light || "litR"})">${pre}${body}${prop}${post}</g></g>`;
+    return `<g data-actor="${A.who}" transform="translate(${f(A.x)},${f(A.y)})">${shadow}<g${RK._olin ? ` filter="url(#${RK._olin})"` : ""}><g transform="scale(${f(sc * dir * (A.sx ?? 1))},${f(sc)})" filter="url(#${A.light || "litR"})">${pre}${body}${prop}${post}</g></g></g>`;
   };
 })(window);

@@ -1,0 +1,6 @@
+{"id":"ST004_COVER","engine":"flat","fps":30,"set":"dining","shots":[
+ {"dur":3,"setOpts":{"eve":true,"bare":true,"chairs":[-420,-60,300,620]},"cam":{"x":70,"y":-370,"z":2.1},"dof":{"bg":6},"shake":0,
+  "actors":[{"who":"boon","s":0.58,"y":20,"x":-43,"view":"front","layer":"back","sink":40,"clipY":0,"light":"litL","mood":"flat","seed":3}],
+  "props":[{"type":"soup","x":-43,"y":-187,"s":0.8},{"type":"spoon","x":30,"y":-183,"s":1.2},{"type":"spoon","x":200,"y":-183,"s":1.6,"ang":8}],
+  "fx":[{"type":"lightleak","t0":0,"t1":99}],
+  "ui":[{"type":"title","t0":0,"t1":99,"y":300,"text":"\"เค็มไป…\"","size":120,"color":"#FFD84A","sub":"ทำไมแม่ติกับข้าวลูกสาวทุกวัน?"}]}]}
