@@ -1,1 +1,5 @@
-{"episode": "rodkit/episodes/ST004.ep.json", "done": false, "v": 3}
+{
+ "episode": "rodkit/episodes/ST004.ep.json",
+ "done": true,
+ "v": 3
+}
