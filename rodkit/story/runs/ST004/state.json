@@ -11,8 +11,9 @@
   "ep_json": "done",
   "dry": "done (120.0 วิ, TTS 344 ตัวอักษร, SFX 16, music preset family ใหม่)",
   "storyboard": "done แก้ s07/s08/s18",
-  "produce": "pushed",
-  "qa": "todo",
-  "deliver": "todo"
+  "produce": "done v1 run 44637550758 (120.0 วิ)",
+  "qa": "v1 ok · เจ้าของช่องติ: ตัวละครเล็ก/สีกลืนฉาก",
+  "deliver": "todo",
+  "fix_v2": "ขยายตัวละคร+เส้นขอบ+ฉากหลังหรี่, ฉากใหม่ backyard/housefront, push run 44642590431 (เครดิต 0)"
  }
 }

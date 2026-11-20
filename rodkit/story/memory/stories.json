@@ -219,6 +219,46 @@
    "hidden_truth": "ยายเอาปลาไปเลี้ยงแมวจรแม่ลูกอ่อน ส้มฉุนเฝ้าลูกแมว",
    "reveal_method": "physical_clue_trail",
    "key_object": "จานก้างเรียงแถว"
+  },
+  {
+   "id": "ST004",
+   "title": "เค็มไป…",
+   "status": "produced 2026-11-20 v1 120.0 วิ · v2 ฉากใหม่/ตัวละครใหญ่ขึ้น",
+   "slot": "family",
+   "format": "duo",
+   "mechanism": "audience_with",
+   "cast": {
+    "main": "mali",
+    "support": [
+     "boon"
+    ],
+    "extra": [
+     "chai",
+     "khaohom",
+     "jaew",
+     "narrator"
+    ]
+   },
+   "want": "มะลิอยากทำกับข้าวโดยไม่โดนแม่ติ",
+   "conflict": "แม่ติกับข้าวทุกวัน มะลิงานล้นมือ",
+   "decision": "เลิกทำ ซื้อกับข้าวแทน",
+   "ending": "มะลิกลับมาทำแล้วนั่งกินกับแม่ ครอบครัวมานั่งเต็มโต๊ะ",
+   "signature": {
+    "conflict": "criticism_misread",
+    "decision": "withdraw_effort",
+    "outcome": "reconnect_by_sitting_together",
+    "hook": "repeated_complaint_line",
+    "ending": "full_table_callback"
+   },
+   "emotion": "เหนื่อย→ค้างคา→ซึ้ง",
+   "owner_feedback": [
+    "ตัวละครเล็กไป ฉากกับตัวละครสีกลืนกัน (เห็น v1) → v2 แก้แล้ว"
+   ],
+   "initial_belief": "แม่ติกับข้าวเพราะไม่พอใจฝีมือลูก",
+   "hidden_truth": "คำติคือข้ออ้างชวนลูกมานั่งกินด้วยกัน แม่วางช้อนคันที่สองรอทุกเย็น",
+   "reveal_method": "absence_behavior_contrast",
+   "key_object": "ช้อนคันที่สอง",
+   "misread_character": "boon"
   }
  ],
  "owner_taste": {
