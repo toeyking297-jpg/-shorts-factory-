@@ -72,6 +72,10 @@
    ],
    "say": [
     {
+     "who": "narrator",
+     "text": "ทุกเย็น บ้านนี้จะมีคำเดิมดังขึ้น"
+    },
+    {
      "who": "boon",
      "text": "เค็มไป…"
     }
@@ -99,7 +103,6 @@
      620
     ]
    },
-   "dur": 2.4,
    "cam": {
     "x": 150,
     "y": -200,
@@ -146,12 +149,17 @@
      "prompt": "metal spoon placed gently on wooden table",
      "len": 0.6
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แล้วยายจะวางช้อนอีกคันไว้ข้างชาม"
+    }
    ]
   },
   {
    "name": "s03_mali_tired",
    "set": "kitchen",
-   "dur": 2.0,
    "cam": {
     "x": -300,
     "y": -380,
@@ -181,6 +189,12 @@
      "gain": 0.5,
      "prompt": "tired adult woman soft sigh",
      "len": 1.0
+    }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "ทำแทบตาย ก็ยังไม่ถูกปาก"
     }
    ]
   },
@@ -470,7 +484,6 @@
     ]
    },
    "cut": "whip",
-   "dur": 3.0,
    "cam": {
     "x": -43,
     "y": -300,
@@ -537,6 +550,12 @@
      "gain": 0.35,
      "prompt": "distant footsteps hurrying, broom sweeping in another room",
      "len": 3.0
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "วันพุธ ยายไม่พูด แค่มองตามลูก"
     }
    ]
   },
@@ -617,7 +636,6 @@
   {
    "name": "s08_hurt",
    "set": "kitchen",
-   "dur": 1.8,
    "cam": {
     "x": -330,
     "y": -390,
@@ -639,6 +657,12 @@
      "seed": 2,
      "prop": "ladle",
      "arms": "hold"
+    }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "ไม่เคยได้ยินคำว่าอร่อยเลย"
     }
    ]
   },
@@ -762,7 +786,6 @@
      ]
     ]
    },
-   "dur": 2.4,
    "cam": {
     "x": [
      [
@@ -800,6 +823,12 @@
      "prop": "porkbag",
      "arms": "hold"
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เย็นนั้น มะลิซื้อกับข้าวกลับบ้าน"
+    }
    ]
   },
   {
@@ -816,7 +845,6 @@
     ]
    },
    "cut": "whip",
-   "dur": 3.2,
    "cam": {
     "x": -20,
     "y": -330,
@@ -872,12 +900,17 @@
      "prompt": "quiet wall clock ticking in silent room",
      "len": 3.2
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ไม่มีแกงร้อนๆ มีแค่กล่องข้าว"
+    }
    ]
   },
   {
    "name": "s12_mali_listens",
    "set": "kitchen",
-   "dur": 2.6,
    "cam": {
     "x": -300,
     "y": -390,
@@ -906,6 +939,12 @@
      ],
      "seed": 2
     }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "เห็นไหม ไม่ทำก็ไม่โดนว่า"
+    }
    ]
   },
   {
@@ -921,7 +960,6 @@
      620
     ]
    },
-   "dur": 2.8,
    "cam": {
     "x": 100,
     "y": -230,
@@ -975,110 +1013,11 @@
      "s": 1.5,
      "ang": 8
     }
-   ]
-  },
-  {
-   "name": "s14_spoon_back",
-   "set": "dining",
-   "setOpts": {
-    "eve": true,
-    "bare": true,
-    "chairs": [
-     -420,
-     -60,
-     300,
-     620
-    ]
-   },
-   "dur": 3.2,
-   "cam": {
-    "x": 100,
-    "y": -230,
-    "z": 2.4
-   },
-   "dof": {
-    "bg": 6
-   },
-   "actors": [
-    {
-     "who": "boon",
-     "s": 0.58,
-     "y": 20,
-     "x": -43,
-     "view": "front",
-     "layer": "back",
-     "sink": 40,
-     "clipY": 0,
-     "light": "litL",
-     "seed": 3,
-     "mood": [
-      [
-       0,
-       "smile"
-      ],
-      [
-       1.2,
-       "flat"
-      ]
-     ]
-    }
    ],
-   "props": [
+   "say": [
     {
-     "type": "foodbox",
-     "x": -43,
-     "y": -187,
-     "s": 0.8,
-     "n": 1
-    },
-    {
-     "type": "spoon",
-     "x": 30,
-     "y": -183,
-     "s": 1.2
-    },
-    {
-     "type": "spoon",
-     "x": [
-      [
-       0,
-       170
-      ],
-      [
-       1.6,
-       170
-      ],
-      [
-       2.4,
-       40
-      ]
-     ],
-     "y": -183,
-     "s": 1.5,
-     "ang": 8,
-     "op": [
-      [
-       0,
-       1
-      ],
-      [
-       2.2,
-       1
-      ],
-      [
-       2.5,
-       0
-      ]
-     ]
-    }
-   ],
-   "sfx": [
-    {
-     "name": "spoonaway",
-     "at": 1.8,
-     "gain": 0.4,
-     "prompt": "metal spoon slid quietly off a table",
-     "len": 0.6
+     "who": "narrator",
+     "text": "แต่ยายยังวางช้อนคันที่สอง รอสักพัก แล้วเก็บกลับเงียบๆ"
     }
    ]
   },
@@ -1223,7 +1162,6 @@
      620
     ]
    },
-   "dur": 1.8,
    "cam": {
     "x": 250,
     "y": -1050,
@@ -1240,6 +1178,12 @@
      "prompt": "quiet wall clock ticking in silent room",
      "len": 1.8
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หกโมงเย็น มะลิแอบดูแม่"
+    }
    ]
   },
   {
@@ -1255,7 +1199,6 @@
      620
     ]
    },
-   "dur": 3.2,
    "cam": {
     "x": 60,
     "y": -260,
@@ -1309,6 +1252,12 @@
      "s": 1.5,
      "ang": 8
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ยายวางช้อนสองคัน แล้วนั่งรอ"
+    }
    ]
   },
   {
@@ -1324,7 +1273,6 @@
      620
     ]
    },
-   "dur": 3.4,
    "cam": {
     "x": -43,
     "y": -300,
@@ -1374,64 +1322,11 @@
      "prompt": "quiet wall clock ticking in silent room",
      "len": 3.4
     }
-   ]
-  },
-  {
-   "name": "s20_spoon_back2",
-   "set": "dining",
-   "setOpts": {
-    "eve": true,
-    "bare": true,
-    "chairs": [
-     -420,
-     -60,
-     300,
-     620
-    ]
-   },
-   "dur": 2.6,
-   "cam": {
-    "x": 150,
-    "y": -200,
-    "z": 3.2
-   },
-   "dof": {
-    "bg": 7
-   },
-   "props": [
+   ],
+   "say": [
     {
-     "type": "spoon",
-     "x": [
-      [
-       0,
-       170
-      ],
-      [
-       0.8,
-       170
-      ],
-      [
-       1.8,
-       40
-      ]
-     ],
-     "y": -183,
-     "s": 1.5,
-     "ang": 8,
-     "op": [
-      [
-       0,
-       1
-      ],
-      [
-       1.6,
-       1
-      ],
-      [
-       1.9,
-       0
-      ]
-     ]
+     "who": "boon",
+     "text": "วันนี้คงยุ่งอีกแล้วสินะ"
     }
    ]
   },
@@ -1448,7 +1343,6 @@
      620
     ]
    },
-   "dur": 3.0,
    "cam": {
     "x": -20,
     "y": -300,
@@ -1486,6 +1380,12 @@
      "y": -183,
      "s": 1.2
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "กินคำเดียว แล้ววางช้อน"
+    }
    ]
   },
   {
@@ -1501,7 +1401,6 @@
      620
     ]
    },
-   "dur": 2.4,
    "cam": {
     "x": 640,
     "y": -400,
@@ -1530,6 +1429,12 @@
      "prompt": "single soft emotional piano note",
      "len": 2.0
     }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "แม่ไม่ได้ติเรื่องรสชาติเลยนี่นา"
+    }
    ]
   },
   {
@@ -1546,8 +1451,6 @@
     ]
    },
    "grade": "sepia",
-   "dur": 1.3,
-   "lockDur": true,
    "cam": {
     "x": 60,
     "y": -300,
@@ -1593,70 +1496,13 @@
      "ang": 8
     }
    ],
-   "ui": []
-  },
-  {
-   "name": "s24_flash",
-   "set": "dining",
-   "setOpts": {
-    "eve": true,
-    "bare": true,
-    "chairs": [
-     -420,
-     -60,
-     300,
-     620
-    ]
-   },
-   "grade": "sepia",
-   "dur": 1.3,
-   "lockDur": true,
-   "cam": {
-    "x": 60,
-    "y": -300,
-    "z": 1.8
-   },
-   "dof": {
-    "bg": 5
-   },
-   "actors": [
+   "ui": [],
+   "say": [
     {
-     "who": "boon",
-     "s": 0.58,
-     "y": 20,
-     "x": -43,
-     "view": "front",
-     "layer": "back",
-     "sink": 40,
-     "clipY": 0,
-     "light": "litL",
-     "seed": 3,
-     "mood": "smile",
-     "arms": "give"
+     "who": "narrator",
+     "text": "ทุกครั้งที่ติ แม่จะตบเก้าอี้ข้างตัว"
     }
-   ],
-   "props": [
-    {
-     "type": "soup",
-     "x": -43,
-     "y": -187,
-     "s": 0.8
-    },
-    {
-     "type": "spoon",
-     "x": 30,
-     "y": -183,
-     "s": 1.2
-    },
-    {
-     "type": "spoon",
-     "x": 170,
-     "y": -183,
-     "s": 1.5,
-     "ang": 8
-    }
-   ],
-   "ui": []
+   ]
   },
   {
    "name": "s25_flash",
@@ -1672,8 +1518,6 @@
     ]
    },
    "grade": "sepia",
-   "dur": 3.2,
-   "lockDur": true,
    "cam": {
     "x": 60,
     "y": -300,
@@ -1730,13 +1574,18 @@
      "color": "#FFE7A0",
      "think": false
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "คำติทุกคำ คือคำชวนให้มานั่งกินด้วยกัน"
+    }
    ]
   },
   {
    "name": "s26_cook_again",
    "set": "kitchen",
    "cut": "whip",
-   "dur": 3.4,
    "cam": {
     "x": -400,
     "y": -380,
@@ -1776,6 +1625,12 @@
      "prompt": "soup simmering in pot, ladle stirring",
      "len": 3.4
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เย็นต่อมา มะลิหยิบทัพพีอีกครั้ง"
+    }
    ]
   },
   {
@@ -1791,7 +1646,6 @@
      620
     ]
    },
-   "dur": 3.0,
    "cam": {
     "x": 120,
     "y": -360,
@@ -1840,6 +1694,12 @@
      "x": 30,
      "y": -183,
      "s": 1.2
+    }
+   ],
+   "say": [
+    {
+     "who": "mali",
+     "text": "วันนี้หนูว่างค่ะแม่"
     }
    ]
   },
@@ -1961,7 +1821,6 @@
      620
     ]
    },
-   "dur": 3.0,
    "cam": {
     "x": 90,
     "y": -210,
@@ -2016,6 +1875,12 @@
      "s": 1.5,
      "ang": 8
     }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เค็มไปนิดจริงๆ แต่ชามหมดเกลี้ยง"
+    }
    ]
   },
   {
@@ -2032,7 +1897,6 @@
     ]
    },
    "cut": "whip",
-   "dur": 4.5,
    "cam": {
     "x": [
      [
@@ -2143,6 +2007,12 @@
      "gain": 0.4,
      "prompt": "warm family dinner chatter and light laughter",
      "len": 3.5
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "บางที คำติของคนแก่ แค่อยากให้เรานั่งลงข้างๆ"
     }
    ]
   }

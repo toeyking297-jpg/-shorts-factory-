@@ -77,7 +77,7 @@ S(name="s21_one_bite",set="dining",setOpts=DIN,dur=3.0,cam=dict(x=-20,y=-300,z=2
 S(name="s22_mali_door",set="dining",setOpts=DIN,dur=2.4,cam=dict(x=640,y=-400,z=2.4),dof=dict(bg=7),
   actors=[A("mali",x=640,mood="worried",seed=2)],sfx=[SFX("piano",0.3,0.5,"single soft emotional piano note",2.0)])
 for i,(day,lbl) in enumerate([("จันทร์","s23"),("อังคาร","s24"),("พุธ","s25")]):
-    S(name=f"{lbl}_flash",set="dining",setOpts=DIN,grade="sepia",dur=1.3 if i<2 else 3.2,lockDur=True,cam=dict(x=60,y=-300,z=1.8),dof=dict(bg=5),
+    S(name=f"{lbl}_flash",set="dining",setOpts=DIN,grade="sepia",cam=dict(x=60,y=-300,z=1.8),dof=dict(bg=5),
       actors=[BOON(mood="smile",arms="give")],props=[SOUP(),SP1,SP2()],
       ui=([dict(type="bubble",t0=0.3,t1=99,x=540,y=430,text="ที่แม่ติ… คือชวนให้นั่งด้วยกัน",color="#FFE7A0",think=False)] if i==2 else []))
 # --- 100–120 ---
@@ -93,6 +93,36 @@ S(name="s29_empty_bowls",set="dining",setOpts=DIN,dur=3.0,cam=dict(x=90,y=-210,z
 S(name="s30_full_table",set="dining",setOpts=DIN,cut="whip",dur=4.5,cam=dict(x=[[0,70],[4.5,80]],y=-340,z=[[0,1.2],[4.5,1.12]]),
   actors=[SEAT("mali",216,55,seed=2,mood="happy"),BOON(mood="happy"),SEAT("chai",-302,55,mood="laugh",seed=4),SEAT("khaohom",446,12,mood="happy",seed=1)],
   props=[SOUP(x=-302,s=0.7),SOUP(s=0.7),SOUP(x=216,s=0.7),SOUP(x=446,s=0.7)],sfx=[SFX("family",0.4,0.4,"warm family dinner chatter and light laughter",3.5)])
+
+# ---- v3: ผู้บรรยายเล่าต่อเนื่อง ห้ามเงียบเกิน 1.5 วิ [เจ้าของช่อง 2026-11-20] ----
+N=lambda t: dict(who="narrator",text=t)
+NAR={
+ "s01_taste":("pre",[N("ทุกเย็น บ้านนี้จะมีคำเดิมดังขึ้น")]),
+ "s02_spoon2":("pre",[N("แล้วยายจะวางช้อนอีกคันไว้ข้างชาม")]),
+ "s03_mali_tired":("pre",[dict(who="mali",text="ทำแทบตาย ก็ยังไม่ถูกปาก")]),
+ "s06_wed_watch":("pre",[N("วันพุธ ยายไม่พูด แค่มองตามลูก")]),
+ "s08_hurt":("pre",[dict(who="mali",text="ไม่เคยได้ยินคำว่าอร่อยเลย")]),
+ "s10b_home_box":("pre",[N("เย็นนั้น มะลิซื้อกับข้าวกลับบ้าน")]),
+ "s11_box_dinner":("pre",[N("ไม่มีแกงร้อนๆ มีแค่กล่องข้าว")]),
+ "s12_mali_listens":("pre",[dict(who="mali",text="เห็นไหม ไม่ทำก็ไม่โดนว่า")]),
+ "s13_spoon_out":("pre",[N("แต่ยายยังวางช้อนคันที่สอง รอสักพัก แล้วเก็บกลับเงียบๆ")]),
+ "s17_clock6":("pre",[N("หกโมงเย็น มะลิแอบดูแม่")]),
+ "s18_two_spoons":("pre",[N("ยายวางช้อนสองคัน แล้วนั่งรอ")]),
+ "s19_wait":("pre",[dict(who="boon",text="วันนี้คงยุ่งอีกแล้วสินะ")]),
+ "s21_one_bite":("pre",[N("กินคำเดียว แล้ววางช้อน")]),
+ "s22_mali_door":("pre",[dict(who="mali",text="แม่ไม่ได้ติเรื่องรสชาติเลยนี่นา")]),
+ "s23_flash":("pre",[N("ทุกครั้งที่ติ แม่จะตบเก้าอี้ข้างตัว")]),
+ "s25_flash":("pre",[N("คำติทุกคำ คือคำชวนให้มานั่งกินด้วยกัน")]),
+ "s26_cook_again":("pre",[N("เย็นต่อมา มะลิหยิบทัพพีอีกครั้ง")]),
+ "s27_sit_down":("pre",[dict(who="mali",text="วันนี้หนูว่างค่ะแม่")]),
+ "s29_empty_bowls":("pre",[N("เค็มไปนิดจริงๆ แต่ชามหมดเกลี้ยง")]),
+ "s30_full_table":("post",[N("บางที คำติของคนแก่ แค่อยากให้เรานั่งลงข้างๆ")]),
+}
+sh[:]=[x for x in sh if x["name"] not in ("s14_spoon_back","s20_spoon_back2","s24_flash")]
+for S_ in sh:
+    if S_["name"] in NAR:
+        pos,ls=NAR[S_["name"]]; S_["say"]=(ls+S_.get("say",[])) if pos=="pre" else (S_.get("say",[])+ls)
+    S_.pop("dur",None)  # ความยาวช็อตตามเสียงพูดจริง
 ep=dict(id="ST004",engine="flat",fps=30,set="dining",title="เค็มไป",music="family",musicGain=1.1,targetSec=120,ambience="auto",ambienceGain=0.12,handheld=0.7,shots=sh)
 json.dump(ep,open("/home/claude/recover/shorts-factory/rodkit/episodes/ST004.ep.json","w"),ensure_ascii=False,indent=1)
 print(len(sh))

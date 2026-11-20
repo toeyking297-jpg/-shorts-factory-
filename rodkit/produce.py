@@ -182,6 +182,7 @@ def main():
     ap.add_argument("episode")
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--no-render", action="store_true")
+    ap.add_argument("--allow-silence", action="store_true", help="ข้ามตัวตรวจช่วงเงียบ (ไม่แนะนำ)")
     a = ap.parse_args()
     ep = json.loads(pathlib.Path(a.episode).read_text("utf-8"))
     eid = ep["id"]
@@ -226,7 +227,7 @@ def main():
         for S in ep["shots"]:
             if S.get("say"):
                 t = LEAD + sum(dur_of(synth(L["who"], L["text"])) + L.get("pause", GAP) for L in S["say"]) - GAP + TAIL
-                need.append(max(S.get("dur", 0), t))
+                need.append(t if ep.get("noSilence", True) else max(S.get("dur", 0), t))
             else:
                 need.append(S.get("dur", 2.0))
         total0, target = sum(need), float(ep["targetSec"])
@@ -235,7 +236,8 @@ def main():
         room = []
         for S, d in zip(ep["shots"], need):
             if S.get("lockDur"): room.append((0, 0)); continue
-            if S.get("say"): room.append((0.0, 1.2))
+            if S.get("say"): room.append((0.0, 0.6 if ep.get("noSilence", True) else 1.2))
+            elif ep.get("noSilence", True): room.append((max(0.0, d - 1.0), 0.0))  # ช็อตไม่มีเสียงพูด: หดได้ ห้ามยืด
             else: room.append((max(0.0, d - max(1.0, d * 0.75)), d * 0.8))
         cap = sum(r[1] for r in room) if delta > 0 else sum(r[0] for r in room)
         k = 0 if cap <= 0 else min(1.0, abs(delta) / cap)
@@ -298,6 +300,22 @@ def main():
         T += S["dur"]
     total = T
     log(f"ความยาวคลิป {total:.1f} วินาที · เสียงพูด {len(voices)} ประโยค")
+
+    # 1.5) ตัวตรวจช่วงเงียบ [เจ้าของช่อง 2026-11-20: "ห้ามหยุดเงียบ"] — ช่วงไม่มีเสียงพูดห้ามเกิน maxSilence วิ
+    total_len = sum(S["dur"] for S in ep["shots"])
+    iv = sorted((st, st + dur_of(pp)) for st, pp, _g in voices)
+    gaps, cur = [], 0.0
+    for va, vb in iv:
+        if va - cur > 0: gaps.append((round(cur, 2), round(va - cur, 2)))
+        cur = max(cur, vb)
+    if total_len - cur > 0: gaps.append((round(cur, 2), round(total_len - cur, 2)))
+    spoken = sum(vb - va for va, vb in iv)
+    mx = float(ep.get("maxSilence", 1.5)); bad = [g for g in gaps if g[1] > mx and g[0] > 0.01 and g[0] + g[1] < total_len - 0.01] + [g for g in gaps if g[1] > mx + 1.0 and not (g[0] > 0.01 and g[0] + g[1] < total_len - 0.01)]
+    log(f"เสียงพูดรวม {spoken:.1f} วิ จาก {total_len:.1f} วิ ({spoken / max(total_len, 1e-6) * 100:.0f}%) · ช่วงเงียบยาวสุด {max([g[1] for g in gaps] or [0]):.1f} วิ")
+    if ep.get("noSilence", True) and bad and not a.allow_silence:
+        for g in sorted(bad, key=lambda g: -g[1])[:12]: log(f"  เงียบ {g[1]:.1f} วิ ที่ {g[0]:.1f}")
+        log(f"หยุด: มีช่วงเงียบเกิน {mx} วิ {len(bad)} จุด — เติมบทบรรยาย/บทพูด หรือย่อช็อต (ห้ามผลิตคลิปเงียบ)")
+        sys.exit(2)
 
     # 2) มิกซ์
     n = int((total + 0.5) * AU.SR)
