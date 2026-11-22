@@ -296,6 +296,44 @@
    "key_object": "ข้อความร่างในมือถือ",
    "misread_character": "fah",
    "owner_request": "เลิกกับแฟน: ทำตัว/ดูแลตัวเอง/ดูแลใจ/ปรับปรุงตัว/คาดหวังอนาคต/ควร-ไม่ควรทำ/ให้พื้นที่/คำว่าสายไป"
+  },
+  {
+   "id": "ST006",
+   "title": "ถ้าเขาขอกลับมา",
+   "status": "producing 2026-11-23",
+   "series": "ST005 ภาค 2",
+   "slot": "night",
+   "format": "guide_story",
+   "mechanism": "audience_with",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum",
+     "jan"
+    ],
+    "extra": [
+     "te",
+     "narrator"
+    ]
+   },
+   "want": "ฟ้าต้องตัดสินใจว่าจะกลับไปหาภูมิไหม",
+   "conflict": "ภูมิขอคืนดีหลัง 6 เดือน",
+   "decision": "ขอเวลา ถามตัวเอง 3 ข้อ แล้วไปฟังเหตุผล",
+   "ending": "ภูมิกลับมาเพราะเหงา ไม่ได้เปลี่ยน ฟ้าปฏิเสธอย่างสุภาพ ปิดให้ชัด เลือกตัวเองโดยไม่เกลียดใคร",
+   "signature": {
+    "conflict": "ex_asks_back",
+    "decision": "pause_and_self_check",
+    "outcome": "decline_kindly",
+    "hook": "awaited_message_arrives_feels_nothing",
+    "ending": "quote_back_because_lonely"
+   },
+   "emotion": "นิ่ง→ลังเล→เข้าใจ→โล่ง",
+   "initial_belief": "ถ้าเขากลับมา ฟ้าจะดีใจและกลับไปทันที",
+   "hidden_truth": "เขากลับมาเพราะเหงา ไม่ได้เปลี่ยน และฟ้าไม่ต้องการเขาแล้ว",
+   "reveal_method": "answer_to_direct_question",
+   "key_object": "ข้อความขอคืนดีในมือถือ",
+   "misread_character": "phum",
+   "owner_request": "EP ถัดไปของซีรีส์เลิกกับแฟน"
   }
  ],
  "owner_taste": {

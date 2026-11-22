@@ -1,0 +1,3 @@
+{"id":"ST006_CUT","engine":"flat","fps":30,"set":"plain","bgDim":0,"handheld":0,"outline":5,"shots":[
+ {"dur":1,"noGrade":true,"cam":{"x":0,"y":-400,"z":2.5},"actors":[{"who":"fah","s":0.62,"y":230,"x":0,"view":"front","mood":"flat","seed":4,"tilt":-4,"light":"litL","prop":"phone","arms":"phone"}]},
+ {"dur":1,"noGrade":true,"cam":{"x":0,"y":-400,"z":2.5},"actors":[{"who":"phum","s":0.62,"y":230,"x":0,"mood":"worried","seed":5,"light":"litL","view":"front"}]}]}
