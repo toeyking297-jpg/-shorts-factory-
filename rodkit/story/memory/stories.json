@@ -259,6 +259,43 @@
    "reveal_method": "absence_behavior_contrast",
    "key_object": "ช้อนคันที่สอง",
    "misread_character": "boon"
+  },
+  {
+   "id": "ST005",
+   "title": "ข้อความที่ไม่ได้ส่ง",
+   "status": "producing 2026-11-22",
+   "slot": "night",
+   "format": "guide_story",
+   "mechanism": "audience_with",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum",
+     "jan"
+    ],
+    "extra": [
+     "te",
+     "narrator"
+    ]
+   },
+   "want": "ฟ้าอยากให้ภูมิกลับมา",
+   "conflict": "เพิ่งเลิกกันหลังคบ 3 ปี ทำแต่สิ่งที่ไม่ควรทำ",
+   "decision": "ดูแลตัวเอง ให้พื้นที่ ปรับปรุงตัว — แต่หวังให้เขากลับมา",
+   "ending": "ภูมิเดินต่อแล้ว ฟ้ายอมรับ ลบข้อความ 3 เดือนต่อมาทักทายกันได้โดยไม่เจ็บ",
+   "signature": {
+    "conflict": "breakup_aftermath",
+    "decision": "self_improve_to_win_back",
+    "outcome": "too_late_accept",
+    "hook": "typing_then_deleting_message",
+    "ending": "quote_too_late_not_for_self"
+   },
+   "emotion": "เจ็บ→ฮึด→ผิดหวัง→ยอมรับ",
+   "initial_belief": "ถ้าเราดีขึ้น เขาจะกลับมา",
+   "hidden_truth": "การเปลี่ยนแปลงเป็นของเรา บางเรื่องสายไปแล้ว การให้พื้นที่คือการปล่อย",
+   "reveal_method": "direct_statement_by_other",
+   "key_object": "ข้อความร่างในมือถือ",
+   "misread_character": "fah",
+   "owner_request": "เลิกกับแฟน: ทำตัว/ดูแลตัวเอง/ดูแลใจ/ปรับปรุงตัว/คาดหวังอนาคต/ควร-ไม่ควรทำ/ให้พื้นที่/คำว่าสายไป"
   }
  ],
  "owner_taste": {
