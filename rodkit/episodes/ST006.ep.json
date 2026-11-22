@@ -1,0 +1,1266 @@
+{
+ "id": "ST006",
+ "engine": "flat",
+ "fps": 30,
+ "set": "condo",
+ "title": "ถ้าเขาขอกลับมา",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_msg",
+   "set": "condo",
+   "cam": {
+    "x": [
+     [
+      0,
+      150
+     ],
+     [
+      3,
+      150
+     ]
+    ],
+    "y": -330,
+    "z": [
+     [
+      0,
+      1.9
+     ],
+     [
+      3,
+      2.05
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 4
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "phone_buzz",
+     "at": 0.1,
+     "gain": 0.5
+    },
+    {
+     "name": "notify",
+     "at": 0.9,
+     "gain": 0.4
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 860,
+     "time": "20:12",
+     "msgs": [
+      {
+       "me": false,
+       "text": "ฟ้า… สบายดีไหม"
+      },
+      {
+       "me": false,
+       "text": "เราคิดถึงฟ้านะ"
+      },
+      {
+       "me": false,
+       "text": "ขอเจอกันได้ไหม"
+      }
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หกเดือนหลังเลิกกัน"
+    },
+    {
+     "who": "narrator",
+     "text": "ข้อความที่ฟ้าเคยรอทุกคืน ก็มาถึง"
+    }
+   ]
+  },
+  {
+   "name": "s02_still",
+   "set": "condo",
+   "cam": {
+    "x": 150,
+    "y": -460,
+    "z": [
+     [
+      0,
+      2.5
+     ],
+     [
+      3,
+      2.8
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "shock",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "heart",
+     "at": 0.2,
+     "gain": 0.5
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แต่แปลก… ใจเธอไม่ได้เต้นแรงอย่างที่เคยคิด"
+    }
+   ]
+  },
+  {
+   "name": "s03_title",
+   "set": "condo",
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      60
+     ]
+    ],
+    "y": -380,
+    "z": [
+     [
+      0,
+      1.15
+     ],
+     [
+      3,
+      1.25
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "ถ้าเขา ขอกลับมา",
+     "size": 104
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ถ้าแฟนเก่าขอกลับมา เราควรทำยังไง"
+    }
+   ]
+  },
+  {
+   "name": "s04_rush",
+   "set": "condo",
+   "cut": "whip",
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "happy",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 980,
+     "s": 0.85,
+     "time": "20:13",
+     "msgs": [
+      {
+       "me": false,
+       "text": "ขอเจอกันได้ไหม"
+      }
+     ],
+     "typing": "ได้สิ! เจอกันเลย",
+     "erase": true,
+     "typeSec": 0.9,
+     "hold": 0.4
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "รีบตอบตอนใจยังเต้น",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "typing",
+     "at": 0.3,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สิ่งแรกที่ไม่ควรทำ"
+    },
+    {
+     "who": "narrator",
+     "text": "คือรีบตอบ ตอนอารมณ์ยังพุ่ง"
+    }
+   ]
+  },
+  {
+   "name": "s05_te",
+   "set": "office",
+   "cut": "whip",
+   "cam": {
+    "x": 20,
+    "y": -370,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "worried"
+    },
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 6,
+     "x": 250,
+     "dir": -1,
+     "mood": "laugh"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "กลับเพราะเหงา",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "te",
+     "text": "กลับไปเลยพี่ ยังรักกันอยู่นี่"
+    },
+    {
+     "who": "narrator",
+     "text": "และไม่ควรกลับไป แค่เพราะกลัวเหงา"
+    }
+   ]
+  },
+  {
+   "name": "s06_revenge",
+   "set": "office",
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 600,
+     "text": "ให้เขารู้บ้าง ว่าเจ็บแค่ไหน"
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ใช้โอกาสนี้เอาคืน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ยิ่งไม่ควรใช้โอกาสนี้ เพื่อเอาคืน"
+    }
+   ]
+  },
+  {
+   "name": "s07_ask_time",
+   "set": "condo",
+   "cut": "whip",
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 980,
+     "s": 0.85,
+     "time": "21:30",
+     "msgs": [
+      {
+       "me": false,
+       "text": "ขอเจอกันได้ไหม"
+      },
+      {
+       "me": true,
+       "text": "ขอเวลาคิดก่อนนะ"
+      }
+     ]
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ขอเวลาคิด",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.9,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ฟ้าเลือกขอเวลา แทนการตอบทันที"
+    }
+   ]
+  },
+  {
+   "name": "s08_jan",
+   "set": "office",
+   "setOpts": {
+    "late": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -370,
+    "z": 1.5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "worried"
+    },
+    {
+     "who": "jan",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 7,
+     "x": 220,
+     "dir": -1,
+     "mood": "smile",
+     "arms": "give"
+    }
+   ],
+   "say": [
+    {
+     "who": "jan",
+     "text": "ก่อนตัดสินใจ ถามตัวเองสามข้อก่อนนะฟ้า"
+    }
+   ]
+  },
+  {
+   "name": "s09_q1",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": -280,
+    "y": -400,
+    "z": 2.0
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -280,
+     "mood": "flat",
+     "prop": "notebookP",
+     "arms": "hold"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "1. ปัญหาเดิมแก้แล้ว?",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ข้อแรก ปัญหาที่ทำให้เลิกกัน"
+    },
+    {
+     "who": "narrator",
+     "text": "เปลี่ยนไปจริงไหม"
+    }
+   ]
+  },
+  {
+   "name": "s10_q2",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 150,
+    "y": -430,
+    "z": [
+     [
+      0,
+      2.3
+     ],
+     [
+      3,
+      2.5
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "2. รักเขา หรือแค่เหงา?",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ข้อสอง เราคิดถึงตัวเขา"
+    },
+    {
+     "who": "narrator",
+     "text": "หรือแค่คิดถึง การมีใครสักคน"
+    }
+   ]
+  },
+  {
+   "name": "s11_q3",
+   "set": "park",
+   "cam": {
+    "x": [
+     [
+      0,
+      -500
+     ],
+     [
+      3.5,
+      -100
+     ]
+    ],
+    "y": -380,
+    "z": 1.35
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "dir": 1,
+     "x": [
+      [
+       0,
+       -900
+      ],
+      [
+       3.5,
+       0
+      ]
+     ],
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "3. เราสุขดีแล้วหรือยัง?",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "steps",
+     "at": 0.2,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ข้อสาม ตอนนี้"
+    },
+    {
+     "who": "narrator",
+     "text": "เรามีความสุขกับตัวเองแล้วหรือยัง"
+    }
+   ]
+  },
+  {
+   "name": "s12_week",
+   "set": "park",
+   "cam": {
+    "x": -100,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -100,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ฟ้าใช้เวลาหนึ่งสัปดาห์"
+    },
+    {
+     "who": "narrator",
+     "text": "ตอบคำถามทั้งสามข้อ อย่างซื่อสัตย์"
+    }
+   ]
+  },
+  {
+   "name": "s13_cafe_wide",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -60
+     ],
+     [
+      3.5,
+      0
+     ]
+    ],
+    "y": -340,
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      3.5,
+      1.4
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "smile"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แล้วเธอก็ไปเจอเขา ที่ร้านกาแฟร้านเดิม"
+    }
+   ]
+  },
+  {
+   "name": "s14_phum_ask",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": 240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "เราคิดผิดที่ปล่อยฟ้าไป"
+    },
+    {
+     "who": "phum",
+     "text": "ลองเริ่มใหม่กันไหม"
+    }
+   ]
+  },
+  {
+   "name": "s15_fah_q",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": -240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "แล้วตอนนี้ ภูมิเปลี่ยนอะไรไปบ้าง"
+    }
+   ]
+  },
+  {
+   "name": "s16_phum_ans",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      40
+     ]
+    ],
+    "y": -330,
+    "z": 1.5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ก็… เหงาน่ะ ไม่มีใครเหมือนฟ้า"
+    },
+    {
+     "who": "narrator",
+     "text": "คำตอบนั้น ทำให้ฟ้าเข้าใจทันที"
+    }
+   ]
+  },
+  {
+   "name": "s17_actions",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": -240,
+    "y": -330,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ดูที่การกระทำ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เขาไม่ได้กลับมาเพราะเปลี่ยน"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่กลับมา เพราะเหงา"
+    }
+   ]
+  },
+  {
+   "name": "s18_answer",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": [
+     [
+      0,
+      -240
+     ],
+     [
+      3,
+      -230
+     ]
+    ],
+    "y": -330,
+    "z": [
+     [
+      0,
+      2.2
+     ],
+     [
+      3,
+      2.4
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "smile"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.1,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ขอบคุณนะ ที่ยังคิดถึงกัน"
+    },
+    {
+     "who": "fah",
+     "text": "แต่ฟ้าเดินต่อมาไกลแล้ว"
+    }
+   ]
+  },
+  {
+   "name": "s19_phum_nod",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true,
+    "rain": true
+   },
+   "cam": {
+    "x": 240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "…เข้าใจแล้ว"
+    },
+    {
+     "who": "narrator",
+     "text": "ประโยคเดียวกับที่เขาเคยพูด"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ครั้งนี้ ไม่มีใครตั้งใจทำร้ายใคร"
+    }
+   ]
+  },
+  {
+   "name": "s20_walk_home",
+   "set": "housefront",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -650
+     ],
+     [
+      3,
+      -120
+     ]
+    ],
+    "y": -420,
+    "z": 1.35
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 200,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "dir": 1,
+     "x": [
+      [
+       0,
+       -900
+      ],
+      [
+       3,
+       -80
+      ]
+     ],
+     "mood": "smile"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ถ้าทั้งคู่เปลี่ยนจริง การกลับไปก็อาจดีได้"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ต้องตัดสินจากสิ่งที่เห็น"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่ใช่สิ่งที่หวัง"
+    }
+   ]
+  },
+  {
+   "name": "s21_close",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "smile",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 980,
+     "s": 0.85,
+     "time": "22:05",
+     "msgs": [
+      {
+       "me": true,
+       "text": "ขอบคุณที่กลับมาบอกนะ"
+      },
+      {
+       "me": true,
+       "text": "ดูแลตัวเองด้วย"
+      }
+     ]
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ปิดให้ชัด อย่างสุภาพ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "การไม่กลับไป ไม่ได้แปลว่าไม่เคยรัก"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่คือการเลือกตัวเอง"
+    },
+    {
+     "who": "narrator",
+     "text": "โดยไม่ต้องเกลียดใคร"
+    }
+   ]
+  },
+  {
+   "name": "s22_end",
+   "set": "park",
+   "cam": {
+    "x": -100,
+    "y": -400,
+    "z": 1.3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -300,
+     "mood": "happy"
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "บางคนกลับมา",
+      "ไม่ใช่เพราะพร้อม",
+      "แต่เพราะเหงา"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "บางคนกลับมา ไม่ใช่เพราะพร้อม แต่เพราะเหงา",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}
