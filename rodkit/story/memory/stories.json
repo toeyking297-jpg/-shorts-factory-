@@ -334,6 +334,42 @@
    "key_object": "ข้อความขอคืนดีในมือถือ",
    "misread_character": "phum",
    "owner_request": "EP ถัดไปของซีรีส์เลิกกับแฟน"
+  },
+  {
+   "id": "ST007",
+   "title": "พร้อมรักใหม่หรือยัง",
+   "status": "producing 2026-11-23",
+   "series": "ST005 ภาค 3 (จบซีรีส์ฟ้า)",
+   "slot": "night",
+   "format": "guide_story",
+   "mechanism": "audience_with",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "ton",
+     "jan"
+    ],
+    "extra": [
+     "te",
+     "narrator"
+    ]
+   },
+   "want": "ฟ้าอยากพิสูจน์ว่ามูฟออนแล้ว",
+   "conflict": "เดตแรกแต่พูดแต่เรื่องภูมิ",
+   "decision": "บอกต้นตามจริง ขอเป็นเพื่อน แล้วใช้เวลากับตัวเอง",
+   "ending": "ฟ้าพร้อมเมื่ออยู่คนเดียวได้ ต้นมาเรียนปั้นดินด้วยในฐานะเพื่อน ค่อยเป็นค่อยไป",
+   "signature": {
+    "conflict": "rebound_date",
+    "decision": "honest_pause",
+    "outcome": "friends_first",
+    "hook": "date_talks_about_ex",
+    "ending": "quote_ready_when_alone_ok"
+   },
+   "initial_belief": "พร้อมรักใหม่ = มีคนใหม่",
+   "hidden_truth": "พร้อมเมื่ออยู่คนเดียวได้โดยไม่ขาด",
+   "reveal_method": "self_realization_after_contrast",
+   "key_object": "แจกันปั้นเบี้ยว",
+   "new_assets": "ฉาก rooftop, pottery; ตัวละคร ton (ยังไม่มีเสียง)"
   }
  ],
  "owner_taste": {
