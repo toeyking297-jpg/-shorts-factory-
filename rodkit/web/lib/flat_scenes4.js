@@ -203,6 +203,91 @@
   function hfSun(t, o) { return ""; }
 
   const wrap = (fn, back, ground) => (t, o) => (back ? R(-4000, -5000, 8000, 5000 + WALL_Y * K, back(o || {})) + R(-4000, WALL_Y * K, 8000, 4000, ground) : "") + `<g transform="scale(${K})">${fn(t, o || {})}</g>`;
+
+  // ================= CONDO (ห้องคอนโดของฟ้า) =================
+  //  setOpts { night:true, photo:"up|down|none", bed:true(ค่าเริ่ม), mess:true(รก) }
+  RK.flatDefs += `
+  <linearGradient id="cdWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B06E62"/><stop offset="1" stop-color="#BF7E70"/></linearGradient>
+  <linearGradient id="cdWallN" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A2A48"/><stop offset="1" stop-color="#4A3656"/></linearGradient>
+  <linearGradient id="cdCity" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1530"/><stop offset="1" stop-color="#2A2E5A"/></linearGradient>
+  <linearGradient id="cdCityD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FB2E6"/><stop offset="1" stop-color="#CFE6F2"/></linearGradient>
+  <radialGradient id="cdLamp"><stop offset="0" stop-color="#FFD98A" stop-opacity=".85"/><stop offset="1" stop-color="#FFB45C" stop-opacity="0"/></radialGradient>`;
+  function cdWall(t, o) {
+    const n = !!o.night;
+    let s = R(-1800, -2500, 3600, 2500 + WALL_Y, n ? "url(#cdWallN)" : "url(#cdWall)");
+    // ลายผนังเส้นตั้งบางๆ
+    for (let x = -1800; x < 1800; x += 120) s += L(x, -2500, x, WALL_Y, n ? "#33243F" : "#A56458", 3, 'opacity=".5"');
+    s += R(-1800, -260, 3600, 190 + WALL_Y + 70, n ? "#2E2138" : "#8E5348") + R(-1800, -270, 3600, 18, n ? "#5A4468" : "#E9C9B8");
+    // หน้าต่างบานใหญ่ + เมือง
+    const wx = -1450, wy = -2050, ww = 1150, wh = 1250;
+    s += R(wx - 30, wy - 30, ww + 60, wh + 60, n ? "#1E1626" : "#6E3F36") + R(wx, wy, ww, wh, n ? "url(#cdCity)" : "url(#cdCityD)");
+    const r = RK.rng(11);
+    for (let i = 0; i < 9; i++) { const bx = wx + i * 130, bh = 300 + r() * 650, bw = 110; s += R(bx, wy + wh - bh, bw, bh, n ? "#151A36" : "#8FA5B8"); for (let yy = wy + wh - bh + 30; yy < wy + wh - 20; yy += 55) for (let xx = bx + 14; xx < bx + bw - 20; xx += 32) if (r() < (n ? 0.45 : 0.25)) s += R(xx, yy, 16, 24, n ? (r() < 0.8 ? "#FFD27A" : "#9FD3FF") : "#D9E6EE", `opacity="${n ? 0.9 : 0.8}"`); }
+    if (n) s += C(wx + 900, wy + 180, 60, "#FFF4D0") + C(wx + 925, wy + 165, 55, "#0E1530");
+    s += R(wx + ww / 2 - 10, wy, 20, wh, n ? "#1E1626" : "#6E3F36") + R(wx, wy + wh / 2 - 8, ww, 16, n ? "#1E1626" : "#6E3F36");
+    // ผ้าม่านมัสตาร์ด
+    const sw = Math.sin(t * 0.8) * 8;
+    s += Pth(`M ${wx - 120},${wy - 80} L ${wx + 110},${wy - 80} Q ${wx + 60 + sw},${wy + 600} ${wx + 120 + sw},${wy + wh + 90} L ${wx - 120},${wy + wh + 90} Z`, n ? "#8C6A2E" : "#D9A441");
+    s += Pth(`M ${wx + ww + 120},${wy - 80} L ${wx + ww - 110},${wy - 80} Q ${wx + ww - 60 - sw},${wy + 600} ${wx + ww - 120 - sw},${wy + wh + 90} L ${wx + ww + 120},${wy + wh + 90} Z`, n ? "#8C6A2E" : "#D9A441");
+    for (let k = 0; k < 4; k++) s += L(wx - 90 + k * 50, wy - 60, wx - 60 + k * 50 + sw, wy + wh + 80, n ? "#7A5A24" : "#C08E34", 6, 'opacity=".6"');
+    s += R(wx - 160, wy - 100, ww + 320, 26, n ? "#2A1E30" : "#5A3A2E");
+    // ชั้นวาง + รูปคู่ (ของสำคัญ) + ต้นไม้ + หนังสือ
+    const shx = 300, shy = -1500;
+    s += R(shx, shy, 900, 28, n ? "#5A4468" : "#6E4A3A") + R(shx, shy - 500, 900, 24, n ? "#5A4468" : "#6E4A3A");
+    const bc = ["#2F6FB0", "#F2C14E", "#3E8A6E", "#E4572E", "#7A5BA6", "#FFFFFF"];
+    for (let i = 0; i < 9; i++) s += R(shx + 30 + i * 46, shy - 200 - (i % 3) * 30, 40, 200 + (i % 3) * 30, bc[i % 6]);
+    s += RR(shx + 520, shy - 120, 130, 120, 20, "#E9DCC4") + C(shx + 585, shy - 170, 70, "#3E8A46") + C(shx + 545, shy - 210, 50, "#5DAA4E");
+    s += RR(shx + 700, shy - 640, 160, 140, 14, "#3E8A6E") + C(shx + 780, shy - 670, 60, "#5DAA4E");
+    const ph = o.photo || "up";
+    if (ph === "up") {
+      s += `<g transform="rotate(-4 ${shx + 260} ${shy - 600})">` + RR(shx + 120, shy - 760, 300, 260, 12, "#F7EBD8") + R(shx + 140, shy - 740, 260, 200, n ? "#7E9BC4" : "#9CC6E8");
+      // คนสองคนในรูป (ฟ้า + ภูมิ)
+      s += C(shx + 225, shy - 650, 34, "#EEC4A0") + Pth(`M ${shx + 190},${shy - 670} q 35,-50 72,0 l 0,40 l -12,-30 l -48,0 Z`, "#2C1C17") + R(shx + 195, shy - 615, 60, 75, "#6F94C4");
+      s += C(shx + 315, shy - 655, 36, "#EBC09B") + Pth(`M ${shx + 280},${shy - 680} q 36,-40 72,0 Z`, "#1E1614") + R(shx + 285, shy - 618, 62, 78, "#2F5E6B");
+      s += Pth(`M ${shx + 268},${shy - 700} c -6,-14 -22,-8 -16,6 l 16,14 l 16,-14 c 6,-14 -10,-20 -16,-6 Z`, "#E4572E") + `</g>`;
+    } else if (ph === "down") s += R(shx + 130, shy - 520, 300, 22, "#F7EBD8") + R(shx + 130, shy - 520, 300, 8, "#C9B9A0");
+    // ปฏิทิน + โปสเตอร์
+    s += RR(1300, -1900, 330, 400, 10, "#F7EBD8") + R(1300, -1900, 330, 90, "#E4572E") + T(1465, -1830, "วันนี้", 52, "#FFFFFF");
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) s += R(1330 + i * 75, -1790 + j * 70, 50, 40, (i + j) % 5 ? "#E7D8C2" : "#F2C14E");
+    // พื้นไม้
+    s += R(-1800, WALL_Y, 3600, 1600, n ? "#3A2A22" : "#9A6A46");
+    for (let x = -1800; x < 1800; x += 220) s += L(x, WALL_Y, x - 260, WALL_Y + 1600, n ? "#2E2018" : "#87593A", 4);
+    return s;
+  }
+  function cdLamps(t, o) {
+    const n = !!o.night;
+    let s = n ? C(1040, -420, 700, "url(#cdLamp)", 'opacity=".9"') : "";
+    if (o.bed === false) return s;
+    // หัวเตียง + ที่นอนด้านหลัง (อยู่หลังตัวละคร) + หมอน
+    s += RR(-560, -820, 1240, 620, 50, n ? "#3B2A30" : "#5E3A30") + RR(-520, -780, 1160, 540, 40, n ? "#4E3640" : "#7A4A3A");
+    s += RR(-600, -260, 1320, 300, 30, n ? "#C9CBD8" : "#F4EFE6") + RR(-610, -270, 1340, 90, 30, n ? "#DCDEEA" : "#FFFFFF");
+    s += RR(-560, -380, 340, 140, 60, n ? "#DCDEEA" : "#FFFFFF") + RR(-180, -370, 300, 130, 60, "#F2C14E");
+    if (o.mess) s += C(150, -250, 40, "#F7EBD8") + R(110, -270, 80, 30, "#3E8A46");
+    return s;
+  }
+  function cdIsland(t, o) {
+    if (o.bed === false) return "";
+    // เตียง: หัวเตียงชิดผนัง ผ้าห่มฟ้าเทา หมอน
+    const n = !!o.night;
+    let s = SHD(250, 230, 900, 0.35);
+    s += RR(-600, 0, 1320, 200, 30, n ? "#C9CBD8" : "#F4EFE6");
+    s += Pth("M -620,60 C -300,10 200,90 740,40 L 740,200 L -620,200 Z", n ? "#5A6E9A" : "#4F7FB8") + Pth("M -620,60 C -300,10 200,90 740,40", "none", ST(n ? "#7A8EBA" : "#79A2D4", 14));
+    for (let i = 0; i < 6; i++) s += C(-500 + i * 230, 140 + (i % 2) * 24, 22, n ? "#7A8EBA" : "#F2C14E", 'opacity=".55"');
+    if (o.mess) { s += RR(400, -10, 160, 50, 14, "#E4572E") + RR(-300, 0, 120, 40, 10, "#FFFFFF"); }
+    // โต๊ะหัวเตียง + โคม + โทรศัพท์
+    s += SHD(1040, 200, 220) + RR(880, -260, 320, 460, 16, n ? "#5A3E2E" : "#7A5236") + R(900, -60, 280, 10, n ? "#3A2A20" : "#5A3E28") + C(1040, 60, 14, "#E8B54A");
+    s += R(1020, -520, 40, 260, "#C9B9A0") + Pth("M 930,-520 L 1150,-520 L 1100,-700 L 980,-700 Z", n ? "#FFE3A3" : "#F2C14E");
+    s += RR(940, -300, 90, 40, 8, "#1E1E24") + (o.night ? R(948, -296, 74, 30, "#8FD3FF", 'opacity=".8"') : "");
+    return s;
+  }
+  function cdFore(t, o) {
+    let s = E(-200, 520, 900, 120, o.night ? "#5A3E5A" : "#3E8A6E", 'opacity=".9"') + E(-200, 520, 760, 90, o.night ? "#6E4E6E" : "#5DAA8E", 'opacity=".8"');
+    s += RR(-1600, 360, 180, 120, 30, "#F7EBD8") + RR(-1380, 380, 180, 120, 30, "#F7EBD8"); // รองเท้าแตะ
+    if (o.mess) s += RR(1200, 420, 300, 120, 20, "#C9C1B0") + RR(1250, 380, 120, 60, 10, "#E4572E");
+    return s;
+  }
+  RK.flatSets.condo = { wall: wrap(cdWall, (o) => (o.night ? "#3A2A48" : "#B06E62"), "#9A6A46"), lamps: wrap(cdLamps), island: wrap(cdIsland), foreground: wrap(cdFore), sunlight: () => "", WALL_Y: WALL_Y * K };
+
   // ฉากสีเรียบ (ใช้ทำปก: เรนเดอร์บนเขียวแล้วตัดพื้นออก)
   const plainW = (t, o) => R(-6000, -6000, 12000, 12000, o.color || "#00FF00"), nil = () => "";
   RK.flatSets.plain = { wall: plainW, lamps: nil, island: nil, foreground: nil, sunlight: nil, WALL_Y: WALL_Y * K };

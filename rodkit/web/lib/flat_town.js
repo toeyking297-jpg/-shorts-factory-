@@ -13,7 +13,7 @@
   const WALL_Y = -70, K = 0.72;
 
   RK.flatDefs += `
-  <linearGradient id="oWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDE3E8"/><stop offset="1" stop-color="#E9EDF0"/></linearGradient>
+  <linearGradient id="oWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5F8A86"/><stop offset="1" stop-color="#6E9792"/></linearGradient>
   <linearGradient id="oWallN" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A5466"/><stop offset="1" stop-color="#5A6375"/></linearGradient>
   <linearGradient id="oCarpet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C8794"/><stop offset="1" stop-color="#5B6572"/></linearGradient>
   <linearGradient id="oCityDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DB8E2"/><stop offset="1" stop-color="#D8ECF6"/></linearGradient>
@@ -80,7 +80,7 @@
     const n = !!o.late;
     let s = R(-1700, -2400, 3400, 2400 + WALL_Y, n ? "url(#oWallN)" : "url(#oWall)");
     // เพดานฝ้า + ไฟเส้น
-    s += R(-1700, -2400, 3400, 560, n ? "#3A4252" : "#F2F4F6");
+    s += R(-1700, -2400, 3400, 560, n ? "#3A4252" : "#4E7672");
     for (let x = -1700; x < 1700; x += 300) s += L(x, -2400, x, -1840, n ? "#323946" : "#DDE1E5", 3);
     for (const lx of [-1100, -300, 500, 1300]) s += RR(lx - 160, -1870, 320, 24, 8, n ? "#6B7383" : "#FFFFFF") + (n ? "" : E(lx, -1830, 280, 90, "#FFFFFF", 'opacity=".35"'));
     // หน้าต่างกระจกบานใหญ่ 2 บาน + ม่านมู่ลี่
@@ -291,6 +291,6 @@
   }
 
   const wrap = (fn, back, ground) => (t, o) => (back ? R(-4000, -5000, 8000, 5000 + WALL_Y * K, back(o || {})) + R(-4000, WALL_Y * K, 8000, 4000, ground) : "") + `<g transform="scale(${K})">${fn(t, o || {})}</g>`;
-  RK.flatSets.office = { wall: wrap(oWall, (o) => (o.late ? "#3A4252" : "#F2F4F6"), "#5B6572"), lamps: wrap(oLamps), island: wrap(oIsland), foreground: wrap(oFore), sunlight: wrap(oSun), WALL_Y: WALL_Y * K };
+  RK.flatSets.office = { wall: wrap(oWall, (o) => (o.late ? "#3A4252" : "#5F8A86"), "#5B6572"), lamps: wrap(oLamps), island: wrap(oIsland), foreground: wrap(oFore), sunlight: wrap(oSun), WALL_Y: WALL_Y * K };
   RK.flatSets.market = { wall: wrap(mWall, () => "#8CC4EA", "#7E766B"), lamps: () => "", island: wrap(mIsland), foreground: wrap(mFore), sunlight: wrap(mSun), WALL_Y: WALL_Y * K };
 })(window);
