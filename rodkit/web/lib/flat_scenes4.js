@@ -362,6 +362,91 @@
   }
   RK.flatSets.cafe = { wall: wrap(cfWall, () => "#2F5D50", "#7A5236"), lamps: wrap(cfLamps), island: wrap(cfIsland), foreground: wrap(cfFore), sunlight: () => "", WALL_Y: WALL_Y * K };
 
+
+  // ================= ROOFTOP (ร้านอาหารดาดฟ้ากลางคืน) =================
+  RK.flatDefs += `
+  <linearGradient id="rtSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151B45"/><stop offset=".6" stop-color="#3B2F6E"/><stop offset="1" stop-color="#C2607A"/></linearGradient>
+  <radialGradient id="rtBulb"><stop offset="0" stop-color="#FFE7A6" stop-opacity=".95"/><stop offset="1" stop-color="#FFB45C" stop-opacity="0"/></radialGradient>`;
+  function rtWall(t, o) {
+    let s = R(-2600, -3400, 5200, 3400 + WALL_Y, "url(#rtSky)");
+    const r = RK.rng(21);
+    for (let i = 0; i < 60; i++) s += C(-2500 + r() * 5000, -3300 + r() * 1300, 3 + r() * 4, "#FFFFFF", `opacity="${(0.3 + 0.5 * Math.abs(Math.sin(t * 1.5 + i))).toFixed(2)}"`);
+    s += C(1500, -2700, 110, "#FFF4D0") + C(1540, -2720, 100, "#2A2560");
+    // เส้นขอบฟ้าเมือง 2 ชั้น
+    for (let layer = 0; layer < 2; layer++) for (let i = 0; i < 16; i++) { const bx = -2600 + i * 340 + layer * 160, bh = 500 + r() * (layer ? 1100 : 700), bw = 260 + r() * 80, c = layer ? "#1E2250" : "#2E3368";
+      s += R(bx, WALL_Y - 600 - bh + layer * 200, bw, bh, c); for (let yy = WALL_Y - 560 - bh + layer * 200; yy < WALL_Y - 640 + layer * 200; yy += 70) for (let xx = bx + 20; xx < bx + bw - 30; xx += 50) if (r() < 0.4) s += R(xx, yy, 22, 34, r() < 0.8 ? "#FFD27A" : "#8FD3FF", `opacity="${layer ? 0.9 : 0.6}"`); }
+    s += R(1700, -2600, 50, 900, "#1E2250") + C(1725, -2620, 16, "#FF4D4D", `opacity="${0.4 + 0.6 * (Math.floor(t * 1.5) % 2)}"`);
+    // ราวกันตกกระจก + พื้นไม้ระเบียง
+    s += R(-2600, -700, 5200, 630, "#9FD3FF", 'opacity=".12"') + R(-2600, -720, 5200, 22, "#C9CED8");
+    for (let x = -2600; x < 2600; x += 520) s += R(x, -720, 18, 650, "#C9CED8");
+    s += R(-2600, WALL_Y, 5200, 1800, "#5A3E2E"); for (let y = WALL_Y; y < WALL_Y + 1800; y += 60) s += L(-2600, y, 2600, y, "#4A3226", 3);
+    // ต้นไม้กระถางสูง
+    for (const px of [-1900, 1950]) s += RR(px - 130, -420, 260, 350, 20, "#2A2E35") + C(px, -560, 180, "#2F6B3A") + C(px - 80, -680, 140, "#3E8A46") + C(px + 70, -760, 120, "#4E8A44");
+    return s;
+  }
+  function rtLamps(t, o) {
+    // ไฟสายระโยง 2 เส้น
+    let s = "";
+    for (let k = 0; k < 2; k++) { const y0 = -1900 + k * 260; s += Pth(`M -2600,${y0} Q 0,${y0 + 380} 2600,${y0}`, "none", ST("#1A1A22", 4));
+      for (let i = 0; i <= 26; i++) { const u = i / 26, x = -2600 + u * 5200, y = y0 + 4 * 380 * u * (1 - u) * 0.5 * 2 * 0.5 * 2; const yy = y0 + 380 * 4 * u * (1 - u) * 0.5; const fl = 0.75 + 0.25 * Math.sin(t * 3 + i * 1.7 + k);
+        s += C(x, yy + 26, 70, "url(#rtBulb)", `opacity="${(0.55 * fl).toFixed(2)}"`) + C(x, yy + 26, 14, "#FFE7A6"); } }
+    return s;
+  }
+  function rtIsland(t, o) {
+    const x0 = o.tableX ?? 0, top = -260, w = 1250;
+    let s = E(x0, 40, w * 0.5, 36, "#0A0612", 'opacity=".35"') + R(x0 - w / 2 + 20, top, w - 40, 320, "#F4EFE6") + R(x0 - w / 2 + 20, top + 200, w - 40, 14, "#C9493B", 'opacity=".7"');
+    s += RR(x0 - w / 2, top - 24, w, 36, 10, "#FFFFFF");
+    // เทียน + จาน + แก้วไวน์น้ำแดง
+    const fl = 1 + 0.15 * Math.sin(t * 9);
+    s += R(x0 - 22, top - 150, 44, 130, "#F7EBD8") + E(x0, top - 168, 14 * fl, 26 * fl, "#FFC24A") + C(x0, top - 160, 120, "url(#rtBulb)", 'opacity=".55"');
+    for (const sx of [-1, 1]) { const px = x0 + sx * 320; s += E(px, top - 30, 150, 26, "#FFFFFF", 'stroke="#D9CDB8" stroke-width="3"') + E(px, top - 38, 100, 18, o.empty ? "#F4EFE6" : "#E4A13A") + (o.empty ? "" : C(px - 30, top - 50, 22, "#3E8A46") + C(px + 30, top - 48, 20, "#C9493B"));
+      const gx = x0 + sx * 120; s += Pth(`M ${gx - 34},${top - 200} L ${gx + 34},${top - 200} Q ${gx + 34},${top - 120} ${gx},${top - 110} Q ${gx - 34},${top - 120} ${gx - 34},${top - 200} Z`, "#E9F2F6", 'opacity=".8"') + Pth(`M ${gx - 30},${top - 165} L ${gx + 30},${top - 165} Q ${gx + 28},${top - 122} ${gx},${top - 114} Q ${gx - 28},${top - 122} ${gx - 30},${top - 165} Z`, "#B3262C") + L(gx, top - 110, gx, top - 30, "#E9F2F6", 6) + E(gx, top - 28, 30, 8, "#E9F2F6"); }
+    return s;
+  }
+  RK.flatSets.rooftop = { wall: wrap(rtWall, () => "#151B45", "#5A3E2E"), lamps: wrap(rtLamps), island: wrap(rtIsland), foreground: wrap((t, o) => ""), sunlight: () => "", WALL_Y: WALL_Y * K };
+
+  // ================= POTTERY (คลาสปั้นดิน) =================
+  //  setOpts { wheels:[x...] ตำแหน่งแป้นหมุน, clay:"tall|bowl|wonky" }
+  function ptWall(t, o) {
+    let s = R(-2200, -2600, 4400, 2600 + WALL_Y, "#E0A458") + R(-2200, -2600, 4400, 900, "#D38F43");
+    for (let x = -2200; x < 2200; x += 260) s += L(x, -1700, x, WALL_Y, "#CC9248", 4, 'opacity=".5"');
+    // หน้าต่างโค้งแสงเช้า
+    for (const wx of [-1650, 1100]) { s += Pth(`M ${wx},-900 L ${wx},-1900 Q ${wx + 280},-2250 ${wx + 560},-1900 L ${wx + 560},-900 Z`, "#7A4A2C") + Pth(`M ${wx + 30},-930 L ${wx + 30},-1890 Q ${wx + 280},-2200 ${wx + 530},-1890 L ${wx + 530},-930 Z`, "#BFE3F0") + L(wx + 280, -2150, wx + 280, -930, "#7A4A2C", 14) + L(wx + 30, -1400, wx + 530, -1400, "#7A4A2C", 14) + C(wx + 140, -1700, 80, "#5DAA4E", 'opacity=".7"'); }
+    // ชั้นวางงานปั้น 3 ชั้น
+    const sx = -900, sy = -2000, colors = ["#B5523F", "#E9DCC4", "#3E7FA8", "#C9A36A", "#7A9A6A", "#F2C14E", "#E9DCC4", "#9A6A4A"];
+    for (let k = 0; k < 3; k++) { const y = sy + k * 380; s += R(sx, y, 1800, 30, "#6E4A30");
+      for (let i = 0; i < 8; i++) { const px = sx + 80 + i * 215, c = colors[(i + k * 3) % 8], tp = (i + k) % 3; s += tp === 0 ? Pth(`M ${px - 60},${y} Q ${px - 80},${y - 150} ${px - 30},${y - 200} L ${px + 30},${y - 200} Q ${px + 80},${y - 150} ${px + 60},${y} Z`, c) + E(px, y - 200, 30, 8, sh(c, -0.3))
+        : tp === 1 ? Pth(`M ${px - 80},${y - 90} Q ${px},${y + 30} ${px + 80},${y - 90} Z`, c) + E(px, y - 90, 80, 14, sh(c, -0.25)) : RR(px - 50, y - 160, 100, 160, 30, c) + Pth(`M ${px + 50},${y - 120} q 40,10 0,60`, "none", ST(c, 14)); } }
+    // ป้าย + ผ้ากันเปื้อนแขวน
+    s += RR(-300, -2480, 600, 150, 20, "#5A3A26") + T(0, -2380, "คลาสปั้นดิน", 90, "#F7EBD8");
+    for (let i = 0; i < 4; i++) s += L(1200 + i * 150, -760, 1200 + i * 150, -700, "#5A3A26", 6) + Pth(`M ${1150 + i * 150},-700 L ${1250 + i * 150},-700 L ${1270 + i * 150},-420 L ${1130 + i * 150},-420 Z`, ["#3E6FB0", "#C9493B", "#3E8A6E", "#F2C14E"][i]);
+    // พื้นปูนขัด + คราบดิน
+    s += R(-2200, WALL_Y, 4400, 1800, "#B9ADA0"); for (let i = 0; i < 14; i++) s += E(-1900 + i * 290, 200 + (i % 3) * 140, 70, 18, "#9A7A5A", 'opacity=".35"');
+    return s;
+  }
+  function ptIsland(t, o) {
+    // โต๊ะแป้นหมุนยาว (ซ่อนขาคนนั่ง) + ดินบนแป้นหมุน
+    const top = -260, w = 2200;
+    let s = E(0, 40, w * 0.48, 36, "#3A2A20", 'opacity=".3"') + R(-w / 2, top, w, 320, "#8A6A4A") + RR(-w / 2 - 20, top - 30, w + 40, 44, 10, "#A9845A");
+    const clay = o.clay || "tall";
+    for (const [i, wx] of (o.wheels || [-300, 300]).entries()) {
+      const spin = t * 7 + i, form = Array.isArray(clay) ? clay[i] : clay;
+      s += `<g transform="translate(${f(wx)},${top}) scale(.72) translate(${f(-wx)},${-top})">`;
+      s += E(wx, top - 34, 200, 34, "#4A4E57") + E(wx, top - 44, 180, 28, "#6E737A");
+      for (let k = 0; k < 6; k++) { const a = spin + k * Math.PI / 3, xx = wx + Math.cos(a) * 150; if (Math.sin(a) > 0) s += L(xx, top - 52, xx, top - 38, "#4A4E57", 5); }
+      const cc = "#B5734A", hi = "#D08F64";
+      if (form === "bowl") s += Pth(`M ${wx - 120},${top - 160} Q ${wx - 110},${top - 50} ${wx},${top - 48} Q ${wx + 110},${top - 50} ${wx + 120},${top - 160} Z`, cc) + E(wx, top - 160, 120, 22, "#8E5434");
+      else if (form === "wonky") { const wb = Math.sin(spin) * 18; s += Pth(`M ${wx - 70},${top - 50} Q ${wx - 120 + wb},${top - 160} ${wx - 30 + wb * 1.5},${top - 260} L ${wx + 40 + wb * 1.5},${top - 250} Q ${wx + 110 + wb},${top - 150} ${wx + 70},${top - 50} Z`, cc) + E(wx + wb * 1.5, top - 255, 36, 10, "#8E5434"); }
+      else s += Pth(`M ${wx - 80},${top - 50} Q ${wx - 110},${top - 170} ${wx - 50},${top - 270} L ${wx + 50},${top - 270} Q ${wx + 110},${top - 170} ${wx + 80},${top - 50} Z`, cc) + E(wx, top - 270, 50, 12, "#8E5434");
+      for (let k = 0; k < 3; k++) { const yy = top - 90 - k * 55 - ((spin * 20) % 55); s += L(wx - 70 + k * 8, yy, wx + 70 - k * 8, yy, hi, 4, 'opacity=".5"'); }
+      s += `</g>`;
+    }
+    // ถังน้ำ + ฟองน้ำ + เครื่องมือ
+    s += RR(-1000, top - 140, 150, 120, 16, "#3E7FA8") + E(-925, top - 140, 75, 14, "#8FC3E6") + RR(860, top - 70, 120, 50, 10, "#F2C14E") + L(700, top - 40, 800, top - 60, "#6E4A30", 10);
+    return s;
+  }
+  RK.flatSets.pottery = { wall: wrap(ptWall, () => "#E0A458", "#B9ADA0"), lamps: wrap((t, o) => ""), island: wrap(ptIsland), foreground: wrap((t, o) => RR(-1950, 340, 300, 260, 30, "#B5523F") + C(-1800, 280, 140, "#3E8A46") + C(-1720, 200, 100, "#5DAA4E")), sunlight: wrap((t, o) => Pth("M -1600,-1900 L -1100,-1900 L -300,400 L -1300,400 Z", "#FFF4C8", 'opacity=".12"') + Pth("M 1150,-1900 L 1650,-1900 L 2200,400 L 1400,400 Z", "#FFF4C8", 'opacity=".12"')), WALL_Y: WALL_Y * K };
+
   // ฉากสีเรียบ (ใช้ทำปก: เรนเดอร์บนเขียวแล้วตัดพื้นออก)
   const plainW = (t, o) => R(-6000, -6000, 12000, 12000, o.color || "#00FF00"), nil = () => "";
   RK.flatSets.plain = { wall: plainW, lamps: nil, island: nil, foreground: nil, sunlight: nil, WALL_Y: WALL_Y * K };

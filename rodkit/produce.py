@@ -373,7 +373,7 @@ def main():
     duck = 1 - 0.6 * np.clip(env / (env.max() + 1e-6) * 3, 0, 1)
     mix = vbus * 1.0 + fbus * 0.9 + mbus * (0.32 * duck)[:, None]
     if ep.get("ambience") == "auto":  # เสียงบรรยากาศเปลี่ยนตามฉากของแต่ละช็อต (เฟดข้ามช็อต 0.3 วิ)
-        AMAP = {"kitchen": "kitchen", "market": "market", "office": "office", "meeting": "office", "bedroom": "bedroom", "porch": "morning", "park": "morning", "living": "kitchen", "dining": "kitchen", "backyard": "morning", "housefront": "street", "condo": "bedroom", "cafe": "office"}
+        AMAP = {"kitchen": "kitchen", "market": "market", "office": "office", "meeting": "office", "bedroom": "bedroom", "porch": "morning", "park": "morning", "living": "kitchen", "dining": "kitchen", "backyard": "morning", "housefront": "street", "condo": "bedroom", "cafe": "office", "rooftop": "street", "pottery": "morning"}
         T0 = 0.0; cache = {}
         for S in ep["shots"]:
             an = S.get("ambience") or AMAP.get(S.get("set") or ep.get("set"), None); a0 = int(T0 * AU.SR); T0 += S["dur"]; a1 = min(n, int(T0 * AU.SR))

@@ -1,0 +1,1149 @@
+{
+ "id": "ST007",
+ "engine": "flat",
+ "fps": 30,
+ "set": "rooftop",
+ "title": "พร้อมรักใหม่หรือยัง",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_date_wide",
+   "set": "rooftop",
+   "cam": {
+    "x": [
+     [
+      0,
+      -60
+     ],
+     [
+      3.5,
+      0
+     ]
+    ],
+    "y": -360,
+    "z": [
+     [
+      0,
+      1.25
+     ],
+     [
+      3.5,
+      1.35
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "laugh"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "smile"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เก้าเดือนหลังเลิกกับภูมิ"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้าตกลงไปเดตครั้งแรก"
+    }
+   ]
+  },
+  {
+   "name": "s02_fah_talk",
+   "set": "rooftop",
+   "cam": {
+    "x": -260,
+    "y": -330,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "laugh"
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ร้านนี้ภูมิเคยพามาเหมือนกัน"
+    },
+    {
+     "who": "fah",
+     "text": "ภูมิชอบสั่งพาสต้า แล้วก็…"
+    }
+   ]
+  },
+  {
+   "name": "s03_ton_smile",
+   "set": "rooftop",
+   "cam": {
+    "x": 260,
+    "y": -330,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "smile"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ต้นยิ้มรับอย่างสุภาพ"
+    },
+    {
+     "who": "narrator",
+     "text": "ขณะที่ฟ้าเล่าเรื่องภูมิ ไปอีกครึ่งชั่วโมง"
+    }
+   ]
+  },
+  {
+   "name": "s04_title",
+   "set": "rooftop",
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      40
+     ]
+    ],
+    "y": -420,
+    "z": [
+     [
+      0,
+      1.05
+     ],
+     [
+      3,
+      1.15
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "พร้อมรักใหม่ หรือยัง",
+     "size": 100
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "จะรู้ได้ยังไง ว่าเราพร้อมรักใหม่แล้ว"
+    }
+   ]
+  },
+  {
+   "name": "s05_te_setup",
+   "set": "office",
+   "cut": "whip",
+   "cam": {
+    "x": 20,
+    "y": -370,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "smile"
+    },
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 6,
+     "x": 250,
+     "dir": -1,
+     "mood": "laugh"
+    }
+   ],
+   "say": [
+    {
+     "who": "te",
+     "text": "พี่ฟ้า ผมมีเพื่อนจะแนะนำ คนนี้ดีมาก!"
+    },
+    {
+     "who": "fah",
+     "text": "ได้เลย จะได้ลืมภูมิสักที"
+    }
+   ]
+  },
+  {
+   "name": "s06_sign1",
+   "set": "office",
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "เดตเพื่อลืมใครบางคน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "นี่คือสัญญาณแรก ว่ายังไม่พร้อม"
+    },
+    {
+     "who": "narrator",
+     "text": "ไปเดต เพื่อลืมคนเก่า"
+    }
+   ]
+  },
+  {
+   "name": "s07_sign2",
+   "set": "rooftop",
+   "cut": "whip",
+   "cam": {
+    "x": -260,
+    "y": -330,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -260,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 470,
+     "text": "ภูมิไม่สั่งแบบนี้หรอก"
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "เทียบกับคนเก่า",
+     "y": 260
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สัญญาณที่สอง"
+    },
+    {
+     "who": "narrator",
+     "text": "คือเปรียบเทียบเขากับคนเก่า ตลอดเวลา"
+    }
+   ]
+  },
+  {
+   "name": "s08_sign3",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ยังแอบดูโซเชียลเขา",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "notify",
+     "at": 0.3,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "และสัญญาณสุดท้าย"
+    },
+    {
+     "who": "narrator",
+     "text": "กลับบ้านมา ยังแอบดูโซเชียลของภูมิอยู่"
+    }
+   ]
+  },
+  {
+   "name": "s09_realize",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 150,
+    "y": -460,
+    "z": 2.6
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sigh",
+     "at": 0.1,
+     "gain": 0.5
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้ายังไม่พร้อมเลยนี่นา"
+    }
+   ]
+  },
+  {
+   "name": "s10_honest",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 980,
+     "s": 0.85,
+     "name": "ต้น",
+     "time": "23:10",
+     "msgs": [
+      {
+       "me": true,
+       "text": "ขอโทษนะต้น ฟ้ายังไม่พร้อม"
+      },
+      {
+       "me": true,
+       "text": "เป็นเพื่อนกันก่อนได้ไหม"
+      },
+      {
+       "me": false,
+       "text": "ได้สิ ไม่ต้องรีบนะ"
+      }
+     ]
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "บอกความจริง",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.6,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สิ่งที่ฟ้าทำถูก"
+    },
+    {
+     "who": "narrator",
+     "text": "คือบอกความจริง ก่อนที่ใครจะเจ็บ"
+    }
+   ]
+  },
+  {
+   "name": "s11_jan",
+   "set": "office",
+   "setOpts": {
+    "late": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -370,
+    "z": 1.5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat"
+    },
+    {
+     "who": "jan",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 7,
+     "x": 220,
+     "dir": -1,
+     "mood": "smile",
+     "arms": "give"
+    }
+   ],
+   "say": [
+    {
+     "who": "jan",
+     "text": "ไม่ต้องรีบนะฟ้า"
+    },
+    {
+     "who": "jan",
+     "text": "ความรักไม่ใช่การแข่ง ว่าใครมูฟออนก่อน"
+    }
+   ]
+  },
+  {
+   "name": "s12_pottery",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -300
+    ],
+    "clay": "tall"
+   },
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -200
+     ],
+     [
+      3.5,
+      -280
+     ]
+    ],
+    "y": -360,
+    "z": [
+     [
+      0,
+      1.5
+     ],
+     [
+      3.5,
+      1.7
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -300,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "happy",
+     "arms": "give"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "เติมชีวิตตัวเอง",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.25
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ฟ้าเลยหันมาใช้เวลากับตัวเอง"
+    },
+    {
+     "who": "narrator",
+     "text": "ลงเรียนปั้นดิน ที่อยากทำมานาน"
+    }
+   ]
+  },
+  {
+   "name": "s13_for_self",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -300
+    ],
+    "clay": "bowl"
+   },
+   "cam": {
+    "x": -300,
+    "y": -360,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -300,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "smile",
+     "arms": "give"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ไม่ใช่เพื่อรอใคร"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่เพราะชีวิตนี้ เป็นของเธอ"
+    }
+   ]
+  },
+  {
+   "name": "s14_ready1",
+   "set": "park",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -500
+     ],
+     [
+      3.5,
+      -100
+     ]
+    ],
+    "y": -380,
+    "z": 1.35
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "dir": 1,
+     "x": [
+      [
+       0,
+       -900
+      ],
+      [
+       3.5,
+       0
+      ]
+     ],
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "นึกถึงได้ ไม่เจ็บ",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "steps",
+     "at": 0.2,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แล้ววันหนึ่ง เธอนึกถึงภูมิ"
+    },
+    {
+     "who": "narrator",
+     "text": "ได้โดยไม่เจ็บอีกแล้ว"
+    }
+   ]
+  },
+  {
+   "name": "s15_ready2",
+   "set": "condo",
+   "cam": {
+    "x": -300,
+    "y": -360,
+    "z": 1.6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -300,
+     "mood": "happy",
+     "prop": "bowlP",
+     "arms": "hold"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "อยู่คนเดียวได้",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "อยู่คนเดียวได้ โดยไม่รู้สึกว่าขาด"
+    }
+   ]
+  },
+  {
+   "name": "s16_ready3",
+   "set": "condo",
+   "cam": {
+    "x": -280,
+    "y": -400,
+    "z": 2.0
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -280,
+     "mood": "smile",
+     "prop": "notebookP",
+     "arms": "hold"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "รู้ว่าเรียนรู้อะไร",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "และรู้แล้วว่า จากรักครั้งก่อน"
+    },
+    {
+     "who": "narrator",
+     "text": "เธอได้เรียนรู้อะไร"
+    }
+   ]
+  },
+  {
+   "name": "s17_ton_arrives",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "tall",
+     "wonky"
+    ]
+   },
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      20
+     ]
+    ],
+    "y": -330,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "shock",
+     "arms": "give"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "laugh",
+     "arms": "give"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ส่วนต้น เขาไม่ได้หายไปไหน"
+    },
+    {
+     "who": "narrator",
+     "text": "เขามาลงเรียนปั้นดินด้วย ในฐานะเพื่อน"
+    }
+   ]
+  },
+  {
+   "name": "s18_friends",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "tall",
+     "wonky"
+    ]
+   },
+   "cam": {
+    "x": 240,
+    "y": -360,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "laugh",
+     "arms": "give"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "เริ่มจากเพื่อน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ครั้งนี้ ไม่มีใครรีบ"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่มีใครถูกใช้แทนใคร"
+    }
+   ]
+  },
+  {
+   "name": "s19_laugh",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "tall",
+     "wonky"
+    ]
+   },
+   "cam": {
+    "x": -240,
+    "y": -360,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "laugh",
+     "arms": "give"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.3,
+     "gain": 0.25
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ของต้นเบี้ยวกว่าของฟ้าอีก!"
+    }
+   ]
+  },
+  {
+   "name": "s20_end",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "tall",
+     "wonky"
+    ]
+   },
+   "cam": {
+    "x": 0,
+    "y": -380,
+    "z": 1.3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "happy",
+     "arms": "give"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 8,
+     "mood": "laugh",
+     "arms": "give"
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "เราพร้อมรักใหม่",
+      "ไม่ใช่ตอนที่เจอใคร",
+      "แต่ตอนที่อยู่คนเดียวได้"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เราพร้อมรักใหม่ ไม่ใช่ตอนที่เจอใคร แต่ตอนที่อยู่คนเดียวได้อย่างมีความสุข",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}
