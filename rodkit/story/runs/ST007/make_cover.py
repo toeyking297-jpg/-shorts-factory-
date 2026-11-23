@@ -49,4 +49,8 @@ cv.alpha_composite(t.rotate(-3,resample=Image.BICUBIC),(0,30))
 f3=ImageFont.truetype(F,62); q='3 สัญญาณว่ายังไม่พร้อม'; bb=d.textbbox((0,0),q,font=f3); tw=bb[2]-bb[0]
 d.rounded_rectangle([(W-tw)//2-40,560,(W+tw)//2+40,660],30,fill=(30,16,40)); d.text((W//2,608),q,font=f3,fill='white',anchor='mm')
 f4=ImageFont.truetype(F,46); d.rounded_rectangle([36,40,262,118],38,fill=(255,214,90),outline=(30,16,40),width=6); d.text((149,78),'ดูเพลิน',font=f4,fill=(30,16,40),anchor='mm')
+
+# ป้าย EP (มุมขวาบน)
+fe=ImageFont.truetype(F,64); d=ImageDraw.Draw(cv)
+d.rounded_rectangle([W-300,34,W-36,124],44,fill=(229,72,77),outline=(30,16,40),width=6); d.text((W-168,79),'EP.3',font=fe,fill='white',anchor='mm')
 cv.convert('RGB').save('/tmp/ST007_ปก.jpg',quality=93); cv.convert('RGB').resize((450,800)).save('/tmp/c7.jpg')

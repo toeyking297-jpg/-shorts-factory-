@@ -370,6 +370,37 @@
    "reveal_method": "self_realization_after_contrast",
    "key_object": "แจกันปั้นเบี้ยว",
    "new_assets": "ฉาก rooftop, pottery; ตัวละคร ton (ยังไม่มีเสียง)"
+  },
+  {
+   "id": "ST008",
+   "title": "ให้โอกาสอีกครั้ง",
+   "status": "producing 2026-11-23",
+   "series": "ซีรีส์ฟ้า EP.4",
+   "slot": "night",
+   "format": "guide_story",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum",
+     "fdad",
+     "fmom",
+     "fsis"
+    ],
+    "extra": [
+     "ton",
+     "narrator"
+    ]
+   },
+   "owner_request": "กลับมาดีกับภูมิ ให้โอกาสกัน; ภูมิไปขอโทษพ่อ แม่ น้องสาวของฟ้า และเปลี่ยนเป็นคนใหม่ได้จริง",
+   "want": "ฟ้ากับภูมิอยากเริ่มใหม่",
+   "conflict": "ต้องไม่จบแบบเดิม ครอบครัวฟ้ายังไม่ให้อภัย",
+   "decision": "คุยเรื่องเก่าให้จบ ภูมิขอโทษครอบครัวถึงบ้าน ตั้งกติกาใหม่",
+   "ending": "ครอบครัวค่อยๆ ยอมรับ มิ้นท์ยิ้มให้ กติกาใหม่ใช้ได้จริง จบที่ท่าน้ำ",
+   "initial_belief": "การกลับมาคบ = ย้อนกลับไปเหมือนเดิม",
+   "hidden_truth": "โอกาสครั้งที่สองคือเริ่มใหม่กับคนเดิมที่ไม่เหมือนเดิม พิสูจน์ด้วยการกระทำต่อเนื่อง",
+   "reveal_method": "proof_by_repeated_actions",
+   "key_object": "การไหว้ขอโทษครอบครัว",
+   "new_assets": "ฉาก riverside; ตัวละคร fdad/fmom/fsis (มิ้นท์) ยังไม่มีเสียง; ท่า wai; housefront รับ houseNo/soi"
   }
  ],
  "owner_taste": {
