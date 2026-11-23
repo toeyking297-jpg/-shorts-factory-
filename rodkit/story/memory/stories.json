@@ -401,6 +401,71 @@
    "reveal_method": "proof_by_repeated_actions",
    "key_object": "การไหว้ขอโทษครอบครัว",
    "new_assets": "ฉาก riverside; ตัวละคร fdad/fmom/fsis (มิ้นท์) ยังไม่มีเสียง; ท่า wai; housefront รับ houseNo/soi"
+  },
+  {
+   "id": "ST009",
+   "title": "ทะเลาะครั้งแรก",
+   "series": "ซีรีส์ฟ้า EP.5",
+   "status": "producing 2026-11-23",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum"
+    ]
+   },
+   "conflict": "ภูมิมารับช้า แบตหมด ฟ้ายืนรอใต้ฝน ความกลัวเก่ากลับมา",
+   "decision": "ขอพัก แล้วพูดความรู้สึก",
+   "ending": "คืนดีก่อนนอน ภูมิพกแบตสำรอง",
+   "initial_belief": "ทะเลาะ = รักกำลังพัง",
+   "hidden_truth": "ที่โกรธจริงคือความกลัวจะกลับไปเป็นแบบเดิม",
+   "reveal_method": "pause_then_name_the_fear",
+   "key_object": "มือถือแบตหมด / แบตสำรอง",
+   "new_assets": "ฉาก busstop (ฝนกลางคืน)"
+  },
+  {
+   "id": "ST010",
+   "title": "บ้านของภูมิ",
+   "series": "ซีรีส์ฟ้า EP.6",
+   "status": "producing 2026-11-23",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum",
+     "pmom"
+    ]
+   },
+   "conflict": "แม่นวลเย็นชา ฟ้ากินปลาร้าไม่ได้",
+   "decision": "ไม่ฝืน ไม่ให้แฟนเลือกข้าง ขอแม่สอนนึ่งข้าวเหนียว",
+   "ending": "แม่นวลเจียวไข่ให้ฟ้าทั้งที่ไม่มีใครขอ",
+   "initial_belief": "แม่ของภูมิไม่ชอบฟ้า",
+   "hidden_truth": "แม่กลัวลูกเจ็บอีกครั้ง (กระจกของครอบครัวฟ้าใน EP.4)",
+   "reveal_method": "mother_tells_past",
+   "key_object": "หวดนึ่งข้าวเหนียว / ไข่เจียว",
+   "new_assets": "ฉาก isan (บ้านใต้ถุนสูง ทุ่งนา เสื่อ เตานึ่ง); ตัวละคร pmom แม่นวล (ไม่มีเสียง)"
+  },
+  {
+   "id": "ST011",
+   "title": "ก้าวต่อไป",
+   "series": "ซีรีส์ฟ้า EP.7 (จบซีรีส์)",
+   "status": "producing 2026-11-23",
+   "cast": {
+    "main": "fah",
+    "support": [
+     "phum",
+     "ton",
+     "fdad",
+     "fmom",
+     "fsis"
+    ]
+   },
+   "conflict": "ก่อนก้าวไปอีกขั้นต้องคุยเรื่องยาก",
+   "decision": "คุยเงิน คุยอนาคต ไม่รีบเพราะแรงกดดัน",
+   "ending": "ภูมิขอแต่งงานด้วยถ้วยปั้นเองที่งานวัด ฟ้าตกลง สองครอบครัวยินดี",
+   "initial_belief": "แต่งงาน = จุดจบของปัญหา",
+   "hidden_truth": "รักที่ดีคือรักที่สองคนช่วยกันซ่อม",
+   "reveal_method": "series_recap",
+   "key_object": "ถ้วยปั้นเบี้ยว + แหวน",
+   "new_assets": "ฉาก fair (งานวัด ชิงช้าสวรรค์)"
   }
  ],
  "owner_taste": {
