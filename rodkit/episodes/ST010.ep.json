@@ -1,0 +1,935 @@
+{
+ "id": "ST010",
+ "engine": "flat",
+ "fps": 30,
+ "set": "isan",
+ "title": "บ้านของภูมิ",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_arrive",
+   "set": "isan",
+   "cam": {
+    "x": [
+     [
+      0,
+      -260
+     ],
+     [
+      4,
+      -120
+     ]
+    ],
+    "y": [
+     [
+      0,
+      -800
+     ],
+     [
+      4,
+      -620
+     ]
+    ],
+    "z": [
+     [
+      0,
+      1.0
+     ],
+     [
+      4,
+      1.15
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -300,
+     "dir": 1,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "happy",
+     "x": -60,
+     "dir": 1
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สงกรานต์ปีนี้ ภูมิพาฟ้ากลับบ้านที่ขอนแก่น"
+    },
+    {
+     "who": "narrator",
+     "text": "ครั้งแรกที่ฟ้าจะได้เจอแม่ของเขา"
+    }
+   ]
+  },
+  {
+   "name": "s02_greet",
+   "set": "isan",
+   "cam": {
+    "x": 0,
+    "y": -470,
+    "z": 1.35
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "mood": "flat",
+     "x": -230
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 200,
+     "mood": "worried",
+     "arms": "wai",
+     "tilt": 6
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "สวัสดีค่ะคุณแม่"
+    },
+    {
+     "who": "narrator",
+     "text": "แม่นวลรับไหว้ แต่ไม่ยิ้ม"
+    }
+   ]
+  },
+  {
+   "name": "s03_title",
+   "set": "isan",
+   "cam": {
+    "x": 0,
+    "y": -900,
+    "z": [
+     [
+      0,
+      0.85
+     ],
+     [
+      3,
+      0.92
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "mood": "flat",
+     "x": -230
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 200,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "บ้าน ของภูมิ",
+     "size": 110
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เข้าบ้านแฟนครั้งแรก ควรทำตัวยังไง"
+    }
+   ]
+  },
+  {
+   "name": "s04_dinner",
+   "set": "isan",
+   "setOpts": {
+    "mat": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -40,
+    "y": -400,
+    "z": 1.2
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "x": -380,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": -60,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "smile"
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 280,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "มื้อแรก มีส้มตำปลาร้ากับแจ่วบอง"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้ากินปลาร้าไม่เป็น"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ฝืนกินจนน้ำตาซึม"
+    }
+   ]
+  },
+  {
+   "name": "s05_force",
+   "set": "isan",
+   "setOpts": {
+    "mat": true
+   },
+   "cam": {
+    "x": 280,
+    "y": -420,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 280,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "pain"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ฝืนจนไม่ใช่ตัวเอง",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "การฝืนตัวเองจนทรมาน"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่ได้ทำให้ใครรักเรามากขึ้น"
+    }
+   ]
+  },
+  {
+   "name": "s06_team",
+   "set": "isan",
+   "setOpts": {
+    "mat": true
+   },
+   "cam": {
+    "x": -60,
+    "y": -420,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": -60,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "เป็นทีมเดียวกัน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "แม่ครับ ฟ้ากินปลาร้าไม่ได้"
+    },
+    {
+     "who": "phum",
+     "text": "ผมเจียวไข่ให้ฟ้าเองนะครับ"
+    }
+   ]
+  },
+  {
+   "name": "s07_mom_nod",
+   "set": "isan",
+   "setOpts": {
+    "mat": true
+   },
+   "cam": {
+    "x": -380,
+    "y": -420,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "x": -380,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แม่นวลพยักหน้า แต่ยังไม่พูดอะไร"
+    }
+   ]
+  },
+  {
+   "name": "s08_vent",
+   "set": "isan",
+   "setOpts": {
+    "eve": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -470,
+    "z": 1.4
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "dir": 1,
+     "mood": "worried"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "flat",
+     "x": 200,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ให้แฟนเลือกข้าง",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "แม่ไม่ชอบฟ้าใช่ไหม"
+    },
+    {
+     "who": "phum",
+     "text": "แม่แค่ยังไม่รู้จักฟ้า"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้าอยากระบาย"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ไม่บังคับให้ภูมิเลือกข้าง"
+    }
+   ]
+  },
+  {
+   "name": "s09_no_post",
+   "set": "isan",
+   "setOpts": {
+    "eve": true
+   },
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "บ่นแม่แฟนลงโซเชียล",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "และไม่โพสต์บ่นลงโซเชียล"
+    },
+    {
+     "who": "narrator",
+     "text": "ว่าแม่แฟนใจร้าย"
+    }
+   ]
+  },
+  {
+   "name": "s10_ask",
+   "set": "isan",
+   "setOpts": {
+    "dawn": true,
+    "steam": true,
+    "steamX": 0
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -470,
+    "z": 1.2
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 14,
+     "mood": "flat",
+     "x": -280,
+     "dir": 1
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": 280,
+     "dir": -1,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ถามและเรียนรู้",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ตีห้าวันรุ่งขึ้น ฟ้าตื่นมาหาแม่ที่หน้าเตา"
+    },
+    {
+     "who": "fah",
+     "text": "คุณแม่คะ สอนฟ้านึ่งข้าวเหนียวได้ไหมคะ"
+    }
+   ]
+  },
+  {
+   "name": "s11_learn",
+   "set": "isan",
+   "setOpts": {
+    "dawn": true,
+    "steam": true,
+    "steamX": 0
+   },
+   "cam": {
+    "x": 0,
+    "y": -430,
+    "z": 1.55
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 14,
+     "mood": "flat",
+     "x": -230,
+     "dir": 1,
+     "arms": "point"
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": 230,
+     "dir": -1,
+     "mood": "worried",
+     "arms": "give"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.6,
+     "gain": 0.2
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แม่นวลสอนให้แช่ข้าว ล้างข้าว พลิกหวด"
+    },
+    {
+     "who": "narrator",
+     "text": "มือฟ้าโดนไอน้ำลวกจนแดง"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ไม่บ่นสักคำ"
+    }
+   ]
+  },
+  {
+   "name": "s12_story",
+   "set": "isan",
+   "setOpts": {
+    "dawn": true,
+    "steam": true,
+    "steamX": 0
+   },
+   "cam": {
+    "x": -260,
+    "y": -470,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "mood": "worried",
+     "x": -260
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แล้วแม่ก็เล่า"
+    },
+    {
+     "who": "narrator",
+     "text": "ตอนเลิกกับฟ้า"
+    },
+    {
+     "who": "narrator",
+     "text": "ภูมิกลับมานอนเงียบอยู่ที่บ้านนี้เป็นเดือน"
+    }
+   ]
+  },
+  {
+   "name": "s13_understand",
+   "set": "isan",
+   "setOpts": {
+    "dawn": true,
+    "steam": true,
+    "steamX": 0
+   },
+   "cam": {
+    "x": 260,
+    "y": -470,
+    "z": [
+     [
+      0,
+      2.3
+     ],
+     [
+      3,
+      2.5
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 260,
+     "mood": "shock"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ฟ้าถึงเข้าใจ"
+    },
+    {
+     "who": "narrator",
+     "text": "ความเย็นชาของแม่ ไม่ใช่เพราะเกลียด"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่เพราะกลัวลูกเจ็บอีกครั้ง"
+    }
+   ]
+  },
+  {
+   "name": "s14_promise",
+   "set": "isan",
+   "setOpts": {
+    "dawn": true,
+    "steam": true,
+    "steamX": 0
+   },
+   "cam": {
+    "x": 0,
+    "y": -430,
+    "z": 1.55
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 14,
+     "mood": "smile",
+     "x": -230,
+     "dir": 1
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": 230,
+     "dir": -1,
+     "mood": "smile",
+     "arms": "wai"
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้าจะดูแลภูมิให้ดีที่สุดค่ะ"
+    }
+   ]
+  },
+  {
+   "name": "s15_omelet",
+   "set": "isan",
+   "setOpts": {
+    "mat": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -40,
+    "y": -400,
+    "z": 1.2
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "x": -380,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": -60,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "happy"
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": -40,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 280,
+     "layer": "back",
+     "sink": 160,
+     "clipY": 0,
+     "mood": "happy"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ให้เวลาเขารู้จักเรา",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.3,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "มื้อเที่ยงวันนั้น มีไข่เจียววางข้างส้มตำ"
+    },
+    {
+     "who": "narrator",
+     "text": "แม่นวลทำไว้ให้ ทั้งที่ไม่มีใครขอ"
+    }
+   ]
+  },
+  {
+   "name": "s16_end",
+   "set": "isan",
+   "setOpts": {
+    "eve": true
+   },
+   "cam": {
+    "x": 0,
+    "y": [
+     [
+      0,
+      -900
+     ],
+     [
+      4,
+      -1100
+     ]
+    ],
+    "z": [
+     [
+      0,
+      0.9
+     ],
+     [
+      4,
+      0.8
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "pmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 14,
+     "mood": "smile",
+     "x": -300
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 0,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "happy",
+     "x": 300
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "การเข้าบ้านใคร",
+      "ไม่ใช่การเอาชนะใจ",
+      "แต่คือการให้เวลา",
+      "เขารู้จักเรา"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "การเข้าบ้านใคร ไม่ใช่การเอาชนะใจ แต่คือการให้เวลาเขารู้จักเรา",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}

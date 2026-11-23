@@ -1,0 +1,865 @@
+{
+ "id": "ST009",
+ "engine": "flat",
+ "fps": 30,
+ "set": "busstop",
+ "title": "ทะเลาะครั้งแรก",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_wait",
+   "set": "busstop",
+   "cam": {
+    "x": [
+     [
+      0,
+      -150
+     ],
+     [
+      3,
+      -150
+     ]
+    ],
+    "y": -420,
+    "z": [
+     [
+      0,
+      1.25
+     ],
+     [
+      3,
+      1.35
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 200,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -150,
+     "mood": "worried",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "phone_buzz",
+     "at": 0.3,
+     "gain": 0.3
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "x": 790,
+     "y": 640,
+     "s": 0.6,
+     "rot": 4,
+     "name": "ภูมิ",
+     "time": "19:40",
+     "msgs": [
+      {
+       "me": true,
+       "text": "ถึงไหนแล้ว"
+      },
+      {
+       "me": true,
+       "text": "รอที่ป้ายนะ"
+      },
+      {
+       "me": true,
+       "text": "ภูมิ?"
+      }
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หนึ่งทุ่มสี่สิบ"
+    },
+    {
+     "who": "narrator",
+     "text": "ภูมิบอกว่าจะมารับตอนหนึ่งทุ่ม"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้ายืนรอใต้ฝน"
+    },
+    {
+     "who": "narrator",
+     "text": "ข้อความไม่ถูกอ่านสักข้อ"
+    }
+   ]
+  },
+  {
+   "name": "s02_fear",
+   "set": "busstop",
+   "cam": {
+    "x": -150,
+    "y": -480,
+    "z": [
+     [
+      0,
+      2.3
+     ],
+     [
+      3,
+      2.5
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 200,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -150,
+     "mood": "pain"
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 520,
+     "text": "เขาหายไปเฉยๆ อีกแล้ว…"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ความกลัวเก่า กลับมาในทันที"
+    }
+   ]
+  },
+  {
+   "name": "s03_title",
+   "set": "busstop",
+   "cam": {
+    "x": 0,
+    "y": -520,
+    "z": [
+     [
+      0,
+      1.0
+     ],
+     [
+      3,
+      1.1
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 200,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -150,
+     "mood": "worried",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "ทะเลาะ ครั้งแรก",
+     "size": 104
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ทะเลาะกันยังไง ไม่ให้เลิกกัน"
+    }
+   ]
+  },
+  {
+   "name": "s04_phum_late",
+   "set": "office",
+   "setOpts": {
+    "late": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -200,
+    "y": -400,
+    "z": 1.8
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": -200,
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chip",
+     "t0": 0.2,
+     "t1": 99,
+     "x": 40,
+     "y": 150,
+     "w": 320,
+     "icon": "clock",
+     "text": "แบตหมด 0%"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ส่วนภูมิ ติดประชุมด่วน มือถือแบตหมด"
+    }
+   ]
+  },
+  {
+   "name": "s05_argue",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -370,
+    "z": 1.45
+   },
+   "handheld": 1.2,
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -220,
+     "dir": 1,
+     "mood": "worried",
+     "arms": "cross"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": 220,
+     "dir": -1
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ภูมิสัญญาแล้วนี่ ว่าจะไม่หายไปเฉยๆ"
+    },
+    {
+     "who": "phum",
+     "text": "ก็งานมันด่วน ทำไมต้องคิดมากขนาดนี้"
+    }
+   ]
+  },
+  {
+   "name": "s06_escalate",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": -220,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "handheld": 1.4,
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -220,
+     "mood": "pain"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ตอบโต้ตอนโกรธ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "คิดมากเหรอ ยืนตากฝนเป็นชั่วโมงเนี่ยนะ"
+    },
+    {
+     "who": "narrator",
+     "text": "ยิ่งพูด ยิ่งแรง"
+    }
+   ]
+  },
+  {
+   "name": "s07_almost",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": -220,
+    "y": -470,
+    "z": [
+     [
+      0,
+      2.5
+     ],
+     [
+      3,
+      2.8
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -220,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 470,
+     "text": "ก็เหมือนตอนที่ภูมิทิ้ง…"
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ขุดเรื่องเก่า",
+     "y": 260
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ประโยคต้องห้าม เกือบหลุดออกมา"
+    }
+   ]
+  },
+  {
+   "name": "s08_pause",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 0,
+    "y": -370,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -220,
+     "dir": 1,
+     "mood": "flat"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "flat",
+     "x": 220,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ขอพักก่อน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "เดี๋ยว… ขอพักสิบนาทีก่อนนะ"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้าเลือกหยุด"
+    },
+    {
+     "who": "narrator",
+     "text": "ก่อนพูดสิ่งที่ถอนคืนไม่ได้"
+    }
+   ]
+  },
+  {
+   "name": "s09_think",
+   "set": "condo",
+   "setOpts": {
+    "night": true,
+    "photo": "up"
+   },
+   "cam": {
+    "x": [
+     [
+      0,
+      -500
+     ],
+     [
+      3.5,
+      -560
+     ]
+    ],
+    "y": -700,
+    "z": 1.6
+   },
+   "dof": {
+    "bg": 2
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -700,
+     "dir": -1,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สิบนาทีนั้น ทั้งคู่ได้ถามตัวเอง"
+    },
+    {
+     "who": "narrator",
+     "text": "ว่าที่โกรธจริงๆ คือเรื่องอะไร"
+    }
+   ]
+  },
+  {
+   "name": "s10_feel",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -80,
+    "y": -430,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 4
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -80,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "พูดความรู้สึก",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้าไม่ได้โกรธที่ภูมิมาช้า"
+    },
+    {
+     "who": "fah",
+     "text": "ฟ้ากลัวว่าเราจะกลับไปเป็นแบบเดิม"
+    }
+   ]
+  },
+  {
+   "name": "s11_listen",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 320,
+    "y": -430,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 4
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": 320,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ฟังให้จบ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ขอโทษนะ เราไม่รู้เลยว่าฟ้ากลัวแบบนั้น"
+    },
+    {
+     "who": "phum",
+     "text": "ครั้งหน้าถ้าจะช้า เราจะหาทางบอกให้ได้"
+    }
+   ]
+  },
+  {
+   "name": "s12_powerbank",
+   "set": "office",
+   "cut": "whip",
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": -200,
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chip",
+     "t0": 0.2,
+     "t1": 99,
+     "x": 40,
+     "y": 150,
+     "w": 360,
+     "icon": "clock",
+     "text": "แบตสำรอง 100%"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "วันรุ่งขึ้น"
+    },
+    {
+     "who": "narrator",
+     "text": "ภูมิพกแบตสำรองติดกระเป๋าทุกวัน"
+    }
+   ]
+  },
+  {
+   "name": "s13_chatfight",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "x": 790,
+     "y": 760,
+     "s": 0.62,
+     "rot": 4,
+     "time": "23:02",
+     "msgs": [
+      {
+       "me": false,
+       "text": "ถึงบ้านแล้วนะ"
+      }
+     ],
+     "typing": "ก็แล้วแต่ภูมิละกัน",
+     "erase": true,
+     "typeSec": 1.0,
+     "hold": 0.5
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ประชด ทะเลาะผ่านแชท",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สิ่งที่ไม่ควรทำเวลาทะเลาะ"
+    },
+    {
+     "who": "narrator",
+     "text": "คือเงียบใส่ หรือประชด"
+    },
+    {
+     "who": "narrator",
+     "text": "และทะเลาะผ่านแชท"
+    },
+    {
+     "who": "narrator",
+     "text": "ที่ไม่เห็นสีหน้ากัน"
+    }
+   ]
+  },
+  {
+   "name": "s14_make_up",
+   "set": "condo",
+   "setOpts": {
+    "night": true
+   },
+   "cam": {
+    "x": 120,
+    "y": -380,
+    "z": 1.35
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -80,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": 320,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "คืนดีก่อนนอน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "คืนดีกันก่อนนอนนะ"
+    },
+    {
+     "who": "phum",
+     "text": "อือ ฝันดีนะฟ้า"
+    }
+   ]
+  },
+  {
+   "name": "s15_end",
+   "set": "busstop",
+   "cam": {
+    "x": 0,
+    "y": -520,
+    "z": 1.1
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 200,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -150,
+     "mood": "happy",
+     "dir": 1
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 200,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": 150,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "คู่ที่ดี ไม่ใช่คู่ที่ไม่เคยทะเลาะ",
+      "แต่คือคู่ที่ทะเลาะแล้ว",
+      "ยังหันหน้าเข้าหากัน"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "คู่ที่ดี ไม่ใช่คู่ที่ไม่เคยทะเลาะ แต่คือคู่ที่ทะเลาะแล้ว ยังหันหน้าเข้าหากัน",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}

@@ -493,6 +493,120 @@
   }
   RK.flatSets.riverside = { wall: wrap(rvWall, () => "#2E3570", "#7A5236"), lamps: wrap(rvLamps), island: wrap(rvIsland), foreground: wrap((t, o) => ""), sunlight: () => "", WALL_Y: WALL_Y * K };
 
+
+  // ================= BUSSTOP (ป้ายรถเมล์ ฝนตกกลางคืน) =================
+  function bsWall(t, o) {
+    let s = R(-2600, -3400, 5200, 3400 + WALL_Y, "#1B2238");
+    // ตึกฝั่งตรงข้ามเบลอ ไฟร้าน
+    const r = RK.rng(31);
+    for (let i = 0; i < 9; i++) { const bx = -2600 + i * 600, bh = 1300 + r() * 900; s += R(bx, WALL_Y - bh, 560, bh, i % 2 ? "#252E4A" : "#2C3656");
+      for (let yy = WALL_Y - bh + 80; yy < WALL_Y - 500; yy += 140) for (let xx = bx + 40; xx < bx + 520; xx += 110) if (r() < 0.5) s += R(xx, yy, 60, 80, r() < 0.7 ? "#FFD27A" : "#8FD3FF", 'opacity=".55"'); }
+    s += RR(-1900, -720, 700, 260, 20, "#E4572E", 'opacity=".85"') + T(-1550, -560, "7-11", 120, "#FFFFFF") + RR(600, -760, 900, 300, 20, "#2F8F6B", 'opacity=".8"') + T(1050, -580, "ร้านข้าวมันไก่", 90, "#FFFFFF");
+    // ถนนเปียก + แสงสะท้อน
+    s += R(-2600, -420, 5200, 350 + WALL_Y + 420, "#262C3C");
+    for (let i = 0; i < 12; i++) s += R(-2400 + i * 420, -300, 200, 14, "#E8E2D4", 'opacity=".5"');
+    for (let i = 0; i < 8; i++) { const x = -2300 + i * 600; s += R(x, -400, 40, 330, ["#FFD27A", "#E4572E", "#8FD3FF"][i % 3], 'opacity=".25"'); }
+    // ไฟรถวิ่งผ่าน
+    const cx = 2800 - ((t * 900) % 6200); s += RR(cx, -560, 520, 170, 40, "#2E3138") + C(cx + 30, -480, 30, "#FFF4C8") + C(cx + 30, -480, 140, "url(#s4Lamp)", 'opacity=".8"') + R(cx - 600, -490, 600, 40, "#FFF4C8", 'opacity=".12"');
+    // ทางเท้า
+    s += R(-2600, WALL_Y - 20, 5200, 1800, "#4A505E") + R(-2600, WALL_Y - 30, 5200, 30, "#8A8F96");
+    for (let x = -2600; x < 2600; x += 300) s += L(x, WALL_Y, x - 200, WALL_Y + 1800, "#3E4350", 4);
+    return s;
+  }
+  function bsLamps(t, o) {
+    // ศาลาป้ายรถเมล์ (หลังคน): หลังคา เสา ป้ายสาย ม้านั่ง
+    let s = R(-1500, -1500, 3000, 80, "#2F6FB0") + R(-1500, -1430, 3000, 30, "#1E4F80") + R(-1400, -1410, 40, 1350, "#8A8F96") + R(1360, -1410, 40, 1350, "#8A8F96");
+    s += R(-1360, -1400, 2720, 900, "#9FD3FF", 'opacity=".12"') + RR(-1250, -1340, 600, 520, 20, "#F2C14E") + T(-950, -1200, "สาย 8", 84, "#1E2230") + T(-950, -1070, "อนุสาวรีย์ฯ", 56, "#1E2230") + T(-950, -960, "สะพานพุทธ", 56, "#1E2230");
+    s += RR(650, -1340, 600, 520, 20, "#FFFFFF", 'opacity=".9"') + T(950, -1140, "โปรดรอรถ", 64, "#2F6FB0") + T(950, -1000, "ในศาลา", 64, "#2F6FB0");
+    s += R(-1200, -430, 2400, 40, "#6E737A") + R(-1150, -390, 40, 330, "#6E737A") + R(1110, -390, 40, 330, "#6E737A");
+    s += C(0, -1450, 420, "url(#s4Lamp)", 'opacity=".45"') + RR(-120, -1430, 240, 30, 10, "#FFF4C8");
+    return s;
+  }
+  function bsRain(t, o) {
+    // ฝน (หน้าสุด) + หยดกระเด็นที่พื้น
+    let s = "";
+    for (let i = 0; i < 160; i++) { const x = -2600 + ((i * 263) % 5200), y = -2600 + ((t * 2400 + i * 397) % 3400); s += L(x, y, x - 26, y + 130, "#DDEBFF", 6, 'opacity=".55"'); }
+    for (let i = 0; i < 30; i++) { const x = -2400 + ((i * 331) % 4800), ph = (t * 3 + i * 0.37) % 1; s += E(x, WALL_Y + 200 + (i % 5) * 160, 30 * ph + 6, 6 * ph + 2, "#CFE0F5", `opacity="${(0.6 * (1 - ph)).toFixed(2)}"`); }
+    return s;
+  }
+  RK.flatSets.busstop = { wall: wrap(bsWall, () => "#1B2238", "#4A505E"), lamps: wrap(bsLamps), island: wrap((t, o) => ""), foreground: wrap(bsRain), sunlight: () => "", WALL_Y: WALL_Y * K };
+
+  // ================= ISAN (บ้านไม้ใต้ถุนสูง ทุ่งนา ภูเขา) =================
+  //  setOpts { dawn:true, eve:true, mat:true(เสื่อ+สำรับกลางใต้ถุน), steam:true(หวดนึ่งข้าว) }
+  function isWall(t, o) {
+    const sky = o.dawn ? "url(#s4SkyEve)" : o.eve ? "url(#s4SkyEve)" : "url(#s4SkyDay)";
+    let s = R(-2600, -3400, 5200, 3400, sky);
+    if (o.dawn) s += C(1600, -1500, 160, "#FFD58A") + C(1600, -1500, 500, "url(#s4Lamp)", 'opacity=".7"');
+    // ภูเขา + ทุ่งนา
+    s += Pth("M -2600,-1300 L -1800,-2100 L -1100,-1500 L -300,-2300 L 600,-1550 L 1400,-2000 L 2600,-1400 L 2600,-1200 L -2600,-1200 Z", o.dawn ? "#5A4A78" : "#4E7A8A", 'opacity=".9"');
+    s += R(-2600, -1250, 5200, 700, o.dawn ? "#8EA65A" : "#7DBA4E");
+    for (let i = 0; i < 18; i++) s += L(-2600, -1200 + i * 40, 2600, -1180 + i * 40, o.dawn ? "#7A9A4E" : "#6AA844", 6, 'opacity=".7"');
+    for (let i = 0; i < 30; i++) { const x = -2500 + i * 170, sw = Math.sin(t * 1.4 + i * 0.6) * 10; s += Pth(`M ${x},-560 q ${sw},-60 ${sw * 1.5},-120 M ${x + 30},-560 q ${sw},-50 ${sw * 1.5 + 20},-100`, "none", ST("#5E9A3A", 8)); }
+    // ต้นตาล + กล้วย
+    for (const px of [-2100, 2200]) { s += R(px - 22, -2300, 44, 1750, "#6E5A3E"); for (let k = 0; k < 9; k++) { const a = (k / 9) * Math.PI * 2; s += Pth(`M ${px},-2300 l ${Math.cos(a) * 260},${Math.sin(a) * 160 - 60} l ${Math.cos(a + 0.2) * 40},40 Z`, "#3E7A3A"); } }
+    s += banana(-1500, -540, 0.9, t) + banana(1700, -540, 0.8, t);
+    // บ้านไม้ใต้ถุนสูง
+    const hx = -1100, hw = 2200;
+    s += Pth(`M ${hx - 200},-1900 L ${hx + hw / 2},-2600 L ${hx + hw + 200},-1900 Z`, "#8E3B2E") + Pth(`M ${hx - 200},-1900 L ${hx + hw / 2},-2600 L ${hx + hw + 200},-1900`, "none", ST("#6E2A20", 20));
+    s += R(hx, -1900, hw, 760, "url(#s4Teak)"); for (let y = -1900; y < -1140; y += 60) s += L(hx, y, hx + hw, y, "#5A3319", 4, 'opacity=".7"');
+    for (let k = 0; k < 3; k++) s += R(hx + 200 + k * 700, -1760, 360, 420, "#2B1A10") + R(hx + 200 + k * 700, -1760, 180, 420, "#8C5A2A") + R(hx + 380 + k * 700, -1760, 180, 420, "#8C5A2A");
+    s += R(hx - 60, -1150, hw + 120, 60, "#5A3319");
+    for (let k = 0; k < 7; k++) s += R(hx + 20 + k * 350, -1090, 60, 1020, "#6E4A30");
+    // บันได + โอ่ง + ไหปลาร้า
+    s += Pth(`M ${hx + hw - 100},-1100 L ${hx + hw + 260},-70 L ${hx + hw + 360},-70 L ${hx + hw},-1100 Z`, "#7A5236") + jar(hx + 400, -80, 0.7) + jar(hx + hw - 300, -80, 0.55);
+    s += R(-2600, WALL_Y, 5200, 1800, "#A68A62"); for (let i = 0; i < 20; i++) s += E(-2400 + i * 260, 200 + (i % 4) * 120, 50, 10, "#8E7450", 'opacity=".4"');
+    return s;
+  }
+  function isIsland(t, o) {
+    let s = "";
+    if (o.mat) { // เสื่อ + ขันโตก (สำรับ) ระดับโต๊ะเตี้ย ซ่อนขาคนนั่งพับเพียบ
+      const top = -120;
+      s += R(-1300, top, 2600, 300, "#C9A050") + R(-1300, top, 2600, 300, "url(#cdLamp)", 'opacity="0"');
+      for (let x = -1300; x < 1300; x += 80) s += L(x, top, x, top + 300, "#A8843E", 4);
+      s += R(-1300, top + 60, 2600, 20, "#B5523F") + R(-1300, top + 200, 2600, 20, "#2F6FB0");
+      s += E(0, top - 10, 420, 60, "#7A4A2C") + E(0, top - 22, 380, 46, "#9A6A3E");
+      s += RR(-300, top - 150, 140, 130, 30, "#C9A36A") + Pth(`M ${-300},${top - 150} q 70,-60 140,0`, "#E9DCC4") + E(-10, top - 60, 90, 22, "#3E8A46") + E(180, top - 60, 80, 20, "#E4A13A") + C(180, top - 76, 20, "#C9493B") + E(-160, top - 50, 60, 16, "#F7EBD8");
+    }
+    if (o.steam) { // เตาถ่าน + หม้อนึ่ง + หวดข้าวเหนียว + ไอน้ำ
+      const x = o.steamX ?? 300, top = -260;
+      s += R(x - 140, top + 40, 280, 260, "#6E6E6E") + E(x, top + 40, 140, 26, "#4A4A4A") + C(x, top + 160, 50, "#E4572E", `opacity="${0.6 + 0.3 * Math.sin(t * 8)}"`);
+      s += Pth(`M ${x - 150},${top + 30} L ${x + 150},${top + 30} L ${x + 120},${top - 150} L ${x - 120},${top - 150} Z`, "#B0B5BC") + Pth(`M ${x - 110},${top - 150} L ${x + 110},${top - 150} L ${x + 60},${top - 420} L ${x - 60},${top - 420} Z`, "#C9A050");
+      for (let k = 0; k < 6; k++) s += L(x - 100 + k * 40, top - 160, x - 50 + k * 20, top - 410, "#A8843E", 4);
+      for (let k = 0; k < 4; k++) { const ph = (t * 0.6 + k * 0.25) % 1; s += C(x + Math.sin(ph * 6 + k) * 40, top - 440 - ph * 500, 40 + ph * 60, "#FFFFFF", `opacity="${(0.5 * (1 - ph)).toFixed(2)}"`); }
+    }
+    return s;
+  }
+  RK.flatSets.isan = { wall: wrap(isWall, (o) => (o.dawn || o.eve ? "#2E3570" : "#3F86C9"), "#A68A62"), lamps: wrap((t, o) => ""), island: wrap(isIsland), foreground: wrap((t, o) => ""), sunlight: wrap((t, o) => o.dawn ? Pth("M 1600,-1500 L 2600,-1500 L 600,800 L -600,800 Z", "url(#s4Beam)", 'opacity=".35"') : ""), WALL_Y: WALL_Y * K };
+
+  // ================= FAIR (งานวัด กลางคืน: ชิงช้าสวรรค์ ไฟ ร้านค้า) =================
+  function frWall(t, o) {
+    let s = R(-2600, -3400, 5200, 3400 + WALL_Y, "#141A3A");
+    const r = RK.rng(41); for (let i = 0; i < 40; i++) s += C(-2500 + r() * 5000, -3300 + r() * 900, 3 + r() * 3, "#FFFFFF", 'opacity=".5"');
+    // ชิงช้าสวรรค์หมุน
+    const wx = 900, wy = -1900, wr = 900, rot = t * 0.25;
+    s += Pth(`M ${wx - 500},-70 L ${wx},${wy} L ${wx + 500},-70`, "none", ST("#C9CED8", 26));
+    s += C(wx, wy, wr, "none", 'stroke="#E9DCC4" stroke-width="18"') + C(wx, wy, wr * 0.6, "none", 'stroke="#E9DCC4" stroke-width="8" opacity=".6"');
+    for (let k = 0; k < 12; k++) { const a = rot + k * Math.PI / 6, ex = wx + Math.cos(a) * wr, ey = wy + Math.sin(a) * wr; s += L(wx, wy, ex, ey, "#E9DCC4", 6) + C(ex, ey, 14, ["#FF5A7A", "#FFD27A", "#5AC8FF"][k % 3]) + C(ex, ey, 60, "url(#rtBulb)", 'opacity=".5"');
+      s += RR(ex - 60, ey + 10, 120, 100, 20, ["#E4572E", "#2F6FB0", "#F2C14E", "#3E8A6E"][k % 4]) + R(ex - 44, ey + 26, 88, 36, "#1E2230", 'opacity=".6"'); }
+    s += C(wx, wy, 60, "#E9DCC4");
+    // ศาลา/โบสถ์ไกล
+    s += Pth("M -2400,-1500 L -1900,-1900 L -1400,-1500 Z", "#3A2A48") + R(-2300, -1500, 800, 700, "#3A2A48") + Pth("M -1900,-1900 L -1900,-2150", "none", ST("#3A2A48", 14));
+    // ซุ้มร้านค้า 3 ร้าน
+    const stall = (x, c, txt) => R(x - 360, -900, 720, 830, "#2A2E35") + Pth(`M ${x - 420},-900 L ${x + 420},-900 L ${x + 360},-1120 L ${x - 360},-1120 Z`, c) + T(x, -980, txt, 76, "#FFFFFF") + R(x - 340, -500, 680, 40, "#6E4A30") + C(x - 200, -560, 50, "#F2C14E") + C(x, -560, 50, "#FF5A7A") + C(x + 200, -560, 50, "#5AC8FF");
+    s += stall(-1700, "#C9302C", "ยิงปืนลูกโป่ง") + stall(-800, "#2F8F6B", "สายไหม") + stall(100, "#E4A13A", "ลูกชิ้นปิ้ง");
+    // ไฟประดับ
+    for (let k = 0; k < 2; k++) for (let i = 0; i < 30; i++) { const x = -2600 + i * 180, y = -1250 - k * 200 + Math.sin(i * 0.6) * 40; s += C(x, y, 12, ["#FF5A7A", "#FFD27A", "#5AC8FF", "#7CFF8A"][(i + k) % 4], `opacity="${(0.6 + 0.4 * Math.sin(t * 4 + i)).toFixed(2)}"`); }
+    s += R(-2600, WALL_Y, 5200, 1800, "#3A3428"); for (let i = 0; i < 16; i++) s += E(-2400 + i * 320, 220 + (i % 3) * 150, 90, 14, "#FFD27A", 'opacity=".08"');
+    return s;
+  }
+  function frFore(t, o) {
+    // ลูกโป่ง + พวงไฟหน้า
+    let s = "";
+    for (let i = 0; i < 5; i++) { const x = -1900 + i * 70, y = 200 - i * 40 + Math.sin(t * 2 + i) * 14; s += L(x, y + 70, -1820, 520, "#E9DCC4", 3) + E(x, y, 50, 64, ["#FF5A7A", "#FFD27A", "#5AC8FF", "#7CFF8A", "#E0368A"][i]); }
+    return s;
+  }
+  RK.flatSets.fair = { wall: wrap(frWall, () => "#141A3A", "#3A3428"), lamps: wrap((t, o) => ""), island: wrap((t, o) => ""), foreground: wrap(frFore), sunlight: () => "", WALL_Y: WALL_Y * K };
+
   // ฉากสีเรียบ (ใช้ทำปก: เรนเดอร์บนเขียวแล้วตัดพื้นออก)
   const plainW = (t, o) => R(-6000, -6000, 12000, 12000, o.color || "#00FF00"), nil = () => "";
   RK.flatSets.plain = { wall: plainW, lamps: nil, island: nil, foreground: nil, sunlight: nil, WALL_Y: WALL_Y * K };

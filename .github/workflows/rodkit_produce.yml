@@ -14,14 +14,42 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: rodkit-produce
-  cancel-in-progress: false
-
+# หลายตอนเรนเดอร์พร้อมกัน (เครื่องละตอน) — แต่ละตอนห้ามรันซ้อนตัวเอง
 jobs:
-  produce:
+  list:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    outputs:
+      eps: ${{ steps.l.outputs.eps }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: l
+        env:
+          EP_INPUT: ${{ github.event.inputs.episode }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, pathlib
+          if os.environ.get("EP_INPUT"):
+              eps = [os.environ["EP_INPUT"]]
+          else:
+              eps = []
+              for p in sorted(pathlib.Path("rodkit/jobs").glob("*.json")):
+                  j = json.loads(p.read_text("utf-8"))
+                  if not j.get("done"): eps.append(j["episode"])
+          print("eps=" + json.dumps(eps))
+          PY
+
+  produce:
+    needs: list
+    if: needs.list.outputs.eps != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        ep: ${{ fromJson(needs.list.outputs.eps) }}
+    concurrency:
+      group: rodkit-produce-${{ matrix.ep }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -35,25 +63,24 @@ jobs:
       - name: Produce
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          EP_INPUT: ${{ github.event.inputs.episode }}
+          E: ${{ matrix.ep }}
         run: |
           set -e
-          if [ -n "$EP_INPUT" ]; then EPS="$EP_INPUT"; else
-            EPS=$(python - <<'PY'
-          import json, pathlib
-          for p in sorted(pathlib.Path("rodkit/jobs").glob("*.json")):
-              j = json.loads(p.read_text("utf-8"))
-              if not j.get("done"):
-                  print(j["episode"])
-          PY
-          ); fi
-          echo "EPS=$EPS"
           mkdir -p rodkit/out
-          for E in $EPS; do
-            python -m rodkit.produce "$E" 2>&1 | tee -a produce.log
-            ID=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$E")
-            cp "rodkit/build/$ID/$ID.mp4" "rodkit/out/$ID.mp4"
-            python - "$E" <<'PY'
+          python -m rodkit.produce "$E" 2>&1 | tee produce.log
+          ID=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$E")
+          cp "rodkit/build/$ID/$ID.mp4" "rodkit/out/$ID.mp4"
+          echo "::notice::$ID · $(grep -m1 'เสียงพากย์' produce.log) · $(grep -m1 'ความยาวคลิป' produce.log)"
+      - name: Save clip back to repo
+        if: always()
+        env:
+          E: ${{ matrix.ep }}
+        run: |
+          git config user.name "rodkit-bot"
+          git config user.email "rodkit-bot@users.noreply.github.com"
+          ID=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$E")
+          mkdir -p rodkit/music_lib && touch rodkit/music_lib/.gitkeep
+          if [ -f "rodkit/out/$ID.mp4" ]; then python - "$E" <<'PY'
           import json, pathlib, sys
           for p in pathlib.Path("rodkit/jobs").glob("*.json"):
               j = json.loads(p.read_text("utf-8"))
@@ -61,15 +88,8 @@ jobs:
                   j["done"] = True
                   p.write_text(json.dumps(j, ensure_ascii=False, indent=1), "utf-8")
           PY
-          done
-          echo "::notice::$(grep -m1 'เสียงพากย์' produce.log) · $(grep -m1 'ความยาวคลิป' produce.log)"
-      - name: Save clip back to repo
-        if: always()
-        run: |
-          git config user.name "rodkit-bot"
-          git config user.email "rodkit-bot@users.noreply.github.com"
-          mkdir -p rodkit/music_lib && touch rodkit/music_lib/.gitkeep
+          fi
           git add rodkit/out rodkit/jobs rodkit/cast.json rodkit/sfx_lib rodkit/music_lib rodkit/voice_lib || true
-          git add rodkit/build/*/*.resolved.json -f || true
-          git commit -m "rodkit: produced clip [skip ci]" || echo "nothing new"
-          git pull --rebase -q && git push
+          git add "rodkit/build/$ID/$ID.resolved.json" -f || true
+          git commit -m "rodkit: produced $ID [skip ci]" || echo "nothing new"
+          for i in 1 2 3 4 5 6; do git pull --rebase -q -X theirs && git push && break; sleep $((RANDOM % 20 + 5)); done

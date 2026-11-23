@@ -1,0 +1,947 @@
+{
+ "id": "ST011",
+ "engine": "flat",
+ "fps": 30,
+ "set": "fair",
+ "title": "ก้าวต่อไป",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_fair",
+   "set": "fair",
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      4,
+      250
+     ]
+    ],
+    "y": [
+     [
+      0,
+      -700
+     ],
+     [
+      4,
+      -560
+     ]
+    ],
+    "z": [
+     [
+      0,
+      0.95
+     ],
+     [
+      4,
+      1.1
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": [
+      [
+       0,
+       -500
+      ],
+      [
+       4,
+       -80
+      ]
+     ],
+     "dir": 1,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": [
+      [
+       0,
+       -240
+      ],
+      [
+       4,
+       180
+      ]
+     ],
+     "dir": 1
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ครบหนึ่งปีที่กลับมาคบกัน"
+    },
+    {
+     "who": "narrator",
+     "text": "ภูมิชวนฟ้าเที่ยวงานวัด"
+    },
+    {
+     "who": "narrator",
+     "text": "เหมือนเดตแรกเมื่อหลายปีก่อน"
+    }
+   ]
+  },
+  {
+   "name": "s02_title",
+   "set": "fair",
+   "cam": {
+    "x": 200,
+    "y": -620,
+    "z": [
+     [
+      0,
+      1.0
+     ],
+     [
+      3,
+      1.1
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -80,
+     "dir": 1,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": 200,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "ก้าว ต่อไป",
+     "size": 110
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ก่อนจะก้าวไปอีกขั้น"
+    },
+    {
+     "who": "narrator",
+     "text": "คู่รักควรคุยอะไรกันบ้าง"
+    }
+   ]
+  },
+  {
+   "name": "s03_money",
+   "set": "cafe",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -60
+     ],
+     [
+      3.5,
+      0
+     ]
+    ],
+    "y": -340,
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      3.5,
+      1.4
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "mood": "flat"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "คุยเรื่องเงินตรงๆ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หนึ่งเดือนก่อนหน้านั้น"
+    },
+    {
+     "who": "fah",
+     "text": "ก่อนไปต่อ เราคุยเรื่องเงินกันตรงๆ ได้ไหม"
+    }
+   ]
+  },
+  {
+   "name": "s04_phum_money",
+   "set": "cafe",
+   "cam": {
+    "x": 240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "เรายังผ่อนรถอีกสองปี"
+    },
+    {
+     "who": "phum",
+     "text": "เก็บเงินได้เดือนละห้าพัน"
+    }
+   ]
+  },
+  {
+   "name": "s05_fah_money",
+   "set": "cafe",
+   "cam": {
+    "x": -240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้ามีเงินเก็บนิดหน่อย"
+    },
+    {
+     "who": "fah",
+     "text": "แต่ส่งให้แม่ทุกเดือน"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่มีใครรวยกว่าใคร"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่ไม่มีใครซ่อนอะไร"
+    }
+   ]
+  },
+  {
+   "name": "s06_future",
+   "set": "cafe",
+   "cam": {
+    "x": 0,
+    "y": -330,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "วางแผนอนาคตด้วยกัน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "สักวัน เราอยากกลับไปดูแลแม่"
+    },
+    {
+     "who": "fah",
+     "text": "งั้นเรามาหาทาง ที่ดีกับทั้งสองบ้านนะ"
+    }
+   ]
+  },
+  {
+   "name": "s07_te",
+   "set": "office",
+   "cut": "whip",
+   "cam": {
+    "x": 20,
+    "y": -370,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat"
+    },
+    {
+     "who": "te",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 6,
+     "x": 250,
+     "dir": -1,
+     "mood": "laugh"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "รีบเพราะคนเร่ง",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "te",
+     "text": "พี่จะสามสิบแล้ว รีบแต่งเลยสิ!"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่ควรรีบแต่ง"
+    },
+    {
+     "who": "narrator",
+     "text": "เพราะอายุ หรือเพราะคนรอบข้างเร่ง"
+    }
+   ]
+  },
+  {
+   "name": "s08_myth",
+   "set": "office",
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "แต่งแล้วปัญหาหาย",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "และอย่าคิดว่าแต่งงานแล้ว"
+    },
+    {
+     "who": "narrator",
+     "text": "ปัญหาจะหายไปเอง"
+    }
+   ]
+  },
+  {
+   "name": "s09_ton_help",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "bowl",
+     "bowl"
+    ]
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -330,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": -240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "arms": "give",
+     "mood": "smile"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "seed": 8,
+     "x": 240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "arms": "give",
+     "mood": "laugh"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ส่วนภูมิ แอบไปเรียนปั้นดินกับต้น"
+    },
+    {
+     "who": "narrator",
+     "text": "ปั้นถ้วยใบเล็กๆ ที่เบี้ยวนิดหน่อย"
+    }
+   ]
+  },
+  {
+   "name": "s10_gift",
+   "set": "fair",
+   "cut": "whip",
+   "cam": {
+    "x": 60,
+    "y": -430,
+    "z": 1.6
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -140,
+     "dir": 1,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": 220,
+     "dir": -1,
+     "prop": "bowlP",
+     "arms": "give"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ปั้นเองนะ เบี้ยวหน่อย"
+    },
+    {
+     "who": "phum",
+     "text": "เหมือนเราสองคนนั่นแหละ"
+    }
+   ]
+  },
+  {
+   "name": "s11_ring",
+   "set": "fair",
+   "cam": {
+    "x": -140,
+    "y": -500,
+    "z": [
+     [
+      0,
+      2.4
+     ],
+     [
+      3,
+      2.7
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -140,
+     "mood": "shock"
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 520,
+     "text": "แหวน…!"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "heart",
+     "at": 0.2,
+     "gain": 0.5
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ในถ้วยใบนั้น มีแหวนวงเล็กๆ วางอยู่"
+    }
+   ]
+  },
+  {
+   "name": "s12_propose",
+   "set": "fair",
+   "cam": {
+    "x": 220,
+    "y": -500,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": 220,
+     "arms": "wai"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ไม่กดดัน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ฟ้า… แต่งงานกับเรานะ"
+    },
+    {
+     "who": "phum",
+     "text": "ไม่ต้องตอบตอนนี้ก็ได้ เรารอได้"
+    }
+   ]
+  },
+  {
+   "name": "s13_yes",
+   "set": "fair",
+   "cam": {
+    "x": -140,
+    "y": -500,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 6
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -140,
+     "mood": "happy"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.4,
+     "gain": 0.4
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้าคิดมาทั้งปีแล้ว"
+    },
+    {
+     "who": "fah",
+     "text": "ตกลงค่ะ"
+    }
+   ]
+  },
+  {
+   "name": "s14_families",
+   "set": "living",
+   "cut": "whip",
+   "cam": {
+    "x": -60,
+    "y": -380,
+    "z": 1.15
+   },
+   "actors": [
+    {
+     "who": "fdad",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 11,
+     "x": -470,
+     "mood": "happy"
+    },
+    {
+     "who": "fmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 12,
+     "x": -220,
+     "mood": "happy",
+     "prop": "phone",
+     "arms": "phone"
+    },
+    {
+     "who": "fsis",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 13,
+     "x": 20,
+     "mood": "laugh"
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 280,
+     "mood": "happy"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ข่าวดีถึงสองบ้านในคืนเดียว"
+    },
+    {
+     "who": "narrator",
+     "text": "แม่นวลโทรหาแม่ของฟ้า"
+    },
+    {
+     "who": "narrator",
+     "text": "คุยกันจนดึก"
+    }
+   ]
+  },
+  {
+   "name": "s15_recap",
+   "set": "riverside",
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -420,
+    "z": 1.3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "x": 200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "mood": "happy"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "จากข้อความที่ไม่ได้ส่ง สู่คำว่าตกลง"
+    },
+    {
+     "who": "narrator",
+     "text": "ไม่ใช่เพราะรักไม่เคยพัง"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่เพราะทั้งคู่ซ่อมมันด้วยกัน"
+    }
+   ]
+  },
+  {
+   "name": "s16_end",
+   "set": "fair",
+   "cam": {
+    "x": [
+     [
+      0,
+      200
+     ],
+     [
+      4,
+      400
+     ]
+    ],
+    "y": [
+     [
+      0,
+      -700
+     ],
+     [
+      4,
+      -1100
+     ]
+    ],
+    "z": [
+     [
+      0,
+      1.0
+     ],
+     [
+      4,
+      0.8
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -80,
+     "dir": 1,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "happy",
+     "x": 200,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "รักที่ดี",
+      "ไม่ใช่รักที่ไม่เคยพัง",
+      "แต่คือรักที่สองคน",
+      "ช่วยกันซ่อม"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "รักที่ดี ไม่ใช่รักที่ไม่เคยพัง แต่คือรักที่สองคนช่วยกันซ่อม",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}
