@@ -1,0 +1,1351 @@
+{
+ "id": "ST008",
+ "engine": "flat",
+ "fps": 30,
+ "set": "riverside",
+ "title": "ให้โอกาสอีกครั้ง",
+ "music": "family",
+ "musicGain": 1.0,
+ "ambience": "auto",
+ "ambienceGain": 0.12,
+ "handheld": 0.7,
+ "shots": [
+  {
+   "name": "s01_river",
+   "set": "riverside",
+   "cam": {
+    "x": [
+     [
+      0,
+      -40
+     ],
+     [
+      3.5,
+      0
+     ]
+    ],
+    "y": [
+     [
+      0,
+      -520
+     ],
+     [
+      3.5,
+      -420
+     ]
+    ],
+    "z": [
+     [
+      0,
+      1.15
+     ],
+     [
+      3.5,
+      1.3
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 4,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 5,
+     "mood": "smile"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หนึ่งปีหลังเลิกกัน"
+    },
+    {
+     "who": "narrator",
+     "text": "ฟ้ากับภูมิ กลับมานั่งข้างกันอีกครั้ง"
+    }
+   ]
+  },
+  {
+   "name": "s02_title",
+   "set": "riverside",
+   "cam": {
+    "x": 0,
+    "y": -420,
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      3,
+      1.4
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 4,
+     "mood": "smile",
+     "dir": 1
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 5,
+     "mood": "smile",
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "title",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 420,
+     "text": "ให้โอกาส อีกครั้ง",
+     "size": 104
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แต่ครั้งนี้ ต้องไม่จบแบบเดิม"
+    }
+   ]
+  },
+  {
+   "name": "s03_no_msg",
+   "set": "condo",
+   "cut": "whip",
+   "cam": {
+    "x": 150,
+    "y": -340,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 110,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": 150,
+     "layer": "back",
+     "sink": 170,
+     "clipY": 0,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ตลอดหลายเดือน ภูมิไม่ได้ทักมาขอคืนดีอีกเลย"
+    }
+   ]
+  },
+  {
+   "name": "s04_phum_market",
+   "set": "market",
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -300
+     ],
+     [
+      3,
+      -200
+     ]
+    ],
+    "y": -380,
+    "z": 1.4
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": -250,
+     "dir": 1,
+     "prop": "porkbag",
+     "arms": "hold"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ดูที่การกระทำ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แต่ฟ้าเห็นเขาเปลี่ยน จากสิ่งที่ทำ"
+    },
+    {
+     "who": "narrator",
+     "text": "หัดอยู่คนเดียว และเลิกหนีปัญหา"
+    }
+   ]
+  },
+  {
+   "name": "s06_consistent",
+   "set": "office",
+   "cam": {
+    "x": -200,
+    "y": -470,
+    "z": 2.4
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "เปลี่ยนจริง ต่อเนื่อง",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ไม่ใช่เปลี่ยนแค่สัปดาห์เดียว"
+    },
+    {
+     "who": "narrator",
+     "text": "แต่เปลี่ยนต่อเนื่อง จนฟ้าเชื่อได้"
+    }
+   ]
+  },
+  {
+   "name": "s07_ton",
+   "set": "pottery",
+   "setOpts": {
+    "wheels": [
+     -240,
+     240
+    ],
+    "clay": [
+     "bowl",
+     "wonky"
+    ]
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -330,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "arms": "give",
+     "seed": 4,
+     "mood": "smile"
+    },
+    {
+     "who": "ton",
+     "s": 0.62,
+     "y": 60,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 120,
+     "clipY": 0,
+     "arms": "give",
+     "seed": 8,
+     "mood": "laugh"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ต้นคือคนแรกที่ฟ้าเล่าให้ฟัง"
+    },
+    {
+     "who": "narrator",
+     "text": "และเป็นเพื่อนที่ยิ้มให้กำลังใจ"
+    }
+   ]
+  },
+  {
+   "name": "s08_cafe",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -60
+     ],
+     [
+      3.5,
+      0
+     ]
+    ],
+    "y": -340,
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      3.5,
+      1.4
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "flat"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "flat"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ก่อนเริ่มใหม่"
+    },
+    {
+     "who": "phum",
+     "text": "เราขอคุยเรื่องเก่าให้จบก่อนได้ไหม"
+    }
+   ]
+  },
+  {
+   "name": "s09_fah_sorry",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true
+   },
+   "cam": {
+    "x": -240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "worried"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "คุยปัญหาเดิมตรงๆ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ฟ้าเคยเลื่อนนัดภูมิบ่อยมาก"
+    },
+    {
+     "who": "fah",
+     "text": "ขอโทษนะ"
+    }
+   ]
+  },
+  {
+   "name": "s10_phum_sorry",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true
+   },
+   "cam": {
+    "x": 240,
+    "y": -330,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "worried"
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "เราก็เคยกลับมา เพราะเหงา"
+    },
+    {
+     "who": "phum",
+     "text": "ขอโทษเหมือนกัน"
+    },
+    {
+     "who": "phum",
+     "text": "แล้วเราอยากไปขอโทษ"
+    },
+    {
+     "who": "phum",
+     "text": "พ่อแม่ กับน้องของฟ้าด้วย"
+    }
+   ]
+  },
+  {
+   "name": "s10a_gate",
+   "set": "housefront",
+   "setOpts": {
+    "houseNo": "บ้านเลขที่ 12",
+    "soi": "ซอยพุดซ้อน",
+    "gateOpen": 0.15
+   },
+   "cut": "whip",
+   "cam": {
+    "x": [
+     [
+      0,
+      -350
+     ],
+     [
+      3,
+      -260
+     ]
+    ],
+    "y": -420,
+    "z": 1.4
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 200,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": -250,
+     "dir": 1,
+     "prop": "porkbag",
+     "arms": "hold"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.4,
+     "gain": 0.35
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "เย็นวันเสาร์ ภูมิมายืนหน้าบ้านของฟ้า"
+    },
+    {
+     "who": "narrator",
+     "text": "บ้านที่เขาไม่กล้ามาเหยียบ ตั้งแต่วันที่เลิกกัน"
+    }
+   ]
+  },
+  {
+   "name": "s10b_family",
+   "set": "living",
+   "cam": {
+    "x": -60,
+    "y": -380,
+    "z": 1.15
+   },
+   "actors": [
+    {
+     "who": "fdad",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 11,
+     "mood": "flat",
+     "x": -470
+    },
+    {
+     "who": "fmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 12,
+     "mood": "flat",
+     "x": -220
+    },
+    {
+     "who": "fsis",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 13,
+     "mood": "flat",
+     "x": 20,
+     "dir": -1,
+     "arms": "cross"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": 330,
+     "dir": -1,
+     "arms": "wai",
+     "tilt": 8
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "พ่อนั่งหน้านิ่ง แม่ไม่ยิ้ม"
+    },
+    {
+     "who": "narrator",
+     "text": "ส่วนมิ้นท์ น้องสาวของฟ้า กอดอกไม่ยอมมองหน้า"
+    }
+   ]
+  },
+  {
+   "name": "s10c_apology",
+   "set": "living",
+   "cam": {
+    "x": 330,
+    "y": -400,
+    "z": [
+     [
+      0,
+      1.9
+     ],
+     [
+      3,
+      2.05
+     ]
+    ]
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": 330,
+     "arms": "wai",
+     "tilt": 6
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "ผมขอโทษครับ ที่เคยทำให้ฟ้าเสียใจ"
+    },
+    {
+     "who": "phum",
+     "text": "ผมไม่ได้มาขอให้ยกโทษวันนี้"
+    },
+    {
+     "who": "phum",
+     "text": "แค่อยากให้เห็นว่า ผมตั้งใจจริง"
+    }
+   ]
+  },
+  {
+   "name": "s10d_sister",
+   "set": "living",
+   "cam": {
+    "x": 20,
+    "y": -460,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fsis",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 13,
+     "mood": "worried",
+     "x": 20,
+     "dir": -1,
+     "arms": "cross"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ไม่บังคับให้ใครยกโทษ",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "มิ้นท์เคยเห็นพี่สาวร้องไห้ทุกคืน"
+    },
+    {
+     "who": "narrator",
+     "text": "เธอยังไม่พร้อมจะยกโทษ และภูมิก็ยอมรับ"
+    }
+   ]
+  },
+  {
+   "name": "s10e_help_dad",
+   "set": "housefront",
+   "setOpts": {
+    "houseNo": "บ้านเลขที่ 12",
+    "soi": "ซอยพุดซ้อน",
+    "gateOpen": 0.5
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -300,
+    "y": -400,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fdad",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 11,
+     "mood": "flat",
+     "x": -480,
+     "dir": 1,
+     "arms": "point"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 200,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": -150,
+     "dir": -1,
+     "arms": "give"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "พิสูจน์ด้วยเวลา",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.5,
+     "gain": 0.2
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "หลังจากนั้นทุกสัปดาห์ ภูมิมาช่วยพ่อซ่อมรั้ว"
+    }
+   ]
+  },
+  {
+   "name": "s10f_help_mom",
+   "set": "market",
+   "cam": {
+    "x": [
+     [
+      0,
+      -300
+     ],
+     [
+      3,
+      -200
+     ]
+    ],
+    "y": -380,
+    "z": 1.4
+   },
+   "actors": [
+    {
+     "who": "fmom",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 12,
+     "mood": "smile",
+     "x": -380,
+     "dir": 1
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": -120,
+     "dir": 1,
+     "prop": "porkbag",
+     "arms": "hold"
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "ช่วยแม่หิ้วของจากตลาด โดยไม่ต้องมีใครขอ"
+    }
+   ]
+  },
+  {
+   "name": "s10g_dinner",
+   "set": "dining",
+   "setOpts": {
+    "bare": true
+   },
+   "cam": {
+    "x": 60,
+    "y": -330,
+    "z": 1.2
+   },
+   "actors": [
+    {
+     "who": "fdad",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 11,
+     "mood": "smile",
+     "x": -300,
+     "layer": "back",
+     "sink": 40,
+     "clipY": 0
+    },
+    {
+     "who": "fmom",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 12,
+     "mood": "happy",
+     "x": -60,
+     "layer": "back",
+     "sink": 40,
+     "clipY": 0
+    },
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "mood": "happy",
+     "x": 180,
+     "layer": "back",
+     "sink": 40,
+     "clipY": 0
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 5,
+     "mood": "smile",
+     "x": 420,
+     "layer": "back",
+     "sink": 40,
+     "clipY": 0
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "จนวันหนึ่ง พ่อรินน้ำให้"
+    },
+    {
+     "who": "narrator",
+     "text": "แม่ชวนอยู่กินข้าวเย็น"
+    }
+   ]
+  },
+  {
+   "name": "s10h_sister_smile",
+   "set": "dining",
+   "setOpts": {
+    "bare": true
+   },
+   "cam": {
+    "x": -560,
+    "y": -420,
+    "z": 2.3
+   },
+   "dof": {
+    "bg": 5
+   },
+   "actors": [
+    {
+     "who": "fsis",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "seed": 13,
+     "mood": "smile",
+     "x": -560,
+     "layer": "back",
+     "sink": 40,
+     "clipY": 0
+    }
+   ],
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.3
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "และมิ้นท์ ยอมยิ้มให้ภูมิ เป็นครั้งแรก"
+    }
+   ]
+  },
+  {
+   "name": "s11_rules",
+   "set": "cafe",
+   "setOpts": {
+    "eve": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -330,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": 1,
+     "seed": 4,
+     "mood": "smile"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 240,
+     "layer": "back",
+     "sink": 190,
+     "clipY": 0,
+     "dir": -1,
+     "seed": 5,
+     "mood": "smile"
+    }
+   ],
+   "ui": [
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ตั้งกติกาใหม่ด้วยกัน",
+     "y": 300
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ถ้าต้องเลื่อนนัด ฟ้าจะบอกเหตุผล"
+    },
+    {
+     "who": "fah",
+     "text": "แล้วนัดวันใหม่ทันที"
+    },
+    {
+     "who": "phum",
+     "text": "ถ้าเราเหงา เราจะบอกตรงๆ"
+    },
+    {
+     "who": "phum",
+     "text": "ไม่หายไปเฉยๆ"
+    }
+   ]
+  },
+  {
+   "name": "s13_fight",
+   "set": "condo",
+   "cut": "whip",
+   "cam": {
+    "x": -60,
+    "y": -370,
+    "z": 1.45
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 4,
+     "x": -260,
+     "mood": "worried",
+     "dir": 1
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 230,
+     "view": "side",
+     "light": "litL",
+     "seed": 5,
+     "mood": "worried",
+     "x": 200,
+     "dir": -1
+    }
+   ],
+   "ui": [
+    {
+     "type": "bubble",
+     "t0": 0.2,
+     "t1": 99,
+     "y": 470,
+     "text": "ก็ภูมิเคยทิ้งฟ้า…"
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": false,
+     "text": "ขุดเรื่องเก่ามาทะเลาะ",
+     "y": 260
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "สิ่งที่ไม่ควรทำ คือหยิบเรื่องเก่ามาเป็นอาวุธ"
+    },
+    {
+     "who": "narrator",
+     "text": "และหวังให้ทุกอย่าง กลับไปเหมือนเดิม"
+    }
+   ]
+  },
+  {
+   "name": "s15_caveat",
+   "set": "riverside",
+   "cut": "whip",
+   "cam": {
+    "x": 0,
+    "y": -470,
+    "z": 1.2
+   },
+   "say": [
+    {
+     "who": "narrator",
+     "text": "แต่ถ้าปัญหาเดิม คือการทำร้ายกัน"
+    },
+    {
+     "who": "narrator",
+     "text": "การไม่ให้โอกาส ก็เป็นทางเลือกที่ถูกเหมือนกัน"
+    }
+   ]
+  },
+  {
+   "name": "s16_reschedule",
+   "set": "office",
+   "setOpts": {
+    "late": true
+   },
+   "cut": "whip",
+   "cam": {
+    "x": -200,
+    "y": -380,
+    "z": 1.9
+   },
+   "dof": {
+    "bg": 3
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 230,
+     "view": "front",
+     "light": "litL",
+     "seed": 4,
+     "x": -200,
+     "mood": "flat",
+     "prop": "phone",
+     "arms": "phone"
+    }
+   ],
+   "ui": [
+    {
+     "type": "chat",
+     "t0": 0.1,
+     "t1": 99,
+     "y": 980,
+     "s": 0.85,
+     "name": "ภูมิ",
+     "time": "17:40",
+     "msgs": [
+      {
+       "me": true,
+       "text": "งานด่วน ขอเลื่อนเป็นพรุ่งนี้ทุ่มนึงได้ไหม"
+      },
+      {
+       "me": false,
+       "text": "ได้สิ ขอบคุณที่บอกนะ"
+      }
+     ]
+    },
+    {
+     "type": "tip",
+     "t0": 0.15,
+     "t1": 99,
+     "do": true,
+     "text": "ค่อยเป็นค่อยไป",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "name": "notify",
+     "at": 1.2,
+     "gain": 0.35
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "กติกาใหม่ ใช้ได้จริง"
+    }
+   ]
+  },
+  {
+   "name": "s17_thanks_fah",
+   "set": "riverside",
+   "cut": "whip",
+   "cam": {
+    "x": -200,
+    "y": -360,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 4
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": -200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 4,
+     "mood": "smile",
+     "dir": 1
+    }
+   ],
+   "say": [
+    {
+     "who": "fah",
+     "text": "ขอบคุณที่ให้โอกาสกันนะ"
+    }
+   ]
+  },
+  {
+   "name": "s18_thanks_phum",
+   "set": "riverside",
+   "cam": {
+    "x": 200,
+    "y": -360,
+    "z": 2.2
+   },
+   "dof": {
+    "bg": 4
+   },
+   "actors": [
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "side",
+     "light": "litL",
+     "x": 200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 5,
+     "mood": "smile",
+     "dir": -1
+    }
+   ],
+   "say": [
+    {
+     "who": "phum",
+     "text": "เราต่างหากที่ต้องขอบคุณ ฟ้ากับครอบครัว"
+    }
+   ]
+  },
+  {
+   "name": "s19_end",
+   "set": "riverside",
+   "cam": {
+    "x": [
+     [
+      0,
+      0
+     ],
+     [
+      4,
+      0
+     ]
+    ],
+    "y": [
+     [
+      0,
+      -420
+     ],
+     [
+      4,
+      -560
+     ]
+    ],
+    "z": [
+     [
+      0,
+      1.3
+     ],
+     [
+      4,
+      1.15
+     ]
+    ]
+   },
+   "actors": [
+    {
+     "who": "fah",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": -200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 4,
+     "mood": "happy"
+    },
+    {
+     "who": "phum",
+     "s": 0.62,
+     "y": 20,
+     "view": "front",
+     "light": "litL",
+     "x": 200,
+     "layer": "back",
+     "sink": 150,
+     "clipY": 0,
+     "seed": 5,
+     "mood": "happy"
+    }
+   ],
+   "ui": [
+    {
+     "type": "quote",
+     "t0": 0.3,
+     "t1": 99,
+     "lines": [
+      "โอกาสครั้งที่สอง",
+      "ไม่ใช่การย้อนกลับไป",
+      "แต่คือการเริ่มใหม่",
+      "กับคนเดิม ที่ไม่เหมือนเดิม"
+     ]
+    }
+   ],
+   "say": [
+    {
+     "who": "narrator",
+     "text": "โอกาสครั้งที่สอง ไม่ใช่การย้อนกลับไป แต่คือการเริ่มใหม่ กับคนเดิม ที่ไม่เหมือนเดิม",
+     "sub": ""
+    }
+   ]
+  }
+ ]
+}
